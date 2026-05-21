@@ -2,82 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --navy-900: #080c1a;
-  --navy-800: #0d1528;
-  --navy-700: #111d35;
-  --gold: #d4a017;
-  --gold-light: #f0c040;
-  --cyan: #00d4ff;
-  --green: #00ff88;
+/* ═══════════════════════════════════════════
+   DARK MODE TOKENS (default)
+═══════════════════════════════════════════ */
+:root, .dark {
+  --bg-primary:    #080c1a;
+  --bg-secondary:  #0d1528;
+  --bg-tertiary:   #111d35;
+  --bg-card:       rgba(13,21,40,0.92);
+  --bg-card2:      rgba(17,29,53,0.85);
+  --bg-hover:      rgba(255,255,255,0.04);
+  --border:        rgba(212,160,23,0.15);
+  --border-subtle: rgba(255,255,255,0.06);
+  --text-primary:  #e8eaf0;
+  --text-secondary:#9aa0b4;
+  --text-muted:    rgba(255,255,255,0.3);
+  --gold:          #d4a017;
+  --gold-light:    #f0c040;
+  --gold-dim:      rgba(212,160,23,0.5);
+  --scan-color:    rgba(212,160,23,0.03);
+  --grid-color:    rgba(212,160,23,0.03);
+  --scrollbar-bg:  #0d1528;
+  --scrollbar-thumb: #d4a017;
+  --shadow:        0 4px 24px rgba(0,0,0,0.4);
+  --navy-950:      #060a16;
 }
 
+/* ═══════════════════════════════════════════
+   LIGHT MODE TOKENS
+═══════════════════════════════════════════ */
+.light {
+  --bg-primary:    #f0f2f8;
+  --bg-secondary:  #e4e8f2;
+  --bg-tertiary:   #d8dded;
+  --bg-card:       rgba(255,255,255,0.95);
+  --bg-card2:      rgba(245,247,255,0.9);
+  --bg-hover:      rgba(0,0,0,0.03);
+  --border:        rgba(180,140,20,0.25);
+  --border-subtle: rgba(0,0,0,0.08);
+  --text-primary:  #111827;
+  --text-secondary:#374151;
+  --text-muted:    rgba(0,0,0,0.4);
+  --gold:          #b8860b;
+  --gold-light:    #d4a017;
+  --gold-dim:      rgba(180,140,20,0.4);
+  --scan-color:    rgba(180,140,20,0.04);
+  --grid-color:    rgba(180,140,20,0.06);
+  --scrollbar-bg:  #e4e8f2;
+  --scrollbar-thumb: #b8860b;
+  --shadow:        0 4px 24px rgba(0,0,0,0.12);
+  --navy-950:      #f0f2f8;
+}
+
+/* ═══════════════════════════════════════════
+   BASE STYLES
+═══════════════════════════════════════════ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { transition: background-color 0.3s ease, color 0.3s ease; }
+
 body {
-  background-color: var(--navy-900);
-  color: #e8eaf0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: var(--navy-800); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 2px; }
 
-.glow-gold { box-shadow: 0 0 20px rgba(212, 160, 23, 0.3); }
-.glow-cyan { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
-.glow-green { box-shadow: 0 0 20px rgba(0, 255, 136, 0.2); }
-
+/* ═══════════════════════════════════════════
+   GRID BACKGROUND
+═══════════════════════════════════════════ */
 .grid-bg {
-  background-image: 
-    linear-gradient(rgba(212,160,23,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,160,23,0.03) 1px, transparent 1px);
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
+  transition: background-color 0.3s ease;
 }
 
+/* ═══════════════════════════════════════════
+   CARD
+═══════════════════════════════════════════ */
 .card {
-  background: linear-gradient(135deg, rgba(13,21,40,0.9) 0%, rgba(17,29,53,0.8) 100%);
-  border: 1px solid rgba(212,160,23,0.15);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .card-glow:hover {
-  border-color: rgba(212,160,23,0.4);
+  border-color: var(--gold-dim);
   box-shadow: 0 0 30px rgba(212,160,23,0.1);
   transition: all 0.3s ease;
 }
 
-.text-gold { color: var(--gold-light); }
-.text-cyan { color: var(--cyan); }
-.text-green { color: var(--green); }
+/* ═══════════════════════════════════════════
+   HEADER — theme-aware
+═══════════════════════════════════════════ */
+.dark .themed-header  { background: rgba(6,10,22,0.92); border-color: rgba(255,255,255,0.05); }
+.light .themed-header { background: rgba(255,255,255,0.95); border-color: rgba(0,0,0,0.08); box-shadow: 0 1px 12px rgba(0,0,0,0.08); }
 
-.badge-star { background: rgba(255,200,0,0.15); color: #ffc800; border: 1px solid rgba(255,200,0,0.3); }
-.badge-cash { background: rgba(0,255,136,0.1); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
-.badge-question { background: rgba(0,212,255,0.1); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
-.badge-dog { background: rgba(255,68,68,0.1); color: #ff6666; border: 1px solid rgba(255,68,68,0.3); }
+/* ═══════════════════════════════════════════
+   TABS — theme-aware
+═══════════════════════════════════════════ */
+.dark .tab-bar  { background: transparent; border-color: rgba(255,255,255,0.05); }
+.light .tab-bar { background: rgba(255,255,255,0.6); border-color: rgba(0,0,0,0.08); }
 
-.pulse-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  animation: pulse 2s infinite;
+.dark .tab-inactive  { color: rgba(255,255,255,0.3); }
+.dark .tab-inactive:hover { color: rgba(255,255,255,0.65); }
+.light .tab-inactive { color: rgba(0,0,0,0.4); }
+.light .tab-inactive:hover { color: rgba(0,0,0,0.7); }
+
+/* ═══════════════════════════════════════════
+   SCAN LINE ANIMATION
+═══════════════════════════════════════════ */
+.scan-line {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 2px; z-index: 100; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: scan 4s linear infinite;
+}
+.light .scan-line { opacity: 0.4; }
+@keyframes scan {
+  0%   { transform: translateY(0); opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
+/* ═══════════════════════════════════════════
+   TOOLTIPS & RECHARTS — theme-aware
+═══════════════════════════════════════════ */
+.dark  .recharts-tooltip-wrapper .custom-tooltip { background: rgba(8,12,26,0.97); border-color: rgba(255,255,255,0.1); }
+.light .recharts-tooltip-wrapper .custom-tooltip { background: rgba(255,255,255,0.98); border-color: rgba(0,0,0,0.12); color: #111; }
 
+/* ═══════════════════════════════════════════
+   TEXT UTILITIES
+═══════════════════════════════════════════ */
+.text-gold   { color: var(--gold-light); }
+.text-muted  { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+/* ═══════════════════════════════════════════
+   BADGES
+═══════════════════════════════════════════ */
+.badge-star     { background:rgba(245,158,11,0.15); color:#F59E0B; border:1px solid rgba(245,158,11,0.3); }
+.badge-cash     { background:rgba(16,185,129,0.12); color:#10B981; border:1px solid rgba(16,185,129,0.3); }
+.badge-question { background:rgba(59,130,246,0.12); color:#3B82F6; border:1px solid rgba(59,130,246,0.3); }
+.badge-dog      { background:rgba(239,68,68,0.12);  color:#EF4444; border:1px solid rgba(239,68,68,0.3); }
+
+.light .badge-star     { background:rgba(245,158,11,0.12); }
+.light .badge-cash     { background:rgba(16,185,129,0.10); }
+.light .badge-question { background:rgba(59,130,246,0.10); }
+.light .badge-dog      { background:rgba(239,68,68,0.10);  }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════ */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
 }
+.animate-fade-up { animation: fadeInUp 0.4s ease forwards; }
 
-.animate-fade-up { animation: fadeInUp 0.5s ease forwards; }
-
-.fullscreen-mode {
-  position: fixed !important;
-  inset: 0;
-  z-index: 9999;
-  overflow-y: auto;
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%     { opacity:0.5; transform:scale(0.75); }
 }
+.pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* ═══════════════════════════════════════════
+   LIGHT MODE — navy class overrides for recharts bg
+═══════════════════════════════════════════ */
+.light .bg-navy-900\/95 { background: rgba(255,255,255,0.96) !important; }
+.light .bg-navy-950\/90 { background: rgba(255,255,255,0.94) !important; }
+.light .border-white\/5  { border-color: rgba(0,0,0,0.07) !important; }
+.light .border-white\/10 { border-color: rgba(0,0,0,0.10) !important; }
+.light .text-white       { color: #111827 !important; }
+.light .text-white\/80   { color: rgba(17,24,39,0.85) !important; }
+.light .text-white\/60   { color: rgba(17,24,39,0.65) !important; }
+.light .text-white\/50   { color: rgba(17,24,39,0.55) !important; }
+.light .text-white\/40   { color: rgba(17,24,39,0.45) !important; }
+.light .text-white\/30   { color: rgba(17,24,39,0.35) !important; }
+.light .text-white\/25   { color: rgba(17,24,39,0.28) !important; }
+.light .text-white\/15   { color: rgba(17,24,39,0.18) !important; }
+.light .bg-white\/5      { background: rgba(0,0,0,0.04) !important; }
+.light .bg-white\/10     { background: rgba(0,0,0,0.07) !important; }
+.light .hover\:bg-white\/10:hover { background: rgba(0,0,0,0.06) !important; }
