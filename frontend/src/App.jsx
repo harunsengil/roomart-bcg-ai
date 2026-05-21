@@ -83,7 +83,10 @@ export default function App() {
       />
 
       {/* ── TAB BAR ───────────────────────────────────── */}
-      <div className="tab-bar flex items-center gap-1 px-6 pt-3 border-b transition-all duration-300">
+      <div
+        className="tab-bar flex items-center gap-1 px-6 pt-3 border-b transition-all duration-300"
+        style={{ position: 'relative', zIndex: 200 }}
+      >
         {TABS.map(tab => {
           const Icon = tab.icon
           const isActive = activeTab === tab.id
@@ -92,9 +95,11 @@ export default function App() {
           return (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              type="button"
+              onClick={(e) => { e.stopPropagation(); setActiveTab(tab.id); }}
+              style={{ position: 'relative', zIndex: 201, cursor: 'pointer' }}
               className={[
-                'relative flex items-center gap-2 px-4 py-2.5',
+                'flex items-center gap-2 px-4 py-2.5 select-none',
                 'text-[11px] font-mono tracking-widest uppercase',
                 'transition-all duration-200 rounded-t-lg border-b-2 -mb-px',
                 isActive
@@ -108,14 +113,6 @@ export default function App() {
                 <span className="w-4 h-4 rounded-full bg-red-500 text-white text-[8px] flex items-center justify-center font-bold">
                   {badgeCount}
                 </span>
-              )}
-              {/* Active underline glow */}
-              {isActive && (
-                <motion.span
-                  layoutId="tab-indicator"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold-400 rounded-full"
-                  style={{ boxShadow: '0 0 8px rgba(212,160,23,0.6)' }}
-                />
               )}
             </button>
           )
