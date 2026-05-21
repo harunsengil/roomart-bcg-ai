@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "last_updated": "2026-05-21T10:20:42.067960"
+  },
+  "categories": {
+    "Oturma Odasi": {
+      "category": "Oturma Odasi",
+      "total_listings": 928,
+      "competitor_count": 49,
+      "avg_price_index": 0.761,
+      "market_saturation": 0.54,
+      "new_listings_30d": 75,
+      "category_growth_30d": 0.285,
+      "avg_review_count": 19,
+      "price_competition_index": 0.59,
+      "timestamp": "2026-05-21T10:20:42.057811"
+    },
+    "Yatak Odasi": {
+      "category": "Yatak Odasi",
+      "total_listings": 5106,
+      "competitor_count": 57,
+      "avg_price_index": 0.939,
+      "market_saturation": 0.33,
+      "new_listings_30d": 89,
+      "category_growth_30d": 0.085,
+      "avg_review_count": 95,
+      "price_competition_index": 0.75,
+      "timestamp": "2026-05-21T10:20:42.057819"
+    },
+    "Yemek Odasi": {
+      "category": "Yemek Odasi",
+      "total_listings": 1841,
+      "competitor_count": 15,
+      "avg_price_index": 1.334,
+      "market_saturation": 0.76,
+      "new_listings_30d": 213,
+      "category_growth_30d": -0.022,
+      "avg_review_count": 90,
+      "price_competition_index": 0.77,
+      "timestamp": "2026-05-21T10:20:42.057825"
+    },
+    "Ofis": {
+      "category": "Ofis",
+      "total_listings": 1335,
+      "competitor_count": 20,
+      "avg_price_index": 0.765,
+      "market_saturation": 0.39,
+      "new_listings_30d": 30,
+      "category_growth_30d": 0.067,
+      "avg_review_count": 120,
+      "price_competition_index": 0.69,
+      "timestamp": "2026-05-21T10:20:42.057831"
+    },
+    "Dekorasyon": {
+      "category": "Dekorasyon",
+      "total_listings": 2673,
+      "competitor_count": 75,
+      "avg_price_index": 1.286,
+      "market_saturation": 0.76,
+      "new_listings_30d": 195,
+      "category_growth_30d": 0.159,
+      "avg_review_count": 133,
+      "price_competition_index": 0.5,
+      "timestamp": "2026-05-21T10:20:42.057836"
+    },
+    "Banyo": {
+      "category": "Banyo",
+      "total_listings": 5488,
+      "competitor_count": 96,
+      "avg_price_index": 1.069,
+      "market_saturation": 0.79,
+      "new_listings_30d": 181,
+      "category_growth_30d": -0.045,
+      "avg_review_count": 175,
+      "price_competition_index": 0.66,
+      "timestamp": "2026-05-21T10:20:42.057840"
+    },
+    "Mutfak": {
+      "category": "Mutfak",
+      "total_listings": 6110,
+      "competitor_count": 83,
+      "avg_price_index": 1.147,
+      "market_saturation": 0.7,
+      "new_listings_30d": 268,
+      "category_growth_30d": 0.158,
+      "avg_review_count": 117,
+      "price_competition_index": 0.59,
+      "timestamp": "2026-05-21T10:20:42.057846"
+    }
+  }
+}

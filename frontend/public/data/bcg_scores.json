@@ -1,0 +1,278 @@
+{
+  "generated_at": "2026-05-21T10:25:23.953987",
+  "kpis": {
+    "total_categories": 8,
+    "total_products": 213,
+    "star_products": 2,
+    "cash_cows": 2,
+    "question_marks": 2,
+    "dogs": 2,
+    "risk_products": 4,
+    "avg_trend_score": 37.2,
+    "high_priority_alerts": 3
+  },
+  "categories": [
+    {
+      "id": "akustik-panel",
+      "category": "Akustik Panel",
+      "slug": "akustik-panel",
+      "product_count": 41,
+      "share_score": 72.57,
+      "growth_score": 78.99,
+      "bcg": {
+        "quadrant": "STAR",
+        "emoji": "⭐",
+        "color": "#F59E0B",
+        "description": "High market share in a fast-growing category"
+      },
+      "recommendation": {
+        "action": "INVEST",
+        "priority": "HIGH",
+        "rationale": "Dominant position in a fast-growing market. Maximize investment to build sustainable lead.",
+        "tactics": [
+          "Increase inventory depth by 40%",
+          "Launch targeted Trendyol ad campaigns",
+          "Expand color/size variations",
+          "Negotiate exclusive supplier agreements"
+        ],
+        "budget_allocation": "20-25% of marketing budget"
+      },
+      "top_product": "Akustik Panel Premium Edition",
+      "avg_price": 628.46,
+      "avg_rating": 4.2,
+      "total_reviews": 882,
+      "trend_score": 48.3,
+      "trend_growth": -6.0
+    },
+    {
+      "id": "duvar-dekor",
+      "category": "Duvar Dekor",
+      "slug": "duvar-dekor",
+      "product_count": 43,
+      "share_score": 62.92,
+      "growth_score": 75.32,
+      "bcg": {
+        "quadrant": "STAR",
+        "emoji": "⭐",
+        "color": "#F59E0B",
+        "description": "High market share in a fast-growing category"
+      },
+      "recommendation": {
+        "action": "INVEST",
+        "priority": "HIGH",
+        "rationale": "Dominant position in a fast-growing market. Maximize investment to build sustainable lead.",
+        "tactics": [
+          "Increase inventory depth by 40%",
+          "Launch targeted Trendyol ad campaigns",
+          "Expand color/size variations",
+          "Negotiate exclusive supplier agreements"
+        ],
+        "budget_allocation": "20-25% of marketing budget"
+      },
+      "top_product": "Duvar Dekor Premium Edition",
+      "avg_price": 450.35,
+      "avg_rating": 4.0,
+      "total_reviews": 5722,
+      "trend_score": 20.2,
+      "trend_growth": -63.4
+    },
+    {
+      "id": "tv-unitesi",
+      "category": "TV Ünitesi",
+      "slug": "tv-unitesi",
+      "product_count": 15,
+      "share_score": 75.46,
+      "growth_score": 35.6,
+      "bcg": {
+        "quadrant": "CASH_COW",
+        "emoji": "🐄",
+        "color": "#10B981",
+        "description": "High market share in a stable/declining category"
+      },
+      "recommendation": {
+        "action": "HARVEST",
+        "priority": "MEDIUM",
+        "rationale": "Reliable revenue source in a mature market. Optimize margins and extract cash for reinvestment.",
+        "tactics": [
+          "Reduce marketing spend 20%",
+          "Focus on margin optimization",
+          "Automate fulfillment processes",
+          "Use cash flow to fund STAR products"
+        ],
+        "budget_allocation": "3-5% of marketing budget"
+      },
+      "top_product": "TV Ünitesi Premium Edition",
+      "avg_price": 3564.23,
+      "avg_rating": 4.6,
+      "total_reviews": 302,
+      "trend_score": 58.6,
+      "trend_growth": 11.9
+    },
+    {
+      "id": "metal-raf",
+      "category": "Metal Raf",
+      "slug": "metal-raf",
+      "product_count": 22,
+      "share_score": 65.97,
+      "growth_score": 32.65,
+      "bcg": {
+        "quadrant": "CASH_COW",
+        "emoji": "🐄",
+        "color": "#10B981",
+        "description": "High market share in a stable/declining category"
+      },
+      "recommendation": {
+        "action": "HARVEST",
+        "priority": "MEDIUM",
+        "rationale": "Reliable revenue source in a mature market. Optimize margins and extract cash for reinvestment.",
+        "tactics": [
+          "Reduce marketing spend 20%",
+          "Focus on margin optimization",
+          "Automate fulfillment processes",
+          "Use cash flow to fund STAR products"
+        ],
+        "budget_allocation": "3-5% of marketing budget"
+      },
+      "top_product": "Metal Raf Premium Edition",
+      "avg_price": 436.8,
+      "avg_rating": 4.0,
+      "total_reviews": 2295,
+      "trend_score": 37.6,
+      "trend_growth": 4.7
+    },
+    {
+      "id": "konsol-masa",
+      "category": "Konsol Masa",
+      "slug": "konsol-masa",
+      "product_count": 27,
+      "share_score": 38.05,
+      "growth_score": 70.64,
+      "bcg": {
+        "quadrant": "QUESTION_MARK",
+        "emoji": "❓",
+        "color": "#3B82F6",
+        "description": "Low market share in a fast-growing category"
+      },
+      "recommendation": {
+        "action": "TEST",
+        "priority": "MEDIUM",
+        "rationale": "High-growth category with unclear market position. Run targeted experiments.",
+        "tactics": [
+          "A/B test pricing strategies",
+          "Launch 3-month advertising trial",
+          "Analyze top competitor strategies",
+          "Set 90-day revenue milestones"
+        ],
+        "budget_allocation": "8-12% of marketing budget"
+      },
+      "top_product": "Konsol Masa Premium Edition",
+      "avg_price": 824.73,
+      "avg_rating": 4.3,
+      "total_reviews": 44,
+      "trend_score": 47.1,
+      "trend_growth": 35.9
+    },
+    {
+      "id": "kitaplik",
+      "category": "Kitaplık",
+      "slug": "kitaplik",
+      "product_count": 17,
+      "share_score": 44.97,
+      "growth_score": 66.92,
+      "bcg": {
+        "quadrant": "QUESTION_MARK",
+        "emoji": "❓",
+        "color": "#3B82F6",
+        "description": "Low market share in a fast-growing category"
+      },
+      "recommendation": {
+        "action": "TEST",
+        "priority": "MEDIUM",
+        "rationale": "High-growth category with unclear market position. Run targeted experiments.",
+        "tactics": [
+          "A/B test pricing strategies",
+          "Launch 3-month advertising trial",
+          "Analyze top competitor strategies",
+          "Set 90-day revenue milestones"
+        ],
+        "budget_allocation": "8-12% of marketing budget"
+      },
+      "top_product": "Kitaplık Premium Edition",
+      "avg_price": 1442.05,
+      "avg_rating": 4.3,
+      "total_reviews": 70,
+      "trend_score": 44.5,
+      "trend_growth": 5.7
+    },
+    {
+      "id": "ayna",
+      "category": "Ayna",
+      "slug": "ayna",
+      "product_count": 32,
+      "share_score": 28.37,
+      "growth_score": 28.15,
+      "bcg": {
+        "quadrant": "DOG",
+        "emoji": "🐕",
+        "color": "#EF4444",
+        "description": "Low market share in a slow-growing category"
+      },
+      "recommendation": {
+        "action": "EXIT",
+        "priority": "HIGH",
+        "rationale": "Low performance in a declining market. Liquidate inventory and reallocate resources.",
+        "tactics": [
+          "Run clearance pricing campaign",
+          "Do not reorder stock",
+          "Reallocate shelf space to STAR products",
+          "Analyze failure factors"
+        ],
+        "budget_allocation": "0% - liquidate"
+      },
+      "top_product": "Ayna Premium Edition",
+      "avg_price": 1039.93,
+      "avg_rating": 4.1,
+      "total_reviews": 124,
+      "trend_score": 19.2,
+      "trend_growth": -27.9
+    },
+    {
+      "id": "abajur",
+      "category": "Abajur",
+      "slug": "abajur",
+      "product_count": 16,
+      "share_score": 21.63,
+      "growth_score": 29.15,
+      "bcg": {
+        "quadrant": "DOG",
+        "emoji": "🐕",
+        "color": "#EF4444",
+        "description": "Low market share in a slow-growing category"
+      },
+      "recommendation": {
+        "action": "EXIT",
+        "priority": "HIGH",
+        "rationale": "Low performance in a declining market. Liquidate inventory and reallocate resources.",
+        "tactics": [
+          "Run clearance pricing campaign",
+          "Do not reorder stock",
+          "Reallocate shelf space to STAR products",
+          "Analyze failure factors"
+        ],
+        "budget_allocation": "0% - liquidate"
+      },
+      "top_product": "Abajur Premium Edition",
+      "avg_price": 308.0,
+      "avg_rating": 3.9,
+      "total_reviews": 95,
+      "trend_score": 22.4,
+      "trend_growth": -2.0
+    }
+  ],
+  "quadrant_distribution": {
+    "STAR": 2,
+    "CASH_COW": 2,
+    "QUESTION_MARK": 2,
+    "DOG": 2
+  }
+}

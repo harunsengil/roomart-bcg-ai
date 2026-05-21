@@ -1,0 +1,925 @@
+{
+  "generated_at": "2026-05-21T10:25:23.945962",
+  "trends": [
+    {
+      "category": "Akustik Panel",
+      "slug": "akustik-panel",
+      "keyword": "akustik panel",
+      "trend_score": 48.3,
+      "growth_rate": -6.0,
+      "peak_interest": 92.7,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 52.3
+        },
+        {
+          "week": 1,
+          "value": 49.7
+        },
+        {
+          "week": 2,
+          "value": 50.9
+        },
+        {
+          "week": 3,
+          "value": 52.7
+        },
+        {
+          "week": 4,
+          "value": 60.5
+        },
+        {
+          "week": 5,
+          "value": 68.3
+        },
+        {
+          "week": 6,
+          "value": 78.6
+        },
+        {
+          "week": 7,
+          "value": 81.1
+        },
+        {
+          "week": 8,
+          "value": 86.5
+        },
+        {
+          "week": 9,
+          "value": 87.5
+        },
+        {
+          "week": 10,
+          "value": 89.3
+        },
+        {
+          "week": 11,
+          "value": 92.7
+        },
+        {
+          "week": 12,
+          "value": 90.1
+        },
+        {
+          "week": 13,
+          "value": 87.7
+        },
+        {
+          "week": 14,
+          "value": 88.3
+        },
+        {
+          "week": 15,
+          "value": 86.5
+        },
+        {
+          "week": 16,
+          "value": 80.3
+        },
+        {
+          "week": 17,
+          "value": 76.8
+        },
+        {
+          "week": 18,
+          "value": 74.7
+        },
+        {
+          "week": 19,
+          "value": 64.5
+        },
+        {
+          "week": 20,
+          "value": 62.0
+        },
+        {
+          "week": 21,
+          "value": 58.9
+        },
+        {
+          "week": 22,
+          "value": 52.9
+        },
+        {
+          "week": 23,
+          "value": 46.2
+        },
+        {
+          "week": 24,
+          "value": 48.3
+        },
+        {
+          "week": 25,
+          "value": 45.9
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945412"
+    },
+    {
+      "category": "Duvar Dekor",
+      "slug": "duvar-dekor",
+      "keyword": "duvar dekor",
+      "trend_score": 20.2,
+      "growth_rate": -63.4,
+      "peak_interest": 100,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 51.5
+        },
+        {
+          "week": 1,
+          "value": 48.9
+        },
+        {
+          "week": 2,
+          "value": 57.0
+        },
+        {
+          "week": 3,
+          "value": 63.6
+        },
+        {
+          "week": 4,
+          "value": 73.9
+        },
+        {
+          "week": 5,
+          "value": 84.1
+        },
+        {
+          "week": 6,
+          "value": 92.4
+        },
+        {
+          "week": 7,
+          "value": 100
+        },
+        {
+          "week": 8,
+          "value": 100
+        },
+        {
+          "week": 9,
+          "value": 100
+        },
+        {
+          "week": 10,
+          "value": 100
+        },
+        {
+          "week": 11,
+          "value": 100
+        },
+        {
+          "week": 12,
+          "value": 100
+        },
+        {
+          "week": 13,
+          "value": 100
+        },
+        {
+          "week": 14,
+          "value": 100
+        },
+        {
+          "week": 15,
+          "value": 91.5
+        },
+        {
+          "week": 16,
+          "value": 83.7
+        },
+        {
+          "week": 17,
+          "value": 75.4
+        },
+        {
+          "week": 18,
+          "value": 63.8
+        },
+        {
+          "week": 19,
+          "value": 53.5
+        },
+        {
+          "week": 20,
+          "value": 41.7
+        },
+        {
+          "week": 21,
+          "value": 32.5
+        },
+        {
+          "week": 22,
+          "value": 28.3
+        },
+        {
+          "week": 23,
+          "value": 22.2
+        },
+        {
+          "week": 24,
+          "value": 17.6
+        },
+        {
+          "week": 25,
+          "value": 12.7
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945467"
+    },
+    {
+      "category": "TV Ünitesi",
+      "slug": "tv-unitesi",
+      "keyword": "tv ünitesi",
+      "trend_score": 58.6,
+      "growth_rate": 11.9,
+      "peak_interest": 100,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 45.9
+        },
+        {
+          "week": 1,
+          "value": 50.7
+        },
+        {
+          "week": 2,
+          "value": 54.3
+        },
+        {
+          "week": 3,
+          "value": 58.6
+        },
+        {
+          "week": 4,
+          "value": 60.2
+        },
+        {
+          "week": 5,
+          "value": 66.8
+        },
+        {
+          "week": 6,
+          "value": 69.2
+        },
+        {
+          "week": 7,
+          "value": 73.3
+        },
+        {
+          "week": 8,
+          "value": 82.0
+        },
+        {
+          "week": 9,
+          "value": 87.4
+        },
+        {
+          "week": 10,
+          "value": 91.3
+        },
+        {
+          "week": 11,
+          "value": 95.2
+        },
+        {
+          "week": 12,
+          "value": 99.2
+        },
+        {
+          "week": 13,
+          "value": 100
+        },
+        {
+          "week": 14,
+          "value": 96.8
+        },
+        {
+          "week": 15,
+          "value": 90.8
+        },
+        {
+          "week": 16,
+          "value": 86.1
+        },
+        {
+          "week": 17,
+          "value": 80.3
+        },
+        {
+          "week": 18,
+          "value": 73.4
+        },
+        {
+          "week": 19,
+          "value": 72.1
+        },
+        {
+          "week": 20,
+          "value": 70.3
+        },
+        {
+          "week": 21,
+          "value": 64.2
+        },
+        {
+          "week": 22,
+          "value": 61.5
+        },
+        {
+          "week": 23,
+          "value": 57.4
+        },
+        {
+          "week": 24,
+          "value": 58.5
+        },
+        {
+          "week": 25,
+          "value": 57.1
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945511"
+    },
+    {
+      "category": "Metal Raf",
+      "slug": "metal-raf",
+      "keyword": "metal raf",
+      "trend_score": 37.6,
+      "growth_rate": 4.7,
+      "peak_interest": 64.2,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 35.0
+        },
+        {
+          "week": 1,
+          "value": 34.3
+        },
+        {
+          "week": 2,
+          "value": 36.7
+        },
+        {
+          "week": 3,
+          "value": 37.8
+        },
+        {
+          "week": 4,
+          "value": 41.7
+        },
+        {
+          "week": 5,
+          "value": 48.1
+        },
+        {
+          "week": 6,
+          "value": 51.5
+        },
+        {
+          "week": 7,
+          "value": 53.7
+        },
+        {
+          "week": 8,
+          "value": 60.7
+        },
+        {
+          "week": 9,
+          "value": 64.1
+        },
+        {
+          "week": 10,
+          "value": 64.2
+        },
+        {
+          "week": 11,
+          "value": 63.2
+        },
+        {
+          "week": 12,
+          "value": 61.7
+        },
+        {
+          "week": 13,
+          "value": 62.6
+        },
+        {
+          "week": 14,
+          "value": 63.6
+        },
+        {
+          "week": 15,
+          "value": 61.3
+        },
+        {
+          "week": 16,
+          "value": 55.9
+        },
+        {
+          "week": 17,
+          "value": 51.9
+        },
+        {
+          "week": 18,
+          "value": 51.4
+        },
+        {
+          "week": 19,
+          "value": 47.6
+        },
+        {
+          "week": 20,
+          "value": 46.7
+        },
+        {
+          "week": 21,
+          "value": 45.4
+        },
+        {
+          "week": 22,
+          "value": 39.0
+        },
+        {
+          "week": 23,
+          "value": 37.8
+        },
+        {
+          "week": 24,
+          "value": 37.2
+        },
+        {
+          "week": 25,
+          "value": 36.5
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945550"
+    },
+    {
+      "category": "Konsol Masa",
+      "slug": "konsol-masa",
+      "keyword": "konsol masa",
+      "trend_score": 47.1,
+      "growth_rate": 35.9,
+      "peak_interest": 87.3,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 31.9
+        },
+        {
+          "week": 1,
+          "value": 34.8
+        },
+        {
+          "week": 2,
+          "value": 34.3
+        },
+        {
+          "week": 3,
+          "value": 37.7
+        },
+        {
+          "week": 4,
+          "value": 42.2
+        },
+        {
+          "week": 5,
+          "value": 51.6
+        },
+        {
+          "week": 6,
+          "value": 60.8
+        },
+        {
+          "week": 7,
+          "value": 64.5
+        },
+        {
+          "week": 8,
+          "value": 70.0
+        },
+        {
+          "week": 9,
+          "value": 72.0
+        },
+        {
+          "week": 10,
+          "value": 79.6
+        },
+        {
+          "week": 11,
+          "value": 85.8
+        },
+        {
+          "week": 12,
+          "value": 85.7
+        },
+        {
+          "week": 13,
+          "value": 87.3
+        },
+        {
+          "week": 14,
+          "value": 87.3
+        },
+        {
+          "week": 15,
+          "value": 82.0
+        },
+        {
+          "week": 16,
+          "value": 81.0
+        },
+        {
+          "week": 17,
+          "value": 77.2
+        },
+        {
+          "week": 18,
+          "value": 74.8
+        },
+        {
+          "week": 19,
+          "value": 70.0
+        },
+        {
+          "week": 20,
+          "value": 60.5
+        },
+        {
+          "week": 21,
+          "value": 54.1
+        },
+        {
+          "week": 22,
+          "value": 45.7
+        },
+        {
+          "week": 23,
+          "value": 46.2
+        },
+        {
+          "week": 24,
+          "value": 47.3
+        },
+        {
+          "week": 25,
+          "value": 49.3
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945587"
+    },
+    {
+      "category": "Kitaplık",
+      "slug": "kitaplik",
+      "keyword": "kitaplık",
+      "trend_score": 44.5,
+      "growth_rate": 5.7,
+      "peak_interest": 78.4,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 39.4
+        },
+        {
+          "week": 1,
+          "value": 37.6
+        },
+        {
+          "week": 2,
+          "value": 42.6
+        },
+        {
+          "week": 3,
+          "value": 49.0
+        },
+        {
+          "week": 4,
+          "value": 50.0
+        },
+        {
+          "week": 5,
+          "value": 54.3
+        },
+        {
+          "week": 6,
+          "value": 55.9
+        },
+        {
+          "week": 7,
+          "value": 62.5
+        },
+        {
+          "week": 8,
+          "value": 68.9
+        },
+        {
+          "week": 9,
+          "value": 70.1
+        },
+        {
+          "week": 10,
+          "value": 73.2
+        },
+        {
+          "week": 11,
+          "value": 75.8
+        },
+        {
+          "week": 12,
+          "value": 75.4
+        },
+        {
+          "week": 13,
+          "value": 78.4
+        },
+        {
+          "week": 14,
+          "value": 77.0
+        },
+        {
+          "week": 15,
+          "value": 73.0
+        },
+        {
+          "week": 16,
+          "value": 70.6
+        },
+        {
+          "week": 17,
+          "value": 68.7
+        },
+        {
+          "week": 18,
+          "value": 62.6
+        },
+        {
+          "week": 19,
+          "value": 57.0
+        },
+        {
+          "week": 20,
+          "value": 56.3
+        },
+        {
+          "week": 21,
+          "value": 53.4
+        },
+        {
+          "week": 22,
+          "value": 49.5
+        },
+        {
+          "week": 23,
+          "value": 46.9
+        },
+        {
+          "week": 24,
+          "value": 42.3
+        },
+        {
+          "week": 25,
+          "value": 39.5
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945774"
+    },
+    {
+      "category": "Ayna",
+      "slug": "ayna",
+      "keyword": "ayna",
+      "trend_score": 19.2,
+      "growth_rate": -27.9,
+      "peak_interest": 48.1,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 25.6
+        },
+        {
+          "week": 1,
+          "value": 26.8
+        },
+        {
+          "week": 2,
+          "value": 26.9
+        },
+        {
+          "week": 3,
+          "value": 27.5
+        },
+        {
+          "week": 4,
+          "value": 27.9
+        },
+        {
+          "week": 5,
+          "value": 31.8
+        },
+        {
+          "week": 6,
+          "value": 33.7
+        },
+        {
+          "week": 7,
+          "value": 39.3
+        },
+        {
+          "week": 8,
+          "value": 44.5
+        },
+        {
+          "week": 9,
+          "value": 44.9
+        },
+        {
+          "week": 10,
+          "value": 45.6
+        },
+        {
+          "week": 11,
+          "value": 48.1
+        },
+        {
+          "week": 12,
+          "value": 47.3
+        },
+        {
+          "week": 13,
+          "value": 45.1
+        },
+        {
+          "week": 14,
+          "value": 46.6
+        },
+        {
+          "week": 15,
+          "value": 45.3
+        },
+        {
+          "week": 16,
+          "value": 42.7
+        },
+        {
+          "week": 17,
+          "value": 41.3
+        },
+        {
+          "week": 18,
+          "value": 39.7
+        },
+        {
+          "week": 19,
+          "value": 34.4
+        },
+        {
+          "week": 20,
+          "value": 28.6
+        },
+        {
+          "week": 21,
+          "value": 24.8
+        },
+        {
+          "week": 22,
+          "value": 21.4
+        },
+        {
+          "week": 23,
+          "value": 18.8
+        },
+        {
+          "week": 24,
+          "value": 18.4
+        },
+        {
+          "week": 25,
+          "value": 18.4
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945819"
+    },
+    {
+      "category": "Abajur",
+      "slug": "abajur",
+      "keyword": "abajur",
+      "trend_score": 22.4,
+      "growth_rate": -2.0,
+      "peak_interest": 42.4,
+      "data_points": [
+        {
+          "week": 0,
+          "value": 23.2
+        },
+        {
+          "week": 1,
+          "value": 21.8
+        },
+        {
+          "week": 2,
+          "value": 22.6
+        },
+        {
+          "week": 3,
+          "value": 23.6
+        },
+        {
+          "week": 4,
+          "value": 27.7
+        },
+        {
+          "week": 5,
+          "value": 29.1
+        },
+        {
+          "week": 6,
+          "value": 30.5
+        },
+        {
+          "week": 7,
+          "value": 33.1
+        },
+        {
+          "week": 8,
+          "value": 35.3
+        },
+        {
+          "week": 9,
+          "value": 36.6
+        },
+        {
+          "week": 10,
+          "value": 37.2
+        },
+        {
+          "week": 11,
+          "value": 40.5
+        },
+        {
+          "week": 12,
+          "value": 40.8
+        },
+        {
+          "week": 13,
+          "value": 42.4
+        },
+        {
+          "week": 14,
+          "value": 41.7
+        },
+        {
+          "week": 15,
+          "value": 38.0
+        },
+        {
+          "week": 16,
+          "value": 38.3
+        },
+        {
+          "week": 17,
+          "value": 37.3
+        },
+        {
+          "week": 18,
+          "value": 36.6
+        },
+        {
+          "week": 19,
+          "value": 35.5
+        },
+        {
+          "week": 20,
+          "value": 34.0
+        },
+        {
+          "week": 21,
+          "value": 29.5
+        },
+        {
+          "week": 22,
+          "value": 26.8
+        },
+        {
+          "week": 23,
+          "value": 23.2
+        },
+        {
+          "week": 24,
+          "value": 21.2
+        },
+        {
+          "week": 25,
+          "value": 18.2
+        }
+      ],
+      "fetched_at": "2026-05-21T10:25:23.945856"
+    }
+  ]
+}

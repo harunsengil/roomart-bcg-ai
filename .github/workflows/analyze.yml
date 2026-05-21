@@ -1,0 +1,41 @@
+name: BCG Analysis
+
+on:
+  push:
+    paths:
+      - 'data/products.json'
+      - 'data/trendyol.json'
+      - 'data/trends.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run BCG analysis engine
+        run: python backend/analyzer.py
+
+      - name: Copy data to frontend public
+        run: cp data/*.json frontend/public/data/
+
+      - name: Commit analysis results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "RoomArt Bot"
+          git add data/ frontend/public/data/
+          git diff --staged --quiet || git commit -m "chore: update BCG analysis scores [skip ci]"
+          git push

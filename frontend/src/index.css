@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-900: #080c1a;
+  --navy-800: #0d1528;
+  --navy-700: #111d35;
+  --gold: #d4a017;
+  --gold-light: #f0c040;
+  --cyan: #00d4ff;
+  --green: #00ff88;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--navy-900);
+  color: #e8eaf0;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-800); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+.glow-gold { box-shadow: 0 0 20px rgba(212, 160, 23, 0.3); }
+.glow-cyan { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+.glow-green { box-shadow: 0 0 20px rgba(0, 255, 136, 0.2); }
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(212,160,23,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,160,23,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(13,21,40,0.9) 0%, rgba(17,29,53,0.8) 100%);
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.card-glow:hover {
+  border-color: rgba(212,160,23,0.4);
+  box-shadow: 0 0 30px rgba(212,160,23,0.1);
+  transition: all 0.3s ease;
+}
+
+.text-gold { color: var(--gold-light); }
+.text-cyan { color: var(--cyan); }
+.text-green { color: var(--green); }
+
+.badge-star { background: rgba(255,200,0,0.15); color: #ffc800; border: 1px solid rgba(255,200,0,0.3); }
+.badge-cash { background: rgba(0,255,136,0.1); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
+.badge-question { background: rgba(0,212,255,0.1); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+.badge-dog { background: rgba(255,68,68,0.1); color: #ff6666; border: 1px solid rgba(255,68,68,0.3); }
+
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up { animation: fadeInUp 0.5s ease forwards; }
+
+.fullscreen-mode {
+  position: fixed !important;
+  inset: 0;
+  z-index: 9999;
+  overflow-y: auto;
+}

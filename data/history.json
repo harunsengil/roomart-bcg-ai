@@ -1,0 +1,602 @@
+[
+  {
+    "timestamp": "2026-04-21T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 37.9,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 1,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-22T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 35.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-23T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 1,
+      "DOG": 2
+    }
+  },
+  {
+    "timestamp": "2026-04-24T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.2,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 3,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-25T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 37.4,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-26T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.8,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 1,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-27T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 38.7,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-28T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 35.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 3,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-04-29T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.3,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-04-30T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.8,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 1,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-01T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 36.2,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-02T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 38.6,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-03T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.3,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 1,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-04T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.4,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 3,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-05T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 36.8,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-06T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.6,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 1,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-07T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.8,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 3,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-08T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 35.1,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 1,
+      "DOG": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-09T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.3,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-10T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.4,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 1,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-11T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.8,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 1,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-12T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 39.1,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-13T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 35.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 2,
+      "DOG": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-14T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 35.9,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-15T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 37.3,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-16T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.9,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 3,
+      "DOG": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-17T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 34.4,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 2,
+      "QUESTION_MARK": 2,
+      "DOG": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-18T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 38.9,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 2,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 3,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-19T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 36.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 3,
+      "CASH_COW": 1,
+      "QUESTION_MARK": 2,
+      "DOG": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-20T10:30:50.601974",
+    "kpis": {
+      "total_categories": 8,
+      "total_products": 213,
+      "star_products": 2,
+      "cash_cows": 2,
+      "question_marks": 2,
+      "dogs": 2,
+      "risk_products": 4,
+      "avg_trend_score": 38.5,
+      "high_priority_alerts": 3
+    },
+    "quadrant_distribution": {
+      "STAR": 1,
+      "CASH_COW": 3,
+      "QUESTION_MARK": 3,
+      "DOG": 3
+    }
+  }
+]
