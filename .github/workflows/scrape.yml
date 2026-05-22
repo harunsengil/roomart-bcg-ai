@@ -1,9 +1,8 @@
 name: Data Collection
-
 on:
   schedule:
-    - cron: '0 */6 * * *'   # Every 6 hours
-  workflow_dispatch:          # Manual trigger
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -31,10 +30,9 @@ jobs:
 
       - name: Run data scraper
         run: python backend/scraper.py
-      env:
-        PYTHONUNBUFFERED: 1
-        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-        
+        env:
+          PYTHONUNBUFFERED: 1
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Commit updated data
         run: |
