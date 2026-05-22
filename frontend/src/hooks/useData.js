@@ -11,10 +11,47 @@ async function fetchJSON(path) {
   return response.json()
 }
 
+// Quadrant hesabı: share/growth ortalamasına göre
+function assignQuadrant(shareScore, growthScore) {
+  const highShare = shareScore >= 50
+  const highGrowth = growthScore >= 50
+  if (highShare && highGrowth) return 'STAR'
+  if (highShare && !highGrowth) return 'CASH_COW'
+  if (!highShare && highGrowth) return 'QUESTION_MARK'
+  return 'DOG'
+}
+
+// JSON category_summary → BCGMatrix'in beklediği formata dönüştür
+function normalizeCategories(raw) {
+  if (!raw) return []
+  return raw.map((c, i) => {
+    const share = c.avg_share_score ?? c.share_score ?? 50
+    const growth = c.avg_growth_score ?? c.growth_score ?? 50
+    const quadrant = c.quadrant ?? assignQuadrant(share, growth)
+    return {
+      id: c.id ?? `cat-${i}`,
+      category: c.category ?? c.name ?? `Kategori ${i + 1}`,
+      slug: (c.category ?? c.name ?? '').toLowerCase().replace(/\s+/g, '-'),
+      share_score: share,
+      growth_score: growth,
+      product_count: c.product_count ?? c.products?.length ?? 0,
+      total_reviews: c.total_reviews ?? 0,
+      total_revenue: c.total_revenue ?? 0,
+      health: c.health ?? 'MIXED',
+      bcg: { quadrant },
+      recommendation: c.recommendation ?? {
+        action: quadrant === 'STAR' ? 'INVEST'
+               : quadrant === 'CASH_COW' ? 'HARVEST'
+               : quadrant === 'QUESTION_MARK' ? 'INVEST'
+               : 'DIVEST',
+        priority: quadrant === 'DOG' ? 'LOW' : 'HIGH',
+      },
+    }
+  })
+}
+
 async function loadFromFirestore() {
-  // Direkt 'latest' dokümanını oku — orderBy/timestamp sorunu yok
   const docRef = doc(db, 'roomart-bcg-dev', 'latest')
-  // 8 saniyelik timeout — takılı kalmayı önler
   const snapshot = await Promise.race([
     getDoc(docRef),
     new Promise((_, reject) =>
@@ -25,7 +62,7 @@ async function loadFromFirestore() {
   const d = snapshot.data()
   return {
     kpis: d.kpis,
-    categories: d.categories,
+    categories: normalizeCategories(d.categories ?? d.category_summary),
     quadrantDistribution: d.quadrant_distribution,
     trends: d.trends,
     alerts: d.alerts,
@@ -41,7 +78,9 @@ async function loadFromJSON() {
   ])
   return {
     kpis: bcgScores.kpis,
-    categories: bcgScores.categories,
+    categories: normalizeCategories(
+      bcgScores.categories ?? bcgScores.category_summary
+    ),
     quadrantDistribution: bcgScores.quadrant_distribution,
     trends: trends.trends,
     alerts: alertsData.alerts,
