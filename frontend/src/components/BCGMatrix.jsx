@@ -126,13 +126,20 @@ export default function BCGMatrix({ categories, onSelectCategory, selectedCatego
             </div>
           ))}
 
-          {categories.map((cat, i) => {
-            const x = (cat.share_score / 100) * 90 + 5
-            const y = (1 - cat.growth_score / 100) * 90 + 5
-            const qm = QUADRANT_META[cat.bcg?.quadrant] || {}
-            const isSelected = selectedCategory?.id === cat.id
-            const bubbleSize = Math.max(28, Math.min(56, (cat.product_count || 15) * 1.5))
-            return (
+          {(() => {
+            const shareScores = categories.map(c => c.share_score)
+            const growthScores = categories.map(c => c.growth_score)
+            const shareMin = Math.min(...shareScores), shareMax = Math.max(...shareScores)
+            const growthMin = Math.min(...growthScores), growthMax = Math.max(...growthScores)
+            const shareRange = shareMax - shareMin || 1
+            const growthRange = growthMax - growthMin || 1
+            return categories.map((cat, i) => {
+              const x = ((cat.share_score - shareMin) / shareRange) * 78 + 11
+              const y = (1 - (cat.growth_score - growthMin) / growthRange) * 78 + 11
+              const qm = QUADRANT_META[cat.bcg?.quadrant] || {}
+              const isSelected = selectedCategory?.id === cat.id
+              const bubbleSize = Math.max(28, Math.min(56, (cat.product_count || 15) * 1.5))
+              return (
               <motion.div key={cat.id} className="absolute cursor-pointer"
                 style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)', zIndex: isSelected ? 20 : 10 }}
                 initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
@@ -158,8 +165,9 @@ export default function BCGMatrix({ categories, onSelectCategory, selectedCatego
                   <span className="text-[8px] font-mono text-white/50">{cat.category}</span>
                 </div>
               </motion.div>
-            )
-          })}
+              )
+            })
+          })()}
         </div>
 
         {tooltip.visible && (
