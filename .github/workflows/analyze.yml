@@ -28,6 +28,8 @@ jobs:
 
       - name: Run BCG analysis engine
         run: python backend/analyzer.py
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Copy data to frontend public
         run: cp data/*.json frontend/public/data/
