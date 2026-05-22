@@ -1,925 +1,2187 @@
 {
-  "generated_at": "2026-05-21T10:25:23.945962",
-  "trends": [
-    {
-      "category": "Akustik Panel",
-      "slug": "akustik-panel",
-      "keyword": "akustik panel",
-      "trend_score": 48.3,
-      "growth_rate": -6.0,
-      "peak_interest": 92.7,
-      "data_points": [
+  "metadata": {
+    "last_updated": "2026-05-22T14:15:25.020586"
+  },
+  "keywords": {
+    "koltuk takimi": {
+      "keyword": "koltuk takimi",
+      "name": "Koltuk Takimi",
+      "category": "Oturma Odasi",
+      "weekly_data": [
         {
-          "week": 0,
-          "value": 52.3
+          "date": "2025-05-30",
+          "value": 83.2
         },
         {
-          "week": 1,
-          "value": 49.7
+          "date": "2025-06-06",
+          "value": 59.7
         },
         {
-          "week": 2,
-          "value": 50.9
+          "date": "2025-06-13",
+          "value": 57.8
         },
         {
-          "week": 3,
-          "value": 52.7
+          "date": "2025-06-20",
+          "value": 56.9
         },
         {
-          "week": 4,
-          "value": 60.5
+          "date": "2025-06-27",
+          "value": 69.9
         },
         {
-          "week": 5,
-          "value": 68.3
+          "date": "2025-07-04",
+          "value": 66.0
         },
         {
-          "week": 6,
-          "value": 78.6
+          "date": "2025-07-11",
+          "value": 69.4
         },
         {
-          "week": 7,
-          "value": 81.1
+          "date": "2025-07-18",
+          "value": 57.3
         },
         {
-          "week": 8,
-          "value": 86.5
+          "date": "2025-07-25",
+          "value": 68.0
         },
         {
-          "week": 9,
-          "value": 87.5
+          "date": "2025-08-01",
+          "value": 59.6
         },
         {
-          "week": 10,
-          "value": 89.3
-        },
-        {
-          "week": 11,
-          "value": 92.7
-        },
-        {
-          "week": 12,
-          "value": 90.1
-        },
-        {
-          "week": 13,
-          "value": 87.7
-        },
-        {
-          "week": 14,
-          "value": 88.3
-        },
-        {
-          "week": 15,
-          "value": 86.5
-        },
-        {
-          "week": 16,
-          "value": 80.3
-        },
-        {
-          "week": 17,
-          "value": 76.8
-        },
-        {
-          "week": 18,
-          "value": 74.7
-        },
-        {
-          "week": 19,
-          "value": 64.5
-        },
-        {
-          "week": 20,
-          "value": 62.0
-        },
-        {
-          "week": 21,
-          "value": 58.9
-        },
-        {
-          "week": 22,
-          "value": 52.9
-        },
-        {
-          "week": 23,
-          "value": 46.2
-        },
-        {
-          "week": 24,
-          "value": 48.3
-        },
-        {
-          "week": 25,
-          "value": 45.9
-        }
-      ],
-      "fetched_at": "2026-05-21T10:25:23.945412"
-    },
-    {
-      "category": "Duvar Dekor",
-      "slug": "duvar-dekor",
-      "keyword": "duvar dekor",
-      "trend_score": 20.2,
-      "growth_rate": -63.4,
-      "peak_interest": 100,
-      "data_points": [
-        {
-          "week": 0,
-          "value": 51.5
-        },
-        {
-          "week": 1,
-          "value": 48.9
-        },
-        {
-          "week": 2,
-          "value": 57.0
-        },
-        {
-          "week": 3,
-          "value": 63.6
-        },
-        {
-          "week": 4,
-          "value": 73.9
-        },
-        {
-          "week": 5,
-          "value": 84.1
-        },
-        {
-          "week": 6,
-          "value": 92.4
-        },
-        {
-          "week": 7,
-          "value": 100
-        },
-        {
-          "week": 8,
-          "value": 100
-        },
-        {
-          "week": 9,
-          "value": 100
-        },
-        {
-          "week": 10,
-          "value": 100
-        },
-        {
-          "week": 11,
-          "value": 100
-        },
-        {
-          "week": 12,
-          "value": 100
-        },
-        {
-          "week": 13,
-          "value": 100
-        },
-        {
-          "week": 14,
-          "value": 100
-        },
-        {
-          "week": 15,
-          "value": 91.5
-        },
-        {
-          "week": 16,
-          "value": 83.7
-        },
-        {
-          "week": 17,
-          "value": 75.4
-        },
-        {
-          "week": 18,
-          "value": 63.8
-        },
-        {
-          "week": 19,
-          "value": 53.5
-        },
-        {
-          "week": 20,
-          "value": 41.7
-        },
-        {
-          "week": 21,
-          "value": 32.5
-        },
-        {
-          "week": 22,
-          "value": 28.3
-        },
-        {
-          "week": 23,
-          "value": 22.2
-        },
-        {
-          "week": 24,
-          "value": 17.6
-        },
-        {
-          "week": 25,
-          "value": 12.7
-        }
-      ],
-      "fetched_at": "2026-05-21T10:25:23.945467"
-    },
-    {
-      "category": "TV Ünitesi",
-      "slug": "tv-unitesi",
-      "keyword": "tv ünitesi",
-      "trend_score": 58.6,
-      "growth_rate": 11.9,
-      "peak_interest": 100,
-      "data_points": [
-        {
-          "week": 0,
-          "value": 45.9
-        },
-        {
-          "week": 1,
-          "value": 50.7
-        },
-        {
-          "week": 2,
-          "value": 54.3
-        },
-        {
-          "week": 3,
-          "value": 58.6
-        },
-        {
-          "week": 4,
-          "value": 60.2
-        },
-        {
-          "week": 5,
-          "value": 66.8
-        },
-        {
-          "week": 6,
-          "value": 69.2
-        },
-        {
-          "week": 7,
-          "value": 73.3
-        },
-        {
-          "week": 8,
-          "value": 82.0
-        },
-        {
-          "week": 9,
-          "value": 87.4
-        },
-        {
-          "week": 10,
-          "value": 91.3
-        },
-        {
-          "week": 11,
-          "value": 95.2
-        },
-        {
-          "week": 12,
-          "value": 99.2
-        },
-        {
-          "week": 13,
-          "value": 100
-        },
-        {
-          "week": 14,
-          "value": 96.8
-        },
-        {
-          "week": 15,
-          "value": 90.8
-        },
-        {
-          "week": 16,
-          "value": 86.1
-        },
-        {
-          "week": 17,
-          "value": 80.3
-        },
-        {
-          "week": 18,
-          "value": 73.4
-        },
-        {
-          "week": 19,
-          "value": 72.1
-        },
-        {
-          "week": 20,
-          "value": 70.3
-        },
-        {
-          "week": 21,
-          "value": 64.2
-        },
-        {
-          "week": 22,
-          "value": 61.5
-        },
-        {
-          "week": 23,
-          "value": 57.4
-        },
-        {
-          "week": 24,
-          "value": 58.5
-        },
-        {
-          "week": 25,
-          "value": 57.1
-        }
-      ],
-      "fetched_at": "2026-05-21T10:25:23.945511"
-    },
-    {
-      "category": "Metal Raf",
-      "slug": "metal-raf",
-      "keyword": "metal raf",
-      "trend_score": 37.6,
-      "growth_rate": 4.7,
-      "peak_interest": 64.2,
-      "data_points": [
-        {
-          "week": 0,
-          "value": 35.0
-        },
-        {
-          "week": 1,
-          "value": 34.3
-        },
-        {
-          "week": 2,
-          "value": 36.7
-        },
-        {
-          "week": 3,
-          "value": 37.8
-        },
-        {
-          "week": 4,
-          "value": 41.7
-        },
-        {
-          "week": 5,
-          "value": 48.1
-        },
-        {
-          "week": 6,
-          "value": 51.5
-        },
-        {
-          "week": 7,
-          "value": 53.7
-        },
-        {
-          "week": 8,
-          "value": 60.7
-        },
-        {
-          "week": 9,
-          "value": 64.1
-        },
-        {
-          "week": 10,
-          "value": 64.2
-        },
-        {
-          "week": 11,
-          "value": 63.2
-        },
-        {
-          "week": 12,
-          "value": 61.7
-        },
-        {
-          "week": 13,
-          "value": 62.6
-        },
-        {
-          "week": 14,
-          "value": 63.6
-        },
-        {
-          "week": 15,
-          "value": 61.3
-        },
-        {
-          "week": 16,
-          "value": 55.9
-        },
-        {
-          "week": 17,
-          "value": 51.9
-        },
-        {
-          "week": 18,
-          "value": 51.4
-        },
-        {
-          "week": 19,
-          "value": 47.6
-        },
-        {
-          "week": 20,
-          "value": 46.7
-        },
-        {
-          "week": 21,
-          "value": 45.4
-        },
-        {
-          "week": 22,
-          "value": 39.0
-        },
-        {
-          "week": 23,
-          "value": 37.8
-        },
-        {
-          "week": 24,
-          "value": 37.2
-        },
-        {
-          "week": 25,
-          "value": 36.5
-        }
-      ],
-      "fetched_at": "2026-05-21T10:25:23.945550"
-    },
-    {
-      "category": "Konsol Masa",
-      "slug": "konsol-masa",
-      "keyword": "konsol masa",
-      "trend_score": 47.1,
-      "growth_rate": 35.9,
-      "peak_interest": 87.3,
-      "data_points": [
-        {
-          "week": 0,
-          "value": 31.9
-        },
-        {
-          "week": 1,
-          "value": 34.8
-        },
-        {
-          "week": 2,
-          "value": 34.3
-        },
-        {
-          "week": 3,
-          "value": 37.7
-        },
-        {
-          "week": 4,
-          "value": 42.2
-        },
-        {
-          "week": 5,
-          "value": 51.6
-        },
-        {
-          "week": 6,
-          "value": 60.8
-        },
-        {
-          "week": 7,
-          "value": 64.5
-        },
-        {
-          "week": 8,
-          "value": 70.0
-        },
-        {
-          "week": 9,
-          "value": 72.0
-        },
-        {
-          "week": 10,
-          "value": 79.6
-        },
-        {
-          "week": 11,
-          "value": 85.8
-        },
-        {
-          "week": 12,
-          "value": 85.7
-        },
-        {
-          "week": 13,
-          "value": 87.3
-        },
-        {
-          "week": 14,
-          "value": 87.3
-        },
-        {
-          "week": 15,
-          "value": 82.0
-        },
-        {
-          "week": 16,
-          "value": 81.0
-        },
-        {
-          "week": 17,
-          "value": 77.2
-        },
-        {
-          "week": 18,
-          "value": 74.8
-        },
-        {
-          "week": 19,
-          "value": 70.0
-        },
-        {
-          "week": 20,
-          "value": 60.5
-        },
-        {
-          "week": 21,
-          "value": 54.1
-        },
-        {
-          "week": 22,
-          "value": 45.7
-        },
-        {
-          "week": 23,
-          "value": 46.2
-        },
-        {
-          "week": 24,
-          "value": 47.3
-        },
-        {
-          "week": 25,
-          "value": 49.3
-        }
-      ],
-      "fetched_at": "2026-05-21T10:25:23.945587"
-    },
-    {
-      "category": "Kitaplık",
-      "slug": "kitaplik",
-      "keyword": "kitaplık",
-      "trend_score": 44.5,
-      "growth_rate": 5.7,
-      "peak_interest": 78.4,
-      "data_points": [
-        {
-          "week": 0,
-          "value": 39.4
-        },
-        {
-          "week": 1,
-          "value": 37.6
-        },
-        {
-          "week": 2,
-          "value": 42.6
-        },
-        {
-          "week": 3,
-          "value": 49.0
-        },
-        {
-          "week": 4,
-          "value": 50.0
-        },
-        {
-          "week": 5,
-          "value": 54.3
-        },
-        {
-          "week": 6,
-          "value": 55.9
-        },
-        {
-          "week": 7,
-          "value": 62.5
-        },
-        {
-          "week": 8,
-          "value": 68.9
-        },
-        {
-          "week": 9,
+          "date": "2025-08-08",
           "value": 70.1
         },
         {
-          "week": 10,
-          "value": 73.2
+          "date": "2025-08-15",
+          "value": 67.5
         },
         {
-          "week": 11,
-          "value": 75.8
+          "date": "2025-08-22",
+          "value": 71.7
         },
         {
-          "week": 12,
-          "value": 75.4
+          "date": "2025-08-29",
+          "value": 71.7
         },
         {
-          "week": 13,
-          "value": 78.4
+          "date": "2025-09-05",
+          "value": 82.2
         },
         {
-          "week": 14,
-          "value": 77.0
+          "date": "2025-09-12",
+          "value": 83.0
         },
         {
-          "week": 15,
-          "value": 73.0
+          "date": "2025-09-19",
+          "value": 70.1
         },
         {
-          "week": 16,
-          "value": 70.6
+          "date": "2025-09-26",
+          "value": 75.1
         },
         {
-          "week": 17,
-          "value": 68.7
+          "date": "2025-10-03",
+          "value": 69.6
         },
         {
-          "week": 18,
-          "value": 62.6
+          "date": "2025-10-10",
+          "value": 77.4
         },
         {
-          "week": 19,
+          "date": "2025-10-17",
+          "value": 67.8
+        },
+        {
+          "date": "2025-10-24",
+          "value": 80.5
+        },
+        {
+          "date": "2025-10-31",
+          "value": 79.8
+        },
+        {
+          "date": "2025-11-07",
+          "value": 68.1
+        },
+        {
+          "date": "2025-11-14",
+          "value": 72.7
+        },
+        {
+          "date": "2025-11-21",
+          "value": 67.3
+        },
+        {
+          "date": "2025-11-28",
+          "value": 77.7
+        },
+        {
+          "date": "2025-12-05",
+          "value": 65.4
+        },
+        {
+          "date": "2025-12-12",
+          "value": 64.2
+        },
+        {
+          "date": "2025-12-19",
+          "value": 75.7
+        },
+        {
+          "date": "2025-12-26",
+          "value": 58.7
+        },
+        {
+          "date": "2026-01-02",
+          "value": 57.7
+        },
+        {
+          "date": "2026-01-09",
+          "value": 51.4
+        },
+        {
+          "date": "2026-01-16",
+          "value": 56.8
+        },
+        {
+          "date": "2026-01-23",
+          "value": 48.6
+        },
+        {
+          "date": "2026-01-30",
+          "value": 50.2
+        },
+        {
+          "date": "2026-02-06",
+          "value": 66.8
+        },
+        {
+          "date": "2026-02-13",
+          "value": 62.1
+        },
+        {
+          "date": "2026-02-20",
+          "value": 62.8
+        },
+        {
+          "date": "2026-02-27",
+          "value": 56.8
+        },
+        {
+          "date": "2026-03-06",
+          "value": 92.5
+        },
+        {
+          "date": "2026-03-13",
+          "value": 77.6
+        },
+        {
+          "date": "2026-03-20",
+          "value": 84.2
+        },
+        {
+          "date": "2026-03-27",
+          "value": 77.7
+        },
+        {
+          "date": "2026-04-03",
+          "value": 76.5
+        },
+        {
+          "date": "2026-04-10",
+          "value": 77.8
+        },
+        {
+          "date": "2026-04-17",
+          "value": 88.1
+        },
+        {
+          "date": "2026-04-24",
+          "value": 82.9
+        },
+        {
+          "date": "2026-05-01",
+          "value": 93.3
+        },
+        {
+          "date": "2026-05-08",
+          "value": 87.2
+        },
+        {
+          "date": "2026-05-15",
+          "value": 77.5
+        },
+        {
+          "date": "2026-05-22",
+          "value": 87.1
+        }
+      ],
+      "current_interest": 86.3,
+      "growth_rate_12w": 0.389,
+      "trend_direction": "rising"
+    },
+    "tv unitesi": {
+      "keyword": "tv unitesi",
+      "name": "TV Unitesi",
+      "category": "Oturma Odasi",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 80.5
+        },
+        {
+          "date": "2025-06-06",
+          "value": 58.1
+        },
+        {
+          "date": "2025-06-13",
+          "value": 69.8
+        },
+        {
+          "date": "2025-06-20",
+          "value": 55.2
+        },
+        {
+          "date": "2025-06-27",
+          "value": 58.4
+        },
+        {
+          "date": "2025-07-04",
+          "value": 59.3
+        },
+        {
+          "date": "2025-07-11",
+          "value": 62.3
+        },
+        {
+          "date": "2025-07-18",
+          "value": 69.5
+        },
+        {
+          "date": "2025-07-25",
+          "value": 61.4
+        },
+        {
+          "date": "2025-08-01",
+          "value": 68.2
+        },
+        {
+          "date": "2025-08-08",
+          "value": 72.8
+        },
+        {
+          "date": "2025-08-15",
           "value": 57.0
         },
         {
-          "week": 20,
-          "value": 56.3
+          "date": "2025-08-22",
+          "value": 71.7
         },
         {
-          "week": 21,
-          "value": 53.4
+          "date": "2025-08-29",
+          "value": 66.5
         },
         {
-          "week": 22,
-          "value": 49.5
+          "date": "2025-09-05",
+          "value": 79.1
         },
         {
-          "week": 23,
+          "date": "2025-09-12",
+          "value": 76.3
+        },
+        {
+          "date": "2025-09-19",
+          "value": 72.3
+        },
+        {
+          "date": "2025-09-26",
+          "value": 66.1
+        },
+        {
+          "date": "2025-10-03",
+          "value": 67.1
+        },
+        {
+          "date": "2025-10-10",
+          "value": 67.8
+        },
+        {
+          "date": "2025-10-17",
+          "value": 67.9
+        },
+        {
+          "date": "2025-10-24",
+          "value": 67.3
+        },
+        {
+          "date": "2025-10-31",
+          "value": 68.5
+        },
+        {
+          "date": "2025-11-07",
+          "value": 75.7
+        },
+        {
+          "date": "2025-11-14",
+          "value": 79.9
+        },
+        {
+          "date": "2025-11-21",
+          "value": 80.5
+        },
+        {
+          "date": "2025-11-28",
+          "value": 81.5
+        },
+        {
+          "date": "2025-12-05",
+          "value": 57.3
+        },
+        {
+          "date": "2025-12-12",
+          "value": 71.5
+        },
+        {
+          "date": "2025-12-19",
+          "value": 58.8
+        },
+        {
+          "date": "2025-12-26",
+          "value": 56.5
+        },
+        {
+          "date": "2026-01-02",
+          "value": 51.3
+        },
+        {
+          "date": "2026-01-09",
+          "value": 57.3
+        },
+        {
+          "date": "2026-01-16",
+          "value": 46.5
+        },
+        {
+          "date": "2026-01-23",
+          "value": 50.0
+        },
+        {
+          "date": "2026-01-30",
+          "value": 53.6
+        },
+        {
+          "date": "2026-02-06",
+          "value": 62.1
+        },
+        {
+          "date": "2026-02-13",
+          "value": 53.7
+        },
+        {
+          "date": "2026-02-20",
+          "value": 54.1
+        },
+        {
+          "date": "2026-02-27",
+          "value": 53.2
+        },
+        {
+          "date": "2026-03-06",
+          "value": 73.3
+        },
+        {
+          "date": "2026-03-13",
+          "value": 89.1
+        },
+        {
+          "date": "2026-03-20",
+          "value": 90.0
+        },
+        {
+          "date": "2026-03-27",
+          "value": 86.0
+        },
+        {
+          "date": "2026-04-03",
+          "value": 79.6
+        },
+        {
+          "date": "2026-04-10",
+          "value": 80.5
+        },
+        {
+          "date": "2026-04-17",
+          "value": 77.9
+        },
+        {
+          "date": "2026-04-24",
+          "value": 84.8
+        },
+        {
+          "date": "2026-05-01",
+          "value": 84.8
+        },
+        {
+          "date": "2026-05-08",
+          "value": 78.0
+        },
+        {
+          "date": "2026-05-15",
+          "value": 89.3
+        },
+        {
+          "date": "2026-05-22",
+          "value": 86.3
+        }
+      ],
+      "current_interest": 84.6,
+      "growth_rate_12w": 0.517,
+      "trend_direction": "rising"
+    },
+    "yatak basligi": {
+      "keyword": "yatak basligi",
+      "name": "Yatak Basligi",
+      "category": "Yatak Odasi",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 70.5
+        },
+        {
+          "date": "2025-06-06",
+          "value": 57.5
+        },
+        {
+          "date": "2025-06-13",
+          "value": 51.3
+        },
+        {
+          "date": "2025-06-20",
+          "value": 52.7
+        },
+        {
+          "date": "2025-06-27",
+          "value": 63.4
+        },
+        {
+          "date": "2025-07-04",
+          "value": 62.2
+        },
+        {
+          "date": "2025-07-11",
+          "value": 53.3
+        },
+        {
+          "date": "2025-07-18",
+          "value": 63.3
+        },
+        {
+          "date": "2025-07-25",
           "value": 46.9
         },
         {
-          "week": 24,
-          "value": 42.3
+          "date": "2025-08-01",
+          "value": 51.7
         },
         {
-          "week": 25,
-          "value": 39.5
+          "date": "2025-08-08",
+          "value": 59.8
+        },
+        {
+          "date": "2025-08-15",
+          "value": 52.8
+        },
+        {
+          "date": "2025-08-22",
+          "value": 56.3
+        },
+        {
+          "date": "2025-08-29",
+          "value": 49.6
+        },
+        {
+          "date": "2025-09-05",
+          "value": 73.2
+        },
+        {
+          "date": "2025-09-12",
+          "value": 64.2
+        },
+        {
+          "date": "2025-09-19",
+          "value": 61.8
+        },
+        {
+          "date": "2025-09-26",
+          "value": 75.6
+        },
+        {
+          "date": "2025-10-03",
+          "value": 73.1
+        },
+        {
+          "date": "2025-10-10",
+          "value": 60.1
+        },
+        {
+          "date": "2025-10-17",
+          "value": 64.8
+        },
+        {
+          "date": "2025-10-24",
+          "value": 71.1
+        },
+        {
+          "date": "2025-10-31",
+          "value": 75.1
+        },
+        {
+          "date": "2025-11-07",
+          "value": 70.5
+        },
+        {
+          "date": "2025-11-14",
+          "value": 72.7
+        },
+        {
+          "date": "2025-11-21",
+          "value": 62.6
+        },
+        {
+          "date": "2025-11-28",
+          "value": 65.8
+        },
+        {
+          "date": "2025-12-05",
+          "value": 55.4
+        },
+        {
+          "date": "2025-12-12",
+          "value": 51.8
+        },
+        {
+          "date": "2025-12-19",
+          "value": 59.1
+        },
+        {
+          "date": "2025-12-26",
+          "value": 58.3
+        },
+        {
+          "date": "2026-01-02",
+          "value": 61.7
+        },
+        {
+          "date": "2026-01-09",
+          "value": 62.9
+        },
+        {
+          "date": "2026-01-16",
+          "value": 58.7
+        },
+        {
+          "date": "2026-01-23",
+          "value": 61.4
+        },
+        {
+          "date": "2026-01-30",
+          "value": 51.2
+        },
+        {
+          "date": "2026-02-06",
+          "value": 54.6
+        },
+        {
+          "date": "2026-02-13",
+          "value": 61.6
+        },
+        {
+          "date": "2026-02-20",
+          "value": 61.0
+        },
+        {
+          "date": "2026-02-27",
+          "value": 55.4
+        },
+        {
+          "date": "2026-03-06",
+          "value": 86.0
+        },
+        {
+          "date": "2026-03-13",
+          "value": 82.2
+        },
+        {
+          "date": "2026-03-20",
+          "value": 69.4
+        },
+        {
+          "date": "2026-03-27",
+          "value": 79.7
+        },
+        {
+          "date": "2026-04-03",
+          "value": 74.0
+        },
+        {
+          "date": "2026-04-10",
+          "value": 80.7
+        },
+        {
+          "date": "2026-04-17",
+          "value": 89.6
+        },
+        {
+          "date": "2026-04-24",
+          "value": 90.5
+        },
+        {
+          "date": "2026-05-01",
+          "value": 91.0
+        },
+        {
+          "date": "2026-05-08",
+          "value": 81.7
+        },
+        {
+          "date": "2026-05-15",
+          "value": 88.0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 90.8
         }
       ],
-      "fetched_at": "2026-05-21T10:25:23.945774"
+      "current_interest": 87.9,
+      "growth_rate_12w": 0.511,
+      "trend_direction": "rising"
     },
-    {
-      "category": "Ayna",
-      "slug": "ayna",
-      "keyword": "ayna",
-      "trend_score": 19.2,
-      "growth_rate": -27.9,
-      "peak_interest": 48.1,
-      "data_points": [
+    "gardirop": {
+      "keyword": "gardirop",
+      "name": "Gardirop",
+      "category": "Yatak Odasi",
+      "weekly_data": [
         {
-          "week": 0,
-          "value": 25.6
+          "date": "2025-05-30",
+          "value": 74.8
         },
         {
-          "week": 1,
-          "value": 26.8
+          "date": "2025-06-06",
+          "value": 55.7
         },
         {
-          "week": 2,
-          "value": 26.9
+          "date": "2025-06-13",
+          "value": 57.2
         },
         {
-          "week": 3,
-          "value": 27.5
+          "date": "2025-06-20",
+          "value": 59.3
         },
         {
-          "week": 4,
-          "value": 27.9
+          "date": "2025-06-27",
+          "value": 59.8
         },
         {
-          "week": 5,
-          "value": 31.8
+          "date": "2025-07-04",
+          "value": 62.8
         },
         {
-          "week": 6,
-          "value": 33.7
+          "date": "2025-07-11",
+          "value": 63.2
         },
         {
-          "week": 7,
-          "value": 39.3
+          "date": "2025-07-18",
+          "value": 52.1
         },
         {
-          "week": 8,
-          "value": 44.5
+          "date": "2025-07-25",
+          "value": 48.8
         },
         {
-          "week": 9,
-          "value": 44.9
+          "date": "2025-08-01",
+          "value": 50.8
         },
         {
-          "week": 10,
-          "value": 45.6
+          "date": "2025-08-08",
+          "value": 55.2
         },
         {
-          "week": 11,
-          "value": 48.1
+          "date": "2025-08-15",
+          "value": 60.9
         },
         {
-          "week": 12,
-          "value": 47.3
+          "date": "2025-08-22",
+          "value": 68.8
         },
         {
-          "week": 13,
-          "value": 45.1
+          "date": "2025-08-29",
+          "value": 58.3
         },
         {
-          "week": 14,
-          "value": 46.6
+          "date": "2025-09-05",
+          "value": 66.0
         },
         {
-          "week": 15,
-          "value": 45.3
+          "date": "2025-09-12",
+          "value": 70.1
         },
         {
-          "week": 16,
+          "date": "2025-09-19",
+          "value": 78.2
+        },
+        {
+          "date": "2025-09-26",
+          "value": 71.3
+        },
+        {
+          "date": "2025-10-03",
+          "value": 65.7
+        },
+        {
+          "date": "2025-10-10",
+          "value": 75.3
+        },
+        {
+          "date": "2025-10-17",
+          "value": 80.3
+        },
+        {
+          "date": "2025-10-24",
+          "value": 76.6
+        },
+        {
+          "date": "2025-10-31",
+          "value": 69.0
+        },
+        {
+          "date": "2025-11-07",
+          "value": 64.8
+        },
+        {
+          "date": "2025-11-14",
+          "value": 70.9
+        },
+        {
+          "date": "2025-11-21",
+          "value": 64.5
+        },
+        {
+          "date": "2025-11-28",
+          "value": 64.9
+        },
+        {
+          "date": "2025-12-05",
+          "value": 63.1
+        },
+        {
+          "date": "2025-12-12",
+          "value": 71.5
+        },
+        {
+          "date": "2025-12-19",
+          "value": 68.8
+        },
+        {
+          "date": "2025-12-26",
+          "value": 63.4
+        },
+        {
+          "date": "2026-01-02",
+          "value": 66.0
+        },
+        {
+          "date": "2026-01-09",
+          "value": 50.8
+        },
+        {
+          "date": "2026-01-16",
+          "value": 52.6
+        },
+        {
+          "date": "2026-01-23",
+          "value": 53.3
+        },
+        {
+          "date": "2026-01-30",
+          "value": 59.6
+        },
+        {
+          "date": "2026-02-06",
+          "value": 66.3
+        },
+        {
+          "date": "2026-02-13",
+          "value": 56.4
+        },
+        {
+          "date": "2026-02-20",
+          "value": 65.6
+        },
+        {
+          "date": "2026-02-27",
+          "value": 68.1
+        },
+        {
+          "date": "2026-03-06",
+          "value": 81.7
+        },
+        {
+          "date": "2026-03-13",
+          "value": 90.2
+        },
+        {
+          "date": "2026-03-20",
+          "value": 90.5
+        },
+        {
+          "date": "2026-03-27",
+          "value": 82.5
+        },
+        {
+          "date": "2026-04-03",
+          "value": 76.7
+        },
+        {
+          "date": "2026-04-10",
+          "value": 75.1
+        },
+        {
+          "date": "2026-04-17",
+          "value": 78.7
+        },
+        {
+          "date": "2026-04-24",
+          "value": 83.4
+        },
+        {
+          "date": "2026-05-01",
+          "value": 74.8
+        },
+        {
+          "date": "2026-05-08",
+          "value": 81.4
+        },
+        {
+          "date": "2026-05-15",
+          "value": 85.0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 82.1
+        }
+      ],
+      "current_interest": 80.8,
+      "growth_rate_12w": 0.261,
+      "trend_direction": "rising"
+    },
+    "yemek masasi": {
+      "keyword": "yemek masasi",
+      "name": "Yemek Masasi",
+      "category": "Yemek Odasi",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 50.7
+        },
+        {
+          "date": "2025-06-06",
+          "value": 42.9
+        },
+        {
+          "date": "2025-06-13",
+          "value": 42.0
+        },
+        {
+          "date": "2025-06-20",
+          "value": 38.8
+        },
+        {
+          "date": "2025-06-27",
+          "value": 34.1
+        },
+        {
+          "date": "2025-07-04",
           "value": 42.7
         },
         {
-          "week": 17,
-          "value": 41.3
+          "date": "2025-07-11",
+          "value": 32.1
         },
         {
-          "week": 18,
-          "value": 39.7
+          "date": "2025-07-18",
+          "value": 32.0
         },
         {
-          "week": 19,
-          "value": 34.4
+          "date": "2025-07-25",
+          "value": 38.4
         },
         {
-          "week": 20,
-          "value": 28.6
+          "date": "2025-08-01",
+          "value": 36.3
         },
         {
-          "week": 21,
-          "value": 24.8
+          "date": "2025-08-08",
+          "value": 47.0
         },
         {
-          "week": 22,
-          "value": 21.4
+          "date": "2025-08-15",
+          "value": 35.2
         },
         {
-          "week": 23,
-          "value": 18.8
+          "date": "2025-08-22",
+          "value": 41.0
         },
         {
-          "week": 24,
-          "value": 18.4
+          "date": "2025-08-29",
+          "value": 46.4
         },
         {
-          "week": 25,
-          "value": 18.4
+          "date": "2025-09-05",
+          "value": 47.0
+        },
+        {
+          "date": "2025-09-12",
+          "value": 54.9
+        },
+        {
+          "date": "2025-09-19",
+          "value": 41.4
+        },
+        {
+          "date": "2025-09-26",
+          "value": 42.6
+        },
+        {
+          "date": "2025-10-03",
+          "value": 44.9
+        },
+        {
+          "date": "2025-10-10",
+          "value": 46.9
+        },
+        {
+          "date": "2025-10-17",
+          "value": 51.0
+        },
+        {
+          "date": "2025-10-24",
+          "value": 43.9
+        },
+        {
+          "date": "2025-10-31",
+          "value": 51.3
+        },
+        {
+          "date": "2025-11-07",
+          "value": 54.4
+        },
+        {
+          "date": "2025-11-14",
+          "value": 53.6
+        },
+        {
+          "date": "2025-11-21",
+          "value": 57.0
+        },
+        {
+          "date": "2025-11-28",
+          "value": 42.5
+        },
+        {
+          "date": "2025-12-05",
+          "value": 48.6
+        },
+        {
+          "date": "2025-12-12",
+          "value": 49.8
+        },
+        {
+          "date": "2025-12-19",
+          "value": 52.0
+        },
+        {
+          "date": "2025-12-26",
+          "value": 38.7
+        },
+        {
+          "date": "2026-01-02",
+          "value": 31.6
+        },
+        {
+          "date": "2026-01-09",
+          "value": 45.2
+        },
+        {
+          "date": "2026-01-16",
+          "value": 43.1
+        },
+        {
+          "date": "2026-01-23",
+          "value": 33.7
+        },
+        {
+          "date": "2026-01-30",
+          "value": 48.0
+        },
+        {
+          "date": "2026-02-06",
+          "value": 45.1
+        },
+        {
+          "date": "2026-02-13",
+          "value": 43.3
+        },
+        {
+          "date": "2026-02-20",
+          "value": 46.4
+        },
+        {
+          "date": "2026-02-27",
+          "value": 43.6
+        },
+        {
+          "date": "2026-03-06",
+          "value": 54.3
+        },
+        {
+          "date": "2026-03-13",
+          "value": 48.8
+        },
+        {
+          "date": "2026-03-20",
+          "value": 54.8
+        },
+        {
+          "date": "2026-03-27",
+          "value": 60.6
+        },
+        {
+          "date": "2026-04-03",
+          "value": 52.0
+        },
+        {
+          "date": "2026-04-10",
+          "value": 52.1
+        },
+        {
+          "date": "2026-04-17",
+          "value": 50.9
+        },
+        {
+          "date": "2026-04-24",
+          "value": 58.8
+        },
+        {
+          "date": "2026-05-01",
+          "value": 68.4
+        },
+        {
+          "date": "2026-05-08",
+          "value": 63.8
+        },
+        {
+          "date": "2026-05-15",
+          "value": 49.7
+        },
+        {
+          "date": "2026-05-22",
+          "value": 57.1
         }
       ],
-      "fetched_at": "2026-05-21T10:25:23.945819"
+      "current_interest": 59.7,
+      "growth_rate_12w": 0.34,
+      "trend_direction": "rising"
     },
-    {
-      "category": "Abajur",
-      "slug": "abajur",
-      "keyword": "abajur",
-      "trend_score": 22.4,
-      "growth_rate": -2.0,
-      "peak_interest": 42.4,
-      "data_points": [
+    "calisma masasi": {
+      "keyword": "calisma masasi",
+      "name": "Calisma Masasi",
+      "category": "Ofis",
+      "weekly_data": [
         {
-          "week": 0,
-          "value": 23.2
+          "date": "2025-05-30",
+          "value": 67.3
         },
         {
-          "week": 1,
-          "value": 21.8
+          "date": "2025-06-06",
+          "value": 47.7
         },
         {
-          "week": 2,
-          "value": 22.6
+          "date": "2025-06-13",
+          "value": 51.3
         },
         {
-          "week": 3,
-          "value": 23.6
+          "date": "2025-06-20",
+          "value": 49.0
         },
         {
-          "week": 4,
-          "value": 27.7
+          "date": "2025-06-27",
+          "value": 55.1
         },
         {
-          "week": 5,
-          "value": 29.1
+          "date": "2025-07-04",
+          "value": 55.1
         },
         {
-          "week": 6,
-          "value": 30.5
+          "date": "2025-07-11",
+          "value": 41.2
         },
         {
-          "week": 7,
-          "value": 33.1
+          "date": "2025-07-18",
+          "value": 56.1
         },
         {
-          "week": 8,
-          "value": 35.3
+          "date": "2025-07-25",
+          "value": 41.9
         },
         {
-          "week": 9,
-          "value": 36.6
+          "date": "2025-08-01",
+          "value": 47.8
         },
         {
-          "week": 10,
-          "value": 37.2
+          "date": "2025-08-08",
+          "value": 44.3
         },
         {
-          "week": 11,
-          "value": 40.5
+          "date": "2025-08-15",
+          "value": 51.3
         },
         {
-          "week": 12,
-          "value": 40.8
+          "date": "2025-08-22",
+          "value": 51.6
         },
         {
-          "week": 13,
+          "date": "2025-08-29",
+          "value": 40.6
+        },
+        {
+          "date": "2025-09-05",
+          "value": 66.4
+        },
+        {
+          "date": "2025-09-12",
+          "value": 50.4
+        },
+        {
+          "date": "2025-09-19",
+          "value": 48.3
+        },
+        {
+          "date": "2025-09-26",
+          "value": 54.1
+        },
+        {
+          "date": "2025-10-03",
+          "value": 59.8
+        },
+        {
+          "date": "2025-10-10",
+          "value": 54.9
+        },
+        {
+          "date": "2025-10-17",
+          "value": 59.2
+        },
+        {
+          "date": "2025-10-24",
+          "value": 65.7
+        },
+        {
+          "date": "2025-10-31",
+          "value": 50.8
+        },
+        {
+          "date": "2025-11-07",
+          "value": 53.6
+        },
+        {
+          "date": "2025-11-14",
+          "value": 64.3
+        },
+        {
+          "date": "2025-11-21",
+          "value": 67.9
+        },
+        {
+          "date": "2025-11-28",
+          "value": 64.6
+        },
+        {
+          "date": "2025-12-05",
+          "value": 60.8
+        },
+        {
+          "date": "2025-12-12",
+          "value": 64.4
+        },
+        {
+          "date": "2025-12-19",
+          "value": 52.9
+        },
+        {
+          "date": "2025-12-26",
+          "value": 51.1
+        },
+        {
+          "date": "2026-01-02",
+          "value": 43.7
+        },
+        {
+          "date": "2026-01-09",
+          "value": 42.5
+        },
+        {
+          "date": "2026-01-16",
+          "value": 53.3
+        },
+        {
+          "date": "2026-01-23",
+          "value": 55.4
+        },
+        {
+          "date": "2026-01-30",
+          "value": 59.2
+        },
+        {
+          "date": "2026-02-06",
+          "value": 55.5
+        },
+        {
+          "date": "2026-02-13",
+          "value": 49.5
+        },
+        {
+          "date": "2026-02-20",
+          "value": 55.7
+        },
+        {
+          "date": "2026-02-27",
+          "value": 57.2
+        },
+        {
+          "date": "2026-03-06",
+          "value": 63.9
+        },
+        {
+          "date": "2026-03-13",
+          "value": 68.9
+        },
+        {
+          "date": "2026-03-20",
+          "value": 62.2
+        },
+        {
+          "date": "2026-03-27",
+          "value": 66.3
+        },
+        {
+          "date": "2026-04-03",
+          "value": 66.9
+        },
+        {
+          "date": "2026-04-10",
+          "value": 78.9
+        },
+        {
+          "date": "2026-04-17",
+          "value": 64.3
+        },
+        {
+          "date": "2026-04-24",
+          "value": 62.8
+        },
+        {
+          "date": "2026-05-01",
+          "value": 81.9
+        },
+        {
+          "date": "2026-05-08",
+          "value": 80.1
+        },
+        {
+          "date": "2026-05-15",
+          "value": 66.3
+        },
+        {
+          "date": "2026-05-22",
+          "value": 83.1
+        }
+      ],
+      "current_interest": 77.8,
+      "growth_rate_12w": 0.429,
+      "trend_direction": "rising"
+    },
+    "duvar rafi": {
+      "keyword": "duvar rafi",
+      "name": "Duvar Rafi",
+      "category": "Dekorasyon",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 100
+        },
+        {
+          "date": "2025-06-06",
+          "value": 75.1
+        },
+        {
+          "date": "2025-06-13",
+          "value": 81.6
+        },
+        {
+          "date": "2025-06-20",
+          "value": 78.7
+        },
+        {
+          "date": "2025-06-27",
+          "value": 70.1
+        },
+        {
+          "date": "2025-07-04",
+          "value": 83.0
+        },
+        {
+          "date": "2025-07-11",
+          "value": 80.2
+        },
+        {
+          "date": "2025-07-18",
+          "value": 88.9
+        },
+        {
+          "date": "2025-07-25",
+          "value": 89.7
+        },
+        {
+          "date": "2025-08-01",
+          "value": 71.6
+        },
+        {
+          "date": "2025-08-08",
+          "value": 81.9
+        },
+        {
+          "date": "2025-08-15",
+          "value": 77.0
+        },
+        {
+          "date": "2025-08-22",
+          "value": 72.9
+        },
+        {
+          "date": "2025-08-29",
+          "value": 88.6
+        },
+        {
+          "date": "2025-09-05",
+          "value": 84.1
+        },
+        {
+          "date": "2025-09-12",
+          "value": 92.3
+        },
+        {
+          "date": "2025-09-19",
+          "value": 86.9
+        },
+        {
+          "date": "2025-09-26",
+          "value": 93.8
+        },
+        {
+          "date": "2025-10-03",
+          "value": 86.5
+        },
+        {
+          "date": "2025-10-10",
+          "value": 99.4
+        },
+        {
+          "date": "2025-10-17",
+          "value": 91.1
+        },
+        {
+          "date": "2025-10-24",
+          "value": 86.4
+        },
+        {
+          "date": "2025-10-31",
+          "value": 98.4
+        },
+        {
+          "date": "2025-11-07",
+          "value": 85.1
+        },
+        {
+          "date": "2025-11-14",
+          "value": 97.2
+        },
+        {
+          "date": "2025-11-21",
+          "value": 87.4
+        },
+        {
+          "date": "2025-11-28",
+          "value": 99.3
+        },
+        {
+          "date": "2025-12-05",
+          "value": 75.6
+        },
+        {
+          "date": "2025-12-12",
+          "value": 83.5
+        },
+        {
+          "date": "2025-12-19",
+          "value": 84.0
+        },
+        {
+          "date": "2025-12-26",
+          "value": 80.6
+        },
+        {
+          "date": "2026-01-02",
+          "value": 76.0
+        },
+        {
+          "date": "2026-01-09",
+          "value": 69.4
+        },
+        {
+          "date": "2026-01-16",
+          "value": 63.3
+        },
+        {
+          "date": "2026-01-23",
+          "value": 69.1
+        },
+        {
+          "date": "2026-01-30",
+          "value": 72.4
+        },
+        {
+          "date": "2026-02-06",
+          "value": 67.1
+        },
+        {
+          "date": "2026-02-13",
+          "value": 69.1
+        },
+        {
+          "date": "2026-02-20",
+          "value": 60.1
+        },
+        {
+          "date": "2026-02-27",
+          "value": 63.7
+        },
+        {
+          "date": "2026-03-06",
+          "value": 100
+        },
+        {
+          "date": "2026-03-13",
+          "value": 97.4
+        },
+        {
+          "date": "2026-03-20",
+          "value": 94.5
+        },
+        {
+          "date": "2026-03-27",
+          "value": 100
+        },
+        {
+          "date": "2026-04-03",
+          "value": 91.4
+        },
+        {
+          "date": "2026-04-10",
+          "value": 91.6
+        },
+        {
+          "date": "2026-04-17",
+          "value": 92.1
+        },
+        {
+          "date": "2026-04-24",
+          "value": 94.6
+        },
+        {
+          "date": "2026-05-01",
+          "value": 91.8
+        },
+        {
+          "date": "2026-05-08",
+          "value": 96.7
+        },
+        {
+          "date": "2026-05-15",
+          "value": 96.2
+        },
+        {
+          "date": "2026-05-22",
+          "value": 100
+        }
+      ],
+      "current_interest": 96.2,
+      "growth_rate_12w": 0.48,
+      "trend_direction": "rising"
+    },
+    "mutfak dolabi": {
+      "keyword": "mutfak dolabi",
+      "name": "Mutfak Dolabi",
+      "category": "Mutfak",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 70.6
+        },
+        {
+          "date": "2025-06-06",
+          "value": 49.8
+        },
+        {
+          "date": "2025-06-13",
+          "value": 53.0
+        },
+        {
+          "date": "2025-06-20",
+          "value": 48.7
+        },
+        {
+          "date": "2025-06-27",
+          "value": 53.1
+        },
+        {
+          "date": "2025-07-04",
+          "value": 59.1
+        },
+        {
+          "date": "2025-07-11",
+          "value": 55.6
+        },
+        {
+          "date": "2025-07-18",
+          "value": 48.8
+        },
+        {
+          "date": "2025-07-25",
+          "value": 45.8
+        },
+        {
+          "date": "2025-08-01",
+          "value": 63.7
+        },
+        {
+          "date": "2025-08-08",
+          "value": 51.4
+        },
+        {
+          "date": "2025-08-15",
+          "value": 47.0
+        },
+        {
+          "date": "2025-08-22",
+          "value": 45.6
+        },
+        {
+          "date": "2025-08-29",
+          "value": 61.1
+        },
+        {
+          "date": "2025-09-05",
+          "value": 52.4
+        },
+        {
+          "date": "2025-09-12",
+          "value": 70.7
+        },
+        {
+          "date": "2025-09-19",
+          "value": 69.5
+        },
+        {
+          "date": "2025-09-26",
+          "value": 56.5
+        },
+        {
+          "date": "2025-10-03",
+          "value": 54.5
+        },
+        {
+          "date": "2025-10-10",
+          "value": 52.7
+        },
+        {
+          "date": "2025-10-17",
+          "value": 51.6
+        },
+        {
+          "date": "2025-10-24",
+          "value": 55.1
+        },
+        {
+          "date": "2025-10-31",
+          "value": 57.6
+        },
+        {
+          "date": "2025-11-07",
+          "value": 55.7
+        },
+        {
+          "date": "2025-11-14",
+          "value": 69.2
+        },
+        {
+          "date": "2025-11-21",
+          "value": 63.1
+        },
+        {
+          "date": "2025-11-28",
+          "value": 58.7
+        },
+        {
+          "date": "2025-12-05",
+          "value": 54.7
+        },
+        {
+          "date": "2025-12-12",
+          "value": 43.0
+        },
+        {
+          "date": "2025-12-19",
+          "value": 58.0
+        },
+        {
+          "date": "2025-12-26",
+          "value": 55.5
+        },
+        {
+          "date": "2026-01-02",
           "value": 42.4
         },
         {
-          "week": 14,
-          "value": 41.7
+          "date": "2026-01-09",
+          "value": 43.4
         },
         {
-          "week": 15,
-          "value": 38.0
+          "date": "2026-01-16",
+          "value": 39.6
         },
         {
-          "week": 16,
+          "date": "2026-01-23",
+          "value": 43.1
+        },
+        {
+          "date": "2026-01-30",
+          "value": 44.7
+        },
+        {
+          "date": "2026-02-06",
+          "value": 38.1
+        },
+        {
+          "date": "2026-02-13",
           "value": 38.3
         },
         {
-          "week": 17,
-          "value": 37.3
+          "date": "2026-02-20",
+          "value": 33.6
         },
         {
-          "week": 18,
-          "value": 36.6
+          "date": "2026-02-27",
+          "value": 41.7
         },
         {
-          "week": 19,
-          "value": 35.5
+          "date": "2026-03-06",
+          "value": 54.6
         },
         {
-          "week": 20,
-          "value": 34.0
+          "date": "2026-03-13",
+          "value": 53.8
         },
         {
-          "week": 21,
-          "value": 29.5
+          "date": "2026-03-20",
+          "value": 58.3
         },
         {
-          "week": 22,
-          "value": 26.8
+          "date": "2026-03-27",
+          "value": 65.3
         },
         {
-          "week": 23,
-          "value": 23.2
+          "date": "2026-04-03",
+          "value": 58.1
         },
         {
-          "week": 24,
-          "value": 21.2
+          "date": "2026-04-10",
+          "value": 58.6
         },
         {
-          "week": 25,
-          "value": 18.2
+          "date": "2026-04-17",
+          "value": 64.8
+        },
+        {
+          "date": "2026-04-24",
+          "value": 56.4
+        },
+        {
+          "date": "2026-05-01",
+          "value": 65.3
+        },
+        {
+          "date": "2026-05-08",
+          "value": 62.3
+        },
+        {
+          "date": "2026-05-15",
+          "value": 63.7
+        },
+        {
+          "date": "2026-05-22",
+          "value": 56.7
         }
       ],
-      "fetched_at": "2026-05-21T10:25:23.945856"
+      "current_interest": 62.0,
+      "growth_rate_12w": 0.635,
+      "trend_direction": "rising"
+    },
+    "banyo dolabi": {
+      "keyword": "banyo dolabi",
+      "name": "Banyo Dolabi",
+      "category": "Banyo",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 70.4
+        },
+        {
+          "date": "2025-06-06",
+          "value": 63.8
+        },
+        {
+          "date": "2025-06-13",
+          "value": 72.6
+        },
+        {
+          "date": "2025-06-20",
+          "value": 69.9
+        },
+        {
+          "date": "2025-06-27",
+          "value": 62.4
+        },
+        {
+          "date": "2025-07-04",
+          "value": 69.4
+        },
+        {
+          "date": "2025-07-11",
+          "value": 68.5
+        },
+        {
+          "date": "2025-07-18",
+          "value": 63.5
+        },
+        {
+          "date": "2025-07-25",
+          "value": 57.9
+        },
+        {
+          "date": "2025-08-01",
+          "value": 67.0
+        },
+        {
+          "date": "2025-08-08",
+          "value": 71.5
+        },
+        {
+          "date": "2025-08-15",
+          "value": 70.3
+        },
+        {
+          "date": "2025-08-22",
+          "value": 71.2
+        },
+        {
+          "date": "2025-08-29",
+          "value": 60.7
+        },
+        {
+          "date": "2025-09-05",
+          "value": 66.4
+        },
+        {
+          "date": "2025-09-12",
+          "value": 74.0
+        },
+        {
+          "date": "2025-09-19",
+          "value": 67.7
+        },
+        {
+          "date": "2025-09-26",
+          "value": 76.8
+        },
+        {
+          "date": "2025-10-03",
+          "value": 68.6
+        },
+        {
+          "date": "2025-10-10",
+          "value": 73.7
+        },
+        {
+          "date": "2025-10-17",
+          "value": 75.6
+        },
+        {
+          "date": "2025-10-24",
+          "value": 62.5
+        },
+        {
+          "date": "2025-10-31",
+          "value": 63.2
+        },
+        {
+          "date": "2025-11-07",
+          "value": 64.0
+        },
+        {
+          "date": "2025-11-14",
+          "value": 69.5
+        },
+        {
+          "date": "2025-11-21",
+          "value": 69.7
+        },
+        {
+          "date": "2025-11-28",
+          "value": 74.4
+        },
+        {
+          "date": "2025-12-05",
+          "value": 63.1
+        },
+        {
+          "date": "2025-12-12",
+          "value": 51.7
+        },
+        {
+          "date": "2025-12-19",
+          "value": 53.7
+        },
+        {
+          "date": "2025-12-26",
+          "value": 57.5
+        },
+        {
+          "date": "2026-01-02",
+          "value": 45.5
+        },
+        {
+          "date": "2026-01-09",
+          "value": 54.1
+        },
+        {
+          "date": "2026-01-16",
+          "value": 43.4
+        },
+        {
+          "date": "2026-01-23",
+          "value": 61.1
+        },
+        {
+          "date": "2026-01-30",
+          "value": 57.7
+        },
+        {
+          "date": "2026-02-06",
+          "value": 58.5
+        },
+        {
+          "date": "2026-02-13",
+          "value": 44.5
+        },
+        {
+          "date": "2026-02-20",
+          "value": 43.5
+        },
+        {
+          "date": "2026-02-27",
+          "value": 56.1
+        },
+        {
+          "date": "2026-03-06",
+          "value": 71.9
+        },
+        {
+          "date": "2026-03-13",
+          "value": 69.6
+        },
+        {
+          "date": "2026-03-20",
+          "value": 74.3
+        },
+        {
+          "date": "2026-03-27",
+          "value": 72.1
+        },
+        {
+          "date": "2026-04-03",
+          "value": 69.5
+        },
+        {
+          "date": "2026-04-10",
+          "value": 74.1
+        },
+        {
+          "date": "2026-04-17",
+          "value": 78.2
+        },
+        {
+          "date": "2026-04-24",
+          "value": 67.1
+        },
+        {
+          "date": "2026-05-01",
+          "value": 84.4
+        },
+        {
+          "date": "2026-05-08",
+          "value": 71.4
+        },
+        {
+          "date": "2026-05-15",
+          "value": 82.2
+        },
+        {
+          "date": "2026-05-22",
+          "value": 79.7
+        }
+      ],
+      "current_interest": 79.4,
+      "growth_rate_12w": 0.568,
+      "trend_direction": "rising"
+    },
+    "sandalye": {
+      "keyword": "sandalye",
+      "name": "Sandalye",
+      "category": "Yemek Odasi",
+      "weekly_data": [
+        {
+          "date": "2025-05-30",
+          "value": 62.0
+        },
+        {
+          "date": "2025-06-06",
+          "value": 59.4
+        },
+        {
+          "date": "2025-06-13",
+          "value": 49.0
+        },
+        {
+          "date": "2025-06-20",
+          "value": 57.3
+        },
+        {
+          "date": "2025-06-27",
+          "value": 50.7
+        },
+        {
+          "date": "2025-07-04",
+          "value": 54.3
+        },
+        {
+          "date": "2025-07-11",
+          "value": 58.4
+        },
+        {
+          "date": "2025-07-18",
+          "value": 65.9
+        },
+        {
+          "date": "2025-07-25",
+          "value": 66.5
+        },
+        {
+          "date": "2025-08-01",
+          "value": 59.6
+        },
+        {
+          "date": "2025-08-08",
+          "value": 66.5
+        },
+        {
+          "date": "2025-08-15",
+          "value": 55.2
+        },
+        {
+          "date": "2025-08-22",
+          "value": 55.5
+        },
+        {
+          "date": "2025-08-29",
+          "value": 54.4
+        },
+        {
+          "date": "2025-09-05",
+          "value": 65.3
+        },
+        {
+          "date": "2025-09-12",
+          "value": 63.7
+        },
+        {
+          "date": "2025-09-19",
+          "value": 70.4
+        },
+        {
+          "date": "2025-09-26",
+          "value": 76.5
+        },
+        {
+          "date": "2025-10-03",
+          "value": 65.3
+        },
+        {
+          "date": "2025-10-10",
+          "value": 68.1
+        },
+        {
+          "date": "2025-10-17",
+          "value": 71.6
+        },
+        {
+          "date": "2025-10-24",
+          "value": 66.1
+        },
+        {
+          "date": "2025-10-31",
+          "value": 70.6
+        },
+        {
+          "date": "2025-11-07",
+          "value": 65.1
+        },
+        {
+          "date": "2025-11-14",
+          "value": 62.5
+        },
+        {
+          "date": "2025-11-21",
+          "value": 77.3
+        },
+        {
+          "date": "2025-11-28",
+          "value": 77.7
+        },
+        {
+          "date": "2025-12-05",
+          "value": 66.4
+        },
+        {
+          "date": "2025-12-12",
+          "value": 56.7
+        },
+        {
+          "date": "2025-12-19",
+          "value": 63.8
+        },
+        {
+          "date": "2025-12-26",
+          "value": 64.2
+        },
+        {
+          "date": "2026-01-02",
+          "value": 49.5
+        },
+        {
+          "date": "2026-01-09",
+          "value": 47.8
+        },
+        {
+          "date": "2026-01-16",
+          "value": 65.4
+        },
+        {
+          "date": "2026-01-23",
+          "value": 50.0
+        },
+        {
+          "date": "2026-01-30",
+          "value": 53.4
+        },
+        {
+          "date": "2026-02-06",
+          "value": 52.7
+        },
+        {
+          "date": "2026-02-13",
+          "value": 52.1
+        },
+        {
+          "date": "2026-02-20",
+          "value": 54.6
+        },
+        {
+          "date": "2026-02-27",
+          "value": 55.9
+        },
+        {
+          "date": "2026-03-06",
+          "value": 89.3
+        },
+        {
+          "date": "2026-03-13",
+          "value": 86.6
+        },
+        {
+          "date": "2026-03-20",
+          "value": 77.2
+        },
+        {
+          "date": "2026-03-27",
+          "value": 86.0
+        },
+        {
+          "date": "2026-04-03",
+          "value": 80.4
+        },
+        {
+          "date": "2026-04-10",
+          "value": 93.6
+        },
+        {
+          "date": "2026-04-17",
+          "value": 78.9
+        },
+        {
+          "date": "2026-04-24",
+          "value": 82.9
+        },
+        {
+          "date": "2026-05-01",
+          "value": 85.2
+        },
+        {
+          "date": "2026-05-08",
+          "value": 84.3
+        },
+        {
+          "date": "2026-05-15",
+          "value": 95.0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 85.6
+        }
+      ],
+      "current_interest": 87.5,
+      "growth_rate_12w": 0.626,
+      "trend_direction": "rising"
     }
-  ]
+  }
 }

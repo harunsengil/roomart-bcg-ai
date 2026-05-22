@@ -1,59 +1,26 @@
 {
-  "generated_at": "2026-05-21T10:30:50.601808",
+  "metadata": {
+    "last_updated": "2026-05-22T15:34:39.415174",
+    "total_alerts": 2
+  },
   "alerts": [
     {
-      "id": "alert_1",
-      "type": "OPPORTUNITY",
-      "severity": "HIGH",
-      "category": "Akustik Panel",
-      "message": "Akustik Panel gaining STAR momentum — accelerate inventory",
-      "detail": "Growth score 74 | Share 72 | Trend: +28% YoY | Action: INVEST",
-      "timestamp": "2026-05-21T10:30:50.601691"
+      "id": "alert-1",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Kose Koltuk is top STAR product",
+      "message": "Classic Kose Koltuk leads category with 88 share score and 74 growth score.",
+      "product_id": "RA-1008",
+      "timestamp": "2026-05-22T15:34:39.415060"
     },
     {
-      "id": "alert_2",
-      "type": "RISK",
-      "severity": "HIGH",
-      "category": "Abajur",
-      "message": "Abajur category declining — DOG territory confirmed",
-      "detail": "Growth -8% | Share 22 | Action: EXIT recommended",
-      "timestamp": "2026-05-21T10:30:50.601696"
-    },
-    {
-      "id": "alert_3",
-      "type": "QUADRANT_CHANGE",
-      "severity": "HIGH",
-      "category": "Duvar Dekor",
-      "message": "Duvar Dekor shifted QUESTION MARK → STAR",
-      "detail": "Growth score crossed 70 threshold | Scale investment immediately",
-      "timestamp": "2026-05-21T04:30:50.601698"
-    },
-    {
-      "id": "alert_4",
-      "type": "INFO",
-      "severity": "MEDIUM",
-      "category": "TV Ünitesi",
-      "message": "TV Ünitesi confirmed as primary CASH COW — optimize margins",
-      "detail": "Market share 78 | Stable growth | Revenue extraction phase",
-      "timestamp": "2026-05-20T22:30:50.601704"
-    },
-    {
-      "id": "alert_5",
-      "type": "OPPORTUNITY",
-      "severity": "MEDIUM",
-      "category": "Konsol Masa",
-      "message": "Konsol Masa showing 18% growth signal — test investment",
-      "detail": "QUESTION MARK with high growth velocity | 90-day trial recommended",
-      "timestamp": "2026-05-20T16:30:50.601745"
-    },
-    {
-      "id": "alert_6",
-      "type": "INFO",
-      "severity": "LOW",
-      "category": "Metal Raf",
-      "message": "Metal Raf stable CASH COW — low volatility confirmed",
-      "detail": "Predictable revenue stream | Maintain current strategy",
-      "timestamp": "2026-05-20T10:30:50.601749"
+      "id": "alert-2",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Aydinlatma is top STAR product",
+      "message": "Vega Aydinlatma leads category with 84 share score and 73 growth score.",
+      "product_id": "RA-1066",
+      "timestamp": "2026-05-22T15:34:39.415060"
     }
   ]
 }
