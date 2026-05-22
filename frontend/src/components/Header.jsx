@@ -107,7 +107,26 @@ export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk,
         </div>
       </div>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
+      {/* Loading progress bar — loading=true iken soldan sağa süpürür, sonra kaybolur */}
+      <div className="relative h-px overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
+        {loading && (
+          <div
+            className="absolute top-0 left-0 h-full bg-gold-400"
+            style={{
+              width: '40%',
+              animation: 'headerSweep 1.2s ease-in-out infinite',
+            }}
+          />
+        )}
+      </div>
+      <style>{`
+        @keyframes headerSweep {
+          0%   { transform: translateX(-100%); opacity: 0.9; }
+          50%  { opacity: 1; }
+          100% { transform: translateX(350%); opacity: 0; }
+        }
+      `}</style>
     </header>
   )
 }

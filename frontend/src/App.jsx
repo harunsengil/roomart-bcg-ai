@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb } from 'lucide-react'
 import Header from './components/Header'
@@ -62,8 +62,17 @@ export default function App() {
   const { theme, toggleTheme } = useTheme()
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
+  const [loadingTimeout, setLoadingTimeout] = useState(false)
 
-  if (loading) return <LoadingScreen />
+  // 15 saniye sonra hâlâ loading'deyse timeout ekranı göster
+  useEffect(() => {
+    if (!loading) { setLoadingTimeout(false); return }
+    const t = setTimeout(() => setLoadingTimeout(true), 15000)
+    return () => clearTimeout(t)
+  }, [loading])
+
+  if (loading && !loadingTimeout) return <LoadingScreen />
+  if (loadingTimeout && loading) return <ErrorScreen error="Veri yüklenemedi — sunucu yanıt vermedi (15s). JSON yedeğine geçiliyor..." onRetry={refetch} />
   if (error) return <ErrorScreen error={error} onRetry={refetch} />
 
   const highAlertCount = data?.alerts?.filter(a => a.severity === 'HIGH').length ?? 0

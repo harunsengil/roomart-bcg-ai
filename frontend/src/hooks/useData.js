@@ -14,7 +14,13 @@ async function fetchJSON(path) {
 async function loadFromFirestore() {
   // Direkt 'latest' dokümanını oku — orderBy/timestamp sorunu yok
   const docRef = doc(db, 'roomart-bcg-dev', 'latest')
-  const snapshot = await getDoc(docRef)
+  // 8 saniyelik timeout — takılı kalmayı önler
+  const snapshot = await Promise.race([
+    getDoc(docRef),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Firestore timeout (8s)')), 8000)
+    ),
+  ])
   if (!snapshot.exists()) throw new Error('Firestore: koleksiyon boş')
   const d = snapshot.data()
   return {
@@ -52,6 +58,7 @@ export function useData(refreshInterval = 6 * 60 * 60 * 1000) {
 
   const loadData = useCallback(async () => {
     try {
+      setLoading(true)
       setError(null)
       let result
       try {
