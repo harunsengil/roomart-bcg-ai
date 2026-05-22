@@ -7,7 +7,9 @@ Calculates BCG quadrant classifications and strategic recommendations
 import json
 import logging
 import math
-from datetime import datetime
+import os
+import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -357,15 +359,178 @@ def main():
         "category_summary": category_summary,
     }
 
-    save_json("bcg_scores.json", bcg_scores)
-    save_json("alerts.json", {
+    alerts_output = {
         "metadata": {"last_updated": datetime.now().isoformat(), "total_alerts": len(alerts)},
         "alerts": alerts,
-    })
+    }
+
+    save_json("bcg_scores.json", bcg_scores)
+    save_json("alerts.json", alerts_output)
+
+    # Write to Firestore if secret is available
+    db_client = init_firebase()
+    save_to_firestore(db_client, bcg_scores, alerts_output, trends_data)
 
     logger.info(f"Analysis complete: {stars} Stars, {cash_cows} Cash Cows, {question_marks} Question Marks, {dogs} Dogs")
     logger.info(f"Generated {len(alerts)} alerts")
 
+
+
+# ── FIREBASE INTEGRATION ──────────────────────────────────────────────────────
+
+def init_firebase():
+    """Initialize Firebase Admin SDK from FIREBASE_SERVICE_ACCOUNT env secret."""
+    service_account_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
+    if not service_account_json:
+        logger.warning("FIREBASE_SERVICE_ACCOUNT not set — skipping Firestore write")
+        return None
+    try:
+        import firebase_admin
+        from firebase_admin import credentials, firestore as fs
+        if not firebase_admin._apps:
+            cred = credentials.Certificate(json.loads(service_account_json))
+            firebase_admin.initialize_app(cred)
+        return fs.client()
+    except Exception as e:
+        logger.error(f"Firebase init failed: {e}")
+        return None
+
+
+def build_frontend_payload(bcg_scores, alerts_output, trends_data):
+    """Convert analyzer output to frontend-compatible format (seed_data.py schema)."""
+    products = bcg_scores.get("products", [])
+    meta = bcg_scores.get("metadata", {})
+
+    # Build category-level summaries from scored products
+    cat_map = {}
+    for p in products:
+        cat = p["category"]
+        if cat not in cat_map:
+            cat_map[cat] = {
+                "id": cat.lower().replace(" ", "-"),
+                "category": cat,
+                "slug": cat.lower().replace(" ", "-"),
+                "product_count": 0,
+                "share_scores": [],
+                "growth_scores": [],
+                "prices": [],
+                "ratings": [],
+                "reviews": [],
+                "bcg_classes": [],
+            }
+        c = cat_map[cat]
+        c["product_count"] += 1
+        c["share_scores"].append(p["share_score"])
+        c["growth_scores"].append(p["growth_score"])
+        c["prices"].append(p.get("price", 0))
+        c["ratings"].append(p.get("rating", 4.0))
+        c["reviews"].append(p.get("review_count", 0))
+        c["bcg_classes"].append(p["bcg_class"])
+
+    BCG_META = {
+        "STAR": {"quadrant": "STAR", "emoji": "⭐", "color": "#F59E0B"},
+        "CASH_COW": {"quadrant": "CASH_COW", "emoji": "🐄", "color": "#10B981"},
+        "QUESTION_MARK": {"quadrant": "QUESTION_MARK", "emoji": "❓", "color": "#3B82F6"},
+        "DOG": {"quadrant": "DOG", "emoji": "🐕", "color": "#EF4444"},
+    }
+    REC_MAP = {
+        "INVEST": "INVEST", "SCALE": "INVEST", "HARVEST": "HARVEST",
+        "DEFEND": "HARVEST", "TEST": "TEST", "MONITOR": "TEST",
+        "OPTIMIZE": "TEST", "EXIT": "EXIT", "RESTRUCTURE": "EXIT",
+    }
+
+    categories = []
+    quadrant_dist = {"STAR": 0, "CASH_COW": 0, "QUESTION_MARK": 0, "DOG": 0}
+    for cat, c in cat_map.items():
+        n = c["product_count"]
+        avg_share = round(sum(c["share_scores"]) / n, 2)
+        avg_growth = round(sum(c["growth_scores"]) / n, 2)
+        top_bcg = max(set(c["bcg_classes"]), key=c["bcg_classes"].count)
+        quadrant_dist[top_bcg] = quadrant_dist.get(top_bcg, 0) + 1
+
+        # Trend data for this category
+        cat_trends = [v for v in trends_data.get("keywords", {}).values()
+                      if v.get("category") == cat]
+        trend_score = round(sum(k.get("current_interest", 50) for k in cat_trends) / len(cat_trends), 1) if cat_trends else 50
+        trend_growth = round(sum(k.get("growth_rate_12w", 0) for k in cat_trends) / len(cat_trends) * 100, 1) if cat_trends else 0
+
+        categories.append({
+            "id": c["id"],
+            "category": cat,
+            "slug": c["slug"],
+            "product_count": n,
+            "share_score": avg_share,
+            "growth_score": avg_growth,
+            "bcg": BCG_META[top_bcg],
+            "recommendation": {"action": REC_MAP.get(
+                max(products, key=lambda p: p.get("composite_score", 0) if p["category"] == cat else 0
+                ).get("recommendation", {}).get("action", "TEST"), "TEST")
+            },
+            "avg_price": round(sum(c["prices"]) / n, 2),
+            "avg_rating": round(sum(c["ratings"]) / n, 1),
+            "total_reviews": sum(c["reviews"]),
+            "trend_score": trend_score,
+            "trend_growth": trend_growth,
+        })
+
+    total_prods = len(products)
+    kpis = {
+        "total_categories": len(categories),
+        "total_products": total_prods,
+        "star_products": quadrant_dist.get("STAR", 0),
+        "cash_cows": quadrant_dist.get("CASH_COW", 0),
+        "question_marks": quadrant_dist.get("QUESTION_MARK", 0),
+        "dogs": quadrant_dist.get("DOG", 0),
+        "risk_products": quadrant_dist.get("DOG", 0) + quadrant_dist.get("QUESTION_MARK", 0),
+        "avg_trend_score": round(sum(c.get("trend_score", 50) for c in categories) / len(categories), 1) if categories else 50,
+        "high_priority_alerts": sum(1 for a in alerts_output.get("alerts", []) if a.get("severity") == "HIGH"),
+    }
+
+    # Build trends in frontend-expected format
+    trends_list = []
+    for cat, c in cat_map.items():
+        cat_trends = [v for v in trends_data.get("keywords", {}).values()
+                      if v.get("category") == cat]
+        for kw_data in cat_trends:
+            trends_list.append({
+                "category": cat,
+                "slug": c["slug"],
+                "keyword": kw_data.get("keyword", cat.lower()),
+                "trend_score": kw_data.get("current_interest", 50),
+                "growth_rate": round(kw_data.get("growth_rate_12w", 0) * 100, 1),
+                "data_points": kw_data.get("weekly_data", []),
+                "fetched_at": datetime.now().isoformat(),
+            })
+        if not cat_trends:
+            trends_list.append({
+                "category": cat, "slug": c["slug"],
+                "keyword": cat.lower(), "trend_score": 50, "growth_rate": 0.0,
+                "data_points": [], "fetched_at": datetime.now().isoformat(),
+            })
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kpis": kpis,
+        "categories": categories,
+        "quadrant_distribution": quadrant_dist,
+        "trends": trends_list,
+        "alerts": alerts_output.get("alerts", []),
+    }
+
+
+def save_to_firestore(db_client, bcg_scores, alerts_output, trends_data):
+    """Write BCG results to Firestore 'roomart-bcg-dev' collection (frontend schema)."""
+    if not db_client:
+        return
+    try:
+        now = datetime.now(timezone.utc)
+        doc_id = now.strftime("%Y-%m-%dT%H:%M")
+        doc_data = build_frontend_payload(bcg_scores, alerts_output, trends_data)
+        db_client.collection("roomart-bcg-dev").document(doc_id).set(doc_data)
+        db_client.collection("roomart-bcg-dev").document("latest").set(doc_data)
+        logger.info(f"Firestore write OK: roomart-bcg-dev/{doc_id}")
+    except Exception as e:
+        logger.error(f"Firestore write failed: {e}")
 
 if __name__ == "__main__":
     main()
