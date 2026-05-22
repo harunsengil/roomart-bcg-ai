@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-22T02:46:26.131093"
+    "last_updated": "2026-05-22T08:53:35.997203"
   },
   "categories": {
     "Oturma Odasi": {
@@ -13,7 +13,7 @@
       "category_growth_30d": 0.285,
       "avg_review_count": 19,
       "price_competition_index": 0.59,
-      "timestamp": "2026-05-22T02:46:26.126902"
+      "timestamp": "2026-05-22T08:53:35.992815"
     },
     "Yatak Odasi": {
       "category": "Yatak Odasi",
@@ -25,7 +25,7 @@
       "category_growth_30d": 0.085,
       "avg_review_count": 95,
       "price_competition_index": 0.75,
-      "timestamp": "2026-05-22T02:46:26.126908"
+      "timestamp": "2026-05-22T08:53:35.992822"
     },
     "Yemek Odasi": {
       "category": "Yemek Odasi",
@@ -37,7 +37,7 @@
       "category_growth_30d": -0.022,
       "avg_review_count": 90,
       "price_competition_index": 0.77,
-      "timestamp": "2026-05-22T02:46:26.126913"
+      "timestamp": "2026-05-22T08:53:35.992829"
     },
     "Ofis": {
       "category": "Ofis",
@@ -49,7 +49,7 @@
       "category_growth_30d": 0.067,
       "avg_review_count": 120,
       "price_competition_index": 0.69,
-      "timestamp": "2026-05-22T02:46:26.126918"
+      "timestamp": "2026-05-22T08:53:35.992834"
     },
     "Dekorasyon": {
       "category": "Dekorasyon",
@@ -61,7 +61,7 @@
       "category_growth_30d": 0.159,
       "avg_review_count": 133,
       "price_competition_index": 0.5,
-      "timestamp": "2026-05-22T02:46:26.126923"
+      "timestamp": "2026-05-22T08:53:35.992840"
     },
     "Banyo": {
       "category": "Banyo",
@@ -73,7 +73,7 @@
       "category_growth_30d": -0.045,
       "avg_review_count": 175,
       "price_competition_index": 0.66,
-      "timestamp": "2026-05-22T02:46:26.126928"
+      "timestamp": "2026-05-22T08:53:35.992846"
     },
     "Mutfak": {
       "category": "Mutfak",
@@ -85,7 +85,7 @@
       "category_growth_30d": 0.158,
       "avg_review_count": 117,
       "price_competition_index": 0.59,
-      "timestamp": "2026-05-22T02:46:26.126933"
+      "timestamp": "2026-05-22T08:53:35.992852"
     }
   }
 }
