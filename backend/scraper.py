@@ -195,6 +195,7 @@ def main():
     return products, trendyol, trends
 
 
+
 if __name__ == "__main__":
     main()
 
