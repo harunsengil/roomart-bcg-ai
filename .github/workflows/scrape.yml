@@ -32,8 +32,8 @@ jobs:
       - name: Run data scraper
         run: python backend/scraper.py
         env:
-          PYTHONUNBUFFERED: 1
-FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        PYTHONUNBUFFERED: 1
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         
 
       - name: Commit updated data
