@@ -188,9 +188,60 @@ def main():
         "keywords": trends
     })
 
+    db = init_firebase()
+    save_to_firebase(db, products, trendyol, trends)
+
     logger.info(f"Collection complete: {len(products)} products")
     return products, trendyol, trends
 
 
 if __name__ == "__main__":
     main()
+
+
+def init_firebase():
+    import os
+    import json
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+    
+    if firebase_admin._apps:
+        return firestore.client()
+    
+    service_account_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
+    if not service_account_json:
+        logger.warning("FIREBASE_SERVICE_ACCOUNT not set, skipping Firebase")
+        return None
+    
+    cred = credentials.Certificate(json.loads(service_account_json))
+    firebase_admin.initialize_app(cred)
+    return firestore.client()
+
+
+def save_to_firebase(db, products, trendyol, trends):
+    if not db:
+        return
+    try:
+        from datetime import timezone
+        now = datetime.now(timezone.utc)
+        batch = db.batch()
+        
+        ref = db.collection("snapshots").document(now.strftime("%Y-%m-%dT%H:%M"))
+        batch.set(ref, {
+            "timestamp": now,
+            "products": products,
+            "trendyol": trendyol,
+            "trends": trends,
+            "product_count": len(products)
+        })
+        
+        meta_ref = db.collection("meta").document("latest")
+        batch.set(meta_ref, {
+            "last_updated": now,
+            "product_count": len(products)
+        })
+        
+        batch.commit()
+        logger.info(f"Saved to Firebase: {len(products)} products")
+    except Exception as e:
+        logger.error(f"Firebase save failed: {e}")

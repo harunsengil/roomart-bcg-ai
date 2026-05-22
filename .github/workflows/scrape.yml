@@ -33,6 +33,7 @@ jobs:
         run: python backend/scraper.py
         env:
           PYTHONUNBUFFERED: 1
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Commit updated data
         run: |
