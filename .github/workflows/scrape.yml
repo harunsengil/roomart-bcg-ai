@@ -31,7 +31,7 @@ jobs:
 
       - name: Run data scraper
         run: python backend/scraper.py
-        env:
+      env:
         PYTHONUNBUFFERED: 1
         FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         
