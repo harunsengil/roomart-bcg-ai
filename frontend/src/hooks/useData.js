@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
@@ -12,21 +12,18 @@ async function fetchJSON(path) {
 }
 
 async function loadFromFirestore() {
-  const q = query(
-    collection(db, 'roomart-bcg-dev'),
-    orderBy('generated_at', 'desc'),
-    limit(1)
-  )
-  const snapshot = await getDocs(q)
-  if (snapshot.empty) throw new Error('Firestore: koleksiyon boş')
-  const doc = snapshot.docs[0].data()
+  // Direkt 'latest' dokümanını oku — orderBy/timestamp sorunu yok
+  const docRef = doc(db, 'roomart-bcg-dev', 'latest')
+  const snapshot = await getDoc(docRef)
+  if (!snapshot.exists()) throw new Error('Firestore: koleksiyon boş')
+  const d = snapshot.data()
   return {
-    kpis: doc.kpis,
-    categories: doc.categories,
-    quadrantDistribution: doc.quadrant_distribution,
-    trends: doc.trends,
-    alerts: doc.alerts,
-    generatedAt: doc.generated_at,
+    kpis: d.kpis,
+    categories: d.categories,
+    quadrantDistribution: d.quadrant_distribution,
+    trends: d.trends,
+    alerts: d.alerts,
+    generatedAt: d.generated_at,
   }
 }
 
