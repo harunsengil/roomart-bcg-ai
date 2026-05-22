@@ -169,37 +169,6 @@ def save_json(filename, data):
     logger.info(f"Saved {path}")
 
 
-def main():
-    logger.info("Starting RoomArt data collection...")
-    products = generate_products()
-    trendyol = get_trendyol_data()
-    trends = get_trends_data()
-
-    save_json("products.json", {
-        "metadata": {"total": len(products), "last_updated": datetime.now().isoformat()},
-        "products": products
-    })
-    save_json("trendyol.json", {
-        "metadata": {"last_updated": datetime.now().isoformat()},
-        "categories": trendyol
-    })
-    save_json("trends.json", {
-        "metadata": {"last_updated": datetime.now().isoformat()},
-        "keywords": trends
-    })
-
-    db = init_firebase()
-    save_to_firebase(db, products, trendyol, trends)
-
-    logger.info(f"Collection complete: {len(products)} products")
-    return products, trendyol, trends
-
-
-
-if __name__ == "__main__":
-    main()
-
-
 def init_firebase():
     import os
     import json
@@ -246,3 +215,35 @@ def save_to_firebase(db, products, trendyol, trends):
         logger.info(f"Saved to Firebase: {len(products)} products")
     except Exception as e:
         logger.error(f"Firebase save failed: {e}")
+
+def main():
+    logger.info("Starting RoomArt data collection...")
+    products = generate_products()
+    trendyol = get_trendyol_data()
+    trends = get_trends_data()
+
+    save_json("products.json", {
+        "metadata": {"total": len(products), "last_updated": datetime.now().isoformat()},
+        "products": products
+    })
+    save_json("trendyol.json", {
+        "metadata": {"last_updated": datetime.now().isoformat()},
+        "categories": trendyol
+    })
+    save_json("trends.json", {
+        "metadata": {"last_updated": datetime.now().isoformat()},
+        "keywords": trends
+    })
+
+    db = init_firebase()
+    save_to_firebase(db, products, trendyol, trends)
+
+    logger.info(f"Collection complete: {len(products)} products")
+    return products, trendyol, trends
+
+
+
+if __name__ == "__main__":
+    main()
+
+
