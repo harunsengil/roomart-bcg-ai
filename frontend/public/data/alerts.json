@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-22T16:55:20.561692",
+    "last_updated": "2026-05-22T17:37:13.475102",
     "total_alerts": 2
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Kose Koltuk is top STAR product",
       "message": "Classic Kose Koltuk leads category with 88 share score and 74 growth score.",
       "product_id": "RA-1008",
-      "timestamp": "2026-05-22T16:55:20.561551"
+      "timestamp": "2026-05-22T17:37:13.474951"
     },
     {
       "id": "alert-2",
@@ -20,7 +20,7 @@
       "title": "Aydinlatma is top STAR product",
       "message": "Vega Aydinlatma leads category with 84 share score and 73 growth score.",
       "product_id": "RA-1066",
-      "timestamp": "2026-05-22T16:55:20.561551"
+      "timestamp": "2026-05-22T17:37:13.474951"
     }
   ]
 }
