@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb } from 'lucide-react'
+import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Bot } from 'lucide-react'
 import Header from './components/Header'
 import KPISection from './components/KPISection'
 import BCGMatrix from './components/BCGMatrix'
@@ -8,6 +8,7 @@ import CategoryPanel from './components/CategoryPanel'
 import { TrendGrid, TrendAreaChart, ScoreRadarChart } from './components/TrendCharts'
 import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
+import BatchRunner from './components/BatchRunner'
 import { useTheme } from './hooks/useTheme'
 
 const TABS = [
@@ -15,6 +16,7 @@ const TABS = [
   { id: 'trends',    label: 'Trends',           icon: TrendingUp },
   { id: 'alerts',    label: 'Alerts & Signals', icon: Bell },
   { id: 'strategy',  label: 'AI Strategy',      icon: Lightbulb },
+  { id: 'batch',     label: 'Batch Runner',      icon: Bot },
 ]
 
 function LoadingScreen() {
@@ -188,6 +190,11 @@ export default function App() {
                   <ScoreRadarChart categories={data?.categories} />
                 </div>
               </div>
+            )}
+
+            {/* ── BATCH RUNNER ── */}
+            {activeTab === 'batch' && (
+              <BatchRunner />
             )}
 
             {/* ── AI STRATEGY ── */}
