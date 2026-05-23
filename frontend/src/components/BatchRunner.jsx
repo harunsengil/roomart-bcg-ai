@@ -3,7 +3,7 @@ import { Play, Square, RotateCcw, Flame, AlertTriangle, CheckCircle, Clock } fro
 
 const PRODUCTS = ['Çamaşır Makinesi Dolabı','Lavabolu Banyo Dolabı','Mutfak Adası','Kitaplıklı Çalışma Masası','Sehpa']
 const FIREBASE_URL = 'https://roomart-bcg-ai-default-rtdb.europe-west1.firebasedatabase.app'
-const MODEL = 'google/gemini-2.5-flash:free'
+const MODEL = 'google/gemini-2.5-flash-preview:free'
 const BCG_COLORS = {
   'Star':          { bg:'bg-yellow-500/10', text:'text-yellow-400', border:'border-yellow-500/30' },
   'Cash Cow':      { bg:'bg-green-500/10',  text:'text-green-400',  border:'border-green-500/30'  },
