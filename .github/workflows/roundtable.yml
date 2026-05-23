@@ -1,0 +1,50 @@
+name: BCG Roundtable Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Tetikleme sebebi (opsiyonel)'
+        required: false
+        default: 'Manuel analiz'
+
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  roundtable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run BCG Roundtable
+        env:
+          ANTHROPIC_API_KEY: \${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Tetikleme: \${{ github.event.inputs.reason || 'Otomatik zamanlama' }}"
+          python backend/roundtable.py
+
+      - name: Trigger dashboard deploy
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            })
+            console.log('Dashboard deploy tetiklendi')
