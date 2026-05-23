@@ -16,14 +16,21 @@ function parseBCG(t) {
   if (u.includes('QUESTION')||u.includes('SORU')) return 'Question Mark'
   return 'Dog'
 }
-async function callClaude(apiKey, system, messages) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system,messages})
-  })
+async function callGemini(apiKey, system, userMessage) {
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: system + '\n\n' + userMessage }] }],
+        generationConfig: { maxOutputTokens: 1000, temperature: 0.7 }
+      })
+    }
+  )
   if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e?.error?.message||`HTTP ${res.status}`) }
-  return (await res.json()).content?.[0]?.text || ''
+  const data = await res.json()
+  return data.candidates?.[0]?.content?.parts?.[0]?.text || ''
 }
 async function writeFirebase(product, payload) {
   const key = product.replace(/\s+/g,'_').replace(/[^\w\u00C0-\u024F]/g,'')
@@ -33,7 +40,7 @@ async function writeFirebase(product, payload) {
 export default function BatchRunner() {
   const [apiKey,setApiKey] = useState('')
   const [results,setResults] = useState(PRODUCTS.map(()=>({status:'pending',bcg:null})))
-  const [logs,setLogs] = useState([{type:'info',msg:"API key gir ve Başlat'a tıkla."}])
+  const [logs,setLogs] = useState([{type:'info',msg:"Gemini API key gir ve Başlat'a tıkla."}])
   const [running,setRunning] = useState(false)
   const [stats,setStats] = useState({done:0,err:0,fire:0,elapsed:null})
   const stopRef = useRef(false)
@@ -43,10 +50,10 @@ export default function BatchRunner() {
   const reset = () => { if(running)return; setResults(PRODUCTS.map(()=>({status:'pending',bcg:null}))); setLogs([{type:'info',msg:'Sıfırlandı.'}]); setStats({done:0,err:0,fire:0,elapsed:null}) }
   const run = async () => {
     if(running)return
-    if(!apiKey.trim()){addLog('API key gerekli!','err');return}
+    if(!apiKey.trim()){addLog('Gemini API key gerekli!','err');return}
     stopRef.current=false; setRunning(true); startRef.current=Date.now()
     let done=0,err=0,fire=0
-    addLog('━━━ Batch başladı ━━━','ok')
+    addLog('━━━ Batch başladı (Gemini 1.5 Flash) ━━━','ok')
     for(let i=0;i<PRODUCTS.length;i++){
       if(stopRef.current){addLog('Durduruldu.','warn');break}
       const product=PRODUCTS[i]
@@ -54,11 +61,11 @@ export default function BatchRunner() {
       addLog(`[${i+1}/5] ${product}`,'info')
       try{
         addLog('  ↳ Pazarlama Direktörü…','info')
-        const mkt = await callClaude(apiKey,'Sen Akar Mutfak Mobilyaları Pazarlama Direktörüsün. Rakipler: Rani Mobilya, Kenzlife, Bofigo. Türkçe, 2 paragraf, sayısal tahminlerle.',[{role:'user',content:`BCG analizi: "${product}" — pazar büyümesi ve rekabetçi konum.`}])
+        const mkt = await callGemini(apiKey,'Sen Akar Mutfak Mobilyaları Pazarlama Direktörüsün. Rakipler: Rani Mobilya, Kenzlife, Bofigo. Türkçe, 2 paragraf, sayısal tahminlerle.',`BCG analizi: "${product}" — pazar büyümesi ve rekabetçi konum.`)
         addLog('  ↳ IT Direktörü…','info')
-        const it = await callClaude(apiKey,'Sen Akar Mutfak Mobilyaları IT Direktörüsün. Pazarlama analizindeki veri güvenilirliğini değerlendir. Türkçe, 2 paragraf.',[{role:'user',content:`Ürün: "${product}"\nPazarlama:\n${mkt}\n\nVeri güvenilirliği?`}])
+        const it = await callGemini(apiKey,'Sen Akar Mutfak Mobilyaları IT Direktörüsün. Pazarlama analizindeki veri güvenilirliğini değerlendir. Türkçe, 2 paragraf.',`Ürün: "${product}"\nPazarlama:\n${mkt}\n\nVeri güvenilirliği?`)
         addLog('  ↳ Strateji Direktörü (JSON)…','info')
-        const csoRaw = await callClaude(apiKey,`Sen Akar Mutfak Mobilyaları Strateji Direktörüsün. YALNIZCA şu JSON ile yanıt ver:\n{"bcg":"Star|Cash Cow|Question Mark|Dog","gerekce":"max 1 cümle","strateji":"max 1 cümle","metrikler":["m1","m2","m3"]}`,[{role:'user',content:`Ürün: "${product}"\nPazarlama: ${mkt.slice(0,400)}\nIT: ${it.slice(0,300)}\n\nBCG kararı ver.`}])
+        const csoRaw = await callGemini(apiKey,`Sen Akar Mutfak Mobilyaları Strateji Direktörüsün. YALNIZCA şu JSON ile yanıt ver, başka hiçbir şey yazma:\n{"bcg":"Star|Cash Cow|Question Mark|Dog","gerekce":"max 1 cümle","strateji":"max 1 cümle","metrikler":["m1","m2","m3"]}`,`Ürün: "${product}"\nPazarlama: ${mkt.slice(0,400)}\nIT: ${it.slice(0,300)}\n\nBCG kararı ver.`)
         let cso={}
         try{cso=JSON.parse(csoRaw.replace(/```json|```/g,'').trim())}
         catch{cso={bcg:parseBCG(csoRaw),gerekce:csoRaw.slice(0,120),strateji:'—',metrikler:[]};addLog('  ⚠ JSON fallback','warn')}
@@ -69,7 +76,7 @@ export default function BatchRunner() {
         if(ok){fire++;addLog('  🔥 Firebase yazıldı','fire')}else addLog('  ⚠ Firebase yazma başarısız','warn')
       }catch(e){updateResult(i,{status:'error'});err++;addLog(`  ✗ ${product}: ${e.message}`,'err')}
       setStats({done,err,fire,elapsed:((Date.now()-startRef.current)/1000).toFixed(1)})
-      if(i<PRODUCTS.length-1&&!stopRef.current){addLog('  ⏳ 3 sn…','info');await new Promise(r=>setTimeout(r,3000))}
+      if(i<PRODUCTS.length-1&&!stopRef.current){addLog('  ⏳ 4 sn…','info');await new Promise(r=>setTimeout(r,4000))}
     }
     setStats(s=>({...s,elapsed:((Date.now()-startRef.current)/1000).toFixed(1)}))
     addLog(`━━━ Bitti — ${done} başarı, ${err} hata, ${fire} Firebase yazma ━━━`,'ok')
@@ -89,8 +96,8 @@ export default function BatchRunner() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <label className="text-xs font-mono tracking-widest shrink-0" style={{color:'var(--text-muted)'}}>ANTHROPIC API KEY</label>
-          <input type="password" value={apiKey} onChange={e=>setApiKey(e.target.value)} placeholder="sk-ant-..." className="flex-1 bg-black/30 border rounded-lg px-3 py-2 text-xs font-mono text-white/80 outline-none focus:border-yellow-500/50 transition-colors placeholder:text-white/15" style={{borderColor:'var(--border-subtle)'}} disabled={running}/>
+          <label className="text-xs font-mono tracking-widest shrink-0" style={{color:'var(--text-muted)'}}>GEMINI API KEY</label>
+          <input type="password" value={apiKey} onChange={e=>setApiKey(e.target.value)} placeholder="AIza..." className="flex-1 bg-black/30 border rounded-lg px-3 py-2 text-xs font-mono text-white/80 outline-none focus:border-yellow-500/50 transition-colors placeholder:text-white/15" style={{borderColor:'var(--border-subtle)'}} disabled={running}/>
           <button onClick={run} disabled={running||!apiKey.trim()} className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono font-medium tracking-widest transition-all disabled:opacity-30 disabled:cursor-not-allowed" style={{background:'var(--gold)',color:'#000'}}><Play size={12}/>BAŞLAT</button>
           <button onClick={()=>{stopRef.current=true}} disabled={!running} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono border border-white/10 text-white/50 hover:border-red-500/40 hover:text-red-400 transition-all disabled:opacity-30 disabled:cursor-not-allowed"><Square size={12}/></button>
           <button onClick={reset} disabled={running} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono border border-white/10 text-white/50 hover:border-white/30 transition-all disabled:opacity-30 disabled:cursor-not-allowed"><RotateCcw size={12}/></button>
