@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-25T15:19:01.514471"
+    "last_updated": "2026-05-25T19:48:53.679215"
   },
   "categories": {
     "Oturma Odasi": {
@@ -13,7 +13,7 @@
       "category_growth_30d": 0.285,
       "avg_review_count": 19,
       "price_competition_index": 0.59,
-      "timestamp": "2026-05-25T15:19:01.510255"
+      "timestamp": "2026-05-25T19:48:53.675014"
     },
     "Yatak Odasi": {
       "category": "Yatak Odasi",
@@ -25,7 +25,7 @@
       "category_growth_30d": 0.085,
       "avg_review_count": 95,
       "price_competition_index": 0.75,
-      "timestamp": "2026-05-25T15:19:01.510261"
+      "timestamp": "2026-05-25T19:48:53.675020"
     },
     "Yemek Odasi": {
       "category": "Yemek Odasi",
@@ -37,7 +37,7 @@
       "category_growth_30d": -0.022,
       "avg_review_count": 90,
       "price_competition_index": 0.77,
-      "timestamp": "2026-05-25T15:19:01.510267"
+      "timestamp": "2026-05-25T19:48:53.675026"
     },
     "Ofis": {
       "category": "Ofis",
@@ -49,7 +49,7 @@
       "category_growth_30d": 0.067,
       "avg_review_count": 120,
       "price_competition_index": 0.69,
-      "timestamp": "2026-05-25T15:19:01.510272"
+      "timestamp": "2026-05-25T19:48:53.675031"
     },
     "Dekorasyon": {
       "category": "Dekorasyon",
@@ -61,7 +61,7 @@
       "category_growth_30d": 0.159,
       "avg_review_count": 133,
       "price_competition_index": 0.5,
-      "timestamp": "2026-05-25T15:19:01.510277"
+      "timestamp": "2026-05-25T19:48:53.675036"
     },
     "Banyo": {
       "category": "Banyo",
@@ -73,7 +73,7 @@
       "category_growth_30d": -0.045,
       "avg_review_count": 175,
       "price_competition_index": 0.66,
-      "timestamp": "2026-05-25T15:19:01.510282"
+      "timestamp": "2026-05-25T19:48:53.675041"
     },
     "Mutfak": {
       "category": "Mutfak",
@@ -85,7 +85,7 @@
       "category_growth_30d": 0.158,
       "avg_review_count": 117,
       "price_competition_index": 0.59,
-      "timestamp": "2026-05-25T15:19:01.510287"
+      "timestamp": "2026-05-25T19:48:53.675046"
     }
   }
 }
