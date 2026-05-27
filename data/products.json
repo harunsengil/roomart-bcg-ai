@@ -1,7 +1,7 @@
 {
   "metadata": {
     "total": 100,
-    "last_updated": "2026-05-27T04:18:18.928173"
+    "last_updated": "2026-05-27T10:05:04.483650"
   },
   "products": [
     {
@@ -22,7 +22,7 @@
       "colors_available": 7,
       "return_rate": 0.012,
       "margin": 0.278,
-      "last_updated": "2026-05-27T04:18:18.925671"
+      "last_updated": "2026-05-27T10:05:04.481155"
     },
     {
       "id": "RA-1001",
@@ -42,7 +42,7 @@
       "colors_available": 4,
       "return_rate": 0.041,
       "margin": 0.333,
-      "last_updated": "2026-05-27T04:18:18.925695"
+      "last_updated": "2026-05-27T10:05:04.481180"
     },
     {
       "id": "RA-1002",
@@ -62,7 +62,7 @@
       "colors_available": 2,
       "return_rate": 0.016,
       "margin": 0.279,
-      "last_updated": "2026-05-27T04:18:18.925711"
+      "last_updated": "2026-05-27T10:05:04.481199"
     },
     {
       "id": "RA-1003",
@@ -82,7 +82,7 @@
       "colors_available": 2,
       "return_rate": 0.049,
       "margin": 0.499,
-      "last_updated": "2026-05-27T04:18:18.925728"
+      "last_updated": "2026-05-27T10:05:04.481212"
     },
     {
       "id": "RA-1004",
@@ -102,7 +102,7 @@
       "colors_available": 4,
       "return_rate": 0.071,
       "margin": 0.364,
-      "last_updated": "2026-05-27T04:18:18.925741"
+      "last_updated": "2026-05-27T10:05:04.481225"
     },
     {
       "id": "RA-1005",
@@ -122,7 +122,7 @@
       "colors_available": 2,
       "return_rate": 0.053,
       "margin": 0.301,
-      "last_updated": "2026-05-27T04:18:18.925758"
+      "last_updated": "2026-05-27T10:05:04.481242"
     },
     {
       "id": "RA-1006",
@@ -142,7 +142,7 @@
       "colors_available": 6,
       "return_rate": 0.069,
       "margin": 0.483,
-      "last_updated": "2026-05-27T04:18:18.925773"
+      "last_updated": "2026-05-27T10:05:04.481258"
     },
     {
       "id": "RA-1007",
@@ -162,7 +162,7 @@
       "colors_available": 6,
       "return_rate": 0.025,
       "margin": 0.4,
-      "last_updated": "2026-05-27T04:18:18.925789"
+      "last_updated": "2026-05-27T10:05:04.481274"
     },
     {
       "id": "RA-1008",
@@ -182,7 +182,7 @@
       "colors_available": 7,
       "return_rate": 0.035,
       "margin": 0.549,
-      "last_updated": "2026-05-27T04:18:18.925800"
+      "last_updated": "2026-05-27T10:05:04.481284"
     },
     {
       "id": "RA-1009",
@@ -202,7 +202,7 @@
       "colors_available": 3,
       "return_rate": 0.065,
       "margin": 0.377,
-      "last_updated": "2026-05-27T04:18:18.925823"
+      "last_updated": "2026-05-27T10:05:04.481291"
     },
     {
       "id": "RA-1010",
@@ -222,7 +222,7 @@
       "colors_available": 2,
       "return_rate": 0.058,
       "margin": 0.411,
-      "last_updated": "2026-05-27T04:18:18.925833"
+      "last_updated": "2026-05-27T10:05:04.481297"
     },
     {
       "id": "RA-1011",
@@ -242,7 +242,7 @@
       "colors_available": 5,
       "return_rate": 0.078,
       "margin": 0.479,
-      "last_updated": "2026-05-27T04:18:18.925840"
+      "last_updated": "2026-05-27T10:05:04.481303"
     },
     {
       "id": "RA-1012",
@@ -262,7 +262,7 @@
       "colors_available": 4,
       "return_rate": 0.021,
       "margin": 0.479,
-      "last_updated": "2026-05-27T04:18:18.925846"
+      "last_updated": "2026-05-27T10:05:04.481309"
     },
     {
       "id": "RA-1013",
@@ -282,7 +282,7 @@
       "colors_available": 1,
       "return_rate": 0.027,
       "margin": 0.42,
-      "last_updated": "2026-05-27T04:18:18.925853"
+      "last_updated": "2026-05-27T10:05:04.481316"
     },
     {
       "id": "RA-1014",
@@ -302,7 +302,7 @@
       "colors_available": 3,
       "return_rate": 0.056,
       "margin": 0.534,
-      "last_updated": "2026-05-27T04:18:18.925859"
+      "last_updated": "2026-05-27T10:05:04.481322"
     },
     {
       "id": "RA-1015",
@@ -322,7 +322,7 @@
       "colors_available": 4,
       "return_rate": 0.06,
       "margin": 0.37,
-      "last_updated": "2026-05-27T04:18:18.925865"
+      "last_updated": "2026-05-27T10:05:04.481329"
     },
     {
       "id": "RA-1016",
@@ -342,7 +342,7 @@
       "colors_available": 1,
       "return_rate": 0.051,
       "margin": 0.319,
-      "last_updated": "2026-05-27T04:18:18.925877"
+      "last_updated": "2026-05-27T10:05:04.481341"
     },
     {
       "id": "RA-1017",
@@ -362,7 +362,7 @@
       "colors_available": 6,
       "return_rate": 0.015,
       "margin": 0.321,
-      "last_updated": "2026-05-27T04:18:18.925882"
+      "last_updated": "2026-05-27T10:05:04.481346"
     },
     {
       "id": "RA-1018",
@@ -382,7 +382,7 @@
       "colors_available": 8,
       "return_rate": 0.067,
       "margin": 0.307,
-      "last_updated": "2026-05-27T04:18:18.925889"
+      "last_updated": "2026-05-27T10:05:04.481352"
     },
     {
       "id": "RA-1019",
@@ -402,7 +402,7 @@
       "colors_available": 2,
       "return_rate": 0.014,
       "margin": 0.468,
-      "last_updated": "2026-05-27T04:18:18.925894"
+      "last_updated": "2026-05-27T10:05:04.481358"
     },
     {
       "id": "RA-1020",
@@ -422,7 +422,7 @@
       "colors_available": 8,
       "return_rate": 0.027,
       "margin": 0.527,
-      "last_updated": "2026-05-27T04:18:18.925900"
+      "last_updated": "2026-05-27T10:05:04.481364"
     },
     {
       "id": "RA-1021",
@@ -442,7 +442,7 @@
       "colors_available": 2,
       "return_rate": 0.075,
       "margin": 0.505,
-      "last_updated": "2026-05-27T04:18:18.925906"
+      "last_updated": "2026-05-27T10:05:04.481372"
     },
     {
       "id": "RA-1022",
@@ -462,7 +462,7 @@
       "colors_available": 7,
       "return_rate": 0.01,
       "margin": 0.367,
-      "last_updated": "2026-05-27T04:18:18.925913"
+      "last_updated": "2026-05-27T10:05:04.481378"
     },
     {
       "id": "RA-1023",
@@ -482,7 +482,7 @@
       "colors_available": 4,
       "return_rate": 0.031,
       "margin": 0.541,
-      "last_updated": "2026-05-27T04:18:18.925919"
+      "last_updated": "2026-05-27T10:05:04.481384"
     },
     {
       "id": "RA-1024",
@@ -502,7 +502,7 @@
       "colors_available": 3,
       "return_rate": 0.014,
       "margin": 0.402,
-      "last_updated": "2026-05-27T04:18:18.925925"
+      "last_updated": "2026-05-27T10:05:04.481390"
     },
     {
       "id": "RA-1025",
@@ -522,7 +522,7 @@
       "colors_available": 1,
       "return_rate": 0.053,
       "margin": 0.376,
-      "last_updated": "2026-05-27T04:18:18.925931"
+      "last_updated": "2026-05-27T10:05:04.481396"
     },
     {
       "id": "RA-1026",
@@ -542,7 +542,7 @@
       "colors_available": 4,
       "return_rate": 0.029,
       "margin": 0.289,
-      "last_updated": "2026-05-27T04:18:18.925939"
+      "last_updated": "2026-05-27T10:05:04.481403"
     },
     {
       "id": "RA-1027",
@@ -562,7 +562,7 @@
       "colors_available": 2,
       "return_rate": 0.015,
       "margin": 0.314,
-      "last_updated": "2026-05-27T04:18:18.925944"
+      "last_updated": "2026-05-27T10:05:04.481409"
     },
     {
       "id": "RA-1028",
@@ -582,7 +582,7 @@
       "colors_available": 8,
       "return_rate": 0.068,
       "margin": 0.461,
-      "last_updated": "2026-05-27T04:18:18.925951"
+      "last_updated": "2026-05-27T10:05:04.481415"
     },
     {
       "id": "RA-1029",
@@ -602,7 +602,7 @@
       "colors_available": 2,
       "return_rate": 0.076,
       "margin": 0.29,
-      "last_updated": "2026-05-27T04:18:18.925956"
+      "last_updated": "2026-05-27T10:05:04.481420"
     },
     {
       "id": "RA-1030",
@@ -622,7 +622,7 @@
       "colors_available": 6,
       "return_rate": 0.024,
       "margin": 0.44,
-      "last_updated": "2026-05-27T04:18:18.925962"
+      "last_updated": "2026-05-27T10:05:04.481426"
     },
     {
       "id": "RA-1031",
@@ -642,7 +642,7 @@
       "colors_available": 7,
       "return_rate": 0.068,
       "margin": 0.263,
-      "last_updated": "2026-05-27T04:18:18.925968"
+      "last_updated": "2026-05-27T10:05:04.481431"
     },
     {
       "id": "RA-1032",
@@ -662,7 +662,7 @@
       "colors_available": 1,
       "return_rate": 0.018,
       "margin": 0.534,
-      "last_updated": "2026-05-27T04:18:18.925974"
+      "last_updated": "2026-05-27T10:05:04.481438"
     },
     {
       "id": "RA-1033",
@@ -682,7 +682,7 @@
       "colors_available": 1,
       "return_rate": 0.032,
       "margin": 0.52,
-      "last_updated": "2026-05-27T04:18:18.925979"
+      "last_updated": "2026-05-27T10:05:04.481443"
     },
     {
       "id": "RA-1034",
@@ -702,7 +702,7 @@
       "colors_available": 7,
       "return_rate": 0.078,
       "margin": 0.475,
-      "last_updated": "2026-05-27T04:18:18.925985"
+      "last_updated": "2026-05-27T10:05:04.481450"
     },
     {
       "id": "RA-1035",
@@ -722,7 +722,7 @@
       "colors_available": 3,
       "return_rate": 0.062,
       "margin": 0.35,
-      "last_updated": "2026-05-27T04:18:18.925991"
+      "last_updated": "2026-05-27T10:05:04.481456"
     },
     {
       "id": "RA-1036",
@@ -742,7 +742,7 @@
       "colors_available": 4,
       "return_rate": 0.024,
       "margin": 0.526,
-      "last_updated": "2026-05-27T04:18:18.925999"
+      "last_updated": "2026-05-27T10:05:04.481464"
     },
     {
       "id": "RA-1037",
@@ -762,7 +762,7 @@
       "colors_available": 6,
       "return_rate": 0.03,
       "margin": 0.271,
-      "last_updated": "2026-05-27T04:18:18.926004"
+      "last_updated": "2026-05-27T10:05:04.481469"
     },
     {
       "id": "RA-1038",
@@ -782,7 +782,7 @@
       "colors_available": 1,
       "return_rate": 0.018,
       "margin": 0.541,
-      "last_updated": "2026-05-27T04:18:18.926010"
+      "last_updated": "2026-05-27T10:05:04.481475"
     },
     {
       "id": "RA-1039",
@@ -802,7 +802,7 @@
       "colors_available": 6,
       "return_rate": 0.041,
       "margin": 0.545,
-      "last_updated": "2026-05-27T04:18:18.926018"
+      "last_updated": "2026-05-27T10:05:04.481487"
     },
     {
       "id": "RA-1040",
@@ -822,7 +822,7 @@
       "colors_available": 4,
       "return_rate": 0.035,
       "margin": 0.271,
-      "last_updated": "2026-05-27T04:18:18.926028"
+      "last_updated": "2026-05-27T10:05:04.481495"
     },
     {
       "id": "RA-1041",
@@ -842,7 +842,7 @@
       "colors_available": 7,
       "return_rate": 0.033,
       "margin": 0.459,
-      "last_updated": "2026-05-27T04:18:18.926034"
+      "last_updated": "2026-05-27T10:05:04.481502"
     },
     {
       "id": "RA-1042",
@@ -862,7 +862,7 @@
       "colors_available": 5,
       "return_rate": 0.038,
       "margin": 0.5,
-      "last_updated": "2026-05-27T04:18:18.926040"
+      "last_updated": "2026-05-27T10:05:04.481508"
     },
     {
       "id": "RA-1043",
@@ -882,7 +882,7 @@
       "colors_available": 8,
       "return_rate": 0.041,
       "margin": 0.314,
-      "last_updated": "2026-05-27T04:18:18.926045"
+      "last_updated": "2026-05-27T10:05:04.481513"
     },
     {
       "id": "RA-1044",
@@ -902,7 +902,7 @@
       "colors_available": 6,
       "return_rate": 0.017,
       "margin": 0.536,
-      "last_updated": "2026-05-27T04:18:18.926050"
+      "last_updated": "2026-05-27T10:05:04.481519"
     },
     {
       "id": "RA-1045",
@@ -922,7 +922,7 @@
       "colors_available": 2,
       "return_rate": 0.042,
       "margin": 0.516,
-      "last_updated": "2026-05-27T04:18:18.926056"
+      "last_updated": "2026-05-27T10:05:04.481525"
     },
     {
       "id": "RA-1046",
@@ -942,7 +942,7 @@
       "colors_available": 1,
       "return_rate": 0.072,
       "margin": 0.508,
-      "last_updated": "2026-05-27T04:18:18.926064"
+      "last_updated": "2026-05-27T10:05:04.481532"
     },
     {
       "id": "RA-1047",
@@ -962,7 +962,7 @@
       "colors_available": 2,
       "return_rate": 0.042,
       "margin": 0.49,
-      "last_updated": "2026-05-27T04:18:18.926069"
+      "last_updated": "2026-05-27T10:05:04.481539"
     },
     {
       "id": "RA-1048",
@@ -982,7 +982,7 @@
       "colors_available": 8,
       "return_rate": 0.073,
       "margin": 0.473,
-      "last_updated": "2026-05-27T04:18:18.926076"
+      "last_updated": "2026-05-27T10:05:04.481545"
     },
     {
       "id": "RA-1049",
@@ -1002,7 +1002,7 @@
       "colors_available": 4,
       "return_rate": 0.029,
       "margin": 0.273,
-      "last_updated": "2026-05-27T04:18:18.926081"
+      "last_updated": "2026-05-27T10:05:04.481551"
     },
     {
       "id": "RA-1050",
@@ -1022,7 +1022,7 @@
       "colors_available": 4,
       "return_rate": 0.037,
       "margin": 0.296,
-      "last_updated": "2026-05-27T04:18:18.926087"
+      "last_updated": "2026-05-27T10:05:04.481557"
     },
     {
       "id": "RA-1051",
@@ -1042,7 +1042,7 @@
       "colors_available": 7,
       "return_rate": 0.037,
       "margin": 0.481,
-      "last_updated": "2026-05-27T04:18:18.926092"
+      "last_updated": "2026-05-27T10:05:04.481563"
     },
     {
       "id": "RA-1052",
@@ -1062,7 +1062,7 @@
       "colors_available": 7,
       "return_rate": 0.048,
       "margin": 0.47,
-      "last_updated": "2026-05-27T04:18:18.926098"
+      "last_updated": "2026-05-27T10:05:04.481569"
     },
     {
       "id": "RA-1053",
@@ -1082,7 +1082,7 @@
       "colors_available": 6,
       "return_rate": 0.057,
       "margin": 0.489,
-      "last_updated": "2026-05-27T04:18:18.926104"
+      "last_updated": "2026-05-27T10:05:04.481575"
     },
     {
       "id": "RA-1054",
@@ -1102,7 +1102,7 @@
       "colors_available": 1,
       "return_rate": 0.016,
       "margin": 0.379,
-      "last_updated": "2026-05-27T04:18:18.926110"
+      "last_updated": "2026-05-27T10:05:04.481581"
     },
     {
       "id": "RA-1055",
@@ -1122,7 +1122,7 @@
       "colors_available": 7,
       "return_rate": 0.029,
       "margin": 0.535,
-      "last_updated": "2026-05-27T04:18:18.926116"
+      "last_updated": "2026-05-27T10:05:04.481587"
     },
     {
       "id": "RA-1056",
@@ -1142,7 +1142,7 @@
       "colors_available": 4,
       "return_rate": 0.056,
       "margin": 0.484,
-      "last_updated": "2026-05-27T04:18:18.926124"
+      "last_updated": "2026-05-27T10:05:04.481595"
     },
     {
       "id": "RA-1057",
@@ -1162,7 +1162,7 @@
       "colors_available": 8,
       "return_rate": 0.057,
       "margin": 0.419,
-      "last_updated": "2026-05-27T04:18:18.926131"
+      "last_updated": "2026-05-27T10:05:04.481603"
     },
     {
       "id": "RA-1058",
@@ -1182,7 +1182,7 @@
       "colors_available": 3,
       "return_rate": 0.078,
       "margin": 0.282,
-      "last_updated": "2026-05-27T04:18:18.926140"
+      "last_updated": "2026-05-27T10:05:04.481611"
     },
     {
       "id": "RA-1059",
@@ -1202,7 +1202,7 @@
       "colors_available": 4,
       "return_rate": 0.017,
       "margin": 0.482,
-      "last_updated": "2026-05-27T04:18:18.926146"
+      "last_updated": "2026-05-27T10:05:04.481618"
     },
     {
       "id": "RA-1060",
@@ -1222,7 +1222,7 @@
       "colors_available": 7,
       "return_rate": 0.056,
       "margin": 0.271,
-      "last_updated": "2026-05-27T04:18:18.926152"
+      "last_updated": "2026-05-27T10:05:04.481623"
     },
     {
       "id": "RA-1061",
@@ -1242,7 +1242,7 @@
       "colors_available": 8,
       "return_rate": 0.06,
       "margin": 0.381,
-      "last_updated": "2026-05-27T04:18:18.926158"
+      "last_updated": "2026-05-27T10:05:04.481630"
     },
     {
       "id": "RA-1062",
@@ -1262,7 +1262,7 @@
       "colors_available": 8,
       "return_rate": 0.04,
       "margin": 0.469,
-      "last_updated": "2026-05-27T04:18:18.926164"
+      "last_updated": "2026-05-27T10:05:04.481636"
     },
     {
       "id": "RA-1063",
@@ -1282,7 +1282,7 @@
       "colors_available": 8,
       "return_rate": 0.05,
       "margin": 0.45,
-      "last_updated": "2026-05-27T04:18:18.926170"
+      "last_updated": "2026-05-27T10:05:04.481642"
     },
     {
       "id": "RA-1064",
@@ -1302,7 +1302,7 @@
       "colors_available": 6,
       "return_rate": 0.03,
       "margin": 0.429,
-      "last_updated": "2026-05-27T04:18:18.926178"
+      "last_updated": "2026-05-27T10:05:04.481650"
     },
     {
       "id": "RA-1065",
@@ -1322,7 +1322,7 @@
       "colors_available": 4,
       "return_rate": 0.058,
       "margin": 0.444,
-      "last_updated": "2026-05-27T04:18:18.926184"
+      "last_updated": "2026-05-27T10:05:04.481657"
     },
     {
       "id": "RA-1066",
@@ -1342,7 +1342,7 @@
       "colors_available": 6,
       "return_rate": 0.043,
       "margin": 0.409,
-      "last_updated": "2026-05-27T04:18:18.926191"
+      "last_updated": "2026-05-27T10:05:04.481664"
     },
     {
       "id": "RA-1067",
@@ -1362,7 +1362,7 @@
       "colors_available": 5,
       "return_rate": 0.026,
       "margin": 0.466,
-      "last_updated": "2026-05-27T04:18:18.926197"
+      "last_updated": "2026-05-27T10:05:04.481670"
     },
     {
       "id": "RA-1068",
@@ -1382,7 +1382,7 @@
       "colors_available": 8,
       "return_rate": 0.029,
       "margin": 0.427,
-      "last_updated": "2026-05-27T04:18:18.926203"
+      "last_updated": "2026-05-27T10:05:04.481676"
     },
     {
       "id": "RA-1069",
@@ -1402,7 +1402,7 @@
       "colors_available": 3,
       "return_rate": 0.029,
       "margin": 0.542,
-      "last_updated": "2026-05-27T04:18:18.926209"
+      "last_updated": "2026-05-27T10:05:04.481682"
     },
     {
       "id": "RA-1070",
@@ -1422,7 +1422,7 @@
       "colors_available": 1,
       "return_rate": 0.05,
       "margin": 0.391,
-      "last_updated": "2026-05-27T04:18:18.926214"
+      "last_updated": "2026-05-27T10:05:04.481688"
     },
     {
       "id": "RA-1071",
@@ -1442,7 +1442,7 @@
       "colors_available": 2,
       "return_rate": 0.038,
       "margin": 0.272,
-      "last_updated": "2026-05-27T04:18:18.926220"
+      "last_updated": "2026-05-27T10:05:04.481693"
     },
     {
       "id": "RA-1072",
@@ -1462,7 +1462,7 @@
       "colors_available": 7,
       "return_rate": 0.052,
       "margin": 0.487,
-      "last_updated": "2026-05-27T04:18:18.926225"
+      "last_updated": "2026-05-27T10:05:04.481699"
     },
     {
       "id": "RA-1073",
@@ -1482,7 +1482,7 @@
       "colors_available": 1,
       "return_rate": 0.053,
       "margin": 0.472,
-      "last_updated": "2026-05-27T04:18:18.926231"
+      "last_updated": "2026-05-27T10:05:04.481705"
     },
     {
       "id": "RA-1074",
@@ -1502,7 +1502,7 @@
       "colors_available": 2,
       "return_rate": 0.021,
       "margin": 0.373,
-      "last_updated": "2026-05-27T04:18:18.926237"
+      "last_updated": "2026-05-27T10:05:04.481710"
     },
     {
       "id": "RA-1075",
@@ -1522,7 +1522,7 @@
       "colors_available": 4,
       "return_rate": 0.075,
       "margin": 0.486,
-      "last_updated": "2026-05-27T04:18:18.926244"
+      "last_updated": "2026-05-27T10:05:04.481718"
     },
     {
       "id": "RA-1076",
@@ -1542,7 +1542,7 @@
       "colors_available": 1,
       "return_rate": 0.022,
       "margin": 0.342,
-      "last_updated": "2026-05-27T04:18:18.926252"
+      "last_updated": "2026-05-27T10:05:04.481728"
     },
     {
       "id": "RA-1077",
@@ -1562,7 +1562,7 @@
       "colors_available": 5,
       "return_rate": 0.045,
       "margin": 0.398,
-      "last_updated": "2026-05-27T04:18:18.926260"
+      "last_updated": "2026-05-27T10:05:04.481734"
     },
     {
       "id": "RA-1078",
@@ -1582,7 +1582,7 @@
       "colors_available": 2,
       "return_rate": 0.026,
       "margin": 0.452,
-      "last_updated": "2026-05-27T04:18:18.926266"
+      "last_updated": "2026-05-27T10:05:04.481740"
     },
     {
       "id": "RA-1079",
@@ -1602,7 +1602,7 @@
       "colors_available": 3,
       "return_rate": 0.08,
       "margin": 0.381,
-      "last_updated": "2026-05-27T04:18:18.926273"
+      "last_updated": "2026-05-27T10:05:04.481747"
     },
     {
       "id": "RA-1080",
@@ -1622,7 +1622,7 @@
       "colors_available": 3,
       "return_rate": 0.033,
       "margin": 0.458,
-      "last_updated": "2026-05-27T04:18:18.926279"
+      "last_updated": "2026-05-27T10:05:04.481753"
     },
     {
       "id": "RA-1081",
@@ -1642,7 +1642,7 @@
       "colors_available": 2,
       "return_rate": 0.078,
       "margin": 0.371,
-      "last_updated": "2026-05-27T04:18:18.926284"
+      "last_updated": "2026-05-27T10:05:04.481759"
     },
     {
       "id": "RA-1082",
@@ -1662,7 +1662,7 @@
       "colors_available": 6,
       "return_rate": 0.054,
       "margin": 0.4,
-      "last_updated": "2026-05-27T04:18:18.926290"
+      "last_updated": "2026-05-27T10:05:04.481765"
     },
     {
       "id": "RA-1083",
@@ -1682,7 +1682,7 @@
       "colors_available": 8,
       "return_rate": 0.018,
       "margin": 0.542,
-      "last_updated": "2026-05-27T04:18:18.926296"
+      "last_updated": "2026-05-27T10:05:04.481771"
     },
     {
       "id": "RA-1084",
@@ -1702,7 +1702,7 @@
       "colors_available": 2,
       "return_rate": 0.026,
       "margin": 0.502,
-      "last_updated": "2026-05-27T04:18:18.926301"
+      "last_updated": "2026-05-27T10:05:04.481777"
     },
     {
       "id": "RA-1085",
@@ -1722,7 +1722,7 @@
       "colors_available": 5,
       "return_rate": 0.039,
       "margin": 0.395,
-      "last_updated": "2026-05-27T04:18:18.926307"
+      "last_updated": "2026-05-27T10:05:04.481783"
     },
     {
       "id": "RA-1086",
@@ -1742,7 +1742,7 @@
       "colors_available": 3,
       "return_rate": 0.07,
       "margin": 0.333,
-      "last_updated": "2026-05-27T04:18:18.926314"
+      "last_updated": "2026-05-27T10:05:04.481805"
     },
     {
       "id": "RA-1087",
@@ -1762,7 +1762,7 @@
       "colors_available": 8,
       "return_rate": 0.071,
       "margin": 0.384,
-      "last_updated": "2026-05-27T04:18:18.926320"
+      "last_updated": "2026-05-27T10:05:04.481816"
     },
     {
       "id": "RA-1088",
@@ -1782,7 +1782,7 @@
       "colors_available": 4,
       "return_rate": 0.079,
       "margin": 0.322,
-      "last_updated": "2026-05-27T04:18:18.926328"
+      "last_updated": "2026-05-27T10:05:04.481827"
     },
     {
       "id": "RA-1089",
@@ -1802,7 +1802,7 @@
       "colors_available": 7,
       "return_rate": 0.037,
       "margin": 0.449,
-      "last_updated": "2026-05-27T04:18:18.926334"
+      "last_updated": "2026-05-27T10:05:04.481834"
     },
     {
       "id": "RA-1090",
@@ -1822,7 +1822,7 @@
       "colors_available": 2,
       "return_rate": 0.071,
       "margin": 0.382,
-      "last_updated": "2026-05-27T04:18:18.926340"
+      "last_updated": "2026-05-27T10:05:04.481840"
     },
     {
       "id": "RA-1091",
@@ -1842,7 +1842,7 @@
       "colors_available": 8,
       "return_rate": 0.065,
       "margin": 0.33,
-      "last_updated": "2026-05-27T04:18:18.926346"
+      "last_updated": "2026-05-27T10:05:04.481846"
     },
     {
       "id": "RA-1092",
@@ -1862,7 +1862,7 @@
       "colors_available": 8,
       "return_rate": 0.071,
       "margin": 0.261,
-      "last_updated": "2026-05-27T04:18:18.926353"
+      "last_updated": "2026-05-27T10:05:04.481853"
     },
     {
       "id": "RA-1093",
@@ -1882,7 +1882,7 @@
       "colors_available": 7,
       "return_rate": 0.078,
       "margin": 0.478,
-      "last_updated": "2026-05-27T04:18:18.926359"
+      "last_updated": "2026-05-27T10:05:04.481859"
     },
     {
       "id": "RA-1094",
@@ -1902,7 +1902,7 @@
       "colors_available": 5,
       "return_rate": 0.035,
       "margin": 0.379,
-      "last_updated": "2026-05-27T04:18:18.926364"
+      "last_updated": "2026-05-27T10:05:04.481865"
     },
     {
       "id": "RA-1095",
@@ -1922,7 +1922,7 @@
       "colors_available": 7,
       "return_rate": 0.053,
       "margin": 0.322,
-      "last_updated": "2026-05-27T04:18:18.926370"
+      "last_updated": "2026-05-27T10:05:04.481870"
     },
     {
       "id": "RA-1096",
@@ -1942,7 +1942,7 @@
       "colors_available": 8,
       "return_rate": 0.073,
       "margin": 0.453,
-      "last_updated": "2026-05-27T04:18:18.926378"
+      "last_updated": "2026-05-27T10:05:04.481878"
     },
     {
       "id": "RA-1097",
@@ -1962,7 +1962,7 @@
       "colors_available": 5,
       "return_rate": 0.042,
       "margin": 0.341,
-      "last_updated": "2026-05-27T04:18:18.926384"
+      "last_updated": "2026-05-27T10:05:04.481884"
     },
     {
       "id": "RA-1098",
@@ -1982,7 +1982,7 @@
       "colors_available": 5,
       "return_rate": 0.012,
       "margin": 0.499,
-      "last_updated": "2026-05-27T04:18:18.926389"
+      "last_updated": "2026-05-27T10:05:04.481890"
     },
     {
       "id": "RA-1099",
@@ -2002,7 +2002,7 @@
       "colors_available": 8,
       "return_rate": 0.068,
       "margin": 0.521,
-      "last_updated": "2026-05-27T04:18:18.926395"
+      "last_updated": "2026-05-27T10:05:04.481895"
     }
   ]
 }
