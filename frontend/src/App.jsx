@@ -226,7 +226,7 @@ export default function App() {
           <span className="capitalize">{theme} mode</span>
         </div>
         <div className="text-[9px] font-mono text-white/15">
-          Auto-refresh every 6h via GitHub Actions
+          Auto-refresh every 30 min · Data updated every 6h via GitHub Actions
         </div>
       </div>
     </div>
