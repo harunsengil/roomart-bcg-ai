@@ -1,388 +1,463 @@
 #!/usr/bin/env python3
 """
-RoomArt BCG Intelligence Platform - Scoring & Analysis Engine
-Calculates BCG quadrant classifications and strategic recommendations
+RoomArt BCG Intelligence Platform - Scoring & Analysis Engine (REAL DATA)
+=========================================================================
+Tamamen gerçek Trendyol verisine (fiyat + puan + değerlendirme) ve
+Google Trends kategori büyümesine dayanır. Sahte alanlar
+(revenue / monthly_sales / margin / return_rate / stock / performance_tier /
+colors_available) KALDIRILDI.
+
+BCG metrik tasarımı (onaylı):
+  • Pazar Payı (X)  = kategori-içi değerlendirme (deg) payı, 0-100 normalize
+  • Büyüme (Y)      = 0.5 * Trends_büyüme + 0.5 * deg_momentum
+                       (momentum verisi yoksa nötr 50; snapshot biriktikçe gerçekleşir)
+  • Eşik (threshold) = portföyün MEDYANI (sabit 50 değil, göreli)
+  • Quadrant:
+        STAR          = yüksek pay + yüksek büyüme
+        CASH_COW      = yüksek pay + düşük büyüme
+        QUESTION_MARK = düşük pay + yüksek büyüme
+        DOG           = düşük pay + düşük büyüme
+
+Öneri motoru gerçek alanlara dayanır: puan (kalite) + fiyat konumu (kategori-içi).
+Erken dönem dürüstlük: her ürün/kategori için `confidence` alanı ve gün sayısı.
 """
 
 import json
 import logging
-import math
 import os
+import re
+import statistics
 from datetime import datetime, timezone
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# data/ deposu repo kökünde (data/snapshots/, data/trends_sonuc.json ...)
 DATA_DIR = Path(__file__).parent.parent / "data"
 
+# Büyüme güveninin "yeterli" sayılması için gereken farklı snapshot günü
+CONFIDENCE_MIN_DAYS = 14
 
-def load_json(filename):
+# ── 5 gerçek kategori + Trends köprüsü ────────────────────────────────────────
+# Sehpa ve Kitaplıklı Çalışma Masası'nın Trends karşılığı YOK -> nötr (None).
+CATEGORIES = [
+    "Çamaşır Makinesi Dolabı",
+    "Lavabolu Banyo Dolabı",
+    "Mutfak Adası",
+    "Kitaplıklı Çalışma Masası",
+    "Sehpa",
+]
+OTHER_CATEGORY = "DİĞER"
+
+# Roomart kategorisi -> trends_sonuc.json anahtarı (eşleşmeyen = None = nötr)
+TRENDS_BRIDGE = {
+    "Çamaşır Makinesi Dolabı": "çamaşır makinesi dolabı",
+    "Lavabolu Banyo Dolabı": "lavabolu banyo dolabı",
+    "Mutfak Adası": None,
+    "Kitaplıklı Çalışma Masası": None,
+    "Sehpa": None,
+}
+
+
+# ── IO yardımcıları ───────────────────────────────────────────────────────────
+def load_json(filename, default=None):
     path = DATA_DIR / filename
+    if not path.exists():
+        if default is not None:
+            logger.warning(f"{path} bulunamadı, varsayılan kullanılıyor.")
+            return default
+        raise FileNotFoundError(path)
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def save_json(filename, data):
     path = DATA_DIR / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     logger.info(f"Saved {path}")
 
 
+# ── Kategori sınıflandırma (ad bazlı, arayüzden düzenlenebilir override) ───────
+def categorize(ad, category_map=None):
+    """
+    Ürün adından 5 gerçek kategoriye eşle. category_map (product_id -> kategori)
+    varsa onu önceliklendir — bu, 'DİĞER atama arayüzü'nün (iş #4) yazdığı
+    elle override'tır.
+    """
+    a = ad.lower()
+    if "çamaşır" in a or "kurutma makinesi" in a or "çamaşır makinesi" in a:
+        return "Çamaşır Makinesi Dolabı"
+    if ("lavabolu" in a or "banyo dolab" in a or "banyo alt" in a
+            or "banyo üst" in a or "banyo boy" in a):
+        return "Lavabolu Banyo Dolabı"
+    if "bar masas" in a or "mutfak adas" in a:
+        return "Mutfak Adası"
+    if ("çalışma masas" in a or "bilgisayar masas" in a
+            or "ofis masas" in a or "kitaplık" in a):
+        return "Kitaplıklı Çalışma Masası"
+    if "sehpa" in a:
+        return "Sehpa"
+    return OTHER_CATEGORY
+
+
+def extract_product_id(url):
+    """Trendyol URL'sinden ürün ID'sini çıkar (...-p-XXXXXX?...)."""
+    m = re.search(r"-p-(\d+)", url or "")
+    return m.group(1) if m else None
+
+
 def normalize(value, min_val, max_val):
-    """Normalize value to 0-100 range"""
     if max_val == min_val:
         return 50.0
-    return max(0, min(100, (value - min_val) / (max_val - min_val) * 100))
+    return max(0.0, min(100.0, (value - min_val) / (max_val - min_val) * 100))
 
 
-def calculate_market_share_score(product, all_products, trendyol_cats):
+# ── Snapshot okuma + reconstruct ──────────────────────────────────────────────
+def load_snapshots():
     """
-    Market Share Score = weighted composite of revenue, reviews, trend visibility,
-    search ranking, organic strength, conversion estimate
+    Snapshot kaynağını yükle. İki formatı destekler:
+      (a) Tek dosya  data/snapshots.json  -> {"YYYY-MM-DD": {pid: {...}}}
+      (b) Delta dosyalar data/snapshots/YYYY-MM.json (snapshot_utils.reconstruct)
+    snapshot_utils henüz yoksa (a)'ya düşer.
     """
-    cat = product["category"]
-    cat_products = [p for p in all_products if p["category"] == cat]
+    # (b) delta mimarisi: snapshot_utils.reconstruct varsa onu kullan
+    try:
+        import snapshot_utils  # backend/snapshot_utils.py (iş #2'de yazılacak)
+        if hasattr(snapshot_utils, "reconstruct"):
+            days = snapshot_utils.reconstruct(DATA_DIR / "snapshots")
+            if days:
+                logger.info(f"snapshot_utils.reconstruct: {len(days)} gün yüklendi.")
+                return days
+    except Exception as e:
+        logger.info(f"snapshot_utils yok/atlandı ({e}); tek-dosya formatına düşülüyor.")
 
-    # Revenue rank within category (0-100)
-    revenues = sorted([p["revenue"] for p in cat_products], reverse=True)
-    rev_rank = revenues.index(product["revenue"]) if product["revenue"] in revenues else len(revenues) - 1
-    revenue_score = normalize(len(revenues) - rev_rank, 0, len(revenues)) * 0.25
-
-    # Review count score (0-100)
-    max_reviews = max(p["review_count"] for p in cat_products) if cat_products else 1
-    review_score = normalize(product["review_count"], 0, max_reviews) * 0.20
-
-    # Price positioning (mid-range = better conversion)
-    prices = [p["price"] for p in cat_products]
-    avg_price = sum(prices) / len(prices)
-    price_factor = 1 - abs(product["price"] - avg_price) / avg_price if avg_price > 0 else 0.5
-    price_score = max(0, price_factor * 100) * 0.10
-
-    # Rating signal
-    rating_score = normalize(product["rating"], 3.0, 5.0) * 0.15
-
-    # Stock health
-    stock_score = min(100, product["stock"] / 2) * 0.10
-
-    # Competition pressure from Trendyol
-    td = trendyol_cats.get(cat, {})
-    competition = td.get("price_competition_index", 0.5)
-    competition_score = (1 - competition) * 100 * 0.10
-
-    # Margin proxy
-    margin_score = normalize(product["margin"], 0.20, 0.60) * 0.10
-
-    total = revenue_score + review_score + price_score + rating_score + stock_score + competition_score + margin_score
-    return round(total, 2)
+    # (a) tek dosya
+    data = load_json("snapshots.json", default={})
+    return data
 
 
-def calculate_growth_score(product, trends, trendyol_cats):
+def latest_day(snapshots):
+    if not snapshots:
+        return None, {}
+    key = sorted(snapshots.keys())[-1]
+    return key, snapshots[key]
+
+
+# ── deg momentum (snapshot biriktikçe gerçekleşir) ────────────────────────────
+def compute_deg_momentum(pid, snapshots, day_keys):
     """
-    Growth Score = trend growth + category momentum + review growth proxy +
-    competitor increase + search volume growth
+    Bir ürünün değerlendirme sayısındaki momentum'u 0-100 skorla.
+    En az 2 farklı gün gerekir; yoksa nötr 50 döner.
+    deg yorum sayısı monotonik arttığı için: pozitif delta -> >50.
     """
-    cat = product["category"]
-    td = trendyol_cats.get(cat, {})
+    if len(day_keys) < 2:
+        return 50.0, False  # (skor, gerçekleşti_mi)
 
-    # Category growth from Trendyol
-    cat_growth = td.get("category_growth_30d", 0)
-    cat_growth_score = normalize(cat_growth, -0.10, 0.40) * 0.25
+    first_key, last_key = day_keys[0], day_keys[-1]
+    first = snapshots.get(first_key, {}).get(pid)
+    last = snapshots.get(last_key, {}).get(pid)
+    if not first or not last:
+        return 50.0, False
 
-    # New listings = market interest
-    new_listings = td.get("new_listings_30d", 50)
-    listing_score = normalize(new_listings, 0, 300) * 0.10
+    d0 = first.get("deg", 0) or 0
+    d1 = last.get("deg", 0) or 0
+    if d0 <= 0:
+        # sıfırdan artış: pozitif ama orijinsiz -> ılımlı pozitif
+        return (65.0 if d1 > 0 else 50.0), True
 
-    # Google Trends keyword growth for category
-    cat_keywords = [v for v in trends.values() if v.get("category") == cat]
-    if cat_keywords:
-        avg_trend_growth = sum(k["growth_rate_12w"] for k in cat_keywords) / len(cat_keywords)
-        avg_interest = sum(k["current_interest"] for k in cat_keywords) / len(cat_keywords)
-    else:
-        avg_trend_growth = 0
-        avg_interest = 50
-
-    trend_growth_score = normalize(avg_trend_growth, -0.30, 0.80) * 0.30
-    trend_interest_score = normalize(avg_interest, 0, 100) * 0.20
-
-    # Product-level momentum (reviews proxy)
-    review_momentum = min(100, product["review_count"] / 5)
-    review_score = review_momentum * 0.15
-
-    total = cat_growth_score + listing_score + trend_growth_score + trend_interest_score + review_score
-    return round(total, 2)
+    # yüzde büyüme -> skor. %0=50, +%30 ve üzeri -> 100, -%30 -> 0
+    pct = (d1 - d0) / d0
+    return normalize(pct, -0.30, 0.30), True
 
 
-def classify_bcg(share_score, growth_score):
-    """Classify into BCG quadrant"""
-    high_share = share_score >= 50
-    high_growth = growth_score >= 50
+# ── Trends büyüme skoru ───────────────────────────────────────────────────────
+def trends_growth_score(category, trends_cats):
+    """
+    Kategorinin Trends büyüme yüzdesini 0-100 skora çevir.
+    Eşleşme yoksa (Sehpa, Çalışma Masası) nötr 50 + has_trends=False döner.
+    """
+    key = TRENDS_BRIDGE.get(category)
+    if not key or key not in trends_cats:
+        return 50.0, False
+    pct = trends_cats[key].get("buyume_yuzde", 0.0)
+    # büyüme yüzdesi: -30%=0, 0%=50, +30%=100 (uç değerler clamp)
+    return normalize(pct, -30.0, 30.0), True
 
+
+# ── Skorlama ──────────────────────────────────────────────────────────────────
+def calculate_market_share(product, cat_products):
+    """
+    Pazar Payı (X) = ürünün kategori-içi değerlendirme (deg) payı, 0-100.
+    En çok yorumlu ürün ~100'e yaklaşır.
+    """
+    total_deg = sum(p["deg"] for p in cat_products)
+    if total_deg <= 0:
+        return 0.0
+    share = product["deg"] / total_deg
+    # tek kategoride pay çok küçülebilir; kategori-içi maks'a göre normalize et
+    max_deg = max(p["deg"] for p in cat_products)
+    if max_deg <= 0:
+        return 0.0
+    return round(normalize(product["deg"], 0, max_deg), 2)
+
+
+def calculate_growth(product, category, snapshots, day_keys, trends_cats):
+    """
+    Büyüme (Y) = 0.5 * Trends_büyüme + 0.5 * deg_momentum
+    """
+    t_score, has_trends = trends_growth_score(category, trends_cats)
+    pid = extract_product_id(product["url"])
+    m_score, has_momentum = compute_deg_momentum(pid, snapshots, day_keys)
+    growth = 0.5 * t_score + 0.5 * m_score
+    return round(growth, 2), has_trends, has_momentum
+
+
+def classify_bcg(share, growth, share_thr, growth_thr):
+    high_share = share >= share_thr
+    high_growth = growth >= growth_thr
     if high_share and high_growth:
         return "STAR"
-    elif high_share and not high_growth:
+    if high_share and not high_growth:
         return "CASH_COW"
-    elif not high_share and high_growth:
+    if not high_share and high_growth:
         return "QUESTION_MARK"
+    return "DOG"
+
+
+def confidence_level(has_trends, has_momentum, n_days):
+    """
+    Büyüme güveni. momentum gerçekleşmediyse veya yeterli gün yoksa düşük.
+    """
+    if has_momentum and n_days >= CONFIDENCE_MIN_DAYS:
+        return "high" if has_trends else "medium"
+    if has_trends:
+        return "medium"
+    return "low"
+
+
+# ── Öneri motoru (GERÇEK alanlar: puan + fiyat konumu) ────────────────────────
+def generate_recommendation(product, bcg_class, cat_products):
+    """
+    Öneri = quadrant + kalite (puan) + kategori-içi fiyat konumu.
+    """
+    puan = product["puan"]
+    prices = [p["fiyat"] for p in cat_products if p["fiyat"] > 0]
+    avg_price = statistics.mean(prices) if prices else product["fiyat"]
+    # fiyat konumu: ucuz < 0.85*ort, premium > 1.15*ort
+    if avg_price > 0:
+        ratio = product["fiyat"] / avg_price
     else:
-        return "DOG"
+        ratio = 1.0
+    position = "premium" if ratio > 1.15 else ("value" if ratio < 0.85 else "mid")
 
+    high_quality = puan >= 4.5
+    weak_quality = puan > 0 and puan < 4.0
 
-def generate_recommendation(product, bcg_class, share_score, growth_score, trendyol_cats):
-    """AI decision engine - generate strategic recommendation"""
-    cat = product["category"]
-    td = trendyol_cats.get(cat, {})
-    margin = product["margin"]
-    return_rate = product["return_rate"]
-    competition = td.get("market_saturation", 0.5)
-
-    # Decision tree
     if bcg_class == "STAR":
-        if margin > 0.40 and competition < 0.6:
-            action = "INVEST"
-            rationale = "High growth with strong margins and manageable competition. Aggressive investment recommended."
-            priority = 1
-        elif margin > 0.30:
-            action = "SCALE"
-            rationale = "Strong growth position. Scale marketing and distribution to capture market share."
-            priority = 1
+        if high_quality:
+            action, rationale, priority = ("INVEST",
+                "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.", 1)
         else:
-            action = "OPTIMIZE"
-            rationale = "Good market position but thin margins. Optimize cost structure before scaling."
-            priority = 2
+            action, rationale, priority = ("SCALE",
+                "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.", 1)
 
     elif bcg_class == "CASH_COW":
-        if return_rate < 0.04 and margin > 0.35:
-            action = "HARVEST"
-            rationale = "Mature category with solid profitability. Harvest cash flow to fund Stars."
-            priority = 2
-        elif competition > 0.7:
-            action = "DEFEND"
-            rationale = "Strong position under competitive pressure. Defend share through loyalty and differentiation."
-            priority = 2
+        if high_quality:
+            action, rationale, priority = ("HARVEST",
+                "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.", 2)
         else:
-            action = "HARVEST"
-            rationale = "Stable cash generator. Maintain with minimal investment."
-            priority = 3
+            action, rationale, priority = ("DEFEND",
+                "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.", 2)
 
     elif bcg_class == "QUESTION_MARK":
-        if growth_score > 65 and margin > 0.35:
-            action = "INVEST"
-            rationale = "High-potential opportunity in growing market. Invest to capture share before maturity."
-            priority = 1
-        elif growth_score > 55:
-            action = "TEST"
-            rationale = "Market growing but position uncertain. Run targeted tests to validate investment case."
-            priority = 2
+        if high_quality and position != "premium":
+            action, rationale, priority = ("INVEST",
+                "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.", 1)
         else:
-            action = "MONITOR"
-            rationale = "Weak position in moderately growing market. Monitor closely before committing resources."
-            priority = 3
+            action, rationale, priority = ("TEST",
+                "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.", 2)
 
     else:  # DOG
-        if margin < 0.25 and return_rate > 0.06:
-            action = "EXIT"
-            rationale = "Low growth, low share, poor margins and high returns. Plan exit strategy."
-            priority = 4
-        elif return_rate > 0.05:
-            action = "RESTRUCTURE"
-            rationale = "Underperforming product. Reduce SKU complexity or discontinue low-margin variants."
-            priority = 3
+        if weak_quality:
+            action, rationale, priority = ("EXIT",
+                "Düşük pay + düşük büyüme + zayıf puan. Çıkış/listeden kaldırmayı değerlendir.", 4)
+        elif position == "premium":
+            action, rationale, priority = ("RESTRUCTURE",
+                "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.", 3)
         else:
-            action = "OPTIMIZE"
-            rationale = "Weak position but salvageable margins. Optimize before deciding to exit."
-            priority = 3
+            action, rationale, priority = ("OPTIMIZE",
+                "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.", 3)
 
-    return {
-        "action": action,
-        "rationale": rationale,
-        "priority": priority,
-    }
+    return {"action": action, "rationale": rationale, "priority": priority,
+            "price_position": position}
 
 
-def detect_alerts(scored_products):
-    """Generate strategic alerts from analysis"""
+# ── Uyarılar ──────────────────────────────────────────────────────────────────
+def detect_alerts(scored):
     alerts = []
-    now = datetime.now().isoformat()
+    now = datetime.now(timezone.utc).isoformat()
 
-    # Find products changing quadrant trajectory
-    stars = [p for p in scored_products if p["bcg_class"] == "STAR"]
-    dogs = [p for p in scored_products if p["bcg_class"] == "DOG"]
-    question_marks = [p for p in scored_products if p["bcg_class"] == "QUESTION_MARK"]
-    cash_cows = [p for p in scored_products if p["bcg_class"] == "CASH_COW"]
-
-    # High-opportunity alerts
-    rising_qm = [p for p in question_marks if p["growth_score"] > 65]
-    for p in rising_qm[:3]:
+    def add(typ, sev, title, msg, pid):
         alerts.append({
-            "id": f"alert-{len(alerts)+1}",
-            "type": "OPPORTUNITY",
-            "severity": "HIGH",
-            "title": f"{p['subcategory']} becoming STAR",
-            "message": f"{p['name']} shows rising trend momentum ({p['growth_score']:.0f}/100 growth score). Consider investment.",
-            "product_id": p["id"],
-            "timestamp": now,
+            "id": f"alert-{len(alerts)+1}", "type": typ, "severity": sev,
+            "title": title, "message": msg, "product_id": pid, "timestamp": now,
         })
 
-    # Risk alerts
-    declining_cows = [p for p in cash_cows if p["growth_score"] < 25]
-    for p in declining_cows[:2]:
-        alerts.append({
-            "id": f"alert-{len(alerts)+1}",
-            "type": "WARNING",
-            "severity": "MEDIUM",
-            "title": f"{p['category']} category losing momentum",
-            "message": f"{p['name']} growth declining. Plan harvest strategy before market deteriorates.",
-            "product_id": p["id"],
-            "timestamp": now,
-        })
+    stars = [p for p in scored if p["bcg_class"] == "STAR"]
+    dogs = [p for p in scored if p["bcg_class"] == "DOG"]
+    qms = [p for p in scored if p["bcg_class"] == "QUESTION_MARK"]
 
-    # Exit candidates
-    exit_dogs = [p for p in dogs if p["recommendation"]["action"] == "EXIT"]
-    for p in exit_dogs[:2]:
-        alerts.append({
-            "id": f"alert-{len(alerts)+1}",
-            "type": "RISK",
-            "severity": "HIGH",
-            "title": f"Exit candidate detected in {p['category']}",
-            "message": f"{p['name']} has poor margins ({p['margin']*100:.0f}%) and high returns. Initiate exit review.",
-            "product_id": p["id"],
-            "timestamp": now,
-        })
+    for p in sorted(qms, key=lambda x: -x["growth_score"])[:3]:
+        if p["confidence"] != "low":
+            add("OPPORTUNITY", "HIGH", f"{p['category']} — yükselen fırsat",
+                f"{p['name'][:60]} büyüme momentumu yüksek ({p['growth_score']:.0f}/100).",
+                p["id"])
 
-    # Positive alerts
-    top_stars = sorted(stars, key=lambda x: x["share_score"] + x["growth_score"], reverse=True)[:2]
-    for p in top_stars:
-        alerts.append({
-            "id": f"alert-{len(alerts)+1}",
-            "type": "SUCCESS",
-            "severity": "INFO",
-            "title": f"{p['subcategory']} is top STAR product",
-            "message": f"{p['name']} leads category with {p['share_score']:.0f} share score and {p['growth_score']:.0f} growth score.",
-            "product_id": p["id"],
-            "timestamp": now,
-        })
+    for p in [d for d in dogs if d["recommendation"]["action"] == "EXIT"][:2]:
+        add("RISK", "HIGH", f"{p['category']} — çıkış adayı",
+            f"{p['name'][:60]} zayıf puan ({p['puan']}) ve düşük pay. İnceleme önerilir.",
+            p["id"])
+
+    for p in sorted(stars, key=lambda x: -(x["share_score"] + x["growth_score"]))[:2]:
+        add("SUCCESS", "INFO", f"{p['category']} — lider STAR",
+            f"{p['name'][:60]} pay {p['share_score']:.0f}, büyüme {p['growth_score']:.0f}.",
+            p["id"])
 
     return alerts
 
 
-def compute_category_summary(scored_products):
-    """Aggregate stats per category"""
-    categories = {}
-    for p in scored_products:
+# ── Frontend payload (mevcut şemayı KORUR) ────────────────────────────────────
+BCG_META = {
+    "STAR": {"quadrant": "STAR", "emoji": "⭐", "color": "#F59E0B"},
+    "CASH_COW": {"quadrant": "CASH_COW", "emoji": "🐄", "color": "#10B981"},
+    "QUESTION_MARK": {"quadrant": "QUESTION_MARK", "emoji": "❓", "color": "#3B82F6"},
+    "DOG": {"quadrant": "DOG", "emoji": "🐕", "color": "#EF4444"},
+}
+REC_MAP = {
+    "INVEST": "INVEST", "SCALE": "INVEST", "HARVEST": "HARVEST",
+    "DEFEND": "HARVEST", "TEST": "TEST", "MONITOR": "TEST",
+    "OPTIMIZE": "TEST", "EXIT": "EXIT", "RESTRUCTURE": "EXIT",
+}
+
+
+def slugify(s):
+    return (s.lower().replace("ç", "c").replace("ş", "s").replace("ğ", "g")
+            .replace("ı", "i").replace("ö", "o").replace("ü", "u")
+            .replace(" ", "-"))
+
+
+def build_frontend_payload(scored, alerts, trends_cats, n_days):
+    cat_map = {}
+    for p in scored:
         cat = p["category"]
-        if cat not in categories:
-            categories[cat] = {
-                "category": cat,
-                "products": [],
-                "stars": 0, "cash_cows": 0, "question_marks": 0, "dogs": 0,
-                "total_revenue": 0,
-                "avg_growth_score": 0,
-                "avg_share_score": 0,
-            }
-        categories[cat]["products"].append(p["id"])
-        bcg_key = p["bcg_class"].lower()
-        categories[cat][bcg_key] = categories[cat].get(bcg_key, 0) + 1
-        categories[cat]["total_revenue"] += p["revenue"]
-        categories[cat]["avg_growth_score"] += p["growth_score"]
-        categories[cat]["avg_share_score"] += p["share_score"]
+        c = cat_map.setdefault(cat, {
+            "share": [], "growth": [], "prices": [], "ratings": [],
+            "reviews": [], "bcg": [], "confidences": [],
+        })
+        c["share"].append(p["share_score"])
+        c["growth"].append(p["growth_score"])
+        c["prices"].append(p["price"])
+        c["ratings"].append(p["rating"])
+        c["reviews"].append(p["review_count"])
+        c["bcg"].append(p["bcg_class"])
+        c["confidences"].append(p["confidence"])
 
-    for cat, data in categories.items():
-        n = len(data["products"])
-        data["avg_growth_score"] = round(data["avg_growth_score"] / n, 1)
-        data["avg_share_score"] = round(data["avg_share_score"] / n, 1)
-        data["product_count"] = n
+    categories = []
+    quadrant_dist = {"STAR": 0, "CASH_COW": 0, "QUESTION_MARK": 0, "DOG": 0}
+    for cat, c in cat_map.items():
+        n = len(c["share"])
+        top_bcg = max(set(c["bcg"]), key=c["bcg"].count)
+        quadrant_dist[top_bcg] = quadrant_dist.get(top_bcg, 0) + 1
 
-        # Classify category health
-        if data["avg_growth_score"] >= 55 and data["avg_share_score"] >= 55:
-            data["health"] = "STRONG"
-        elif data["avg_growth_score"] < 35 and data["avg_share_score"] < 35:
-            data["health"] = "WEAK"
+        tkey = TRENDS_BRIDGE.get(cat)
+        if tkey and tkey in trends_cats:
+            td = trends_cats[tkey]
+            trend_score = round(min(100.0, td.get("ortalama", 50)), 1)
+            trend_growth = round(td.get("buyume_yuzde", 0.0), 1)
         else:
-            data["health"] = "MIXED"
+            trend_score, trend_growth = 50.0, 0.0
 
-    return list(categories.values())
+        cat_prods = [p for p in scored if p["category"] == cat]
+        top_prod = max(cat_prods, key=lambda p: (p["share_score"] + p["growth_score"]))
+        top_action = top_prod["recommendation"]["action"]
 
+        # kategori güveni: en düşük güven seviyesi baskın
+        conf_rank = {"low": 0, "medium": 1, "high": 2}
+        cat_conf = min(c["confidences"], key=lambda x: conf_rank[x])
 
-def main():
-    logger.info("Starting BCG analysis engine...")
+        categories.append({
+            "id": slugify(cat), "category": cat, "slug": slugify(cat),
+            "product_count": n,
+            "share_score": round(statistics.mean(c["share"]), 2),
+            "growth_score": round(statistics.mean(c["growth"]), 2),
+            "bcg": BCG_META[top_bcg],
+            "recommendation": {"action": REC_MAP.get(top_action, "TEST")},
+            "avg_price": round(statistics.mean(c["prices"]), 2),
+            "avg_rating": round(statistics.mean([r for r in c["ratings"] if r > 0] or [0]), 1),
+            "total_reviews": sum(c["reviews"]),
+            "trend_score": trend_score,
+            "trend_growth": trend_growth,
+            "confidence": cat_conf,
+        })
 
-    products_data = load_json("products.json")
-    trendyol_data = load_json("trendyol.json")
-    trends_data = load_json("trends.json")
-
-    products = products_data["products"]
-    trendyol_cats = trendyol_data["categories"]
-    trends = trends_data["keywords"]
-
-    scored_products = []
-
-    for p in products:
-        share_score = calculate_market_share_score(p, products, trendyol_cats)
-        growth_score = calculate_growth_score(p, trends, trendyol_cats)
-        bcg_class = classify_bcg(share_score, growth_score)
-        rec = generate_recommendation(p, bcg_class, share_score, growth_score, trendyol_cats)
-
-        scored = {**p,
-            "share_score": share_score,
-            "growth_score": growth_score,
-            "bcg_class": bcg_class,
-            "recommendation": rec,
-            "composite_score": round((share_score + growth_score) / 2, 1),
-        }
-        scored_products.append(scored)
-
-    # Summary stats
-    total = len(scored_products)
-    stars = sum(1 for p in scored_products if p["bcg_class"] == "STAR")
-    cash_cows = sum(1 for p in scored_products if p["bcg_class"] == "CASH_COW")
-    question_marks = sum(1 for p in scored_products if p["bcg_class"] == "QUESTION_MARK")
-    dogs = sum(1 for p in scored_products if p["bcg_class"] == "DOG")
-    invest_actions = sum(1 for p in scored_products if p["recommendation"]["action"] == "INVEST")
-
-    alerts = detect_alerts(scored_products)
-    category_summary = compute_category_summary(scored_products)
-
-    bcg_scores = {
-        "metadata": {
-            "last_updated": datetime.now().isoformat(),
-            "total_products": total,
-            "stars": stars,
-            "cash_cows": cash_cows,
-            "question_marks": question_marks,
-            "dogs": dogs,
-            "invest_candidates": invest_actions,
-            "avg_portfolio_score": round(sum(p["composite_score"] for p in scored_products) / total, 1),
-        },
-        "products": scored_products,
-        "category_summary": category_summary,
+    kpis = {
+        "total_categories": len(categories),
+        "total_products": len(scored),
+        "star_products": quadrant_dist["STAR"],
+        "cash_cows": quadrant_dist["CASH_COW"],
+        "question_marks": quadrant_dist["QUESTION_MARK"],
+        "dogs": quadrant_dist["DOG"],
+        "risk_products": quadrant_dist["DOG"] + quadrant_dist["QUESTION_MARK"],
+        "avg_trend_score": round(statistics.mean([c["trend_score"] for c in categories]), 1) if categories else 50,
+        "high_priority_alerts": sum(1 for a in alerts if a.get("severity") == "HIGH"),
+        "data_days": n_days,
+        "growth_confident": n_days >= CONFIDENCE_MIN_DAYS,
+        # Erken dönem dürüstlüğü: momentum henüz ölçülemediğinden büyüme ekseni
+        # ürünleri tam ayıramaz; bazı quadrant'lar boş kalabilir. Frontend bu
+        # bayrakla "X gün veri bekleniyor, matris henüz tam değil" notunu gösterir.
+        "growth_axis_active": n_days >= 2,
+        "days_until_confident": max(0, CONFIDENCE_MIN_DAYS - n_days),
     }
 
-    alerts_output = {
-        "metadata": {"last_updated": datetime.now().isoformat(), "total_alerts": len(alerts)},
+    trends_list = []
+    for cat in cat_map:
+        tkey = TRENDS_BRIDGE.get(cat)
+        if tkey and tkey in trends_cats:
+            td = trends_cats[tkey]
+            trends_list.append({
+                "category": cat, "slug": slugify(cat), "keyword": tkey,
+                "trend_score": round(min(100.0, td.get("ortalama", 50)), 1),
+                "growth_rate": round(td.get("buyume_yuzde", 0.0), 1),
+                "data_points": td.get("haftalik", []),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "has_trends": True,
+            })
+        else:
+            trends_list.append({
+                "category": cat, "slug": slugify(cat), "keyword": cat.lower(),
+                "trend_score": 50.0, "growth_rate": 0.0, "data_points": [],
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "has_trends": False,
+            })
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kpis": kpis,
+        "categories": categories,
+        "quadrant_distribution": quadrant_dist,
+        "trends": trends_list,
         "alerts": alerts,
     }
 
-    save_json("bcg_scores.json", bcg_scores)
-    save_json("alerts.json", alerts_output)
 
-    # Write to Firestore if secret is available
-    db_client = init_firebase()
-    save_to_firestore(db_client, bcg_scores, alerts_output, trends_data)
-
-    logger.info(f"Analysis complete: {stars} Stars, {cash_cows} Cash Cows, {question_marks} Question Marks, {dogs} Dogs")
-    logger.info(f"Generated {len(alerts)} alerts")
-
-
-
-# ── FIREBASE INTEGRATION ──────────────────────────────────────────────────────
-
+# ── Firebase ──────────────────────────────────────────────────────────────────
 def init_firebase():
-    """Initialize Firebase Admin SDK from FIREBASE_SERVICE_ACCOUNT env secret."""
     service_account_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
     if not service_account_json:
-        logger.warning("FIREBASE_SERVICE_ACCOUNT not set — skipping Firestore write")
+        logger.warning("FIREBASE_SERVICE_ACCOUNT not set — Firestore yazımı atlanıyor")
         return None
     try:
         import firebase_admin
@@ -396,146 +471,119 @@ def init_firebase():
         return None
 
 
-def build_frontend_payload(bcg_scores, alerts_output, trends_data):
-    """Convert analyzer output to frontend-compatible format (seed_data.py schema)."""
-    products = bcg_scores.get("products", [])
-    meta = bcg_scores.get("metadata", {})
-
-    # Build category-level summaries from scored products
-    cat_map = {}
-    for p in products:
-        cat = p["category"]
-        if cat not in cat_map:
-            cat_map[cat] = {
-                "id": cat.lower().replace(" ", "-"),
-                "category": cat,
-                "slug": cat.lower().replace(" ", "-"),
-                "product_count": 0,
-                "share_scores": [],
-                "growth_scores": [],
-                "prices": [],
-                "ratings": [],
-                "reviews": [],
-                "bcg_classes": [],
-            }
-        c = cat_map[cat]
-        c["product_count"] += 1
-        c["share_scores"].append(p["share_score"])
-        c["growth_scores"].append(p["growth_score"])
-        c["prices"].append(p.get("price", 0))
-        c["ratings"].append(p.get("rating", 4.0))
-        c["reviews"].append(p.get("review_count", 0))
-        c["bcg_classes"].append(p["bcg_class"])
-
-    BCG_META = {
-        "STAR": {"quadrant": "STAR", "emoji": "⭐", "color": "#F59E0B"},
-        "CASH_COW": {"quadrant": "CASH_COW", "emoji": "🐄", "color": "#10B981"},
-        "QUESTION_MARK": {"quadrant": "QUESTION_MARK", "emoji": "❓", "color": "#3B82F6"},
-        "DOG": {"quadrant": "DOG", "emoji": "🐕", "color": "#EF4444"},
-    }
-    REC_MAP = {
-        "INVEST": "INVEST", "SCALE": "INVEST", "HARVEST": "HARVEST",
-        "DEFEND": "HARVEST", "TEST": "TEST", "MONITOR": "TEST",
-        "OPTIMIZE": "TEST", "EXIT": "EXIT", "RESTRUCTURE": "EXIT",
-    }
-
-    categories = []
-    quadrant_dist = {"STAR": 0, "CASH_COW": 0, "QUESTION_MARK": 0, "DOG": 0}
-    for cat, c in cat_map.items():
-        n = c["product_count"]
-        avg_share = round(sum(c["share_scores"]) / n, 2)
-        avg_growth = round(sum(c["growth_scores"]) / n, 2)
-        top_bcg = max(set(c["bcg_classes"]), key=c["bcg_classes"].count)
-        quadrant_dist[top_bcg] = quadrant_dist.get(top_bcg, 0) + 1
-
-        # Trend data for this category
-        cat_trends = [v for v in trends_data.get("keywords", {}).values()
-                      if v.get("category") == cat]
-        trend_score = round(sum(k.get("current_interest", 50) for k in cat_trends) / len(cat_trends), 1) if cat_trends else 50
-        trend_growth = round(sum(k.get("growth_rate_12w", 0) for k in cat_trends) / len(cat_trends) * 100, 1) if cat_trends else 0
-
-        # Kategori içindeki en yüksek composite_score'a sahip ürünün önerisini al
-        cat_prods = [p for p in products if p["category"] == cat]
-        if cat_prods:
-            top_prod = max(cat_prods, key=lambda p: p.get("composite_score", 0))
-            top_action = top_prod.get("recommendation", {}).get("action", "TEST")
-        else:
-            top_action = "TEST"
-
-        categories.append({
-            "id": c["id"],
-            "category": cat,
-            "slug": c["slug"],
-            "product_count": n,
-            "share_score": avg_share,
-            "growth_score": avg_growth,
-            "bcg": BCG_META[top_bcg],
-            "recommendation": {"action": REC_MAP.get(top_action, "TEST")},
-            "avg_price": round(sum(c["prices"]) / n, 2),
-            "avg_rating": round(sum(c["ratings"]) / n, 1),
-            "total_reviews": sum(c["reviews"]),
-            "trend_score": trend_score,
-            "trend_growth": trend_growth,
-        })
-
-    total_prods = len(products)
-    kpis = {
-        "total_categories": len(categories),
-        "total_products": total_prods,
-        "star_products": quadrant_dist.get("STAR", 0),
-        "cash_cows": quadrant_dist.get("CASH_COW", 0),
-        "question_marks": quadrant_dist.get("QUESTION_MARK", 0),
-        "dogs": quadrant_dist.get("DOG", 0),
-        "risk_products": quadrant_dist.get("DOG", 0) + quadrant_dist.get("QUESTION_MARK", 0),
-        "avg_trend_score": round(sum(c.get("trend_score", 50) for c in categories) / len(categories), 1) if categories else 50,
-        "high_priority_alerts": sum(1 for a in alerts_output.get("alerts", []) if a.get("severity") == "HIGH"),
-    }
-
-    # Build trends in frontend-expected format
-    trends_list = []
-    for cat, c in cat_map.items():
-        cat_trends = [v for v in trends_data.get("keywords", {}).values()
-                      if v.get("category") == cat]
-        for kw_data in cat_trends:
-            trends_list.append({
-                "category": cat,
-                "slug": c["slug"],
-                "keyword": kw_data.get("keyword", cat.lower()),
-                "trend_score": kw_data.get("current_interest", 50),
-                "growth_rate": round(kw_data.get("growth_rate_12w", 0) * 100, 1),
-                "data_points": kw_data.get("weekly_data", []),
-                "fetched_at": datetime.now().isoformat(),
-            })
-        if not cat_trends:
-            trends_list.append({
-                "category": cat, "slug": c["slug"],
-                "keyword": cat.lower(), "trend_score": 50, "growth_rate": 0.0,
-                "data_points": [], "fetched_at": datetime.now().isoformat(),
-            })
-
-    return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "kpis": kpis,
-        "categories": categories,
-        "quadrant_distribution": quadrant_dist,
-        "trends": trends_list,
-        "alerts": alerts_output.get("alerts", []),
-    }
-
-
-def save_to_firestore(db_client, bcg_scores, alerts_output, trends_data):
-    """Write BCG results to Firestore 'roomart-bcg-dev' collection (frontend schema)."""
+def save_to_firestore(db_client, payload):
     if not db_client:
         return
     try:
-        now = datetime.now(timezone.utc)
-        doc_id = now.strftime("%Y-%m-%dT%H:%M")
-        doc_data = build_frontend_payload(bcg_scores, alerts_output, trends_data)
-        db_client.collection("roomart-bcg-dev").document(doc_id).set(doc_data)
-        db_client.collection("roomart-bcg-dev").document("latest").set(doc_data)
+        doc_id = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
+        db_client.collection("roomart-bcg-dev").document(doc_id).set(payload)
+        db_client.collection("roomart-bcg-dev").document("latest").set(payload)
         logger.info(f"Firestore write OK: roomart-bcg-dev/{doc_id}")
     except Exception as e:
         logger.error(f"Firestore write failed: {e}")
+
+
+# ── Ana akış ──────────────────────────────────────────────────────────────────
+def run_analysis():
+    snapshots = load_snapshots()
+    day_keys = sorted(snapshots.keys())
+    n_days = len(day_keys)
+    cur_key, current = latest_day(snapshots)
+    logger.info(f"{n_days} gün snapshot; en güncel: {cur_key}; {len(current)} ürün.")
+
+    trends_doc = load_json("trends_sonuc.json", default={"kategoriler": {}})
+    trends_cats = trends_doc.get("kategoriler", {})
+
+    category_map = load_json("category_map.json", default={})  # iş #4 override'ları
+
+    # Ürünleri normalize et + kategoriye ata
+    products = []
+    for pid, raw in current.items():
+        cat = category_map.get(pid) or categorize(raw["ad"])
+        products.append({
+            "id": pid,
+            "name": raw["ad"],
+            "category": cat,
+            "price": raw.get("fiyat", 0.0),
+            "rating": raw.get("puan", 0.0),
+            "review_count": raw.get("deg", 0),
+            "url": raw.get("url", ""),
+            # iç hesaplama alanları (frontend'e gitmez)
+            "fiyat": raw.get("fiyat", 0.0),
+            "puan": raw.get("puan", 0.0),
+            "deg": raw.get("deg", 0),
+        })
+
+    # DİĞER hariç gerçek kategorilerde skorla; DİĞER atanana dek analiz dışı
+    scored = []
+    analyzable = [p for p in products if p["category"] != OTHER_CATEGORY]
+    by_cat = {}
+    for p in analyzable:
+        by_cat.setdefault(p["category"], []).append(p)
+
+    for p in analyzable:
+        cat_products = by_cat[p["category"]]
+        share = calculate_market_share(p, cat_products)
+        growth, has_trends, has_momentum = calculate_growth(
+            p, p["category"], snapshots, day_keys, trends_cats)
+        p["_share"], p["_growth"] = share, growth
+        p["_has_trends"], p["_has_momentum"] = has_trends, has_momentum
+
+    # Göreli eşik = portföy medyanı (analiz edilebilir tüm ürünler)
+    share_thr = statistics.median([p["_share"] for p in analyzable]) if analyzable else 50
+    growth_thr = statistics.median([p["_growth"] for p in analyzable]) if analyzable else 50
+    logger.info(f"Eşikler (medyan): pay={share_thr:.1f}, büyüme={growth_thr:.1f}")
+
+    for p in analyzable:
+        bcg = classify_bcg(p["_share"], p["_growth"], share_thr, growth_thr)
+        rec = generate_recommendation(p, bcg, by_cat[p["category"]])
+        conf = confidence_level(p["_has_trends"], p["_has_momentum"], n_days)
+        scored.append({
+            "id": p["id"], "name": p["name"], "category": p["category"],
+            "price": p["price"], "rating": p["rating"], "review_count": p["review_count"],
+            "url": p["url"], "puan": p["puan"],
+            "share_score": p["_share"], "growth_score": p["_growth"],
+            "bcg_class": bcg, "recommendation": rec,
+            "composite_score": round((p["_share"] + p["_growth"]) / 2, 1),
+            "confidence": conf,
+        })
+
+    alerts = detect_alerts(scored)
+    payload = build_frontend_payload(scored, alerts, trends_cats, n_days)
+
+    # Ham skor dosyası (debug/denetim için)
+    bcg_scores = {
+        "metadata": {
+            "last_updated": datetime.now(timezone.utc).isoformat(),
+            "total_products": len(scored),
+            "other_unassigned": sum(1 for p in products if p["category"] == OTHER_CATEGORY),
+            "data_days": n_days,
+            "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
+            "quadrant_distribution": payload["quadrant_distribution"],
+        },
+        "products": scored,
+    }
+    return bcg_scores, payload, alerts
+
+
+def main():
+    logger.info("BCG analiz motoru (gerçek veri) başlıyor...")
+    bcg_scores, payload, alerts = run_analysis()
+
+    save_json("bcg_scores.json", bcg_scores)
+    save_json("alerts.json", {"metadata": {
+        "last_updated": datetime.now(timezone.utc).isoformat(),
+        "total_alerts": len(alerts)}, "alerts": alerts})
+
+    db = init_firebase()
+    save_to_firestore(db, payload)
+
+    q = bcg_scores["metadata"]["quadrant_distribution"]
+    logger.info(f"Tamamlandı: {q['STAR']} Star, {q['CASH_COW']} Cash Cow, "
+                f"{q['QUESTION_MARK']} Question Mark, {q['DOG']} Dog; "
+                f"{len(alerts)} uyarı; "
+                f"{bcg_scores['metadata']['other_unassigned']} DİĞER (atanmadı).")
+
 
 if __name__ == "__main__":
     main()
