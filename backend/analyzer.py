@@ -8,7 +8,6 @@ import json
 import logging
 import math
 import os
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -283,7 +282,8 @@ def compute_category_summary(scored_products):
                 "avg_share_score": 0,
             }
         categories[cat]["products"].append(p["id"])
-        categories[cat][p["bcg_class"].lower().replace("_", "_")] = categories[cat].get(p["bcg_class"].lower(), 0) + 1
+        bcg_key = p["bcg_class"].lower()
+        categories[cat][bcg_key] = categories[cat].get(bcg_key, 0) + 1
         categories[cat]["total_revenue"] += p["revenue"]
         categories[cat]["avg_growth_score"] += p["growth_score"]
         categories[cat]["avg_share_score"] += p["share_score"]
@@ -454,6 +454,14 @@ def build_frontend_payload(bcg_scores, alerts_output, trends_data):
         trend_score = round(sum(k.get("current_interest", 50) for k in cat_trends) / len(cat_trends), 1) if cat_trends else 50
         trend_growth = round(sum(k.get("growth_rate_12w", 0) for k in cat_trends) / len(cat_trends) * 100, 1) if cat_trends else 0
 
+        # Kategori içindeki en yüksek composite_score'a sahip ürünün önerisini al
+        cat_prods = [p for p in products if p["category"] == cat]
+        if cat_prods:
+            top_prod = max(cat_prods, key=lambda p: p.get("composite_score", 0))
+            top_action = top_prod.get("recommendation", {}).get("action", "TEST")
+        else:
+            top_action = "TEST"
+
         categories.append({
             "id": c["id"],
             "category": cat,
@@ -462,10 +470,7 @@ def build_frontend_payload(bcg_scores, alerts_output, trends_data):
             "share_score": avg_share,
             "growth_score": avg_growth,
             "bcg": BCG_META[top_bcg],
-            "recommendation": {"action": REC_MAP.get(
-                max(products, key=lambda p: p.get("composite_score", 0) if p["category"] == cat else 0
-                ).get("recommendation", {}).get("action", "TEST"), "TEST")
-            },
+            "recommendation": {"action": REC_MAP.get(top_action, "TEST")},
             "avg_price": round(sum(c["prices"]) / n, 2),
             "avg_rating": round(sum(c["ratings"]) / n, 1),
             "total_reviews": sum(c["reviews"]),
