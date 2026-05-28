@@ -31,9 +31,9 @@ jobs:
 
       - name: Run BCG Roundtable
         env:
-          ANTHROPIC_API_KEY: \${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "Tetikleme: \${{ github.event.inputs.reason || 'Otomatik zamanlama' }}"
+          echo "Tetikleme: ${{ github.event.inputs.reason || 'Otomatik zamanlama' }}"
           python backend/roundtable.py
 
       - name: Trigger dashboard deploy
