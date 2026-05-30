@@ -49,6 +49,9 @@ CATEGORIES = [
     "Sehpa",
 ]
 OTHER_CATEGORY = "DİĞER"
+# category_map.json'da bir ürünü analizden tamamen çıkarmak için sentinel
+# (mobilya dışı gürültü: telefon, vb.). Atama UI'ı "Hariç Tut" seçilince bunu yazar.
+EXCLUDE_TOKEN = "__EXCLUDE__"
 
 # Roomart kategorisi -> trends_sonuc.json anahtarı (eşleşmeyen = None = nötr)
 TRENDS_BRIDGE = {
@@ -498,8 +501,13 @@ def run_analysis():
 
     # Ürünleri normalize et + kategoriye ata
     products = []
+    excluded = 0
     for pid, raw in current.items():
-        cat = category_map.get(pid) or categorize(raw["ad"])
+        mapped = category_map.get(pid)
+        if mapped == EXCLUDE_TOKEN:
+            excluded += 1            # mobilya dışı/gürültü: analizden tamamen çıkar
+            continue
+        cat = mapped or categorize(raw["ad"])
         products.append({
             "id": pid,
             "name": raw["ad"],
@@ -582,8 +590,10 @@ def run_analysis():
         "metadata": {
             "last_updated": datetime.now(timezone.utc).isoformat(),
             "total_products": len(scored),          # skorlanan (DİĞER hariç)
-            "total_all": len(products_payload),      # tüm ürünler (DİĞER dahil)
+            "total_all": len(products_payload),      # tüm ürünler (DİĞER dahil, EXCLUDE hariç)
             "other_unassigned": sum(1 for p in products if p["category"] == OTHER_CATEGORY),
+            "excluded_count": excluded,              # category_map ile "Hariç Tut" edilen
+
             "data_days": n_days,
             "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
             "quadrant_distribution": payload["quadrant_distribution"],

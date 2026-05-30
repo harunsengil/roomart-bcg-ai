@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Bot, Table2 } from 'lucide-react'
+import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Bot, Table2, Tags } from 'lucide-react'
 import Header from './components/Header'
 import KPISection from './components/KPISection'
 import BCGMatrix from './components/BCGMatrix'
@@ -10,11 +10,13 @@ import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
 import BatchRunner from './components/BatchRunner'
 import ProductTable from './components/ProductTable'
+import CategoryAssign from './components/CategoryAssign'
 import { useTheme } from './hooks/useTheme'
 
 const TABS = [
   { id: 'overview',  label: 'Overview',        icon: LayoutDashboard },
   { id: 'products',  label: 'Products',         icon: Table2 },
+  { id: 'assign',    label: 'Assign',           icon: Tags },
   { id: 'trends',    label: 'Trends',           icon: TrendingUp },
   { id: 'alerts',    label: 'Alerts & Signals', icon: Bell },
   { id: 'strategy',  label: 'AI Strategy',      icon: Lightbulb },
@@ -177,6 +179,11 @@ export default function App() {
             {/* ── PRODUCTS ── */}
             {activeTab === 'products' && (
               <ProductTable products={data?.products ?? []} />
+            )}
+
+            {/* ── ASSIGN (DİĞER → kategori) ── */}
+            {activeTab === 'assign' && (
+              <CategoryAssign products={data?.products ?? []} categories={data?.categories ?? []} />
             )}
 
             {/* ── TRENDS ── */}
