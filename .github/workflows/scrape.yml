@@ -29,8 +29,22 @@ jobs:
       - name: Install dependencies
         run: pip install -r backend/requirements.txt
 
-      - name: Install Chromium (Playwright)
+      # Playwright tarayıcı binary'lerini sürüm-anahtarlı cache'le (~150MB/koşu tasarrufu).
+      # playwright sürümü requirements.txt'te pinli; değişince cache otomatik tazelenir.
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('backend/requirements.txt') }}
+
+      - name: Install Chromium (cache miss → tarayıcı + sistem bağımlılıkları)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
         run: python -m playwright install --with-deps chromium
+
+      - name: Install Playwright system deps (cache hit → yalnız apt; tarayıcı zaten cache'te)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: python -m playwright install-deps chromium
 
       - name: Run data scraper
         run: python backend/scraper.py
