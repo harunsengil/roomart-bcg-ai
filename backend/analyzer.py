@@ -84,24 +84,36 @@ def save_json(filename, data):
 
 
 # ── Kategori sınıflandırma (ad bazlı, arayüzden düzenlenebilir override) ───────
+def _norm(s):
+    """
+    Türkçe-dayanıklı normalize: İ/I/ı/i ayrımını tek 'i'ye indir, sonra casefold.
+    Neden: Python .lower() Türkçe casing'i yanlış yapar ("I".lower()='i' noktalı;
+    pattern'ler dotless 'ı' içerir) → BÜYÜK HARFLİ adlar ("ÇALIŞMA MASASI") eşleşmezdi.
+    """
+    s = (s or "").replace("İ", "i").replace("I", "i").replace("ı", "i")
+    return s.casefold()
+
+
 def categorize(ad, category_map=None):
     """
     Ürün adından 5 gerçek kategoriye eşle. category_map (product_id -> kategori)
-    varsa onu önceliklendir — bu, 'DİĞER atama arayüzü'nün (iş #4) yazdığı
-    elle override'tır.
+    varsa onu önceliklendir — bu, 'DİĞER atama arayüzü'nün yazdığı elle override'tır.
+    Eşleştirme _norm ile büyük/küçük harf ve Türkçe i-varyantlarından bağımsızdır.
     """
-    a = ad.lower()
-    if "çamaşır" in a or "kurutma makinesi" in a or "çamaşır makinesi" in a:
+    a = _norm(ad)
+
+    def has(*kws):
+        return any(_norm(k) in a for k in kws)
+
+    if has("çamaşır", "kurutma makinesi"):
         return "Çamaşır Makinesi Dolabı"
-    if ("lavabolu" in a or "banyo dolab" in a or "banyo alt" in a
-            or "banyo üst" in a or "banyo boy" in a):
+    if has("lavabolu", "banyo dolab", "banyo alt", "banyo üst", "banyo boy"):
         return "Lavabolu Banyo Dolabı"
-    if "bar masas" in a or "mutfak adas" in a:
+    if has("bar masas", "mutfak adas"):
         return "Mutfak Adası"
-    if ("çalışma masas" in a or "bilgisayar masas" in a
-            or "ofis masas" in a or "kitaplık" in a):
+    if has("çalışma masas", "bilgisayar masas", "ofis masas", "kitaplık"):
         return "Kitaplıklı Çalışma Masası"
-    if "sehpa" in a:
+    if has("sehpa"):
         return "Sehpa"
     return OTHER_CATEGORY
 
