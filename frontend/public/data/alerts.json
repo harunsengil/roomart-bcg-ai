@@ -1,7 +1,53 @@
 {
   "metadata": {
-    "last_updated": "2026-05-28T21:49:54.795743+00:00",
-    "total_alerts": 0
+    "last_updated": "2026-05-30T15:02:41.728621+00:00",
+    "total_alerts": 5
   },
-  "alerts": []
+  "alerts": [
+    {
+      "id": "alert-1",
+      "type": "OPPORTUNITY",
+      "severity": "HIGH",
+      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (64/100).",
+      "product_id": "820441598",
+      "timestamp": "2026-05-30T15:02:41.724044+00:00"
+    },
+    {
+      "id": "alert-2",
+      "type": "OPPORTUNITY",
+      "severity": "HIGH",
+      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (64/100).",
+      "product_id": "820082166",
+      "timestamp": "2026-05-30T15:02:41.724044+00:00"
+    },
+    {
+      "id": "alert-3",
+      "type": "OPPORTUNITY",
+      "severity": "HIGH",
+      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
+      "message": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dol büyüme momentumu yüksek (64/100).",
+      "product_id": "838150342",
+      "timestamp": "2026-05-30T15:02:41.724044+00:00"
+    },
+    {
+      "id": "alert-4",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır Ve Kurutma Makinesi Dolabı Mat Beyaz pay 100, büyüme 64.",
+      "product_id": "367009664",
+      "timestamp": "2026-05-30T15:02:41.724044+00:00"
+    },
+    {
+      "id": "alert-5",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Mutfak Adası — lider STAR",
+      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 50.",
+      "product_id": "877650214",
+      "timestamp": "2026-05-30T15:02:41.724044+00:00"
+    }
+  ]
 }

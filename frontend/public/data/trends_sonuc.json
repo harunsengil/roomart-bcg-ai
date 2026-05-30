@@ -1,0 +1,127 @@
+{
+  "tarih": "2026-05-18 12:47",
+  "geo": "TR",
+  "zaman": "today 12-m",
+  "kategoriler": {
+    "banyo dolabı": {
+      "ortalama": 83.8,
+      "maks": 100,
+      "buyume_yuzde": 12.5,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        79,
+        85,
+        74,
+        86,
+        86,
+        81,
+        83,
+        89,
+        83,
+        83,
+        82,
+        76
+      ]
+    },
+    "lavabolu banyo dolabı": {
+      "ortalama": 3.6,
+      "maks": 6,
+      "buyume_yuzde": -17.6,
+      "trend": "Düşüyor",
+      "haftalik": [
+        5,
+        4,
+        5,
+        0,
+        5,
+        0,
+        0,
+        5,
+        4,
+        3,
+        4,
+        3
+      ]
+    },
+    "çamaşır makinesi dolabı": {
+      "ortalama": 18.2,
+      "maks": 25,
+      "buyume_yuzde": 16.7,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        13,
+        16,
+        15,
+        18,
+        20,
+        19,
+        15,
+        17,
+        15,
+        16,
+        16,
+        16
+      ]
+    },
+    "banyo üst dolabı": {
+      "ortalama": 0.3,
+      "maks": 5,
+      "buyume_yuzde": -49.5,
+      "trend": "Düşüyor",
+      "haftalik": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    "mutfak köşe dolabı": {
+      "ortalama": 0.3,
+      "maks": 4,
+      "buyume_yuzde": 5000.0,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    "kiler dolabı": {
+      "ortalama": 71.5,
+      "maks": 100,
+      "buyume_yuzde": -10.4,
+      "trend": "Düşüyor",
+      "haftalik": [
+        97,
+        71,
+        50,
+        94,
+        73,
+        73,
+        63,
+        83,
+        64,
+        78,
+        59,
+        58
+      ]
+    }
+  }
+}
