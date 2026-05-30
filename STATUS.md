@@ -73,6 +73,10 @@
 - **[Teknik borç]** Deploy Dashboard çalışıyor ama actions/checkout@v4, configure-pages@v4,
   deploy-pages@v4 Node.js 20 deprecation uyarısı veriyor. İleride en güncel sürümlere
   yükseltilmeli (workflow kırılmadan önce).
+- **[Kök neden — çözüldü]** Lokal FIREBASE_SERVICE_ACCOUNT `roomart-bcg-dev` projesini
+  gösteriyor; dashboard/CI `roomart-bcg-ai`. Yerel analyzer Firestore yazımları prod'u
+  güncellemiyordu → dashboard "0 products". Çözüm: CI analyze (doğru proje) çalıştır.
+  Detay: memory/firebase-project-mismatch.md. Yerel Firestore yazımına güvenme; CI gerekir.
 
 ---
 

@@ -58,4 +58,13 @@
   gerekir. Karar: önce veri katmanı açılır (payload'a `products` 192 + `is_unassigned`),
   yazma kanalı en sona bırakılır.
 
+- **2026-05-30 — [Firebase proje uyuşmazlığı / kök neden]** Bu makinedeki lokal
+  `FIREBASE_SERVICE_ACCOUNT` env `project_id: roomart-bcg-dev`'i gösteriyor; dashboard ve CI
+  ise `roomart-bcg-ai` projesini kullanır (koleksiyon adı `roomart-bcg-dev` ile karışmasın).
+  Sonuç: yerel `analyzer.py` Firestore yazımları YANLIŞ projeye gider; dashboard'un okuduğu
+  `roomart-bcg-ai/.../latest`'i güncellemez ("Firestore write OK" yanıltıcı). Dashboard'da
+  "0 products" bunun sonucuydu — frontend kodu doğru. KARAR: Dashboard Firestore'unu yalnız
+  **CI `analyze.yml`** (gerçek roomart-bcg-ai secret) günceller; yerel çalıştırma sadece
+  `data/*.json` üretmek/denetlemek için. Doğrulama: `roomart-bcg-ai` REST okuması.
+
 <!-- Yeni kararları buraya ekle -->
