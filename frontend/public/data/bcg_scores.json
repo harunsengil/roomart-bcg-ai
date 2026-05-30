@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "last_updated": "2026-05-30T20:54:49.259555+00:00",
-    "total_products": 154,
+    "last_updated": "2026-05-30T21:10:30.724856+00:00",
+    "total_products": 157,
     "total_all": 187,
-    "other_unassigned": 33,
+    "other_unassigned": 30,
     "excluded_count": 1,
     "data_days": 2,
     "thresholds": {
-      "share": 9.4,
-      "growth": 36.2
+      "share": 9.8,
+      "growth": 36.5
     },
     "quadrant_distribution": {
       "STAR": 4,
@@ -306,7 +306,7 @@
       "review_count": 56,
       "url": "https://www.trendyol.com/roomart/napoli-cok-amacli-dolap-kiler-dolabi-kitaplik-mutfak-dolabi-p-873329385?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "is_unassigned": false,
-      "share_score": 100.0,
+      "share_score": 24.24,
       "growth_score": 50.0,
       "bcg_class": "STAR",
       "recommendation": {
@@ -315,7 +315,7 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 75.0,
+      "composite_score": 37.1,
       "confidence": "low"
     },
     {
@@ -905,11 +905,11 @@
       "is_unassigned": false,
       "share_score": 9.38,
       "growth_score": 63.92,
-      "bcg_class": "STAR",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "SCALE",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
       "composite_score": 36.6,
@@ -987,7 +987,7 @@
       "review_count": 35,
       "url": "https://www.trendyol.com/roomart/napoli-cok-amacli-dolap-kiler-dolabi-kitaplik-mutfak-dolabi-p-873329497?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "is_unassigned": false,
-      "share_score": 62.5,
+      "share_score": 15.15,
       "growth_score": 50.0,
       "bcg_class": "STAR",
       "recommendation": {
@@ -996,7 +996,7 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 56.2,
+      "composite_score": 32.6,
       "confidence": "low"
     },
     {
@@ -1023,18 +1023,23 @@
     {
       "id": "758326178",
       "name": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL ",
-      "category": "DİĞER",
+      "category": "Kitaplıklı Çalışma Masası",
       "price": 6499.0,
       "rating": 4.6,
       "review_count": 231,
       "url": "https://www.trendyol.com/roomart/roma-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-mat-beyaz-roma-masa-sol-p-758326178?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 100.0,
+      "growth_score": 50.0,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "mid"
+      },
+      "composite_score": 75.0,
+      "confidence": "low"
     },
     {
       "id": "367009664",
@@ -1635,11 +1640,11 @@
       "is_unassigned": false,
       "share_score": 45.08,
       "growth_score": 36.3,
-      "bcg_class": "STAR",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "SCALE",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "DEFEND",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "premium"
       },
       "composite_score": 40.7,
@@ -2129,11 +2134,11 @@
       "is_unassigned": false,
       "share_score": 9.38,
       "growth_score": 61.47,
-      "bcg_class": "STAR",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "SCALE",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
       "composite_score": 35.4,
@@ -2553,18 +2558,23 @@
     {
       "id": "758329243",
       "name": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ ",
-      "category": "DİĞER",
+      "category": "Kitaplıklı Çalışma Masası",
       "price": 6499.0,
       "rating": 4.6,
       "review_count": 120,
       "url": "https://www.trendyol.com/roomart/roma-rafli-calisma-masasi-calisma-ofis-masasi-sag-dolap-mat-beyaz-p-758329243?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 51.95,
+      "growth_score": 50.0,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "mid"
+      },
+      "composite_score": 51.0,
+      "confidence": "low"
     },
     {
       "id": "384837607",
@@ -2932,18 +2942,23 @@
     {
       "id": "739771677",
       "name": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL ",
-      "category": "DİĞER",
+      "category": "Kitaplıklı Çalışma Masası",
       "price": 6749.0,
       "rating": 4.7,
       "review_count": 47,
       "url": "https://www.trendyol.com/roomart/roma-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-atlantik-cam-p-739771677?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 20.35,
+      "growth_score": 50.0,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "mid"
+      },
+      "composite_score": 35.2,
+      "confidence": "low"
     },
     {
       "id": "897265048",
