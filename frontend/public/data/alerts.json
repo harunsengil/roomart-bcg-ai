@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-05-30T17:24:38.995701+00:00",
-    "total_alerts": 5
+    "last_updated": "2026-05-30T19:51:50.831328+00:00",
+    "total_alerts": 7
   },
   "alerts": [
     {
@@ -9,45 +9,63 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (64/100).",
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (77/100).",
       "product_id": "820441598",
-      "timestamp": "2026-05-30T17:24:38.990581+00:00"
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (64/100).",
-      "product_id": "820082166",
-      "timestamp": "2026-05-30T17:24:38.990581+00:00"
+      "message": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı büyüme momentumu yüksek (72/100).",
+      "product_id": "920561584",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dol büyüme momentumu yüksek (64/100).",
-      "product_id": "838150342",
-      "timestamp": "2026-05-30T17:24:38.990581+00:00"
+      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (70/100).",
+      "product_id": "877183321",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
     },
     {
       "id": "alert-4",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır Ve Kurutma Makinesi Dolabı Mat Beyaz pay 100, büyüme 64.",
-      "product_id": "367009664",
-      "timestamp": "2026-05-30T17:24:38.990581+00:00"
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "Lavabolu Banyo Dolabı — çıkış adayı",
+      "message": "ROOMART Dubai Mdflam Sepetli Banyo Dolabı Seti, Lavabolu Alt zayıf puan (3.7) ve düşük pay. İnceleme önerilir.",
+      "product_id": "971279035",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
     },
     {
       "id": "alert-5",
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "Lavabolu Banyo Dolabı — çıkış adayı",
+      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
+      "product_id": "971265574",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
+    },
+    {
+      "id": "alert-6",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Mutfak Adası — lider STAR",
-      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 50.",
-      "product_id": "877650214",
-      "timestamp": "2026-05-30T17:24:38.990581+00:00"
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır Ve Kurutma Makinesi Dolabı Mat Beyaz pay 100, büyüme 63.",
+      "product_id": "367009664",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
+    },
+    {
+      "id": "alert-7",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Sehpa — lider STAR",
+      "message": "ROOMART Helsinki Orta Sehpa Suntalam 80 cm pay 100, büyüme 51.",
+      "product_id": "866321311",
+      "timestamp": "2026-05-30T19:51:50.826421+00:00"
     }
   ]
 }
