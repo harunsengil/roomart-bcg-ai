@@ -75,24 +75,6 @@ def extract_pid(url):
 
 
 # ── Playwright yardımcıları ─────────────────────────────────────────────────--
-def dismiss_overlays(page):
-    """Çerez/konum tooltip'lerini kapat (kibar, hata yutar)."""
-    try:
-        page.keyboard.press("Escape")
-    except Exception:
-        pass
-    for name in ("Tümünü Reddet", "Anladım"):
-        try:
-            page.get_by_role("button", name=name).click(timeout=1500)
-            time.sleep(0.3)
-        except Exception:
-            pass
-    try:
-        page.keyboard.press("Escape")
-    except Exception:
-        pass
-
-
 def parse_product(page, url):
     """Ürün detay sayfasından {ad, fiyat, puan, deg} çıkar. Hata → None."""
     resp = page.goto(url, wait_until="domcontentloaded", timeout=NAV_TIMEOUT_MS)
@@ -100,8 +82,12 @@ def parse_product(page, url):
     if status and status >= 400:
         logger.warning(f"  HTTP {status} — atlandı")
         return None
-    time.sleep(1.2)
-    dismiss_overlays(page)
+    # puan/deg JS ile geç render olur; probe'da 2500ms bekleme çalıştı (4.8★/39 deg).
+    page.wait_for_timeout(2500)
+    try:
+        page.keyboard.press("Escape")
+    except Exception:
+        pass
 
     try:
         ad = page.get_by_test_id("product-title").inner_text().strip()
@@ -151,6 +137,8 @@ def scrape(seed):
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(user_agent=USER_AGENT)
         page = context.new_page()
+        # Eksik element auto-wait'i 30s yerine ≤6s olsun (yoksa her üründe takılır)
+        page.set_default_timeout(6000)
 
         for i, (pid, rec) in enumerate(seed.items(), 1):
             url = rec.get("url")
@@ -195,6 +183,17 @@ def main():
         logger.error(
             f"Başarı oranı {ratio:.0%} < {MIN_SUCCESS_RATIO:.0%} — yarım/bozuk gün, "
             "snapshot YAZILMADI (momentum kirlenmesin)."
+        )
+        return
+
+    # Kalite guard: puan/deg parse'ı sessizce kırılırsa ürünler "başarılı" görünür
+    # ama deg=0 olur → momentum zehirlenir. Çoğu üründe deg>0 beklenir; değilse yazma.
+    nonzero_deg = sum(1 for v in urunler.values() if v.get("deg", 0) > 0)
+    deg_ratio = nonzero_deg / len(urunler) if urunler else 0
+    if deg_ratio < 0.4:
+        logger.error(
+            f"deg parse şüpheli: yalnız {deg_ratio:.0%} üründe deg>0 — selector kırık "
+            "olabilir, snapshot YAZILMADI (momentum kirlenmesin)."
         )
         return
 
