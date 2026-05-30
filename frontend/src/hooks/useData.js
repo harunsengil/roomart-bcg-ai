@@ -37,6 +37,12 @@ function normalizeCategories(raw) {
       product_count: c.product_count ?? c.products?.length ?? 0,
       total_reviews: c.total_reviews ?? 0,
       total_revenue: c.total_revenue ?? 0,
+      // CategoryPanel detayının kullandığı alanlar (payload üretiyor; eşlenmezse NaN/undefined)
+      avg_price: c.avg_price ?? 0,
+      avg_rating: c.avg_rating ?? 0,
+      trend_score: c.trend_score ?? 50,
+      trend_growth: c.trend_growth ?? 0,
+      confidence: c.confidence,
       health: c.health ?? 'MIXED',
       bcg: { quadrant },
       recommendation: c.recommendation ?? {
