@@ -11,25 +11,25 @@
 - **Aktif branch:** main (doğrudan main'e çalışıyoruz; tek geliştirici)
 
 ## Sistem Durumu (özet)
-- Workflow'lar aktif: scrape (günlük 05:00 UTC), analyze (data push'ta),
-  roundtable (günlük 06:00 UTC), deploy (Pages).
-- Firestore yazımı çalışıyor (`roomart-bcg-dev/latest`).
-- Dashboard yayında: https://harunsengil.github.io/roomart-bcg-ai/
+- **Pipeline OTONOM ve uçtan uca doğrulandı (2026-05-30):** scrape (gerçek Trendyol,
+  Playwright, günlük 05:00 UTC) → analyze → deploy zinciri explicit dispatch ile çalışıyor.
+- Firestore yazımı CI'da doğru projeye (`roomart-bcg-ai`) gidiyor; **yerel** analyzer
+  `roomart-bcg-dev` projesine yazar (prod'u güncellemez) — bkz Bilinen Sorunlar.
+- Dashboard yayında: https://harunsengil.github.io/roomart-bcg-ai/ (Overview, Products, Assign,
+  Trends, Alerts, AI Strategy, Batch sekmeleri).
+- snapshots.json artık **2 gün** (2026-05-18, 2026-05-30); momentum ekseni aktif
+  (`growth_axis_active=true`, `days_until_confident=12`).
 
 ## Şu An Çalışılan
-- Veri katmanı açıldı: analyzer payload + bcg_scores.json artık 192 ürünün tamamını
-  (`is_unassigned` bayrağıyla) taşıyor; useData `products`'ı expose ediyor. Sıradaki UI işi:
-  ProductTable'ı sekmeye bağlamak (Excel görünüm) ve DİĞER-atama UI'ı.
+- a+b+c (v1) tamamlandı ve canlı. Sistem günlük otonom akıyor; aktif bir görev yok.
+  Sıradaki opsiyonlar "Sıradaki Adımlar"da.
 
 ## Bekleyen / Bloke
-- [ ] İş B doğrulama: Actions UI'dan `BCG Analysis` → "Run workflow" tetikle; loglarda
-      "Dashboard deploy tetiklendi" + `Deploy Dashboard` otomatik koşuyor mu teyit et.
-      (Yerelde `gh` CLI kurulu değil; doğrulama UI'dan yapılacak.)
-- [ ] İş C: scraper.py gerçek Trendyol yerine demo/template üretiyor; çıktısı
-      (products.json) analyzer tarafından okunmuyor (orphan). Gerçek `snapshots.json` yazmalı.
-      Bunu yazınca scrape→analyze halkası kendiliğinden canlanır (zincir hazır).
-- [ ] Eksik dosyalar: backend/snapshot_utils.py (delta mimarisi) ve data/category_map.json
-      (DİĞER override'ları) referanslı ama yok; analyzer şimdilik tek-dosya + boş map'e düşüyor.
+- [ ] Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de. Assign sekmesinden
+      "Hariç Tut" (`__EXCLUDE__`) ile category_map.json'a eklenip commit edilmeli.
+- [ ] backend/snapshot_utils.py (delta arşiv) — snapshots.json günlük büyüyor; ileride.
+- [ ] v2: yeni-ürün keşfi (mağaza enumerate Playwright'la; haftalik_snapshot.py'de vardı).
+      Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
 - [x] Tam otomatik pipeline + Pages deploy kuruldu.
@@ -61,23 +61,31 @@
 - [x] **(2026-05-30) UI:** ProductTable yeni "Products" sekmesine bağlandı (192 ürün,
       data.products'tan). Import bug düzeltildi (BCG_CONFIG/ACTION_COLORS → QUADRANT_META/ACTION_META).
       Revenue→Price; DİĞER ürünler "∅ ATANMADI" rozeti + "—" skor; "Atanmadı" filtre çipi. Build OK.
+- [x] **(2026-05-30) (a) UI fix:** kategori detayında NaN/undefined düzeltildi
+      (normalizeCategories avg_price/avg_rating/trend_score/trend_growth eşliyor).
+- [x] **(2026-05-30) (b) Assign sekmesi:** DİĞER ürünleri kategoriye ata / "Hariç Tut" →
+      category_map.json indir/kopyala (sıfır altyapı yazma kanalı). analyzer EXCLUDE
+      (`__EXCLUDE__`) desteği + metadata.excluded_count.
+- [x] **(2026-05-30) (c) İş C v1 — gerçek scraper UÇTAN UCA DOĞRULANDI:** backend/scraper.py
+      Playwright seed-refresh; puan/deg/fiyat **gömülü JSON**'dan (headless-shell render-bağımsız,
+      kök neden buydu). CI koşusu: 188/192 ürün (%98), 2026-05-30 günü eklendi (Toplam gün: 2) →
+      analyze → deploy zinciri **success**; roomart-bcg-ai Firestore `data_days=2`,
+      `growth_axis_active=true`, kadran STAR 4 / DOG 1 (momentum ayrıştırması başladı).
+- [x] **(2026-05-30) CI verimlilik:** scrape.yml Playwright Chromium'u sürüm-anahtarlı
+      cache'liyor (cache-hit'te ~100MB indirme yok). İlke: memory/ci-resource-efficiency.md.
 
 ## Sıradaki Adımlar
-0. İş C v1 doğrulama: Actions → "Data Collection" → Run workflow ile uçtan uca dene
-   (scrape → snapshots.json[bugün] → analyze → deploy). CI'da Playwright 200 doğrulandı (probe).
-1. UI: DİĞER-atama sekmesi (36 ürünü kategoriye ata → category_map.json). Bloke edici:
-   statik hosting'de repoya yazma kanalı yok — önce kanal tasarımı (GitHub API/admin/elle).
-3. İş B'yi Actions UI'dan canlı doğrula.
-4. İş C — scraper.py'yi gerçek Trendyol ROOMART sayfalarından snapshots.json yazacak şekilde
-   yeniden yaz; günlük snapshot biriktirmeyi başlat.
-5. snapshot_utils.py + category_map.json'u ekle (delta arşiv + DİĞER atama).
+1. Gürültü temizliği: Assign sekmesinden mobilya-dışı ürünleri "Hariç Tut" → category_map.json commit.
+2. v2: yeni-ürün keşfi (mağaza enumerate, Playwright; 403'ü gerçek tarayıcı geçiyordu).
+3. snapshot_utils.py (delta arşiv) — snapshots.json büyümesi için.
+4. (Düşük öncelik) Actions Node20 deprecation yükseltmesi; roundtable failure (Anthropic) incelemesi.
 
 ## Bilinen Sorunlar / Riskler
-- Tek snapshot günü (2026-05-18) var → momentum ölçülemiyor, büyüme ekseni ayrıştırmıyor;
-  bu yüzden matris şu an tek yanlı (yalnız STAR/QM, hiç CASH_COW/DOG). ≥14 gün biriktikçe düzelir.
-  Kodda growth_axis_active / days_until_confident bayraklarıyla dürüstçe işaretli.
-- scraper.py demo üretiyor ve çıktısı analyzer'a girmiyor; gerçek veri elle yüklenmiş
-  (snapshots.json + trends_sonuc.json, 2026-05-18) ve otomatik tazelenmiyor. → İş C kritik.
+- Momentum güveni için ≥14 farklı gün gerek. Şu an 2 gün (growth_axis_active=true ama
+  days_until_confident=12). Günlük cron biriktikçe `growth_confident=true` olacak. Erken
+  dönem kadranlar henüz tam oturmadı (kodda bayraklarla dürüstçe işaretli).
+- v1 scraper yalnız mevcut seed'i (snapshots.json son günü) tazeler; **yeni ROOMART
+  ürünlerini otomatik keşfetmez**. Katalog genişletme seed-genişletme/v2 ister.
 - **[Teknik borç]** Deploy Dashboard çalışıyor ama actions/checkout@v4, configure-pages@v4,
   deploy-pages@v4 Node.js 20 deprecation uyarısı veriyor. İleride en güncel sürümlere
   yükseltilmeli (workflow kırılmadan önce).

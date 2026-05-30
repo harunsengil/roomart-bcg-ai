@@ -67,4 +67,15 @@
   **CI `analyze.yml`** (gerçek roomart-bcg-ai secret) günceller; yerel çalıştırma sadece
   `data/*.json` üretmek/denetlemek için. Doğrulama: `roomart-bcg-ai` REST okuması.
 
+- **2026-05-30 — [Scraping: gömülü JSON]** Trendyol ürün verisi (puan/deg/fiyat) DOM
+  widget'ından DEĞİL, sayfanın initial HTML'indeki gömülü JSON state'ten parse edilir
+  (`"ratingScore":{"averageRating","totalCount"}`, `"sellingPrice":{"value"}`). Gerekçe:
+  CI'daki headless-shell Chromium review widget DOM'unu render etmiyordu (puan/deg=0);
+  gömülü JSON JS-render'dan bağımsız ve daha hızlı. `ad` DOM h1'den kalır. Kalite guard:
+  deg>0 oranı <%40 ise snapshot yazılmaz. Scraper v1 = seed-refresh (mağaza enumerate yok).
+
+- **2026-05-30 — [CI verimlilik ilkesi]** Pahalı/tekrarlı CI adımları sürüm-anahtarlı
+  cache'lenir (Playwright browser binary'leri), cache-hit'te ağır indirme atlanır. Tüm
+  süreçlerde varsayılan mercek. Detay: memory/ci-resource-efficiency.md.
+
 <!-- Yeni kararları buraya ekle -->
