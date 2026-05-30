@@ -3,13 +3,14 @@ name: BCG Analysis
 on:
   push:
     paths:
-      - 'data/products.json'
-      - 'data/trendyol.json'
-      - 'data/trends.json'
+      - 'data/snapshots.json'
+      - 'data/trends_sonuc.json'
+      - 'data/category_map.json'
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   analyze:
@@ -35,9 +36,28 @@ jobs:
         run: cp data/*.json frontend/public/data/
 
       - name: Commit analysis results
+        id: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "RoomArt Bot"
           git add data/ frontend/public/data/
-          git diff --staged --quiet || git commit -m "chore: update BCG analysis scores [skip ci]"
-          git push
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: update BCG analysis scores [skip ci]"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger dashboard deploy
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            })
+            console.log('Dashboard deploy tetiklendi')

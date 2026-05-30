@@ -29,4 +29,18 @@
   için `analyze.yml` veri push'unda tetiklenmiyor; BCG skorları otomatik güncellenmiyor (İş B).
   Çözülene dek analyzer manuel/yerel çalıştırılıp sonuç commit edilir.
 
+- **2026-05-30 — [CI tetikleme]** Workflow'lar arası geçiş explicit `workflow_dispatch`
+  (`actions/github-script` + `createWorkflowDispatch`) ile yapılır; push-path cascade'ine
+  GÜVENİLMEZ. Gerekçe: varsayılan GITHUB_TOKEN ile yapılan bot push'ları başka workflow'ların
+  push trigger'larını tetiklemez (GitHub recursion koruması). roundtable→deploy bu pattern'i
+  zaten kullanıyordu; scrape→analyze ve analyze→deploy de aynıya geçirildi. Dispatch yalnız
+  commit gerçekten atıldığında yapılır (boş deploy/analyze önlenir). analyze.yml artık gerçek
+  analyzer girdilerini (snapshots.json/trends_sonuc.json/category_map.json) izler; eski
+  orphan dosyaları (products/trendyol/trends.json) değil.
+
+- **2026-05-30 — [Branch modeli]** Tek geliştirici; doğrudan `main`'e çalışılır. Gerekçe:
+  workflow_dispatch/cross-workflow dispatch yalnız default branch (main) tanımını okur, bu
+  yüzden CI değişikliklerinin canlı olması için zaten main'de olması gerekir; PR akışı sadece
+  geciktirir.
+
 <!-- Yeni kararları buraya ekle -->
