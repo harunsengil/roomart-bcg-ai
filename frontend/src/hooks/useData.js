@@ -63,6 +63,7 @@ async function loadFromFirestore() {
   return {
     kpis: d.kpis,
     categories: normalizeCategories(d.categories ?? d.category_summary),
+    products: d.products ?? [],
     quadrantDistribution: d.quadrant_distribution,
     trends: d.trends,
     alerts: d.alerts,
@@ -81,6 +82,7 @@ async function loadFromJSON() {
     categories: normalizeCategories(
       bcgScores.categories ?? bcgScores.category_summary
     ),
+    products: bcgScores.products ?? [],
     quadrantDistribution: bcgScores.quadrant_distribution,
     trends: trends.trends,
     alerts: alertsData.alerts,

@@ -548,20 +548,48 @@ def run_analysis():
             "confidence": conf,
         })
 
+    # ── Birleşik ürün dizisi (192 hepsi; DİĞER dahil) — frontend tablo/atama için ──
+    # Skorlanmış ürünleri id ile indeksle, ham ürün listesi (DİĞER dahil) üzerinden birleştir.
+    scored_by_id = {p["id"]: p for p in scored}
+    products_payload = []
+    for p in products:
+        sc = scored_by_id.get(p["id"])
+        products_payload.append({
+            # ortak alanlar (192 hepsi)
+            "id": p["id"],
+            "name": p["name"],
+            "category": p["category"],
+            "price": p["price"],
+            "rating": p["rating"],
+            "review_count": p["review_count"],
+            "url": p["url"],
+            "is_unassigned": p["category"] == OTHER_CATEGORY,
+            # skor alanları: skorlanmışta dolu, DİĞER'de None (henüz atanmadı)
+            "share_score": sc["share_score"] if sc else None,
+            "growth_score": sc["growth_score"] if sc else None,
+            "bcg_class": sc["bcg_class"] if sc else None,
+            "recommendation": sc["recommendation"] if sc else None,
+            "composite_score": sc["composite_score"] if sc else None,
+            "confidence": sc["confidence"] if sc else None,
+        })
+
     alerts = detect_alerts(scored)
     payload = build_frontend_payload(scored, alerts, trends_cats, n_days)
+    payload["products"] = products_payload
 
     # Ham skor dosyası (debug/denetim için)
     bcg_scores = {
         "metadata": {
             "last_updated": datetime.now(timezone.utc).isoformat(),
-            "total_products": len(scored),
+            "total_products": len(scored),          # skorlanan (DİĞER hariç)
+            "total_all": len(products_payload),      # tüm ürünler (DİĞER dahil)
             "other_unassigned": sum(1 for p in products if p["category"] == OTHER_CATEGORY),
             "data_days": n_days,
             "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
             "quadrant_distribution": payload["quadrant_distribution"],
         },
-        "products": scored,
+        # Firestore ile parite: 192 ürünün tamamı (is_unassigned bayrağıyla)
+        "products": products_payload,
     }
     return bcg_scores, payload, alerts
 

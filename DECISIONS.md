@@ -43,4 +43,19 @@
   yüzden CI değişikliklerinin canlı olması için zaten main'de olması gerekir; PR akışı sadece
   geciktirir.
 
+- **2026-05-30 — [Teşhis: BCG Matrix]** Matris **kategori-bazlı** çiziyor (App.jsx
+  `BCGMatrix categories={data?.categories}`), ürün-bazlı değil. Gözlenen "~6 nokta" =
+  5 gerçek kategori balonu (beklenen, **bug değil, tasarım**). 156 skorlu ürün bu 5 balona
+  toplulaşıyor; 36 DİĞER tümüyle dışarıda. Ek bulgu: matris yalnız Firestore'dan çalışıyor —
+  `bcg_scores.json`'da `categories` anahtarı yok, JSON fallback'te matris boş kalır.
+
+- **2026-05-30 — [Teşhis: Veri katmanı boşlukları]** İleri sekmeler (DİĞER atama UI +
+  Excel ürün tablosu) için üç eksik: (1) `products` dizisi frontend payload'unda ve
+  `useData`'da YOK — frontend'in per-product veriye hiç erişimi yok; (2) 36 DİĞER ürün
+  hiçbir yerde yapısal **persist edilmiyor** (`bcg_scores.json` yalnız skorlu 156'yı içerir),
+  yalnız `snapshots.json`'da ham halde; (3) `category_map.json`'a **yazma kanalı yok** —
+  dashboard statik Pages (salt-okunur), repoya yazmak için ayrı kanal (GitHub API/admin/elle)
+  gerekir. Karar: önce veri katmanı açılır (payload'a `products` 192 + `is_unassigned`),
+  yazma kanalı en sona bırakılır.
+
 <!-- Yeni kararları buraya ekle -->

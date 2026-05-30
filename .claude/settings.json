@@ -14,7 +14,12 @@
       "Bash(pip install -r backend/requirements.txt)",
       "Bash(cd frontend && npm install)",
       "Bash(cd frontend && npm run build)",
-      "Bash(cd frontend && npm run dev)"
+      "Bash(cd frontend && npm run dev)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Read"
     ],
     "ask": [
       "Bash(git push --force:*)",
