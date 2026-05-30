@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Bot } from 'lucide-react'
+import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Bot, Table2 } from 'lucide-react'
 import Header from './components/Header'
 import KPISection from './components/KPISection'
 import BCGMatrix from './components/BCGMatrix'
@@ -9,10 +9,12 @@ import { TrendGrid, TrendAreaChart, ScoreRadarChart } from './components/TrendCh
 import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
 import BatchRunner from './components/BatchRunner'
+import ProductTable from './components/ProductTable'
 import { useTheme } from './hooks/useTheme'
 
 const TABS = [
   { id: 'overview',  label: 'Overview',        icon: LayoutDashboard },
+  { id: 'products',  label: 'Products',         icon: Table2 },
   { id: 'trends',    label: 'Trends',           icon: TrendingUp },
   { id: 'alerts',    label: 'Alerts & Signals', icon: Bell },
   { id: 'strategy',  label: 'AI Strategy',      icon: Lightbulb },
@@ -170,6 +172,11 @@ export default function App() {
                   </div>
                 </div>
               </>
+            )}
+
+            {/* ── PRODUCTS ── */}
+            {activeTab === 'products' && (
+              <ProductTable products={data?.products ?? []} />
             )}
 
             {/* ── TRENDS ── */}

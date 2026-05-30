@@ -52,11 +52,12 @@
       `products` expose ediyor. Matris akışı aynen çalışıyor (categories=5 değişmedi),
       frontend build OK. ProductTable henüz bağlı değil (görsel değişiklik yok).
 - [x] **(2026-05-30) Config:** .claude/settings.json allow listesine find/grep/cat/ls/Read eklendi.
+- [x] **(2026-05-30) UI:** ProductTable yeni "Products" sekmesine bağlandı (192 ürün,
+      data.products'tan). Import bug düzeltildi (BCG_CONFIG/ACTION_COLORS → QUADRANT_META/ACTION_META).
+      Revenue→Price; DİĞER ürünler "∅ ATANMADI" rozeti + "—" skor; "Atanmadı" filtre çipi. Build OK.
 
 ## Sıradaki Adımlar
-1. UI: ProductTable'ı yeni sekmeye bağla (Excel görünüm); `revenue` kolonunu kaldır/değiştir
-   (alan artık yok), 192 ürünü `data.products`'tan besle.
-2. UI: DİĞER-atama sekmesi (36 ürünü kategoriye ata → category_map.json). Bloke edici:
+1. UI: DİĞER-atama sekmesi (36 ürünü kategoriye ata → category_map.json). Bloke edici:
    statik hosting'de repoya yazma kanalı yok — önce kanal tasarımı (GitHub API/admin/elle).
 3. İş B'yi Actions UI'dan canlı doğrula.
 4. İş C — scraper.py'yi gerçek Trendyol ROOMART sayfalarından snapshots.json yazacak şekilde

@@ -1,5 +1,8 @@
 import { useState, useMemo } from 'react'
-import { BCG_CONFIG, ACTION_COLORS, formatCurrency, formatScore } from '../utils/helpers'
+import { QUADRANT_META, ACTION_META, formatCurrency, formatScore } from '../utils/helpers'
+
+// Skorlanmamış (DİĞER) ürünler için nötr rozet
+const UNASSIGNED_META = { label: 'ATANMADI', emoji: '∅', color: '#6B7280' }
 
 export default function ProductTable({ products }) {
   const [search, setSearch] = useState('')
@@ -19,7 +22,10 @@ export default function ProductTable({ products }) {
     return products
       .filter(p => {
         const matchSearch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.category.toLowerCase().includes(search.toLowerCase())
-        const matchBcg = bcgFilter === 'ALL' || p.bcg_class === bcgFilter
+        const matchBcg =
+          bcgFilter === 'ALL' ? true
+          : bcgFilter === 'UNASSIGNED' ? p.is_unassigned
+          : p.bcg_class === bcgFilter
         return matchSearch && matchBcg
       })
       .sort((a, b) => {
@@ -54,8 +60,11 @@ export default function ProductTable({ products }) {
             className="px-3 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-gold/40 w-48"
           />
           <div className="flex gap-1">
-            {['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG'].map(f => {
-              const cfg = f === 'ALL' ? { color: '#888' } : BCG_CONFIG[f]
+            {['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG', 'UNASSIGNED'].map(f => {
+              const cfg = f === 'ALL' ? { color: '#888' }
+                : f === 'UNASSIGNED' ? UNASSIGNED_META
+                : QUADRANT_META[f]
+              const label = f === 'ALL' ? 'ALL' : cfg.emoji
               return (
                 <button key={f}
                   onClick={() => { setBcgFilter(f); setPage(0) }}
@@ -64,7 +73,7 @@ export default function ProductTable({ products }) {
                     borderColor: bcgFilter === f ? cfg.color : 'rgba(255,255,255,0.1)',
                     color: bcgFilter === f ? cfg.color : 'rgba(255,255,255,0.4)',
                   }}>
-                  {f === 'ALL' ? 'ALL' : BCG_CONFIG[f].icon}
+                  {label}
                 </button>
               )
             })}
@@ -80,15 +89,15 @@ export default function ProductTable({ products }) {
               <SortHeader field="share_score" label="Share" />
               <SortHeader field="growth_score" label="Growth" />
               <SortHeader field="composite_score" label="Score" />
-              <SortHeader field="revenue" label="Revenue/mo" />
+              <SortHeader field="price" label="Price" />
               <th className="px-4 py-3 text-left text-xs font-mono text-white/40">BCG</th>
               <th className="px-4 py-3 text-left text-xs font-mono text-white/40">Action</th>
             </tr>
           </thead>
           <tbody>
             {paginated.map((p, i) => {
-              const cfg = BCG_CONFIG[p.bcg_class] || {}
-              const aColor = ACTION_COLORS[p.recommendation?.action] || '#888'
+              const cfg = QUADRANT_META[p.bcg_class] || UNASSIGNED_META
+              const aColor = ACTION_META[p.recommendation?.action]?.color || '#888'
               return (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/3 transition-colors">
                   <td className="px-4 py-3">
@@ -100,23 +109,27 @@ export default function ProductTable({ products }) {
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 bg-white/10 rounded-full w-16">
-                        <div className="h-full rounded-full" style={{ width: `${p.composite_score}%`, background: cfg.color }}></div>
+                        <div className="h-full rounded-full" style={{ width: `${p.composite_score ?? 0}%`, background: cfg.color }}></div>
                       </div>
                       <span className="font-mono text-xs text-white">{formatScore(p.composite_score)}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm text-white">{formatCurrency(p.revenue)}</td>
+                  <td className="px-4 py-3 font-mono text-sm text-white">{formatCurrency(p.price)}</td>
                   <td className="px-4 py-3">
                     <span className="text-xs font-mono px-2 py-0.5 rounded-full"
                       style={{ background: `${cfg.color}15`, color: cfg.color }}>
-                      {cfg.icon} {cfg.label}
+                      {cfg.emoji} {cfg.label}
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <span className="text-xs font-mono px-2 py-0.5 rounded-full"
-                      style={{ background: `${aColor}15`, color: aColor }}>
-                      {p.recommendation?.action}
-                    </span>
+                    {p.recommendation?.action ? (
+                      <span className="text-xs font-mono px-2 py-0.5 rounded-full"
+                        style={{ background: `${aColor}15`, color: aColor }}>
+                        {p.recommendation.action}
+                      </span>
+                    ) : (
+                      <span className="text-xs font-mono text-white/30">—</span>
+                    )}
                   </td>
                 </tr>
               )
