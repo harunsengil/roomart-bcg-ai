@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "last_updated": "2026-05-30T19:51:50.827288+00:00",
+    "last_updated": "2026-05-30T20:54:49.259555+00:00",
     "total_products": 154,
-    "total_all": 188,
-    "other_unassigned": 34,
-    "excluded_count": 0,
+    "total_all": 187,
+    "other_unassigned": 33,
+    "excluded_count": 1,
     "data_days": 2,
     "thresholds": {
       "share": 9.4,
@@ -3779,22 +3779,6 @@
       },
       "composite_score": 25.7,
       "confidence": "medium"
-    },
-    {
-      "id": "857296077",
-      "name": "Apple iPhone 16 Pro Max 256GB Siyah Titanyum",
-      "category": "DİĞER",
-      "price": 116799.0,
-      "rating": 4.6,
-      "review_count": 149,
-      "url": "https://www.trendyol.com/apple/iphone-16-pro-max-256gb-siyah-titanyum-p-857296077",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
     }
   ]
 }
