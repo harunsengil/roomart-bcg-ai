@@ -19,4 +19,14 @@
 - **(geçmiş) — [Roundtable]** Kategori yorumları Anthropic API ile üretilip Realtime DB'ye
   (`/bcg_roundtable`) yazılıyor; Firestore'dan ayrı tutuldu.
 
+- **2026-05-30 — [Veri kaynağı netleşti]** Analiz gerçek kaynağı `snapshots.json`
+  (`{gün: {pid: {ad,fiyat,puan,deg,url}}}`) + `trends_sonuc.json`'dır; bunlar 2026-05-18'de
+  elle yüklendi. `scraper.py` ise demo/template üretip `products.json`'a yazıyor ve bu çıktı
+  analyzer tarafından OKUNMUYOR (orphan). Karar: scraper gerçek Trendyol'a yöneltilene dek
+  (İş C) yerel testlerde scraper ÇALIŞTIRILMAZ; pipeline doğrulaması doğrudan analyzer ile yapılır.
+
+- **2026-05-30 — [Pipeline tetik kopukluğu]** `scrape.yml` commit mesajı `[skip ci]` içerdiği
+  için `analyze.yml` veri push'unda tetiklenmiyor; BCG skorları otomatik güncellenmiyor (İş B).
+  Çözülene dek analyzer manuel/yerel çalıştırılıp sonuç commit edilir.
+
 <!-- Yeni kararları buraya ekle -->
