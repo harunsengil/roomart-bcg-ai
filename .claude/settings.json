@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git pull:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(python backend/scraper.py)",
+      "Bash(python backend/analyzer.py)",
+      "Bash(python backend/seed_data.py)",
+      "Bash(pip install -r backend/requirements.txt)",
+      "Bash(cd frontend && npm install)",
+      "Bash(cd frontend && npm run build)",
+      "Bash(cd frontend && npm run dev)"
+    ],
+    "ask": [
+      "Bash(git push --force:*)",
+      "Bash(python backend/roundtable.py)",
+      "Bash(rm:*)"
+    ]
+  },
+  "env": {
+    "PROJECT": "roomart-bcg-ai"
+  }
+}
