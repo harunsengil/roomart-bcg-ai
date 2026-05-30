@@ -1,20 +1,47 @@
 #!/usr/bin/env python3
 """
-CI fizibilite probu (İş C öncesi go/no-go):
-GitHub Actions datacenter IP'sinden + headless Chromium ile Trendyol ürün
-DETAY sayfası 200 mü 403 mü dönüyor, fiyat/puan/deg parse edilebiliyor mu?
+CI selector TANI probu (İş C debug):
+scraper'la AYNI ortamda (playwright==1.49.0, headless-shell) tek bir ürün detay
+sayfasını açar ve puan/deg için hangi selector'ların eşleştiğini + scroll'dan
+önce/sonra durumu + gerçek 'rating'/'review' markup'ını döker.
 
-Mağaza listesi (403'lük kısım) DENENMEZ — yalnız tek bir ürün detay sayfası.
-snapshots.json son günün ilk ürününü seed alır. Hiçbir dosya yazmaz, salt teşhis.
+Amaç: scraper'da puan/deg neden 0 geliyor — selector mı değişti, lazy-load mu,
+headless-shell render farkı mı? Hiçbir dosya yazmaz.
 """
 import json
-import re
-import sys
 from pathlib import Path
 
 DATA = Path(__file__).parent.parent / "data" / "snapshots.json"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+
+RATING_SELECTORS = [
+    "span.reviews-summary-average-rating",
+    "div.product-rating-score span",
+    "span.ratingScore",
+    '[class*="rating-score"]',
+    '[class*="rating-line-count"]',
+    '[data-testid="rating-score"]',
+]
+REVIEW_SELECTORS = [
+    '[data-testid="review-info-link"]',
+    "a.reviews-summary-reviews-detail",
+    '[class*="review"] a',
+    '[class*="total-review"]',
+]
+DUMP_JS = """() => {
+  const out = [];
+  const els = document.querySelectorAll(
+    '[class*="rating"],[class*="review"],[class*="Rating"],[class*="Review"],[data-testid*="rating"],[data-testid*="review"]'
+  );
+  for (const e of els) {
+    const id = e.getAttribute('data-testid') || e.getAttribute('class') || e.tagName;
+    const txt = (e.innerText || '').trim().slice(0, 40).replace(/\\s+/g, ' ');
+    out.push(`${e.tagName}[${id}] :: ${txt}`);
+    if (out.length >= 25) break;
+  }
+  return out;
+}"""
 
 
 def seed_url():
@@ -24,19 +51,30 @@ def seed_url():
     return rec.get("url"), pid, day
 
 
+def try_selectors(page, selectors, label):
+    print(f"  -- {label} --")
+    for sel in selectors:
+        try:
+            el = page.query_selector(sel)
+            txt = el.inner_text().strip()[:30] if el else None
+        except Exception as e:
+            txt = f"ERR {str(e)[:30]}"
+        print(f"    {sel!r:55} -> {txt}")
+
+
 def main():
     from playwright.sync_api import sync_playwright
 
     url, pid, day = seed_url()
-    print(f"[PROBE] seed günü={day} pid={pid}")
+    print(f"[PROBE] seed={day} pid={pid}")
     print(f"[PROBE] URL: {url}")
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_context(user_agent=UA).new_page()
+        page.set_default_timeout(8000)
         resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
-        status = resp.status if resp else None
-        print(f"[PROBE] HTTP STATUS: {status}")
+        print(f"[PROBE] HTTP STATUS: {resp.status if resp else None}")
         page.wait_for_timeout(2500)
         try:
             page.keyboard.press("Escape")
@@ -47,21 +85,30 @@ def main():
             ad = page.get_by_test_id("product-title").inner_text().strip()
         except Exception:
             ad = None
-        puan_el = page.query_selector("span.reviews-summary-average-rating")
-        puan = puan_el.inner_text().strip() if puan_el else None
+        print(f"[PROBE] ad: {ad}")
+
+        print("\n[PROBE] === SCROLL ÖNCESİ ===")
+        try_selectors(page, RATING_SELECTORS, "rating")
+        try_selectors(page, REVIEW_SELECTORS, "review")
+
+        # Yorumlar bölümü lazy-load olabilir → aşağı kaydır
+        for _ in range(5):
+            page.keyboard.press("End")
+            page.wait_for_timeout(500)
+        page.wait_for_timeout(1500)
+
+        print("\n[PROBE] === SCROLL SONRASI ===")
+        try_selectors(page, RATING_SELECTORS, "rating")
+        try_selectors(page, REVIEW_SELECTORS, "review")
+
+        print("\n[PROBE] === GERÇEK rating/review elementleri (markup) ===")
         try:
-            deg_raw = page.get_by_test_id("review-info-link").inner_text()
-            deg = re.sub(r"[^\d]", "", deg_raw) or None
-        except Exception:
-            deg = None
+            for line in page.evaluate(DUMP_JS):
+                print("   ", line)
+        except Exception as e:
+            print("   dump hatası:", str(e)[:80])
 
-        print(f"[PROBE] product-title: {ad}")
-        print(f"[PROBE] puan: {puan} | deg: {deg}")
         browser.close()
-
-    ok = status == 200 and bool(ad)
-    print(f"[PROBE] SONUÇ: {'OK — CI scraping uygulanabilir (200 + veri)' if ok else f'BLOKLU/EKSİK (status={status}, ad={ad}) → plan B: lokal çalıştır'}")
-    sys.exit(0 if ok else 1)
 
 
 if __name__ == "__main__":
