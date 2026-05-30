@@ -74,7 +74,31 @@ def extract_pid(url):
     return None
 
 
-# ── Playwright yardımcıları ─────────────────────────────────────────────────--
+# ── Veri çıkarma ──────────────────────────────────────────────────────────--
+def parse_rating_price(html):
+    """
+    Gömülü JSON state'ten puan/deg/fiyat çıkar (RENDER BAĞIMSIZ — headless-shell'de
+    review widget'ı render edilmese bile çalışır; veri initial HTML'de mevcut).
+      "ratingScore":{"averageRating":4.80...,"commentCount":140,"totalCount":193}
+      "sellingPrice":{"value":13399.9, ...}
+    deg = totalCount (sayfadaki "Değerlendirme" sayısı).
+    """
+    puan, deg, fiyat = 0.0, 0, 0.0
+    rs = re.search(r'"ratingScore":\s*\{([^}]*)\}', html)
+    if rs:
+        block = rs.group(1)
+        a = re.search(r'"averageRating":\s*([0-9.]+)', block)
+        t = re.search(r'"totalCount":\s*(\d+)', block)
+        if a:
+            puan = round(float(a.group(1)), 1)
+        if t:
+            deg = int(t.group(1))
+    pr = re.search(r'"sellingPrice":\s*\{\s*"value":\s*([0-9.]+)', html)
+    if pr:
+        fiyat = float(pr.group(1))
+    return puan, deg, fiyat
+
+
 def parse_product(page, url):
     """Ürün detay sayfasından {ad, fiyat, puan, deg} çıkar. Hata → None."""
     resp = page.goto(url, wait_until="domcontentloaded", timeout=NAV_TIMEOUT_MS)
@@ -82,43 +106,25 @@ def parse_product(page, url):
     if status and status >= 400:
         logger.warning(f"  HTTP {status} — atlandı")
         return None
-    # puan/deg JS ile geç render olur; probe'da 2500ms bekleme çalıştı (4.8★/39 deg).
-    page.wait_for_timeout(2500)
-    try:
-        page.keyboard.press("Escape")
-    except Exception:
-        pass
 
+    # ad: DOM h1 (server-render; get_by_test_id yalnız gerektiği kadar bekler)
     try:
         ad = page.get_by_test_id("product-title").inner_text().strip()
     except Exception:
         ad = "—"
 
-    try:
-        fiyat_el = (
-            page.query_selector("span.discounted")
-            or page.query_selector("span.prc-dsc")
-            or page.get_by_test_id("lowest-price")
-        )
-        fiyat = float(re.sub(r"[^\d,]", "", fiyat_el.inner_text()).replace(",", ".") or "0") if fiyat_el else 0.0
-    except Exception:
-        fiyat = 0.0
+    # puan/deg/fiyat: gömülü JSON'dan (headless-shell render'ından bağımsız)
+    html = page.content()
+    puan, deg, fiyat = parse_rating_price(html)
 
-    try:
-        puan_el = (
-            page.query_selector("span.reviews-summary-average-rating")
-            or page.query_selector("div.product-rating-score span")
-            or page.query_selector("span.ratingScore")
-        )
-        puan = float(puan_el.inner_text().strip()) if puan_el else 0.0
-    except Exception:
-        puan = 0.0
-
-    try:
-        deg_raw = page.get_by_test_id("review-info-link").inner_text()
-        deg = int(re.sub(r"[^\d]", "", deg_raw) or "0")
-    except Exception:
-        deg = 0
+    # fiyat JSON'dan gelmezse DOM'a düş (yedek)
+    if fiyat == 0.0:
+        try:
+            fiyat_el = page.query_selector("span.discounted") or page.query_selector("span.prc-dsc")
+            if fiyat_el:
+                fiyat = float(re.sub(r"[^\d,]", "", fiyat_el.inner_text()).replace(",", ".") or "0")
+        except Exception:
+            pass
 
     # Ad alınamadıysa sayfa muhtemelen bozuk/yönlendirilmiş → güvenilmez
     if ad == "—":
