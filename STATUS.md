@@ -52,11 +52,19 @@
       `products` expose ediyor. Matris akışı aynen çalışıyor (categories=5 değişmedi),
       frontend build OK. ProductTable henüz bağlı değil (görsel değişiklik yok).
 - [x] **(2026-05-30) Config:** .claude/settings.json allow listesine find/grep/cat/ls/Read eklendi.
+- [x] **(2026-05-30) İş C v1 (scraper):** backend/scraper.py sahte demo'dan **gerçek
+      Playwright seed-refresh** scraper'a çevrildi — snapshots.json son günü seed alır,
+      her ürün detay sayfasını tazeler, snapshots.json[bugün]'e append (idempotent,
+      %60 başarı eşiği, kibar gecikme). CI probe: Trendyol detay sayfası 200+veri.
+      scrape.yml'e Playwright Chromium kurulumu + playwright requirements eklendi.
+      Mağaza enumerate (403) yapılmaz; yeni ürün keşfi seed-genişletme/sonraki sürüm.
 - [x] **(2026-05-30) UI:** ProductTable yeni "Products" sekmesine bağlandı (192 ürün,
       data.products'tan). Import bug düzeltildi (BCG_CONFIG/ACTION_COLORS → QUADRANT_META/ACTION_META).
       Revenue→Price; DİĞER ürünler "∅ ATANMADI" rozeti + "—" skor; "Atanmadı" filtre çipi. Build OK.
 
 ## Sıradaki Adımlar
+0. İş C v1 doğrulama: Actions → "Data Collection" → Run workflow ile uçtan uca dene
+   (scrape → snapshots.json[bugün] → analyze → deploy). CI'da Playwright 200 doğrulandı (probe).
 1. UI: DİĞER-atama sekmesi (36 ürünü kategoriye ata → category_map.json). Bloke edici:
    statik hosting'de repoya yazma kanalı yok — önce kanal tasarımı (GitHub API/admin/elle).
 3. İş B'yi Actions UI'dan canlı doğrula.

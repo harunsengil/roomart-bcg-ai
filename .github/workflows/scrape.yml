@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r backend/requirements.txt
 
+      - name: Install Chromium (Playwright)
+        run: python -m playwright install --with-deps chromium
+
       - name: Run data scraper
         run: python backend/scraper.py
         env:

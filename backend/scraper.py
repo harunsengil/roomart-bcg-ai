@@ -1,249 +1,207 @@
 #!/usr/bin/env python3
 """
-RoomArt BCG Intelligence Platform - Data Scraper
-Collects product data from RoomArt, Trendyol, and Google Trends
+RoomArt BCG — Scraper v1 (seed-refresh, Playwright)
+===================================================
+Trendyol ROOMART ürünlerinin GÜNLÜK snapshot'ını alır → data/snapshots.json.
+
+Tasarım (İş C v1):
+  • Mağaza listesini (trendyol.com/magaza/...) DOLAŞMAZ — o sayfa anti-bot ile
+    403/000 verir. Bunun yerine snapshots.json SON GÜNÜN ürün URL'lerini "seed"
+    alır ve her ürün DETAY sayfasını tek tek tazeler (detay sayfası 200 dönüyor,
+    CI'da da doğrulandı).
+  • Yeni ürün KEŞFİ yoktur; katalog genişletmek için seed elle güncellenir
+    (ya da ileride enumerate modu eklenir).
+  • Çıktı: snapshots.json[bugün] = {pid: {ad, fiyat, puan, deg, url}} (append, idempotent).
+    Bugün için snapshot zaten varsa tekrar çekmez.
+
+Kibarlık & dayanıklılık: istek-arası gecikme, Escape/"Tümünü Reddet", ürün başına
+hata toleransı (bir pid bozulursa o gün kırılmaz). Çok fazla ürün başarısız olursa
+(yarım/bozuk gün) snapshot YAZILMAZ — momentum verisi kirlenmesin.
+
+Selector'lar rpa_projesi/haftalik_snapshot.py + roomart_bot.py'den alınmıştır.
 """
 
 import json
-import random
-import time
 import logging
-from datetime import datetime, timedelta
+import os
+import re
+import time
+from datetime import datetime
 from pathlib import Path
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-DATA_DIR.mkdir(exist_ok=True)
+SNAPSHOT_FILE = DATA_DIR / "snapshots.json"
 
-ROOMART_CATEGORIES = {
-    "Oturma Odasi": ["Koltuk Takimi", "TV Unitesi", "Sehpa", "Kose Koltuk", "Tekli Koltuk"],
-    "Yatak Odasi": ["Yatak Basligi", "Gardirop", "Sifonyer", "Komodin", "Ayna"],
-    "Yemek Odasi": ["Yemek Masasi", "Sandalye", "Bufe", "Vitrin"],
-    "Ofis": ["Calisma Masasi", "Ofis Koltuğu", "Kitaplik", "Dosya Dolabi"],
-    "Dekorasyon": ["Duvar Rafi", "Aydinlatma", "Hali", "Yastik", "Perde"],
-    "Banyo": ["Banyo Dolabi", "Ayna", "Havluluk"],
-    "Mutfak": ["Mutfak Dolabi", "Bar Taburesi", "Mutfak Adasi"],
-}
-
-PRODUCT_TEMPLATES = [
-    {"name": "Elegance", "price_range": (8500, 45000)},
-    {"name": "Modern", "price_range": (6000, 28000)},
-    {"name": "Classic", "price_range": (12000, 65000)},
-    {"name": "Luna", "price_range": (4500, 18000)},
-    {"name": "Prestige", "price_range": (18000, 85000)},
-    {"name": "Comfort", "price_range": (7500, 32000)},
-    {"name": "Nordic", "price_range": (5500, 22000)},
-    {"name": "Vega", "price_range": (9000, 40000)},
-    {"name": "Aurora", "price_range": (11000, 55000)},
-    {"name": "Terra", "price_range": (6500, 24000)},
-]
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+REQUEST_DELAY = 0.8          # ürünler arası kibar gecikme (sn)
+NAV_TIMEOUT_MS = 45000       # sayfa yükleme zaman aşımı
+MIN_SUCCESS_RATIO = 0.6      # seed'in en az %60'ı çekilmeli, yoksa gün yazılmaz
 
 
-def generate_products():
-    products = []
-    product_id = 1000
-    random.seed(42)
-
-    for category, subcategories in ROOMART_CATEGORIES.items():
-        for subcategory in subcategories:
-            for i in range(random.randint(2, 5)):
-                template = random.choice(PRODUCT_TEMPLATES)
-                price_min, price_max = template["price_range"]
-                price = round(random.uniform(price_min, price_max), -2)
-                tier = random.choices(["high", "medium", "low"], weights=[0.25, 0.50, 0.25])[0]
-
-                if tier == "high":
-                    reviews = random.randint(150, 800)
-                    rating = round(random.uniform(4.2, 4.9), 1)
-                    monthly_sales = random.randint(80, 400)
-                    stock = random.randint(50, 500)
-                elif tier == "medium":
-                    reviews = random.randint(30, 150)
-                    rating = round(random.uniform(3.8, 4.4), 1)
-                    monthly_sales = random.randint(20, 80)
-                    stock = random.randint(20, 200)
-                else:
-                    reviews = random.randint(0, 30)
-                    rating = round(random.uniform(3.0, 4.0), 1)
-                    monthly_sales = random.randint(1, 20)
-                    stock = random.randint(5, 50)
-
-                products.append({
-                    "id": f"RA-{product_id}",
-                    "name": f"{template['name']} {subcategory}",
-                    "category": category,
-                    "subcategory": subcategory,
-                    "price": price,
-                    "currency": "TRY",
-                    "stock": stock,
-                    "stock_status": "in_stock" if stock > 10 else "low_stock",
-                    "rating": rating,
-                    "review_count": reviews,
-                    "monthly_sales": monthly_sales,
-                    "revenue": round(price * monthly_sales),
-                    "url": f"https://www.roomart.com.tr/urun/RA-{product_id}",
-                    "performance_tier": tier,
-                    "colors_available": random.randint(1, 8),
-                    "return_rate": round(random.uniform(0.01, 0.08), 3),
-                    "margin": round(random.uniform(0.25, 0.55), 3),
-                    "last_updated": datetime.now().isoformat(),
-                })
-                product_id += 1
-
-    return products
+# ── IO ────────────────────────────────────────────────────────────────────────
+def load_snapshots():
+    if SNAPSHOT_FILE.exists():
+        with open(SNAPSHOT_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
 
 
-def get_trendyol_data():
-    trendyol = {}
-    random.seed(123)
-    for category in ROOMART_CATEGORIES.keys():
-        trendyol[category] = {
-            "category": category,
-            "total_listings": random.randint(500, 8000),
-            "competitor_count": random.randint(15, 120),
-            "avg_price_index": round(random.uniform(0.7, 1.4), 3),
-            "market_saturation": round(random.uniform(0.3, 0.9), 2),
-            "new_listings_30d": random.randint(20, 300),
-            "category_growth_30d": round(random.uniform(-0.05, 0.35), 3),
-            "avg_review_count": random.randint(10, 200),
-            "price_competition_index": round(random.uniform(0.4, 0.9), 2),
-            "timestamp": datetime.now().isoformat(),
-        }
-    return trendyol
-
-
-def get_trends_data():
-    keywords = {
-        "koltuk takimi": {"name": "Koltuk Takimi", "category": "Oturma Odasi"},
-        "tv unitesi": {"name": "TV Unitesi", "category": "Oturma Odasi"},
-        "yatak basligi": {"name": "Yatak Basligi", "category": "Yatak Odasi"},
-        "gardirop": {"name": "Gardirop", "category": "Yatak Odasi"},
-        "yemek masasi": {"name": "Yemek Masasi", "category": "Yemek Odasi"},
-        "calisma masasi": {"name": "Calisma Masasi", "category": "Ofis"},
-        "duvar rafi": {"name": "Duvar Rafi", "category": "Dekorasyon"},
-        "mutfak dolabi": {"name": "Mutfak Dolabi", "category": "Mutfak"},
-        "banyo dolabi": {"name": "Banyo Dolabi", "category": "Banyo"},
-        "sandalye": {"name": "Sandalye", "category": "Yemek Odasi"},
-    }
-
-    trends = {}
-    now = datetime.now()
-    random.seed(99)
-
-    for keyword, meta in keywords.items():
-        base = random.randint(40, 80)
-        direction = random.uniform(-0.3, 0.8)
-        weekly = []
-
-        for w in range(52):
-            date = now - timedelta(weeks=51 - w)
-            month = date.month
-            seasonal = 1.25 if month in [3,4,5] else 1.15 if month in [9,10,11] else 0.85 if month in [1,2] else 1.0
-            noise = random.uniform(-10, 10)
-            value = max(0, min(100, base * seasonal + (w/52)*direction*30 + noise))
-            weekly.append({"date": date.strftime("%Y-%m-%d"), "value": round(value, 1)})
-
-        recent = sum(w["value"] for w in weekly[-4:]) / 4
-        old = sum(w["value"] for w in weekly[-16:-12]) / 4
-        growth = (recent - old) / old if old > 0 else 0
-
-        trends[keyword] = {
-            "keyword": keyword,
-            "name": meta["name"],
-            "category": meta["category"],
-            "weekly_data": weekly,
-            "current_interest": round(recent, 1),
-            "growth_rate_12w": round(growth, 3),
-            "trend_direction": "rising" if growth > 0.05 else "falling" if growth < -0.05 else "stable",
-        }
-
-    return trends
-
-
-def save_json(filename, data):
-    path = DATA_DIR / filename
-    with open(path, "w", encoding="utf-8") as f:
+def save_snapshots(data):
+    SNAPSHOT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(SNAPSHOT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    logger.info(f"Saved {path}")
+    logger.info(f"Kaydedildi: {SNAPSHOT_FILE}")
 
 
-def init_firebase():
-    import os
-    import json
-    import firebase_admin
-    from firebase_admin import credentials, firestore
-    
-    if firebase_admin._apps:
-        return firestore.client()
-    
-    service_account_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
-    if not service_account_json:
-        logger.warning("FIREBASE_SERVICE_ACCOUNT not set, skipping Firebase")
-        return None
-    
-    cred = credentials.Certificate(json.loads(service_account_json))
-    firebase_admin.initialize_app(cred)
-    return firestore.client()
+def seed_products(snapshots):
+    """snapshots.json son günün {pid: kayıt} sözlüğünü döndür (seed)."""
+    if not snapshots:
+        return {}
+    last_day = sorted(snapshots.keys())[-1]
+    logger.info(f"Seed günü: {last_day} ({len(snapshots[last_day])} ürün)")
+    return snapshots[last_day]
 
 
-def save_to_firebase(db, products, trendyol, trends):
-    if not db:
-        return
+def extract_pid(url):
+    if url and "-p-" in url:
+        return url.split("-p-")[-1].split("?")[0]
+    return None
+
+
+# ── Playwright yardımcıları ─────────────────────────────────────────────────--
+def dismiss_overlays(page):
+    """Çerez/konum tooltip'lerini kapat (kibar, hata yutar)."""
     try:
-        from datetime import timezone
-        now = datetime.now(timezone.utc)
-        batch = db.batch()
-        
-        ref = db.collection("snapshots").document(now.strftime("%Y-%m-%dT%H:%M"))
-        batch.set(ref, {
-            "timestamp": now,
-            "products": products,
-            "trendyol": trendyol,
-            "trends": trends,
-            "product_count": len(products)
-        })
-        
-        meta_ref = db.collection("meta").document("latest")
-        batch.set(meta_ref, {
-            "last_updated": now,
-            "product_count": len(products)
-        })
-        
-        batch.commit()
-        logger.info(f"Saved to Firebase: {len(products)} products")
-    except Exception as e:
-        logger.error(f"Firebase save failed: {e}")
+        page.keyboard.press("Escape")
+    except Exception:
+        pass
+    for name in ("Tümünü Reddet", "Anladım"):
+        try:
+            page.get_by_role("button", name=name).click(timeout=1500)
+            time.sleep(0.3)
+        except Exception:
+            pass
+    try:
+        page.keyboard.press("Escape")
+    except Exception:
+        pass
 
+
+def parse_product(page, url):
+    """Ürün detay sayfasından {ad, fiyat, puan, deg} çıkar. Hata → None."""
+    resp = page.goto(url, wait_until="domcontentloaded", timeout=NAV_TIMEOUT_MS)
+    status = resp.status if resp else None
+    if status and status >= 400:
+        logger.warning(f"  HTTP {status} — atlandı")
+        return None
+    time.sleep(1.2)
+    dismiss_overlays(page)
+
+    try:
+        ad = page.get_by_test_id("product-title").inner_text().strip()
+    except Exception:
+        ad = "—"
+
+    try:
+        fiyat_el = (
+            page.query_selector("span.discounted")
+            or page.query_selector("span.prc-dsc")
+            or page.get_by_test_id("lowest-price")
+        )
+        fiyat = float(re.sub(r"[^\d,]", "", fiyat_el.inner_text()).replace(",", ".") or "0") if fiyat_el else 0.0
+    except Exception:
+        fiyat = 0.0
+
+    try:
+        puan_el = (
+            page.query_selector("span.reviews-summary-average-rating")
+            or page.query_selector("div.product-rating-score span")
+            or page.query_selector("span.ratingScore")
+        )
+        puan = float(puan_el.inner_text().strip()) if puan_el else 0.0
+    except Exception:
+        puan = 0.0
+
+    try:
+        deg_raw = page.get_by_test_id("review-info-link").inner_text()
+        deg = int(re.sub(r"[^\d]", "", deg_raw) or "0")
+    except Exception:
+        deg = 0
+
+    # Ad alınamadıysa sayfa muhtemelen bozuk/yönlendirilmiş → güvenilmez
+    if ad == "—":
+        return None
+
+    return {"ad": ad[:60], "fiyat": fiyat, "puan": puan, "deg": deg, "url": url}
+
+
+def scrape(seed):
+    """Seed'deki her ürünü tazele. {pid: kayıt} döndür."""
+    from playwright.sync_api import sync_playwright
+
+    urunler = {}
+    total = len(seed)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(user_agent=USER_AGENT)
+        page = context.new_page()
+
+        for i, (pid, rec) in enumerate(seed.items(), 1):
+            url = rec.get("url")
+            if not url:
+                continue
+            try:
+                logger.info(f"  [{i}/{total}] {pid}")
+                veri = parse_product(page, url)
+                if veri:
+                    urunler[pid] = veri
+                    logger.info(f"      ✓ {veri['ad'][:40]} | {veri['fiyat']} TL | {veri['puan']}★ | {veri['deg']} deg")
+                else:
+                    logger.warning(f"      atlandı (veri yok): {pid}")
+            except Exception as e:
+                logger.warning(f"      [HATA] {pid}: {str(e)[:80]}")
+            time.sleep(REQUEST_DELAY)
+
+        browser.close()
+    return urunler
+
+
+# ── Ana akış ────────────────────────────────────────────────────────────────--
 def main():
-    logger.info("Starting RoomArt data collection...")
-    products = generate_products()
-    trendyol = get_trendyol_data()
-    trends = get_trends_data()
+    logger.info("RoomArt scraper v1 (seed-refresh) başlıyor...")
+    snapshots = load_snapshots()
+    today = datetime.now().strftime("%Y-%m-%d")
 
-    save_json("products.json", {
-        "metadata": {"total": len(products), "last_updated": datetime.now().isoformat()},
-        "products": products
-    })
-    save_json("trendyol.json", {
-        "metadata": {"last_updated": datetime.now().isoformat()},
-        "categories": trendyol
-    })
-    save_json("trends.json", {
-        "metadata": {"last_updated": datetime.now().isoformat()},
-        "keywords": trends
-    })
+    if today in snapshots:
+        logger.info(f"Bugün ({today}) için snapshot zaten var — atlanıyor.")
+        return
 
-    db = init_firebase()
-    save_to_firebase(db, products, trendyol, trends)
+    seed = seed_products(snapshots)
+    if not seed:
+        logger.error("Seed bulunamadı (snapshots.json boş). Önce bir ilk gün gerekir.")
+        return
 
-    logger.info(f"Collection complete: {len(products)} products")
-    return products, trendyol, trends
+    urunler = scrape(seed)
+    ratio = len(urunler) / len(seed) if seed else 0
+    logger.info(f"Çekilen: {len(urunler)}/{len(seed)} ürün (oran {ratio:.0%})")
 
+    if ratio < MIN_SUCCESS_RATIO:
+        logger.error(
+            f"Başarı oranı {ratio:.0%} < {MIN_SUCCESS_RATIO:.0%} — yarım/bozuk gün, "
+            "snapshot YAZILMADI (momentum kirlenmesin)."
+        )
+        return
+
+    snapshots[today] = urunler
+    save_snapshots(snapshots)
+    logger.info(f"Tamamlandı: {today} → {len(urunler)} ürün eklendi. Toplam gün: {len(snapshots)}")
 
 
 if __name__ == "__main__":
     main()
-
-
