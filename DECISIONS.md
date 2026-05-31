@@ -78,4 +78,14 @@
   cache'lenir (Playwright browser binary'leri), cache-hit'te ağır indirme atlanır. Tüm
   süreçlerde varsayılan mercek. Detay: memory/ci-resource-efficiency.md.
 
+- **2026-05-31 — [Çalışma protokolü / Model seçimi (Seviye 2)]** Code her yeni göreve
+  başlamadan tek satır model önerir: `MODEL: <Opus 4.8|Sonnet 4.6|Haiku 4.5> — gerekçe`.
+  Geçişi kullanıcı `/model` ile yapar (Code değiştiremez). Sınıflandırma: Opus = çok-dosyalı
+  bağımlı/mimari/kök-neden/belirsiz; Sonnet = tek-dosya/bilinen pattern/test/net tarif;
+  Haiku = format/küçük düzeltme/hızlı soru (şüphede üst kademe). Seviye-2 onay durakları:
+  (1) model önerisi, (2) 3+ dosyalı yapısal iş kısa plan+onay, (3) riskli/geri-dönülemez
+  (force-push, silme, history rewrite, prod/dashboard etkileyen, şema/CI/secret). Rutin
+  tek-dosyada onay yok. İlke: işe başlamadan `git pull --rebase`, CI'da cache. (Chat ile
+  uzlaşıldı; Code uygular.)
+
 <!-- Yeni kararları buraya ekle -->
