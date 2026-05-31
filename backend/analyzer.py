@@ -601,7 +601,12 @@ def run_analysis():
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
             "bcg_class": sc["bcg_class"] if sc else None,
-            "recommendation": sc["recommendation"] if sc else None,
+            # action'ı REC_MAP'ten geçir → tooltip/tablo kategori paneliyle TUTARLI
+            # (ör. SCALE→INVEST); rationale/priority korunur.
+            "recommendation": ({**sc["recommendation"],
+                                "action": REC_MAP.get(sc["recommendation"]["action"],
+                                                      sc["recommendation"]["action"])}
+                               if sc else None),
             "composite_score": sc["composite_score"] if sc else None,
             "confidence": sc["confidence"] if sc else None,
         })
