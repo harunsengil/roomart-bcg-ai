@@ -165,6 +165,7 @@ export default function App() {
                 <div className="grid grid-cols-1 xl:grid-cols-5 gap-4" style={{ minHeight: 480 }}>
                   <div className="xl:col-span-3">
                     <BCGMatrix
+                      products={data?.products}
                       categories={data?.categories}
                       onSelectCategory={setSelectedCategory}
                       selectedCategory={selectedCategory}

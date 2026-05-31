@@ -9,78 +9,90 @@ const QUADRANT_LABELS = [
   { id: 'CASH_COW', x: '75%', y: '75%', label: '🐄 CASH COWS', sub: 'Low Growth · High Share', color: '#10B981' },
 ]
 
-function Tooltip({ category, visible }) {
-  if (!visible || !category) return null
-  const qm = QUADRANT_META[category.bcg?.quadrant] || {}
-  const am = ACTION_META[category.recommendation?.action] || {}
+const PAD = 8 // çizim alanı kenar boşluğu (%)
+const SPAN = 100 - 2 * PAD
+
+function median(arr) {
+  if (!arr.length) return 50
+  const s = [...arr].sort((a, b) => a - b)
+  const m = Math.floor(s.length / 2)
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2
+}
+
+// Parçalı normalize: medyan → 0.5 (eşik çizgisi tam ortada; nokta rengi görsel kadranla uyumlu)
+function frac(v, thr) {
+  if (v <= thr) return thr <= 0 ? 0.5 : (v / thr) * 0.5
+  return thr >= 100 ? 0.5 : 0.5 + ((v - thr) / (100 - thr)) * 0.5
+}
+
+function ProductTooltip({ p }) {
+  if (!p) return null
+  const qm = QUADRANT_META[p.bcg_class] || {}
+  const am = ACTION_META[p.recommendation?.action] || {}
   return (
-    <AnimatePresence>
-      <motion.div initial={{ opacity: 0, scale: 0.9, y: 8 }} animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.15 }}
-        className="pointer-events-none absolute z-50 w-64 rounded-xl border bg-navy-900/98 backdrop-blur-xl p-4 shadow-2xl"
-        style={{ borderColor: (qm.color || '#fff') + '40' }}>
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <p className="text-[10px] font-mono text-white/30 tracking-widest uppercase">{category.slug}</p>
-            <h4 className="text-white font-body font-semibold text-sm mt-0.5">{category.category}</h4>
+    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.12 }}
+      className="pointer-events-none absolute z-50 w-60 rounded-xl border bg-navy-900/98 backdrop-blur-xl p-3 shadow-2xl"
+      style={{ borderColor: (qm.color || '#fff') + '40' }}>
+      <div className="flex items-center justify-between mb-2 gap-2">
+        <h4 className="text-white font-body font-medium text-xs leading-snug">{p.name}</h4>
+        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider flex-shrink-0"
+          style={{ background: qm.bg, color: qm.color, border: `1px solid ${qm.border}` }}>
+          {qm.emoji} {qm.label}
+        </span>
+      </div>
+      <p className="text-[9px] font-mono text-white/30 mb-2 truncate">{p.category}</p>
+      <div className="grid grid-cols-3 gap-1.5 mb-2">
+        {[['Share', p.share_score], ['Growth', p.growth_score], ['Score', p.composite_score]].map(([l, v]) => (
+          <div key={l} className="bg-white/5 rounded-md p-1.5 text-center">
+            <p className="text-[8px] font-mono text-white/30 uppercase">{l}</p>
+            <p className="text-sm font-display text-white">{formatScore(v)}</p>
           </div>
-          <div className="px-2 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider"
-            style={{ background: qm.bg, color: qm.color, border: `1px solid ${qm.border}` }}>
-            {qm.label}
-          </div>
+        ))}
+      </div>
+      {p.recommendation?.action && (
+        <div className="rounded-md px-2 py-1 text-center" style={{ background: am.bg || 'rgba(255,255,255,0.05)' }}>
+          <span className="text-[11px] font-bold font-mono tracking-wider" style={{ color: am.color || '#fff' }}>
+            {p.recommendation.action}
+          </span>
         </div>
-        <div className="grid grid-cols-2 gap-2 mb-3">
-          {[
-            { label: 'Market Share', value: formatScore(category.share_score) },
-            { label: 'Growth Score', value: formatScore(category.growth_score) },
-            { label: 'Products', value: category.product_count },
-            { label: 'Reviews', value: ((category.total_reviews || 0) / 1000).toFixed(1) + 'K' },
-          ].map(({ label, value }) => (
-            <div key={label} className="bg-white/5 rounded-lg p-2">
-              <p className="text-[9px] font-mono text-white/30 uppercase tracking-wider">{label}</p>
-              <p className="text-lg font-display text-white">{value}</p>
-            </div>
-          ))}
-        </div>
-        <div className="rounded-lg px-3 py-2 flex items-center justify-between"
-          style={{ background: am.bg || 'rgba(255,255,255,0.05)' }}>
-          <div>
-            <p className="text-[9px] font-mono text-white/30 uppercase tracking-wider">Recommendation</p>
-            <p className="text-sm font-bold font-mono tracking-wider mt-0.5" style={{ color: am.color || '#fff' }}>
-              {category.recommendation?.action}
-            </p>
-          </div>
-          <div className="text-[10px] font-mono px-2 py-0.5 rounded"
-            style={{ background: 'rgba(255,255,255,0.05)', color: category.recommendation?.priority === 'HIGH' ? '#EF4444' : '#F59E0B' }}>
-            {category.recommendation?.priority}
-          </div>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+      )}
+    </motion.div>
   )
 }
 
-export default function BCGMatrix({ categories, onSelectCategory, selectedCategory }) {
-  const [tooltip, setTooltip] = useState({ visible: false, category: null, x: 0, y: 0 })
+export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory }) {
+  const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
   const containerRef = useRef(null)
-  if (!categories?.length) return null
 
-  const handleMouseEnter = (e, category) => {
+  // Yalnız skorlanmış ürünler (DİĞER/atanmamış skorsuz → matriste yok)
+  const scored = (products || []).filter(
+    p => !p.is_unassigned && p.share_score != null && p.growth_score != null
+  )
+  if (!scored.length) return null
+
+  // Göreli eşik = portföy medyanı (analyzer ile aynı mantık) → çizgiler 50%'de
+  const shareThr = median(scored.map(p => p.share_score))
+  const growthThr = median(scored.map(p => p.growth_score))
+
+  const handleMouseEnter = (e, product) => {
     const rect = containerRef.current?.getBoundingClientRect()
     if (!rect) return
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
-    const tipX = x > rect.width * 0.6 ? x - 270 : x + 16
-    const tipY = y > rect.height * 0.5 ? y - 200 : y + 16
-    setTooltip({ visible: true, category, x: tipX, y: tipY })
+    const tipX = x > rect.width * 0.6 ? x - 250 : x + 14
+    const tipY = y > rect.height * 0.5 ? y - 170 : y + 14
+    setTooltip({ visible: true, product, x: tipX, y: tipY })
   }
+  const clearTip = () => setTooltip({ visible: false, product: null, x: 0, y: 0 })
 
   return (
     <div className="glass-card p-5 h-full">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="font-display text-lg tracking-[0.15em] text-white">BCG MATRIX</h2>
-          <p className="text-[10px] font-mono text-white/30 tracking-wider">Relative Market Share vs Growth Score</p>
+          <p className="text-[10px] font-mono text-white/30 tracking-wider">
+            {scored.length} ürün · Relative Market Share vs Growth Score
+          </p>
         </div>
         <div className="flex items-center gap-2">
           {Object.entries(QUADRANT_META).map(([key, meta]) => (
@@ -126,53 +138,41 @@ export default function BCGMatrix({ categories, onSelectCategory, selectedCatego
             </div>
           ))}
 
-          {(() => {
-            const shareScores = categories.map(c => c.share_score)
-            const growthScores = categories.map(c => c.growth_score)
-            const shareMin = Math.min(...shareScores), shareMax = Math.max(...shareScores)
-            const growthMin = Math.min(...growthScores), growthMax = Math.max(...growthScores)
-            const shareRange = shareMax - shareMin || 1
-            const growthRange = growthMax - growthMin || 1
-            return categories.map((cat, i) => {
-              const x = ((cat.share_score - shareMin) / shareRange) * 78 + 11
-              const y = (1 - (cat.growth_score - growthMin) / growthRange) * 78 + 11
-              const qm = QUADRANT_META[cat.bcg?.quadrant] || {}
-              const isSelected = selectedCategory?.id === cat.id
-              const bubbleSize = Math.max(28, Math.min(56, (cat.product_count || 15) * 1.5))
-              return (
-              <motion.div key={cat.id} className="absolute cursor-pointer"
-                style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)', zIndex: isSelected ? 20 : 10 }}
-                initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: i * 0.08, type: 'spring', stiffness: 200 }}
-                whileHover={{ scale: 1.15, zIndex: 30 }}
-                onClick={() => onSelectCategory(cat)}
-                onMouseEnter={(e) => handleMouseEnter(e, cat)}
-                onMouseLeave={() => setTooltip({ visible: false, category: null, x: 0, y: 0 })}>
-                {(cat.bcg?.quadrant === 'STAR' || cat.growth_score > 70) && (
-                  <div className="absolute inset-0 rounded-full animate-ping"
-                    style={{ background: 'transparent', border: `1px solid ${qm.color}`, opacity: 0.4, animationDuration: '2s' }} />
-                )}
-                <div className="rounded-full flex items-center justify-center font-mono text-[9px] font-bold text-white transition-all duration-200 relative"
-                  style={{ width: bubbleSize, height: bubbleSize,
-                    background: `radial-gradient(circle at 35% 35%, ${qm.color}80, ${qm.color}30)`,
-                    border: `2px solid ${isSelected ? qm.color : (qm.color || '#fff') + '60'}`,
-                    boxShadow: isSelected ? `0 0 20px ${qm.color}60` : `0 0 8px ${qm.color}30` }}>
-                  <span className="text-[8px] leading-tight text-center px-0.5">
-                    {cat.category.split(' ').map(w => w[0]).join('').slice(0, 3)}
-                  </span>
-                </div>
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span className="text-[8px] font-mono text-white/50">{cat.category}</span>
-                </div>
-              </motion.div>
-              )
-            })
-          })()}
+          {/* Ürün noktaları */}
+          {scored.map((p, i) => {
+            const x = PAD + frac(p.share_score, shareThr) * SPAN
+            const y = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
+            const qm = QUADRANT_META[p.bcg_class] || {}
+            const dimmed = selectedCategory && selectedCategory.category !== p.category
+            const size = 9
+            return (
+              <div key={p.id} className="absolute cursor-pointer"
+                style={{
+                  left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)',
+                  zIndex: tooltip.product?.id === p.id ? 30 : 5,
+                }}
+                onMouseEnter={(e) => handleMouseEnter(e, p)}
+                onMouseLeave={clearTip}
+                onClick={() => {
+                  const cat = (categories || []).find(c => c.category === p.category)
+                  if (cat) onSelectCategory(cat)
+                }}>
+                <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
+                  style={{
+                    width: size, height: size,
+                    background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
+                    border: `1px solid ${qm.color}`,
+                    opacity: dimmed ? 0.18 : 0.85,
+                    boxShadow: `0 0 5px ${qm.color}55`,
+                  }} />
+              </div>
+            )
+          })}
         </div>
 
         {tooltip.visible && (
           <div style={{ position: 'absolute', left: tooltip.x, top: tooltip.y, zIndex: 100 }}>
-            <Tooltip category={tooltip.category} visible={tooltip.visible} />
+            <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
           </div>
         )}
       </div>
