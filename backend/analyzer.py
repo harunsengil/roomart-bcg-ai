@@ -397,7 +397,10 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
 
         cat_prods = [p for p in scored if p["category"] == cat]
         top_prod = max(cat_prods, key=lambda p: (p["share_score"] + p["growth_score"]))
-        top_action = top_prod["recommendation"]["action"]
+        top_rec = top_prod["recommendation"]
+        top_action = top_rec["action"]
+        # ürün priority'si int (1-4) → kategori önerisi için etiket (frontend HIGH/MEDIUM/LOW bekler)
+        prio_label = {1: "HIGH", 2: "MEDIUM", 3: "LOW", 4: "LOW"}.get(top_rec.get("priority"), "MEDIUM")
 
         # kategori güveni: en düşük güven seviyesi baskın
         conf_rank = {"low": 0, "medium": 1, "high": 2}
@@ -409,7 +412,13 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
             "share_score": round(statistics.mean(c["share"]), 2),
             "growth_score": round(statistics.mean(c["growth"]), 2),
             "bcg": BCG_META[top_bcg],
-            "recommendation": {"action": REC_MAP.get(top_action, "TEST")},
+            # action + rationale + priority (kategorinin lider ürününden); tactics/budget
+            # üretilmiyor (eski sahte-veri kalıntısı), frontend'den de kaldırıldı.
+            "recommendation": {
+                "action": REC_MAP.get(top_action, "TEST"),
+                "rationale": top_rec.get("rationale", ""),
+                "priority": prio_label,
+            },
             "avg_price": round(statistics.mean(c["prices"]), 2),
             "avg_rating": round(statistics.mean([r for r in c["ratings"] if r > 0] or [0]), 1),
             "total_reviews": sum(c["reviews"]),
@@ -442,11 +451,14 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
         tkey = TRENDS_BRIDGE.get(cat)
         if tkey and tkey in trends_cats:
             td = trends_cats[tkey]
+            haftalik = td.get("haftalik", [])
             trends_list.append({
                 "category": cat, "slug": slugify(cat), "keyword": tkey,
                 "trend_score": round(min(100.0, td.get("ortalama", 50)), 1),
                 "growth_rate": round(td.get("buyume_yuzde", 0.0), 1),
-                "data_points": td.get("haftalik", []),
+                # frontend recharts {value} objesi bekler (ham sayı değil)
+                "data_points": [{"week": i + 1, "value": v} for i, v in enumerate(haftalik)],
+                "peak_interest": td.get("maks", max(haftalik) if haftalik else 0),
                 "fetched_at": datetime.now(timezone.utc).isoformat(),
                 "has_trends": True,
             })
@@ -454,6 +466,7 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
             trends_list.append({
                 "category": cat, "slug": slugify(cat), "keyword": cat.lower(),
                 "trend_score": 50.0, "growth_rate": 0.0, "data_points": [],
+                "peak_interest": 0,
                 "fetched_at": datetime.now(timezone.utc).isoformat(),
                 "has_trends": False,
             })

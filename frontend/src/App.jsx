@@ -148,6 +148,19 @@ export default function App() {
             {/* ── OVERVIEW ── */}
             {activeTab === 'overview' && (
               <>
+                {data?.kpis && !data.kpis.growth_confident && (
+                  <div className="flex items-center gap-3 rounded-xl border border-amber-500/25 bg-amber-500/5 px-4 py-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse flex-shrink-0" />
+                    <p className="text-[11px] font-mono text-amber-200/70 leading-snug">
+                      Veri olgunlaşıyor — <b className="text-amber-300">{data.kpis.data_days}/14 gün</b>.
+                      {data.kpis.growth_axis_active
+                        ? ' Büyüme ekseni aktif ama momentum güveni için '
+                        : ' Momentum henüz ölçülemiyor; '}
+                      <b className="text-amber-300">{data.kpis.days_until_confident} gün</b> daha gerekiyor.
+                      Erken dönem kadranları kesin değil.
+                    </p>
+                  </div>
+                )}
                 <KPISection kpis={data?.kpis} />
                 <div className="grid grid-cols-1 xl:grid-cols-5 gap-4" style={{ minHeight: 480 }}>
                   <div className="xl:col-span-3">

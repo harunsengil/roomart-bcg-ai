@@ -103,16 +103,8 @@ export function RecommendationsPanel({ categories }) {
                     </span>
                   </div>
                   <p className="text-[10px] text-white/40 leading-relaxed mb-2">{rec.rationale}</p>
-                  <div className="space-y-1">
-                    {rec.tactics?.slice(0, 2).map((t, j) => (
-                      <div key={j} className="flex items-center gap-1.5 text-[10px] text-white/50">
-                        <ChevronRight size={8} style={{ color: am.color }} />{t}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-2 text-[9px] font-mono text-white/25">
-                    Budget: <span style={{ color: am.color + 'cc' }}>{rec.budget_allocation}</span>
-                    {' · '}Priority: <span className={rec.priority === 'HIGH' ? 'text-red-400' : 'text-amber-400'}>{rec.priority}</span>
+                  <div className="text-[9px] font-mono text-white/25">
+                    Priority: <span className={rec.priority === 'HIGH' ? 'text-red-400' : rec.priority === 'MEDIUM' ? 'text-amber-400' : 'text-white/40'}>{rec.priority}</span>
                   </div>
                 </div>
               </div>

@@ -67,7 +67,7 @@ export default function KPISection({ kpis }) {
     { icon: Grid3X3, label: 'Total Categories', value: kpis.total_categories, sub: 'Active product lines', accent: '#F59E0B', pulse: false },
     { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Monitored SKUs', accent: '#8B5CF6', pulse: false },
     { icon: Star, label: 'Star Products', value: kpis.star_products, sub: 'High growth & share', accent: '#F59E0B', pulse: true },
-    { icon: BarChart3, label: 'Cash Cows', value: kpis.cash_cows, sub: 'Stable revenue generators', accent: '#10B981', pulse: false },
+    { icon: BarChart3, label: 'Cash Cows', value: kpis.cash_cows, sub: 'Low growth · high share', accent: '#10B981', pulse: false },
     { icon: Activity, label: 'Question Marks', value: kpis.question_marks, sub: 'Requires decision', accent: '#3B82F6', pulse: true },
     { icon: AlertTriangle, label: 'Risk Products', value: kpis.risk_products, sub: 'Dogs + Question Marks', accent: '#EF4444', pulse: kpis.risk_products > 0 },
     { icon: TrendingUp, label: 'Avg Trend Score', value: kpis.avg_trend_score, sub: 'Google Trends index', accent: '#06B6D4', pulse: false },

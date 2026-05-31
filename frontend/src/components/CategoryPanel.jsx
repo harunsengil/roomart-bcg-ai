@@ -41,6 +41,12 @@ function CategoryRow({ category, isSelected, onClick }) {
           <span>Share: <b className="text-white/60">{formatScore(category.share_score)}</b></span>
           <span>Growth: <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
           <span>{category.product_count} SKUs</span>
+          {category.confidence && (
+            <span title={`Güven: ${category.confidence}`}
+              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>
+              ● {category.confidence}
+            </span>
+          )}
         </div>
       </div>
 
@@ -129,21 +135,7 @@ function CategoryDetail({ category }) {
               {rec.priority} PRIORITY
             </div>
           </div>
-          <p className="text-[11px] text-white/50 mb-3">{rec.rationale}</p>
-
-          <div className="space-y-1.5">
-            {rec.tactics?.map((tactic, i) => (
-              <div key={i} className="flex items-start gap-2 text-[11px] text-white/60">
-                <span className="text-[9px] font-mono mt-0.5" style={{ color: am.color }}>▸</span>
-                {tactic}
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 pt-3 border-t border-white/5">
-            <span className="text-[9px] font-mono text-white/30">Budget: </span>
-            <span className="text-[11px] font-mono" style={{ color: am.color }}>{rec.budget_allocation}</span>
-          </div>
+          <p className="text-[11px] text-white/50">{rec.rationale}</p>
         </div>
       </motion.div>
     </AnimatePresence>

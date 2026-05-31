@@ -82,7 +82,7 @@ export function TrendGrid({ trends }) {
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="font-display text-base tracking-[0.15em] text-white">TREND MOMENTUM</h2>
-          <p className="text-[10px] font-mono text-white/30">Google Trends · 26-week window</p>
+          <p className="text-[10px] font-mono text-white/30">Google Trends · 12-week window</p>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-3">

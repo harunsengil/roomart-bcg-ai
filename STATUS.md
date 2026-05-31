@@ -73,6 +73,14 @@
       `growth_axis_active=true`, kadran STAR 4 / DOG 1 (momentum ayrıştırması başladı).
 - [x] **(2026-05-30) CI verimlilik:** scrape.yml Playwright Chromium'u sürüm-anahtarlı
       cache'liyor (cache-hit'te ~100MB indirme yok). İlke: memory/ci-resource-efficiency.md.
+- [x] **(2026-05-31) Gürültü + categorize:** iPhone category_map ile hariç tutuldu;
+      categorize() Türkçe casing bug'ı düzeltildi (_norm) → DİĞER 34→30, 3 ROMA çalışma masası kurtarıldı.
+- [x] **(2026-05-31) Dashboard denetim düzeltmeleri:** (P1) trends `data_points` artık
+      `{week,value}` (grafikler boş çiziliyordu) + `peak_interest`; kategori önerisine
+      `rationale`+`priority` eklendi (CategoryPanel/AI Recommendations yarı-boştu),
+      üretilmeyen tactics/budget UI'dan kaldırıldı. (P2) 4 ölü komponent silindi
+      (RecommendationsPanel/CategoryHeatmap/KPICards/TrendChart — sahte alan/kırık import içeriyordu).
+      (P3) Overview'a "veri olgunlaşıyor X/14 gün" banner'ı + kategori confidence rozeti. Build OK.
 
 ## Sıradaki Adımlar
 1. Gürültü temizliği: Assign sekmesinden mobilya-dışı ürünleri "Hariç Tut" → category_map.json commit.
