@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-31T14:42:46.618110+00:00",
+    "last_updated": "2026-05-31T15:02:08.051747+00:00",
     "total_products": 157,
     "total_all": 187,
     "other_unassigned": 30,
@@ -11,9 +11,9 @@
       "growth": 36.8
     },
     "quadrant_distribution": {
-      "STAR": 4,
+      "STAR": 3,
       "CASH_COW": 0,
-      "QUESTION_MARK": 0,
+      "QUESTION_MARK": 1,
       "DOG": 1
     }
   },
