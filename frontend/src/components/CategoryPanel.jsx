@@ -37,26 +37,24 @@ function CategoryRow({ category, isSelected, onClick }) {
             {category.recommendation?.action}
           </span>
         </div>
-        <div className="flex items-center gap-3 text-[10px] font-mono text-white/30">
-          <span>Share: <b className="text-white/60">{formatScore(category.share_score)}</b></span>
-          <span>Growth: <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
-          <span>{category.product_count} SKUs</span>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-mono text-white/30">
+          <span>S <b className="text-white/60">{formatScore(category.share_score)}</b></span>
+          <span>G <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
+          <span>{category.product_count} SKU</span>
           {category.confidence && (
             <span title={`Güven: ${category.confidence}`}
-              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>
-              ● {category.confidence}
-            </span>
+              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>●</span>
           )}
         </div>
       </div>
 
       {/* Trend */}
-      <div className={`flex items-center gap-1 text-[11px] font-mono ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
+      <div className={`flex items-center gap-0.5 text-[11px] font-mono flex-shrink-0 ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
         {isPositive ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
         {isPositive ? '+' : ''}{category.trend_growth?.toFixed(1)}%
       </div>
 
-      <ChevronRight size={12} className={`text-white/20 transition-colors ${isSelected ? 'text-white/50' : 'group-hover:text-white/40'}`} />
+      <ChevronRight size={12} className={`flex-shrink-0 text-white/20 transition-colors ${isSelected ? 'text-white/50' : 'group-hover:text-white/40'}`} />
     </motion.div>
   )
 }
