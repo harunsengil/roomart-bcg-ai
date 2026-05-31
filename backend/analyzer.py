@@ -427,14 +427,20 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
             "confidence": cat_conf,
         })
 
+    # KPI kadran sayıları ÜRÜN-bazlı (matris ürün-bazlı; "STAR PRODUCTS" = STAR ürün sayısı).
+    # quadrant_dist kategori-bazlıydı → KPI ile matris çelişiyordu (QM 0 ama matris dolu).
+    prod_q = {"STAR": 0, "CASH_COW": 0, "QUESTION_MARK": 0, "DOG": 0}
+    for p in scored:
+        prod_q[p["bcg_class"]] = prod_q.get(p["bcg_class"], 0) + 1
+
     kpis = {
         "total_categories": len(categories),
         "total_products": len(scored),
-        "star_products": quadrant_dist["STAR"],
-        "cash_cows": quadrant_dist["CASH_COW"],
-        "question_marks": quadrant_dist["QUESTION_MARK"],
-        "dogs": quadrant_dist["DOG"],
-        "risk_products": quadrant_dist["DOG"] + quadrant_dist["QUESTION_MARK"],
+        "star_products": prod_q["STAR"],
+        "cash_cows": prod_q["CASH_COW"],
+        "question_marks": prod_q["QUESTION_MARK"],
+        "dogs": prod_q["DOG"],
+        "risk_products": prod_q["DOG"] + prod_q["QUESTION_MARK"],
         "avg_trend_score": round(statistics.mean([c["trend_score"] for c in categories]), 1) if categories else 50,
         "high_priority_alerts": sum(1 for a in alerts if a.get("severity") == "HIGH"),
         "data_days": n_days,

@@ -111,7 +111,7 @@ export function TrendAreaChart({ trends }) {
   const COLORS = ['#F59E0B', '#10B981', '#3B82F6', '#EF4444', '#8B5CF6', '#06B6D4', '#F97316', '#EC4899']
 
   return (
-    <div className="glass-card p-5">
+    <div className="glass-card p-5 overflow-hidden">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="font-display text-base tracking-[0.15em] text-white">CATEGORY TREND COMPARISON</h2>
@@ -152,7 +152,7 @@ export function ScoreRadarChart({ categories }) {
   }))
 
   return (
-    <div className="glass-card p-5">
+    <div className="glass-card p-5 overflow-hidden">
       <div className="mb-4">
         <h2 className="font-display text-base tracking-[0.15em] text-white">PERFORMANCE RADAR</h2>
         <p className="text-[10px] font-mono text-white/30">Multi-dimension category comparison</p>

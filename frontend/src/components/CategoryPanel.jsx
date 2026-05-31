@@ -168,7 +168,9 @@ export default function CategoryPanel({ categories, selectedCategory, onSelectCa
       <div className="flex items-center justify-between p-4 border-b border-white/5 flex-shrink-0">
         <div>
           <h2 className="font-display text-base tracking-[0.15em] text-white">CATEGORIES</h2>
-          <p className="text-[10px] font-mono text-white/30">{categories?.length || 0} active lines</p>
+          <p className="text-[10px] font-mono text-white/30">
+            {categories?.length || 0} active lines · <span className="text-white/45">S</span>=Share <span className="text-white/45">G</span>=Growth · ●=güven
+          </p>
         </div>
       </div>
 
@@ -181,7 +183,7 @@ export default function CategoryPanel({ categories, selectedCategory, onSelectCa
                 key={cat.id}
                 category={cat}
                 isSelected={selectedCategory?.id === cat.id}
-                onClick={onSelectCategory}
+                onClick={(c) => onSelectCategory(selectedCategory?.id === c.id ? null : c)}
               />
             ))}
           </div>

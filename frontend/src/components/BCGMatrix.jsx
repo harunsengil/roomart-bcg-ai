@@ -8,7 +8,7 @@ const QUADRANT_LABELS = [
   { id: 'DOG', x: '25%', y: '75%', label: '🐕 DOGS', sub: 'Low Growth · Low Share', color: '#EF4444' },
   { id: 'CASH_COW', x: '75%', y: '75%', label: '🐄 CASH COWS', sub: 'Low Growth · High Share', color: '#10B981' },
 ]
-
+const ACTIONS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const PAD = 8
 const SPAN = 100 - 2 * PAD
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
@@ -19,26 +19,17 @@ function median(arr) {
   const m = Math.floor(s.length / 2)
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2
 }
-
-// Parçalı normalize: medyan → 0.5 (eşik çizgisi tam ortada)
 function frac(v, thr) {
   if (v <= thr) return thr <= 0 ? 0.5 : (v / thr) * 0.5
   return thr >= 100 ? 0.5 : 0.5 + ((v - thr) / (100 - thr)) * 0.5
 }
-
-// Deterministik küçük jitter (özdeş koordinatlı ürünler ayrışsın)
 function jitter(id) {
   let h = 0
   const s = String(id)
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0
-  const jx = ((h % 1000) / 1000 - 0.5) * 3.0
-  const jy = (((h >>> 10) % 1000) / 1000 - 0.5) * 3.0
-  return [jx, jy]
+  return [((h % 1000) / 1000 - 0.5) * 3.0, (((h >>> 10) % 1000) / 1000 - 0.5) * 3.0]
 }
-
-function dotSize(reviewCount) {
-  return 7 + clamp(Math.sqrt(reviewCount || 0) / 2.5, 0, 7) // 7..14px
-}
+function dotSize(rc) { return 7 + clamp(Math.sqrt(rc || 0) / 2.5, 0, 7) }
 
 function ProductTooltip({ p }) {
   if (!p) return null
@@ -77,7 +68,8 @@ function ProductTooltip({ p }) {
 
 export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory }) {
   const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
-  const [zoom, setZoom] = useState(null) // null | 'STAR' | 'CASH_COW' | 'QUESTION_MARK' | 'DOG'
+  const [zoom, setZoom] = useState(null)
+  const [actionFilter, setActionFilter] = useState('ALL')
   const containerRef = useRef(null)
 
   const scored = (products || []).filter(
@@ -87,8 +79,6 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
 
   const shareThr = median(scored.map(p => p.share_score))
   const growthThr = median(scored.map(p => p.growth_score))
-
-  // kadran alt-aralıkları (zoom için)
   const QRANGE = {
     STAR: { loS: shareThr, hiS: 100, loG: growthThr, hiG: 100 },
     QUESTION_MARK: { loS: 0, hiS: shareThr, loG: growthThr, hiG: 100 },
@@ -96,7 +86,11 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
     DOG: { loS: 0, hiS: shareThr, loG: 0, hiG: growthThr },
   }
 
-  const shown = zoom ? scored.filter(p => p.bcg_class === zoom) : scored
+  // Filtreler: aksiyon çipi + seçili kategori + (zoom kadranı)
+  const base = scored
+    .filter(p => actionFilter === 'ALL' || p.recommendation?.action === actionFilter)
+    .filter(p => !selectedCategory || p.category === selectedCategory.category)
+  const shown = zoom ? base.filter(p => p.bcg_class === zoom) : base
 
   const posOf = (p) => {
     const [jx, jy] = jitter(p.id)
@@ -112,47 +106,54 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   const handleMouseEnter = (e, product) => {
     const rect = containerRef.current?.getBoundingClientRect()
     if (!rect) return
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
+    const x = e.clientX - rect.left, y = e.clientY - rect.top
     setTooltip({ visible: true, product, x: x > rect.width * 0.6 ? x - 250 : x + 14, y: y > rect.height * 0.5 ? y - 170 : y + 14 })
   }
   const clearTip = () => setTooltip({ visible: false, product: null, x: 0, y: 0 })
 
-  // Boş alana tıklama: zoom'daysa geri; değilse tıklanan kadranı yakınlaştır
   const handlePlotClick = (e) => {
     if (zoom) { setZoom(null); return }
     const rect = containerRef.current?.getBoundingClientRect()
     if (!rect) return
-    const fx = (e.clientX - rect.left) / rect.width
-    const fy = (e.clientY - rect.top) / rect.height
+    const fx = (e.clientX - rect.left) / rect.width, fy = (e.clientY - rect.top) / rect.height
     const q = fx < 0.5 ? (fy < 0.5 ? 'QUESTION_MARK' : 'DOG') : (fy < 0.5 ? 'STAR' : 'CASH_COW')
-    if (scored.some(p => p.bcg_class === q)) setZoom(q)
+    if (base.some(p => p.bcg_class === q)) setZoom(q)
   }
 
   const zoomMeta = zoom ? QUADRANT_META[zoom] : null
 
   return (
     <div className="glass-card p-5 h-full">
-      <div className="flex items-center justify-between mb-4">
-        <div>
+      <div className="flex items-start justify-between mb-3 gap-3">
+        <div className="min-w-0">
           <h2 className="font-display text-lg tracking-[0.15em] text-white">BCG MATRIX</h2>
           <p className="text-[10px] font-mono text-white/30 tracking-wider">
             {zoom
               ? `🔍 ${zoomMeta.label} · ${shown.length} ürün — boşluğa tıkla: geri`
-              : `${scored.length} ürün · boş kadrana tıkla: yakınlaştır`}
+              : `${shown.length}/${scored.length} ürün · boş kadrana tıkla: yakınlaştır`}
+            {selectedCategory && (
+              <button onClick={(e) => { e.stopPropagation(); onSelectCategory(null) }}
+                className="ml-2 text-gold-400 hover:text-gold-300">· {selectedCategory.category} ✕</button>
+            )}
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          {Object.entries(QUADRANT_META).map(([key, meta]) => (
-            <div key={key} className="flex items-center gap-1.5 text-[10px] font-mono text-white/40">
-              <div className="w-2 h-2 rounded-full" style={{ background: meta.color }} />
-              <span className="hidden xl:inline">{meta.label}</span>
-            </div>
-          ))}
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          {ACTIONS.map(a => {
+            const color = a === 'ALL' ? '#888' : (ACTION_META[a]?.color || '#888')
+            const active = actionFilter === a
+            return (
+              <button key={a} onClick={() => setActionFilter(a)}
+                className="px-2 py-0.5 text-[9px] font-mono rounded border transition-all"
+                style={{ borderColor: active ? color : 'rgba(255,255,255,0.1)', color: active ? color : 'rgba(255,255,255,0.4)', background: active ? color + '15' : 'transparent' }}>
+                {a}
+              </button>
+            )
+          })}
         </div>
       </div>
 
-      <div ref={containerRef} className="relative cursor-crosshair" style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
+      <div ref={containerRef} className={`relative ${zoom ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+        style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
         <div className="absolute inset-0">
           <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
             {!zoom && (
@@ -199,11 +200,9 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             ))
           )}
 
-          {/* Ürün noktaları */}
           {shown.map((p) => {
             const [x, y] = posOf(p)
             const qm = QUADRANT_META[p.bcg_class] || {}
-            const dimmed = selectedCategory && selectedCategory.category !== p.category
             const size = dotSize(p.review_count)
             return (
               <div key={p.id} className="absolute cursor-pointer"
@@ -211,7 +210,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                 onMouseEnter={(e) => handleMouseEnter(e, p)}
                 onMouseLeave={clearTip}
                 onClick={(e) => {
-                  e.stopPropagation() // nokta tıklaması zoom'u tetiklemesin
+                  e.stopPropagation()
                   const cat = (categories || []).find(c => c.category === p.category)
                   if (cat) onSelectCategory(cat)
                 }}>
@@ -219,9 +218,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                   style={{
                     width: size, height: size,
                     background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
-                    border: `1px solid ${qm.color}`,
-                    opacity: dimmed ? 0.18 : 0.85,
-                    boxShadow: `0 0 5px ${qm.color}55`,
+                    border: `1px solid ${qm.color}`, opacity: 0.85, boxShadow: `0 0 5px ${qm.color}55`,
                   }} />
               </div>
             )
