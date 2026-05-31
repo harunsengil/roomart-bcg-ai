@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "last_updated": "2026-05-30T21:10:30.724856+00:00",
+    "last_updated": "2026-05-31T08:22:31.692297+00:00",
     "total_products": 157,
     "total_all": 187,
     "other_unassigned": 30,
     "excluded_count": 1,
-    "data_days": 2,
+    "data_days": 3,
     "thresholds": {
       "share": 9.8,
-      "growth": 36.5
+      "growth": 36.8
     },
     "quadrant_distribution": {
       "STAR": 4,
@@ -393,19 +393,19 @@
       "category": "Lavabolu Banyo Dolabı",
       "price": 8649.9,
       "rating": 4.3,
-      "review_count": 11,
+      "review_count": 12,
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-ayakli-2-kapakli-cekmeceli-mat-beyaz-mdf-80-cm-banyo-dolabi-p-818467523?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "is_unassigned": false,
-      "share_score": 5.7,
-      "growth_score": 35.33,
-      "bcg_class": "DOG",
+      "share_score": 6.22,
+      "growth_score": 42.91,
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "OPTIMIZE",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
-        "priority": 3,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 20.5,
+      "composite_score": 24.6,
       "confidence": "medium"
     },
     {
@@ -1152,11 +1152,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "price": 6699.0,
       "rating": 4.6,
-      "review_count": 136,
+      "review_count": 134,
       "url": "https://www.trendyol.com/roomart/design-camasir-ve-kurutma-makinesi-dolabi-rayli-cekmeceli-lux-35002-p-472877125?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "is_unassigned": false,
-      "share_score": 38.64,
-      "growth_score": 62.12,
+      "share_score": 38.07,
+      "growth_score": 60.92,
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1164,7 +1164,7 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 50.4,
+      "composite_score": 49.5,
       "confidence": "medium"
     },
     {
@@ -3223,11 +3223,11 @@
       "is_unassigned": false,
       "share_score": 38.86,
       "growth_score": 36.46,
-      "bcg_class": "STAR",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "value"
       },
       "composite_score": 37.7,
