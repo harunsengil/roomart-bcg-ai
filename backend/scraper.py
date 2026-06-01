@@ -134,7 +134,8 @@ def parse_product(page, url):
     if ad == "—":
         return None
 
-    return {"ad": ad[:60], "fiyat": fiyat, "puan": puan, "deg": deg, "kod": kod, "url": url}
+    # ad tam saklanır (eskiden [:60] kesiliyordu → frontend tam ad gösterebilsin)
+    return {"ad": ad[:160], "fiyat": fiyat, "puan": puan, "deg": deg, "kod": kod, "url": url}
 
 
 def scrape(seed):
