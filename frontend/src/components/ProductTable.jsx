@@ -43,13 +43,15 @@ export default function ProductTable({ products }) {
   const [sortField, setSortField] = useState('composite_score')
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
-  const tableTopRef = useRef(null)
+  const scrollBoxRef = useRef(null)
+  const didMount = useRef(false)
+  const goPage = (p) => setPage(p)
 
-  // Sayfa değişince tablo başına dön (yeni sayfa 1. satırdan başlasın)
-  const goPage = (p) => {
-    setPage(p)
-    tableTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  // Sayfa değişince (render SONRASI) tablo kutusunu başa sar → yeni sayfa 1. satırdan
+  useEffect(() => {
+    if (!didMount.current) { didMount.current = true; return }
+    if (scrollBoxRef.current) scrollBoxRef.current.scrollTop = 0
+  }, [page])
 
   // Filtre popup'ı: dış alana tıklayınca kapansın
   useEffect(() => {
@@ -224,10 +226,11 @@ export default function ProductTable({ products }) {
         </div>
       </div>
 
-      <div ref={tableTopRef} className="overflow-x-auto" style={{ scrollMarginTop: '12px' }}>
+      <div ref={scrollBoxRef} className="overflow-auto rounded-lg border border-white/5"
+        style={{ maxHeight: 'calc(100vh - 320px)' }}>
         <table className="w-full">
           <thead className="sticky top-0 z-30">
-            <tr className="border-b border-white/5" style={{ background: 'var(--bg-card)' }}>
+            <tr className="border-b border-white/10" style={{ background: 'var(--bg-card)' }}>
               <th className="px-3 py-3 text-left text-xs font-mono text-white/40">No</th>
               <HeadCell field="name" label="Product" />
               <HeadCell field="category" label="Category" />
