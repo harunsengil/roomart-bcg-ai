@@ -107,19 +107,17 @@ export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk,
         </div>
       </div>
 
-      {/* Loading progress bar — loading=true iken soldan sağa süpürür, sonra kaybolur */}
-      <div className="relative h-px overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
-        {loading && (
+      {/* Loading progress bar — YALNIZ loading=true iken render edilir (track dahil),
+          yüklenmiyorken hiç çizgi kalmaz. */}
+      {loading && (
+        <div className="relative h-px overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
           <div
             className="absolute top-0 left-0 h-full bg-gold-400"
-            style={{
-              width: '40%',
-              animation: 'headerSweep 1.2s ease-in-out infinite',
-            }}
+            style={{ width: '40%', animation: 'headerSweep 1.2s ease-in-out infinite' }}
           />
-        )}
-      </div>
+        </div>
+      )}
       <style>{`
         @keyframes headerSweep {
           0%   { transform: translateX(-100%); opacity: 0.9; }

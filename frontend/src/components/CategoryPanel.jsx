@@ -97,13 +97,11 @@ function CategoryRow({ category, isSelected, onClick }) {
           <span>S <b className="text-white/60">{formatScore(category.share_score)}</b></span>
           <span>G <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
           <span>{category.product_count} SKU</span>
+          <span className={`flex items-center gap-0.5 ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
+            {isPositive ? <TrendingUp size={9} /> : <TrendingDown size={9} />}
+            {isPositive ? '+' : ''}{category.trend_growth?.toFixed(1)}%
+          </span>
         </div>
-      </div>
-
-      {/* Trend */}
-      <div className={`flex items-center gap-0.5 text-[11px] font-mono flex-shrink-0 ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
-        {isPositive ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-        {isPositive ? '+' : ''}{category.trend_growth?.toFixed(1)}%
       </div>
 
       <ChevronRight size={12} className={`flex-shrink-0 text-white/20 transition-colors ${isSelected ? 'text-white/50' : 'group-hover:text-white/40'}`} />
