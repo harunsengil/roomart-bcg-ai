@@ -87,7 +87,7 @@ README.md, .gitignore
 
 ## 6. İş Kategorileri (5 gerçek)
 
-Çamaşır Makinesi Dolabı · Lavabolu Banyo Dolabı · Mutfak Adası ·
+Çamaşır Makinesi Dolabı · Banyo Dolabı · Mutfak Adası ·
 Kitaplıklı Çalışma Masası · Sehpa
 (Trends köprüsü yalnız ilk ikisinde var; diğerleri nötr.)
 

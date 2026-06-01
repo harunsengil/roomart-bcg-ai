@@ -43,7 +43,7 @@ CONFIDENCE_MIN_DAYS = 14
 # Sehpa ve Kitaplıklı Çalışma Masası'nın Trends karşılığı YOK -> nötr (None).
 CATEGORIES = [
     "Çamaşır Makinesi Dolabı",
-    "Lavabolu Banyo Dolabı",
+    "Banyo Dolabı",
     "Mutfak Adası",
     "Kitaplıklı Çalışma Masası",
     "Sehpa",
@@ -56,7 +56,7 @@ EXCLUDE_TOKEN = "__EXCLUDE__"
 # Roomart kategorisi -> trends_sonuc.json anahtarı (eşleşmeyen = None = nötr)
 TRENDS_BRIDGE = {
     "Çamaşır Makinesi Dolabı": "çamaşır makinesi dolabı",
-    "Lavabolu Banyo Dolabı": "lavabolu banyo dolabı",
+    "Banyo Dolabı": "lavabolu banyo dolabı",
     "Mutfak Adası": None,
     "Kitaplıklı Çalışma Masası": None,
     "Sehpa": None,
@@ -108,7 +108,7 @@ def categorize(ad, category_map=None):
     if has("çamaşır", "kurutma makinesi"):
         return "Çamaşır Makinesi Dolabı"
     if has("lavabolu", "banyo dolab", "banyo alt", "banyo üst", "banyo boy"):
-        return "Lavabolu Banyo Dolabı"
+        return "Banyo Dolabı"
     if has("bar masas", "mutfak adas"):
         return "Mutfak Adası"
     if has("çalışma masas", "bilgisayar masas", "ofis masas", "kitaplık"):

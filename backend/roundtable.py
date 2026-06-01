@@ -26,7 +26,7 @@ RAKIPLER = "Rani Mobilya, Kenzlife, Bofigo"
 
 PRODUCTS = [
     "Çamaşır Makinesi Dolabı",
-    "Lavabolu Banyo Dolabı",
+    "Banyo Dolabı",
     "Mutfak Adası",
     "Kitaplıklı Çalışma Masası",
     "Sehpa",

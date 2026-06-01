@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Play, Square, RotateCcw, Flame, AlertTriangle, CheckCircle, Clock } from 'lucide-react'
 
-const PRODUCTS = ['Çamaşır Makinesi Dolabı','Lavabolu Banyo Dolabı','Mutfak Adası','Kitaplıklı Çalışma Masası','Sehpa']
+const PRODUCTS = ['Çamaşır Makinesi Dolabı','Banyo Dolabı','Mutfak Adası','Kitaplıklı Çalışma Masası','Sehpa']
 const FIREBASE_URL = 'https://roomart-bcg-ai-default-rtdb.europe-west1.firebasedatabase.app'
 const MODEL = 'openai/gpt-oss-120b:free'
 const BCG_COLORS = {
