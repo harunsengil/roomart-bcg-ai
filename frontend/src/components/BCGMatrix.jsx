@@ -144,7 +144,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             return (
               <button key={a} type="button" onClick={() => setActionFilter(a)}
                 className="px-2 py-0.5 text-[9px] font-mono rounded border transition-all"
-                style={{ borderColor: active ? color : 'rgba(255,255,255,0.1)', color: active ? color : 'rgba(255,255,255,0.4)', background: active ? color + '15' : 'transparent' }}>
+                style={{ borderColor: active ? color : 'var(--border-subtle)', color: active ? color : 'var(--text-secondary)', background: active ? color + '15' : 'transparent' }}>
                 {a}
               </button>
             )
@@ -158,8 +158,8 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
           <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
             {!zoom && (
               <>
-                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="4 4" />
-                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
                 <rect x="0" y="0" width="50%" height="50%" fill="rgba(59,130,246,0.04)" />
                 <rect x="50%" y="0" width="50%" height="50%" fill="rgba(245,158,11,0.06)" />
                 <rect x="0" y="50%" width="50%" height="50%" fill="rgba(239,68,68,0.04)" />
@@ -169,11 +169,11 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             {zoom && <rect x="0" y="0" width="100%" height="100%" fill={zoomMeta.color + '0c'} />}
             <defs>
               <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.2)" />
+                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
               </marker>
             </defs>
-            <line x1="5%" y1="95%" x2="95%" y2="95%" stroke="rgba(255,255,255,0.2)" strokeWidth="1" markerEnd="url(#arrow)" />
-            <line x1="5%" y1="95%" x2="5%" y2="5%" stroke="rgba(255,255,255,0.2)" strokeWidth="1" markerEnd="url(#arrow)" />
+            <line x1="5%" y1="95%" x2="95%" y2="95%" stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+            <line x1="5%" y1="95%" x2="5%" y2="5%" stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
           </svg>
 
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-white/30 tracking-widest uppercase pointer-events-none">

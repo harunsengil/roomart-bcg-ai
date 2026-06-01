@@ -162,14 +162,14 @@ export default function ProductTable({ products }) {
 
   const Chip = ({ active, color, label, onClick }) => (
     <button onClick={onClick} className="px-2 py-1 text-xs font-mono rounded border transition-all"
-      style={{ borderColor: active ? color : 'rgba(255,255,255,0.1)', color: active ? color : 'rgba(255,255,255,0.4)', background: active ? color + '15' : 'transparent' }}>
+      style={{ borderColor: active ? color : 'var(--border-subtle)', color: active ? color : 'var(--text-secondary)', background: active ? color + '15' : 'transparent' }}>
       {label}
     </button>
   )
   const PageBtn = ({ onClick, disabled, active, children, title }) => (
     <button onClick={onClick} disabled={disabled} title={title}
       className="px-2 py-1 rounded border transition-all disabled:opacity-30 hover:border-gold/40 hover:text-gold"
-      style={{ borderColor: active ? '#d4a017' : 'rgba(255,255,255,0.1)', color: active ? '#d4a017' : 'rgba(255,255,255,0.5)' }}>{children}</button>
+      style={{ borderColor: active ? 'var(--gold)' : 'var(--border-subtle)', color: active ? 'var(--gold)' : 'var(--text-secondary)' }}>{children}</button>
   )
 
   const HeadCell = ({ field, label }) => {
@@ -208,7 +208,7 @@ export default function ProductTable({ products }) {
                   <button key={v} onClick={() => toggleVal(field, v)}
                     className="flex items-center gap-2 w-full text-left px-1.5 py-1 rounded text-[11px] font-mono hover:bg-white/5">
                     <span className="flex-shrink-0 w-3 h-3 rounded border flex items-center justify-center"
-                      style={{ borderColor: checked ? '#d4a017' : 'rgba(255,255,255,0.25)', background: checked ? '#d4a017' : 'transparent' }}>
+                      style={{ borderColor: checked ? 'var(--gold)' : 'var(--text-muted)', background: checked ? 'var(--gold)' : 'transparent' }}>
                       {checked && <span className="text-[8px] text-black leading-none">✓</span>}
                     </span>
                     <span className="truncate text-white/70">{v}</span>

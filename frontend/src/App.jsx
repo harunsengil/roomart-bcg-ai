@@ -205,7 +205,7 @@ export default function App() {
                   <AlertsPanel alerts={data?.alerts} />
                 </div>
                 <div>
-                  <ScoreRadarChart categories={data?.categories} />
+                  <ScoreRadarChart categories={data?.categories} theme={theme} />
                 </div>
               </div>
             )}

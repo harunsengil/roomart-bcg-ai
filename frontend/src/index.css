@@ -32,14 +32,14 @@
    LIGHT MODE TOKENS
 ═══════════════════════════════════════════ */
 .light {
-  --bg-primary:    #e6e9f1;   /* daha az parlak — saf beyaz göz yoruyordu */
-  --bg-secondary:  #dce1ec;
-  --bg-tertiary:   #d2d8e6;
-  --bg-card:       rgba(248,250,253,0.96);  /* hafif kırık-beyaz kart (glare azaldı) */
-  --bg-card2:      rgba(241,244,250,0.92);
-  --bg-hover:      rgba(0,0,0,0.03);
-  --border:        rgba(180,140,20,0.25);
-  --border-subtle: rgba(0,0,0,0.08);
+  --bg-primary:    #e2e6ef;   /* belirgin açık-gri zemin → beyaz kartlar üstünde "kalkar" */
+  --bg-secondary:  #d6dbe8;
+  --bg-tertiary:   #cad1e0;
+  --bg-card:       #ffffff;                  /* dolu beyaz kutu (gri zeminde net ayrışır) */
+  --bg-card2:      #f3f6fb;
+  --bg-hover:      rgba(0,0,0,0.04);
+  --border:        rgba(180,140,20,0.30);
+  --border-subtle: rgba(15,23,42,0.12);
   --text-primary:  #111827;
   --text-secondary:#374151;
   --text-muted:    rgba(0,0,0,0.4);
@@ -50,7 +50,7 @@
   --grid-color:    rgba(180,140,20,0.06);
   --scrollbar-bg:  #e4e8f2;
   --scrollbar-thumb: #b8860b;
-  --shadow:        0 4px 24px rgba(0,0,0,0.12);
+  --shadow:        0 4px 18px rgba(15,23,42,0.10);  /* beyaz kartları gri zeminde belirginleştirir */
   --navy-950:      #f0f2f8;
 }
 
@@ -100,6 +100,17 @@ body {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+/* glass-card daha önce TANIMSIZDI (no-op) → kutuların arka planı yoktu; dark'ta koyu zemin
+   gizliyordu, light'ta şeffaf kalıp okunmuyordu. Tema-bilinçli tanım → tüm kutular dolgulu. */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
 .card-glow:hover {
   border-color: var(--gold-dim);
   box-shadow: 0 0 30px rgba(212,160,23,0.1);
@@ -110,7 +121,7 @@ body {
    HEADER — theme-aware
 ═══════════════════════════════════════════ */
 .dark .themed-header  { background: rgba(6,10,22,0.92); border-color: rgba(255,255,255,0.05); }
-.light .themed-header { background: rgba(255,255,255,0.95); border-color: rgba(0,0,0,0.08); box-shadow: 0 1px 12px rgba(0,0,0,0.08); }
+.light .themed-header { background: #ffffff; border-color: rgba(15,23,42,0.10); box-shadow: 0 2px 14px rgba(15,23,42,0.10); }
 
 /* ═══════════════════════════════════════════
    TABS — theme-aware
@@ -184,9 +195,13 @@ body {
 .light .text-white\/30   { color: rgba(17,24,39,0.35) !important; }
 .light .text-white\/25   { color: rgba(17,24,39,0.28) !important; }
 .light .text-white\/15   { color: rgba(17,24,39,0.18) !important; }
-.light .bg-white\/5      { background: rgba(0,0,0,0.04) !important; }
-.light .bg-white\/10     { background: rgba(0,0,0,0.07) !important; }
-.light .hover\:bg-white\/10:hover { background: rgba(0,0,0,0.06) !important; }
+.light .bg-white\/4      { background: rgba(15,23,42,0.04) !important; }  /* iç tile dolgusu */
+.light .bg-white\/5      { background: rgba(15,23,42,0.045) !important; }
+.light .bg-white\/8      { background: rgba(15,23,42,0.07) !important; }
+.light .bg-white\/10     { background: rgba(15,23,42,0.07) !important; }
+.light .hover\:bg-white\/4:hover  { background: rgba(15,23,42,0.05) !important; }
+.light .hover\:bg-white\/10:hover { background: rgba(15,23,42,0.06) !important; }
+.light .hover\:bg-white\/3:hover  { background: rgba(15,23,42,0.04) !important; }
 
 /* Light mode: parlak gold/amber METİN beyaz üstünde okunmuyordu → koyu, okunabilir tonlar.
    (Dark mode dokunulmaz; bunlar yalnız .light altında geçerli.) */

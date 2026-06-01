@@ -141,8 +141,13 @@ export function TrendAreaChart({ trends }) {
   )
 }
 
-export function ScoreRadarChart({ categories }) {
+export function ScoreRadarChart({ categories, theme }) {
   if (!categories?.length) return null
+
+  const light = theme === 'light'
+  const gridStroke = light ? 'rgba(15,23,42,0.14)' : 'rgba(255,255,255,0.06)'
+  const tickFill = light ? 'rgba(15,23,42,0.65)' : 'rgba(255,255,255,0.4)'
+  const legendColor = light ? 'rgba(15,23,42,0.65)' : 'rgba(255,255,255,0.4)'
 
   const data = categories.map(cat => ({
     category: cat.category.split(' ').slice(0, 1).join(''),
@@ -160,12 +165,12 @@ export function ScoreRadarChart({ categories }) {
       <div className="flex-1 min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart data={data} margin={{ top: 20, right: 40, bottom: 20, left: 40 }} outerRadius="72%">
-            <PolarGrid stroke="rgba(255,255,255,0.06)" />
-            <PolarAngleAxis dataKey="category" tick={{ fill: 'rgba(255,255,255,0.4)', fontSize: 11, fontFamily: 'JetBrains Mono' }} />
-            <Radar name="Market Share" dataKey="share" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.15} strokeWidth={1.5} />
-            <Radar name="Growth Score" dataKey="growth" stroke="#10B981" fill="#10B981" fillOpacity={0.1} strokeWidth={1.5} />
-            <Radar name="Trend Score" dataKey="trend" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.08} strokeWidth={1} />
-            <Legend wrapperStyle={{ fontSize: '10px', fontFamily: 'JetBrains Mono', color: 'rgba(255,255,255,0.4)' }} />
+            <PolarGrid stroke={gridStroke} />
+            <PolarAngleAxis dataKey="category" tick={{ fill: tickFill, fontSize: 11, fontFamily: 'JetBrains Mono' }} />
+            <Radar name="Market Share" dataKey="share" stroke="#F59E0B" fill="#F59E0B" fillOpacity={light ? 0.22 : 0.15} strokeWidth={1.5} />
+            <Radar name="Growth Score" dataKey="growth" stroke="#10B981" fill="#10B981" fillOpacity={light ? 0.16 : 0.1} strokeWidth={1.5} />
+            <Radar name="Trend Score" dataKey="trend" stroke="#3B82F6" fill="#3B82F6" fillOpacity={light ? 0.14 : 0.08} strokeWidth={1} />
+            <Legend wrapperStyle={{ fontSize: '10px', fontFamily: 'JetBrains Mono', color: legendColor }} />
           </RadarChart>
         </ResponsiveContainer>
       </div>
