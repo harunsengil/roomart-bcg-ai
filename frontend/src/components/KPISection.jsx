@@ -24,8 +24,9 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
           anında & temalı, güvenilir. */}
       {tooltip && (
         <div className="pointer-events-none absolute left-0 top-full mt-1 z-50 hidden group-hover:block
-          max-w-xs rounded-lg border border-white/10 bg-navy-900/98 px-3 py-2 text-[10px] font-mono
-          text-white/75 leading-relaxed shadow-2xl backdrop-blur-xl">
+          max-w-xs rounded-lg border border-white/10 px-3 py-2 text-[10px] font-mono
+          text-white/75 leading-relaxed shadow-2xl backdrop-blur-xl"
+          style={{ background: 'var(--bg-secondary)' }}>
           {tooltip}
         </div>
       )}

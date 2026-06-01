@@ -32,6 +32,25 @@ const cellMatch = (cell, q) => {
   const c = String(cell).toLowerCase()
   return c.includes(q.toLowerCase()) || norm(c).includes(norm(q))
 }
+// Sayısal operatör → FİYATA uygulanır. ">3500", "<2000", ">=5000", "1000-5000" (aralık).
+// Operatör yoksa null döner → normal metin araması (kod "1773" araması bozulmaz).
+const num = (s) => Number(String(s).replace(/[.,₺\s]/g, ''))
+function priceOp(q) {
+  const s = q.replace(/[₺\s]/g, '')
+  let m = s.match(/^(>=|<=|>|<)(\d[\d.,]*)$/)
+  if (m) {
+    const n = num(m[2]), op = m[1]
+    return (price) => price != null && (
+      op === '>' ? price > n : op === '<' ? price < n : op === '>=' ? price >= n : price <= n
+    )
+  }
+  m = s.match(/^(\d[\d.,]*)[-–](\d[\d.,]*)$/)
+  if (m) {
+    const a = Math.min(num(m[1]), num(m[2])), b = Math.max(num(m[1]), num(m[2]))
+    return (price) => price != null && price >= a && price <= b
+  }
+  return null
+}
 
 export default function ProductTable({ products }) {
   const [search, setSearch] = useState('')
@@ -47,10 +66,14 @@ export default function ProductTable({ products }) {
   const didMount = useRef(false)
   const goPage = (p) => setPage(p)
 
-  // Sayfa değişince (render SONRASI) tablo kutusunu başa sar → yeni sayfa 1. satırdan
+  // Sayfa değişince tablo kutusunu başa sar → yeni sayfa 1. satırdan.
+  // rAF: içerik yüksekliği değişince (örn. 100→87 satır) layout otursun, sonra smooth
+  // kaydır — yoksa stale scrollTop'tan başlayıp ilk geçişte tepeye çıkmıyordu.
   useEffect(() => {
     if (!didMount.current) { didMount.current = true; return }
-    scrollBoxRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    const el = scrollBoxRef.current
+    if (!el) return
+    requestAnimationFrame(() => el.scrollTo({ top: 0, behavior: 'smooth' }))
   }, [page])
 
   // Filtre popup'ı: dış alana tıklayınca kapansın
@@ -86,9 +109,11 @@ export default function ProductTable({ products }) {
 
   const filtered = useMemo(() => {
     const q = search.trim()
+    const op = q ? priceOp(q) : null
     return products
       .filter(p => {
-        if (q && !(SEARCH_FIELDS.some(f => cellMatch(colText(p, f), q)) || cellMatch(formatCurrency(p.price), q))) return false
+        if (op) { if (!op(p.price)) return false }
+        else if (q && !(SEARCH_FIELDS.some(f => cellMatch(colText(p, f), q)) || cellMatch(formatCurrency(p.price), q))) return false
         for (const [field, vals] of Object.entries(colFilters)) {
           if (vals && vals.length && !vals.includes(String(colText(p, field)))) return false
         }
@@ -156,7 +181,8 @@ export default function ProductTable({ products }) {
           </button>
         </div>
         {openCol === field && (
-          <div data-colfilter className="absolute left-2 top-full z-50 mt-1 w-52 rounded-lg border border-white/10 bg-navy-900/98 p-2 shadow-2xl backdrop-blur-xl">
+          <div data-colfilter className="absolute left-2 top-full z-50 mt-1 w-52 rounded-lg border border-white/10 p-2 shadow-2xl backdrop-blur-xl"
+            style={{ background: 'var(--bg-secondary)' }}>
             <div className="flex items-center justify-between mb-1.5">
               <button onClick={() => clearCol(field)} className="text-[10px] font-mono text-gold-400 hover:text-gold-300">Tümü</button>
               {sel.length > 0 && <button onClick={() => clearCol(field)} className="text-white/40 hover:text-white" title="Seçimi temizle"><X size={12} /></button>}
@@ -200,7 +226,7 @@ export default function ProductTable({ products }) {
             <div className="relative">
               <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-white/25" />
               <input value={search} onChange={e => { setSearch(e.target.value); setPage(0) }}
-                placeholder="Ara: ad, kod, kategori, fiyat, BCG, action…"
+                placeholder="Ara: ad, kod, BCG… veya >3500, <2000, 1000-5000"
                 className="pl-7 pr-7 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-gold/40 w-72" />
               {search && <button onClick={() => { setSearch(''); setPage(0) }} className="absolute right-2 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"><X size={13} /></button>}
             </div>

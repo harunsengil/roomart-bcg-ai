@@ -37,8 +37,8 @@ function ProductTooltip({ p }) {
   const am = ACTION_META[p.recommendation?.action] || {}
   return (
     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.12 }}
-      className="pointer-events-none absolute z-50 w-60 rounded-xl border bg-navy-900/98 backdrop-blur-xl p-3 shadow-2xl"
-      style={{ borderColor: (qm.color || '#fff') + '40' }}>
+      className="pointer-events-none absolute z-50 w-60 rounded-xl border backdrop-blur-xl p-3 shadow-2xl"
+      style={{ borderColor: (qm.color || '#fff') + '40', background: 'var(--bg-secondary)' }}>
       <div className="flex items-center justify-between mb-2 gap-2">
         <h4 className="text-white font-body font-medium text-xs leading-snug">{p.name}</h4>
         <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider flex-shrink-0"
