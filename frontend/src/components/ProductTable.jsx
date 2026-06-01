@@ -6,7 +6,7 @@ const UNASSIGNED_META = { label: 'ATANMADI', emoji: '∅', color: '#6B7280' }
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG', 'UNASSIGNED']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'kod', 'bcg', 'action'])
-const SEARCH_FIELDS = ['name', 'category', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'price']
+const SEARCH_FIELDS = ['name', 'category', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'price']
 const PAGE_SIZE = 100
 
 function colText(p, field) {
@@ -17,6 +17,8 @@ function colText(p, field) {
     case 'share_score': return p.share_score ?? ''
     case 'growth_score': return p.growth_score ?? ''
     case 'composite_score': return p.composite_score ?? ''
+    case 'rating': return p.rating ?? ''
+    case 'review_count': return p.review_count ?? ''
     // GÖRÜNEN (yuvarlanmış) fiyat — ham 13669.9 değil; "6699" yanlış substring eşleşmesini önler
     case 'price': return p.price == null ? '' : Math.round(p.price)
     case 'bcg': return p.bcg_class || ''
@@ -145,10 +147,10 @@ export default function ProductTable({ products }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Kod', 'Share', 'Growth', 'Score', 'Price', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Değerlendirme', 'Price', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
       i + 1, p.name, p.category, p.kod || '', p.share_score ?? '', p.growth_score ?? '',
-      p.composite_score ?? '', p.price ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
+      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.price ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
     ])
     const esc = v => `"${String(v).replace(/"/g, '""')}"`
     const csv = '﻿' + [header, ...rows].map(r => r.map(esc).join(';')).join('\r\n')
@@ -269,6 +271,8 @@ export default function ProductTable({ products }) {
               <HeadCell field="share_score" label="Share" />
               <HeadCell field="growth_score" label="Growth" />
               <HeadCell field="composite_score" label="Score" />
+              <HeadCell field="rating" label="Puan" />
+              <HeadCell field="review_count" label="Değerlendirme" />
               <HeadCell field="price" label="Price" />
               <HeadCell field="bcg" label="BCG" />
               <HeadCell field="action" label="Action" />
@@ -299,6 +303,12 @@ export default function ProductTable({ products }) {
                       </div>
                       <span className="font-mono text-xs text-white">{formatScore(p.composite_score)}</span>
                     </div>
+                  </td>
+                  <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
+                    {p.rating > 0 ? <span className="text-gold-400">★ {p.rating.toFixed(1)}</span> : <span className="text-white/30">—</span>}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-sm text-white/70 whitespace-nowrap">
+                    {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-4 py-3 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
                   <td className="px-4 py-3">
