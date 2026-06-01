@@ -1,6 +1,60 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, TrendingUp, TrendingDown, Star, DollarSign } from 'lucide-react'
-import { QUADRANT_META, ACTION_META, formatNumber, formatScore } from '../utils/helpers'
+import { ChevronRight, TrendingUp, TrendingDown, Star, DollarSign, ExternalLink, X } from 'lucide-react'
+import { QUADRANT_META, ACTION_META, formatNumber, formatScore, formatCurrency } from '../utils/helpers'
+
+// Matriste bir ürüne tıklanınca sağ panelde açılan ürün kartı (Trendyol linkli)
+function ProductDetail({ product, onClose }) {
+  const p = product
+  const qm = QUADRANT_META[p.bcg_class] || { label: 'ATANMADI', emoji: '∅', color: '#6B7280', bg: 'rgba(107,114,128,0.12)', border: 'rgba(107,114,128,0.3)' }
+  const am = ACTION_META[p.recommendation?.action] || {}
+  return (
+    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="rounded-xl p-4" style={{ background: qm.bg, border: `1px solid ${qm.border}` }}>
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <div className="min-w-0">
+            <p className="text-[10px] font-mono tracking-widest" style={{ color: qm.color + '80' }}>ÜRÜN · {p.category}</p>
+            <h3 className="font-body text-base text-white mt-0.5 leading-snug">{p.name}</h3>
+          </div>
+          <button onClick={onClose} className="flex-shrink-0 text-white/30 hover:text-white/70" title="Kapat"><X size={16} /></button>
+        </div>
+        <span className="text-xs font-mono font-bold tracking-wider" style={{ color: qm.color }}>{qm.emoji} {qm.label}</span>
+      </div>
+
+      <div className="space-y-3">
+        <ScoreBar label="Market Share Score" value={p.share_score} max={100} color={qm.color} />
+        <ScoreBar label="Market Growth Score" value={p.growth_score} max={100} color={qm.color} />
+        <ScoreBar label="Composite Score" value={p.composite_score} max={100} color="#06B6D4" />
+      </div>
+
+      <div className="grid grid-cols-2 gap-2">
+        {[
+          { label: 'Fiyat', value: formatCurrency(p.price), icon: '💰' },
+          { label: 'Puan', value: (p.rating ? p.rating.toFixed(1) : '—') + ' ★', icon: '⭐' },
+          { label: 'Değerlendirme', value: formatNumber(p.review_count), icon: '💬' },
+          { label: 'Güven', value: p.confidence || '—', icon: '🎯' },
+        ].map(({ label, value, icon }) => (
+          <div key={label} className="bg-white/4 rounded-lg p-3 border border-white/5">
+            <p className="text-[9px] font-mono text-white/30 uppercase tracking-wider">{icon} {label}</p>
+            <p className="text-base font-display text-white mt-0.5">{value}</p>
+          </div>
+        ))}
+      </div>
+
+      {p.recommendation?.action && (
+        <div className="rounded-xl border p-3" style={{ background: (am.bg || 'rgba(255,255,255,0.04)'), borderColor: (am.color || '#888') + '30' }}>
+          <p className="text-[9px] font-mono text-white/30 uppercase tracking-wider">Strategic Action</p>
+          <p className="text-lg font-display tracking-wider mt-0.5" style={{ color: am.color || '#fff' }}>{p.recommendation.action}</p>
+          {p.recommendation.rationale && <p className="text-[11px] text-white/50 mt-1">{p.recommendation.rationale}</p>}
+        </div>
+      )}
+
+      <a href={p.url} target="_blank" rel="noreferrer"
+        className="flex items-center justify-center gap-2 w-full rounded-lg border border-gold/40 text-gold py-2.5 text-xs font-mono tracking-wider hover:bg-gold/10 transition-all">
+        <ExternalLink size={14} /> TRENDYOL'DA AÇ
+      </a>
+    </div>
+  )
+}
 
 function CategoryRow({ category, isSelected, onClick }) {
   const qm = QUADRANT_META[category.bcg?.quadrant] || {}
@@ -161,7 +215,7 @@ function ScoreBar({ label, value, max, color }) {
   )
 }
 
-export default function CategoryPanel({ categories, selectedCategory, onSelectCategory }) {
+export default function CategoryPanel({ categories, selectedCategory, onSelectCategory, selectedProduct, onClearProduct }) {
   return (
     <div className="glass-card flex flex-col h-full overflow-hidden">
       {/* Panel header */}
@@ -189,8 +243,10 @@ export default function CategoryPanel({ categories, selectedCategory, onSelectCa
           </div>
         </div>
 
-        {/* Detail panel */}
-        <CategoryDetail category={selectedCategory} />
+        {/* Detail panel — ürün seçiliyse ürün kartı (Trendyol linkli), yoksa kategori detayı */}
+        {selectedProduct
+          ? <ProductDetail product={selectedProduct} onClose={onClearProduct} />
+          : <CategoryDetail category={selectedCategory} />}
       </div>
     </div>
   )

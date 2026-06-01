@@ -66,7 +66,7 @@ function ProductTooltip({ p }) {
   )
 }
 
-export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory }) {
+export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory, onSelectProduct }) {
   const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
   const [zoom, setZoom] = useState(null)
   const [actionFilter, setActionFilter] = useState('ALL')
@@ -211,8 +211,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                 onMouseLeave={clearTip}
                 onClick={(e) => {
                   e.stopPropagation()
-                  const cat = (categories || []).find(c => c.category === p.category)
-                  if (cat) onSelectCategory(cat)
+                  onSelectProduct && onSelectProduct(p) // sağ panelde ürün kartı + Trendyol linki
                 }}>
                 <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
                   style={{

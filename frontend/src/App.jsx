@@ -67,6 +67,7 @@ export default function App() {
   const { isKiosk, toggleKiosk } = useKioskMode()
   const { theme, toggleTheme } = useTheme()
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedProduct, setSelectedProduct] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [loadingTimeout, setLoadingTimeout] = useState(false)
 
@@ -169,13 +170,16 @@ export default function App() {
                       categories={data?.categories}
                       onSelectCategory={setSelectedCategory}
                       selectedCategory={selectedCategory}
+                      onSelectProduct={setSelectedProduct}
                     />
                   </div>
                   <div className="xl:col-span-2">
                     <CategoryPanel
                       categories={data?.categories}
                       selectedCategory={selectedCategory}
-                      onSelectCategory={setSelectedCategory}
+                      onSelectCategory={(c) => { setSelectedCategory(c); setSelectedProduct(null) }}
+                      selectedProduct={selectedProduct}
+                      onClearProduct={() => setSelectedProduct(null)}
                     />
                   </div>
                 </div>
