@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "last_updated": "2026-06-01T08:58:43.750907+00:00",
-    "total_products": 157,
+    "last_updated": "2026-06-01T11:21:00.503278+00:00",
+    "total_products": 170,
     "total_all": 187,
-    "other_unassigned": 30,
+    "other_unassigned": 17,
     "excluded_count": 1,
     "data_days": 4,
     "thresholds": {
-      "share": 9.8,
-      "growth": 37.3
+      "share": 9.4,
+      "growth": 36.6
     },
     "quadrant_distribution": {
       "STAR": 4,
@@ -21,19 +21,24 @@
     {
       "id": "322556848",
       "name": "ROOMART Banos Banyo Bd2 Ayaksız 2 Kapaklı Mat Beyaz 130 X 35",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 3399.9,
       "rating": 4.8,
       "review_count": 39,
       "kod": "1719",
       "url": "https://www.trendyol.com/roomart/banos-banyo-bd2-ayaksiz-2-kapakli-mat-beyaz-130-x-35-cm-banyo-boy-dolabi-p-322556848?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 20.21,
+      "growth_score": 33.25,
+      "bcg_class": "CASH_COW",
+      "recommendation": {
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
+        "price_position": "value"
+      },
+      "composite_score": 26.7,
+      "confidence": "medium"
     },
     {
       "id": "820271932",
@@ -96,7 +101,7 @@
         "action": "INVEST",
         "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
         "priority": 1,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 35.8,
       "confidence": "medium"
@@ -375,36 +380,46 @@
     {
       "id": "322554941",
       "name": "ROOMART Banos Banyo Ad7 Kulpsuz 2 Kapaklı Mat Beyaz Mdf 80 C",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2999.9,
       "rating": 4.8,
       "review_count": 45,
       "kod": "1718",
       "url": "https://www.trendyol.com/roomart/banos-banyo-ad7-kulpsuz-2-kapakli-mat-beyaz-mdf-80-cm-aynali-banyo-ust-dolabi-p-322554941?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 23.32,
+      "growth_score": 37.23,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "value"
+      },
+      "composite_score": 30.3,
+      "confidence": "medium"
     },
     {
       "id": "811436282",
       "name": "ROOMART Banos Banyo Kulpsuz 2 Kapaklı Mat Beyaz Mdf 82 Cm Ay",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2909.9,
       "rating": 4.8,
       "review_count": 40,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banos-banyo-kulpsuz-2-kapakli-mat-beyaz-mdf-82-cm-aynali-banyo-ust-dolabi-p-811436282?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 20.73,
+      "growth_score": 39.72,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "value"
+      },
+      "composite_score": 30.2,
+      "confidence": "medium"
     },
     {
       "id": "818467523",
@@ -618,7 +633,7 @@
         "action": "EXIT",
         "rationale": "Düşük pay + düşük büyüme + zayıf puan. Çıkış/listeden kaldırmayı değerlendir.",
         "priority": 4,
-        "price_position": "mid"
+        "price_position": "premium"
       },
       "composite_score": 18.7,
       "confidence": "medium"
@@ -816,19 +831,24 @@
     {
       "id": "811434295",
       "name": "ROOMART Banos Banyo Kulpsuz 2 Kapaklı Mat Beyaz Mdf 62 Cm Ay",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2469.9,
       "rating": 4.9,
       "review_count": 19,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banos-banyo-kulpsuz-2-kapakli-mat-beyaz-mdf-62-cm-aynali-banyo-ust-dolabi-p-811434295?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 9.84,
+      "growth_score": 39.96,
+      "bcg_class": "STAR",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "value"
+      },
+      "composite_score": 24.9,
+      "confidence": "medium"
     },
     {
       "id": "322557634",
@@ -952,11 +972,11 @@
       "is_unassigned": false,
       "share_score": 9.38,
       "growth_score": 63.92,
-      "bcg_class": "QUESTION_MARK",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "premium"
       },
       "composite_score": 36.6,
@@ -1067,7 +1087,7 @@
         "action": "TEST",
         "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
         "priority": 3,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 22.3,
       "confidence": "medium"
@@ -1573,7 +1593,7 @@
         "action": "TEST",
         "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
         "priority": 3,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 19.7,
       "confidence": "medium"
@@ -1617,7 +1637,7 @@
         "action": "TEST",
         "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
         "priority": 2,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 24.7,
       "confidence": "medium"
@@ -1793,7 +1813,7 @@
         "action": "INVEST",
         "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
         "priority": 1,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 24.7,
       "confidence": "medium"
@@ -1856,10 +1876,10 @@
       "growth_score": 35.33,
       "bcg_class": "DOG",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "action": "EXIT",
+        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
         "priority": 3,
-        "price_position": "mid"
+        "price_position": "premium"
       },
       "composite_score": 21.3,
       "confidence": "medium"
@@ -2021,36 +2041,46 @@
     {
       "id": "941993530",
       "name": "ROOMART Likya Kulpsuz Tek Kapaklı Açık Raflı Aynalı Mdflam 7",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2320.04,
       "rating": 5.0,
       "review_count": 1,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-acik-rafli-aynali-mdflam-70-cm-aynali-banyo-ust-dolabi-p-941993530?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 0.52,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 17.9,
+      "confidence": "medium"
     },
     {
       "id": "923688243",
       "name": "ROOMART Kulpsuz Tek Kapaklı Mat Suntalam 60 Cm Aynalı Banyo ",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 1649.9,
       "rating": 5.0,
       "review_count": 1,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688243?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 0.52,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 17.9,
+      "confidence": "medium"
     },
     {
       "id": "866371337",
@@ -2240,11 +2270,11 @@
       "is_unassigned": false,
       "share_score": 9.38,
       "growth_score": 61.47,
-      "bcg_class": "QUESTION_MARK",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "premium"
       },
       "composite_score": 35.4,
@@ -2264,10 +2294,10 @@
       "growth_score": 35.33,
       "bcg_class": "DOG",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "action": "EXIT",
+        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
         "priority": 3,
-        "price_position": "mid"
+        "price_position": "premium"
       },
       "composite_score": 19.5,
       "confidence": "medium"
@@ -2275,19 +2305,24 @@
     {
       "id": "941991515",
       "name": "ROOMART Likya Kulpsuz Tek Kapaklı Aynalı Mdflam 45 Cm Aynalı",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2039.9,
       "rating": 5.0,
       "review_count": 10,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-p-941991515?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 5.18,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 20.3,
+      "confidence": "medium"
     },
     {
       "id": "935578612",
@@ -2490,53 +2525,68 @@
     {
       "id": "941992971",
       "name": "ROOMART Likya Kulpsuz Tek Kapaklı Aynalı Mdflam 45 Cm Aynalı",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2039.9,
       "rating": 4.9,
       "review_count": 17,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-p-941992971?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 8.81,
+      "growth_score": 46.44,
+      "bcg_class": "QUESTION_MARK",
+      "recommendation": {
+        "action": "INVEST",
+        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
+        "priority": 1,
+        "price_position": "value"
+      },
+      "composite_score": 27.6,
+      "confidence": "medium"
     },
     {
       "id": "923688385",
       "name": "ROOMART Kulpsuz Tek Kapaklı Mat Suntalam 60 Cm Aynalı Banyo ",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 1544.92,
       "rating": 4.6,
       "review_count": 14,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688385?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 7.25,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 21.3,
+      "confidence": "medium"
     },
     {
       "id": "923688265",
       "name": "ROOMART Kulpsuz Tek Kapaklı Mat Suntalam 60 Cm Aynalı Banyo ",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 1649.9,
       "rating": 4.4,
       "review_count": 9,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688265?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 4.66,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 20.0,
+      "confidence": "medium"
     },
     {
       "id": "367028013",
@@ -2585,19 +2635,24 @@
     {
       "id": "941992247",
       "name": "ROOMART Likya Kulpsuz Tek Kapaklı Açık Raflı Aynalı Mdflam 7",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2323.46,
       "rating": 4.6,
       "review_count": 5,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-acik-rafli-aynali-mdflam-70-cm-aynali-banyo-ust-dolabi-p-941992247?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 2.59,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 19.0,
+      "confidence": "medium"
     },
     {
       "id": "829237770",
@@ -2646,19 +2701,24 @@
     {
       "id": "941993544",
       "name": "ROOMART Likya Kulpsuz Tek Kapaklı Aynalı Mdflam 45 Cm Aynalı",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 2039.9,
       "rating": 5.0,
       "review_count": 6,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-p-941993544?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 3.11,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 19.2,
+      "confidence": "medium"
     },
     {
       "id": "820048531",
@@ -2878,19 +2938,24 @@
     {
       "id": "384840285",
       "name": "ROOMART Banos Banyo Kulpsuz Tek Kapaklı Mat Beyaz 40 Cm Mini",
-      "category": "DİĞER",
+      "category": "Lavabolu Banyo Dolabı",
       "price": 1799.9,
       "rating": 4.3,
       "review_count": 6,
       "kod": "2022",
       "url": "https://www.trendyol.com/roomart/banos-banyo-kulpsuz-tek-kapakli-mat-beyaz-40-cm-mini-aynali-banyo-ust-dolabi-p-384840285?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "is_unassigned": true,
-      "share_score": null,
-      "growth_score": null,
-      "bcg_class": null,
-      "recommendation": null,
-      "composite_score": null,
-      "confidence": null
+      "is_unassigned": false,
+      "share_score": 3.11,
+      "growth_score": 35.33,
+      "bcg_class": "DOG",
+      "recommendation": {
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
+        "price_position": "value"
+      },
+      "composite_score": 19.2,
+      "confidence": "medium"
     },
     {
       "id": "828995990",
@@ -3713,11 +3778,11 @@
       "is_unassigned": false,
       "share_score": 28.5,
       "growth_score": 36.88,
-      "bcg_class": "CASH_COW",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
       "composite_score": 32.7,
@@ -3796,12 +3861,12 @@
       "is_unassigned": false,
       "share_score": 30.57,
       "growth_score": 36.77,
-      "bcg_class": "CASH_COW",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
-        "price_position": "value"
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
+        "price_position": "mid"
       },
       "composite_score": 33.7,
       "confidence": "medium"
@@ -3955,7 +4020,7 @@
         "action": "TEST",
         "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
         "priority": 3,
-        "price_position": "value"
+        "price_position": "mid"
       },
       "composite_score": 19.5,
       "confidence": "medium"
