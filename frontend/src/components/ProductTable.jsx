@@ -67,13 +67,18 @@ export default function ProductTable({ products }) {
   const goPage = (p) => setPage(p)
 
   // Sayfa değişince tablo kutusunu başa sar → yeni sayfa 1. satırdan.
-  // rAF: içerik yüksekliği değişince (örn. 100→87 satır) layout otursun, sonra smooth
-  // kaydır — yoksa stale scrollTop'tan başlayıp ilk geçişte tepeye çıkmıyordu.
+  // Çift rAF: daha KISA sayfaya geçişte (örn. 100→87 satır) tarayıcı scrollTop'u 1. frame'de
+  // aşağı CLAMP eder; bu clamp bekleyen smooth scroll'u iptal ediyordu (ileri sayfada en alta
+  // atıyordu). 1. frame clamp'i bitirsin, smooth'u 2. frame'de temiz başlat.
   useEffect(() => {
     if (!didMount.current) { didMount.current = true; return }
     const el = scrollBoxRef.current
     if (!el) return
-    requestAnimationFrame(() => el.scrollTo({ top: 0, behavior: 'smooth' }))
+    let r2
+    const r1 = requestAnimationFrame(() => {
+      r2 = requestAnimationFrame(() => el.scrollTo({ top: 0, behavior: 'smooth' }))
+    })
+    return () => { cancelAnimationFrame(r1); if (r2) cancelAnimationFrame(r2) }
   }, [page])
 
   // Filtre popup'ı: dış alana tıklayınca kapansın
