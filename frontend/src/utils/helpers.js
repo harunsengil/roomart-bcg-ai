@@ -32,6 +32,14 @@ export function timeAgo(dateStr) {
   return `${Math.floor(hrs / 24)}d ago`
 }
 
+// Light mode: parlak amber/gold beyaz üstünde okunmuyor → yalnız bu tonları koyulaştır.
+// Diğer renkler (yeşil/mavi/kırmızı/gri) light'ta zaten okunur → dokunma.
+const LIGHT_REMAP = {
+  '#F59E0B': '#b45309', '#f59e0b': '#b45309',
+  '#d4a017': '#8a5a00', '#f0c040': '#8a5a00', '#f5d060': '#8a5a00', '#b8860b': '#8a5a00',
+}
+export const tone = (hex, light) => (light && LIGHT_REMAP[hex]) || hex
+
 export const QUADRANT_META = {
   STAR: { label: 'STAR', emoji: '⭐', color: '#F59E0B', bg: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.3)', textClass: 'text-amber-400' },
   CASH_COW: { label: 'CASH COW', emoji: '🐄', color: '#10B981', bg: 'rgba(16,185,129,0.12)', border: 'rgba(16,185,129,0.3)', textClass: 'text-emerald-400' },

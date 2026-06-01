@@ -1,12 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, TrendingUp, TrendingDown, Star, DollarSign, ExternalLink, X } from 'lucide-react'
-import { QUADRANT_META, ACTION_META, formatNumber, formatScore, formatCurrency } from '../utils/helpers'
+import { QUADRANT_META, ACTION_META, formatNumber, formatScore, formatCurrency, tone } from '../utils/helpers'
+import { useIsLight } from '../hooks/useTheme'
 
 // Matriste bir ürüne tıklanınca sağ panelde açılan ürün kartı (Trendyol linkli)
 function ProductDetail({ product, onClose }) {
   const p = product
-  const qm = QUADRANT_META[p.bcg_class] || { label: 'ATANMADI', emoji: '∅', color: '#6B7280', bg: 'rgba(107,114,128,0.12)', border: 'rgba(107,114,128,0.3)' }
-  const am = ACTION_META[p.recommendation?.action] || {}
+  const light = useIsLight()
+  const qmB = QUADRANT_META[p.bcg_class] || { label: 'ATANMADI', emoji: '∅', color: '#6B7280', bg: 'rgba(107,114,128,0.12)', border: 'rgba(107,114,128,0.3)' }
+  const qm = { ...qmB, color: tone(qmB.color, light) }
+  const am0 = ACTION_META[p.recommendation?.action] || {}
+  const am = { ...am0, color: tone(am0.color, light) }
   return (
     <div className="relative z-20 flex-1 overflow-y-auto p-4 space-y-4">
       <div className="rounded-xl p-4" style={{ background: qm.bg, border: `1px solid ${qm.border}` }}>
@@ -58,8 +62,11 @@ function ProductDetail({ product, onClose }) {
 }
 
 function CategoryRow({ category, isSelected, onClick }) {
-  const qm = QUADRANT_META[category.bcg?.quadrant] || {}
-  const am = ACTION_META[category.recommendation?.action] || {}
+  const light = useIsLight()
+  const qmB = QUADRANT_META[category.bcg?.quadrant] || {}
+  const qm = { ...qmB, color: tone(qmB.color, light) }
+  const am0 = ACTION_META[category.recommendation?.action] || {}
+  const am = { ...am0, color: tone(am0.color, light) }
   const isPositive = category.trend_growth >= 0
 
   return (
@@ -87,7 +94,7 @@ function CategoryRow({ category, isSelected, onClick }) {
           <span className="text-sm font-body font-medium text-white truncate" title={category.category}>{category.category}</span>
           {category.confidence && (
             <span className="flex-shrink-0 text-[8px]" title={`Güven: ${category.confidence}`}
-              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>●</span>
+              style={{ color: tone({ low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888', light) }}>●</span>
           )}
         </div>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-mono text-white/30">
@@ -115,6 +122,7 @@ function CategoryRow({ category, isSelected, onClick }) {
 }
 
 function CategoryDetail({ category }) {
+  const light = useIsLight()
   if (!category) return (
     <div className="flex-1 flex items-center justify-center text-center p-8">
       <div>
@@ -124,8 +132,10 @@ function CategoryDetail({ category }) {
     </div>
   )
 
-  const qm = QUADRANT_META[category.bcg?.quadrant] || {}
-  const am = ACTION_META[category.recommendation?.action] || {}
+  const qmB = QUADRANT_META[category.bcg?.quadrant] || {}
+  const qm = { ...qmB, color: tone(qmB.color, light) }
+  const am0 = ACTION_META[category.recommendation?.action] || {}
+  const am = { ...am0, color: tone(am0.color, light) }
   const rec = category.recommendation || {}
 
   return (

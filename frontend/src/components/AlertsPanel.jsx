@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, Zap, Info, TrendingUp, Clock, ChevronRight } from 'lucide-react'
-import { ACTION_META } from '../utils/helpers'
+import { ACTION_META, tone } from '../utils/helpers'
+import { useIsLight } from '../hooks/useTheme'
 
 const ALERT_ICONS = { RISK: AlertTriangle, OPPORTUNITY: TrendingUp, QUADRANT_CHANGE: Zap, INFO: Info }
 const SEVERITY_STYLES = {
@@ -73,6 +74,7 @@ export function AlertsPanel({ alerts }) {
   )
 }
 export function RecommendationsPanel({ categories }) {
+  const light = useIsLight()
   if (!categories) return null
   const sorted = [...categories].sort((a, b) => {
     const order = { HIGH: 0, MEDIUM: 1, LOW: 2 }
@@ -86,7 +88,8 @@ export function RecommendationsPanel({ categories }) {
       </div>
       <div className="overflow-y-auto flex-1 space-y-2">
         {sorted.map((cat, i) => {
-          const am = ACTION_META[cat.recommendation?.action] || {}
+          const am0 = ACTION_META[cat.recommendation?.action] || {}
+          const am = { ...am0, color: tone(am0.color, light) }
           const rec = cat.recommendation || {}
           return (
             <motion.div key={cat.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}

@@ -26,3 +26,20 @@ export function useTheme() {
 
   return { theme, toggleTheme, isDark: theme === 'dark' }
 }
+
+// Reaktif "light mı?" — documentElement .light class'ını MutationObserver ile izler.
+// Prop-drilling olmadan herhangi bir bileşende kullanılabilir; tema değişince re-render eder.
+export function useIsLight() {
+  const [light, setLight] = useState(
+    () => typeof document !== 'undefined' && document.documentElement.classList.contains('light')
+  )
+  useEffect(() => {
+    const el = document.documentElement
+    const update = () => setLight(el.classList.contains('light'))
+    update()
+    const obs = new MutationObserver(update)
+    obs.observe(el, { attributes: true, attributeFilter: ['class'] })
+    return () => obs.disconnect()
+  }, [])
+  return light
+}

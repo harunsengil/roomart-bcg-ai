@@ -26,6 +26,8 @@
   --scrollbar-thumb: #d4a017;
   --shadow:        0 4px 24px rgba(0,0,0,0.4);
   --navy-950:      #060a16;
+  --row-alt:       rgba(255,255,255,0.022);  /* zebra: alternatif satır */
+  --row-hover:     rgba(255,255,255,0.06);
 }
 
 /* ═══════════════════════════════════════════
@@ -52,6 +54,8 @@
   --scrollbar-thumb: #b8860b;
   --shadow:        0 4px 18px rgba(15,23,42,0.10);  /* beyaz kartları gri zeminde belirginleştirir */
   --navy-950:      #f0f2f8;
+  --row-alt:       rgba(15,23,42,0.045);  /* zebra: açık gri satır (beyaz ile dönüşümlü) */
+  --row-hover:     rgba(15,23,42,0.09);   /* hover: daha koyu gri */
 }
 
 /* ═══════════════════════════════════════════
@@ -110,6 +114,10 @@ body {
   box-shadow: var(--shadow);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
+
+/* Zebra tablo satırları (Products): bir satır gri, diğeri zemin; hover daha koyu gri. */
+.zebra-row:nth-child(even) { background: var(--row-alt); }
+.zebra-row:hover { background: var(--row-hover) !important; }
 
 .card-glow:hover {
   border-color: var(--gold-dim);

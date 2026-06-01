@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { Filter, X, Download, Search, ExternalLink } from 'lucide-react'
-import { QUADRANT_META, ACTION_META, formatCurrency, formatScore } from '../utils/helpers'
+import { QUADRANT_META, ACTION_META, formatCurrency, formatScore, tone } from '../utils/helpers'
+import { useIsLight } from '../hooks/useTheme'
 
 // Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
@@ -67,6 +68,7 @@ export default function ProductTable({ products }) {
   const [page, setPage] = useState(0)
   const scrollBoxRef = useRef(null)
   const didMount = useRef(false)
+  const light = useIsLight()
   const goPage = (p) => setPage(p)
 
   // Sayfa değişince tablo kutusunu başa sar → yeni sayfa 1. satırdan.
@@ -247,13 +249,13 @@ export default function ProductTable({ products }) {
             <span className="text-[9px] font-mono text-white/25 mr-0.5">BCG</span>
             {BCG_FILTERS.map(f => {
               const cfg = f === 'ALL' ? { color: '#888' } : QUADRANT_META[f]
-              return <Chip key={f} active={bcgFilter === f} color={cfg.color} label={f === 'ALL' ? 'ALL' : cfg.emoji} onClick={() => { setBcgFilter(f); setPage(0) }} />
+              return <Chip key={f} active={bcgFilter === f} color={tone(cfg.color, light)} label={f === 'ALL' ? 'ALL' : cfg.emoji} onClick={() => { setBcgFilter(f); setPage(0) }} />
             })}
           </div>
           <div className="flex flex-wrap gap-1 items-center">
             <span className="text-[9px] font-mono text-white/25 mr-0.5">Action</span>
             {ACTION_FILTERS.map(a => {
-              const color = a === 'ALL' ? '#888' : (ACTION_META[a]?.color || '#888')
+              const color = tone(a === 'ALL' ? '#888' : (ACTION_META[a]?.color || '#888'), light)
               return <Chip key={a} active={actionFilter === a} color={color} label={a} onClick={() => { setActionFilter(a); setPage(0) }} />
             })}
           </div>
@@ -281,10 +283,11 @@ export default function ProductTable({ products }) {
           </thead>
           <tbody>
             {paginated.map((p, i) => {
-              const cfg = QUADRANT_META[p.bcg_class] || FALLBACK_META
-              const aColor = ACTION_META[p.recommendation?.action]?.color || '#888'
+              const cfgRaw = QUADRANT_META[p.bcg_class] || FALLBACK_META
+              const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
+              const aColor = tone(ACTION_META[p.recommendation?.action]?.color || '#888', light)
               return (
-                <tr key={p.id} className="border-b border-white/5 hover:bg-white/3 transition-colors align-top">
+                <tr key={p.id} className="zebra-row border-b border-white/5 transition-colors align-top">
                   <td className="px-3 py-3 font-mono text-xs text-white/30">{safePage * PAGE_SIZE + i + 1}</td>
                   <td className="px-4 py-3 max-w-sm">
                     <a href={p.url} target="_blank" rel="noreferrer"
