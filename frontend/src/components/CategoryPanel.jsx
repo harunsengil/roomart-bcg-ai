@@ -81,9 +81,15 @@ function CategoryRow({ category, isSelected, onClick }) {
         {qm.emoji}
       </div>
 
-      {/* Info — kategori ADI kendi satırında (artık action ismi sıkıştırmıyor) */}
+      {/* Info — kategori ADI + güven noktası ilk satırda; özet metrikleri ikinci satırda */}
       <div className="flex-1 min-w-0">
-        <div className="text-sm font-body font-medium text-white truncate mb-0.5">{category.category}</div>
+        <div className="flex items-center gap-1.5 mb-0.5">
+          <span className="text-sm font-body font-medium text-white truncate">{category.category}</span>
+          {category.confidence && (
+            <span className="flex-shrink-0 text-[8px]" title={`Güven: ${category.confidence}`}
+              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>●</span>
+          )}
+        </div>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-mono text-white/30">
           <span className="px-1 py-0.5 rounded font-bold tracking-wider" style={{ background: am.bg, color: am.color }}>
             {category.recommendation?.action}
@@ -91,10 +97,6 @@ function CategoryRow({ category, isSelected, onClick }) {
           <span>S <b className="text-white/60">{formatScore(category.share_score)}</b></span>
           <span>G <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
           <span>{category.product_count} SKU</span>
-          {category.confidence && (
-            <span title={`Güven: ${category.confidence}`}
-              style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>●</span>
-          )}
         </div>
       </div>
 

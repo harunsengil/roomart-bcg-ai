@@ -72,6 +72,9 @@ body {
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
 ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 2px; }
+/* Yatay scrollbar'ı gizle — recharts/kartların yükleme sırasında bıraktığı gold
+   yatay çizgi (loading line) artık görünmez. İçerik yine trackpad ile kayar. */
+::-webkit-scrollbar:horizontal { height: 0; }
 
 /* ═══════════════════════════════════════════
    GRID BACKGROUND
