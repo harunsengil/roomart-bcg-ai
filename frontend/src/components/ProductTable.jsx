@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { Filter, X, Download, Search, ExternalLink } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatCurrency, formatScore } from '../utils/helpers'
 
@@ -43,6 +43,13 @@ export default function ProductTable({ products }) {
   const [sortField, setSortField] = useState('composite_score')
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
+  const tableTopRef = useRef(null)
+
+  // Sayfa değişince tablo başına dön (yeni sayfa 1. satırdan başlasın)
+  const goPage = (p) => {
+    setPage(p)
+    tableTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   // Filtre popup'ı: dış alana tıklayınca kapansın
   useEffect(() => {
@@ -217,10 +224,10 @@ export default function ProductTable({ products }) {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
+      <div ref={tableTopRef} className="overflow-x-auto" style={{ scrollMarginTop: '12px' }}>
         <table className="w-full">
-          <thead>
-            <tr className="border-b border-white/5">
+          <thead className="sticky top-0 z-30">
+            <tr className="border-b border-white/5" style={{ background: 'var(--bg-card)' }}>
               <th className="px-3 py-3 text-left text-xs font-mono text-white/40">No</th>
               <HeadCell field="name" label="Product" />
               <HeadCell field="category" label="Category" />
@@ -280,11 +287,11 @@ export default function ProductTable({ products }) {
           style={{ background: 'var(--bg-card)' }}>
           <span>{safePage * PAGE_SIZE + 1}–{Math.min((safePage + 1) * PAGE_SIZE, filtered.length)} / {filtered.length}</span>
           <div className="flex gap-1">
-            <PageBtn onClick={() => setPage(0)} disabled={safePage === 0} title="İlk sayfa">«</PageBtn>
-            <PageBtn onClick={() => setPage(p => Math.max(0, p - 1))} disabled={safePage === 0}>‹</PageBtn>
-            {pageWindow.map(pg => <PageBtn key={pg} onClick={() => setPage(pg)} active={safePage === pg}>{pg + 1}</PageBtn>)}
-            <PageBtn onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={safePage === totalPages - 1}>›</PageBtn>
-            <PageBtn onClick={() => setPage(totalPages - 1)} disabled={safePage === totalPages - 1} title="Son sayfa">»</PageBtn>
+            <PageBtn onClick={() => goPage(0)} disabled={safePage === 0} title="İlk sayfa">«</PageBtn>
+            <PageBtn onClick={() => goPage(Math.max(0, safePage - 1))} disabled={safePage === 0}>‹</PageBtn>
+            {pageWindow.map(pg => <PageBtn key={pg} onClick={() => goPage(pg)} active={safePage === pg}>{pg + 1}</PageBtn>)}
+            <PageBtn onClick={() => goPage(Math.min(totalPages - 1, safePage + 1))} disabled={safePage === totalPages - 1}>›</PageBtn>
+            <PageBtn onClick={() => goPage(totalPages - 1)} disabled={safePage === totalPages - 1} title="Son sayfa">»</PageBtn>
           </div>
         </div>
       )}
