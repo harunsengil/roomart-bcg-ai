@@ -546,6 +546,7 @@ def run_analysis():
             "price": raw.get("fiyat", 0.0),
             "rating": raw.get("puan", 0.0),
             "review_count": raw.get("deg", 0),
+            "kod": raw.get("kod"),            # Trendyol ürün kodu (scraper v1.1)
             "url": raw.get("url", ""),
             # iç hesaplama alanları (frontend'e gitmez)
             "fiyat": raw.get("fiyat", 0.0),
@@ -601,6 +602,7 @@ def run_analysis():
             "price": p["price"],
             "rating": p["rating"],
             "review_count": p["review_count"],
+            "kod": p.get("kod"),
             "url": p["url"],
             "is_unassigned": p["category"] == OTHER_CATEGORY,
             # skor alanları: skorlanmışta dolu, DİĞER'de None (henüz atanmadı)

@@ -117,6 +117,10 @@ def parse_product(page, url):
     html = page.content()
     puan, deg, fiyat = parse_rating_price(html)
 
+    # Trendyol ürün kodu (sayfadaki "Ürün Kodu: NNN") gömülü JSON'da "productCode":"NNN"
+    mkod = re.search(r'"productCode":"(\d+)"', html)
+    kod = mkod.group(1) if mkod else None
+
     # fiyat JSON'dan gelmezse DOM'a düş (yedek)
     if fiyat == 0.0:
         try:
@@ -130,7 +134,7 @@ def parse_product(page, url):
     if ad == "—":
         return None
 
-    return {"ad": ad[:60], "fiyat": fiyat, "puan": puan, "deg": deg, "url": url}
+    return {"ad": ad[:60], "fiyat": fiyat, "puan": puan, "deg": deg, "kod": kod, "url": url}
 
 
 def scrape(seed):
