@@ -21,7 +21,7 @@ export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk,
   const isDark = theme === 'dark'
 
   return (
-    <header className="themed-header sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-300">
+    <header className="themed-header flex-shrink-0 z-50 border-b backdrop-blur-xl transition-all duration-300">
       <div className="flex items-center justify-between px-6 py-3">
 
         {/* Logo */}

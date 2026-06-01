@@ -50,7 +50,7 @@ export default function ProductTable({ products }) {
   // Sayfa değişince (render SONRASI) tablo kutusunu başa sar → yeni sayfa 1. satırdan
   useEffect(() => {
     if (!didMount.current) { didMount.current = true; return }
-    if (scrollBoxRef.current) scrollBoxRef.current.scrollTop = 0
+    scrollBoxRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
   }, [page])
 
   // Filtre popup'ı: dış alana tıklayınca kapansın
@@ -227,7 +227,7 @@ export default function ProductTable({ products }) {
       </div>
 
       <div ref={scrollBoxRef} className="overflow-auto rounded-lg border border-white/5"
-        style={{ maxHeight: 'calc(100vh - 320px)' }}>
+        style={{ maxHeight: 'calc(100vh - 360px)' }}>
         <table className="w-full">
           <thead className="sticky top-0 z-30">
             <tr className="border-b border-white/10" style={{ background: 'var(--bg-card)' }}>

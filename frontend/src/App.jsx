@@ -85,7 +85,7 @@ export default function App() {
   const highAlertCount = data?.alerts?.filter(a => a.severity === 'HIGH').length ?? 0
 
   return (
-    <div className={`min-h-screen grid-bg flex flex-col ${theme}`}>
+    <div className={`h-screen overflow-hidden grid-bg flex flex-col ${theme}`}>
       <div className="scan-line" />
 
       <Header
@@ -100,7 +100,7 @@ export default function App() {
 
       {/* ── TAB BAR ───────────────────────────────────── */}
       <div
-        className="tab-bar flex items-center gap-1 px-6 pt-3 border-b transition-all duration-300"
+        className="tab-bar flex-shrink-0 flex items-center gap-1 px-6 pt-3 border-b transition-all duration-300"
         style={{ position: 'relative', zIndex: 200 }}
       >
         {TABS.map(tab => {
@@ -136,7 +136,7 @@ export default function App() {
       </div>
 
       {/* ── MAIN CONTENT ─────────────────────────────── */}
-      <main className="flex-1 overflow-y-auto overflow-x-hidden">
+      <main className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
