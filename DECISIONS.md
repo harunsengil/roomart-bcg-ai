@@ -144,4 +144,14 @@
   modelinde key/slug stabil tutulup label ayrı sütun olmalı — etiket değişiklikleri veriyi/eşleşmeyi
   kırmasın.
 
+- **2026-06-01 — [UI: tema-bilinçli renk + dolu kutular + responsive]** (1) `.glass-card`
+  TANIMSIZDI (no-op) → tanımlandı; tüm floating kutular tema-değişkenli arka plana sahip.
+  (2) Inline parlak amber/gold (#F59E0B/#d4a017) light'ta okunmuyordu → `tone(hex, light)` helper
+  + reaktif `useIsLight()` hook (documentElement `.light` MutationObserver; prop-drilling yok) ile
+  yalnız bu tonlar light'ta koyulaştırılır; diğer renkler değişmez. Inline `rgba(255,255,255,..)`
+  yerine `var(--border-subtle)/--text-secondary/--gold` kullanıldı (chip/pagination/checkbox).
+  (3) Light kutulara aşağıdan-yukarıya gri→kırık-beyaz gradient. (4) Responsive: app-shell `100dvh`,
+  sekme çubuğu yatay-scroll, breakpoint'li header/arama/footer; masaüstü korunur. NOT: Aşama 2
+  (Next.js) frontend'i yeniden kuracağı için bu light/responsive emeğinin bir kısmı orada tekrarlanabilir.
+
 <!-- Yeni kararları buraya ekle -->

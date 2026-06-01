@@ -26,9 +26,9 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-01) Aşama 1 — göç öncesi dondur + sadeleştir tamamlandı.** Assign + Batch
-  sekmeleri kaldırıldı; DİĞER artık skorlanır (matriste 6. grup); `is_unassigned`/UNASSIGNED
-  mantığı temizlendi. Sonraki: Aşama 2 = Supabase/Next.js göçü (ayrı oturum).
+- **(2026-06-01) Aşama 1 + UI cilası tamamlandı, canlı.** Assign/Batch kaldırıldı, Diğer
+  skorlu (6. grup), light-mode tümüyle elden geçti, responsive (mobil dahil). Aktif görev yok.
+  Sonraki: **Aşama 2 = Supabase/Next.js göçü (ayrı oturum)**.
 
 ## Bekleyen / Bloke
 - [ ] Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de. Assign sekmesinden
@@ -111,10 +111,22 @@
       ürünü getirme) — sonra Assign UI tümüyle kaldırıldı (aşağı).
 - [x] **(2026-06-01) Aşama 1 — dondur + sadeleştir:** İki tag (`v1-full-pre-cleanup`,
       `v1-frozen-pre-supabase`). Assign + Batch sekmeleri/bileşenleri silindi (yazma-kanalı ara
-      altyapısı kurulmadı — göçte DB gelecek). **DİĞER artık skorlanır** (analyzer `analyzable=products`):
-      matriste 6. grup, X=DİĞER-içi deg payı, Y=trends-yok→nötr; `is_unassigned`/UNASSIGNED mantığı
-      (BCGMatrix/ProductTable) temizlendi. EXCLUDE≠DİĞER korundu. Lokal doğrulama: 187 skorlu, 6
-      kategori (Banyo 119/Çamaşır 38/DİĞER 17/Kitaplıklı 5/Mutfak 5/Sehpa 3), excluded 1.
+      altyapısı kurulmadı — göçte DB gelecek). **Diğer artık skorlanır** (analyzer `analyzable=products`):
+      matriste 6. grup, X=Diğer-içi deg payı, Y=trends-yok→nötr; `is_unassigned`/UNASSIGNED mantığı
+      (BCGMatrix/ProductTable) temizlendi. EXCLUDE≠Diğer korundu. Canlı: 187 skorlu, 6 kategori
+      (Banyo 119/Çamaşır 38/Diğer 17/Kitaplıklı 5/Mutfak 5/Sehpa 3), excluded 1. "DİĞER"→"Diğer" rename.
+- [x] **(2026-06-01) UI: kategori filtre ayrımı + radar:** Overview ve AI Strategy kategori panelleri
+      ayrı state (`selectedCategory` / `strategyCategory`) → birbirini etkilemez. Performance Radar
+      (ScoreRadarChart) kolonu doldurur (h-full + flex-1) + tema-bilinçli grid/etiket.
+- [x] **(2026-06-01) Light-mode kapsamlı revizyon:** **kök neden** `.glass-card` TANIMSIZDI (kutuların
+      arka planı yoktu) → tanımlandı, tüm kutular dolgulu. Parlaklık azaltıldı (gri zemin + opak/gradient
+      beyaz kartlar); gold/amber metin `.light`'ta koyulaştırıldı. Tema-bilinçli `tone()`+`useIsLight()`
+      (MutationObserver, prop-drilling yok) → INVEST/STAR rozet, chip, pagination, güven noktaları, radar
+      light'ta okunur. Products **zebra** satır (var(--row-alt)/--row-hover). Beyaz kutulara aşağıdan-
+      yukarıya gri→kırık-beyaz **gradient**.
+- [x] **(2026-06-01) Responsive (mobil dahil):** h-[100dvh]; sekme çubuğu yatay-scroll; header/arama/
+      footer breakpoint'li; matris çipleri sarılır; Products tablosu yatay kaydırma. Tüm özellikler
+      her ekranda çalışır.
 
 ## Sıradaki Adımlar
 1. **Aşama 2 — Mimari göç (ayrı oturum):** Next.js + Supabase (Auth/Postgres/RLS) + Vercel.
