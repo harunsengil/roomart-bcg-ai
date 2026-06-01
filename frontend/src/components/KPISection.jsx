@@ -7,7 +7,7 @@ const cardVariants = {
   visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.07, duration: 0.4, ease: 'easeOut' } }),
 }
 
-function KPICard({ icon: Icon, label, value, sub, accent, index, pulse }) {
+function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip }) {
   return (
     <motion.div
       custom={index}
@@ -16,6 +16,7 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse }) {
       animate="visible"
       className="kpi-card group"
       style={{ '--accent': accent }}
+      title={tooltip}
     >
       {/* Background glow */}
       <div
@@ -60,11 +61,13 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse }) {
   )
 }
 
-export default function KPISection({ kpis }) {
+export default function KPISection({ kpis, categories }) {
   if (!kpis) return null
 
+  const categoryNames = (categories || []).map(c => c.category).filter(Boolean).join(' · ')
+
   const cards = [
-    { icon: Grid3X3, label: 'Total Categories', value: kpis.total_categories, sub: 'Active product lines', accent: '#F59E0B', pulse: false },
+    { icon: Grid3X3, label: 'Total Categories', value: kpis.total_categories, sub: 'Active product lines', accent: '#F59E0B', pulse: false, tooltip: categoryNames || undefined },
     { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Monitored SKUs', accent: '#8B5CF6', pulse: false },
     { icon: Star, label: 'Star Products', value: kpis.star_products, sub: 'High growth & share', accent: '#F59E0B', pulse: true },
     { icon: BarChart3, label: 'Cash Cows', value: kpis.cash_cows, sub: 'Low growth · high share', accent: '#10B981', pulse: false },

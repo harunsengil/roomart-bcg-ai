@@ -84,7 +84,7 @@ function CategoryRow({ category, isSelected, onClick }) {
       {/* Info — kategori ADI + güven noktası ilk satırda; özet metrikleri ikinci satırda */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1.5 mb-0.5">
-          <span className="text-sm font-body font-medium text-white truncate">{category.category}</span>
+          <span className="text-sm font-body font-medium text-white truncate" title={category.category}>{category.category}</span>
           {category.confidence && (
             <span className="flex-shrink-0 text-[8px]" title={`Güven: ${category.confidence}`}
               style={{ color: { low: '#EF4444', medium: '#F59E0B', high: '#10B981' }[category.confidence] || '#888' }}>●</span>
@@ -104,7 +104,12 @@ function CategoryRow({ category, isSelected, onClick }) {
         </div>
       </div>
 
-      <ChevronRight size={12} className={`flex-shrink-0 text-white/20 transition-colors ${isSelected ? 'text-white/50' : 'group-hover:text-white/40'}`} />
+      {isSelected ? (
+        <button type="button" onClick={(e) => { e.stopPropagation(); onClick(category) }}
+          className="flex-shrink-0 text-white/50 hover:text-white" title="Filtreyi kaldır"><X size={13} /></button>
+      ) : (
+        <ChevronRight size={12} className="flex-shrink-0 text-white/20 group-hover:text-white/40 transition-colors" />
+      )}
     </motion.div>
   )
 }

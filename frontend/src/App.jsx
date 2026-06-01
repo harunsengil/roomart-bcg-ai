@@ -162,7 +162,7 @@ export default function App() {
                     </p>
                   </div>
                 )}
-                <KPISection kpis={data?.kpis} />
+                <KPISection kpis={data?.kpis} categories={data?.categories} />
                 <div className="grid grid-cols-1 xl:grid-cols-5 gap-4" style={{ minHeight: 480 }}>
                   <div className="xl:col-span-3">
                     <BCGMatrix
