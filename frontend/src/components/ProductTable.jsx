@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Filter, X, Download, Search, ExternalLink } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatCurrency, formatScore } from '../utils/helpers'
 
@@ -7,7 +7,7 @@ const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG', 'UNASSIG
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'kod', 'bcg', 'action'])
 const SEARCH_FIELDS = ['name', 'category', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'price']
-const PAGE_SIZE = 10
+const PAGE_SIZE = 100
 
 function colText(p, field) {
   switch (field) {
@@ -17,7 +17,8 @@ function colText(p, field) {
     case 'share_score': return p.share_score ?? ''
     case 'growth_score': return p.growth_score ?? ''
     case 'composite_score': return p.composite_score ?? ''
-    case 'price': return p.price ?? ''
+    // GÖRÜNEN (yuvarlanmış) fiyat — ham 13669.9 değil; "6699" yanlış substring eşleşmesini önler
+    case 'price': return p.price == null ? '' : Math.round(p.price)
     case 'bcg': return p.bcg_class || ''
     case 'action': return p.recommendation?.action || ''
     default: return ''
@@ -42,6 +43,14 @@ export default function ProductTable({ products }) {
   const [sortField, setSortField] = useState('composite_score')
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
+
+  // Filtre popup'ı: dış alana tıklayınca kapansın
+  useEffect(() => {
+    if (openCol == null) return
+    const onDown = (e) => { if (!e.target.closest('[data-colfilter]')) setOpenCol(null) }
+    document.addEventListener('mousedown', onDown)
+    return () => document.removeEventListener('mousedown', onDown)
+  }, [openCol])
 
   const toggleSort = (field) => {
     if (sortField === field) setSortDir(d => (d === 'asc' ? 'desc' : 'asc'))
@@ -131,14 +140,14 @@ export default function ProductTable({ products }) {
           <span className="cursor-pointer hover:text-white/70" onClick={() => toggleSort(field)}>
             {label} {sortField === field ? (sortDir === 'asc' ? '↑' : '↓') : ''}
           </span>
-          <button onClick={() => setOpenCol(openCol === field ? null : field)} title="Sütun filtresi"
+          <button data-colfilter onClick={() => setOpenCol(openCol === field ? null : field)} title="Sütun filtresi"
             style={{ color: sel.length ? '#d4a017' : undefined }} className={sel.length ? '' : 'text-white/20 hover:text-white/50'}>
             <Filter size={11} />
             {sel.length > 0 && <span className="ml-0.5 text-[8px]">{sel.length}</span>}
           </button>
         </div>
         {openCol === field && (
-          <div className="absolute left-2 top-full z-50 mt-1 w-52 rounded-lg border border-white/10 bg-navy-900/98 p-2 shadow-2xl backdrop-blur-xl">
+          <div data-colfilter className="absolute left-2 top-full z-50 mt-1 w-52 rounded-lg border border-white/10 bg-navy-900/98 p-2 shadow-2xl backdrop-blur-xl">
             <div className="flex items-center justify-between mb-1.5">
               <button onClick={() => clearCol(field)} className="text-[10px] font-mono text-gold-400 hover:text-gold-300">Tümü</button>
               {sel.length > 0 && <button onClick={() => clearCol(field)} className="text-white/40 hover:text-white" title="Seçimi temizle"><X size={12} /></button>}
@@ -267,7 +276,8 @@ export default function ProductTable({ products }) {
       </div>
 
       {totalPages > 1 && (
-        <div className="flex items-center justify-between text-xs font-mono text-white/40">
+        <div className="sticky bottom-0 -mx-6 px-6 pt-3 pb-1 flex items-center justify-between text-xs font-mono text-white/40 border-t border-white/5"
+          style={{ background: 'var(--bg-card)' }}>
           <span>{safePage * PAGE_SIZE + 1}–{Math.min((safePage + 1) * PAGE_SIZE, filtered.length)} / {filtered.length}</span>
           <div className="flex gap-1">
             <PageBtn onClick={() => setPage(0)} disabled={safePage === 0} title="İlk sayfa">«</PageBtn>
