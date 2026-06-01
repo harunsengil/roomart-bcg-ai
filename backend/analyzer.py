@@ -48,7 +48,7 @@ CATEGORIES = [
     "Kitaplıklı Çalışma Masası",
     "Sehpa",
 ]
-OTHER_CATEGORY = "DİĞER"
+OTHER_CATEGORY = "Diğer"
 # category_map.json'da bir ürünü analizden tamamen çıkarmak için sentinel
 # (mobilya dışı gürültü: telefon, vb.). Atama UI'ı "Hariç Tut" seçilince bunu yazar.
 EXCLUDE_TOKEN = "__EXCLUDE__"
