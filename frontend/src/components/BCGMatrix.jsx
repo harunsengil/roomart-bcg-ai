@@ -124,7 +124,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
 
   return (
     <div className="glass-card p-5 h-full">
-      <div className="flex items-start justify-between mb-3 gap-3">
+      <div className="relative z-20 flex items-start justify-between mb-3 gap-3">
         <div className="min-w-0">
           <h2 className="font-display text-lg tracking-[0.15em] text-white">BCG MATRIX</h2>
           <p className="text-[10px] font-mono text-white/30 tracking-wider">
@@ -142,7 +142,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             const color = a === 'ALL' ? '#888' : (ACTION_META[a]?.color || '#888')
             const active = actionFilter === a
             return (
-              <button key={a} onClick={() => setActionFilter(a)}
+              <button key={a} type="button" onClick={() => setActionFilter(a)}
                 className="px-2 py-0.5 text-[9px] font-mono rounded border transition-all"
                 style={{ borderColor: active ? color : 'rgba(255,255,255,0.1)', color: active ? color : 'rgba(255,255,255,0.4)', background: active ? color + '15' : 'transparent' }}>
                 {a}

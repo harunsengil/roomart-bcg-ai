@@ -8,14 +8,14 @@ function ProductDetail({ product, onClose }) {
   const qm = QUADRANT_META[p.bcg_class] || { label: 'ATANMADI', emoji: '∅', color: '#6B7280', bg: 'rgba(107,114,128,0.12)', border: 'rgba(107,114,128,0.3)' }
   const am = ACTION_META[p.recommendation?.action] || {}
   return (
-    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+    <div className="relative z-20 flex-1 overflow-y-auto p-4 space-y-4">
       <div className="rounded-xl p-4" style={{ background: qm.bg, border: `1px solid ${qm.border}` }}>
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="min-w-0">
             <p className="text-[10px] font-mono tracking-widest" style={{ color: qm.color + '80' }}>ÜRÜN · {p.category}</p>
             <h3 className="font-body text-base text-white mt-0.5 leading-snug">{p.name}</h3>
           </div>
-          <button onClick={onClose} className="flex-shrink-0 text-white/30 hover:text-white/70" title="Kapat"><X size={16} /></button>
+          <button type="button" onClick={onClose} className="flex-shrink-0 text-white/30 hover:text-white/70" title="Kapat"><X size={16} /></button>
         </div>
         <span className="text-xs font-mono font-bold tracking-wider" style={{ color: qm.color }}>{qm.emoji} {qm.label}</span>
       </div>
@@ -48,8 +48,9 @@ function ProductDetail({ product, onClose }) {
         </div>
       )}
 
-      <a href={p.url} target="_blank" rel="noreferrer"
-        className="flex items-center justify-center gap-2 w-full rounded-lg border border-gold/40 text-gold py-2.5 text-xs font-mono tracking-wider hover:bg-gold/10 transition-all">
+      <a href={p.url || '#'} target="_blank" rel="noreferrer"
+        onClick={(e) => { if (p.url) { e.preventDefault(); window.open(p.url, '_blank', 'noopener,noreferrer') } }}
+        className="flex items-center justify-center gap-2 w-full rounded-lg border border-gold/40 text-gold py-2.5 text-xs font-mono tracking-wider hover:bg-gold/10 transition-all cursor-pointer">
         <ExternalLink size={14} /> TRENDYOL'DA AÇ
       </a>
     </div>
@@ -80,18 +81,13 @@ function CategoryRow({ category, isSelected, onClick }) {
         {qm.emoji}
       </div>
 
-      {/* Info */}
+      {/* Info — kategori ADI kendi satırında (artık action ismi sıkıştırmıyor) */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-0.5">
-          <span className="text-sm font-body font-medium text-white truncate">{category.category}</span>
-          <span
-            className="text-[9px] font-mono px-1.5 py-0.5 rounded tracking-wider hidden xl:inline"
-            style={{ background: am.bg, color: am.color }}
-          >
+        <div className="text-sm font-body font-medium text-white truncate mb-0.5">{category.category}</div>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-mono text-white/30">
+          <span className="px-1 py-0.5 rounded font-bold tracking-wider" style={{ background: am.bg, color: am.color }}>
             {category.recommendation?.action}
           </span>
-        </div>
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-mono text-white/30">
           <span>S <b className="text-white/60">{formatScore(category.share_score)}</b></span>
           <span>G <b className="text-white/60">{formatScore(category.growth_score)}</b></span>
           <span>{category.product_count} SKU</span>
