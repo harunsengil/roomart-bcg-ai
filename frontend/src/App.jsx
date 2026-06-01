@@ -183,14 +183,8 @@ export default function App() {
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                  <div className="lg:col-span-2" style={{ minHeight: 280 }}>
-                    <AlertsPanel alerts={data?.alerts?.slice(0, 4)} />
-                  </div>
-                  <div>
-                    <ScoreRadarChart categories={data?.categories} />
-                  </div>
-                </div>
+                {/* STRATEGIC ALERTS + PERFORMANCE RADAR Overview'dan kaldırıldı —
+                    ALERTS & SIGNALS sekmesinde zaten var (tekrar önlendi). */}
               </>
             )}
 

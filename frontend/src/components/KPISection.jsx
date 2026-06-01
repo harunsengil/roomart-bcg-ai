@@ -14,12 +14,22 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
       variants={cardVariants}
       initial="hidden"
       animate="visible"
-      className="kpi-card group"
+      className="kpi-card group relative"
       style={{ '--accent': accent }}
-      title={tooltip}
     >
       {/* Not: önceki dekoratif accent katmanları (radial glow / köşe blob / alt h-px bar)
           kaldırıldı — gold accent kartlarda kalıcı sarı 'çizgi/glow' artefaktı yaratıyorlardı. */}
+
+      {/* Hover popup (örn. TOTAL CATEGORIES → kategori adları) — native title yerine
+          anında & temalı, güvenilir. */}
+      {tooltip && (
+        <div className="pointer-events-none absolute left-0 top-full mt-1 z-50 hidden group-hover:block
+          max-w-xs rounded-lg border border-white/10 bg-navy-900/98 px-3 py-2 text-[10px] font-mono
+          text-white/75 leading-relaxed shadow-2xl backdrop-blur-xl">
+          {tooltip}
+        </div>
+      )}
+
       <div className="relative flex items-start justify-between">
         <div className="flex-1">
           <p className="text-[10px] font-mono text-white/30 tracking-widest uppercase mb-2">{label}</p>
