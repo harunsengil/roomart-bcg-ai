@@ -138,4 +138,10 @@
   gelecek). Assign + BatchRunner sekmeleri/bileşenleri silindi. `category_map.json` dosya olarak
   kalır, analyzer okumaya devam eder (manuel düzenleme + EXCLUDE çalışır); UI'dan atama yok.
 
+- **2026-06-01 — [Göç notu — kategori modeli]** Postgres'e geçişte kategoriler için görünen-ad
+  (label, ör. 'Diğer') ile iç-anahtar/slug (ör. 'other') AYRILMALI. Mevcut JSON mimaride ikisi
+  tek string ('Diğer') olarak birleşik; bu çalışıyor çünkü frontend display-map kullanmıyor. DB
+  modelinde key/slug stabil tutulup label ayrı sütun olmalı — etiket değişiklikleri veriyi/eşleşmeyi
+  kırmasın.
+
 <!-- Yeni kararları buraya ekle -->
