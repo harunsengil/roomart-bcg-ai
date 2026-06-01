@@ -22,21 +22,21 @@ export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk,
 
   return (
     <header className="themed-header flex-shrink-0 z-50 border-b backdrop-blur-xl transition-all duration-300">
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between gap-2 px-3 sm:px-6 py-3">
 
         {/* Logo */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
           <div className="relative">
             <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center">
               <span className="font-display text-gold-400 text-lg tracking-widest">RA</span>
             </div>
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-navy-950 animate-pulse" />
           </div>
-          <div>
-            <h1 className="font-display text-xl tracking-[0.2em] text-white leading-none">
-              ROOMART <span className="text-gold-400 ml-2">BCG INTELLIGENCE</span>
+          <div className="min-w-0">
+            <h1 className="font-display text-base sm:text-xl tracking-[0.15em] sm:tracking-[0.2em] text-white leading-none truncate">
+              ROOMART <span className="text-gold-400 sm:ml-2">BCG INTELLIGENCE</span>
             </h1>
-            <p className="text-[10px] text-white/30 font-mono tracking-widest uppercase mt-0.5">
+            <p className="hidden sm:block text-[10px] text-white/30 font-mono tracking-widest uppercase mt-0.5">
               Market Intelligence Platform v2.0
             </p>
           </div>

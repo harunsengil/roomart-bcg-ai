@@ -222,3 +222,11 @@ body {
 .light .text-amber-200\/70 { color: #b45309 !important; } /* koyu amber — banner/STAR rozet metni */
 /* Gold accent border'ları light'ta biraz daha koyu (görünürlük) */
 .light .border-gold-400  { border-color: #b8860b !important; }
+
+/* Light: beyaz zeminli kutular (card/glass-card) → aşağıdan yukarıya gri→kırık-beyaz gradient */
+.light .card,
+.light .glass-card { background: linear-gradient(to top, #e2e6ee, #fbfcfe); }
+
+/* Sekme çubuğu mobilde yatay kaydırılabilir; scrollbar gizli */
+.tab-bar { scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }

@@ -137,7 +137,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             )}
           </p>
         </div>
-        <div className="flex items-center gap-1.5 flex-shrink-0">
+        <div className="flex items-center gap-1.5 flex-wrap justify-end flex-shrink-0">
           {ACTIONS.map(a => {
             const color = a === 'ALL' ? '#888' : (ACTION_META[a]?.color || '#888')
             const active = actionFilter === a

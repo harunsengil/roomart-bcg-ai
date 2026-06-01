@@ -82,7 +82,7 @@ export default function App() {
   const highAlertCount = data?.alerts?.filter(a => a.severity === 'HIGH').length ?? 0
 
   return (
-    <div className={`h-screen overflow-hidden grid-bg flex flex-col ${theme}`}>
+    <div className={`h-[100dvh] overflow-hidden grid-bg flex flex-col ${theme}`}>
       <div className="scan-line" />
 
       <Header
@@ -97,7 +97,7 @@ export default function App() {
 
       {/* ── TAB BAR ───────────────────────────────────── */}
       <div
-        className="tab-bar flex-shrink-0 flex items-center gap-1 px-6 pt-3 border-b transition-all duration-300"
+        className="tab-bar flex-shrink-0 flex items-center gap-1 px-3 sm:px-6 pt-3 border-b transition-all duration-300 overflow-x-auto"
         style={{ position: 'relative', zIndex: 200 }}
       >
         {TABS.map(tab => {
@@ -112,7 +112,7 @@ export default function App() {
               onClick={(e) => { e.stopPropagation(); setActiveTab(tab.id); }}
               style={{ position: 'relative', zIndex: 201, cursor: 'pointer' }}
               className={[
-                'flex items-center gap-2 px-4 py-2.5 select-none',
+                'flex items-center gap-2 px-3 sm:px-4 py-2.5 select-none flex-shrink-0 whitespace-nowrap',
                 'text-[11px] font-mono tracking-widest uppercase',
                 'transition-all duration-200 rounded-t-lg border-b-2 -mb-px',
                 isActive
@@ -141,7 +141,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
-            className="p-5 space-y-4"
+            className="p-3 sm:p-5 space-y-4"
           >
             {/* ── OVERVIEW ── */}
             {activeTab === 'overview' && (
@@ -230,15 +230,15 @@ export default function App() {
       </main>
 
       {/* ── FOOTER ───────────────────────────────────── */}
-      <div className="flex items-center justify-between px-6 py-2 border-t border-white/5 flex-shrink-0">
-        <div className="flex items-center gap-4 text-[9px] font-mono text-white/15">
-          <span>RoomArt BCG Intelligence Platform</span>
-          <span>·</span>
-          <span>Python + React + GitHub Actions</span>
-          <span>·</span>
-          <span className="capitalize">{theme} mode</span>
+      <div className="flex items-center justify-between gap-2 px-3 sm:px-6 py-2 border-t border-white/5 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 text-[9px] font-mono text-white/15 min-w-0 truncate">
+          <span className="truncate">RoomArt BCG Intelligence Platform</span>
+          <span className="hidden sm:inline">·</span>
+          <span className="hidden sm:inline">Python + React + GitHub Actions</span>
+          <span className="hidden sm:inline">·</span>
+          <span className="capitalize hidden sm:inline">{theme} mode</span>
         </div>
-        <div className="text-[9px] font-mono text-white/15">
+        <div className="text-[9px] font-mono text-white/15 hidden md:block flex-shrink-0">
           Auto-refresh every 30 min · Data updated every 6h via GitHub Actions
         </div>
       </div>

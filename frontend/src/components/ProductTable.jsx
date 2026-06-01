@@ -231,13 +231,13 @@ export default function ProductTable({ products }) {
           <h2 className="font-display text-xl text-white font-semibold">Product Intelligence</h2>
           <p className="text-xs text-white/40 font-mono mt-0.5">{filtered.length} products · {products.length} total</p>
         </div>
-        <div className="flex flex-col gap-2 xl:items-end">
-          <div className="flex gap-2 items-center">
-            <div className="relative">
+        <div className="flex flex-col gap-2 xl:items-end w-full xl:w-auto">
+          <div className="flex gap-2 items-center w-full xl:w-auto">
+            <div className="relative flex-1 xl:flex-none">
               <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-white/25" />
               <input value={search} onChange={e => { setSearch(e.target.value); setPage(0) }}
                 placeholder="Ara: ad, kod, BCG… veya >3500, <2000, 1000-5000"
-                className="pl-7 pr-7 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-gold/40 w-72" />
+                className="pl-7 pr-7 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-gold/40 w-full xl:w-72" />
               {search && <button onClick={() => { setSearch(''); setPage(0) }} className="absolute right-2 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"><X size={13} /></button>}
             </div>
             <button onClick={exportCSV} title="Filtreli veriyi Excel/CSV indir"
