@@ -18,20 +18,8 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
       style={{ '--accent': accent }}
       title={tooltip}
     >
-      {/* Background glow */}
-      <div
-        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: `radial-gradient(circle at 50% 0%, ${accent}15 0%, transparent 70%)` }}
-      />
-
-      {/* Corner accent */}
-      <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-xl pointer-events-none">
-        <div
-          className="absolute -top-8 -right-8 w-16 h-16 rounded-full opacity-20"
-          style={{ background: accent }}
-        />
-      </div>
-
+      {/* Not: önceki dekoratif accent katmanları (radial glow / köşe blob / alt h-px bar)
+          kaldırıldı — gold accent kartlarda kalıcı sarı 'çizgi/glow' artefaktı yaratıyorlardı. */}
       <div className="relative flex items-start justify-between">
         <div className="flex-1">
           <p className="text-[10px] font-mono text-white/30 tracking-widest uppercase mb-2">{label}</p>
@@ -54,9 +42,6 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
           <Icon size={18} style={{ color: accent }} />
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-px rounded-b-xl" style={{ background: `linear-gradient(90deg, transparent, ${accent}50, transparent)` }} />
     </motion.div>
   )
 }
