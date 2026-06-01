@@ -10,6 +10,11 @@
 - **Güncelleyen:** Code
 - **Aktif branch:** main (doğrudan main'e çalışıyoruz; tek geliştirici)
 
+> **🧊 DONDURMA NOKTASI:** Bu, JSON+Actions mimarisinin son tam sürümü; **Supabase + Next.js +
+> Vercel göçü** (Aşama 2, ayrı oturum) öncesi dondurma. Tag'ler: `v1-full-pre-cleanup` (Assign+Batch
+> dahil tam-özellikli, DİĞER matris-dışı eski hal), `v1-frozen-pre-supabase` (Aşama 1 sonrası:
+> DİĞER skorlu, Assign/Batch yok). Göç kararı + davranış değişikliği için bkz DECISIONS.md (2026-06-01).
+
 ## Sistem Durumu (özet)
 - **Pipeline OTONOM ve uçtan uca doğrulandı (2026-05-30):** scrape (gerçek Trendyol,
   Playwright, günlük 05:00 UTC) → analyze → deploy zinciri explicit dispatch ile çalışıyor.
@@ -21,9 +26,9 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-01) Dashboard UX cilası tamamlandı ve canlı** (matris ürün-scatter, Products
-  tablosu tam donanımlı, app-shell layout sabit). Aktif bir görev yok; sıradaki opsiyonlar
-  "Sıradaki Adımlar"da.
+- **(2026-06-01) Aşama 1 — göç öncesi dondur + sadeleştir tamamlandı.** Assign + Batch
+  sekmeleri kaldırıldı; DİĞER artık skorlanır (matriste 6. grup); `is_unassigned`/UNASSIGNED
+  mantığı temizlendi. Sonraki: Aşama 2 = Supabase/Next.js göçü (ayrı oturum).
 
 ## Bekleyen / Bloke
 - [ ] Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de. Assign sekmesinden
@@ -102,14 +107,21 @@
       smooth scroll (clamp/smooth yarışı → ileri sayfa en alta atıyordu, düzeldi). Popup
       şeffaflığı: `bg-navy-900/98` (geçersiz class) → opak `var(--bg-secondary)` (filtre
       popup + KPI + matris tooltip üçü birden).
+- [x] **(2026-06-01) 'Banyo Dolabı' rename + Assign UI** (ad→link, Link sütunu kaldır, herhangi
+      ürünü getirme) — sonra Assign UI tümüyle kaldırıldı (aşağı).
+- [x] **(2026-06-01) Aşama 1 — dondur + sadeleştir:** İki tag (`v1-full-pre-cleanup`,
+      `v1-frozen-pre-supabase`). Assign + Batch sekmeleri/bileşenleri silindi (yazma-kanalı ara
+      altyapısı kurulmadı — göçte DB gelecek). **DİĞER artık skorlanır** (analyzer `analyzable=products`):
+      matriste 6. grup, X=DİĞER-içi deg payı, Y=trends-yok→nötr; `is_unassigned`/UNASSIGNED mantığı
+      (BCGMatrix/ProductTable) temizlendi. EXCLUDE≠DİĞER korundu. Lokal doğrulama: 187 skorlu, 6
+      kategori (Banyo 119/Çamaşır 38/DİĞER 17/Kitaplıklı 5/Mutfak 5/Sehpa 3), excluded 1.
 
 ## Sıradaki Adımlar
-1. Gürültü temizliği: Assign sekmesinden mobilya-dışı ürünleri "Hariç Tut" → category_map.json commit.
-2. v2: yeni-ürün keşfi (mağaza enumerate, Playwright; 403'ü gerçek tarayıcı geçiyordu).
-3. snapshot_utils.py (delta arşiv) — snapshots.json büyümesi için.
-4. (Düşük öncelik) Ürün kodu kapsamı: bazı detay sayfaları headless'te `productCode` döndürmüyor
-   (~yarısı boş "—"); ek parse/yedek selektör ile iyileştirilebilir (veri eksikliği, bug değil).
-5. (Düşük öncelik) Actions Node20 deprecation yükseltmesi; roundtable failure (Anthropic) incelemesi.
+1. **Aşama 2 — Mimari göç (ayrı oturum):** Next.js + Supabase (Auth/Postgres/RLS) + Vercel.
+   Kategori atama API→DB anlık; scrape/analiz job→Postgres; analyzer/categorize/scraper mantığı
+   taşınır. Detay: DECISIONS.md (2026-06-01).
+2. (Göç kapsamında) Gürültü/atama yönetimi DB+Auth'lu admin panelinden; v2 yeni-ürün keşfi;
+   snapshot delta arşiv; ürün-kodu kapsamı; Actions Node20 yükseltmesi.
 
 ## Bilinen Sorunlar / Riskler
 - Momentum güveni için ≥14 farklı gün gerek. Şu an 2 gün (growth_axis_active=true ama

@@ -107,4 +107,35 @@
   inline style kullanır. Gerekçe: `navy-900` config'de yoktu → sınıf no-op → popuplar şeffaf
   görünüyordu. `--bg-secondary` her iki temada (dark/light) opak.
 
+- **2026-06-01 — [BÜYÜK RESİM: Mimari göç kararı (Aşama 2, ayrı oturum)]** RoomArt,
+  "statik GitHub Pages + JSON + GitHub Actions" mimarisinden standart iskelete göçecek:
+  **Next.js (App Router) + Supabase Auth + Supabase Postgres + Vercel.** Hedef: çok-projeli,
+  çok-kullanıcılı, yazılabilir temel. Veri Postgres'te (products, snapshots, bcg_scores,
+  category_assignments, profiles + rol/yetki + RLS). Kategori atama = API→DB anlık yazma
+  (commit/pipeline yok). scrape/analiz = zamanlanmış job→Postgres. GitHub yalnız kod+CI/CD.
+  Admin panelinden kullanıcı/yetki; Assign yalnız yetkili kullanıcıya. analyzer BCG mantığı +
+  categorize() + scraper gömülü-JSON yöntemi Python/mantık olarak taşınır, sadece çıktı
+  Postgres'e gider. Gerekçe: statik site yazılamaz; token/Worker/Firebase ara çözümleri
+  çok-kullanıcılı güvenli yazma için ya güvensiz ya ağır → kalıcı çözüm DB+Auth.
+  NOT: Bu oturumda KOD YAZILMADI; yalnız karar kaydı.
+
+- **2026-06-01 — [Göç öncesi DONDURMA + iki tag]** JSON+Actions mimarisinin son tam sürümü
+  dondurma noktası olarak işaretlendi. İki git tag: **`v1-full-pre-cleanup`** (Assign+Batch
+  dahil tam-özellikli eski hal; DİĞER matris-dışı eski davranış burada donar — geri dönüş
+  noktası) ve **`v1-frozen-pre-supabase`** (Aşama 1 sadeleştirmesi sonrası: DİĞER skorlu,
+  Assign/Batch yok, deploy OK — Supabase/Next.js göçü başlangıç noktası).
+
+- **2026-06-01 — [DAVRANIŞ DEĞİŞİKLİĞİ: DİĞER artık skorlanır]** Eşleşmeyen ürünler DİĞER
+  bucket'ında kalır ama **analiz dışı bırakılmaz** — DİĞER tek kategori gibi BCG'de skorlanır,
+  matriste 6. grup olur. X = DİĞER-içi deg payı; Y = Trends köprüsü yok → nötr (Sehpa/Mutfak
+  Adası gibi, momentum aktif). Bu, 2026-05-30'daki "DİĞER atanana dek analiz dışı / is_unassigned"
+  kararını **geçersiz kılar**. `is_unassigned` alanı + matris-dışı mantık kaldırıldı; payload'da
+  tüm ürünler (DİĞER dahil) skorlu. **EXCLUDE ≠ DİĞER korunur:** category_map `__EXCLUDE__`
+  (iPhone/mobilya-dışı) tümüyle analiz dışı; DİĞER'e DÜŞMEZ.
+
+- **2026-06-01 — [Assign + Batch UI kaldırıldı]** Yarım kalan kategori-atama yazma-kanalı
+  (token/Worker/Supabase auth) planları temizlendi; **yerine ara altyapı kurulmadı** (göçte DB
+  gelecek). Assign + BatchRunner sekmeleri/bileşenleri silindi. `category_map.json` dosya olarak
+  kalır, analyzer okumaya devam eder (manuel düzenleme + EXCLUDE çalışır); UI'dan atama yok.
+
 <!-- Yeni kararları buraya ekle -->

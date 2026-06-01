@@ -73,7 +73,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   const containerRef = useRef(null)
 
   const scored = (products || []).filter(
-    p => !p.is_unassigned && p.share_score != null && p.growth_score != null
+    p => p.share_score != null && p.growth_score != null
   )
   if (!scored.length) return null
 

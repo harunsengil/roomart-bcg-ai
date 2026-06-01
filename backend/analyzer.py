@@ -554,9 +554,11 @@ def run_analysis():
             "deg": raw.get("deg", 0),
         })
 
-    # DİĞER hariç gerçek kategorilerde skorla; DİĞER atanana dek analiz dışı
+    # Tüm ürünler skorlanır — DİĞER de tek kategori gibi BCG'de yer alır (matriste 6. grup).
+    # Trends köprüsü yok → büyüme nötr (Sehpa/Mutfak Adası gibi). EXCLUDE edilenler zaten
+    # yukarıda `products`'a hiç girmedi → tümüyle analiz dışında (EXCLUDE ≠ DİĞER).
     scored = []
-    analyzable = [p for p in products if p["category"] != OTHER_CATEGORY]
+    analyzable = products
     by_cat = {}
     for p in analyzable:
         by_cat.setdefault(p["category"], []).append(p)
@@ -604,8 +606,7 @@ def run_analysis():
             "review_count": p["review_count"],
             "kod": p.get("kod"),
             "url": p["url"],
-            "is_unassigned": p["category"] == OTHER_CATEGORY,
-            # skor alanları: skorlanmışta dolu, DİĞER'de None (henüz atanmadı)
+            # skor alanları — DİĞER dahil tüm ürünler skorlu (defensive: sc her zaman dolu)
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
             "bcg_class": sc["bcg_class"] if sc else None,
@@ -627,16 +628,16 @@ def run_analysis():
     bcg_scores = {
         "metadata": {
             "last_updated": datetime.now(timezone.utc).isoformat(),
-            "total_products": len(scored),          # skorlanan (DİĞER hariç)
-            "total_all": len(products_payload),      # tüm ürünler (DİĞER dahil, EXCLUDE hariç)
-            "other_unassigned": sum(1 for p in products if p["category"] == OTHER_CATEGORY),
-            "excluded_count": excluded,              # category_map ile "Hariç Tut" edilen
+            "total_products": len(scored),          # skorlanan (DİĞER dahil; EXCLUDE hariç)
+            "total_all": len(products_payload),      # = total_products (DİĞER artık skorlu)
+            "other_count": sum(1 for p in products if p["category"] == OTHER_CATEGORY),  # DİĞER (skorlu)
+            "excluded_count": excluded,              # category_map "Hariç Tut" (analiz dışı; DİĞER değil)
 
             "data_days": n_days,
             "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
             "quadrant_distribution": payload["quadrant_distribution"],
         },
-        # Firestore ile parite: 192 ürünün tamamı (is_unassigned bayrağıyla)
+        # Firestore ile parite: tüm ürünler (DİĞER dahil, hepsi skorlu; EXCLUDE hariç)
         "products": products_payload,
     }
     return bcg_scores, payload, alerts
@@ -658,7 +659,7 @@ def main():
     logger.info(f"Tamamlandı: {q['STAR']} Star, {q['CASH_COW']} Cash Cow, "
                 f"{q['QUESTION_MARK']} Question Mark, {q['DOG']} Dog; "
                 f"{len(alerts)} uyarı; "
-                f"{bcg_scores['metadata']['other_unassigned']} DİĞER (atanmadı).")
+                f"{bcg_scores['metadata']['other_count']} DİĞER (skorlu).")
 
 
 if __name__ == "__main__":

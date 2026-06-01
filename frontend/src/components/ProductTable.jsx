@@ -2,8 +2,9 @@ import { useState, useMemo, useEffect, useRef } from 'react'
 import { Filter, X, Download, Search, ExternalLink } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatCurrency, formatScore } from '../utils/helpers'
 
-const UNASSIGNED_META = { label: 'ATANMADI', emoji: '∅', color: '#6B7280' }
-const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG', 'UNASSIGNED']
+// Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
+const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
+const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'kod', 'bcg', 'action'])
 const SEARCH_FIELDS = ['name', 'category', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'price']
@@ -124,7 +125,7 @@ export default function ProductTable({ products }) {
         for (const [field, vals] of Object.entries(colFilters)) {
           if (vals && vals.length && !vals.includes(String(colText(p, field)))) return false
         }
-        const matchBcg = bcgFilter === 'ALL' ? true : bcgFilter === 'UNASSIGNED' ? p.is_unassigned : p.bcg_class === bcgFilter
+        const matchBcg = bcgFilter === 'ALL' ? true : p.bcg_class === bcgFilter
         const matchAction = actionFilter === 'ALL' || p.recommendation?.action === actionFilter
         return matchBcg && matchAction
       })
@@ -245,7 +246,7 @@ export default function ProductTable({ products }) {
           <div className="flex flex-wrap gap-1 items-center">
             <span className="text-[9px] font-mono text-white/25 mr-0.5">BCG</span>
             {BCG_FILTERS.map(f => {
-              const cfg = f === 'ALL' ? { color: '#888' } : f === 'UNASSIGNED' ? UNASSIGNED_META : QUADRANT_META[f]
+              const cfg = f === 'ALL' ? { color: '#888' } : QUADRANT_META[f]
               return <Chip key={f} active={bcgFilter === f} color={cfg.color} label={f === 'ALL' ? 'ALL' : cfg.emoji} onClick={() => { setBcgFilter(f); setPage(0) }} />
             })}
           </div>
@@ -280,7 +281,7 @@ export default function ProductTable({ products }) {
           </thead>
           <tbody>
             {paginated.map((p, i) => {
-              const cfg = QUADRANT_META[p.bcg_class] || UNASSIGNED_META
+              const cfg = QUADRANT_META[p.bcg_class] || FALLBACK_META
               const aColor = ACTION_META[p.recommendation?.action]?.color || '#888'
               return (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/3 transition-colors align-top">
