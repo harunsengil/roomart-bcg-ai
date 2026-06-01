@@ -6,7 +6,7 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-05-30
+- **Tarih:** 2026-06-01
 - **Güncelleyen:** Code
 - **Aktif branch:** main (doğrudan main'e çalışıyoruz; tek geliştirici)
 
@@ -17,12 +17,13 @@
   `roomart-bcg-dev` projesine yazar (prod'u güncellemez) — bkz Bilinen Sorunlar.
 - Dashboard yayında: https://harunsengil.github.io/roomart-bcg-ai/ (Overview, Products, Assign,
   Trends, Alerts, AI Strategy, Batch sekmeleri).
-- snapshots.json artık **2 gün** (2026-05-18, 2026-05-30); momentum ekseni aktif
-  (`growth_axis_active=true`, `days_until_confident=12`).
+- snapshots.json artık **4 gün**; momentum ekseni aktif (`growth_axis_active=true`,
+  `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- a+b+c (v1) tamamlandı ve canlı. Sistem günlük otonom akıyor; aktif bir görev yok.
-  Sıradaki opsiyonlar "Sıradaki Adımlar"da.
+- **(2026-06-01) Dashboard UX cilası tamamlandı ve canlı** (matris ürün-scatter, Products
+  tablosu tam donanımlı, app-shell layout sabit). Aktif bir görev yok; sıradaki opsiyonlar
+  "Sıradaki Adımlar"da.
 
 ## Bekleyen / Bloke
 - [ ] Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de. Assign sekmesinden
@@ -81,12 +82,34 @@
       üretilmeyen tactics/budget UI'dan kaldırıldı. (P2) 4 ölü komponent silindi
       (RecommendationsPanel/CategoryHeatmap/KPICards/TrendChart — sahte alan/kırık import içeriyordu).
       (P3) Overview'a "veri olgunlaşıyor X/14 gün" banner'ı + kategori confidence rozeti. Build OK.
+- [x] **(2026-06-01) BCG Matrix → ürün-scatter:** kategori-balonu yerine TÜM ürünler nokta
+      olarak çizilir (jitter ile yığılma açıldı, zoom, action filtre çipleri, noktaya tıkla →
+      sağ panelde ürün kartı + Trendyol link). Medyan eşikleri korunur.
+- [x] **(2026-06-01) Overview sadeleştirme:** Strategic Alerts + Performance Radar kaldırıldı
+      (Alerts & Signals sekmesinde zaten var). KPI dekoratif accent katmanları silindi
+      (kalıcı "sarı loading çizgisi" artefaktıydı) + TOTAL CATEGORIES hover popup'ı.
+- [x] **(2026-06-01) Products sekmesi (tam donanım):** No/Kategori/Kod/Puan/Değerlendirme
+      sütunları, tüm-sütun arama (binlik-ayraç duyarsız), sıralanabilir başlıklar, Excel tarzı
+      çoklu-seçim sütun filtreleri (filtre-içi arama + Tümü/✕), BCG+Action çipleri, Excel/CSV
+      export, ürün adı→Trendyol link, 100 satır/sayfa, ilk/son ok + pencere. Sayısal arama
+      operatörleri: `>3500`, `<2000`, `>=N`, `1000-5000` (aralık) → fiyata uygulanır.
+- [x] **(2026-06-01) App-shell layout fix:** outer `h-screen+overflow-hidden`, `main`
+      `flex-1+min-h-0+overflow-y-auto` → SADECE main içeride kayar; header/sekme/footer pinli.
+      Kök neden: Header `sticky top-0` + sekme `relative z-200` → body kayınca sekmeler
+      header'a biniyordu; `min-h-screen` footer'ı tarayıcıya göre kaydırıyordu. Tüm sekmelerde.
+- [x] **(2026-06-01) ProductTable scroll/popup:** sticky thead (sınırlı-yükseklik scroll
+      kutusu; `overflow-x-auto`→sticky-trap kök nedeni çözüldü), sayfa değişiminde çift-rAF
+      smooth scroll (clamp/smooth yarışı → ileri sayfa en alta atıyordu, düzeldi). Popup
+      şeffaflığı: `bg-navy-900/98` (geçersiz class) → opak `var(--bg-secondary)` (filtre
+      popup + KPI + matris tooltip üçü birden).
 
 ## Sıradaki Adımlar
 1. Gürültü temizliği: Assign sekmesinden mobilya-dışı ürünleri "Hariç Tut" → category_map.json commit.
 2. v2: yeni-ürün keşfi (mağaza enumerate, Playwright; 403'ü gerçek tarayıcı geçiyordu).
 3. snapshot_utils.py (delta arşiv) — snapshots.json büyümesi için.
-4. (Düşük öncelik) Actions Node20 deprecation yükseltmesi; roundtable failure (Anthropic) incelemesi.
+4. (Düşük öncelik) Ürün kodu kapsamı: bazı detay sayfaları headless'te `productCode` döndürmüyor
+   (~yarısı boş "—"); ek parse/yedek selektör ile iyileştirilebilir (veri eksikliği, bug değil).
+5. (Düşük öncelik) Actions Node20 deprecation yükseltmesi; roundtable failure (Anthropic) incelemesi.
 
 ## Bilinen Sorunlar / Riskler
 - Momentum güveni için ≥14 farklı gün gerek. Şu an 2 gün (growth_axis_active=true ama

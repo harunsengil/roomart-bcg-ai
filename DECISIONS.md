@@ -88,4 +88,23 @@
   tek-dosyada onay yok. İlke: işe başlamadan `git pull --rebase`, CI'da cache. (Chat ile
   uzlaşıldı; Code uygular.)
 
+- **2026-06-01 — [UI: BCG Matrix ürün-bazlı]** Matris artık kategori-balonu yerine TÜM
+  ürünleri tek tek nokta olarak çizer (App.jsx `BCGMatrix products=...`). 2026-05-30'daki
+  "kategori-bazlı tasarım" teşhisini **bilinçli olarak geçersiz kılar** — kullanıcı ürün
+  seviyesi dağılım istedi. Yığılma jitter ile açıldı; noktaya tıklama sağ panelde ürün kartı
+  (Trendyol link) gösterir. Kategori balonları kaldırıldı.
+
+- **2026-06-01 — [UI: App-shell sabit viewport]** Uygulama kabuğu tam-viewport sabit kolon:
+  outer `h-screen + overflow-hidden`, `main` `flex-1 + min-h-0 + overflow-y-auto`; header/
+  sekme/footer `flex-shrink-0` ile pinli, SADECE main içeride kayar. Gerekçe: eski
+  `min-h-screen` + Header `sticky top-0` + sekme `relative z-200` kombinasyonunda body kayınca
+  sekmeler header'ın üstüne biniyor, footer tarayıcıya göre farklı yerde duruyordu. Uzun
+  içerikli sekmeler (Products/Assign) kendi iç scroll'larını yönetir (ProductTable: sınırlı-
+  yükseklik kutu + sticky thead + çift-rAF smooth sayfa scroll'u). İlke: tek scroll otoritesi = main.
+
+- **2026-06-01 — [UI: opak yüzey değişkeni]** Floating panel/popup/tooltip arka planları
+  `bg-navy-900/98` gibi Tailwind'de TANIMSIZ renk sınıfları yerine opak `var(--bg-secondary)`
+  inline style kullanır. Gerekçe: `navy-900` config'de yoktu → sınıf no-op → popuplar şeffaf
+  görünüyordu. `--bg-secondary` her iki temada (dark/light) opak.
+
 <!-- Yeni kararları buraya ekle -->
