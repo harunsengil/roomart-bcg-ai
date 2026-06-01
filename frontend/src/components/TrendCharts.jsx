@@ -152,21 +152,23 @@ export function ScoreRadarChart({ categories }) {
   }))
 
   return (
-    <div className="glass-card p-5 overflow-hidden">
-      <div className="mb-4">
+    <div className="glass-card p-5 overflow-hidden h-full flex flex-col" style={{ minHeight: 600 }}>
+      <div className="mb-4 flex-shrink-0">
         <h2 className="font-display text-base tracking-[0.15em] text-white">PERFORMANCE RADAR</h2>
         <p className="text-[10px] font-mono text-white/30">Multi-dimension category comparison</p>
       </div>
-      <ResponsiveContainer width="100%" height={200}>
-        <RadarChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 20 }}>
-          <PolarGrid stroke="rgba(255,255,255,0.06)" />
-          <PolarAngleAxis dataKey="category" tick={{ fill: 'rgba(255,255,255,0.4)', fontSize: 9, fontFamily: 'JetBrains Mono' }} />
-          <Radar name="Market Share" dataKey="share" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.15} strokeWidth={1.5} />
-          <Radar name="Growth Score" dataKey="growth" stroke="#10B981" fill="#10B981" fillOpacity={0.1} strokeWidth={1.5} />
-          <Radar name="Trend Score" dataKey="trend" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.08} strokeWidth={1} />
-          <Legend wrapperStyle={{ fontSize: '9px', fontFamily: 'JetBrains Mono', color: 'rgba(255,255,255,0.4)' }} />
-        </RadarChart>
-      </ResponsiveContainer>
+      <div className="flex-1 min-h-0">
+        <ResponsiveContainer width="100%" height="100%">
+          <RadarChart data={data} margin={{ top: 20, right: 40, bottom: 20, left: 40 }} outerRadius="72%">
+            <PolarGrid stroke="rgba(255,255,255,0.06)" />
+            <PolarAngleAxis dataKey="category" tick={{ fill: 'rgba(255,255,255,0.4)', fontSize: 11, fontFamily: 'JetBrains Mono' }} />
+            <Radar name="Market Share" dataKey="share" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.15} strokeWidth={1.5} />
+            <Radar name="Growth Score" dataKey="growth" stroke="#10B981" fill="#10B981" fillOpacity={0.1} strokeWidth={1.5} />
+            <Radar name="Trend Score" dataKey="trend" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.08} strokeWidth={1} />
+            <Legend wrapperStyle={{ fontSize: '10px', fontFamily: 'JetBrains Mono', color: 'rgba(255,255,255,0.4)' }} />
+          </RadarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   )
 }

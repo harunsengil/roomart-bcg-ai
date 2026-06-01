@@ -62,7 +62,8 @@ export default function App() {
   const { data, loading, error, lastUpdated, refetch } = useData(30 * 60 * 1000)
   const { isKiosk, toggleKiosk } = useKioskMode()
   const { theme, toggleTheme } = useTheme()
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(null)        // Overview (matris + panel)
+  const [strategyCategory, setStrategyCategory] = useState(null)        // AI Strategy paneli (bağımsız)
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [loadingTimeout, setLoadingTimeout] = useState(false)
@@ -218,8 +219,8 @@ export default function App() {
                 <div>
                   <CategoryPanel
                     categories={data?.categories}
-                    selectedCategory={selectedCategory}
-                    onSelectCategory={setSelectedCategory}
+                    selectedCategory={strategyCategory}
+                    onSelectCategory={setStrategyCategory}
                   />
                 </div>
               </div>
