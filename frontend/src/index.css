@@ -32,11 +32,11 @@
    LIGHT MODE TOKENS
 ═══════════════════════════════════════════ */
 .light {
-  --bg-primary:    #f0f2f8;
-  --bg-secondary:  #e4e8f2;
-  --bg-tertiary:   #d8dded;
-  --bg-card:       rgba(255,255,255,0.95);
-  --bg-card2:      rgba(245,247,255,0.9);
+  --bg-primary:    #e6e9f1;   /* daha az parlak — saf beyaz göz yoruyordu */
+  --bg-secondary:  #dce1ec;
+  --bg-tertiary:   #d2d8e6;
+  --bg-card:       rgba(248,250,253,0.96);  /* hafif kırık-beyaz kart (glare azaldı) */
+  --bg-card2:      rgba(241,244,250,0.92);
   --bg-hover:      rgba(0,0,0,0.03);
   --border:        rgba(180,140,20,0.25);
   --border-subtle: rgba(0,0,0,0.08);
@@ -187,3 +187,15 @@ body {
 .light .bg-white\/5      { background: rgba(0,0,0,0.04) !important; }
 .light .bg-white\/10     { background: rgba(0,0,0,0.07) !important; }
 .light .hover\:bg-white\/10:hover { background: rgba(0,0,0,0.06) !important; }
+
+/* Light mode: parlak gold/amber METİN beyaz üstünde okunmuyordu → koyu, okunabilir tonlar.
+   (Dark mode dokunulmaz; bunlar yalnız .light altında geçerli.) */
+.light .text-gold-400,
+.light .text-gold-300,
+.light .text-gold        { color: #8a5a00 !important; }   /* koyu gold — başlık/sekme/link */
+.light .text-amber-400,
+.light .text-amber-300,
+.light .text-amber-200,
+.light .text-amber-200\/70 { color: #b45309 !important; } /* koyu amber — banner/STAR rozet metni */
+/* Gold accent border'ları light'ta biraz daha koyu (görünürlük) */
+.light .border-gold-400  { border-color: #b8860b !important; }
