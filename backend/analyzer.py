@@ -39,27 +39,36 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 # Büyüme güveninin "yeterli" sayılması için gereken farklı snapshot günü
 CONFIDENCE_MIN_DAYS = 14
 
-# ── 5 gerçek kategori + Trends köprüsü ────────────────────────────────────────
-# Sehpa ve Kitaplıklı Çalışma Masası'nın Trends karşılığı YOK -> nötr (None).
+# RoomArt'ın Trendyol merchantId'si. Snapshot okuma katmanında bu merchantId'e
+# sahip OLMAYAN tüm ürünler (mobilya dışı gürültü: iPhone vb.) elenir.
+ROOMART_MERCHANT_ID = "362387"
+
+# ── Gerçek kategoriler + Trends köprüsü ───────────────────────────────────────
+# Mutfak Adası / Kitaplıklı Çalışma Masası / Sehpa / Kahve Köşesi'nin Trends
+# karşılığı YOK -> bu kategoriler büyüme ekseninde momentum-only (bkz. TRENDS_BRIDGE).
 CATEGORIES = [
     "Çamaşır Makinesi Dolabı",
     "Banyo Dolabı",
     "Mutfak Adası",
     "Kitaplıklı Çalışma Masası",
     "Sehpa",
+    "Kahve Köşesi",
 ]
 OTHER_CATEGORY = "Diğer"
 # category_map.json'da bir ürünü analizden tamamen çıkarmak için sentinel
 # (mobilya dışı gürültü: telefon, vb.). Atama UI'ı "Hariç Tut" seçilince bunu yazar.
 EXCLUDE_TOKEN = "__EXCLUDE__"
 
-# Roomart kategorisi -> trends_sonuc.json anahtarı (eşleşmeyen = None = nötr)
+# Roomart kategorisi -> trends_sonuc.json anahtarı.
+# None = bu kategorinin gerçek Trends verisi YOK -> büyüme momentum-only hesaplanır
+# ve kategori MEDYAN eşik hesabından HARİÇ tutulur (suni nötr-50 medyanı bozmasın).
 TRENDS_BRIDGE = {
     "Çamaşır Makinesi Dolabı": "çamaşır makinesi dolabı",
     "Banyo Dolabı": "lavabolu banyo dolabı",
     "Mutfak Adası": None,
     "Kitaplıklı Çalışma Masası": None,
     "Sehpa": None,
+    "Kahve Köşesi": None,
 }
 
 
@@ -105,6 +114,10 @@ def categorize(ad, category_map=None):
     def has(*kws):
         return any(_norm(k) in a for k in kws)
 
+    # Kahve Köşesi'ni önce yakala: adında "Kiler/Mutfak Dolabı" gibi başka anahtarlar
+    # da geçebildiği için yüksek öncelikli kontrol et.
+    if has("kahve köşe"):
+        return "Kahve Köşesi"
     if has("çamaşır", "kurutma makinesi"):
         return "Çamaşır Makinesi Dolabı"
     if has("lavabolu", "banyo dolab", "banyo alt", "banyo üst", "banyo boy"):
@@ -122,6 +135,34 @@ def extract_product_id(url):
     """Trendyol URL'sinden ürün ID'sini çıkar (...-p-XXXXXX?...)."""
     m = re.search(r"-p-(\d+)", url or "")
     return m.group(1) if m else None
+
+
+def extract_merchant_id(url):
+    """Trendyol URL'sinden merchantId'yi çıkar (...&merchantId=XXXXXX&...)."""
+    m = re.search(r"merchantId=(\d+)", url or "")
+    return m.group(1) if m else None
+
+
+def filter_roomart_only(snapshots):
+    """
+    NON-FURNITURE FİLTRE: merchantId'i RoomArt'a (362387) ait OLMAYAN tüm ürünleri
+    her günün snapshot'ından ele. merchantId hiç parse edilemeyen ürünler de elenir
+    (mobilya dışı gürültü: iPhone gibi farklı satıcı/URL'den sızanlar).
+    Okuma katmanında yapılır ki kaynak (tek-dosya veya delta) ne olursa olsun yakalansın.
+    """
+    dropped = 0
+    cleaned = {}
+    for day, products in snapshots.items():
+        kept = {}
+        for pid, raw in products.items():
+            if extract_merchant_id(raw.get("url", "")) == ROOMART_MERCHANT_ID:
+                kept[pid] = raw
+            else:
+                dropped += 1
+        cleaned[day] = kept
+    if dropped:
+        logger.info(f"[FİLTRE] {dropped} non-RoomArt ürün elendi")
+    return cleaned
 
 
 def normalize(value, min_val, max_val):
@@ -145,13 +186,13 @@ def load_snapshots():
             days = snapshot_utils.reconstruct(DATA_DIR / "snapshots")
             if days:
                 logger.info(f"snapshot_utils.reconstruct: {len(days)} gün yüklendi.")
-                return days
+                return filter_roomart_only(days)
     except Exception as e:
         logger.info(f"snapshot_utils yok/atlandı ({e}); tek-dosya formatına düşülüyor.")
 
     # (a) tek dosya
     data = load_json("snapshots.json", default={})
-    return data
+    return filter_roomart_only(data)
 
 
 def latest_day(snapshots):
@@ -221,12 +262,18 @@ def calculate_market_share(product, cat_products):
 
 def calculate_growth(product, category, snapshots, day_keys, trends_cats):
     """
-    Büyüme (Y) = 0.5 * Trends_büyüme + 0.5 * deg_momentum
+    Büyüme (Y):
+      • Gerçek Trends'i olan kategori : 0.5 * Trends_büyüme + 0.5 * deg_momentum
+      • Trends'i OLMAYAN kategori     : sadece deg_momentum (suni nötr-50 Trends
+        bileşeni KULLANILMAZ; bu kategoriler ayrıca medyan eşikten hariç tutulur)
     """
     t_score, has_trends = trends_growth_score(category, trends_cats)
     pid = extract_product_id(product["url"])
     m_score, has_momentum = compute_deg_momentum(pid, snapshots, day_keys)
-    growth = 0.5 * t_score + 0.5 * m_score
+    if has_trends:
+        growth = 0.5 * t_score + 0.5 * m_score
+    else:
+        growth = m_score
     return round(growth, 2), has_trends, has_momentum
 
 
@@ -388,12 +435,17 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
         quadrant_dist[top_bcg] = quadrant_dist.get(top_bcg, 0) + 1
 
         tkey = TRENDS_BRIDGE.get(cat)
-        if tkey and tkey in trends_cats:
+        has_real_trends = bool(tkey and tkey in trends_cats)
+        if has_real_trends:
             td = trends_cats[tkey]
             trend_score = round(min(100.0, td.get("ortalama", 50)), 1)
             trend_growth = round(td.get("buyume_yuzde", 0.0), 1)
         else:
             trend_score, trend_growth = 50.0, 0.0
+        # trends_source: kullanılan trends_sonuc anahtarı (yoksa null).
+        # growth_axis_active (kategori-bazlı): büyüme ekseni gerçek Trends'e mi dayanıyor?
+        trends_source = tkey if has_real_trends else None
+        cat_growth_axis_active = has_real_trends
 
         cat_prods = [p for p in scored if p["category"] == cat]
         top_prod = max(cat_prods, key=lambda p: (p["share_score"] + p["growth_score"]))
@@ -424,6 +476,8 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
             "total_reviews": sum(c["reviews"]),
             "trend_score": trend_score,
             "trend_growth": trend_growth,
+            "trends_source": trends_source,
+            "growth_axis_active": cat_growth_axis_active,
             "confidence": cat_conf,
         })
 
@@ -571,10 +625,21 @@ def run_analysis():
         p["_share"], p["_growth"] = share, growth
         p["_has_trends"], p["_has_momentum"] = has_trends, has_momentum
 
-    # Göreli eşik = portföy medyanı (analiz edilebilir tüm ürünler)
+    # Göreli eşik = portföy medyanı.
+    #   • Pay (X): tüm analiz edilebilir ürünlerin medyanı (X eksenine dokunulmaz).
+    #   • Büyüme (Y): SADECE gerçek Trends verisi olan kategorilerin medyanı; Trends'siz
+    #     kategoriler (momentum-only) eşiği bozmasın diye hariç. Hiç Trends'li ürün
+    #     yoksa tüm ürünlere düş (defensive).
     share_thr = statistics.median([p["_share"] for p in analyzable]) if analyzable else 50
-    growth_thr = statistics.median([p["_growth"] for p in analyzable]) if analyzable else 50
-    logger.info(f"Eşikler (medyan): pay={share_thr:.1f}, büyüme={growth_thr:.1f}")
+    trends_growths = [p["_growth"] for p in analyzable if p["_has_trends"]]
+    if trends_growths:
+        growth_thr = statistics.median(trends_growths)
+    elif analyzable:
+        growth_thr = statistics.median([p["_growth"] for p in analyzable])
+    else:
+        growth_thr = 50
+    logger.info(f"Eşikler (medyan): pay={share_thr:.1f}, büyüme={growth_thr:.1f} "
+                f"(büyüme medyanı {len(trends_growths)} Trends'li üründen)")
 
     for p in analyzable:
         bcg = classify_bcg(p["_share"], p["_growth"], share_thr, growth_thr)
