@@ -1,0 +1,36 @@
+{
+  "_aciklama": "Kategori-bazli rakip magaza haritasi. competitor_bot.py aktif=true ve magaza_url placeholder olmayanlari scrape eder. magaza_url formati: https://www.trendyol.com/magaza/<slug>-m-<kod>?sst=0&channelId=1&pi={} (pi sayfa numarasi icin format placeholder). NOT: Kenzlife magaza adi Trendyol'da 'bakbudaiyi' / 'BAK BU DA IYI' olarak gorunur, ayni marka. Bu magaza her kategoride urun satar; analyzer kategori filtresi sart.",
+  "_son_guncelleme": "2026-06-02",
+  "kategoriler": {
+    "Çamaşır Makinesi Dolabı": [
+      {"marka": "Rani Mobilya", "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "DEKORFİM", "magaza_url": "https://www.trendyol.com/magaza/dekorfim-m-649488?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Kenzlife", "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Egecan Mobilya", "magaza_url": "https://www.trendyol.com/magaza/egecan-m-385417?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Bofigo", "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true}
+    ],
+    "Lavabolu Banyo Dolabı": [
+      {"marka": "KAREN BANYO", "magaza_url": "https://www.trendyol.com/magaza/karen-banyo-m-330260?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Rani Mobilya", "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Kenzlife", "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Bofigo", "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true}
+    ],
+    "Mutfak Adası": [
+      {"marka": "Rani Mobilya", "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Asra Trend", "magaza_url": "https://www.trendyol.com/magaza/asratrend-m-374428?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Robin Home", "magaza_url": "https://www.trendyol.com/magaza/robin-home-m-299300?sst=0&channelId=1&pi={}", "aktif": true}
+    ],
+    "Kitaplıklı Çalışma Masası": [
+      {"marka": "Bofigo", "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Rani Mobilya", "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true}
+    ],
+    "Kahve Köşesi": [
+      {"marka": "Asra Trend", "magaza_url": "https://www.trendyol.com/magaza/asratrend-m-374428?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Robin Home", "magaza_url": "https://www.trendyol.com/magaza/robin-home-m-299300?sst=0&channelId=1&pi={}", "aktif": true},
+      {"marka": "Rani Mobilya", "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true}
+    ],
+    "Sehpa": [
+      {"marka": "Bofigo", "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true}
+    ]
+  }
+}
