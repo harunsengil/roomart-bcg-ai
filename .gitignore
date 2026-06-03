@@ -5,3 +5,8 @@ __pycache__/
 .env
 .DS_Store
 *.egg-info/
+
+# RoomArt gerçek satış/ciro agregatı — PUBLIC repo'ya commit'lenmemeli (rakip istihbaratı).
+# Sadece yerel + Firestore'a (private) yazılmalı. (Her iki yol da: data + frontend kopyası.)
+data/trendyol_sales.json
+frontend/public/data/trendyol_sales.json
