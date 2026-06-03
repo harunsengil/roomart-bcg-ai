@@ -7,43 +7,40 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-06-03
-- **Güncelleyen:** Code (terminal trendyol-api oturumu — KAPANIYOR; sürücü → VS Code Claude Code eklentisi)
-- **Aktif branch:** `feat/sales-momentum` (working tree burada). NOT: 2026-06-03'te çoklu-oturum +
-  stacked-PR akışı yaşandı; PR #1+#3 main'e merge oldu. Şimdi geliştirme **VS Code Claude Code eklentisi**
-  (sürücü) + Chat (düşünme) ile sürecek. ⚠️ Aynı repoda eklenti + terminal claude'u **AYNI ANDA** aktif
-  session'la çalıştırma (paylaşılan working tree → çakışma).
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #4 merge + canlı doğrulama oturumu)
+- **Aktif branch:** `main` (PR #4 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
+  Claude Code eklentisi** (sürücü) + Chat (düşünme) ile sürüyor. ⚠️ Aynı repoda eklenti + terminal
+  claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Açık iş:** **PR #4** (`feat/sales-momentum` → main) — BCG büyüme ekseni = gerçek satış momentumu
->   (son7g vs önceki7g). CODE-ONLY, tek commit `18c06aa`, merge bekliyor. Yerel doğrulama:
->   growth_basis {sales:125, reviews:62}, quadrant 4 STAR/0 CC/2 QM/1 DOG.
-> - **Merge sonrası:** `analyze.yml` dispatch ile canlı doğrula (growth_basis CI'da gerçek satışla).
-> - 🔴 **Bekleyen kullanıcı aksiyonu:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token
->   sohbette göründü). Bayat token'da CI artık görünür `::error::` verir (hardening mevcut).
-> - **Diğer adaylar:** BCG Roundtable workflow failure incelemesi.
+> - **Açık kod işi yok** — PR #1/#3/#4 main'de, satış-tabanlı pazar payı + satış-momentumu büyüme
+>   ekseni canlı ve doğrulandı.
+> - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel-acil):** Trendyol API Secret'ı yenile →
+>   `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). **Token ŞU AN geçerli** (2026-06-03
+>   CI'da satış çekti), ama sızdığı için rotasyon önerilir. Bayat token'da `analyze.yml`'in
+>   "Verify Trendyol sync" adımı görünür `::warning::` verir (hardening mevcut).
+> - ⚠️ **Güvenlik (lokal):** `git remote origin` URL'inde plaintext GitHub PAT (`ghp_…`) var
+>   (yalnız yerel `.git/config`, commit'li değil) → rotasyon + credential-helper önerilir.
+> - **Diğer adaylar:** `competitor_bot.py`'yi analyzer'a bağla (göreceli-pay, marka bazlı; CANLI
+>   doğrulanmamış); BCG Roundtable workflow failure incelemesi; Aşama 2 (Supabase/Next.js göçü).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
 >   None-trends + parametrik `competitor_bot.py`) → main `aebec6b`.
 > - **PR #3** (resmî Trendyol API + pazar-payı=GERÇEK SATIŞ + CI hardening; kapanan PR #2'nin yerine)
 >   → main `9a72638`.
-> - Merge sonrası **Deploy Dashboard** tetiklendi (satış-tabanlı bcg_scores yayınlanıyor).
+> - **PR #4** (BCG büyüme ekseni Y = gerçek satış momentumu, son7g vs önceki7g; history store yok)
+>   → main `1e4ab24`. **Canlı doğrulandı:** `analyze.yml` dispatch (run 26885434479) success;
+>   CI-commit `7ead404` `bcg_scores.json` metadata `growth_basis {sales:125, reviews:62}`,
+>   quadrant `4 STAR/0 CC/2 QM/1 DOG` (yerel ile birebir); Trendyol sync+verify adımları success
+>   (token geçerli, satış kullanıldı); Deploy Dashboard tetiklendi → success.
 > Detay + çoklu-oturum koordinasyon: DECISIONS.md (2026-06-03).
 
-> **✅ MERGE TAMAM (2026-06-03):**
-> - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
->   None-trends + parametrik `competitor_bot.py`) → main `aebec6b`.
-> - **PR #3** (resmî Trendyol API + pazar-payı=GERÇEK SATIŞ + CI hardening; kapanan PR #2'nin yerine)
->   → main `9a72638`.
-> - Merge sonrası **Deploy Dashboard** tetiklendi (satış-tabanlı bcg_scores yayınlanıyor).
-> Detay + çoklu-oturum koordinasyon: DECISIONS.md (2026-06-03).
-
-> **🆕 Pazar payı artık GERÇEK SATIŞ:** `trendyol_api.py`+`trendyol_sync.py` kendi mağaza verisini
-> çeker → `data/trendyol_sales.json` (PII'siz, **gitignored**, ciro public'e gitmez; ham satış private
-> Firestore). analyzer X eksenini kategori-içi net satış adedine bağlar (satış yoksa deg'e düşer;
-> `share_basis`). **⚠️ Yapılacak:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette
-> göründü). Secrets (`TRENDYOL_SUPPLIER_ID`/`TRENDYOL_TOKEN`) eklendi ✅.
-> **Büyüme ekseni (Y) = gerçek satış momentumu** PR #4'te (history store gerekmedi; son7g vs önceki7g).
+> **🆕 Pazar payı + büyüme artık GERÇEK SATIŞ:** `trendyol_api.py`+`trendyol_sync.py` kendi mağaza
+> verisini çeker → `data/trendyol_sales.json` (PII'siz, **gitignored**, ciro public'e gitmez; ham satış
+> private Firestore). analyzer X eksenini kategori-içi net satış adedine (`share_basis`), Y eksenini
+> satış momentumuna (`growth_basis`; satış yoksa ikisi de deg'e düşer) bağlar. Secrets
+> (`TRENDYOL_SUPPLIER_ID`/`TRENDYOL_TOKEN`) kurulu ✅; rotasyon bekliyor (yukarı).
 
 > **🧊 DONDURMA NOKTASI:** Bu, JSON+Actions mimarisinin son tam sürümü; **Supabase + Next.js +
 > Vercel göçü** (Aşama 2, ayrı oturum) öncesi dondurma. Tag'ler: `v1-full-pre-cleanup` (Assign+Batch
@@ -61,9 +58,10 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-01) Aşama 1 + UI cilası tamamlandı, canlı.** Assign/Batch kaldırıldı, Diğer
-  skorlu (6. grup), light-mode tümüyle elden geçti, responsive (mobil dahil). Aktif görev yok.
-  Sonraki: **Aşama 2 = Supabase/Next.js göçü (ayrı oturum)**.
+- **(2026-06-03) PR #4 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Satış-tabanlı
+  pazar payı (X) + satış-momentumu büyüme (Y) main'de ve dashboard'da canlı. Bekleyen tek şey
+  kullanıcı aksiyonu: `TRENDYOL_TOKEN` rotasyonu (güvenlik). Sonraki büyük adım: **Aşama 2 =
+  Supabase/Next.js göçü (ayrı oturum)**.
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -76,6 +74,13 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-03) PR #4 — büyüme ekseni (Y) = gerçek satış momentumu** (`feat/sales-momentum`
+      → main `1e4ab24`, merge-commit). `trendyol_sync.py` siparişleri son7g vs önceki7g net adede
+      bucket'lar → `sales_momentum` (0-100, deg ölçeği; ikisi-0→None); `analyzer.calculate_growth`
+      satış momentumu varsa onu, yoksa eski `deg_momentum`'a düşer (`growth_basis` "sales"|"reviews").
+      `bc`→`bcat` gölge temizliği. **Canlı doğrulandı** (REST API merge + `analyze.yml` dispatch,
+      run 26885434479 success): CI-commit `7ead404` `growth_basis {sales:125, reviews:62}`,
+      quadrant 4 STAR/0 CC/2 QM/1 DOG; sync+verify success (token geçerli); Deploy success.
 - [x] **(2026-06-03) PR #1 — analyzer mekanik temizlik + competitor_bot** (`feat/analyzer-cleanup-
       competitor-scraper` @ `95d42dd`, kod-only, push'lı, merge'e hazır): non-furniture merchantId
       filtresi (5 iPhone elendi) + Kahve Köşesi ayrı kategori (Diğer 16→3) + None-trends momentum-only

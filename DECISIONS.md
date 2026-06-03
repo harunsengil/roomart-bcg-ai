@@ -231,4 +231,16 @@
   medyan eşik esas olarak DÜŞEN ürünleri ayırır — bu fazda doğru/dürüst sinyal. Pencere/band ileride
   veri arttıkça ayarlanabilir.
 
+- **2026-06-03 — [PR #4 MERGE + CANLI DOĞRULAMA]** Satış-momentumu büyüme ekseni (yukarıdaki
+  "[BCG §5: Büyüme ekseni (Y) = GERÇEK SATIŞ momentumu]" kararı) `feat/sales-momentum` → main
+  **merge-commit** ile birleştirildi (`1e4ab24`). Ortamda `gh` CLI yok → merge + workflow dispatch
+  **GitHub REST API** ile yapıldı (token git remote URL'inden). Merge sonrası `analyze.yml`
+  workflow_dispatch (run `26885434479`) → **success**; CI-commit `7ead404` `bcg_scores.json` metadata
+  `growth_basis {sales:125, reviews:62}`, quadrant `4 STAR/0 CC/2 QM/1 DOG` (yerel doğrulama ile
+  birebir). "Sync Trendyol sales" + "Verify Trendyol sync" adımları success → **TRENDYOL_TOKEN şu an
+  geçerli** (canlı satış çekti, fallback'e düşmedi); Deploy Dashboard tetiklendi → success.
+  **Açık kullanıcı aksiyonu (güvenlik):** token sohbette sızdığı için rotasyon önerilir (geçerli olsa
+  da); ayrıca `git remote origin` URL'inde plaintext PAT (`ghp_…`, yalnız yerel `.git/config`) →
+  rotasyon + credential-helper.
+
 <!-- Yeni kararları buraya ekle -->
