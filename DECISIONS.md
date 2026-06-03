@@ -216,4 +216,19 @@
   pay + `share_basis` etiketi yazılır, ham satış sayıları DEĞİL (doğrulandı: grep boş).
   CI: `analyze.yml`'e analyzer'dan önce `continue-on-error` sync adımı (secret yoksa deg'e düşer).
 
+- **2026-06-03 — [BCG §5: Büyüme ekseni (Y) = GERÇEK SATIŞ momentumu]** Büyüme momentumu artık
+  `deg` (yorum) yerine **gerçek satış hızı**: `trendyol_sync.py` siparişleri `orderDate`'e göre
+  **son 7 gün vs önceki 7 gün** net adet olarak bucket'lar → ürün/kategori `sales_momentum` (0-100,
+  deg ile aynı ölçek: %0=50, +%30=100, -%30=0, sıfırdan büyüme=65). **History store GEREKMEZ** —
+  18 günlük sipariş aralığı tek çekimde iki pencereyi besler (Firestore arşivi/gün-bekleme yok).
+  `analyzer.calculate_growth`: `sales_momentum` varsa onu, son 14 günde satışı olmayan ürün eski
+  `deg_momentum`'a düşer; her ürün `growth_basis` ("sales"|"reviews") taşır (share_basis ile simetrik).
+  Trends'li kategori `0.5*Trends+0.5*sales_momentum`, Trends'siz yalnız momentum. `confidence`: satış
+  momentumu tek çekimde gerçek → snapshot gün sayısına (CONFIDENCE_MIN_DAYS) bağlı DEĞİL.
+  **Doğrulama:** growth_basis {sales:125, reviews:62}; quadrant 4 STAR/0 CC/2 QM/1 DOG (düşen ürün
+  Y'de ayrıştı). Ham satış/momentum sayıları payload'a YAZILMAZ (yalnız etiket; grep boş).
+  **Not (büyüme fazı):** mağaza hızlı büyürken momentum çoğu üründe yükseğe (100) saturate olur;
+  medyan eşik esas olarak DÜŞEN ürünleri ayırır — bu fazda doğru/dürüst sinyal. Pencere/band ileride
+  veri arttıkça ayarlanabilir.
+
 <!-- Yeni kararları buraya ekle -->

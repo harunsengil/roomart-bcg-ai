@@ -26,7 +26,7 @@ from __future__ import annotations
 import json
 import logging
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import trendyol_api as ty
@@ -39,6 +39,26 @@ OUT_FILE = DATA_DIR / "trendyol_sales.json"
 
 # Net satıştan düşülen sipariş kalemi durumları (iptal/iade satış sayılmaz).
 EXCLUDED_LINE_STATUSES = {"Cancelled", "Returned", "UnDelivered", "UnSupplied"}
+
+# Satış-momentumu penceresi: son N gün vs önceki N gün (sipariş orderDate'ine göre).
+# History store GEREKMEZ — tek çekimde iki pencere kıyaslanır.
+MOMENTUM_WINDOW_DAYS = 7
+
+
+def _normalize(value, lo, hi):
+    if hi == lo:
+        return 50.0
+    return max(0.0, min(100.0, (value - lo) / (hi - lo) * 100))
+
+
+def _momentum_score(recent: int, prior: int):
+    """Satış-momentumu 0-100. Son 14 günde hiç satış yoksa None (analyzer deg'e düşer).
+    deg_momentum ile aynı ölçek: %0=50, +%30=100, -%30=0; sıfırdan büyüme=65."""
+    if recent == 0 and prior == 0:
+        return None
+    if prior == 0:
+        return 65.0
+    return round(_normalize((recent - prior) / prior, -0.30, 0.30), 2)
 
 
 def _categorize(name: str) -> str:
@@ -85,7 +105,13 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
     by_product, by_category = {}, {}
     status_breakdown = {}
 
+    # Momentum pencereleri (UTC, epoch ms): [now-7g, now] vs [now-14g, now-7g]
+    now = datetime.now(timezone.utc)
+    c_recent = (now - timedelta(days=MOMENTUM_WINDOW_DAYS)).timestamp() * 1000
+    c_prior = (now - timedelta(days=2 * MOMENTUM_WINDOW_DAYS)).timestamp() * 1000
+
     for order in orders:
+        od = order.get("orderDate", 0) or 0
         for ln in order.get("lines", []) or []:
             bc = str(ln.get("barcode") or "")
             # contentId (= snapshot pid) barcode köprüsünden; çözülemezse barcode'a düş
@@ -97,11 +123,13 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
             status = ln.get("orderLineItemStatusName", "?")
             status_breakdown[status] = status_breakdown.get(status, 0) + qty
             is_net = status not in EXCLUDED_LINE_STATUSES
+            # momentum yalnız NET satıştan; pencere kovası
+            win = "recent" if od >= c_recent else ("prior" if od >= c_prior else None)
 
             bp = by_product.setdefault(code, {
                 "product_name": name, "barcode": ln.get("barcode"), "category": cat,
                 "gross_units": 0, "gross_amount": 0.0, "net_units": 0, "net_amount": 0.0,
-                "order_lines": 0,
+                "order_lines": 0, "units_recent": 0, "units_prior": 0,
             })
             bp["gross_units"] += qty
             bp["gross_amount"] = round(bp["gross_amount"] + amount, 2)
@@ -109,22 +137,33 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
             if is_net:
                 bp["net_units"] += qty
                 bp["net_amount"] = round(bp["net_amount"] + amount, 2)
+                if win == "recent":
+                    bp["units_recent"] += qty
+                elif win == "prior":
+                    bp["units_prior"] += qty
 
-            bc = by_category.setdefault(cat, {
+            bcat = by_category.setdefault(cat, {
                 "gross_units": 0, "gross_amount": 0.0, "net_units": 0, "net_amount": 0.0,
-                "order_lines": 0, "products": set(),
+                "order_lines": 0, "products": set(), "units_recent": 0, "units_prior": 0,
             })
-            bc["gross_units"] += qty
-            bc["gross_amount"] = round(bc["gross_amount"] + amount, 2)
-            bc["order_lines"] += 1
-            bc["products"].add(code)
+            bcat["gross_units"] += qty
+            bcat["gross_amount"] = round(bcat["gross_amount"] + amount, 2)
+            bcat["order_lines"] += 1
+            bcat["products"].add(code)
             if is_net:
-                bc["net_units"] += qty
-                bc["net_amount"] = round(bc["net_amount"] + amount, 2)
+                bcat["net_units"] += qty
+                bcat["net_amount"] = round(bcat["net_amount"] + amount, 2)
+                if win == "recent":
+                    bcat["units_recent"] += qty
+                elif win == "prior":
+                    bcat["units_prior"] += qty
 
-    # set → sayı (JSON serileştirilebilir)
+    # momentum skoru (ürün + kategori); set → sayı
+    for d in by_product.values():
+        d["sales_momentum"] = _momentum_score(d["units_recent"], d["units_prior"])
     for c in by_category.values():
         c["distinct_products"] = len(c.pop("products"))
+        c["sales_momentum"] = _momentum_score(c["units_recent"], c["units_prior"])
     return by_product, by_category, status_breakdown
 
 
