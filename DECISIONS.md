@@ -243,4 +243,24 @@
   da); ayrıca `git remote origin` URL'inde plaintext PAT (`ghp_…`, yalnız yerel `.git/config`) →
   rotasyon + credential-helper.
 
+- **2026-06-03 — [Ürün kapsamı = API kataloğu; matris ≠ tablo evreni]** (PR #5, `d9bdb81`) Dashboard
+  ürün evreni snapshot-seed'den (187) **tam Trendyol mağaza kataloğuna** (resmî API, ~999 ürün)
+  genişletildi. **İki ayrı evren:** (1) **Tablo** = tüm katalog (snapshot ∪ `trendyol_sales.json['products']`),
+  envanter görünürlüğü için. (2) **BCG matrisi/skor** = yalnız SİNYAL-taşıyan ürünler = snapshot'ta
+  yorum verisi VAR **veya** son14g gerçek net satış>0 (~261). Sinyalsiz pasif ürünler (ne satış ne
+  yorum, ~738) tabloda görünür ama `bcg_class=None` (matriste yok — BCGMatrix null-skoru zaten
+  filtreliyor). Gerekçe: eski 187-seed evreni gerçek satışın **%19'unu** ve katalogun **%81'ini**
+  kaçırıyordu (74 satışlı ürün matriste hiç yoktu; kategori kapsamı Banyo %20/Diğer %3/Kitaplıklı %8).
+  999'un tamamını matrise sokmak X=0'da 738 sıfır-sinyal gürültüsü yaratırdı → sinyal eşiği seçildi
+  (kullanıcı kararı: "261 matris + 999 tablo"). **Veri kaynağı önceliği:** her ürün scrape öncelikli
+  (görünen puan/değerlendirme/fiyat/kod/url); snapshot'ta yoksa API'den (title/sale_price/stockCode/
+  productUrl) + `stock`. `trendyol_sync.aggregate_products`'a `product_url`+`stock_code` eklendi
+  (pasif ürün linki/kodu). ProductTable'a **Stok** kolonu. metadata `catalog_total`(999)+
+  `passive_count`(738). **KPI semantiği:** `total_products`=skorlanan (261, quadrant toplamıyla
+  tutarlı); tablo 999 gösterir — istenirse ileride KPI 999'a çevrilip ayrı "Scored" kartı eklenebilir.
+  **Canlı doğrulandı:** run 26900585270 success, CI-commit `7fbc20c`; 999 tablo/261 matris/738 pasif,
+  stok 999/999, growth_basis {sales:197,reviews:64}. **Sınır:** scrape seed hâlâ 187 (puan/değerlendirme
+  yalnız bu ürünlerde); 74 yeni satışlı ürün puan/değerlendirme=0 ("—") ile gelir — scrape genişletmesi
+  (v2 yeni-ürün keşfi) ayrı iş.
+
 <!-- Yeni kararları buraya ekle -->

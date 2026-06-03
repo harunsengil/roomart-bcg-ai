@@ -7,14 +7,18 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-06-03
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #4 merge + canlı doğrulama oturumu)
-- **Aktif branch:** `main` (PR #4 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #4 + PR #5 merge + canlı doğrulama)
+- **Aktif branch:** `main` (PR #4 + #5 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
   Claude Code eklentisi** (sürücü) + Chat (düşünme) ile sürüyor. ⚠️ Aynı repoda eklenti + terminal
   claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Açık kod işi yok** — PR #1/#3/#4 main'de, satış-tabanlı pazar payı + satış-momentumu büyüme
->   ekseni canlı ve doğrulandı.
+> - **Açık kod işi yok** — PR #1/#3/#4/#5 main'de. Satış-tabanlı pazar payı + satış-momentumu büyüme
+>   ekseni + **API-katalog ürün kapsamı** (999 tablo / 261 sinyalli matris) canlı ve doğrulandı.
+> - **Adaylar (kullanıcı sırası):** KPI semantiği (Total Products 261 vs tablo 999 — istenirse
+>   999'a çevir + ayrı "Scored 261" kartı); kolon zenginleştirme (liste fiyatı/indirim, marka,
+>   attributes renk/ölçü); kategori kaynağı = Trendyol `categoryName` ile categorize() uyumu;
+>   competitor_bot.py'yi analyzer'a bağla; BCG Roundtable failure; Aşama 2 (Supabase/Next.js).
 > - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel-acil):** Trendyol API Secret'ı yenile →
 >   `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). **Token ŞU AN geçerli** (2026-06-03
 >   CI'da satış çekti), ama sızdığı için rotasyon önerilir. Bayat token'da `analyze.yml`'in
@@ -74,6 +78,15 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-03) PR #5 — ürün kapsamı = API kataloğu** (`feat/catalog-coverage` → main `d9bdb81`,
+      merge-commit). Dashboard tablosu artık tüm Trendyol mağaza kataloğunu (API ~999) gösterir; BCG
+      matrisi yalnız SİNYAL-taşıyan (snapshot'ta yorum VEYA gerçek satış, ~261) ürünleri skorlar.
+      Eski 187-seed evreni satışın %19'unu + katalogun %81'ini kaçırıyordu. `analyzer` evreni =
+      `snapshot ∪ trendyol_sales.json['products']`; pasif (sinyalsiz, 738) ürün tabloda görünür
+      `bcg_class=None`. `trendyol_sync`'e `product_url`+`stock_code`; ProductTable'a **Stok** kolonu
+      (0→kırmızı, None→"—"). metadata `catalog_total`+`passive_count`. **Canlı doğrulandı** (run
+      26900585270 success, CI-commit `7fbc20c`): 999 tablo / 261 matris / 738 pasif, stok 999/999.
+      NOT (KPI): `total_products`=261 (skorlanan); tablo 999. Detay: DECISIONS 2026-06-03.
 - [x] **(2026-06-03) PR #4 — büyüme ekseni (Y) = gerçek satış momentumu** (`feat/sales-momentum`
       → main `1e4ab24`, merge-commit). `trendyol_sync.py` siparişleri son7g vs önceki7g net adede
       bucket'lar → `sales_momentum` (0-100, deg ölçeği; ikisi-0→None); `analyzer.calculate_growth`
