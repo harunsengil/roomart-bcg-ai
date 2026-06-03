@@ -617,41 +617,66 @@ def run_analysis():
     else:
         logger.warning("trendyol_sales.json yok/boş — pazar payı YORUM (deg) tabanına düşüyor.")
 
-    # Ürünleri normalize et + kategoriye ata
+    # ── Ürün evreni = snapshot (scrape: puan/deg) ∪ API kataloğu (satış/stok/fiyat) ──
+    # Katalog-kapsamı: dashboard tablosu TÜM mağaza kataloğunu (API, ~999) gösterir; BCG
+    # matrisi yalnız SİNYAL-taşıyan (snapshot'ta yorum VEYA gerçek satış olan, ~261) ürünleri
+    # skorlar. Sinyalsiz pasif ürünler (ne satış ne yorum) tabloda görünür, skoru None'dur.
+    api_products = sales_doc.get("products", {})  # contentId → {title, sale_price, stock, ...}
+    if api_products:
+        logger.info(f"API kataloğu yüklendi: {len(api_products)} ürün (tablo kapsamı = tam katalog).")
+
+    all_pids = set(current.keys()) | set(api_products.keys())
     products = []
     excluded = 0
-    for pid, raw in current.items():
+    for pid in all_pids:
         mapped = category_map.get(pid)
         if mapped == EXCLUDE_TOKEN:
             excluded += 1            # mobilya dışı/gürültü: analizden tamamen çıkar
             continue
-        cat = mapped or categorize(raw["ad"])
+        raw = current.get(pid)            # snapshot (scrape) — varsa puan/deg/fiyat/kod/url
+        api = api_products.get(pid, {})   # API katalog — fiyat/stok/title/stockCode/url
+        name = (raw["ad"] if raw and raw.get("ad") else api.get("title")) or ""
+        cat = mapped or categorize(name)
         # satış net adedi + momentum (pid = productContentId = sales_by_product anahtarı)
         srec = sales_by_product.get(pid, {})
         units = int(srec.get("net_units", 0) or 0)
         sales_momentum = srec.get("sales_momentum")  # None ise büyüme deg'e düşer
+        # scrape öncelikli (görünen fiyat/yorum); snapshot'ta yoksa API'den
+        price = (raw.get("fiyat") if raw else None) or api.get("sale_price") or 0.0
+        rating = raw.get("puan", 0.0) if raw else 0.0
+        review_count = raw.get("deg", 0) if raw else 0
+        kod = (raw.get("kod") if raw else None) or api.get("stock_code")
+        url = (raw.get("url") if raw else None) or api.get("product_url") or ""
+        stock = api.get("stock")          # API quantity (snapshot'ta yok); None → tabloda "—"
+        # SİNYAL: snapshot'ta var (yorum verisi) VEYA gerçek satış>0 → matriste skorlanır.
+        has_signal = (raw is not None) or units > 0
         products.append({
             "id": pid,
-            "name": raw["ad"],
+            "name": name,
             "category": cat,
-            "price": raw.get("fiyat", 0.0),
-            "rating": raw.get("puan", 0.0),
-            "review_count": raw.get("deg", 0),
-            "kod": raw.get("kod"),            # Trendyol ürün kodu (scraper v1.1)
-            "url": raw.get("url", ""),
+            "price": price,
+            "rating": rating,
+            "review_count": review_count,
+            "kod": kod,                       # Trendyol ürün kodu (scrape v1.1 veya API stockCode)
+            "url": url,
+            "stock": stock,                   # API stok adedi (envanter görünürlüğü)
             # iç hesaplama alanları (frontend'e gitmez)
-            "fiyat": raw.get("fiyat", 0.0),
-            "puan": raw.get("puan", 0.0),
-            "deg": raw.get("deg", 0),
+            "fiyat": price,
+            "puan": rating,
+            "deg": review_count,
             "units": units,                   # gerçek net satış adedi (pazar payı tabanı)
             "sales_momentum": sales_momentum, # gerçek satış momentumu (büyüme tabanı; None→deg)
+            "_signal": has_signal,            # True → matriste skorlanır; False → pasif (tablo-only)
         })
 
-    # Tüm ürünler skorlanır — DİĞER de tek kategori gibi BCG'de yer alır (matriste 6. grup).
-    # Trends köprüsü yok → büyüme nötr (Sehpa/Mutfak Adası gibi). EXCLUDE edilenler zaten
-    # yukarıda `products`'a hiç girmedi → tümüyle analiz dışında (EXCLUDE ≠ DİĞER).
+    # Matris/skor evreni = sinyalli ürünler (DİĞER de tek kategori gibi yer alır; Trends köprüsü
+    # yok → büyüme nötr). Sinyalsiz pasif ürünler skorlanmaz (payload'da bcg_class=None).
+    # EXCLUDE edilenler zaten yukarıda `products`'a hiç girmedi (EXCLUDE ≠ DİĞER ≠ pasif).
     scored = []
-    analyzable = products
+    analyzable = [p for p in products if p["_signal"]]
+    passive_count = len(products) - len(analyzable)
+    logger.info(f"Ürün evreni: {len(products)} tablo (tam katalog) | {len(analyzable)} sinyalli "
+                f"(matris/skor) | {passive_count} pasif (tablo-only, skorsuz).")
     by_cat = {}
     for p in analyzable:
         by_cat.setdefault(p["category"], []).append(p)
@@ -718,7 +743,8 @@ def run_analysis():
             "review_count": p["review_count"],
             "kod": p.get("kod"),
             "url": p["url"],
-            # skor alanları — DİĞER dahil tüm ürünler skorlu (defensive: sc her zaman dolu)
+            "stock": p.get("stock"),         # API stok adedi (envanter; pasif üründe de dolu)
+            # skor alanları — sinyalli ürünler skorlu; pasif (sinyalsiz) ürünlerde None
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
             "share_basis": sc["share_basis"] if sc else None,
@@ -742,9 +768,11 @@ def run_analysis():
     bcg_scores = {
         "metadata": {
             "last_updated": datetime.now(timezone.utc).isoformat(),
-            "total_products": len(scored),          # skorlanan (DİĞER dahil; EXCLUDE hariç)
-            "total_all": len(products_payload),      # = total_products (DİĞER artık skorlu)
-            "other_count": sum(1 for p in products if p["category"] == OTHER_CATEGORY),  # DİĞER (skorlu)
+            "total_products": len(scored),          # SİNYALLİ = matriste skorlanan (~261)
+            "total_all": len(products_payload),      # tablo = tam katalog (snapshot ∪ API, ~999)
+            "catalog_total": len(products_payload),  # tam katalog ürün sayısı (tablo evreni)
+            "passive_count": passive_count,          # skorsuz pasif (ne satış ne yorum; tablo-only)
+            "other_count": sum(1 for p in analyzable if p["category"] == OTHER_CATEGORY),  # DİĞER (skorlu)
             "excluded_count": excluded,              # category_map "Hariç Tut" (analiz dışı; DİĞER değil)
 
             "data_days": n_days,

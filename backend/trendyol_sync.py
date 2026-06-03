@@ -91,6 +91,10 @@ def aggregate_products(products: list) -> tuple[dict, dict]:
             "stock": p.get("quantity"),
             "on_sale": p.get("onSale"),
             "approved": p.get("approved"),
+            # Katalog-kapsamı: analyzer ürün evrenini snapshot+API birleşimine genişletir;
+            # snapshot'ta OLMAYAN pasif ürünler için Trendyol linki + ürün kodu buradan gelir.
+            "product_url": p.get("productUrl"),
+            "stock_code": p.get("stockCode"),
         }
     return table, barcode_to_content
 
