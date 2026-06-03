@@ -12,8 +12,10 @@ BCG metrik tasarımı (onaylı, 2026-06-03 güncellemesi):
                        (Trendyol API → trendyol_sales.json). Satış yoksa kategori
                        eski değerlendirme (deg) payına düşer; her ürün `share_basis`
                        ("sales"|"reviews") ile hangi tabanı kullandığını belirtir.
-  • Büyüme (Y)      = 0.5 * Trends_büyüme + 0.5 * deg_momentum
-                       (momentum verisi yoksa nötr 50; snapshot biriktikçe gerçekleşir)
+  • Büyüme (Y)      = 0.5 * Trends_büyüme + 0.5 * SATIŞ_momentum (Trends'siz: yalnız momentum)
+                       Momentum = gerçek satış hızı (son 7g vs önceki 7g net adet,
+                       trendyol_sync.py). Son 14 günde satışı olmayan ürün eski
+                       deg_momentum'a düşer; her ürün `growth_basis` ("sales"|"reviews").
   • Eşik (threshold) = portföyün MEDYANI (sabit 50 değil, göreli)
   • Quadrant:
         STAR          = yüksek pay + yüksek büyüme
@@ -274,18 +276,26 @@ def calculate_market_share(product, cat_products, basis):
 def calculate_growth(product, category, snapshots, day_keys, trends_cats):
     """
     Büyüme (Y):
-      • Gerçek Trends'i olan kategori : 0.5 * Trends_büyüme + 0.5 * deg_momentum
-      • Trends'i OLMAYAN kategori     : sadece deg_momentum (suni nötr-50 Trends
-        bileşeni KULLANILMAZ; bu kategoriler ayrıca medyan eşikten hariç tutulur)
+      • Momentum kaynağı: GERÇEK SATIŞ momentumu (sales_momentum = son7g vs önceki7g
+        satış adedi, trendyol_sync.py) varsa onu; yoksa eski deg_momentum (yorum
+        sayısı). Hangisinin kullanıldığı `growth_basis` ("sales"|"reviews") ile işaretlenir.
+      • Gerçek Trends'i olan kategori : 0.5 * Trends_büyüme + 0.5 * momentum
+      • Trends'i OLMAYAN kategori     : sadece momentum (suni nötr-50 Trends bileşeni
+        KULLANILMAZ; bu kategoriler ayrıca medyan eşikten hariç tutulur)
     """
     t_score, has_trends = trends_growth_score(category, trends_cats)
-    pid = extract_product_id(product["url"])
-    m_score, has_momentum = compute_deg_momentum(pid, snapshots, day_keys)
+    sm = product.get("sales_momentum")
+    if sm is not None:                       # gerçek satış momentumu (tercih)
+        m_score, has_momentum, growth_basis = float(sm), True, "sales"
+    else:                                    # geri uyum: yorum (deg) momentumu
+        pid = extract_product_id(product["url"])
+        m_score, has_momentum = compute_deg_momentum(pid, snapshots, day_keys)
+        growth_basis = "reviews"
     if has_trends:
         growth = 0.5 * t_score + 0.5 * m_score
     else:
         growth = m_score
-    return round(growth, 2), has_trends, has_momentum
+    return round(growth, 2), has_trends, has_momentum, growth_basis
 
 
 def classify_bcg(share, growth, share_thr, growth_thr):
@@ -300,10 +310,13 @@ def classify_bcg(share, growth, share_thr, growth_thr):
     return "DOG"
 
 
-def confidence_level(has_trends, has_momentum, n_days):
+def confidence_level(has_trends, has_momentum, n_days, growth_basis="reviews"):
     """
-    Büyüme güveni. momentum gerçekleşmediyse veya yeterli gün yoksa düşük.
+    Büyüme güveni. SATIŞ momentumu tek çekimde gerçektir (snapshot gün sayısına bağlı
+    değil) → yüksek güven. deg momentumu ise yeterli snapshot günü ister.
     """
+    if growth_basis == "sales":
+        return "high" if has_trends else "medium"
     if has_momentum and n_days >= CONFIDENCE_MIN_DAYS:
         return "high" if has_trends else "medium"
     if has_trends:
@@ -613,8 +626,10 @@ def run_analysis():
             excluded += 1            # mobilya dışı/gürültü: analizden tamamen çıkar
             continue
         cat = mapped or categorize(raw["ad"])
-        # satış net adedi (pid = productContentId = sales_by_product anahtarı)
-        units = int(sales_by_product.get(pid, {}).get("net_units", 0) or 0)
+        # satış net adedi + momentum (pid = productContentId = sales_by_product anahtarı)
+        srec = sales_by_product.get(pid, {})
+        units = int(srec.get("net_units", 0) or 0)
+        sales_momentum = srec.get("sales_momentum")  # None ise büyüme deg'e düşer
         products.append({
             "id": pid,
             "name": raw["ad"],
@@ -629,6 +644,7 @@ def run_analysis():
             "puan": raw.get("puan", 0.0),
             "deg": raw.get("deg", 0),
             "units": units,                   # gerçek net satış adedi (pazar payı tabanı)
+            "sales_momentum": sales_momentum, # gerçek satış momentumu (büyüme tabanı; None→deg)
         })
 
     # Tüm ürünler skorlanır — DİĞER de tek kategori gibi BCG'de yer alır (matriste 6. grup).
@@ -647,10 +663,11 @@ def run_analysis():
         cat_products = by_cat[p["category"]]
         basis = cat_basis[p["category"]]
         share = calculate_market_share(p, cat_products, basis)
-        growth, has_trends, has_momentum = calculate_growth(
+        growth, has_trends, has_momentum, growth_basis = calculate_growth(
             p, p["category"], snapshots, day_keys, trends_cats)
         p["_share"], p["_growth"] = share, growth
         p["_share_basis"] = basis
+        p["_growth_basis"] = growth_basis
         p["_has_trends"], p["_has_momentum"] = has_trends, has_momentum
 
     # Göreli eşik = portföy medyanı.
@@ -672,13 +689,14 @@ def run_analysis():
     for p in analyzable:
         bcg = classify_bcg(p["_share"], p["_growth"], share_thr, growth_thr)
         rec = generate_recommendation(p, bcg, by_cat[p["category"]])
-        conf = confidence_level(p["_has_trends"], p["_has_momentum"], n_days)
+        conf = confidence_level(p["_has_trends"], p["_has_momentum"], n_days, p["_growth_basis"])
         scored.append({
             "id": p["id"], "name": p["name"], "category": p["category"],
             "price": p["price"], "rating": p["rating"], "review_count": p["review_count"],
             "url": p["url"], "puan": p["puan"],
             "share_score": p["_share"], "growth_score": p["_growth"],
             "share_basis": p["_share_basis"],   # "sales" | "reviews" (ham satış değil)
+            "growth_basis": p["_growth_basis"], # "sales" | "reviews" (momentum kaynağı)
             "bcg_class": bcg, "recommendation": rec,
             "composite_score": round((p["_share"] + p["_growth"]) / 2, 1),
             "confidence": conf,
@@ -704,6 +722,7 @@ def run_analysis():
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
             "share_basis": sc["share_basis"] if sc else None,
+            "growth_basis": sc["growth_basis"] if sc else None,
             "bcg_class": sc["bcg_class"] if sc else None,
             # action'ı REC_MAP'ten geçir → tooltip/tablo kategori paneliyle TUTARLI
             # (ör. SCALE→INVEST); rationale/priority korunur.
@@ -732,6 +751,10 @@ def run_analysis():
             "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
             "quadrant_distribution": payload["quadrant_distribution"],
             # Pazar payı tabanı dökümü (ham satış değil; yalnız "sales"/"reviews" sayısı)
+            "growth_basis": {
+                "sales": sum(1 for p in scored if p.get("growth_basis") == "sales"),
+                "reviews": sum(1 for p in scored if p.get("growth_basis") == "reviews"),
+            },
             "share_basis": {
                 "sales": sum(1 for p in scored if p.get("share_basis") == "sales"),
                 "reviews": sum(1 for p in scored if p.get("share_basis") == "reviews"),
