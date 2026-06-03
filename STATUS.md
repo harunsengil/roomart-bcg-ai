@@ -7,24 +7,25 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-06-03
-- **Güncelleyen:** Code (trendyol-api oturumu — TEK KOORDİNATÖR; analyzer-cleanup stand-down)
-- **Aktif branch:** `feat/trendyol-api` (PR #2). NOT: bu görevde PR/branch akışına + geçici olarak
-  **çoklu oturuma** geçildi; "doğrudan main / tek geliştirici" (2026-05-30) geçersiz. 2026-06-03'te
-  tüm takip **trendyol-api oturumuna** konsolide edildi (tek koordinatör).
+- **Güncelleyen:** Code (trendyol-api oturumu — TEK KOORDİNATÖR; çoklu-oturum episode KAPANDI)
+- **Aktif branch:** `main`. NOT: 2026-06-03'te geçici çoklu-oturum + stacked-PR akışı vardı; ikisi de
+  main'e merge oldu, tüm takip tek oturuma konsolide edildi. Feature branch'ler silindi.
 
-> **🔀 AÇIK PR'LAR (stacked):**
-> - **PR #1** (analyzer-cleanup): `feat/analyzer-cleanup-competitor-scraper` → `main`. analyzer mekanik
->   temizlik (non-furniture filtre + Kahve Köşesi + momentum-only None-trends) + parametrik
->   `competitor_bot.py`. **merge'e HAZIR.**
-> - **PR #2** (trendyol-api): `feat/trendyol-api` → `feat/analyzer-cleanup-competitor-scraper` (stacked).
->   Resmî Trendyol API + pazar-payı=GERÇEK SATIŞ (1002 ürün/~520 sipariş, PII'siz) + CI hardening.
-> - **MERGE SIRASI: önce PR #1 → main, sonra PR #2** (GitHub PR #2'yi main'e retarget eder).
+> **✅ MERGE TAMAM (2026-06-03):**
+> - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
+>   None-trends + parametrik `competitor_bot.py`) → main `aebec6b`.
+> - **PR #3** (resmî Trendyol API + pazar-payı=GERÇEK SATIŞ + CI hardening; kapanan PR #2'nin yerine)
+>   → main `9a72638`.
+> - Merge sonrası **Deploy Dashboard** tetiklendi (satış-tabanlı bcg_scores yayınlanıyor).
 > Detay + çoklu-oturum koordinasyon: DECISIONS.md (2026-06-03).
 
 > **🆕 Pazar payı artık GERÇEK SATIŞ:** `trendyol_api.py`+`trendyol_sync.py` kendi mağaza verisini
 > çeker → `data/trendyol_sales.json` (PII'siz, **gitignored**, ciro public'e gitmez; ham satış private
 > Firestore). analyzer X eksenini kategori-içi net satış adedine bağlar (satış yoksa deg'e düşer;
-> `share_basis`). **⚠️ Yapılacak:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). Secrets eklendi ✅.
+> `share_basis`). **⚠️ Yapılacak:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette
+> göründü). Secrets (`TRENDYOL_SUPPLIER_ID`/`TRENDYOL_TOKEN`) eklendi ✅.
+> **Sıradaki aday işler:** (C) büyüme eksenine satış-momentumu (sales_latest günlük arşiv);
+> canlı CI doğrulama (`analyze.yml` dispatch); BCG Roundtable workflow failure incelemesi.
 
 > **🧊 DONDURMA NOKTASI:** Bu, JSON+Actions mimarisinin son tam sürümü; **Supabase + Next.js +
 > Vercel göçü** (Aşama 2, ayrı oturum) öncesi dondurma. Tag'ler: `v1-full-pre-cleanup` (Assign+Batch
