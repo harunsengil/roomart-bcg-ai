@@ -15,10 +15,10 @@
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 > - **Açık kod işi yok** — PR #1/#3/#4/#5 main'de. Satış-tabanlı pazar payı + satış-momentumu büyüme
 >   ekseni + **API-katalog ürün kapsamı** (999 tablo / 261 sinyalli matris) canlı ve doğrulandı.
-> - **Adaylar (kullanıcı sırası):** KPI semantiği (Total Products 261 vs tablo 999 — istenirse
->   999'a çevir + ayrı "Scored 261" kartı); kolon zenginleştirme (liste fiyatı/indirim, marka,
+> - **Adaylar (kullanıcı sırası):** kolon zenginleştirme (liste fiyatı/indirim, marka,
 >   attributes renk/ölçü); kategori kaynağı = Trendyol `categoryName` ile categorize() uyumu;
 >   competitor_bot.py'yi analyzer'a bağla; BCG Roundtable failure; Aşama 2 (Supabase/Next.js).
+>   (KPI 999/261 ayrımı + Scored kartı PR #6 ile YAPILDI.)
 > - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel-acil):** Trendyol API Secret'ı yenile →
 >   `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). **Token ŞU AN geçerli** (2026-06-03
 >   CI'da satış çekti), ama sızdığı için rotasyon önerilir. Bayat token'da `analyze.yml`'in
@@ -78,6 +78,11 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-03) PR #6 — KPI: Total Products=katalog (999) + Scored kartı (261)** (`7f70935`).
+      `kpis.total_products`=tam katalog, yeni `kpis.scored_products`=matris; KPISection 9. kart
+      (Target ikonu, grid lg:8→9). Canlı doğrulandı (run 26901304662 success, deploy success).
+      Ayrıca: yerel `.env.trendyol.local` silindi (token GitHub Secret'ta kalır), merged branch'ler
+      (`feat/catalog-coverage`, `feat/kpi-catalog-scored`) silindi.
 - [x] **(2026-06-03) PR #5 — ürün kapsamı = API kataloğu** (`feat/catalog-coverage` → main `d9bdb81`,
       merge-commit). Dashboard tablosu artık tüm Trendyol mağaza kataloğunu (API ~999) gösterir; BCG
       matrisi yalnız SİNYAL-taşıyan (snapshot'ta yorum VEYA gerçek satış, ~261) ürünleri skorlar.

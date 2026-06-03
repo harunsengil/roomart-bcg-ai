@@ -263,4 +263,12 @@
   yalnız bu ürünlerde); 74 yeni satışlı ürün puan/değerlendirme=0 ("—") ile gelir — scrape genişletmesi
   (v2 yeni-ürün keşfi) ayrı iş.
 
+- **2026-06-03 — [KPI: Total Products = katalog; ayrı Scored]** (PR #6, `7f70935`) PR #5'teki "KPI
+  total_products=261, istenirse 999'a çevrilebilir" notu uygulandı (kullanıcı kararı). `kpis.total_products`
+  artık tam katalog (~999, tablo evreni); yeni `kpis.scored_products` = matriste skorlanan sinyalli ürün
+  (~261, quadrant toplamıyla tutarlı). KPISection'a 9. kart ("Scored", Target ikonu), grid lg:8→9.
+  Product-level quadrant KPI'ları (star/cc/qm/dog) scored 261'den sayılır (değişmedi). Canlı doğrulandı
+  (run 26901304662 + deploy success). Temizlik: yerel `backend/.env.trendyol.local` silindi (token GitHub
+  Secret'ta DEĞİŞMEDEN kalır; CI etkilenmez), merged feature branch'ler silindi.
+
 <!-- Yeni kararları buraya ekle -->
