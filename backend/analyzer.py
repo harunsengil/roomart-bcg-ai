@@ -763,6 +763,10 @@ def run_analysis():
     alerts = detect_alerts(scored)
     payload = build_frontend_payload(scored, alerts, trends_cats, n_days)
     payload["products"] = products_payload
+    # KPI ayrımı: "Total Products" = tam katalog (tablo evreni, ~999);
+    # "Scored" = matriste skorlanan sinyalli ürünler (~261; quadrant toplamıyla tutarlı).
+    payload["kpis"]["total_products"] = len(products_payload)
+    payload["kpis"]["scored_products"] = len(scored)
 
     # Ham skor dosyası (debug/denetim için)
     bcg_scores = {

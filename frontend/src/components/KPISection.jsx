@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Package, Grid3X3, Star, AlertTriangle, TrendingUp, BarChart3, Activity } from 'lucide-react'
+import { Package, Grid3X3, Star, AlertTriangle, TrendingUp, BarChart3, Activity, Target } from 'lucide-react'
 import { formatNumber } from '../utils/helpers'
 
 const cardVariants = {
@@ -64,7 +64,8 @@ export default function KPISection({ kpis, categories }) {
 
   const cards = [
     { icon: Grid3X3, label: 'Total Categories', value: kpis.total_categories, sub: 'Active product lines', accent: '#F59E0B', pulse: false, tooltip: categoryNames || undefined },
-    { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Monitored SKUs', accent: '#8B5CF6', pulse: false },
+    { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Catalog SKUs', accent: '#8B5CF6', pulse: false },
+    { icon: Target, label: 'Scored', value: kpis.scored_products ?? kpis.total_products, sub: 'BCG matrisinde', accent: '#A78BFA', pulse: false },
     { icon: Star, label: 'Star Products', value: kpis.star_products, sub: 'High growth & share', accent: '#F59E0B', pulse: true },
     { icon: BarChart3, label: 'Cash Cows', value: kpis.cash_cows, sub: 'Low growth · high share', accent: '#10B981', pulse: false },
     { icon: Activity, label: 'Question Marks', value: kpis.question_marks, sub: 'Requires decision', accent: '#3B82F6', pulse: true },
@@ -74,7 +75,7 @@ export default function KPISection({ kpis, categories }) {
   ]
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
       {cards.map((card, i) => (
         <KPICard key={card.label} {...card} index={i} />
       ))}
