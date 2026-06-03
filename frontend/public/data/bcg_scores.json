@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-03T11:52:39.101244+00:00",
+    "last_updated": "2026-06-03T12:42:48.985459+00:00",
     "total_products": 187,
     "total_all": 187,
     "other_count": 3,
@@ -8,13 +8,17 @@
     "data_days": 6,
     "thresholds": {
       "share": 6.2,
-      "growth": 36.9
+      "growth": 42.8
     },
     "quadrant_distribution": {
       "STAR": 4,
       "CASH_COW": 0,
       "QUESTION_MARK": 2,
       "DOG": 1
+    },
+    "growth_basis": {
+      "sales": 125,
+      "reviews": 62
     },
     "share_basis": {
       "sales": 187,
@@ -32,8 +36,9 @@
       "kod": "1719",
       "url": "https://www.trendyol.com/roomart/banos-banyo-bd2-ayaksiz-2-kapakli-mat-beyaz-130-x-35-cm-banyo-boy-dolabi-p-322556848?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 35.29,
-      "growth_score": 33.25,
+      "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -41,8 +46,8 @@
         "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 34.3,
-      "confidence": "medium"
+      "composite_score": 35.3,
+      "confidence": "high"
     },
     {
       "id": "820271932",
@@ -54,17 +59,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-x-200-cm-p-820271932?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 18.75,
-      "growth_score": 67.88,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 43.3,
-      "confidence": "medium"
+      "composite_score": 28.8,
+      "confidence": "high"
     },
     {
       "id": "838152663",
@@ -76,8 +82,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838152663?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 68.19,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -85,8 +92,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 40.3,
-      "confidence": "medium"
+      "composite_score": 42.0,
+      "confidence": "high"
     },
     {
       "id": "322554885",
@@ -98,17 +105,18 @@
       "kod": "1715",
       "url": "https://www.trendyol.com/roomart/banos-banyo-ld7-ayaksiz-2-kapakli-lavabolu-mat-beyaz-mdf-85-cm-banyo-dolabi-p-322554885?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 29.41,
-      "growth_score": 37.98,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 33.7,
-      "confidence": "medium"
+      "composite_score": 19.9,
+      "confidence": "high"
     },
     {
       "id": "885510279",
@@ -120,8 +128,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510279?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 55.45,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -129,8 +138,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 77.7,
-      "confidence": "low"
+      "composite_score": 100.0,
+      "confidence": "medium"
     },
     {
       "id": "820445956",
@@ -142,8 +151,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-820445956?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 31.25,
-      "growth_score": 66.17,
+      "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -151,8 +161,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 48.7,
-      "confidence": "medium"
+      "composite_score": 47.6,
+      "confidence": "high"
     },
     {
       "id": "820441598",
@@ -166,6 +176,7 @@
       "share_score": 0.0,
       "growth_score": 76.74,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -188,6 +199,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -208,17 +220,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kulpsuz-3-kapakli-mdf-90-cm-aynali-banyo-ust-dolabi-p-829239030?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 39.12,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 22.5,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "885510233",
@@ -230,8 +243,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510233?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 33.33,
-      "growth_score": 51.18,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -239,8 +253,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 42.3,
-      "confidence": "low"
+      "composite_score": 66.7,
+      "confidence": "medium"
     },
     {
       "id": "818183602",
@@ -252,8 +266,9 @@
       "kod": "2381",
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-ayakli-2-kapakli-cekmeceli-mat-beyaz-mdf-100-cm-banyo-dolabi-p-818183602?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 39.72,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -261,8 +276,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 25.7,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "817656657",
@@ -276,6 +291,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -296,8 +312,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/lavabolu-mdf-95-cm-cekmeceli-lotus-oval-lavabolu-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-817652416?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 37.27,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -305,8 +322,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 24.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "820272849",
@@ -318,8 +335,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-820272849?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 25.0,
-      "growth_score": 64.85,
+      "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -327,8 +345,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 44.9,
-      "confidence": "medium"
+      "composite_score": 44.5,
+      "confidence": "high"
     },
     {
       "id": "873329385",
@@ -340,8 +358,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/napoli-cok-amacli-dolap-kiler-dolabi-kitaplik-mutfak-dolabi-p-873329385?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 50.0,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -349,8 +368,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 75.0,
-      "confidence": "low"
+      "composite_score": 100.0,
+      "confidence": "medium"
     },
     {
       "id": "885510344",
@@ -362,8 +381,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510344?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 41.67,
-      "growth_score": 53.69,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -371,8 +391,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 47.7,
-      "confidence": "low"
+      "composite_score": 53.3,
+      "confidence": "medium"
     },
     {
       "id": "820082166",
@@ -384,8 +404,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-820082166?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 71.49,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -393,8 +414,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 38.9,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "322554941",
@@ -406,8 +427,9 @@
       "kod": "1718",
       "url": "https://www.trendyol.com/roomart/banos-banyo-ad7-kulpsuz-2-kapakli-mat-beyaz-mdf-80-cm-aynali-banyo-ust-dolabi-p-322554941?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 29.41,
-      "growth_score": 37.23,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -415,8 +437,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 33.3,
-      "confidence": "medium"
+      "composite_score": 44.9,
+      "confidence": "high"
     },
     {
       "id": "811436282",
@@ -428,8 +450,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banos-banyo-kulpsuz-2-kapakli-mat-beyaz-mdf-82-cm-aynali-banyo-ust-dolabi-p-811436282?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 41.18,
-      "growth_score": 41.91,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -437,8 +460,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 41.5,
-      "confidence": "medium"
+      "composite_score": 50.8,
+      "confidence": "high"
     },
     {
       "id": "818467523",
@@ -452,6 +475,7 @@
       "share_score": 0.0,
       "growth_score": 42.91,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -474,6 +498,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -494,8 +519,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 8.33,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -503,8 +529,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 29.2,
-      "confidence": "low"
+      "composite_score": 36.7,
+      "confidence": "medium"
     },
     {
       "id": "1143914080",
@@ -516,8 +542,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914080?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 16.67,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -525,8 +552,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 33.3,
-      "confidence": "low"
+      "composite_score": 40.8,
+      "confidence": "medium"
     },
     {
       "id": "1143914130",
@@ -540,6 +567,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -560,17 +588,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914275?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 16.67,
-      "growth_score": 50.0,
+      "growth_score": 0.0,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 33.3,
-      "confidence": "low"
+      "composite_score": 8.3,
+      "confidence": "medium"
     },
     {
       "id": "971265576",
@@ -584,6 +613,7 @@
       "share_score": 0.0,
       "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -604,17 +634,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/dubai-mdflam-sepetli-banyo-dolabi-seti-lavabolu-alt-dolap-aynali-banyo-ust-dolabi-boy-dolabi-p-971279075?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "EXIT",
-        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
-        "priority": 3,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "971279035",
@@ -626,17 +657,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/dubai-mdflam-sepetli-banyo-dolabi-seti-lavabolu-alt-dolap-aynali-banyo-ust-dolabi-boy-dolabi-p-971279035?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "EXIT",
-        "rationale": "Düşük pay + düşük büyüme + zayıf puan. Çıkış/listeden kaldırmayı değerlendir.",
-        "priority": 4,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "971265460",
@@ -650,6 +682,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -672,6 +705,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -692,8 +726,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/dubai-mdflam-sepetli-banyo-dolabi-seti-lavabolu-alt-dolap-aynali-banyo-ust-dolabi-boy-dolabi-p-971277331?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -701,8 +736,8 @@
         "priority": 3,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "962229828",
@@ -716,6 +751,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -736,17 +772,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096793?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 25.0,
-      "growth_score": 54.76,
+      "growth_score": 0.0,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 39.9,
-      "confidence": "low"
+      "composite_score": 12.5,
+      "confidence": "medium"
     },
     {
       "id": "962096961",
@@ -758,8 +795,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096961?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 33.33,
-      "growth_score": 55.75,
+      "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -767,8 +805,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 44.5,
-      "confidence": "low"
+      "composite_score": 41.7,
+      "confidence": "medium"
     },
     {
       "id": "962231047",
@@ -782,6 +820,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -802,17 +841,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096802?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 16.67,
-      "growth_score": 50.0,
+      "growth_score": 0.0,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 33.3,
-      "confidence": "low"
+      "composite_score": 8.3,
+      "confidence": "medium"
     },
     {
       "id": "962085213",
@@ -824,8 +864,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/glamo-aynali-makyaj-masasi-tek-cekmeceli-2-dolapli-taki-duzenleyici-mat-beyaz-p-962085213?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -833,8 +874,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 75.0,
-      "confidence": "low"
+      "composite_score": 82.5,
+      "confidence": "medium"
     },
     {
       "id": "962231369",
@@ -848,6 +889,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -870,6 +912,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -890,8 +933,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096876?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 8.33,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -899,8 +943,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 29.2,
-      "confidence": "low"
+      "composite_score": 36.7,
+      "confidence": "medium"
     },
     {
       "id": "811434295",
@@ -912,17 +956,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banos-banyo-kulpsuz-2-kapakli-mat-beyaz-mdf-62-cm-aynali-banyo-ust-dolabi-p-811434295?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 39.96,
+      "growth_score": 35.33,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 31.7,
-      "confidence": "medium"
+      "composite_score": 29.4,
+      "confidence": "high"
     },
     {
       "id": "322557634",
@@ -934,17 +979,18 @@
       "kod": "1714",
       "url": "https://www.trendyol.com/roomart/banos-banyo-ld7-65-cm-ayaksiz-2-kapakli-lavabolu-mat-beyaz-mdf-p-322557634?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 39.5,
+      "growth_score": 35.33,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 25.6,
-      "confidence": "medium"
+      "composite_score": 23.5,
+      "confidence": "high"
     },
     {
       "id": "816763449",
@@ -958,6 +1004,7 @@
       "share_score": 5.88,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -980,6 +1027,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -1002,6 +1050,7 @@
       "share_score": 6.25,
       "growth_score": 65.77,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1022,17 +1071,18 @@
       "kod": "2398",
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-mat-beyaz-mdf-100-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-2-adet-boy-dolabi-p-818473365?boutiqueId=61&merchantId=362387&os=1",
       "share_score": 23.53,
-      "growth_score": 35.33,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 29.4,
-      "confidence": "medium"
+      "composite_score": 41.9,
+      "confidence": "high"
     },
     {
       "id": "838150342",
@@ -1044,17 +1094,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150342?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 31.25,
-      "growth_score": 63.92,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 47.6,
-      "confidence": "medium"
+      "composite_score": 35.1,
+      "confidence": "high"
     },
     {
       "id": "828239389",
@@ -1066,17 +1117,18 @@
       "kod": "2463",
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kulpsuz-2-kapakli-atlantik-cam-mdf-95-cm-aynali-banyo-ust-dolabi-p-828239389?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 38.21,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 22.0,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "305394873",
@@ -1090,6 +1142,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -1112,6 +1165,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -1134,6 +1188,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -1154,17 +1209,18 @@
       "kod": "2379",
       "url": "https://www.trendyol.com/roomart/ayakli-2-kapakli-lavabolu-mdflam-60-cm-banyo-dolab-p-812626767?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 26.5,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "758326178",
@@ -1176,8 +1232,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/roma-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-mat-beyaz-roma-masa-sol-p-758326178?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 25.0,
-      "growth_score": 50.72,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1185,8 +1242,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 37.9,
-      "confidence": "low"
+      "composite_score": 45.0,
+      "confidence": "medium"
     },
     {
       "id": "367009664",
@@ -1198,8 +1255,9 @@
       "kod": "1773",
       "url": "https://www.trendyol.com/roomart/camasir-ve-kurutma-makinesi-dolabi-mat-beyaz-p-367009664?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 62.75,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1207,8 +1265,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 34.5,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "877650214",
@@ -1220,8 +1278,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/milano-bar-masasi-dolapli-yuksek-mutfak-yemek-masasi-mutfak-adasi-p-877650214?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 51.6,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1229,8 +1288,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 75.8,
-      "confidence": "low"
+      "composite_score": 100.0,
+      "confidence": "medium"
     },
     {
       "id": "838150481",
@@ -1241,9 +1300,10 @@
       "review_count": 131,
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150481?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "share_score": 12.5,
-      "growth_score": 65.21,
+      "share_score": 18.75,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1251,8 +1311,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 38.9,
-      "confidence": "medium"
+      "composite_score": 45.1,
+      "confidence": "high"
     },
     {
       "id": "279192989",
@@ -1264,17 +1324,18 @@
       "kod": "1757",
       "url": "https://www.trendyol.com/roomart/roomarttm7-3-lavabolu-ahsap-mat-beyaz-mdf-85-cm-banyo-dolabi-aynali-banyo-ust-dolabi-boy-dolabi-p-279192989?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 35.29,
-      "growth_score": 35.77,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 35.5,
-      "confidence": "medium"
+      "composite_score": 47.8,
+      "confidence": "high"
     },
     {
       "id": "277718585",
@@ -1286,17 +1347,18 @@
       "kod": "1760",
       "url": "https://www.trendyol.com/roomart/tm7-2-ayaksiz-2-kapakli-lavabolu-ahsap-mat-beyaz-mdf-85-cm-banyo-dolabi-aynali-ust-dolabi-p-277718585?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 29.41,
-      "growth_score": 34.87,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 32.1,
-      "confidence": "medium"
+      "composite_score": 36.1,
+      "confidence": "high"
     },
     {
       "id": "472877125",
@@ -1310,6 +1372,7 @@
       "share_score": 0.0,
       "growth_score": 60.32,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -1330,17 +1393,18 @@
       "kod": "1775",
       "url": "https://www.trendyol.com/roomart/camasir-ve-kurutma-makinesi-dolabi-ust-dolabi-67x240-cm-mat-beyaz-p-367023469?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 64.61,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 38.6,
-      "confidence": "medium"
+      "composite_score": 25.7,
+      "confidence": "high"
     },
     {
       "id": "239710115",
@@ -1352,8 +1416,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/roomarttm7-3-lavabolu-ahsap-antrasit-mdf-100cm-banyo-dolabi-aynali-banyo-ust-dolabi-banyo-boy-dolabi-p-239710115?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 34.42,
+      "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -1361,8 +1426,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 29.0,
-      "confidence": "medium"
+      "composite_score": 29.4,
+      "confidence": "high"
     },
     {
       "id": "382151440",
@@ -1374,17 +1439,18 @@
       "kod": "1902",
       "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-beyaz-mat-mdf-100-cm-banyo-alt-dolap-aynali-ust-dolap-boy-dolap-p-382151440?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.86,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 26.8,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "322556792",
@@ -1396,17 +1462,18 @@
       "kod": "1722",
       "url": "https://www.trendyol.com/roomart/banos-banyo-lavabolu-mat-beyaz-mdf-100cm-banyo-dolabi-aynali-banyo-ust-dolap-banyo-boy-dolap-p-322556792?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 36.03,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 26.8,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "876821484",
@@ -1418,8 +1485,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/dublin-bar-masasi-acik-rafli-yuksek-mutfak-yemek-masasi-mutfak-adasi-p-876821484?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 27.27,
-      "growth_score": 50.0,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1427,8 +1495,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 38.6,
-      "confidence": "low"
+      "composite_score": 63.6,
+      "confidence": "medium"
     },
     {
       "id": "305387351",
@@ -1440,8 +1508,9 @@
       "kod": "1713",
       "url": "https://www.trendyol.com/roomart/cd10-camasir-kurutma-makinesi-dolabi-3-rafli-2-kapakli-banyo-dolabi-mat-antrasit-ahsap-1713-p-305387351?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 63.92,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1449,8 +1518,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 35.1,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "817567967",
@@ -1462,8 +1531,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ayaksiz-lavabolu-mdf-95-cm-cekmeceli-lotus-oval-lavabolu-banyo-dolabi-aynali-ust-dolabi-p-817567967?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -1471,8 +1541,8 @@
         "priority": 3,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "942332755",
@@ -1484,8 +1554,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kapakli-acik-rafli-mdflam-lavabolu-82-cm-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-942332755?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 37.27,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1493,8 +1564,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 30.4,
-      "confidence": "medium"
+      "composite_score": 41.9,
+      "confidence": "high"
     },
     {
       "id": "942215259",
@@ -1506,8 +1577,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-tek-kapakli-lavabolu-82-cm-banyo-alt-dolabi-ust-dolabi-lavabolu-mdflam-banyo-dolabi-takimi-p-942215259?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 47.06,
-      "growth_score": 55.33,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1515,8 +1587,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 51.2,
-      "confidence": "medium"
+      "composite_score": 53.7,
+      "confidence": "high"
     },
     {
       "id": "942005194",
@@ -1528,8 +1600,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-tek-kapakli-lavabolu-49-cm-banyo-dolabi-ust-dolabi-mini-lavabolu-banyo-dolabi-takimi-p-942005194?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 39.3,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1537,8 +1610,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 31.4,
-      "confidence": "medium"
+      "composite_score": 33.2,
+      "confidence": "high"
     },
     {
       "id": "941994096",
@@ -1550,8 +1623,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-banyo-dolabi-mat-mdflam-114-cm-banyo-boy-dolabi-p-941994096?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 59.14,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -1559,8 +1633,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 32.5,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "942005079",
@@ -1572,8 +1646,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-tek-kapakli-lavabolu-49-cm-banyo-dolabi-ust-dolabi-mini-lavabolu-banyo-dolabi-takimi-p-942005079?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 41.18,
-      "growth_score": 42.28,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1581,8 +1656,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 41.7,
-      "confidence": "medium"
+      "composite_score": 50.8,
+      "confidence": "high"
     },
     {
       "id": "382177346",
@@ -1593,9 +1668,10 @@
       "review_count": 124,
       "kod": "1899",
       "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-beyaz-mat-mdf-85-cm-banyo-alt-dolap-aynali-ust-dolap-boy-dolap-p-382177346?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "share_score": 35.29,
-      "growth_score": 41.08,
+      "share_score": 29.41,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1603,8 +1679,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 38.2,
-      "confidence": "medium"
+      "composite_score": 36.1,
+      "confidence": "high"
     },
     {
       "id": "920575303",
@@ -1616,8 +1692,9 @@
       "kod": "1016",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-p-920575303?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 69.57,
+      "growth_score": 88.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1625,8 +1702,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 84.8,
-      "confidence": "medium"
+      "composite_score": 94.5,
+      "confidence": "high"
     },
     {
       "id": "31882957",
@@ -1638,8 +1715,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/banos/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-85-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi-p-31882957?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -1647,8 +1725,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 26.5,
-      "confidence": "medium"
+      "composite_score": 14.0,
+      "confidence": "high"
     },
     {
       "id": "942205597",
@@ -1660,17 +1738,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-lavabolu-banyo-dolabi-takimi-tek-kapakli-72-cm-lavabolu-banyo-alt-dolabi-ust-dolabi-p-942205597?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 26.5,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "897254452",
@@ -1684,6 +1763,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -1706,11 +1786,12 @@
       "share_score": 5.88,
       "growth_score": 40.54,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "reviews",
+      "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "mid"
       },
       "composite_score": 23.2,
@@ -1726,17 +1807,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-ayaksiz-tek-kapakli-lavabolu-49-cm-banyo-dolabi-alt-mini-lavabolu-alt-banyo-dolabi-p-941937700?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 45.75,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 31.7,
-      "confidence": "medium"
+      "composite_score": 14.0,
+      "confidence": "high"
     },
     {
       "id": "1071696599",
@@ -1750,6 +1832,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -1770,8 +1853,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-lavabolu-banyo-dolabi-takimi-mdflam-tek-kapakli-lavabolu-59-cm-banyo-alt-dolabi-ust-dolabi-p-942020451?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 41.18,
-      "growth_score": 45.75,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1779,8 +1863,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 43.5,
-      "confidence": "medium"
+      "composite_score": 50.8,
+      "confidence": "high"
     },
     {
       "id": "942005203",
@@ -1792,8 +1876,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-tek-kapakli-lavabolu-49-cm-banyo-dolabi-ust-dolabi-mini-lavabolu-banyo-dolabi-takimi-p-942005203?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 44.74,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1801,8 +1886,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 72.4,
-      "confidence": "medium"
+      "composite_score": 80.2,
+      "confidence": "high"
     },
     {
       "id": "31882964",
@@ -1814,8 +1899,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/banos/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi-p-31882964?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 36.3,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -1823,8 +1909,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 27.0,
-      "confidence": "medium"
+      "composite_score": 14.0,
+      "confidence": "high"
     },
     {
       "id": "941937701",
@@ -1836,8 +1922,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-ayaksiz-tek-kapakli-lavabolu-49-cm-banyo-dolabi-alt-mini-lavabolu-alt-banyo-dolabi-p-941937701?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 43.67,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1845,8 +1932,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 33.6,
-      "confidence": "medium"
+      "composite_score": 41.9,
+      "confidence": "high"
     },
     {
       "id": "941956246",
@@ -1858,17 +1945,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-ayaksiz-tek-kapakli-acik-rafli-lavabolu-72-cm-banyo-dolabi-alt-lavabolu-alt-banyo-dolabi-p-941956246?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
-        "priority": 3,
+        "action": "INVEST",
+        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "942205702",
@@ -1880,8 +1968,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-lavabolu-banyo-dolabi-takimi-tek-kapakli-72-cm-lavabolu-banyo-alt-dolabi-ust-dolabi-p-942205702?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 45.75,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1889,8 +1978,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 28.8,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "923693266",
@@ -1902,17 +1991,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-923693266?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 35.29,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 35.3,
-      "confidence": "medium"
+      "composite_score": 39.1,
+      "confidence": "high"
     },
     {
       "id": "31882665",
@@ -1924,17 +2014,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/banos/roomart-al3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolabi-p-31882665?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 38.42,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 28.0,
-      "confidence": "medium"
+      "composite_score": 14.0,
+      "confidence": "high"
     },
     {
       "id": "942318319",
@@ -1946,17 +2037,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-mdflam-kapakli-lavabolu-60-cm-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-942318319?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 41.18,
-      "growth_score": 35.33,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 38.3,
-      "confidence": "medium"
+      "composite_score": 50.8,
+      "confidence": "high"
     },
     {
       "id": "877183321",
@@ -1968,8 +2060,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/luna-camasir-sepetli-camasir-makinesi-dolabi-kirli-sepetli-cok-amacli-dolap-p-877183321?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 69.87,
+      "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -1977,8 +2070,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 41.2,
-      "confidence": "medium"
+      "composite_score": 38.2,
+      "confidence": "high"
     },
     {
       "id": "450581347",
@@ -1990,17 +2083,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ayaksiz-tek-kapakli-lavabolu-50-cm-banyo-dolabi-aynali-ust-dolabi-p-450581347?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 26.5,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "866321311",
@@ -2012,8 +2106,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-80-cm-p-866321311?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 100.0,
-      "growth_score": 55.09,
+      "growth_score": 100.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2021,8 +2116,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 77.5,
-      "confidence": "low"
+      "composite_score": 100.0,
+      "confidence": "medium"
     },
     {
       "id": "920574329",
@@ -2033,9 +2128,10 @@
       "review_count": 43,
       "kod": "1016",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-p-920574329?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "share_score": 12.5,
+      "share_score": 6.25,
       "growth_score": 65.9,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2043,7 +2139,7 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 39.2,
+      "composite_score": 36.1,
       "confidence": "medium"
     },
     {
@@ -2058,6 +2154,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -2080,6 +2177,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2100,8 +2198,9 @@
       "kod": "1015",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561495?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 63.92,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2109,8 +2208,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 38.2,
-      "confidence": "medium"
+      "composite_score": 42.0,
+      "confidence": "high"
     },
     {
       "id": "941993530",
@@ -2122,17 +2221,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-acik-rafli-aynali-mdflam-70-cm-aynali-banyo-ust-dolabi-p-941993530?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
-        "priority": 3,
+        "action": "INVEST",
+        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "923688243",
@@ -2144,17 +2244,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688243?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 29.4,
-      "confidence": "medium"
+      "composite_score": 33.2,
+      "confidence": "high"
     },
     {
       "id": "866371337",
@@ -2166,17 +2267,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/siena-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-866371337?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 42.86,
-      "growth_score": 50.0,
+      "growth_score": 0.0,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 46.4,
-      "confidence": "low"
+      "composite_score": 21.4,
+      "confidence": "medium"
     },
     {
       "id": "923693108",
@@ -2188,8 +2290,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-923693108?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2197,8 +2300,8 @@
         "priority": 3,
         "price_position": "mid"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "885457375",
@@ -2212,6 +2315,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -2232,8 +2336,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-923693227?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 76.47,
-      "growth_score": 45.75,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2241,8 +2346,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 61.1,
-      "confidence": "medium"
+      "composite_score": 68.4,
+      "confidence": "high"
     },
     {
       "id": "877649981",
@@ -2254,8 +2359,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/milano-bar-masasi-dolapli-yuksek-mutfak-yemek-masasi-mutfak-adasi-p-877649981?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 18.18,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2263,8 +2369,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 34.1,
-      "confidence": "low"
+      "composite_score": 41.6,
+      "confidence": "medium"
     },
     {
       "id": "278768624",
@@ -2276,17 +2382,18 @@
       "kod": "1758",
       "url": "https://www.trendyol.com/roomart/lavabolu-ahsap-mat-beyaz-mdf-100-cm-banyo-dolabi-aynali-banyo-ust-dolabi-boy-dolabi-p-278768624?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 33.8,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 22.8,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "920562678",
@@ -2298,8 +2405,9 @@
       "kod": "1015",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920562678?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 37.5,
-      "growth_score": 66.3,
+      "growth_score": 88.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2307,8 +2415,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 51.9,
-      "confidence": "medium"
+      "composite_score": 63.2,
+      "confidence": "high"
     },
     {
       "id": "1071696605",
@@ -2320,8 +2428,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/lavabolu-mat-suntalam-60-cm-banyo-dolabi-aynali-ust-dolabi-p-1071696605?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2329,8 +2438,8 @@
         "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "553695665",
@@ -2342,8 +2451,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-ve-kurutma-makinesi-dolabi-ust-dolabi-67x240-cm-p-553695665?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 61.47,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2351,8 +2461,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 37.0,
-      "confidence": "medium"
+      "composite_score": 42.0,
+      "confidence": "high"
     },
     {
       "id": "382870726",
@@ -2366,6 +2476,7 @@
       "share_score": 5.88,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -2386,17 +2497,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-p-941991515?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 29.4,
-      "confidence": "medium"
+      "composite_score": 33.2,
+      "confidence": "high"
     },
     {
       "id": "935578612",
@@ -2410,6 +2522,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -2430,17 +2543,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kapakli-acik-rafli-mdflam-lavabolu-82-cm-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-942332688?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 23.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "831948948",
@@ -2452,17 +2566,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-831948948?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 23.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "923693094",
@@ -2474,8 +2589,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-923693094?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 60.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2483,8 +2599,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 36.0,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "942020424",
@@ -2496,8 +2612,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-lavabolu-banyo-dolabi-takimi-mdflam-tek-kapakli-lavabolu-59-cm-banyo-alt-dolabi-ust-dolabi-p-942020424?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 38.96,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -2505,8 +2622,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 22.4,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "239701616",
@@ -2518,17 +2635,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/roomarttm7-3-lavabolu-ahsap-antrasit-mdf-85-cm-banyo-dolabi-aynali-banyo-ust-dolabi-boy-dolabi-p-239701616?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 34.24,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 25.9,
-      "confidence": "medium"
+      "composite_score": 30.2,
+      "confidence": "high"
     },
     {
       "id": "920561584",
@@ -2540,8 +2658,9 @@
       "kod": "1015",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561584?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 71.85,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2549,8 +2668,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 39.0,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "382882110",
@@ -2564,6 +2683,7 @@
       "share_score": 0.0,
       "growth_score": 49.22,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -2586,11 +2706,12 @@
       "share_score": 0.0,
       "growth_score": 38.88,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "reviews",
+      "bcg_class": "DOG",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "action": "EXIT",
+        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
+        "priority": 3,
         "price_position": "premium"
       },
       "composite_score": 19.4,
@@ -2606,17 +2727,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-p-941992971?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 46.44,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 26.2,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "923688385",
@@ -2628,17 +2750,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688385?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
-        "priority": 3,
+        "action": "INVEST",
+        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "923688265",
@@ -2650,17 +2773,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-ust-dolabi-p-923688265?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 47.06,
-      "growth_score": 35.33,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 41.2,
-      "confidence": "medium"
+      "composite_score": 53.7,
+      "confidence": "high"
     },
     {
       "id": "367028013",
@@ -2674,6 +2798,7 @@
       "share_score": 0.0,
       "growth_score": 65.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -2696,6 +2821,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2716,17 +2842,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kulpsuz-tek-kapakli-acik-rafli-aynali-mdflam-70-cm-aynali-banyo-ust-dolabi-p-941992247?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "TEST",
-        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
-        "priority": 3,
+        "action": "INVEST",
+        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "829237770",
@@ -2740,6 +2867,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2762,6 +2890,7 @@
       "share_score": 11.76,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -2770,7 +2899,7 @@
         "price_position": "premium"
       },
       "composite_score": 23.5,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "941993544",
@@ -2784,6 +2913,7 @@
       "share_score": 11.76,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -2792,7 +2922,7 @@
         "price_position": "value"
       },
       "composite_score": 23.5,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "820048531",
@@ -2806,6 +2936,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -2828,6 +2959,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -2850,6 +2982,7 @@
       "share_score": 0.0,
       "growth_score": 33.52,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -2872,6 +3005,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -2892,17 +3026,18 @@
       "kod": "1016",
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-p-920575159?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 69.12,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 37.7,
-      "confidence": "medium"
+      "composite_score": 22.6,
+      "confidence": "high"
     },
     {
       "id": "877182347",
@@ -2916,6 +3051,7 @@
       "share_score": 12.5,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2924,7 +3060,7 @@
         "price_position": "value"
       },
       "composite_score": 38.2,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "941963720",
@@ -2936,17 +3072,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-tek-kapakli-acik-rafli-lavabolu-82-cm-banyo-dolabi-alt-lavabolu-alt-banyo-dolabi-p-941963720?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 56.17,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Büyüyen pazarda kaliteli ama düşük paylı. Pay kapmak için yatırım yap.",
-        "priority": 1,
+        "action": "TEST",
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 31.0,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "866320879",
@@ -2958,8 +3095,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-80-cm-p-866320879?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 28.57,
-      "growth_score": 56.41,
+      "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -2967,8 +3105,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 42.5,
-      "confidence": "low"
+      "composite_score": 39.3,
+      "confidence": "medium"
     },
     {
       "id": "828114327",
@@ -2980,17 +3118,18 @@
       "kod": "2461",
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kulpsuz-tek-kapakli-atlantik-cam-mdf-65-cm-aynali-banyo-ust-dolabi-p-828114327?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 37.71,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 21.8,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "737948512",
@@ -3004,6 +3143,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -3026,6 +3166,7 @@
       "share_score": 11.76,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -3034,7 +3175,7 @@
         "price_position": "value"
       },
       "composite_score": 23.5,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "828995990",
@@ -3046,8 +3187,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-kulpsuz-2-kapakli-mdf-75-cm-aynali-banyo-ust-dolabi-p-828995990?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3055,8 +3197,8 @@
         "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "829327750",
@@ -3070,6 +3212,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3092,6 +3235,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3112,8 +3256,9 @@
       "kod": "2380",
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-mat-beyaz-mdf-80-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-p-818171227?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 49.22,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3121,8 +3266,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 30.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "816761991",
@@ -3136,6 +3281,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3158,6 +3304,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3178,8 +3325,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-820279551?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 25.0,
-      "growth_score": 63.92,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3187,8 +3335,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 44.5,
-      "confidence": "medium"
+      "composite_score": 48.2,
+      "confidence": "high"
     },
     {
       "id": "742023202",
@@ -3200,8 +3348,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/mara-2-kapakli-cok-amacli-dolap-kiler-dolabi-kitaplik-p-742023202?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 50.0,
-      "growth_score": 50.0,
+      "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3209,8 +3358,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 50.0,
-      "confidence": "low"
+      "composite_score": 57.5,
+      "confidence": "medium"
     },
     {
       "id": "877720999",
@@ -3222,8 +3371,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/tek-cekmeceli-ve-kapakli-camasir-ve-kurutma-makinesi-dolabi-banyo-dolabi-p-877720999?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 63.92,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3231,8 +3381,8 @@
         "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 35.1,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "739771677",
@@ -3246,6 +3396,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -3266,17 +3417,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapaksiz-banyo-dolabi-65-cm-p-897265048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 25.0,
-      "growth_score": 63.92,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
+        "priority": 2,
         "price_position": "value"
       },
-      "composite_score": 44.5,
-      "confidence": "medium"
+      "composite_score": 32.0,
+      "confidence": "high"
     },
     {
       "id": "941994223",
@@ -3290,6 +3442,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3312,6 +3465,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3332,17 +3486,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-kapakli-ve-acik-rafli-mdflam-lavabolu-72-cm-banyo-alt-dolabi-ust-dolabi-banyo-boy-dolabi-p-942329480?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "EXIT",
-        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
-        "priority": 3,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "341261445",
@@ -3356,6 +3511,7 @@
       "share_score": 0.0,
       "growth_score": 63.92,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -3378,6 +3534,7 @@
       "share_score": 5.88,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3400,6 +3557,7 @@
       "share_score": 5.88,
       "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -3420,17 +3578,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/gusto-ayaksiz-oval-lavabolu-mdf-120-cm-cekmeceli-banyo-dolabi-p-828831998?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "EXIT",
-        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
-        "priority": 3,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "829272175",
@@ -3444,6 +3603,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3464,17 +3624,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ayaksiz-tek-kapakli-sol-lavabolu-46-cm-banyo-alt-dolabi-p-806572947?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 23.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "828098241",
@@ -3488,6 +3649,7 @@
       "share_score": 5.88,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3508,8 +3670,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/oval-lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-830514619?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 38.42,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3517,8 +3680,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 25.1,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "865494379",
@@ -3530,17 +3693,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/lavabolu-mat-suntalam-60-cm-banyo-dolabi-aynali-ust-dolabi-p-865494379?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 47.06,
-      "growth_score": 36.46,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 41.8,
-      "confidence": "medium"
+      "composite_score": 53.7,
+      "confidence": "high"
     },
     {
       "id": "935578591",
@@ -3552,8 +3716,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/dora-banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x230-cm-p-935578591?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 43.75,
-      "growth_score": 65.9,
+      "growth_score": 88.92,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3561,8 +3726,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 54.8,
-      "confidence": "medium"
+      "composite_score": 66.3,
+      "confidence": "high"
     },
     {
       "id": "322550190",
@@ -3574,8 +3739,9 @@
       "kod": "1721",
       "url": "https://www.trendyol.com/roomart/banos-banyo-lavabolu-mat-beyaz-mdf-85-cm-banyo-dolabi-aynali-banyo-ust-dolap-banyo-boy-dolap-p-322550190?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 34.55,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -3583,8 +3749,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 29.0,
-      "confidence": "medium"
+      "composite_score": 16.9,
+      "confidence": "high"
     },
     {
       "id": "942347078",
@@ -3598,6 +3764,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3618,8 +3785,9 @@
       "kod": "1756",
       "url": "https://www.trendyol.com/roomart/roomarttm7-3-lavabolu-ahsap-mat-beyaz-mdf-65-cm-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-277733128?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 23.53,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "CASH_COW",
       "recommendation": {
         "action": "HARVEST",
@@ -3627,8 +3795,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 29.4,
-      "confidence": "medium"
+      "composite_score": 16.9,
+      "confidence": "high"
     },
     {
       "id": "31882847",
@@ -3642,6 +3810,7 @@
       "share_score": 0.0,
       "growth_score": 27.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3662,8 +3831,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-820039855?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 68.08,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3671,8 +3841,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 40.3,
-      "confidence": "medium"
+      "composite_score": 42.0,
+      "confidence": "high"
     },
     {
       "id": "379215720",
@@ -3686,6 +3856,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3708,6 +3879,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3728,17 +3900,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-923693088?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 17.65,
-      "growth_score": 35.33,
+      "growth_score": 60.33,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Paylı ama büyüme düşük; puanı güçlendirerek payı savun.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Güçlü konum; puan ortalama. Kalite iyileştirmesiyle ölçeklen.",
+        "priority": 1,
         "price_position": "mid"
       },
-      "composite_score": 26.5,
-      "confidence": "medium"
+      "composite_score": 39.0,
+      "confidence": "high"
     },
     {
       "id": "820055878",
@@ -3752,6 +3925,7 @@
       "share_score": 6.25,
       "growth_score": 68.08,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3774,6 +3948,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3794,8 +3969,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-231-2-x-67-cm-camasir-ve-kurutma-makinesi-dolabi-p-812785343?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 18.75,
-      "growth_score": 65.9,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3803,8 +3979,8 @@
         "priority": 1,
         "price_position": "premium"
       },
-      "composite_score": 42.3,
-      "confidence": "medium"
+      "composite_score": 45.1,
+      "confidence": "high"
     },
     {
       "id": "923687783",
@@ -3818,6 +3994,7 @@
       "share_score": 0.0,
       "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -3838,8 +4015,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-lavabolu-banyo-dolabi-takimi-mdflam-tek-kapakli-lavabolu-59-cm-banyo-alt-dolabi-ust-dolabi-p-942020390?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 29.41,
-      "growth_score": 45.14,
+      "growth_score": 60.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3847,8 +4025,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 37.3,
-      "confidence": "medium"
+      "composite_score": 44.9,
+      "confidence": "high"
     },
     {
       "id": "450534676",
@@ -3860,8 +4038,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/ayaksiz-tek-kapakli-lavabolu-50-cm-banyo-dolabi-tuvalet-kagitligi-suntalam-tuvalet-standi-p-450534676?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 36.88,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -3869,8 +4048,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 21.4,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "322553384",
@@ -3884,6 +4063,7 @@
       "share_score": 0.0,
       "growth_score": 35.33,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "EXIT",
@@ -3904,8 +4084,9 @@
       "kod": "1552",
       "url": "https://www.trendyol.com/roomart/cm3-kapakli-camasir-makinesi-alt-dolabi-mat-beyaz-p-691077949?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 6.25,
-      "growth_score": 67.39,
+      "growth_score": 71.42,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "STAR",
       "recommendation": {
         "action": "INVEST",
@@ -3913,8 +4094,8 @@
         "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 36.8,
-      "confidence": "medium"
+      "composite_score": 38.8,
+      "confidence": "high"
     },
     {
       "id": "876823360",
@@ -3928,6 +4109,7 @@
       "share_score": 0.0,
       "growth_score": 65.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "INVEST",
@@ -3950,6 +4132,7 @@
       "share_score": 0.0,
       "growth_score": 36.77,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -3970,17 +4153,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-p-820446971?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 12.5,
-      "growth_score": 63.92,
+      "growth_score": 38.92,
       "share_basis": "sales",
-      "bcg_class": "STAR",
+      "growth_basis": "sales",
+      "bcg_class": "CASH_COW",
       "recommendation": {
-        "action": "INVEST",
-        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
-        "priority": 1,
+        "action": "HARVEST",
+        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 38.2,
-      "confidence": "medium"
+      "composite_score": 25.7,
+      "confidence": "high"
     },
     {
       "id": "382143350",
@@ -3992,17 +4176,18 @@
       "kod": "1896",
       "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-beyaz-mat-mdf-65-cm-banyo-alt-dolap-aynali-ust-dolap-boy-dolap-p-382143350?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 32.95,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "DOG",
+      "growth_basis": "sales",
+      "bcg_class": "QUESTION_MARK",
       "recommendation": {
-        "action": "EXIT",
-        "rationale": "Zayıf konum ama premium fiyat; fiyat/konumlandırmayı yeniden gözden geçir.",
-        "priority": 3,
+        "action": "TEST",
+        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
+        "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 19.4,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "379204275",
@@ -4014,8 +4199,9 @@
       "kod": "1911",
       "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-antrasit-mat-mdf-100-cm-alt-dolap-aynali-ust-dolap-boy-dolap-p-379204275?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 37.27,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -4023,8 +4209,8 @@
         "priority": 2,
         "price_position": "premium"
       },
-      "composite_score": 21.6,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "885457128",
@@ -4038,6 +4224,7 @@
       "share_score": 0.0,
       "growth_score": 50.0,
       "share_basis": "sales",
+      "growth_basis": "reviews",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -4058,8 +4245,9 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-tek-kapakli-lavabolu-82-cm-banyo-alt-dolabi-ust-dolabi-lavabolu-mdflam-banyo-dolabi-takimi-p-942215240?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 43.67,
+      "growth_score": 42.83,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "QUESTION_MARK",
       "recommendation": {
         "action": "TEST",
@@ -4067,8 +4255,8 @@
         "priority": 2,
         "price_position": "mid"
       },
-      "composite_score": 24.8,
-      "confidence": "medium"
+      "composite_score": 24.4,
+      "confidence": "high"
     },
     {
       "id": "810342875",
@@ -4080,17 +4268,18 @@
       "kod": "2389",
       "url": "https://www.trendyol.com/roomart/banyo-dolabi-mdf-107-x-35-cm-cekmeceli-banyo-boy-dolabi-mat-beyaz-p-810342875?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 11.76,
-      "growth_score": 35.33,
+      "growth_score": 42.83,
       "share_basis": "sales",
-      "bcg_class": "CASH_COW",
+      "growth_basis": "sales",
+      "bcg_class": "STAR",
       "recommendation": {
-        "action": "HARVEST",
-        "rationale": "Olgun, yüksek paylı ve kaliteli. Nakit akışını koru, Star'ları fonla.",
-        "priority": 2,
+        "action": "INVEST",
+        "rationale": "Yüksek pay + yüksek büyüme ve güçlü puan. Stok/görünürlük yatırımı önerilir.",
+        "priority": 1,
         "price_position": "value"
       },
-      "composite_score": 23.5,
-      "confidence": "medium"
+      "composite_score": 27.3,
+      "confidence": "high"
     },
     {
       "id": "382156150",
@@ -4102,8 +4291,9 @@
       "kod": "1901",
       "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-beyaz-mat-mdf-85-cm-banyo-alt-dolabi-p-382156150?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 35.33,
+      "growth_score": 10.33,
       "share_basis": "sales",
+      "growth_basis": "sales",
       "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
@@ -4111,8 +4301,8 @@
         "priority": 3,
         "price_position": "mid"
       },
-      "composite_score": 20.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     },
     {
       "id": "941963775",
@@ -4124,17 +4314,18 @@
       "kod": null,
       "url": "https://www.trendyol.com/roomart/likya-tek-kapakli-acik-rafli-lavabolu-82-cm-banyo-dolabi-alt-lavabolu-alt-banyo-dolabi-p-941963775?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "share_score": 5.88,
-      "growth_score": 47.24,
+      "growth_score": 10.33,
       "share_basis": "sales",
-      "bcg_class": "QUESTION_MARK",
+      "growth_basis": "sales",
+      "bcg_class": "DOG",
       "recommendation": {
         "action": "TEST",
-        "rationale": "Büyüme var, konum belirsiz. Hedefli testle yatırım kararını doğrula.",
-        "priority": 2,
+        "rationale": "Zayıf konum, kabul edilebilir kalite. Çıkmadan önce optimize et.",
+        "priority": 3,
         "price_position": "value"
       },
-      "composite_score": 26.6,
-      "confidence": "medium"
+      "composite_score": 8.1,
+      "confidence": "high"
     }
   ]
 }
