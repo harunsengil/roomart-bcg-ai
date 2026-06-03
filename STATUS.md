@@ -7,9 +7,28 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-06-03
-- **Güncelleyen:** Code (trendyol-api oturumu — TEK KOORDİNATÖR; çoklu-oturum episode KAPANDI)
-- **Aktif branch:** `main`. NOT: 2026-06-03'te geçici çoklu-oturum + stacked-PR akışı vardı; ikisi de
-  main'e merge oldu, tüm takip tek oturuma konsolide edildi. Feature branch'ler silindi.
+- **Güncelleyen:** Code (terminal trendyol-api oturumu — KAPANIYOR; sürücü → VS Code Claude Code eklentisi)
+- **Aktif branch:** `feat/sales-momentum` (working tree burada). NOT: 2026-06-03'te çoklu-oturum +
+  stacked-PR akışı yaşandı; PR #1+#3 main'e merge oldu. Şimdi geliştirme **VS Code Claude Code eklentisi**
+  (sürücü) + Chat (düşünme) ile sürecek. ⚠️ Aynı repoda eklenti + terminal claude'u **AYNI ANDA** aktif
+  session'la çalıştırma (paylaşılan working tree → çakışma).
+
+> **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
+> - **Açık iş:** **PR #4** (`feat/sales-momentum` → main) — BCG büyüme ekseni = gerçek satış momentumu
+>   (son7g vs önceki7g). CODE-ONLY, tek commit `18c06aa`, merge bekliyor. Yerel doğrulama:
+>   growth_basis {sales:125, reviews:62}, quadrant 4 STAR/0 CC/2 QM/1 DOG.
+> - **Merge sonrası:** `analyze.yml` dispatch ile canlı doğrula (growth_basis CI'da gerçek satışla).
+> - 🔴 **Bekleyen kullanıcı aksiyonu:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token
+>   sohbette göründü). Bayat token'da CI artık görünür `::error::` verir (hardening mevcut).
+> - **Diğer adaylar:** BCG Roundtable workflow failure incelemesi.
+
+> **✅ MERGE TAMAM (2026-06-03):**
+> - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
+>   None-trends + parametrik `competitor_bot.py`) → main `aebec6b`.
+> - **PR #3** (resmî Trendyol API + pazar-payı=GERÇEK SATIŞ + CI hardening; kapanan PR #2'nin yerine)
+>   → main `9a72638`.
+> - Merge sonrası **Deploy Dashboard** tetiklendi (satış-tabanlı bcg_scores yayınlanıyor).
+> Detay + çoklu-oturum koordinasyon: DECISIONS.md (2026-06-03).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
@@ -24,8 +43,7 @@
 > Firestore). analyzer X eksenini kategori-içi net satış adedine bağlar (satış yoksa deg'e düşer;
 > `share_basis`). **⚠️ Yapılacak:** API Secret'ı yenile → `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette
 > göründü). Secrets (`TRENDYOL_SUPPLIER_ID`/`TRENDYOL_TOKEN`) eklendi ✅.
-> **Sıradaki aday işler:** (C) büyüme eksenine satış-momentumu (sales_latest günlük arşiv);
-> canlı CI doğrulama (`analyze.yml` dispatch); BCG Roundtable workflow failure incelemesi.
+> **Büyüme ekseni (Y) = gerçek satış momentumu** PR #4'te (history store gerekmedi; son7g vs önceki7g).
 
 > **🧊 DONDURMA NOKTASI:** Bu, JSON+Actions mimarisinin son tam sürümü; **Supabase + Next.js +
 > Vercel göçü** (Aşama 2, ayrı oturum) öncesi dondurma. Tag'ler: `v1-full-pre-cleanup` (Assign+Batch
