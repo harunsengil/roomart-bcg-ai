@@ -154,4 +154,50 @@
   sekme çubuğu yatay-scroll, breakpoint'li header/arama/footer; masaüstü korunur. NOT: Aşama 2
   (Next.js) frontend'i yeniden kuracağı için bu light/responsive emeğinin bir kısmı orada tekrarlanabilir.
 
+- **2026-06-03 — [PR #1: analyzer mekanik temizlik + competitor_bot]** Branch
+  `feat/analyzer-cleanup-competitor-scraper`, commit `95d42dd`, PR #1 → main. KOD-ONLY (data
+  artifact'leri CI üretir). Kapsam:
+  • **İŞ 1a — Non-furniture filtre:** `analyzer.load_snapshots()` okuma katmanına
+    `filter_roomart_only()` eklendi → URL'den `merchantId` parse edilir, `362387` (RoomArt,
+    `ROOMART_MERCHANT_ID`) OLMAYAN — merchantId'i hiç parse edilemeyenler dahil — ürünler her
+    günün snapshot'ından elenir; `[FİLTRE] N non-RoomArt ürün elendi` loglanır. Mevcut veride
+    5 gün × 1 iPhone (merchantId yok) = 5 elendi; gerçek RoomArt ürünü etkilenmedi. Bu, STATUS'taki
+    "iPhone gürültüsü DİĞER'de → Assign'dan EXCLUDE" bekleyen işini **kaynakta otomatik** çözer
+    (manuel `__EXCLUDE__` gerekmez; EXCLUDE mekanizması yine korunur).
+  • **İŞ 1b — Trends bridge + Kahve Köşesi:** `Kahve Köşesi` AYRI kategori olarak eklendi
+    (`categorize()` "kahve köşe" kuralı + `CATEGORIES` + `TRENDS_BRIDGE[...]=None`). 12 ürün
+    `Diğer`'den çekildi (Diğer 16→3). **`Banyo Dolabı` adı korundu** (yeniden adlandırma YOK →
+    X/pay gruplamasına dokunulmadı — kullanıcı kararı). Trends'i olmayan kategoriler (Mutfak
+    Adası, Kitaplıklı Çalışma Masası, Sehpa, Kahve Köşesi, Diğer): büyüme = **sadece deg_momentum**
+    (suni nötr-50 trends bileşeni KULLANILMAZ — kullanıcı kararı). Büyüme MEDYAN eşiği **yalnız
+    gerçek Trends'li kategorilerden** hesaplanır (157 ürün: Çamaşır 38 + Banyo 119); pay (X) eşiği
+    değişmedi. Her kategoriye additive `trends_source` (+kullanılan anahtar/null) ve kategori-bazlı
+    `growth_axis_active` eklendi; global KPI `growth_axis_active` + mevcut frontend şeması KORUNDU.
+  • **İŞ 3 — competitor_bot.py (yeni):** `rpa_projesi/rani_bot.py`'nin PARAMETRİK kopyası;
+    `data/competitors.json` okur, `aktif=true` rakipleri `magaza_url`'e göre TEKİLLEŞTİRİR
+    (18 giriş → 8 mağaza), her mağazayı bir kez scrape eder. Çıktı `data/competitor_snapshots.json`,
+    `snapshots.json` ile AYNI format `{tarih→id→{ad,fiyat,puan,deg,url,marka}}` + `marka`.
+  • **Out-of-scope (bu PR'da YOK):** Adım 1+2 = X-ekseni satış-entegrasyonu + Y'den deg_momentum
+    çıkarma → bunlar trendyol-api oturumunun PR #2'sinde yapıldı (bkz. aşağı).
+  • **Bekleyen / tuzaklar (sonraki PR):** (1) `competitor_bot.py` analyzer'a HENÜZ bağlı DEĞİL —
+    ayrı PR'da `competitor_snapshots.json` göreceli-pay gruplamasına (marka bazlı) bağlanmalı.
+    (2) `competitor_bot.py` CANLI ÇALIŞTIRILMADI (Playwright+Trendyol gerekir) — güvenmeden önce
+    yerelde/CI'da doğrula. (3) `ozellikleri_cek` taşındı ama snapshot 6-alan şeması öznitelik
+    içermediği için ÇAĞRILMIYOR (ileride zenginleştirme referansı). (4) `trendyol_api.py`/
+    `trendyol_sync.py` PR #1'e AİT DEĞİL (PR #2).
+
+- **2026-06-03 — [Çoklu-oturum koordinasyon + devir]** İki Claude Code oturumu aynı repoda paralel
+  çalıştı: **analyzer-cleanup** (bu PR #1) ve **trendyol-api** (PR #2: resmî Trendyol Marketplace
+  API entegrasyonu + pazar-payı=gerçek-satış). İkisi **aynı working tree/HEAD'i** paylaştığı için
+  çakışma oldu (trendyol commit'i `644818a` önce analyzer branch'ine yazıldı); repo-DIŞI bir
+  haberleşme kanalı (`~/.claude/projects/.../SESSION_SYNC.md`) ile koordine edildi. Çözüm:
+  trendyol-api ayrı **git worktree**'ye (`/Users/harunsengil/roomart-trendyol-api`, branch
+  `feat/trendyol-api`) geçti; analyzer branch'i `95d42dd`'ye reset'lendi (kullanıcı onaylı; iş
+  kaybı yok). **PR #2 STACKED**: base = `feat/analyzer-cleanup-competitor-scraper`.
+  **MERGE SIRASI: önce PR #1 → main, sonra PR #2** (GitHub PR #2'yi otomatik main'e retarget eder).
+  **KARAR (2026-06-03): tüm takip TEK oturuma (trendyol-api) devredildi**; analyzer-cleanup
+  stand-down oldu. Sonraki bağlam repo dosyalarından (bu kayıt + STATUS.md) devralınmalı.
+  Tuzak: `data/trendyol_sales.json` (hassas satış verisi) `.gitignore`'a PR #2'de eklendi —
+  PR #1 `.gitignore`'unda YOK; public repo'ya sızmamasına dikkat.
+
 <!-- Yeni kararları buraya ekle -->

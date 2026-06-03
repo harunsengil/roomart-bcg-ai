@@ -6,9 +6,20 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-01
-- **Güncelleyen:** Code
-- **Aktif branch:** main (doğrudan main'e çalışıyoruz; tek geliştirici)
+- **Tarih:** 2026-06-03
+- **Güncelleyen:** Code (analyzer-cleanup oturumu — DEVİR/stand-down)
+- **Aktif branch:** `feat/analyzer-cleanup-competitor-scraper` (PR #1). NOT: bu görevde
+  PR/branch akışına + **çoklu oturuma** geçildi; "doğrudan main / tek geliştirici" (2026-05-30)
+  artık geçici olarak geçersiz. Tüm takip 2026-06-03'te **trendyol-api oturumuna** devredildi.
+
+> **🔀 AÇIK PR'LAR (stacked):**
+> - **PR #1** (bu oturum): `feat/analyzer-cleanup-competitor-scraper` → `main`. analyzer mekanik
+>   temizlik (non-furniture filtre + Kahve Köşesi + momentum-only None-trends) + parametrik
+>   `competitor_bot.py`. Commit `95d42dd`, push'lı, **merge'e HAZIR**.
+> - **PR #2** (trendyol-api oturumu): `feat/trendyol-api` → `feat/analyzer-cleanup-competitor-scraper`
+>   (stacked). Resmî Trendyol API + pazar-payı=gerçek-satış + CI hardening.
+> - **MERGE SIRASI: önce PR #1 → main, sonra PR #2** (GitHub PR #2'yi main'e retarget eder).
+> Detay + çoklu-oturum koordinasyon: DECISIONS.md (2026-06-03).
 
 > **🧊 DONDURMA NOKTASI:** Bu, JSON+Actions mimarisinin son tam sürümü; **Supabase + Next.js +
 > Vercel göçü** (Aşama 2, ayrı oturum) öncesi dondurma. Tag'ler: `v1-full-pre-cleanup` (Assign+Batch
@@ -31,13 +42,25 @@
   Sonraki: **Aşama 2 = Supabase/Next.js göçü (ayrı oturum)**.
 
 ## Bekleyen / Bloke
-- [ ] Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de. Assign sekmesinden
-      "Hariç Tut" (`__EXCLUDE__`) ile category_map.json'a eklenip commit edilmeli.
+- [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
+      `analyzer.filter_roomart_only()` okuma katmanında merchantId≠362387'yi otomatik eler
+      (manuel EXCLUDE gerekmez; EXCLUDE yine çalışır). PR #1 merge olunca canlı olur.
+- [ ] **competitor_bot.py'yi analyzer'a bağla (ayrı PR):** `competitor_snapshots.json` göreceli-pay
+      gruplamasına (marka bazlı) bağlanmalı; competitor_bot CANLI doğrulanmalı (Playwright+Trendyol).
 - [ ] backend/snapshot_utils.py (delta arşiv) — snapshots.json günlük büyüyor; ileride.
 - [ ] v2: yeni-ürün keşfi (mağaza enumerate Playwright'la; haftalik_snapshot.py'de vardı).
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-03) PR #1 — analyzer mekanik temizlik + competitor_bot** (`feat/analyzer-cleanup-
+      competitor-scraper` @ `95d42dd`, kod-only, push'lı, merge'e hazır): non-furniture merchantId
+      filtresi (5 iPhone elendi) + Kahve Köşesi ayrı kategori (Diğer 16→3) + None-trends momentum-only
+      + medyan yalnız Trends'li kategorilerden + per-kategori `trends_source`/`growth_axis_active`
+      (şema korundu); parametrik `competitor_bot.py` (8 tekil mağaza → `competitor_snapshots.json`,
+      analyzer'a henüz bağlı değil). Detay: DECISIONS.md 2026-06-03.
+- [x] **(2026-06-03) Çoklu-oturum koordinasyon:** analyzer-cleanup ↔ trendyol-api repo-dışı
+      SESSION_SYNC kanalı + ayrı worktree ile izole edildi; PR #2 stacked açıldı; takip trendyol-api'ye
+      devredildi (bu oturum stand-down).
 - [x] Tam otomatik pipeline + Pages deploy kuruldu.
 - [x] analyzer.py gerçek-veri BCG skor motoruna geçirildi (sahte alanlar kaldırıldı).
 - [x] roundtable.py (Anthropic API) entegre edildi.
