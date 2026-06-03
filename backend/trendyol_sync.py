@@ -191,4 +191,17 @@ def main() -> None:
 if __name__ == "__main__":
     # repo kökünden veya backend/'den çalışsın diye analyzer importu için path
     sys.path.insert(0, str(Path(__file__).parent))
-    main()
+    # Sync, BCG analizini ASLA bozmamalı (analyzer dosya yoksa deg'e düşer) → her
+    # durumda exit 0. Ama hata türünü AYIRT et: eksik secret BEKLENEN (warning),
+    # auth reddi ALARM (error annotation) — sessiz düşüşü görünür kılar.
+    try:
+        main()
+    except SystemExit as exc:
+        logger.info(f"Atlanıyor: {exc}")
+        print("::warning title=Trendyol sync::Secrets yok — pazar payı 'reviews' (deg) tabanına düşecek.")
+    except ty.TrendyolAuthError as exc:
+        logger.error(str(exc))
+        print(f"::error title=Trendyol auth::{exc}")
+    except Exception as exc:  # noqa: BLE001 — analizi bozmadan görünür hata bırak
+        logger.error(f"Sync başarısız: {exc}")
+        print(f"::error title=Trendyol sync::{type(exc).__name__}: {exc}")

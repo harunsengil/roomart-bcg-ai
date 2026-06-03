@@ -16,12 +16,26 @@ Yerel test:
 from __future__ import annotations
 
 import base64
+import logging
 import os
 import sys
+import time
 
 import requests
 
+logger = logging.getLogger(__name__)
+
 BASE_URL = "https://apigw.trendyol.com"
+
+# Geçici hatalar (rate-limit / sunucu) için yeniden deneme.
+RETRY_STATUSES = {429, 500, 502, 503, 504}
+MAX_RETRIES = 4
+BACKOFF_BASE = 1.5  # sn; üstel: 1.5, 3, 6, 12
+
+
+class TrendyolAuthError(RuntimeError):
+    """401/403 — kimlik/secret geçersiz veya token bayatlamış (rotasyon sonrası).
+    Bunu YUTMA: pazar payının sessizce deg'e düşmesi bu hatayla AYIRT edilebilir."""
 
 
 def _config() -> tuple[str, str, str]:
@@ -66,10 +80,38 @@ def make_session() -> tuple[requests.Session, str]:
     return sess, supplier_id
 
 
-def _get(sess: requests.Session, path: str, **params):
+def _request(sess: requests.Session, path: str, *, timeout: int = 60, **params):
+    """GET + geçici-hata retry (üstel backoff) + net auth hatası.
+    401/403 → TrendyolAuthError (yutulmaz). 429/5xx → MAX_RETRIES kez yeniden dener."""
     url = f"{BASE_URL}{path}"
-    r = sess.get(url, params=params, timeout=30)
-    return r
+    last_exc = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            r = sess.get(url, params=params, timeout=timeout)
+        except requests.RequestException as exc:  # ağ/timeout → retry
+            last_exc = exc
+            if attempt < MAX_RETRIES:
+                time.sleep(BACKOFF_BASE ** attempt)
+                continue
+            raise
+        if r.status_code in (401, 403):
+            raise TrendyolAuthError(
+                f"Trendyol auth reddetti (HTTP {r.status_code}) {path} — "
+                "TRENDYOL_TOKEN/secret geçersiz veya bayat. Secret yenilendiyse "
+                "TRENDYOL_TOKEN'ı yeni base64(key:secret) ile GÜNCELLE."
+            )
+        if r.status_code in RETRY_STATUSES and attempt < MAX_RETRIES:
+            wait = BACKOFF_BASE ** attempt
+            logger.warning(f"HTTP {r.status_code} {path} — {wait:.0f}s sonra yeniden ({attempt}/{MAX_RETRIES})")
+            time.sleep(wait)
+            continue
+        r.raise_for_status()
+        return r
+    raise last_exc if last_exc else RuntimeError(f"İstek başarısız: {path}")
+
+
+def _get(sess: requests.Session, path: str, **params):
+    return _request(sess, path, timeout=30, **params)
 
 
 # ── Sayfalı çekim ──────────────────────────────────────────────────────────────
@@ -77,12 +119,7 @@ def _paged(sess: requests.Session, path: str, page_size: int = 200, max_pages=No
     """`content`+`totalPages` döndüren uçlarda tüm sayfaları dolaş (generator)."""
     page = 0
     while True:
-        r = sess.get(
-            f"{BASE_URL}{path}",
-            params={**params, "page": page, "size": page_size},
-            timeout=60,
-        )
-        r.raise_for_status()
+        r = _request(sess, path, timeout=60, **{**params, "page": page, "size": page_size})
         data = r.json()
         content = data.get("content", []) or []
         for item in content:
@@ -120,6 +157,9 @@ def test_connection() -> None:
     for label, path, params in checks:
         try:
             r = _get(sess, path, **params)
+        except TrendyolAuthError as exc:
+            print(f"[AUTH ] {label:14s} → {exc}")
+            continue
         except requests.RequestException as exc:  # ağ hatası
             print(f"[HATA ] {label:14s} → {exc}")
             continue

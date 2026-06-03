@@ -38,6 +38,20 @@ jobs:
           TRENDYOL_TOKEN: ${{ secrets.TRENDYOL_TOKEN }}
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
+      # Sessiz düşüşü görünür kıl: secret VARSA ama satış dosyası üretilmediyse uyar
+      # (token rotasyon sonrası bayatlamış olabilir → pazar payı sessizce deg'e döner).
+      - name: Verify Trendyol sync
+        env:
+          TRENDYOL_TOKEN: ${{ secrets.TRENDYOL_TOKEN }}
+        run: |
+          if [ -z "$TRENDYOL_TOKEN" ]; then
+            echo "Trendyol secret yok — pazar payı 'reviews' (deg) tabanında (beklenen)."
+          elif [ ! -s data/trendyol_sales.json ]; then
+            echo "::warning title=Trendyol::Secret VAR ama trendyol_sales.json YOK — pazar payı deg'e düştü (token bayat olabilir; TRENDYOL_TOKEN'ı yenile)."
+          else
+            echo "✓ trendyol_sales.json hazır ($(wc -c < data/trendyol_sales.json) bayt) — pazar payı GERÇEK SATIŞ tabanında."
+          fi
+
       - name: Run BCG analysis engine
         run: python backend/analyzer.py
         env:
