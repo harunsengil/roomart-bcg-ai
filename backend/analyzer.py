@@ -7,8 +7,11 @@ Google Trends kategori büyümesine dayanır. Sahte alanlar
 (revenue / monthly_sales / margin / return_rate / stock / performance_tier /
 colors_available) KALDIRILDI.
 
-BCG metrik tasarımı (onaylı):
-  • Pazar Payı (X)  = kategori-içi değerlendirme (deg) payı, 0-100 normalize
+BCG metrik tasarımı (onaylı, 2026-06-03 güncellemesi):
+  • Pazar Payı (X)  = kategori-içi GERÇEK SATIŞ (net_units) payı, 0-100 normalize
+                       (Trendyol API → trendyol_sales.json). Satış yoksa kategori
+                       eski değerlendirme (deg) payına düşer; her ürün `share_basis`
+                       ("sales"|"reviews") ile hangi tabanı kullandığını belirtir.
   • Büyüme (Y)      = 0.5 * Trends_büyüme + 0.5 * deg_momentum
                        (momentum verisi yoksa nötr 50; snapshot biriktikçe gerçekleşir)
   • Eşik (threshold) = portföyün MEDYANI (sabit 50 değil, göreli)
@@ -244,20 +247,28 @@ def trends_growth_score(category, trends_cats):
 
 
 # ── Skorlama ──────────────────────────────────────────────────────────────────
-def calculate_market_share(product, cat_products):
+def category_share_basis(cat_products):
     """
-    Pazar Payı (X) = ürünün kategori-içi değerlendirme (deg) payı, 0-100.
-    En çok yorumlu ürün ~100'e yaklaşır.
+    Kategorinin pazar-payı tabanını seç:
+      • "sales"   : kategoride GERÇEK satış (net_units) varsa → satış payı (tercih).
+      • "reviews" : satış yoksa → eski deg (yorum sayısı) payına düş (geri uyumlu).
+    Trendyol API satış verisi (trendyol_sales.json) yoksa tüm kategoriler "reviews"a düşer.
     """
-    total_deg = sum(p["deg"] for p in cat_products)
-    if total_deg <= 0:
+    return "sales" if sum(p.get("units", 0) for p in cat_products) > 0 else "reviews"
+
+
+def calculate_market_share(product, cat_products, basis):
+    """
+    Pazar Payı (X), 0-100. Taban kategoriye göre (bkz. category_share_basis):
+      • "sales"  : kategori-içi net satış adedi payı (en çok satan ~100).
+      • "reviews": kategori-içi değerlendirme (deg) payı (eski davranış).
+    Kategori-içi maksimuma göre normalize edilir.
+    """
+    key = "units" if basis == "sales" else "deg"
+    max_v = max((p.get(key, 0) for p in cat_products), default=0)
+    if max_v <= 0:
         return 0.0
-    share = product["deg"] / total_deg
-    # tek kategoride pay çok küçülebilir; kategori-içi maks'a göre normalize et
-    max_deg = max(p["deg"] for p in cat_products)
-    if max_deg <= 0:
-        return 0.0
-    return round(normalize(product["deg"], 0, max_deg), 2)
+    return round(normalize(product.get(key, 0), 0, max_v), 2)
 
 
 def calculate_growth(product, category, snapshots, day_keys, trends_cats):
@@ -584,6 +595,15 @@ def run_analysis():
 
     category_map = load_json("category_map.json", default={})  # iş #4 override'ları
 
+    # Gerçek satış verisi (Trendyol API → trendyol_sync.py). PUBLIC repo'ya commit
+    # EDİLMEZ (.gitignore); CI'da analiz öncesi üretilir. Yoksa pay deg'e düşer.
+    sales_doc = load_json("trendyol_sales.json", default={})
+    sales_by_product = sales_doc.get("sales_by_product", {})
+    if sales_by_product:
+        logger.info(f"Satış verisi yüklendi: {len(sales_by_product)} ürün (pazar payı = gerçek satış).")
+    else:
+        logger.warning("trendyol_sales.json yok/boş — pazar payı YORUM (deg) tabanına düşüyor.")
+
     # Ürünleri normalize et + kategoriye ata
     products = []
     excluded = 0
@@ -593,6 +613,8 @@ def run_analysis():
             excluded += 1            # mobilya dışı/gürültü: analizden tamamen çıkar
             continue
         cat = mapped or categorize(raw["ad"])
+        # satış net adedi (pid = productContentId = sales_by_product anahtarı)
+        units = int(sales_by_product.get(pid, {}).get("net_units", 0) or 0)
         products.append({
             "id": pid,
             "name": raw["ad"],
@@ -606,6 +628,7 @@ def run_analysis():
             "fiyat": raw.get("fiyat", 0.0),
             "puan": raw.get("puan", 0.0),
             "deg": raw.get("deg", 0),
+            "units": units,                   # gerçek net satış adedi (pazar payı tabanı)
         })
 
     # Tüm ürünler skorlanır — DİĞER de tek kategori gibi BCG'de yer alır (matriste 6. grup).
@@ -617,12 +640,17 @@ def run_analysis():
     for p in analyzable:
         by_cat.setdefault(p["category"], []).append(p)
 
+    # Pazar-payı tabanı kategori bazında (satış varsa "sales", yoksa "reviews")
+    cat_basis = {cat: category_share_basis(cps) for cat, cps in by_cat.items()}
+
     for p in analyzable:
         cat_products = by_cat[p["category"]]
-        share = calculate_market_share(p, cat_products)
+        basis = cat_basis[p["category"]]
+        share = calculate_market_share(p, cat_products, basis)
         growth, has_trends, has_momentum = calculate_growth(
             p, p["category"], snapshots, day_keys, trends_cats)
         p["_share"], p["_growth"] = share, growth
+        p["_share_basis"] = basis
         p["_has_trends"], p["_has_momentum"] = has_trends, has_momentum
 
     # Göreli eşik = portföy medyanı.
@@ -650,6 +678,7 @@ def run_analysis():
             "price": p["price"], "rating": p["rating"], "review_count": p["review_count"],
             "url": p["url"], "puan": p["puan"],
             "share_score": p["_share"], "growth_score": p["_growth"],
+            "share_basis": p["_share_basis"],   # "sales" | "reviews" (ham satış değil)
             "bcg_class": bcg, "recommendation": rec,
             "composite_score": round((p["_share"] + p["_growth"]) / 2, 1),
             "confidence": conf,
@@ -674,6 +703,7 @@ def run_analysis():
             # skor alanları — DİĞER dahil tüm ürünler skorlu (defensive: sc her zaman dolu)
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
+            "share_basis": sc["share_basis"] if sc else None,
             "bcg_class": sc["bcg_class"] if sc else None,
             # action'ı REC_MAP'ten geçir → tooltip/tablo kategori paneliyle TUTARLI
             # (ör. SCALE→INVEST); rationale/priority korunur.
@@ -701,6 +731,11 @@ def run_analysis():
             "data_days": n_days,
             "thresholds": {"share": round(share_thr, 1), "growth": round(growth_thr, 1)},
             "quadrant_distribution": payload["quadrant_distribution"],
+            # Pazar payı tabanı dökümü (ham satış değil; yalnız "sales"/"reviews" sayısı)
+            "share_basis": {
+                "sales": sum(1 for p in scored if p.get("share_basis") == "sales"),
+                "reviews": sum(1 for p in scored if p.get("share_basis") == "reviews"),
+            },
         },
         # Firestore ile parite: tüm ürünler (DİĞER dahil, hepsi skorlu; EXCLUDE hariç)
         "products": products_payload,

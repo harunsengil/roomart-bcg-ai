@@ -199,5 +199,21 @@
   stand-down oldu. Sonraki bağlam repo dosyalarından (bu kayıt + STATUS.md) devralınmalı.
   Tuzak: `data/trendyol_sales.json` (hassas satış verisi) `.gitignore`'a PR #2'de eklendi —
   PR #1 `.gitignore`'unda YOK; public repo'ya sızmamasına dikkat.
+- **2026-06-03 — [Trendyol resmî API entegrasyonu + pazar payı = GERÇEK SATIŞ]** RoomArt'ın
+  resmî Trendyol Marketplace API'si (Supplier 362387) bağlandı (`backend/trendyol_api.py`
+  client; secret YALNIZ env/GitHub Secrets, `TRENDYOL_SUPPLIER_ID`+`TRENDYOL_TOKEN`).
+  `backend/trendyol_sync.py` kendi ürün+sipariş verisini çeker, müşteri PII'sini ayıklar,
+  kategori/ürün bazında agregatlar → `data/trendyol_sales.json`. **Linkaj:** sipariş satırı
+  ↔ ürün kataloğu SADECE `barcode` ile %100; ürün `productContentId` = snapshot `-p-` pid'i
+  (187/188) → satış `productContentId` ile anahtarlanır, analyzer pid'le birebir bağlar.
+  **BCG §5 değişikliği:** Pazar Payı (X) artık kategori-içi `net_units` (gerçek net satış,
+  iptal/iade hariç) payı; satış olmayan kategori eski `deg` payına düşer. Her ürün/skor
+  `share_basis` ("sales"|"reviews") taşır (data-honesty). Büyüme (Y) değişmedi (Trends+deg
+  momentum); satış-momentumu için zaman serisi henüz yok → ileride.
+  **GÜVENLİK:** `trendyol_sales.json` gerçek ciro içerir → `.gitignore`'da (hem data/ hem
+  frontend/public kopyası); public repo'ya/dashboard'a KOPYALANMAZ; ham satış Firestore'da
+  PRIVATE (`roomart-bcg-dev/sales_latest`) tutulur. `bcg_scores.json`'a yalnız 0-100 normalize
+  pay + `share_basis` etiketi yazılır, ham satış sayıları DEĞİL (doğrulandı: grep boş).
+  CI: `analyze.yml`'e analyzer'dan önce `continue-on-error` sync adımı (secret yoksa deg'e düşer).
 
 <!-- Yeni kararları buraya ekle -->

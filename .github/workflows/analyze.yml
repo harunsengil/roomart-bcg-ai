@@ -27,13 +27,41 @@ jobs:
       - name: Install dependencies
         run: pip install -r backend/requirements.txt
 
+      # Kendi mağaza satışını Trendyol API'den çek (data/trendyol_sales.json, gitignored).
+      # analyzer bunu okuyup pazar payını GERÇEK satışa bağlar. Secret yoksa veya hata
+      # olursa build kırılmaz; analyzer otomatik deg (yorum) tabanına düşer.
+      - name: Sync Trendyol sales (own store)
+        run: python backend/trendyol_sync.py
+        continue-on-error: true
+        env:
+          TRENDYOL_SUPPLIER_ID: ${{ secrets.TRENDYOL_SUPPLIER_ID }}
+          TRENDYOL_TOKEN: ${{ secrets.TRENDYOL_TOKEN }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      # Sessiz düşüşü görünür kıl: secret VARSA ama satış dosyası üretilmediyse uyar
+      # (token rotasyon sonrası bayatlamış olabilir → pazar payı sessizce deg'e döner).
+      - name: Verify Trendyol sync
+        env:
+          TRENDYOL_TOKEN: ${{ secrets.TRENDYOL_TOKEN }}
+        run: |
+          if [ -z "$TRENDYOL_TOKEN" ]; then
+            echo "Trendyol secret yok — pazar payı 'reviews' (deg) tabanında (beklenen)."
+          elif [ ! -s data/trendyol_sales.json ]; then
+            echo "::warning title=Trendyol::Secret VAR ama trendyol_sales.json YOK — pazar payı deg'e düştü (token bayat olabilir; TRENDYOL_TOKEN'ı yenile)."
+          else
+            echo "✓ trendyol_sales.json hazır ($(wc -c < data/trendyol_sales.json) bayt) — pazar payı GERÇEK SATIŞ tabanında."
+          fi
+
       - name: Run BCG analysis engine
         run: python backend/analyzer.py
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-      - name: Copy data to frontend public
-        run: cp data/*.json frontend/public/data/
+      # GÜVENLİK: gerçek satış/ciro dosyasını public frontend'e KOPYALAMA (rakip istihbaratı).
+      - name: Copy data to frontend public (sales hariç)
+        run: |
+          cp data/*.json frontend/public/data/
+          rm -f frontend/public/data/trendyol_sales.json
 
       - name: Commit analysis results
         id: commit
