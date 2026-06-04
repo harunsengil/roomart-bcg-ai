@@ -617,15 +617,21 @@ def run_analysis():
     else:
         logger.warning("trendyol_sales.json yok/boş — pazar payı YORUM (deg) tabanına düşüyor.")
 
-    # ── Ürün evreni = snapshot (scrape: puan/deg) ∪ API kataloğu (satış/stok/fiyat) ──
-    # Katalog-kapsamı: dashboard tablosu TÜM mağaza kataloğunu (API, ~999) gösterir; BCG
-    # matrisi yalnız SİNYAL-taşıyan (snapshot'ta yorum VEYA gerçek satış olan, ~261) ürünleri
-    # skorlar. Sinyalsiz pasif ürünler (ne satış ne yorum) tabloda görünür, skoru None'dur.
-    api_products = sales_doc.get("products", {})  # contentId → {title, sale_price, stock, ...}
+    # ── Ürün evreni = AKTİF Trendyol kataloğu (on_sale=True), snapshot ile zenginleştirilir ──
+    # AKTİF filtre: yalnız satışta (on_sale=True) ürünler analize girer. Trendyol'da bir ürün
+    # pasif edilince veya stoğu bitince on_sale=False olur → günlük sync TAZE çektiği için
+    # aktif/pasif değişimi otomatik yansır (yeni ürün aktifse listeye girer, pasifse düşer).
+    # Tablo = tüm aktif ürünler; BCG matrisi = aktif ∩ SİNYAL-taşıyan (snapshot'ta yorum VEYA
+    # gerçek satış). Aktif ama sinyalsiz ürünler tabloda görünür, skoru None'dur.
+    api_products = sales_doc.get("products", {})  # contentId → {title, sale_price, stock, on_sale, ...}
+    active_api = {pid: a for pid, a in api_products.items() if a.get("on_sale") is True}
     if api_products:
-        logger.info(f"API kataloğu yüklendi: {len(api_products)} ürün (tablo kapsamı = tam katalog).")
+        logger.info(f"API kataloğu: {len(api_products)} ürün → {len(active_api)} AKTİF (on_sale=True); "
+                    f"{len(api_products) - len(active_api)} pasif/stoksuz analiz DIŞI.")
 
-    all_pids = set(current.keys()) | set(api_products.keys())
+    # Evren = aktif API ürünleri. API yoksa (sync başarısız) snapshot'a düş — aktif filtre
+    # uygulanamaz ama analiz çökmesin (graceful degradation).
+    all_pids = set(active_api.keys()) if active_api else set(current.keys())
     products = []
     excluded = 0
     for pid in all_pids:
@@ -675,8 +681,8 @@ def run_analysis():
     scored = []
     analyzable = [p for p in products if p["_signal"]]
     passive_count = len(products) - len(analyzable)
-    logger.info(f"Ürün evreni: {len(products)} tablo (tam katalog) | {len(analyzable)} sinyalli "
-                f"(matris/skor) | {passive_count} pasif (tablo-only, skorsuz).")
+    logger.info(f"Ürün evreni: {len(products)} AKTİF tablo | {len(analyzable)} sinyalli "
+                f"(matris/skor) | {passive_count} aktif-pasif (tablo-only, skorsuz).")
     by_cat = {}
     for p in analyzable:
         by_cat.setdefault(p["category"], []).append(p)
@@ -772,10 +778,11 @@ def run_analysis():
     bcg_scores = {
         "metadata": {
             "last_updated": datetime.now(timezone.utc).isoformat(),
-            "total_products": len(scored),          # SİNYALLİ = matriste skorlanan (~261)
-            "total_all": len(products_payload),      # tablo = tam katalog (snapshot ∪ API, ~999)
-            "catalog_total": len(products_payload),  # tam katalog ürün sayısı (tablo evreni)
-            "passive_count": passive_count,          # skorsuz pasif (ne satış ne yorum; tablo-only)
+            "total_products": len(scored),          # SİNYALLİ = matriste skorlanan (~254)
+            "total_all": len(products_payload),      # tablo = AKTİF ürünler (on_sale=True, ~475)
+            "catalog_total": len(products_payload),  # aktif ürün sayısı (tablo evreni)
+            "active_total": len(products_payload),   # aktif (on_sale=True) — açık ad
+            "passive_count": passive_count,          # aktif ama sinyalsiz (skorsuz; tablo-only)
             "other_count": sum(1 for p in analyzable if p["category"] == OTHER_CATEGORY),  # DİĞER (skorlu)
             "excluded_count": excluded,              # category_map "Hariç Tut" (analiz dışı; DİĞER değil)
 
