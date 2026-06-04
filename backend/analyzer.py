@@ -654,6 +654,13 @@ def run_analysis():
         kod = (raw.get("kod") if raw else None) or api.get("stock_code")
         url = (raw.get("url") if raw else None) or api.get("product_url") or ""
         stock = api.get("stock")          # API quantity (snapshot'ta yok); None → tabloda "—"
+        # Kolon zenginleştirme (API): liste fiyatı + indirim % + renk + Trendyol kategorisi.
+        list_price = api.get("list_price")
+        discount = None                   # liste > satış ise indirim yüzdesi; değilse None ("—")
+        if list_price and price and list_price > price:
+            discount = round(100 * (1 - price / list_price))
+        color = api.get("color")                   # attribute "Renk"
+        category_name = api.get("category_name")   # Trendyol'un kendi kategorisi (referans)
         # SİNYAL: snapshot'ta var (yorum verisi) VEYA gerçek satış>0 → matriste skorlanır.
         has_signal = (raw is not None) or units > 0
         products.append({
@@ -666,6 +673,10 @@ def run_analysis():
             "kod": kod,                       # Trendyol ürün kodu (scrape v1.1 veya API stockCode)
             "url": url,
             "stock": stock,                   # API stok adedi (envanter görünürlüğü)
+            "list_price": list_price,         # liste (üstü çizili) fiyat
+            "discount": discount,             # indirim % (None → "—")
+            "color": color,                   # renk (attribute)
+            "category_name": category_name,   # Trendyol kategorisi (referans; bizim BCG kategorisi ≠)
             # iç hesaplama alanları (frontend'e gitmez)
             "fiyat": price,
             "puan": rating,
@@ -750,6 +761,10 @@ def run_analysis():
             "kod": p.get("kod"),
             "url": p["url"],
             "stock": p.get("stock"),         # API stok adedi (envanter; pasif üründe de dolu)
+            "list_price": p.get("list_price"),     # liste fiyatı
+            "discount": p.get("discount"),         # indirim % (None → "—")
+            "color": p.get("color"),               # renk (attribute)
+            "category_name": p.get("category_name"),  # Trendyol kategorisi (referans)
             # skor alanları — sinyalli ürünler skorlu; pasif (sinyalsiz) ürünlerde None
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
