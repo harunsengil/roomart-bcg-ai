@@ -7,14 +7,16 @@ import { useIsLight } from '../hooks/useTheme'
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
-const STRING_SORT = new Set(['name', 'category', 'kod', 'bcg', 'action'])
-const SEARCH_FIELDS = ['name', 'category', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'price', 'stock']
+const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action'])
+const SEARCH_FIELDS = ['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'price', 'list_price', 'discount', 'stock']
 const PAGE_SIZE = 100
 
 function colText(p, field) {
   switch (field) {
     case 'name': return p.name || ''
     case 'category': return p.category || ''
+    case 'category_name': return p.category_name || ''
+    case 'color': return p.color || ''
     case 'kod': return p.kod || ''
     case 'share_score': return p.share_score ?? ''
     case 'growth_score': return p.growth_score ?? ''
@@ -23,6 +25,8 @@ function colText(p, field) {
     case 'review_count': return p.review_count ?? ''
     // GÖRÜNEN (yuvarlanmış) fiyat — ham 13669.9 değil; "6699" yanlış substring eşleşmesini önler
     case 'price': return p.price == null ? '' : Math.round(p.price)
+    case 'list_price': return p.list_price == null ? '' : Math.round(p.list_price)
+    case 'discount': return p.discount ?? ''
     case 'stock': return p.stock ?? ''
     case 'bcg': return p.bcg_class || ''
     case 'action': return p.recommendation?.action || ''
@@ -151,10 +155,10 @@ export default function ProductTable({ products }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Değerlendirme', 'Price', 'Stok', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Değerlendirme', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
-      i + 1, p.name, p.category, p.kod || '', p.share_score ?? '', p.growth_score ?? '',
-      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.price ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
+      i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.share_score ?? '', p.growth_score ?? '',
+      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
     ])
     const esc = v => `"${String(v).replace(/"/g, '""')}"`
     const csv = '﻿' + [header, ...rows].map(r => r.map(esc).join(';')).join('\r\n')
@@ -271,6 +275,8 @@ export default function ProductTable({ products }) {
               <th className="px-3 py-3 text-left text-xs font-mono text-white/40">No</th>
               <HeadCell field="name" label="Product" />
               <HeadCell field="category" label="Category" />
+              <HeadCell field="category_name" label="Trendyol Kat." />
+              <HeadCell field="color" label="Renk" />
               <HeadCell field="kod" label="Kod" />
               <HeadCell field="share_score" label="Share" />
               <HeadCell field="growth_score" label="Growth" />
@@ -278,6 +284,8 @@ export default function ProductTable({ products }) {
               <HeadCell field="rating" label="Puan" />
               <HeadCell field="review_count" label="Değerlendirme" />
               <HeadCell field="price" label="Price" />
+              <HeadCell field="list_price" label="Liste" />
+              <HeadCell field="discount" label="İndirim" />
               <HeadCell field="stock" label="Stok" />
               <HeadCell field="bcg" label="BCG" />
               <HeadCell field="action" label="Action" />
@@ -299,6 +307,8 @@ export default function ProductTable({ products }) {
                     </a>
                   </td>
                   <td className="px-4 py-3 text-xs text-white/50 font-mono whitespace-nowrap">{p.category}</td>
+                  <td className="px-4 py-3 text-xs text-white/45 font-mono whitespace-nowrap">{p.category_name || '—'}</td>
+                  <td className="px-4 py-3 text-xs text-white/60 whitespace-nowrap max-w-[10rem] truncate" title={p.color || ''}>{p.color || '—'}</td>
                   <td className="px-4 py-3 font-mono text-xs text-white/60">{p.kod || '—'}</td>
                   <td className="px-4 py-3 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
                   <td className="px-4 py-3 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
@@ -317,6 +327,12 @@ export default function ProductTable({ products }) {
                     {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-4 py-3 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
+                  <td className="px-4 py-3 font-mono text-xs whitespace-nowrap">
+                    {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
+                    {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
+                  </td>
                   <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
                     {p.stock != null ? <span className={p.stock > 0 ? 'text-white/70' : 'text-rose-400'}>{p.stock}</span> : <span className="text-white/30">—</span>}
                   </td>

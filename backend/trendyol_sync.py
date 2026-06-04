@@ -70,6 +70,15 @@ def _categorize(name: str) -> str:
         return "Diğer"
 
 
+def _attr(attributes, name: str):
+    """attributes[] listesinden adı verilen özniteliğin İLK değerini döndür (yoksa None).
+    Trendyol'da aynı ad birden çok kez gelebilir (ör. iki 'Renk') → ilki alınır."""
+    for a in attributes or []:
+        if a.get("attributeName") == name:
+            return a.get("attributeValue")
+    return None
+
+
 def aggregate_products(products: list) -> tuple[dict, dict]:
     """
     Ürünleri `productContentId` (= snapshot/dashboard ürün pid'i) anahtarıyla otoriter
@@ -95,6 +104,9 @@ def aggregate_products(products: list) -> tuple[dict, dict]:
             # snapshot'ta OLMAYAN pasif ürünler için Trendyol linki + ürün kodu buradan gelir.
             "product_url": p.get("productUrl"),
             "stock_code": p.get("stockCode"),
+            # Kolon zenginleştirme: Trendyol'un kendi kategorisi (referans) + Renk (attribute).
+            "category_name": p.get("categoryName"),
+            "color": _attr(p.get("attributes"), "Renk"),
         }
     return table, barcode_to_content
 
