@@ -78,6 +78,12 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-04) PR #7 — analize sadece AKTİF ürünler (`on_sale=True`) + KPI ikon sol** (`7db2dd5`).
+      Analiz evreni artık aktif Trendyol kataloğu; pasif/stoksuf (~524) ürünler dışı. `on_sale` zaten
+      saklı → **sync değişmedi**; günlük taze sync ile aktif/pasif değişimi otomatik yansır (yeni ürün
+      aktif→listeye girer, pasif/stok bitti→düşer). Tablo 999→**475**, matris 262→**255**. KPI ikonları
+      sola; "Total Products" alt yazısı "Aktif SKU". Canlı doğrulandı (run 26958185018 success; stok=0
+      ürün 0). Kenar: stoğu biten ama yakın satışlı ~9 ürün düşer (direktife uygun). Detay: DECISIONS.
 - [x] **(2026-06-03) PR #6 — KPI: Total Products=katalog (999) + Scored kartı (261)** (`7f70935`).
       `kpis.total_products`=tam katalog, yeni `kpis.scored_products`=matris; KPISection 9. kart
       (Target ikonu, grid lg:8→9). Canlı doğrulandı (run 26901304662 success, deploy success).

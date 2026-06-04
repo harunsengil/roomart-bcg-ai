@@ -271,4 +271,16 @@
   (run 26901304662 + deploy success). Temizlik: yerel `backend/.env.trendyol.local` silindi (token GitHub
   Secret'ta DEĞİŞMEDEN kalır; CI etkilenmez), merged feature branch'ler silindi.
 
+- **2026-06-04 — [Analiz evreni = AKTİF ürünler (on_sale=True)]** (PR #7, `7db2dd5`) Kullanıcı kararı:
+  "analize sadece aktif ürünler girsin; yeni ürün aktif/pasif edilince liste güncellensin." **Aktif tanımı
+  = `on_sale=True`** — veriyle doğrulandı: on_sale=True ⟺ stock>0 (Trendyol stok bitince/ürün pasifleşince
+  on_sale=False yapar); `approved` zaten hepsinde True. analyzer ürün evreni artık `active_api =
+  {on_sale=True}` (PR #5'teki tam-katalog 999 → ~475 aktif). Tablo=aktif, matris=aktif∩sinyal (~255).
+  **Otomatik güncelleme:** `on_sale` zaten `trendyol_sales.json`'da saklı → **sync DEĞİŞMEDİ**; günlük
+  cron taze çektiği için aktif/pasif değişimi bir sonraki analizde otomatik yansır. API yoksa snapshot'a
+  düşer (graceful, aktif filtre uygulanamaz). **Kenar durum:** son14g satıp şimdi stoğu biten ~9 ürün
+  (6 satışlı + 3 snapshot'lı) matristen düşer — "pasif edilince listeden çıkar" mantığına uygun (kabul).
+  metadata `active_total` eklendi; KPI "Total Products"=aktif (475, sub "Aktif SKU"). UI: KPI ikonları
+  sola alındı. Canlı doğrulandı (run 26958185018 + deploy success; tabloda stok=0 ürün 0).
+
 <!-- Yeni kararları buraya ekle -->
