@@ -78,6 +78,13 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-04) PR #8 — kolon zenginleştirme: Liste/İndirim/Renk/Trendyol Kat.** (`0499d5f`).
+      Tabloya 4 kolon: `Trendyol Kat.` (API categoryName, referans), `Renk` (attribute), `Liste`
+      (üstü çizili list_price), `İndirim` (−%, türetilen). `trendyol_sync`'e category_name+color;
+      analyzer payload'a list_price/discount/color/category_name. Marka EKLENMEDİ (%97 ROOMART).
+      **Diğer denetimi:** categorize() DOĞRU — 13 Diğer ürünü gerçek diğer tipler (Duvar Rafı 7/
+      Makyaj Masası 2/Çok Amaçlı 2/Portmanto 2); kural değişmedi, Trendyol Kat. kolonu gösterir.
+      Canlı: list_price 475/475, color 436/475, category_name 475/475, discount 69/475. Detay: DECISIONS.
 - [x] **(2026-06-04) PR #7 — analize sadece AKTİF ürünler (`on_sale=True`) + KPI ikon sol** (`7db2dd5`).
       Analiz evreni artık aktif Trendyol kataloğu; pasif/stoksuf (~524) ürünler dışı. `on_sale` zaten
       saklı → **sync değişmedi**; günlük taze sync ile aktif/pasif değişimi otomatik yansır (yeni ürün

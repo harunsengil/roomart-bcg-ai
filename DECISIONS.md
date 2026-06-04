@@ -283,4 +283,18 @@
   metadata `active_total` eklendi; KPI "Total Products"=aktif (475, sub "Aktif SKU"). UI: KPI ikonları
   sola alındı. Canlı doğrulandı (run 26958185018 + deploy success; tabloda stok=0 ürün 0).
 
+- **2026-06-04 — [Kolon zenginleştirme + categoryName denetimi]** (PR #8, `0499d5f`) Kullanıcı kolon
+  kararı: tabloya **Liste Fiyatı + İndirim % + Renk + Trendyol Kategorisi** eklendi. `trendyol_sync.
+  aggregate_products` artık `category_name` (Trendyol'un kendi kategorisi) + `color` (attribute "Renk",
+  `_attr` helper) saklar; analyzer payload'a `list_price`+`discount` (liste>satış ise %, analyzer'da
+  TÜRETİLİR — tek kaynak)+`color`+`category_name`. **Marka EKLENMEDİ:** veri %97 ROOMART (+%2.5 "banos")
+  → sabit, değersiz. **Trendyol categoryName ≠ bizim categorize():** farklı taksonomi (Trendyol: Banyo
+  Rafları/Banyo Dolabı Seti/Orta Sehpa/Çok Amaçlı Dolap… 12 kategori; bizimki 7 BCG iş kategorisi) →
+  REPLACE etmez, yalnız REFERANS kolon. **Diğer denetimi:** categorize() DOĞRU çalışıyor — Diğer'deki 13
+  aktif ürün gerçekten farklı tipler (Duvar Rafı/Baharatlık 7, Makyaj Masası 2, Çok Amaçlı/Ayakkabılık 2,
+  Portmanto 2); 5-7 BCG kategorimize girmiyorlar → kural değişikliği gerekmedi. **Attribute kapsamı**
+  (478 aktif): Renk %91 (48 tekil), Materyal %98 ama 3 tekil (düşük bilgi), Dolap Ölçüsü %79, Özellik %90.
+  Şimdilik yalnız Renk kolon; Ölçü/Özellik ileride istenirse (`_attr` ile kolay). Canlı doğrulandı
+  (run 26959294764 + deploy; list_price 475/475, color 436/475, category_name 475/475, discount 69/475).
+
 <!-- Yeni kararları buraya ekle -->
