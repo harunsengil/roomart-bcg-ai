@@ -31,8 +31,14 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
         </div>
       )}
 
-      <div className="relative flex items-start justify-between">
-        <div className="flex-1">
+      <div className="relative flex items-start gap-3">
+        <div
+          className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+          style={{ background: `${accent}18`, border: `1px solid ${accent}30` }}
+        >
+          <Icon size={18} style={{ color: accent }} />
+        </div>
+        <div className="flex-1 min-w-0">
           <p className="text-[10px] font-mono text-white/30 tracking-widest uppercase mb-2">{label}</p>
           <div className="flex items-baseline gap-2">
             <span className="font-display text-4xl tracking-wide text-white" style={{ color: accent }}>
@@ -46,12 +52,6 @@ function KPICard({ icon: Icon, label, value, sub, accent, index, pulse, tooltip 
             <p className="text-[11px] text-white/40 mt-1 font-mono">{sub}</p>
           )}
         </div>
-        <div
-          className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ml-3"
-          style={{ background: `${accent}18`, border: `1px solid ${accent}30` }}
-        >
-          <Icon size={18} style={{ color: accent }} />
-        </div>
       </div>
     </motion.div>
   )
@@ -64,7 +64,7 @@ export default function KPISection({ kpis, categories }) {
 
   const cards = [
     { icon: Grid3X3, label: 'Total Categories', value: kpis.total_categories, sub: 'Active product lines', accent: '#F59E0B', pulse: false, tooltip: categoryNames || undefined },
-    { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Catalog SKUs', accent: '#8B5CF6', pulse: false },
+    { icon: Package, label: 'Total Products', value: kpis.total_products, sub: 'Aktif SKU', accent: '#8B5CF6', pulse: false },
     { icon: Target, label: 'Scored', value: kpis.scored_products ?? kpis.total_products, sub: 'BCG matrisinde', accent: '#A78BFA', pulse: false },
     { icon: Star, label: 'Star Products', value: kpis.star_products, sub: 'High growth & share', accent: '#F59E0B', pulse: true },
     { icon: BarChart3, label: 'Cash Cows', value: kpis.cash_cows, sub: 'Low growth · high share', accent: '#10B981', pulse: false },
