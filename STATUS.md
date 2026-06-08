@@ -75,6 +75,10 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-08) Products tablo layout — sayfaya sığar** (PR #10, `4574235`). `table-fixed`+`colgroup`
+      (17 kolon %100) → yatay scroll yok; ürün adı `line-clamp-3` (max 3 satır, Product %17 en geniş);
+      Category/Trendyol/Renk + başlıklar wrap; padding küçültüldü; BCG rozeti kısa kod (QM/CC, tam ad
+      title); **"Değerlendirme" başlığı → "Yorum"**. ANTHROPIC_API_KEY secret'ı kullanıcı tarafından silindi.
 - [x] **(2026-06-08) Roundtable TAMAMEN kaldırıldı** (`roundtable.yml`+`roundtable.py` silindi).
       Kök neden: günlük ❌ = Anthropic API kredisi bitmiş (kod değil, fatura). Frontend'e dokunulmadı —
       AI Strategy sekmesi analyzer önerilerini okuyor, çalışmaya devam ediyor. Doc/config temizlendi.
