@@ -1,10 +1,12 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
-import { Filter, X, Download, Search, ExternalLink } from 'lucide-react'
+import { Filter, X, Download, Search } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatCurrency, formatScore, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
 // Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
+// Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
+const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action'])
@@ -155,7 +157,7 @@ export default function ProductTable({ products }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Değerlendirme', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
       i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.share_score ?? '', p.growth_score ?? '',
       p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
@@ -184,9 +186,9 @@ export default function ProductTable({ products }) {
     const cs = (colSearch[field] || '').toLowerCase()
     const values = openCol === field ? distinctValues(field).filter(v => !cs || v.toLowerCase().includes(cs) || norm(v).includes(norm(cs))) : []
     return (
-      <th className="relative px-4 py-3 text-left text-xs font-mono text-white/40 whitespace-nowrap select-none">
-        <div className="flex items-center gap-1">
-          <span className="cursor-pointer hover:text-white/70" onClick={() => toggleSort(field)}>
+      <th className="relative px-2 py-2.5 text-left text-xs font-mono text-white/40 break-words select-none align-bottom">
+        <div className="flex items-start gap-1">
+          <span className="cursor-pointer hover:text-white/70 break-words" onClick={() => toggleSort(field)}>
             {label} {sortField === field ? (sortDir === 'asc' ? '↑' : '↓') : ''}
           </span>
           <button data-colfilter onClick={() => setOpenCol(openCol === field ? null : field)} title="Sütun filtresi"
@@ -267,12 +269,31 @@ export default function ProductTable({ products }) {
         </div>
       </div>
 
-      <div ref={scrollBoxRef} className="overflow-auto rounded-lg border border-white/5"
+      <div ref={scrollBoxRef} className="overflow-y-auto overflow-x-hidden rounded-lg border border-white/5"
         style={{ maxHeight: 'calc(100vh - 360px)' }}>
-        <table className="w-full">
+        <table className="w-full table-fixed">
+          <colgroup>
+            <col style={{ width: '3%' }} />{/* No */}
+            <col style={{ width: '17%' }} />{/* Product */}
+            <col style={{ width: '8%' }} />{/* Category */}
+            <col style={{ width: '8%' }} />{/* Trendyol Kat. */}
+            <col style={{ width: '7%' }} />{/* Renk */}
+            <col style={{ width: '5%' }} />{/* Kod */}
+            <col style={{ width: '4%' }} />{/* Share */}
+            <col style={{ width: '4%' }} />{/* Growth */}
+            <col style={{ width: '7%' }} />{/* Score */}
+            <col style={{ width: '4%' }} />{/* Puan */}
+            <col style={{ width: '4%' }} />{/* Yorum (review_count) */}
+            <col style={{ width: '6%' }} />{/* Price */}
+            <col style={{ width: '5%' }} />{/* Liste */}
+            <col style={{ width: '4%' }} />{/* İndirim */}
+            <col style={{ width: '4%' }} />{/* Stok */}
+            <col style={{ width: '5%' }} />{/* BCG */}
+            <col style={{ width: '5%' }} />{/* Action */}
+          </colgroup>
           <thead className="sticky top-0 z-30">
             <tr className="border-b border-white/10" style={{ background: 'var(--bg-card)' }}>
-              <th className="px-3 py-3 text-left text-xs font-mono text-white/40">No</th>
+              <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40">No</th>
               <HeadCell field="name" label="Product" />
               <HeadCell field="category" label="Category" />
               <HeadCell field="category_name" label="Trendyol Kat." />
@@ -282,7 +303,7 @@ export default function ProductTable({ products }) {
               <HeadCell field="growth_score" label="Growth" />
               <HeadCell field="composite_score" label="Score" />
               <HeadCell field="rating" label="Puan" />
-              <HeadCell field="review_count" label="Değerlendirme" />
+              <HeadCell field="review_count" label="Yorum" />
               <HeadCell field="price" label="Price" />
               <HeadCell field="list_price" label="Liste" />
               <HeadCell field="discount" label="İndirim" />
@@ -298,48 +319,47 @@ export default function ProductTable({ products }) {
               const aColor = tone(ACTION_META[p.recommendation?.action]?.color || '#888', light)
               return (
                 <tr key={p.id} className="zebra-row border-b border-white/5 transition-colors align-top">
-                  <td className="px-3 py-3 font-mono text-xs text-white/30">{safePage * PAGE_SIZE + i + 1}</td>
-                  <td className="px-4 py-3 max-w-sm">
-                    <a href={p.url} target="_blank" rel="noreferrer"
-                      className="font-medium text-white text-sm hover:text-gold inline-flex items-start gap-1 group">
+                  <td className="px-2 py-2.5 font-mono text-xs text-white/30">{safePage * PAGE_SIZE + i + 1}</td>
+                  <td className="px-2 py-2.5">
+                    <a href={p.url} target="_blank" rel="noreferrer" title={p.name}
+                      className="font-medium text-white text-sm hover:text-gold line-clamp-3 break-words">
                       {p.name}
-                      <ExternalLink size={11} className="mt-0.5 flex-shrink-0 opacity-0 group-hover:opacity-60" />
                     </a>
                   </td>
-                  <td className="px-4 py-3 text-xs text-white/50 font-mono whitespace-nowrap">{p.category}</td>
-                  <td className="px-4 py-3 text-xs text-white/45 font-mono whitespace-nowrap">{p.category_name || '—'}</td>
-                  <td className="px-4 py-3 text-xs text-white/60 whitespace-nowrap max-w-[10rem] truncate" title={p.color || ''}>{p.color || '—'}</td>
-                  <td className="px-4 py-3 font-mono text-xs text-white/60">{p.kod || '—'}</td>
-                  <td className="px-4 py-3 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
-                  <td className="px-4 py-3 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
-                  <td className="px-4 py-3">
+                  <td className="px-2 py-2.5 text-xs text-white/50 font-mono break-words">{p.category}</td>
+                  <td className="px-2 py-2.5 text-xs text-white/45 font-mono break-words">{p.category_name || '—'}</td>
+                  <td className="px-2 py-2.5 text-xs text-white/60 break-words" title={p.color || ''}>{p.color || '—'}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs text-white/60">{p.kod || '—'}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
+                  <td className="px-2 py-2.5">
                     <div className="flex items-center gap-2">
-                      <div className="h-1.5 bg-white/10 rounded-full w-16">
+                      <div className="h-1.5 bg-white/10 rounded-full w-8 flex-shrink-0">
                         <div className="h-full rounded-full" style={{ width: `${p.composite_score ?? 0}%`, background: cfg.color }}></div>
                       </div>
                       <span className="font-mono text-xs text-white">{formatScore(p.composite_score)}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.rating > 0 ? <span className="text-gold-400">★ {p.rating.toFixed(1)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm text-white/70 whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap">
                     {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
-                  <td className="px-4 py-3 font-mono text-xs whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
                     {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-4 py-3 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.stock != null ? <span className={p.stock > 0 ? 'text-white/70' : 'text-rose-400'}>{p.stock}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-4 py-3">
-                    <span className="text-xs font-mono px-2 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {cfg.label}</span>
+                  <td className="px-2 py-2.5">
+                    <span title={cfg.label} className="text-xs font-mono px-1.5 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {BCG_SHORT[p.bcg_class] || cfg.label}</span>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-2 py-2.5">
                     {p.recommendation?.action ? (
                       <span className="text-xs font-mono px-2 py-0.5 rounded-full" style={{ background: `${aColor}15`, color: aColor }}>{p.recommendation.action}</span>
                     ) : (<span className="text-xs font-mono text-white/30">—</span>)}
