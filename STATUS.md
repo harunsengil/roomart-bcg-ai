@@ -13,20 +13,17 @@
   claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Açık kod işi yok** — PR #1/#3/#4/#5 main'de. Satış-tabanlı pazar payı + satış-momentumu büyüme
->   ekseni + **API-katalog ürün kapsamı** (999 tablo / 261 sinyalli matris) canlı ve doğrulandı.
-> - **Adaylar (kullanıcı sırası):** kolon zenginleştirme (liste fiyatı/indirim, marka,
->   attributes renk/ölçü); kategori kaynağı = Trendyol `categoryName` ile categorize() uyumu;
->   competitor_bot.py'yi analyzer'a bağla; BCG Roundtable failure; Aşama 2 (Supabase/Next.js).
->   (KPI 999/261 ayrımı + Scored kartı PR #6 ile YAPILDI.)
+> - **Açık kod işi yok** — PR #1–#8 main'de + roundtable kaldırıldı. Canlı: satış-tabanlı pazar payı +
+>   satış-momentumu büyüme + **sadece AKTİF ürünler** (on_sale=True; tablo ~475 / matris ~254) +
+>   zengin kolonlar (Liste/İndirim/Renk/Trendyol Kat./Stok) + KPI (Aktif SKU / Scored, ikon sol).
+> - **Adaylar:** `competitor_bot.py`'yi analyzer'a bağla (göreceli-pay, marka bazlı; CANLI doğrulanmamış);
+>   ileri attribute kolonları (Ölçü/Özellik — `_attr` ile kolay); Aşama 2 (Supabase/Next.js göçü).
 > - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel-acil):** Trendyol API Secret'ı yenile →
 >   `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). **Token ŞU AN geçerli** (2026-06-03
 >   CI'da satış çekti), ama sızdığı için rotasyon önerilir. Bayat token'da `analyze.yml`'in
 >   "Verify Trendyol sync" adımı görünür `::warning::` verir (hardening mevcut).
 > - ⚠️ **Güvenlik (lokal):** `git remote origin` URL'inde plaintext GitHub PAT (`ghp_…`) var
 >   (yalnız yerel `.git/config`, commit'li değil) → rotasyon + credential-helper önerilir.
-> - **Diğer adaylar:** `competitor_bot.py`'yi analyzer'a bağla (göreceli-pay, marka bazlı; CANLI
->   doğrulanmamış); BCG Roundtable workflow failure incelemesi; Aşama 2 (Supabase/Next.js göçü).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
@@ -78,6 +75,10 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-08) Roundtable TAMAMEN kaldırıldı** (`roundtable.yml`+`roundtable.py` silindi).
+      Kök neden: günlük ❌ = Anthropic API kredisi bitmiş (kod değil, fatura). Frontend'e dokunulmadı —
+      AI Strategy sekmesi analyzer önerilerini okuyor, çalışmaya devam ediyor. Doc/config temizlendi.
+      ANTHROPIC_API_KEY secret'ı artık kullanılmıyor (silinebilir). Detay: DECISIONS 2026-06-08.
 - [x] **(2026-06-04) PR #8 — kolon zenginleştirme: Liste/İndirim/Renk/Trendyol Kat.** (`0499d5f`).
       Tabloya 4 kolon: `Trendyol Kat.` (API categoryName, referans), `Renk` (attribute), `Liste`
       (üstü çizili list_price), `İndirim` (−%, türetilen). `trendyol_sync`'e category_name+color;

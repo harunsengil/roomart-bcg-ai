@@ -23,7 +23,6 @@
     ],
     "ask": [
       "Bash(git push --force:*)",
-      "Bash(python backend/roundtable.py)",
       "Bash(rm:*)"
     ]
   },

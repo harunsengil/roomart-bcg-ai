@@ -297,4 +297,16 @@
   Şimdilik yalnız Renk kolon; Ölçü/Özellik ileride istenirse (`_attr` ile kolay). Canlı doğrulandı
   (run 26959294764 + deploy; list_price 475/475, color 436/475, category_name 475/475, discount 69/475).
 
+- **2026-06-08 — [Roundtable TAMAMEN KALDIRILDI]** `roundtable.yml` + `backend/roundtable.py` silindi.
+  **Kök neden:** workflow her gün ❌ (exit 1) veriyordu — Anthropic API **kredi bakiyesi bitmiş**
+  ("credit balance is too low", her ürün çağrısı 400). Kod sağlamdı; sorun faturaydı. Kullanıcı kararı:
+  özelliği tümden kaldır (nazik-atla/schedule-kapat yerine). **Etki YOK — frontend dokunulmadı:** dashboard
+  "AI Strategy" sekmesi roundtable Realtime DB'sini DEĞİL, `analyzer.py`'nin kategori `recommendation`
+  (action/rationale/priority) verisini (Firestore/JSON) okur → çalışmaya devam eder. roundtable izole bir
+  modüldü (hiçbir backend ondan import etmiyordu). Temizlik: CLAUDE.md (mimari: 4→3 workflow, Realtime DB
+  satırı + ANTHROPIC_API_KEY notu), `.claude/commands/pipeline.md` (roundtable uyarısı), `.claude/settings.json`
+  (`Bash(python backend/roundtable.py)` izni) güncellendi. Geçmiş [Roundtable] kararları (yukarıda) arşiv
+  olarak korundu. **Kullanıcı aksiyonu (ops.):** `ANTHROPIC_API_KEY` GitHub Secret'ı artık kullanılmıyor →
+  silinebilir; `/bcg_roundtable` Realtime DB path'i de artık yazılmıyor.
+
 <!-- Yeni kararları buraya ekle -->
