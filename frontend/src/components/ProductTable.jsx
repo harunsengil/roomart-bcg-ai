@@ -7,8 +7,6 @@ import { useIsLight } from '../hooks/useTheme'
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
-// Sayısal kolonlar sağa yaslanır (başlık + hücre) → rakamlar hizalı, okunur.
-const RIGHT_ALIGN = new Set(['share_score', 'growth_score', 'rating', 'review_count', 'price', 'list_price', 'discount', 'stock'])
 // Sağ yarıdaki kolonların filtre açılır menüsü sağa yaslanır (overflow-x-hidden kırpmasın).
 const DROP_RIGHT = new Set(['price', 'list_price', 'discount', 'stock', 'bcg', 'action'])
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
@@ -189,9 +187,8 @@ export default function ProductTable({ products }) {
     const sel = colFilters[field] || []
     const cs = (colSearch[field] || '').toLowerCase()
     const values = openCol === field ? distinctValues(field).filter(v => !cs || v.toLowerCase().includes(cs) || norm(v).includes(norm(cs))) : []
-    const right = RIGHT_ALIGN.has(field)
     return (
-      <th className={`relative px-2 py-2.5 text-xs font-mono text-white/40 break-words select-none align-top ${right ? 'text-right' : 'text-left'}`}>
+      <th className="relative px-2 py-2.5 text-xs font-mono text-white/40 break-words select-none align-top text-left">
         {/* Üst satır: yalnız etiket (tıkla = sırala). Sıralama oku burada DEĞİL → etiket
             satırı asla sarmaz/kaymaz. Alt satır: filtre + sıralama oku (her zaman solda). */}
         <div className="flex flex-col gap-1.5">
@@ -287,8 +284,8 @@ export default function ProductTable({ products }) {
             <col style={{ width: '3%' }} />{/* No */}
             <col style={{ width: '17%' }} />{/* Product */}
             <col style={{ width: '8%' }} />{/* Category */}
-            <col style={{ width: '8%' }} />{/* Trendyol Kat. */}
-            <col style={{ width: '7%' }} />{/* Renk */}
+            <col style={{ width: '7%' }} />{/* Trendyol Kat. */}
+            <col style={{ width: '6%' }} />{/* Renk */}
             <col style={{ width: '5%' }} />{/* Kod */}
             <col style={{ width: '4%' }} />{/* Share */}
             <col style={{ width: '4%' }} />{/* Growth */}
@@ -297,7 +294,7 @@ export default function ProductTable({ products }) {
             <col style={{ width: '4%' }} />{/* Yorum (review_count) */}
             <col style={{ width: '6%' }} />{/* Price */}
             <col style={{ width: '5%' }} />{/* Liste */}
-            <col style={{ width: '4%' }} />{/* İndirim */}
+            <col style={{ width: '6%' }} />{/* İndirim */}
             <col style={{ width: '4%' }} />{/* Stok */}
             <col style={{ width: '5%' }} />{/* BCG */}
             <col style={{ width: '5%' }} />{/* Action */}
@@ -341,8 +338,8 @@ export default function ProductTable({ products }) {
                   <td className="px-2 py-2.5 text-xs text-white/45 font-mono break-words">{p.category_name || '—'}</td>
                   <td className="px-2 py-2.5 text-xs text-white/60 break-words" title={p.color || ''}>{p.color || '—'}</td>
                   <td className="px-2 py-2.5 font-mono text-xs text-white/60">{p.kod || '—'}</td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white text-right">{formatScore(p.share_score)}</td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white text-right">{formatScore(p.growth_score)}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
                   <td className="px-2 py-2.5">
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 bg-white/10 rounded-full w-8 flex-shrink-0">
@@ -351,20 +348,20 @@ export default function ProductTable({ products }) {
                       <span className="font-mono text-xs text-white">{formatScore(p.composite_score)}</span>
                     </div>
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.rating > 0 ? <span className="text-gold-400">★ {p.rating.toFixed(1)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap text-right">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap">
                     {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap text-right">{formatCurrency(p.price)}</td>
-                  <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap text-right">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
                     {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.stock != null ? <span className={p.stock > 0 ? 'text-white/70' : 'text-rose-400'}>{p.stock}</span> : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-2 py-2.5">
