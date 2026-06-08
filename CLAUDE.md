@@ -16,7 +16,6 @@ GitHub Actions + GitHub Pages üzerinde çalışır.
 - **Repo:** `harunsengil/roomart-bcg-ai` (public)
 - **Firebase projectId:** `roomart-bcg-ai`
 - **Firestore koleksiyonu:** `roomart-bcg-dev` (doc: `latest` + tarihli)
-- **Realtime DB (roundtable):** `roomart-bcg-ai-default-rtdb.europe-west1`, path `/bcg_roundtable`
 - **Dashboard:** https://harunsengil.github.io/roomart-bcg-ai/
 
 ---
@@ -28,10 +27,10 @@ GitHub Actions + GitHub Pages üzerinde çalışır.
 | Frontend | React + Vite + TailwindCSS |
 | Veri okuma | Firestore (öncelik) → `data/*.json` (fallback) |
 | Backend | Python 3.11 |
-| CI / otomasyon | GitHub Actions (4 workflow) |
+| CI / otomasyon | GitHub Actions (3 workflow: scrape · analyze · deploy) |
 | Hosting | GitHub Pages |
 | Trend | pytrends; Scrape | requests + beautifulsoup4 + lxml |
-| AI analiz | Anthropic API (roundtable) |
+| Satış verisi | resmî Trendyol Marketplace API (kendi mağaza) |
 
 ---
 
@@ -41,12 +40,12 @@ GitHub Actions + GitHub Pages üzerinde çalışır.
 .github/workflows/
   scrape.yml       # günlük 05:00 UTC → backend/scraper.py → data/ güncelle
   analyze.yml      # data/*.json push'unda → backend/analyzer.py → bcg_scores + Firestore
-  roundtable.yml   # günlük 06:00 UTC → backend/roundtable.py → Realtime DB + deploy tetikle
   deploy.yml       # frontend/** veya data/** push → Vite build → Pages
 backend/
   scraper.py       # ürün/trendyol/trends verisi toplar → data/ + Firestore
   analyzer.py      # BCG skor motoru (gerçek veri) → data/bcg_scores.json + Firestore
-  roundtable.py    # Anthropic API ile kategori analizi → Realtime DB
+  trendyol_api.py  # resmî Trendyol Marketplace API istemcisi (kendi mağaza)
+  trendyol_sync.py # kendi ürün+sipariş verisi → data/trendyol_sales.json (PII'siz)
   seed_data.py     # demo veri üreticisi (scraper'sız dashboard doldurma)
   requirements.txt
 data/                # products, trendyol, trends, trends_sonuc, bcg_scores, alerts,
@@ -64,12 +63,12 @@ README.md, .gitignore
 ## 4. Veri Akışı
 
 1. `scrape.yml` (günlük) → `scraper.py` → `data/*.json` günceller, Firestore'a yazar, commit.
-2. `data/*.json` değişince `analyze.yml` tetiklenir → `analyzer.py` BCG skorlarını hesaplar
-   → `data/bcg_scores.json` + Firestore `roomart-bcg-dev/latest`, sonra `frontend/public/data/`'ya kopyalar.
-3. `roundtable.yml` (günlük) → `roundtable.py` Anthropic API ile kategori yorumu → Realtime DB,
+2. `data/*.json` değişince `analyze.yml` tetiklenir → önce `trendyol_sync.py` (kendi satış
+   verisi → `data/trendyol_sales.json`, gitignored), sonra `analyzer.py` BCG skorlarını hesaplar
+   → `data/bcg_scores.json` + Firestore `roomart-bcg-dev/latest`, `frontend/public/data/`'ya kopyalar,
    ardından `deploy.yml`'i tetikler.
-4. `deploy.yml` → Vite build → GitHub Pages.
-5. Dashboard `useData.js` ile önce Firestore (`roomart-bcg-dev/latest`), olmazsa `data/*.json` okur.
+3. `deploy.yml` → Vite build → GitHub Pages.
+4. Dashboard `useData.js` ile önce Firestore (`roomart-bcg-dev/latest`), olmazsa `data/*.json` okur.
 
 ---
 
@@ -99,7 +98,8 @@ Kitaplıklı Çalışma Masası · Sehpa
 
 - `FIREBASE_SERVICE_ACCOUNT` — Firestore yazımı (scraper + analyzer `os.environ`'dan okur).
 - `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID` — frontend build.
-- `ANTHROPIC_API_KEY` — roundtable analizi.
+- `TRENDYOL_SUPPLIER_ID`, `TRENDYOL_TOKEN` — resmî Trendyol API (kendi satış verisi).
+- ~~`ANTHROPIC_API_KEY`~~ — roundtable kaldırıldı (2026-06-08); secret artık kullanılmıyor (silinebilir).
 
 > Not: Bu mekanizma **zaten çalışıyor**. Secret JSON'u `json.loads` ile okunur; ayrı bir
 > sync script'i veya `service_account.json` dosyasına gerek yoktur.

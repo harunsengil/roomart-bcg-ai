@@ -13,6 +13,3 @@ Hepsini repo kökünden çalıştır (scriptler data/ yolunu köke göre çözer
 4. İstersen frontend'i lokal gör: `cd frontend && npm install && npm run dev`.
 5. Hata çıkarsa tam traceback'i göster, nedenini (veri şeması, pytrends rate limit,
    eksik env) belirt ve düzeltme öner.
-
-Uyarı: `backend/roundtable.py` Anthropic API kullanır (ücret/kota). Sadece açıkça
-istenirse ve `ANTHROPIC_API_KEY` ayarlıyken çalıştır.
