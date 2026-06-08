@@ -7,6 +7,13 @@ import { useIsLight } from '../hooks/useTheme'
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
+// Sütun-filtresi (çoklu-seçim) yalnız KATEGORİK kolonlarda anlamlı; sayısal kolonlarda
+// sıralama + arama yeterli → filtre ikonu kaldırılır (dar başlıklar kalabalık olmasın).
+const FILTERABLE = new Set(['category', 'category_name', 'color', 'bcg', 'action'])
+// Sayısal kolonlar sağa yaslanır (başlık + hücre) → rakamlar hizalı, okunur.
+const RIGHT_ALIGN = new Set(['share_score', 'growth_score', 'rating', 'review_count', 'price', 'list_price', 'discount', 'stock'])
+// Sağ kenardaki filtreli kolonların açılır menüsü sağa yaslanır (overflow-x-hidden kırpmasın).
+const DROP_RIGHT = new Set(['bcg', 'action'])
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action'])
@@ -185,20 +192,24 @@ export default function ProductTable({ products }) {
     const sel = colFilters[field] || []
     const cs = (colSearch[field] || '').toLowerCase()
     const values = openCol === field ? distinctValues(field).filter(v => !cs || v.toLowerCase().includes(cs) || norm(v).includes(norm(cs))) : []
+    const right = RIGHT_ALIGN.has(field)
+    const filterable = FILTERABLE.has(field)
     return (
-      <th className="relative px-2 py-2.5 text-left text-xs font-mono text-white/40 break-words select-none align-bottom">
-        <div className="flex items-start gap-1">
+      <th className={`relative px-2 py-2.5 text-xs font-mono text-white/40 break-words select-none align-bottom ${right ? 'text-right' : 'text-left'}`}>
+        <div className={`flex items-start gap-1 ${right ? 'justify-end' : ''}`}>
           <span className="cursor-pointer hover:text-white/70 break-words" onClick={() => toggleSort(field)}>
             {label} {sortField === field ? (sortDir === 'asc' ? '↑' : '↓') : ''}
           </span>
-          <button data-colfilter onClick={() => setOpenCol(openCol === field ? null : field)} title="Sütun filtresi"
-            style={{ color: sel.length ? '#d4a017' : undefined }} className={sel.length ? '' : 'text-white/20 hover:text-white/50'}>
-            <Filter size={11} />
-            {sel.length > 0 && <span className="ml-0.5 text-[8px]">{sel.length}</span>}
-          </button>
+          {filterable && (
+            <button data-colfilter onClick={() => setOpenCol(openCol === field ? null : field)} title="Sütun filtresi"
+              style={{ color: sel.length ? '#d4a017' : undefined }} className={sel.length ? 'flex-shrink-0' : 'flex-shrink-0 text-white/20 hover:text-white/50'}>
+              <Filter size={11} />
+              {sel.length > 0 && <span className="ml-0.5 text-[8px]">{sel.length}</span>}
+            </button>
+          )}
         </div>
-        {openCol === field && (
-          <div data-colfilter className="absolute left-2 top-full z-50 mt-1 w-52 rounded-lg border border-white/10 p-2 shadow-2xl backdrop-blur-xl"
+        {filterable && openCol === field && (
+          <div data-colfilter className={`absolute top-full z-50 mt-1 w-52 rounded-lg border border-white/10 p-2 shadow-2xl backdrop-blur-xl ${DROP_RIGHT.has(field) ? 'right-2' : 'left-2'}`}
             style={{ background: 'var(--bg-secondary)' }}>
             <div className="flex items-center justify-between mb-1.5">
               <button onClick={() => clearCol(field)} className="text-[10px] font-mono text-gold-400 hover:text-gold-300">Tümü</button>
@@ -330,8 +341,8 @@ export default function ProductTable({ products }) {
                   <td className="px-2 py-2.5 text-xs text-white/45 font-mono break-words">{p.category_name || '—'}</td>
                   <td className="px-2 py-2.5 text-xs text-white/60 break-words" title={p.color || ''}>{p.color || '—'}</td>
                   <td className="px-2 py-2.5 font-mono text-xs text-white/60">{p.kod || '—'}</td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white text-right">{formatScore(p.share_score)}</td>
+                  <td className="px-2 py-2.5 font-mono text-sm text-white text-right">{formatScore(p.growth_score)}</td>
                   <td className="px-2 py-2.5">
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 bg-white/10 rounded-full w-8 flex-shrink-0">
@@ -340,20 +351,20 @@ export default function ProductTable({ products }) {
                       <span className="font-mono text-xs text-white">{formatScore(p.composite_score)}</span>
                     </div>
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
                     {p.rating > 0 ? <span className="text-gold-400">★ {p.rating.toFixed(1)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap text-right">
                     {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
-                  <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap text-right">{formatCurrency(p.price)}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap text-right">
                     {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap text-right">
                     {p.stock != null ? <span className={p.stock > 0 ? 'text-white/70' : 'text-rose-400'}>{p.stock}</span> : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-2 py-2.5">
