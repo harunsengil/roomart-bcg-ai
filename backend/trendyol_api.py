@@ -143,6 +143,77 @@ def fetch_all_orders(sess: requests.Session, supplier_id: str, **filters) -> lis
     return list(_paged(sess, f"/integration/order/sellers/{supplier_id}/orders", **filters))
 
 
+def fetch_orders_lifetime(
+    sess: requests.Session,
+    supplier_id: str,
+    *,
+    window_days: int = 14,
+    max_days: int = 730,
+    empty_stop: int = 3,
+    now_ms: int | None = None,
+    **filters,
+) -> tuple[list, dict]:
+    """Ömür-boyu siparişleri çek: şimdiden geriye `window_days`'lik pencerelerle ilerle.
+
+    Trendyol orders ucu tek istekte ≤ 2 haftalık aralık kabul eder; daha geriye gitmek için
+    pencereleri elle kaydırmak gerekir. Durma koşulu (ikisinden biri):
+      • ardışık `empty_stop` boş pencere (mağaza geçmişinin başına ulaşıldı), VEYA
+      • `max_days` tavanı (CI maliyet sınırı — aşırı çağrıyı engeller).
+
+    `orderDate` filtresi `startDate`/`endDate` (epoch ms) iledir. Aynı sipariş bitişik
+    pencerelerin sınırında iki kez gelebileceğinden `id` ile tekilleştirilir.
+    Döndürür: (orders, stats) — stats: {windows, oldest_order_ms, max_days, hit_cap}.
+    """
+    if now_ms is None:
+        now_ms = int(time.time() * 1000)
+    win_ms = window_days * 24 * 3600 * 1000
+    floor_ms = now_ms - max_days * 24 * 3600 * 1000
+
+    by_id: dict = {}
+    oldest = None
+    windows = 0
+    consecutive_empty = 0
+    end = now_ms
+    hit_cap = False
+
+    while end > floor_ms:
+        start = max(end - win_ms, floor_ms)
+        chunk = list(
+            _paged(
+                sess,
+                f"/integration/order/sellers/{supplier_id}/orders",
+                startDate=start,
+                endDate=end,
+                **filters,
+            )
+        )
+        windows += 1
+        if chunk:
+            consecutive_empty = 0
+            for o in chunk:
+                oid = o.get("id")
+                by_id[oid if oid is not None else len(by_id)] = o
+                od = o.get("orderDate")
+                if od and (oldest is None or od < oldest):
+                    oldest = od
+        else:
+            consecutive_empty += 1
+            if consecutive_empty >= empty_stop:
+                break
+        if start <= floor_ms:
+            hit_cap = True
+            break
+        end = start
+
+    stats = {
+        "windows": windows,
+        "oldest_order_ms": oldest,
+        "max_days": max_days,
+        "hit_cap": hit_cap,
+    }
+    return list(by_id.values()), stats
+
+
 def test_connection() -> None:
     sess, sid = make_session()
 
