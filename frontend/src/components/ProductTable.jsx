@@ -8,11 +8,11 @@ const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 // Sağ yarıdaki kolonların filtre açılır menüsü sağa yaslanır (overflow-x-hidden kırpmasın).
-const DROP_RIGHT = new Set(['price', 'list_price', 'discount', 'stock', 'bcg', 'action'])
+const DROP_RIGHT = new Set(['net_retention_pct', 'risk_rate', 'sales_per_day', 'price', 'list_price', 'discount', 'stock', 'bcg', 'action'])
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
-const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action'])
-const SEARCH_FIELDS = ['name', 'category', 'category_name', 'color', 'kod', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'price', 'list_price', 'discount', 'stock']
+const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'product_main_id', 'bcg', 'action'])
+const SEARCH_FIELDS = ['name', 'category', 'category_name', 'color', 'kod', 'product_main_id', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'net_retention_pct', 'risk_rate', 'sales_per_day', 'variant_count', 'price', 'list_price', 'discount', 'stock']
 const PAGE_SIZE = 100
 
 function colText(p, field) {
@@ -22,11 +22,16 @@ function colText(p, field) {
     case 'category_name': return p.category_name || ''
     case 'color': return p.color || ''
     case 'kod': return p.kod || ''
+    case 'product_main_id': return p.product_main_id || ''
+    case 'variant_count': return p.variant_count ?? ''
     case 'share_score': return p.share_score ?? ''
     case 'growth_score': return p.growth_score ?? ''
     case 'composite_score': return p.composite_score ?? ''
     case 'rating': return p.rating ?? ''
     case 'review_count': return p.review_count ?? ''
+    case 'net_retention_pct': return p.net_retention_pct ?? ''
+    case 'risk_rate': return p.risk_rate ?? ''
+    case 'sales_per_day': return p.sales_per_day ?? ''
     // GÖRÜNEN (yuvarlanmış) fiyat — ham 13669.9 değil; "6699" yanlış substring eşleşmesini önler
     case 'price': return p.price == null ? '' : Math.round(p.price)
     case 'list_price': return p.list_price == null ? '' : Math.round(p.list_price)
@@ -159,10 +164,10 @@ export default function ProductTable({ products }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Model', 'Varyant #', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Net Tahsilat %', 'İade %', 'Sat. Hızı (adet/gün)', 'Kampanya', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
-      i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.share_score ?? '', p.growth_score ?? '',
-      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
+      i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.product_main_id || '', p.variant_count ?? '', p.share_score ?? '', p.growth_score ?? '',
+      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.net_retention_pct ?? '', p.risk_rate ?? '', p.sales_per_day ?? '', p.has_campaign ? 'Evet' : '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
     ])
     const esc = v => `"${String(v).replace(/"/g, '""')}"`
     const csv = '﻿' + [header, ...rows].map(r => r.map(esc).join(';')).join('\r\n')
@@ -282,20 +287,25 @@ export default function ProductTable({ products }) {
         <table className="w-full table-fixed">
           <colgroup>
             <col style={{ width: '3%' }} />{/* No */}
-            <col style={{ width: '17%' }} />{/* Product */}
-            <col style={{ width: '8%' }} />{/* Category */}
-            <col style={{ width: '7%' }} />{/* Trendyol Kat. */}
-            <col style={{ width: '6%' }} />{/* Renk */}
-            <col style={{ width: '5%' }} />{/* Kod */}
+            <col style={{ width: '12%' }} />{/* Product */}
+            <col style={{ width: '6%' }} />{/* Category */}
+            <col style={{ width: '5%' }} />{/* Trendyol Kat. */}
+            <col style={{ width: '5%' }} />{/* Renk */}
+            <col style={{ width: '4%' }} />{/* Kod */}
+            <col style={{ width: '4%' }} />{/* Model (productMainId) */}
+            <col style={{ width: '3%' }} />{/* Varyant # */}
             <col style={{ width: '4%' }} />{/* Share */}
             <col style={{ width: '4%' }} />{/* Growth */}
-            <col style={{ width: '7%' }} />{/* Score */}
+            <col style={{ width: '5%' }} />{/* Score */}
             <col style={{ width: '4%' }} />{/* Puan */}
             <col style={{ width: '4%' }} />{/* Yorum (review_count) */}
-            <col style={{ width: '6%' }} />{/* Price */}
-            <col style={{ width: '5%' }} />{/* Liste */}
-            <col style={{ width: '6%' }} />{/* İndirim */}
-            <col style={{ width: '4%' }} />{/* Stok */}
+            <col style={{ width: '4%' }} />{/* Net Tah. % */}
+            <col style={{ width: '4%' }} />{/* İade % */}
+            <col style={{ width: '4%' }} />{/* Sat. Hızı */}
+            <col style={{ width: '4%' }} />{/* Price */}
+            <col style={{ width: '4%' }} />{/* Liste */}
+            <col style={{ width: '4%' }} />{/* İndirim */}
+            <col style={{ width: '3%' }} />{/* Stok */}
             <col style={{ width: '5%' }} />{/* BCG */}
             <col style={{ width: '5%' }} />{/* Action */}
           </colgroup>
@@ -307,11 +317,16 @@ export default function ProductTable({ products }) {
               <HeadCell field="category_name" label="Trendyol Kat." />
               <HeadCell field="color" label="Renk" />
               <HeadCell field="kod" label="Kod" />
+              <HeadCell field="product_main_id" label="Model" />
+              <HeadCell field="variant_count" label="Var. #" />
               <HeadCell field="share_score" label="Share" />
               <HeadCell field="growth_score" label="Growth" />
               <HeadCell field="composite_score" label="Score" />
               <HeadCell field="rating" label="Puan" />
               <HeadCell field="review_count" label="Yorum" />
+              <HeadCell field="net_retention_pct" label="Net Tah. %" />
+              <HeadCell field="risk_rate" label="İade %" />
+              <HeadCell field="sales_per_day" label="Sat. Hızı" />
               <HeadCell field="price" label="Price" />
               <HeadCell field="list_price" label="Liste" />
               <HeadCell field="discount" label="İndirim" />
@@ -331,13 +346,15 @@ export default function ProductTable({ products }) {
                   <td className="px-2 py-2.5">
                     <a href={p.url} target="_blank" rel="noreferrer" title={p.name}
                       className="font-medium text-white text-sm hover:text-gold line-clamp-3 break-words">
-                      {p.name}
+                      {p.has_campaign && <span title="Aktif kampanya" className="mr-1">🏷️</span>}{p.name}
                     </a>
                   </td>
                   <td className="px-2 py-2.5 text-xs text-white/50 font-mono break-words">{p.category}</td>
                   <td className="px-2 py-2.5 text-xs text-white/45 font-mono break-words">{p.category_name || '—'}</td>
                   <td className="px-2 py-2.5 text-xs text-white/60 break-words" title={p.color || ''}>{p.color || '—'}</td>
                   <td className="px-2 py-2.5 font-mono text-xs text-white/60">{p.kod || '—'}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs text-white/55 break-words" title={p.product_main_id || ''}>{p.product_main_id || '—'}</td>
+                  <td className="px-2 py-2.5 font-mono text-xs text-white/50 whitespace-nowrap">{p.variant_count > 1 ? `×${p.variant_count}` : <span className="text-white/30">—</span>}</td>
                   <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.share_score)}</td>
                   <td className="px-2 py-2.5 font-mono text-sm text-white">{formatScore(p.growth_score)}</td>
                   <td className="px-2 py-2.5">
@@ -353,6 +370,17 @@ export default function ProductTable({ products }) {
                   </td>
                   <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap">
                     {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
+                  </td>
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap" title="Net Tahsilat % (komisyon+promo sonrası, COGS hariç)">
+                    {p.net_retention_pct != null ? <span className="text-white/80">%{Math.round(p.net_retention_pct)}</span> : <span className="text-white/30">—</span>}
+                  </td>
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap" title="İade/iptal oranı">
+                    {(p.risk_rate ?? 0) > 0
+                      ? <span className={p.risk_rate >= 20 ? 'text-rose-400' : 'text-white/60'}>%{Math.round(p.risk_rate)}</span>
+                      : <span className="text-white/30">—</span>}
+                  </td>
+                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap" title="Yaşa-göre satış hızı (adet/gün)">
+                    {(p.sales_per_day ?? 0) > 0 ? <span className="text-cyan-300/80">{p.sales_per_day.toFixed(2)}</span> : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
                   <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
