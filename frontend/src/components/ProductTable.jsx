@@ -70,6 +70,39 @@ function priceOp(q) {
   return null
 }
 
+// Satır-içi mini satış çizgisi (son 13 hafta net adet). Bağımlılıksız inline SVG (402 satır → perf).
+function Sparkline({ data, w = 64, h = 20 }) {
+  if (!data || data.length < 2 || !data.some(v => v > 0)) return null
+  const max = Math.max(...data, 1), n = data.length
+  const pts = data.map((v, i) => `${(i / (n - 1)) * w},${h - 1 - (v / max) * (h - 2)}`).join(' ')
+  return (
+    <svg width={w} height={h} className="block">
+      <polyline points={pts} fill="none" stroke="#22D3EE" strokeWidth="1.4" strokeLinejoin="round" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+// Hover'da gösterilen büyük grafik (alan dolgulu + nokta + özet).
+function BigChart({ data, name }) {
+  const w = 240, h = 96, pad = 8, n = data.length, max = Math.max(...data, 1)
+  const x = i => pad + (i / (n - 1)) * (w - 2 * pad)
+  const y = v => h - pad - (v / max) * (h - 2 * pad)
+  const line = data.map((v, i) => `${x(i)},${y(v)}`).join(' ')
+  const area = `${x(0)},${h - pad} ${line} ${x(n - 1)},${h - pad}`
+  const total = data.reduce((a, b) => a + b, 0)
+  return (
+    <div>
+      <div className="text-[10px] font-mono text-white/70 mb-1 truncate" style={{ maxWidth: w }}>{name}</div>
+      <svg width={w} height={h}>
+        <polygon points={area} fill="#22D3EE22" />
+        <polyline points={line} fill="none" stroke="#22D3EE" strokeWidth="1.8" strokeLinejoin="round" />
+        {data.map((v, i) => <circle key={i} cx={x(i)} cy={y(v)} r="2" fill="#22D3EE" />)}
+      </svg>
+      <div className="text-[9px] font-mono text-white/40 mt-1">Son {n} hafta · toplam {total} adet</div>
+    </div>
+  )
+}
+
 export default function ProductTable({ products }) {
   const [search, setSearch] = useState('')
   const [bcgFilter, setBcgFilter] = useState('ALL')
@@ -80,6 +113,7 @@ export default function ProductTable({ products }) {
   const [sortField, setSortField] = useState('composite_score')
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
+  const [spark, setSpark] = useState({ show: false, x: 0, y: 0, series: null, name: '' })
   const scrollBoxRef = useRef(null)
   const didMount = useRef(false)
   const light = useIsLight()
@@ -164,10 +198,10 @@ export default function ProductTable({ products }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Model', 'Varyant #', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Net Tahsilat %', 'İade %', 'Sat. Hızı (adet/gün)', 'Kampanya', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Model', 'Varyant #', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Net Tahsilat %', 'İade %', 'Sat. Hızı (adet/gün)', 'Satış 13h (eski→yeni)', 'Kampanya', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
       i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.product_main_id || '', p.variant_count ?? '', p.share_score ?? '', p.growth_score ?? '',
-      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.net_retention_pct ?? '', p.risk_rate ?? '', p.sales_per_day ?? '', p.has_campaign ? 'Evet' : '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
+      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.net_retention_pct ?? '', p.risk_rate ?? '', p.sales_per_day ?? '', p.sales_series ? p.sales_series.join('|') : '', p.has_campaign ? 'Evet' : '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
     ])
     const esc = v => `"${String(v).replace(/"/g, '""')}"`
     const csv = '﻿' + [header, ...rows].map(r => r.map(esc).join(';')).join('\r\n')
@@ -287,21 +321,22 @@ export default function ProductTable({ products }) {
         <table className="w-full table-fixed">
           <colgroup>
             <col style={{ width: '3%' }} />{/* No */}
-            <col style={{ width: '12%' }} />{/* Product */}
-            <col style={{ width: '6%' }} />{/* Category */}
-            <col style={{ width: '5%' }} />{/* Trendyol Kat. */}
+            <col style={{ width: '10%' }} />{/* Product */}
+            <col style={{ width: '5%' }} />{/* Category */}
+            <col style={{ width: '4%' }} />{/* Trendyol Kat. */}
             <col style={{ width: '5%' }} />{/* Renk */}
             <col style={{ width: '4%' }} />{/* Kod */}
             <col style={{ width: '4%' }} />{/* Model (productMainId) */}
             <col style={{ width: '3%' }} />{/* Varyant # */}
             <col style={{ width: '4%' }} />{/* Share */}
             <col style={{ width: '4%' }} />{/* Growth */}
-            <col style={{ width: '5%' }} />{/* Score */}
+            <col style={{ width: '4%' }} />{/* Score */}
             <col style={{ width: '4%' }} />{/* Puan */}
             <col style={{ width: '4%' }} />{/* Yorum (review_count) */}
             <col style={{ width: '4%' }} />{/* Net Tah. % */}
             <col style={{ width: '4%' }} />{/* İade % */}
             <col style={{ width: '4%' }} />{/* Sat. Hızı */}
+            <col style={{ width: '5%' }} />{/* Satış 3a (sparkline) */}
             <col style={{ width: '4%' }} />{/* Price */}
             <col style={{ width: '4%' }} />{/* Liste */}
             <col style={{ width: '4%' }} />{/* İndirim */}
@@ -327,6 +362,7 @@ export default function ProductTable({ products }) {
               <HeadCell field="net_retention_pct" label="Net Tah. %" />
               <HeadCell field="risk_rate" label="İade %" />
               <HeadCell field="sales_per_day" label="Sat. Hızı" />
+              <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top" title="Son 13 haftalık net satış (üzerine gel → büyük grafik)">Satış 3a</th>
               <HeadCell field="price" label="Price" />
               <HeadCell field="list_price" label="Liste" />
               <HeadCell field="discount" label="İndirim" />
@@ -382,6 +418,16 @@ export default function ProductTable({ products }) {
                   <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap" title="Yaşa-göre satış hızı (adet/gün)">
                     {(p.sales_per_day ?? 0) > 0 ? <span className="text-cyan-300/80">{p.sales_per_day.toFixed(2)}</span> : <span className="text-white/30">—</span>}
                   </td>
+                  <td className="px-2 py-2.5">
+                    {p.sales_series && p.sales_series.some(v => v > 0) ? (
+                      <div className="inline-block cursor-crosshair"
+                        onMouseEnter={e => setSpark({ show: true, x: e.clientX, y: e.clientY, series: p.sales_series, name: p.name })}
+                        onMouseMove={e => setSpark(s => (s.show ? { ...s, x: e.clientX, y: e.clientY } : s))}
+                        onMouseLeave={() => setSpark(s => ({ ...s, show: false }))}>
+                        <Sparkline data={p.sales_series} />
+                      </div>
+                    ) : <span className="font-mono text-sm text-white/30">—</span>}
+                  </td>
                   <td className="px-2 py-2.5 font-mono text-sm text-white whitespace-nowrap">{formatCurrency(p.price)}</td>
                   <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
                     {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
@@ -418,6 +464,18 @@ export default function ProductTable({ products }) {
             <PageBtn onClick={() => goPage(Math.min(totalPages - 1, safePage + 1))} disabled={safePage === totalPages - 1}>›</PageBtn>
             <PageBtn onClick={() => goPage(totalPages - 1)} disabled={safePage === totalPages - 1} title="Son sayfa">»</PageBtn>
           </div>
+        </div>
+      )}
+
+      {/* Sparkline hover popup — fixed konum (scroll kutusunun overflow'undan kırpılmaz) */}
+      {spark.show && spark.series && (
+        <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/10 p-2.5 shadow-2xl backdrop-blur-xl"
+          style={{
+            background: 'var(--bg-secondary)',
+            left: Math.min(spark.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 1920) - 268),
+            top: Math.min(spark.y + 14, (typeof window !== 'undefined' ? window.innerHeight : 1080) - 140),
+          }}>
+          <BigChart data={spark.series} name={spark.name} />
         </div>
       )}
     </div>

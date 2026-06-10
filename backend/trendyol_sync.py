@@ -44,6 +44,10 @@ EXCLUDED_LINE_STATUSES = {"Cancelled", "Returned", "UnDelivered", "UnSupplied"}
 # History store GEREKMEZ — tek çekimde iki pencere kıyaslanır.
 MOMENTUM_WINDOW_DAYS = 7
 
+# Ürün-başına son ~3 ay satış serisi (sparkline): N haftalık net-adet kovası.
+# Ömür-boyu çekilen siparişlerden tek seferde hesaplanır (history store gerekmez).
+SERIES_WEEKS = 13
+
 
 def _normalize(value, lo, hi):
     if hi == lo:
@@ -140,8 +144,10 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
 
     # Momentum pencereleri (UTC, epoch ms): [now-7g, now] vs [now-14g, now-7g]
     now = datetime.now(timezone.utc)
+    now_ms = now.timestamp() * 1000
     c_recent = (now - timedelta(days=MOMENTUM_WINDOW_DAYS)).timestamp() * 1000
     c_prior = (now - timedelta(days=2 * MOMENTUM_WINDOW_DAYS)).timestamp() * 1000
+    week_ms = 7 * 24 * 3600 * 1000  # sparkline haftalık kova genişliği
 
     for order in orders:
         od = order.get("orderDate", 0) or 0
@@ -167,6 +173,8 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
                 "order_lines": 0, "units_recent": 0, "units_prior": 0,
                 # Net Tahsilat % + risk + promo için biriktiriciler (yalnız NET kalemlerden)
                 "_comm_w": 0.0, "_seller_disc": 0.0, "risk_units": 0, "promo_units": 0,
+                # son SERIES_WEEKS haftalık net-adet kovası (sparkline); idx0=en yeni hafta
+                "_series": [0] * SERIES_WEEKS,
             })
             bp["gross_units"] += qty
             bp["gross_amount"] = round(bp["gross_amount"] + amount, 2)
@@ -184,6 +192,11 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
                     bp["units_recent"] += qty
                 elif win == "prior":
                     bp["units_prior"] += qty
+                # sparkline: siparişin kaç hafta öncesine düştüğü (idx0=en yeni)
+                if od:
+                    widx = int((now_ms - od) // week_ms)
+                    if 0 <= widx < SERIES_WEEKS:
+                        bp["_series"][widx] += qty
 
             bcat = by_category.setdefault(cat, {
                 "gross_units": 0, "gross_amount": 0.0, "net_units": 0, "net_amount": 0.0,
@@ -220,6 +233,9 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
         # Promo payı: satıcı-indirimli net adet / net adet (kampanya-şişmesi sinyali).
         nu = d.get("net_units", 0)
         d["promo_share"] = round(d.get("promo_units", 0) / nu * 100, 1) if nu > 0 else 0.0
+        # Sparkline serisi: eski→yeni (soldan sağa zaman); satış yoksa None.
+        series = list(reversed(d.pop("_series", [])))
+        d["sales_series"] = series if any(series) else None
     for c in by_category.values():
         c["distinct_products"] = len(c.pop("products"))
         c["sales_momentum"] = _momentum_score(c["units_recent"], c["units_prior"])

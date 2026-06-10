@@ -709,6 +709,7 @@ def run_analysis():
         net_retention_pct = srec.get("net_retention_pct")  # komisyon+promo sonrası satıcıya kalan % (COGS hariç)
         risk_rate = srec.get("risk_rate", 0.0)             # iade/iptal oranı %
         promo_share = srec.get("promo_share", 0.0)         # satıcı-indirimli net satış payı %
+        sales_series = srec.get("sales_series")            # son 13 haftalık net adet (sparkline; eski→yeni)
         has_campaign = bool(api.get("has_campaign"))       # ürün aktif kampanyada mı
         product_main_id = api.get("product_main_id")       # varyant modeli (ör. DEFNE90)
         variant_count = api.get("variant_count", 1)        # aynı modeldeki renk/beden kardeşi sayısı
@@ -746,6 +747,7 @@ def run_analysis():
             "age_days": age_days,
             "sales_per_day": sales_per_day,           # yaşa-göre satış hızı (adet/gün)
             "reviews_per_day": reviews_per_day,       # yaşa-göre yorum hızı (yorum/gün)
+            "sales_series": sales_series,             # son 13 haftalık net adet (sparkline)
             # iç hesaplama alanları (frontend'e gitmez)
             "fiyat": price,
             "puan": rating,
@@ -852,6 +854,7 @@ def run_analysis():
             "age_days": p.get("age_days"),
             "sales_per_day": p.get("sales_per_day", 0.0),     # yaşa-göre satış hızı
             "reviews_per_day": p.get("reviews_per_day", 0.0),
+            "sales_series": p.get("sales_series"),            # son 13 haftalık net adet (sparkline)
             # skor alanları — sinyalli ürünler skorlu; pasif (sinyalsiz) ürünlerde None
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
