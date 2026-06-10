@@ -113,7 +113,7 @@ export default function ProductTable({ products }) {
   const [sortField, setSortField] = useState('composite_score')
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
-  const [spark, setSpark] = useState({ show: false, x: 0, y: 0, series: null, name: '' })
+  const [spark, setSpark] = useState({ show: false, left: 0, top: 0, bottom: 0, series: null, name: '' })
   const scrollBoxRef = useRef(null)
   const didMount = useRef(false)
   const light = useIsLight()
@@ -421,8 +421,7 @@ export default function ProductTable({ products }) {
                   <td className="px-2 py-2.5">
                     {p.sales_series && p.sales_series.some(v => v > 0) ? (
                       <div className="inline-block cursor-crosshair"
-                        onMouseEnter={e => setSpark({ show: true, x: e.clientX, y: e.clientY, series: p.sales_series, name: p.name })}
-                        onMouseMove={e => setSpark(s => (s.show ? { ...s, x: e.clientX, y: e.clientY } : s))}
+                        onMouseEnter={e => { const r = e.currentTarget.getBoundingClientRect(); setSpark({ show: true, left: r.left, top: r.top, bottom: r.bottom, series: p.sales_series, name: p.name }) }}
                         onMouseLeave={() => setSpark(s => ({ ...s, show: false }))}>
                         <Sparkline data={p.sales_series} />
                       </div>
@@ -467,17 +466,22 @@ export default function ProductTable({ products }) {
         </div>
       )}
 
-      {/* Sparkline hover popup — fixed konum (scroll kutusunun overflow'undan kırpılmaz) */}
-      {spark.show && spark.series && (
-        <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/10 p-2.5 shadow-2xl backdrop-blur-xl"
-          style={{
-            background: 'var(--bg-secondary)',
-            left: Math.min(spark.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 1920) - 268),
-            top: Math.min(spark.y + 14, (typeof window !== 'undefined' ? window.innerHeight : 1080) - 140),
-          }}>
-          <BigChart data={spark.series} name={spark.name} />
-        </div>
-      )}
+      {/* Sparkline hover popup — kendi sparkline'ının HEMEN ALTINA sabitlenir (imleç değil).
+          fixed konum → scroll kutusunun overflow'undan kırpılmaz; alta sığmazsa üste taşar. */}
+      {spark.show && spark.series && (() => {
+        const W = 258, H = 142, gap = 6
+        const vw = typeof window !== 'undefined' ? window.innerWidth : 1920
+        const vh = typeof window !== 'undefined' ? window.innerHeight : 1080
+        const left = Math.max(8, Math.min(spark.left, vw - W - 8))
+        const below = spark.bottom + gap + H <= vh
+        const top = below ? spark.bottom + gap : Math.max(8, spark.top - gap - H)
+        return (
+          <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/10 p-2.5 shadow-2xl backdrop-blur-xl"
+            style={{ background: 'var(--bg-secondary)', left, top }}>
+            <BigChart data={spark.series} name={spark.name} />
+          </div>
+        )
+      })()}
     </div>
   )
 }
