@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { Filter, X, Download, Search } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatCurrency, formatScore, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
@@ -482,11 +483,11 @@ export default function ProductTable({ products }) {
       )}
 
       {/* Sparkline hover popup — kendi sparkline'ının HEMEN ALTINA sabitlenir (imleç değil).
-          fixed konum → scroll kutusunun overflow'undan kırpılmaz; alta sığmazsa üste taşar. */}
-      {spark.show && spark.series && (() => {
+          PORTAL ile document.body'ye render edilir: aksi halde .card'ın backdrop-filter'ı
+          'position: fixed'i viewport yerine kendine göre konumlar → popup ~2 satır kayardı. */}
+      {spark.show && spark.series && typeof document !== 'undefined' && createPortal((() => {
         const W = BIGCHART_W + 20, H = 178, gap = 4
-        const vw = typeof window !== 'undefined' ? window.innerWidth : 1920
-        const vh = typeof window !== 'undefined' ? window.innerHeight : 1080
+        const vw = window.innerWidth, vh = window.innerHeight
         const left = Math.max(8, Math.min(spark.left, vw - W - 8))
         const below = spark.bottom + gap + H <= vh
         const top = below ? spark.bottom + gap : Math.max(8, spark.top - gap - H)
@@ -496,7 +497,7 @@ export default function ProductTable({ products }) {
             <BigChart data={spark.series} name={spark.name} />
           </div>
         )
-      })()}
+      })(), document.body)}
     </div>
   )
 }
