@@ -29,12 +29,12 @@ function jitter(id) {
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0
   return [((h % 1000) / 1000 - 0.5) * 3.0, (((h >>> 10) % 1000) / 1000 - 0.5) * 3.0]
 }
-// Kabarcık boyutu = Net Tahsilat % (komisyon+promo sonrası satıcıya kalan oran; COGS hariç).
-// Tipik aralık ~%80–97 → boyut 6–14. Veri yoksa nötr sabit boyut.
+// Kabarcık boyutu = SATIŞ HACMİ (net adet) — klasik BCG "pazar büyüklüğü" kabarcığı.
+// Alan-orantılı (yarıçap ∝ √adet) → görsel alan satışla orantılı, büyük satıcılar baskın çıkmaz.
+// (Net Tahsilat %85-89 bandında sıkışık olduğu için boyut sinyali değil; kolon/tooltip'te kalır.)
 function dotSize(p) {
-  const ret = p?.net_retention_pct
-  if (ret == null) return 7
-  return 6 + clamp((ret - 80) / 2.2, 0, 8)
+  const u = p?.units || 0
+  return 5 + clamp(Math.sqrt(u) * 1.25, 0, 13)
 }
 
 function ProductTooltip({ p }) {
@@ -61,11 +61,11 @@ function ProductTooltip({ p }) {
           </div>
         ))}
       </div>
-      {(p.net_retention_pct != null || (p.risk_rate ?? 0) > 0 || (p.sales_per_day ?? 0) > 0) && (
+      {((p.units ?? 0) > 0 || p.net_retention_pct != null || (p.risk_rate ?? 0) > 0) && (
         <div className="flex items-center justify-between gap-2 mb-2 text-[9px] font-mono text-white/40">
-          {p.net_retention_pct != null && <span title="Net Tahsilat % (komisyon+promo sonrası)">⬤ Net %{Math.round(p.net_retention_pct)}</span>}
+          {(p.units ?? 0) > 0 && <span title="Net satış adedi (kabarcık boyutu)">⬤ {p.units} adet</span>}
+          {p.net_retention_pct != null && <span title="Net Tahsilat % (komisyon+promo sonrası)">Net %{Math.round(p.net_retention_pct)}</span>}
           {(p.risk_rate ?? 0) > 0 && <span className={p.risk_rate >= 20 ? 'text-rose-400' : ''}>İade %{Math.round(p.risk_rate)}</span>}
-          {(p.sales_per_day ?? 0) > 0 && <span className="text-cyan-300/70">{p.sales_per_day.toFixed(2)}/gün</span>}
         </div>
       )}
       {p.recommendation?.action && (
@@ -143,7 +143,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
           <p className="text-[10px] font-mono text-white/30 tracking-wider">
             {zoom
               ? `🔍 ${zoomMeta.label} · ${shown.length} ürün — boşluğa tıkla: geri`
-              : `${shown.length}/${scored.length} ürün · ⬤ boyut = Net Tahsilat % · boş kadrana tıkla: yakınlaştır`}
+              : `${shown.length}/${scored.length} ürün · ⬤ boyut = satış adedi · boş kadrana tıkla: yakınlaştır`}
             {selectedCategory && (
               <button onClick={(e) => { e.stopPropagation(); onSelectCategory(null) }}
                 className="ml-2 text-gold-400 hover:text-gold-300">· {selectedCategory.category} ✕</button>

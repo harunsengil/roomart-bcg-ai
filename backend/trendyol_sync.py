@@ -226,13 +226,51 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
     return by_product, by_category, status_breakdown
 
 
-def save_to_firestore(payload: dict) -> None:
-    """Ham satış agregatını PRIVATE Firestore'a yaz (public repo'ya değil).
+def build_sales_snapshot(payload: dict, date: str) -> dict:
+    """Tarihli arşiv için YALIN satış snapshot'ı kur (kategori + ürün-bazlı, PII'siz).
+
+    Neden: Trendyol sipariş API'si ~3 ay geçmiş döndürüyor; aged-out siparişlerin cirosu
+    kalıcı kaybolur. Bu snapshot her dönemin satışını düşmeden önce arşivler → ciro trendi.
+    999'luk statik katalog tablosu DAHİL EDİLMEZ (zaman içinde değişmiyor); yalnız satış agregatı.
+    """
+    md = payload.get("metadata", {})
+    by_category = {}
+    for cat, c in payload.get("sales_by_category", {}).items():
+        by_category[cat] = {
+            "net_units": c.get("net_units", 0),
+            "net_amount": c.get("net_amount", 0.0),
+            "gross_units": c.get("gross_units", 0),
+            "distinct_products": c.get("distinct_products", 0),
+            "sales_momentum": c.get("sales_momentum"),
+        }
+    by_product, tot_nu, tot_na = {}, 0, 0.0
+    for pid, p in payload.get("sales_by_product", {}).items():
+        nu, na = p.get("net_units", 0), p.get("net_amount", 0.0)
+        tot_nu += nu
+        tot_na += na
+        by_product[pid] = {"u": nu, "a": round(na, 2)}   # slim: units + amount
+    return {
+        "date": date,
+        "generated_at": md.get("generated_at"),
+        "supplier_id": md.get("supplier_id"),
+        "orders_total": md.get("orders_total"),
+        "order_windows": md.get("order_windows"),
+        "oldest_order_date": md.get("oldest_order_date"),
+        "totals": {"net_units": tot_nu, "net_amount": round(tot_na, 2)},
+        "by_category": by_category,
+        "by_product": by_product,
+    }
+
+
+def save_sales_snapshot(payload: dict) -> None:
+    """Tarihli satış arşivini PRIVATE Firestore'a yaz: sales_history/{YYYY-MM-DD}.
+    doc id = tarih → gün başına 1, idempotent (aynı gün tekrar koşarsa o günü günceller),
+    geçmişi bozmaz. Public repo'ya ASLA (revenue = rakip istihbaratı).
     FIREBASE_SERVICE_ACCOUNT yoksa sessizce atlanır."""
     import os
     sa = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
     if not sa:
-        logger.info("FIREBASE_SERVICE_ACCOUNT yok — Firestore yazımı atlanıyor.")
+        logger.info("FIREBASE_SERVICE_ACCOUNT yok — satış arşivi yazımı atlanıyor.")
         return
     try:
         import firebase_admin
@@ -240,11 +278,12 @@ def save_to_firestore(payload: dict) -> None:
         if not firebase_admin._apps:
             firebase_admin.initialize_app(credentials.Certificate(json.loads(sa)))
         db = fs.client()
-        # Ham satış PRIVATE kalsın: ayrı doc; frontend latest payload'ına karışmaz.
-        db.collection("roomart-bcg-dev").document("sales_latest").set(payload)
-        logger.info("Firestore yazıldı: roomart-bcg-dev/sales_latest (private).")
+        date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        snap = build_sales_snapshot(payload, date)
+        db.collection("sales_history").document(date).set(snap)
+        logger.info(f"Firestore yazıldı: sales_history/{date} (private; {len(snap['by_product'])} ürün).")
     except Exception as e:
-        logger.error(f"Firestore yazımı başarısız: {e}")
+        logger.error(f"Satış arşivi yazımı başarısız: {e}")
 
 
 def main() -> None:
@@ -287,7 +326,7 @@ def main() -> None:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     logger.info(f"Kaydedildi: {OUT_FILE}")
 
-    save_to_firestore(payload)
+    save_sales_snapshot(payload)
 
     # Özet log
     top = sorted(by_category.items(), key=lambda kv: -kv[1]["net_units"])[:6]
