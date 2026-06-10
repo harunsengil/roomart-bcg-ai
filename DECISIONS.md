@@ -309,4 +309,30 @@
   olarak korundu. **Kullanıcı aksiyonu (ops.):** `ANTHROPIC_API_KEY` GitHub Secret'ı artık kullanılmıyor →
   silinebilir; `/bcg_roundtable` Realtime DB path'i de artık yazılmıyor.
 
+- **2026-06-10 — [Trendyol API zenginleştirmesi: 6 sinyal + yaşa-göre hız KPI]** (PR #14, `5924ac7`)
+  API'nin zaten çektiği `lines[]`/ürün alanlarından 6 yeni sinyal üretildi: **Net Tahsilat %**
+  (Σ(amount·(1−komisyon/100)−satıcı_indirim)/Σamount; COGS verisi YOK → "kâr/margin" DENMEZ, KDV hariç),
+  **İade %**, **kampanya/promo payı**, **varyant** (productMainId), **ürün yaşı** (createDateTime),
+  **katalog sağlığı** (arşiv/kara-liste/reddedilmiş/kilitli). Sipariş çekimi **ömür-boyu** yapıldı
+  (`fetch_orders_lifetime`, 14g pencere; 552→6452 sipariş). Evren artık on_sale **+ sağlıklı**. Yeni
+  **yaşa-göre satış hızı** `units/max(yaş,14)` (genç-yıldız adil değerlendirme); `adjust_confidence`
+  yüksek-iade/promo-şişmiş büyümeyi bir kademe düşürür. **Kullanıcı kararları:** kabarcık=marj (sonra
+  #15'te adede çevrildi), ömür-boyu sipariş geçmişi, varyant=zenginleştirme (birim contentId kalır).
+
+- **2026-06-10 — [BCG kabarcık boyutu = satış adedi]** (PR #15, `f9944e8`) Net Tahsilat % matriste
+  kabarcık boyutu seçilmişti ama veride **%85-89'da sıkışık** (komisyon tekdüze + COGS yok) → varyans
+  yok, kabarcıklar aynı boyut çıktı. Karar: kabarcık = **net satış adedi** (klasik BCG "pazar büyüklüğü",
+  alan-orantılı √adet; units 1→171 görünür fark). Net Tahsilat % kolon+tooltip'te kalır. **Güvenlik notu:**
+  `units` artık public payload'da (satış hacmi rakipçe görülebilir; PR #14'teki sales_per_day+age_days
+  zaten ima ediyordu). Ciro (TL) hâlâ tamamen private. Public dashboard kilidi açık kullanıcı kararı.
+
+- **2026-06-10 — [Tarihli satış arşivi: sales_history/{date}]** (PR #15, `f9944e8`) **Gerekçe:** Trendyol
+  sipariş API'si ~3 ay geçmiş döndürüyor (ömür-boyu çekimde en eski ~2026-03-10'da durdu); aged-out
+  siparişlerin cirosu kalıcı kaybolur. Mevcut tarihli Firestore doc'ları (BCG) sadece skor/yüzde tutuyor,
+  ciro yok. Karar: PRIVATE Firestore koleksiyonu `sales_history`, **doc id = tarih → idempotent** (gün
+  başına 1, üzerine yazmaz). İçerik **kategori + ürün-bazlı** yalın snapshot (PII'siz, 999 katalog hariç →
+  ~17KB/gün). **Public repo'ya ASLA** (revenue = rakip istihbaratı). Ölü `sales_latest` (yazılıp hiç
+  okunmayan 876KB doc, 1MiB limitine yaklaşıyordu) bunun yerine **kaldırıldı**. İleride frontend ciro-trend
+  grafiğinin zemini. Canlı doğrulandı: CI log `sales_history/2026-06-10 (private; 429 ürün)`.
+
 <!-- Yeni kararları buraya ekle -->

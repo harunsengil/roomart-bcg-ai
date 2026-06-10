@@ -6,22 +6,24 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-03
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #4 + PR #5 merge + canlı doğrulama)
-- **Aktif branch:** `main` (PR #4 + #5 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
+- **Tarih:** 2026-06-10
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #14 + PR #15 merge + canlı doğrulama)
+- **Aktif branch:** `main` (PR #14 + #15 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
   Claude Code eklentisi** (sürücü) + Chat (düşünme) ile sürüyor. ⚠️ Aynı repoda eklenti + terminal
   claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Açık kod işi yok** — PR #1–#8 main'de + roundtable kaldırıldı. Canlı: satış-tabanlı pazar payı +
->   satış-momentumu büyüme + **sadece AKTİF ürünler** (on_sale=True; tablo ~475 / matris ~254) +
->   zengin kolonlar (Liste/İndirim/Renk/Trendyol Kat./Stok) + KPI (Aktif SKU / Scored, ikon sol).
-> - **Adaylar:** `competitor_bot.py`'yi analyzer'a bağla (göreceli-pay, marka bazlı; CANLI doğrulanmamış);
->   ileri attribute kolonları (Ölçü/Özellik — `_attr` ile kolay); Aşama 2 (Supabase/Next.js göçü).
-> - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel-acil):** Trendyol API Secret'ı yenile →
->   `TRENDYOL_TOKEN`'ı güncelle (eski token sohbette göründü). **Token ŞU AN geçerli** (2026-06-03
->   CI'da satış çekti), ama sızdığı için rotasyon önerilir. Bayat token'da `analyze.yml`'in
->   "Verify Trendyol sync" adımı görünür `::warning::` verir (hardening mevcut).
+> - **Açık kod işi yok** — PR #14 (API zenginleştirmesi) + #15 (kabarcık=satış adedi + sales_history)
+>   main'de ve canlı. Canlı: satış-tabanlı pazar payı + satış-momentumu büyüme + AKTİF+SAĞLIKLI ürün
+>   evreni + **6 yeni sinyal** (Net Tahsilat %, İade %, kampanya, varyant, yaş, ömür-boyu satış) +
+>   yaşa-göre hız KPI'ı + BCG kabarcık boyutu = satış adedi. **sales_history/{tarih}** günlük arşivleniyor.
+> - **Adaylar:** (a) **Public dashboard kilidi** — `units` (satış hacmi) artık public payload'da;
+>   Firestore okuma kuralı / kimlik-korumalı Pages istenirse. (b) **sales_history üstüne ciro-trend
+>   grafiği** (frontend; veri birikmeye başladı). (c) `competitor_bot.py`'yi analyzer'a bağla
+>   (göreceli-pay, marka bazlı; CANLI doğrulanmamış). (d) Aşama 2 (Supabase/Next.js göçü).
+> - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu (eski token
+>   sohbette göründü). **Token ŞU AN geçerli** (2026-06-10 CI'da 6452 sipariş çekti). Bayat token'da
+>   `analyze.yml`'in "Verify Trendyol sync" adımı görünür `::warning::` verir.
 > - ⚠️ **Güvenlik (lokal):** `git remote origin` URL'inde plaintext GitHub PAT (`ghp_…`) var
 >   (yalnız yerel `.git/config`, commit'li değil) → rotasyon + credential-helper önerilir.
 
@@ -59,10 +61,11 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-03) PR #4 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Satış-tabanlı
-  pazar payı (X) + satış-momentumu büyüme (Y) main'de ve dashboard'da canlı. Bekleyen tek şey
-  kullanıcı aksiyonu: `TRENDYOL_TOKEN` rotasyonu (güvenlik). Sonraki büyük adım: **Aşama 2 =
-  Supabase/Next.js göçü (ayrı oturum)**.
+- **(2026-06-10) PR #14 + #15 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Trendyol API
+  zenginleştirmesi (kârlılık/iade/hız/varyant + yaşa-göre KPI) ve kabarcık=satış adedi + tarihli satış
+  arşivi (sales_history) canlı. Kullanıcı kararı bekleyen adaylar: **public dashboard kilidi** (units
+  hacmi public oldu) ve **ciro-trend grafiği** (sales_history üstüne). Sonraki büyük adım yine **Aşama 2
+  = Supabase/Next.js göçü (ayrı oturum)**.
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -75,6 +78,25 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-10) PR #15 — kabarcık=satış adedi + tarihli satış arşivi** (`f9944e8`). (1) BCG
+      kabarcık boyutu Net Tahsilat %'ten **net satış adedine** çevrildi (marj %85-89'da varyanssızdı,
+      kabarcıklar aynı boyuttaydı); `analyzer` payload'a `units`, `BCGMatrix.dotSize` alan-orantılı
+      (√adet; units 1→171). (2) **sales_history/{YYYY-MM-DD}** Firestore private arşivi: `trendyol_sync.
+      build_sales_snapshot` (yalın kategori+ürün, 17KB) + `save_sales_snapshot`; ölü `sales_latest`
+      (876KB, yazılıp hiç okunmuyordu) kaldırıldı. Gerekçe: Trendyol API ~3 ay geçmiş döndürüyor →
+      aged-out ciro arşivlenmezse kaybolur. **Canlı doğrulandı** (run 27275983962 success): CI log
+      `sales_history/2026-06-10 (private; 429 ürün)`, units 401/max171, deploy success. DECISIONS 2026-06-10.
+- [x] **(2026-06-10) PR #14 — Trendyol API zenginleştirmesi (6 sinyal + yaşa-göre hız KPI)** (`5924ac7`).
+      `trendyol_api.fetch_orders_lifetime` (14g pencere, boş-pencere/max_days tavanı) → **ömür-boyu sipariş
+      552→6452**, en eski ~2026-03-10. `trendyol_sync`: Net Tahsilat % (komisyon+promo sonrası, COGS hariç),
+      İade %, promo payı, kampanya, varyant (Model+#), ürün yaşı, katalog-sağlığı bayrakları. `analyzer`:
+      evren = on_sale **+ sağlıklı** (arşiv/kara-liste/reddedilmiş/kilitli hariç); yaşa-göre hız
+      `units/max(yaş,14)`; `adjust_confidence` (yüksek iade/promo-şişmiş büyüme bir kademe düşürür); yeni
+      KPI avg_sales_velocity/avg_net_retention/high_return_count; yeni uyarı (yüksek iade + kârsız hacim).
+      Frontend: ProductTable +5 kolon (17→22, %100) + kampanya 🏷️; KPISection "Ort. Satış Hızı" (grid 9→10).
+      **Sonuç:** satışı olan ürün 214→430, sinyalli 261→402, ürün-BCG STAR140/CC64/QM87/DOG112 (268-DOG bitti).
+      **Canlı doğrulandı** (run 27269783973 success). Kararlar (kullanıcı): kabarcık=marj→(sonra adet),
+      ömür-boyu sipariş, varyant=zenginleştirme. DECISIONS 2026-06-10.
 - [x] **(2026-06-08) Products tablo layout — sayfaya sığar** (PR #10, `4574235`). `table-fixed`+`colgroup`
       (17 kolon %100) → yatay scroll yok; ürün adı `line-clamp-3` (max 3 satır, Product %17 en geniş);
       Category/Trendyol/Renk + başlıklar wrap; padding küçültüldü; BCG rozeti kısa kod (QM/CC, tam ad
