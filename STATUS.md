@@ -7,16 +7,18 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-06-10
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #14 + PR #15 merge + canlı doğrulama)
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #14–#17 merge + canlı doğrulama)
 - **Aktif branch:** `main` (PR #14 + #15 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
   Claude Code eklentisi** (sürücü) + Chat (düşünme) ile sürüyor. ⚠️ Aynı repoda eklenti + terminal
   claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 > - **Açık kod işi yok** — PR #14 (API zenginleştirmesi) + #15 (kabarcık=satış adedi + sales_history)
->   main'de ve canlı. Canlı: satış-tabanlı pazar payı + satış-momentumu büyüme + AKTİF+SAĞLIKLI ürün
->   evreni + **6 yeni sinyal** (Net Tahsilat %, İade %, kampanya, varyant, yaş, ömür-boyu satış) +
->   yaşa-göre hız KPI'ı + BCG kabarcık boyutu = satış adedi. **sales_history/{tarih}** günlük arşivleniyor.
+>   + #16 (satış sparkline'ı, son 13 hafta) + #17 (sparkline hover konumu) main'de ve canlı. Canlı:
+>   satış-tabanlı pazar payı + satış-momentumu büyüme + AKTİF+SAĞLIKLI ürün evreni + **6 yeni sinyal**
+>   (Net Tahsilat %, İade %, kampanya, varyant, yaş, ömür-boyu satış) + yaşa-göre hız KPI'ı + BCG
+>   kabarcık boyutu = satış adedi + **'Satış 3a' sparkline kolonu** (hover→büyük grafik).
+>   **sales_history/{tarih}** günlük arşivleniyor.
 > - **Adaylar:** (a) **Public dashboard kilidi** — `units` (satış hacmi) artık public payload'da;
 >   Firestore okuma kuralı / kimlik-korumalı Pages istenirse. (b) **sales_history üstüne ciro-trend
 >   grafiği** (frontend; veri birikmeye başladı). (c) `competitor_bot.py`'yi analyzer'a bağla
@@ -61,11 +63,12 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-10) PR #14 + #15 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Trendyol API
-  zenginleştirmesi (kârlılık/iade/hız/varyant + yaşa-göre KPI) ve kabarcık=satış adedi + tarihli satış
-  arşivi (sales_history) canlı. Kullanıcı kararı bekleyen adaylar: **public dashboard kilidi** (units
-  hacmi public oldu) ve **ciro-trend grafiği** (sales_history üstüne). Sonraki büyük adım yine **Aşama 2
-  = Supabase/Next.js göçü (ayrı oturum)**.
+- **(2026-06-10) PR #14–#17 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Trendyol API
+  zenginleştirmesi (kârlılık/iade/hız/varyant + yaşa-göre KPI), kabarcık=satış adedi + tarihli satış
+  arşivi (sales_history), ürün **satış sparkline'ı** (son 13 hafta, hover→büyük grafik kendi satırının
+  altında) canlı. Kullanıcı kararı bekleyen adaylar: **public dashboard kilidi** (units + haftalık satış
+  hacmi public oldu) ve **ciro-trend grafiği** (sales_history üstüne; veri günlük birikiyor). Sonraki
+  büyük adım yine **Aşama 2 = Supabase/Next.js göçü (ayrı oturum)**.
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -78,6 +81,14 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-10) PR #16 + #17 — ürün satış sparkline'ı (son 13 hafta) + hover grafik** (`fcc7585`,
+      `679723e`). ProductTable'a **'Satış 3a'** kolonu (Sat. Hızı yanı): bağımlılıksız inline SVG
+      sparkline (recharts değil, 402 satır perf); hover'da **fixed-position büyük grafik** (alan+nokta+
+      "Son 13 hafta · toplam N adet") — #17 ile imleç yerine **kendi sparkline'ının hemen altına**
+      sabitlendi (getBoundingClientRect, alta sığmazsa üste taşar). Veri: `trendyol_sync` ürün başına
+      **haftalık net-adet serisi** (SERIES_WEEKS=13), ömür-boyu siparişlerden tek seferde (history
+      beklemez; toplam=net_units ✓); `analyzer` → `sales_series` payload'da. colgroup 22→23 %100; CSV'ye
+      seri. **Canlı doğrulandı** (run 27277800125 success; sales_series 401/473; deploy success).
 - [x] **(2026-06-10) PR #15 — kabarcık=satış adedi + tarihli satış arşivi** (`f9944e8`). (1) BCG
       kabarcık boyutu Net Tahsilat %'ten **net satış adedine** çevrildi (marj %85-89'da varyanssızdı,
       kabarcıklar aynı boyuttaydı); `analyzer` payload'a `units`, `BCGMatrix.dotSize` alan-orantılı

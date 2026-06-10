@@ -335,4 +335,14 @@
   okunmayan 876KB doc, 1MiB limitine yaklaşıyordu) bunun yerine **kaldırıldı**. İleride frontend ciro-trend
   grafiğinin zemini. Canlı doğrulandı: CI log `sales_history/2026-06-10 (private; 429 ürün)`.
 
+- **2026-06-10 — [Ürün satış sparkline'ı: kaynak = ömür-boyu siparişler, sales_history değil]** (PR #16
+  `fcc7585` + #17 `679723e`) ProductTable'a son 13 haftalık satış çizgisi (sparkline) + hover'da büyük
+  grafik. **Veri kaynağı kararı:** `sales_history` arşivi yeni başladığı için (1 gün) ondan 3 ay çizilemez;
+  seri bunun yerine `trendyol_sync`'in zaten çektiği **ömür-boyu siparişlerden** her koşuda taze hesaplanır
+  (`sales_series`, haftalık net-adet, SERIES_WEEKS=13; toplam=net_units) → şimdi çalışır, arşiv birikimini
+  beklemez. **Render kararı:** inline SVG sparkline (recharts DEĞİL — 100 satır/sayfa × instans perf).
+  **Konum (#17):** hover grafiği imleç yerine `getBoundingClientRect` ile **kendi sparkline'ının altına**
+  sabit (alta sığmazsa üste taşar); fixed konum → tablo scroll overflow'undan kırpılmaz. **Güvenlik:**
+  haftalık satış adedi de public payload'a girer (units gibi kabul edilen hacim; ciro değil, hâlâ private).
+
 <!-- Yeni kararları buraya ekle -->
