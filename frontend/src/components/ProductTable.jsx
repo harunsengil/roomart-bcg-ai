@@ -82,23 +82,38 @@ function Sparkline({ data, w = 64, h = 20 }) {
   )
 }
 
-// Hover'da gösterilen büyük grafik (alan dolgulu + nokta + özet).
+// Hover'da gösterilen büyük grafik: alan + nokta + her haftanın ADET değeri (üstte) + özet.
+export const BIGCHART_W = 320
 function BigChart({ data, name }) {
-  const w = 240, h = 96, pad = 8, n = data.length, max = Math.max(...data, 1)
-  const x = i => pad + (i / (n - 1)) * (w - 2 * pad)
-  const y = v => h - pad - (v / max) * (h - 2 * pad)
+  const w = BIGCHART_W, h = 132, padX = 14, padTop = 20, padBot = 26
+  const n = data.length, max = Math.max(...data, 1)
+  const x = i => padX + (i / (n - 1)) * (w - 2 * padX)
+  const y = v => h - padBot - (v / max) * (h - padTop - padBot)
   const line = data.map((v, i) => `${x(i)},${y(v)}`).join(' ')
-  const area = `${x(0)},${h - pad} ${line} ${x(n - 1)},${h - pad}`
+  const area = `${x(0)},${h - padBot} ${line} ${x(n - 1)},${h - padBot}`
   const total = data.reduce((a, b) => a + b, 0)
+  const maxIdx = data.indexOf(max)
   return (
     <div>
-      <div className="text-[10px] font-mono text-white/70 mb-1 truncate" style={{ maxWidth: w }}>{name}</div>
+      <div className="text-[10px] font-mono text-white/70 mb-1.5 truncate" style={{ maxWidth: w }}>{name}</div>
       <svg width={w} height={h}>
-        <polygon points={area} fill="#22D3EE22" />
+        <polygon points={area} fill="#22D3EE1f" />
         <polyline points={line} fill="none" stroke="#22D3EE" strokeWidth="1.8" strokeLinejoin="round" />
-        {data.map((v, i) => <circle key={i} cx={x(i)} cy={y(v)} r="2" fill="#22D3EE" />)}
+        {data.map((v, i) => (
+          <g key={i}>
+            <circle cx={x(i)} cy={y(v)} r="2.2" fill="#22D3EE" />
+            {/* her haftanın adedi noktanın üstünde (0 ise gizle) */}
+            {v > 0 && <text x={x(i)} y={y(v) - 6} fontSize="8.5" fontFamily="monospace"
+              fill={i === maxIdx ? '#67e8f9' : 'rgba(255,255,255,0.55)'} textAnchor="middle">{v}</text>}
+            {/* alt eksen: hafta etiketi (yalnız ilk/son) */}
+            {(i === 0 || i === n - 1) && <text x={x(i)} y={h - 8} fontSize="8" fontFamily="monospace"
+              fill="rgba(255,255,255,0.3)" textAnchor={i === 0 ? 'start' : 'end'}>{i === 0 ? `${n}h önce` : 'bu hafta'}</text>}
+          </g>
+        ))}
       </svg>
-      <div className="text-[9px] font-mono text-white/40 mt-1">Son {n} hafta · toplam {total} adet</div>
+      <div className="text-[9px] font-mono text-white/45 mt-1">
+        Son {n} hafta · toplam <span className="text-white/70">{total}</span> adet · en yüksek <span className="text-cyan-300">{max}</span>
+      </div>
     </div>
   )
 }
@@ -469,7 +484,7 @@ export default function ProductTable({ products }) {
       {/* Sparkline hover popup — kendi sparkline'ının HEMEN ALTINA sabitlenir (imleç değil).
           fixed konum → scroll kutusunun overflow'undan kırpılmaz; alta sığmazsa üste taşar. */}
       {spark.show && spark.series && (() => {
-        const W = 258, H = 142, gap = 6
+        const W = BIGCHART_W + 20, H = 178, gap = 4
         const vw = typeof window !== 'undefined' ? window.innerWidth : 1920
         const vh = typeof window !== 'undefined' ? window.innerHeight : 1080
         const left = Math.max(8, Math.min(spark.left, vw - W - 8))
