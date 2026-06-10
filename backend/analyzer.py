@@ -842,7 +842,8 @@ def run_analysis():
             "color": p.get("color"),               # renk (attribute)
             "category_name": p.get("category_name"),  # Trendyol kategorisi (referans)
             # API zenginleştirme (pasif üründe de dolu olabilir)
-            "net_retention_pct": p.get("net_retention_pct"),  # Net Tahsilat % (kabarcık + kolon)
+            "units": p.get("units", 0),                       # net satış adedi (BCG kabarcık boyutu)
+            "net_retention_pct": p.get("net_retention_pct"),  # Net Tahsilat % (kolon + tooltip)
             "risk_rate": p.get("risk_rate", 0.0),             # iade/iptal %
             "promo_share": p.get("promo_share", 0.0),
             "has_campaign": p.get("has_campaign", False),
