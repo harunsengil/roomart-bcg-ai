@@ -86,11 +86,18 @@ def aggregate_products(products: list) -> tuple[dict, dict]:
     (sipariş satırları kataloğa SADECE barcode ile %100 bağlanıyor — doğrulandı 2026-06-02).
     """
     table, barcode_to_content = {}, {}
+    # Varyant sayımı: aynı productMainId'i (ör. "DEFNE90") paylaşan renk/beden kardeşleri.
+    main_counts: dict = {}
+    for p in products:
+        mid = p.get("productMainId")
+        if mid:
+            main_counts[mid] = main_counts.get(mid, 0) + 1
     for p in products:
         cid = str(p.get("productContentId") or p.get("id"))
         bc = p.get("barcode")
         if bc:
             barcode_to_content[str(bc)] = cid
+        mid = p.get("productMainId")
         table[cid] = {
             "barcode": bc,
             "title": p.get("title"),
@@ -107,6 +114,16 @@ def aggregate_products(products: list) -> tuple[dict, dict]:
             # Kolon zenginleştirme: Trendyol'un kendi kategorisi (referans) + Renk (attribute).
             "category_name": p.get("categoryName"),
             "color": _attr(p.get("attributes"), "Renk"),
+            # API zenginleştirme: ürün yaşı (createDateTime, epoch ms) → analyzer'da age_days/hız;
+            # kampanya bayrağı; varyant modeli + kardeş sayısı; katalog-sağlığı bayrakları (evren filtresi).
+            "created_at": p.get("createDateTime"),
+            "has_campaign": bool(p.get("hasActiveCampaign")),
+            "product_main_id": mid,
+            "variant_count": main_counts.get(mid, 1) if mid else 1,
+            "archived": bool(p.get("archived")),
+            "blacklisted": bool(p.get("blacklisted")),
+            "rejected": bool(p.get("rejected")),
+            "locked": bool(p.get("locked")),
         }
     return table, barcode_to_content
 
@@ -136,6 +153,8 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
             cat = _categorize(name)
             qty = int(ln.get("quantity", 0) or 0)
             amount = float(ln.get("amount", 0) or 0)
+            commission = float(ln.get("commission", 0) or 0)        # Trendyol komisyon %
+            seller_disc = float(ln.get("lineSellerDiscount", 0) or 0)  # satıcı-finanse promo
             status = ln.get("orderLineItemStatusName", "?")
             status_breakdown[status] = status_breakdown.get(status, 0) + qty
             is_net = status not in EXCLUDED_LINE_STATUSES
@@ -146,13 +165,21 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
                 "product_name": name, "barcode": ln.get("barcode"), "category": cat,
                 "gross_units": 0, "gross_amount": 0.0, "net_units": 0, "net_amount": 0.0,
                 "order_lines": 0, "units_recent": 0, "units_prior": 0,
+                # Net Tahsilat % + risk + promo için biriktiriciler (yalnız NET kalemlerden)
+                "_comm_w": 0.0, "_seller_disc": 0.0, "risk_units": 0, "promo_units": 0,
             })
             bp["gross_units"] += qty
             bp["gross_amount"] = round(bp["gross_amount"] + amount, 2)
             bp["order_lines"] += 1
+            if not is_net:
+                bp["risk_units"] += qty
             if is_net:
                 bp["net_units"] += qty
                 bp["net_amount"] = round(bp["net_amount"] + amount, 2)
+                bp["_comm_w"] += amount * commission          # amount-ağırlıklı komisyon payı
+                bp["_seller_disc"] += seller_disc
+                if seller_disc > 0:
+                    bp["promo_units"] += qty
                 if win == "recent":
                     bp["units_recent"] += qty
                 elif win == "prior":
@@ -177,6 +204,22 @@ def aggregate_sales(orders: list, barcode_to_content: dict) -> tuple[dict, dict,
     # momentum skoru (ürün + kategori); set → sayı
     for d in by_product.values():
         d["sales_momentum"] = _momentum_score(d["units_recent"], d["units_prior"])
+        # Net Tahsilat %: komisyon+satıcı-promo sonrası satıcıya kalan oran (COGS HARİÇ — kâr değil).
+        # = Σ(amount·(1−komisyon/100) − satıcı_indirim) / Σ(amount) × 100, NET kalemlerden.
+        net_amt = d.get("net_amount", 0.0)
+        comm_w = d.pop("_comm_w", 0.0)
+        seller_disc = d.pop("_seller_disc", 0.0)
+        if net_amt > 0:
+            kept = net_amt - comm_w / 100.0 - seller_disc
+            d["net_retention_pct"] = round(max(0.0, min(100.0, kept / net_amt * 100)), 1)
+        else:
+            d["net_retention_pct"] = None
+        # İade/iptal oranı: gross adetin içinde iptal/iade/teslim-edilemeyen payı.
+        gu = d.get("gross_units", 0)
+        d["risk_rate"] = round(d["risk_units"] / gu * 100, 1) if gu > 0 else 0.0
+        # Promo payı: satıcı-indirimli net adet / net adet (kampanya-şişmesi sinyali).
+        nu = d.get("net_units", 0)
+        d["promo_share"] = round(d.get("promo_units", 0) / nu * 100, 1) if nu > 0 else 0.0
     for c in by_category.values():
         c["distinct_products"] = len(c.pop("products"))
         c["sales_momentum"] = _momentum_score(c["units_recent"], c["units_prior"])
@@ -210,8 +253,15 @@ def main() -> None:
 
     products = ty.fetch_all_products(sess, sid)
     logger.info(f"Ürün çekildi: {len(products)}")
-    orders = ty.fetch_all_orders(sess, sid)
-    logger.info(f"Sipariş çekildi: {len(orders)}")
+    # Ömür-boyu sipariş: 14 günlük pencerelerle geriye; boş-pencere/tavanla dur (CI maliyet sınırı).
+    orders, ostats = ty.fetch_orders_lifetime(sess, sid)
+    oldest_iso = None
+    if ostats.get("oldest_order_ms"):
+        oldest_iso = datetime.fromtimestamp(ostats["oldest_order_ms"] / 1000, timezone.utc).isoformat()
+    logger.info(
+        f"Sipariş çekildi: {len(orders)} | pencere={ostats['windows']} "
+        f"| en eski={oldest_iso} | tavan={ostats['max_days']}g hit={ostats['hit_cap']}"
+    )
 
     prod_table, barcode_to_content = aggregate_products(products)
     by_product, by_category, status_breakdown = aggregate_sales(orders, barcode_to_content)
@@ -222,6 +272,9 @@ def main() -> None:
             "supplier_id": sid,
             "products_total": len(products),
             "orders_total": len(orders),
+            "order_windows": ostats["windows"],
+            "oldest_order_date": oldest_iso,
+            "order_history_capped": ostats["hit_cap"],
             "status_breakdown": status_breakdown,
             "note": "Müşteri PII'si hariç tutuldu; yalnız ürün/adet/ciro agregatı.",
         },

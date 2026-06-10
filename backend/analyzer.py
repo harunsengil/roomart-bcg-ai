@@ -43,6 +43,10 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 
 # Büyüme güveninin "yeterli" sayılması için gereken farklı snapshot günü
 CONFIDENCE_MIN_DAYS = 14
+# Yaşa-göre hız paydası alt sınırı: çok yeni ürünlerde (yaş→0) hızın patlamasını engeller.
+VELOCITY_AGE_FLOOR_DAYS = 14
+# İade/iptal oranı bu eşiğin üstündeyse güven bir kademe düşer + uyarı üretilir.
+HIGH_RETURN_PCT = 20.0
 
 # RoomArt'ın Trendyol merchantId'si. Snapshot okuma katmanında bu merchantId'e
 # sahip OLMAYAN tüm ürünler (mobilya dışı gürültü: iPhone vb.) elenir.
@@ -324,6 +328,22 @@ def confidence_level(has_trends, has_momentum, n_days, growth_basis="reviews"):
     return "low"
 
 
+_CONF_ORDER = ["low", "medium", "high"]
+
+
+def adjust_confidence(level, risk_rate=0.0, has_campaign=False, promo_share=0.0, growth_score=50.0):
+    """Güveni veri-kalitesi sinyalleriyle bir kademe DÜŞÜR (asla yükseltmez):
+      • yüksek iade/iptal (risk_rate ≥ HIGH_RETURN_PCT): satış sinyali gürültülü.
+      • promo-şişmiş büyüme: aktif kampanya + yüksek promo payı + yüksek büyüme skoru
+        → momentum organik değil, indirim kaynaklı olabilir.
+    Eşik altıysa dokunmaz (mevcut davranışla geriye uyumlu)."""
+    idx = _CONF_ORDER.index(level) if level in _CONF_ORDER else 1
+    promo_inflated = has_campaign and promo_share >= 50.0 and growth_score >= 60.0
+    if (risk_rate or 0) >= HIGH_RETURN_PCT or promo_inflated:
+        idx = max(0, idx - 1)
+    return _CONF_ORDER[idx]
+
+
 # ── Öneri motoru (GERÇEK alanlar: puan + fiyat konumu) ────────────────────────
 def generate_recommendation(product, bcg_class, cat_products):
     """
@@ -411,6 +431,22 @@ def detect_alerts(scored):
         add("SUCCESS", "INFO", f"{p['category']} — lider STAR",
             f"{p['name'][:60]} pay {p['share_score']:.0f}, büyüme {p['growth_score']:.0f}.",
             p["id"])
+
+    # Yüksek iade/iptal riski: satış görünür ama iade oranı eşik üstü → kalite/iade incelemesi.
+    high_return = [p for p in scored if (p.get("risk_rate") or 0) >= HIGH_RETURN_PCT]
+    for p in sorted(high_return, key=lambda x: -x["risk_rate"])[:2]:
+        add("RISK", "HIGH", f"{p['category']} — yüksek iade riski",
+            f"{p['name'][:60]} iade/iptal oranı %{p['risk_rate']:.0f}. Kalite/lojistik incele.",
+            p["id"])
+
+    # Kârsız hacim: çok satan ama Net Tahsilat düşük → komisyon+promo marjı yiyor.
+    profitable_pool = [p for p in scored
+                       if p.get("net_retention_pct") is not None and p["net_retention_pct"] < 84
+                       and (p.get("sales_per_day") or 0) > 0]
+    for p in sorted(profitable_pool, key=lambda x: -x["sales_per_day"])[:2]:
+        add("RISK", "INFO", f"{p['category']} — kârsız hacim uyarısı",
+            f"{p['name'][:60]} hızlı satıyor ama Net Tahsilat %{p['net_retention_pct']:.0f} "
+            f"(komisyon+promo marjı eritiyor).", p["id"])
 
     return alerts
 
@@ -624,14 +660,22 @@ def run_analysis():
     # Tablo = tüm aktif ürünler; BCG matrisi = aktif ∩ SİNYAL-taşıyan (snapshot'ta yorum VEYA
     # gerçek satış). Aktif ama sinyalsiz ürünler tabloda görünür, skoru None'dur.
     api_products = sales_doc.get("products", {})  # contentId → {title, sale_price, stock, on_sale, ...}
-    active_api = {pid: a for pid, a in api_products.items() if a.get("on_sale") is True}
+    # Katalog-sağlığı: on_sale olsa bile arşivli/kara-listeli/reddedilmiş/kilitli ürünler
+    # gerçek satılabilir evrende DEĞİL → evrenden ayıkla (daha temiz/güvenilir matris).
+    def _healthy(a):
+        return not (a.get("archived") or a.get("blacklisted") or a.get("rejected") or a.get("locked"))
+    on_sale = {pid: a for pid, a in api_products.items() if a.get("on_sale") is True}
+    active_api = {pid: a for pid, a in on_sale.items() if _healthy(a)}
+    health_filtered = len(on_sale) - len(active_api)
     if api_products:
-        logger.info(f"API kataloğu: {len(api_products)} ürün → {len(active_api)} AKTİF (on_sale=True); "
-                    f"{len(api_products) - len(active_api)} pasif/stoksuz analiz DIŞI.")
+        logger.info(f"API kataloğu: {len(api_products)} ürün → {len(on_sale)} satışta (on_sale=True) "
+                    f"→ {len(active_api)} SAĞLIKLI aktif; {len(api_products) - len(on_sale)} pasif/stoksuz, "
+                    f"{health_filtered} arşiv/kara-liste/reddedilmiş/kilitli analiz DIŞI.")
 
     # Evren = aktif API ürünleri. API yoksa (sync başarısız) snapshot'a düş — aktif filtre
     # uygulanamaz ama analiz çökmesin (graceful degradation).
     all_pids = set(active_api.keys()) if active_api else set(current.keys())
+    now_ms = datetime.now(timezone.utc).timestamp() * 1000
     products = []
     excluded = 0
     for pid in all_pids:
@@ -661,6 +705,21 @@ def run_analysis():
             discount = round(100 * (1 - price / list_price))
         color = api.get("color")                   # attribute "Renk"
         category_name = api.get("category_name")   # Trendyol'un kendi kategorisi (referans)
+        # ── API zenginleştirme: kârlılık / risk / kampanya / varyant / yaş & hız ──
+        net_retention_pct = srec.get("net_retention_pct")  # komisyon+promo sonrası satıcıya kalan % (COGS hariç)
+        risk_rate = srec.get("risk_rate", 0.0)             # iade/iptal oranı %
+        promo_share = srec.get("promo_share", 0.0)         # satıcı-indirimli net satış payı %
+        has_campaign = bool(api.get("has_campaign"))       # ürün aktif kampanyada mı
+        product_main_id = api.get("product_main_id")       # varyant modeli (ör. DEFNE90)
+        variant_count = api.get("variant_count", 1)        # aynı modeldeki renk/beden kardeşi sayısı
+        created_at = api.get("created_at")                 # listeleme tarihi (epoch ms)
+        age_days = None
+        if created_at:
+            age_days = max(0, round((now_ms - created_at) / 86_400_000))
+        # Yaşa-göre hız: çok genç ürünün hızını şişirmemek için payda max(yaş, taban).
+        denom = max(age_days or 0, VELOCITY_AGE_FLOOR_DAYS)
+        sales_per_day = round(units / denom, 3) if (units and denom) else 0.0
+        reviews_per_day = round(review_count / denom, 3) if (review_count and denom) else 0.0
         # SİNYAL: snapshot'ta var (yorum verisi) VEYA gerçek satış>0 → matriste skorlanır.
         has_signal = (raw is not None) or units > 0
         products.append({
@@ -677,6 +736,16 @@ def run_analysis():
             "discount": discount,             # indirim % (None → "—")
             "color": color,                   # renk (attribute)
             "category_name": category_name,   # Trendyol kategorisi (referans; bizim BCG kategorisi ≠)
+            # API zenginleştirme alanları (tabloya/matrise gider)
+            "net_retention_pct": net_retention_pct,  # Net Tahsilat % (kabarcık boyutu + kolon)
+            "risk_rate": risk_rate,                   # iade/iptal %
+            "promo_share": promo_share,               # kampanya-şişmesi sinyali
+            "has_campaign": has_campaign,
+            "product_main_id": product_main_id,
+            "variant_count": variant_count,
+            "age_days": age_days,
+            "sales_per_day": sales_per_day,           # yaşa-göre satış hızı (adet/gün)
+            "reviews_per_day": reviews_per_day,       # yaşa-göre yorum hızı (yorum/gün)
             # iç hesaplama alanları (frontend'e gitmez)
             "fiyat": price,
             "puan": rating,
@@ -732,6 +801,9 @@ def run_analysis():
         bcg = classify_bcg(p["_share"], p["_growth"], share_thr, growth_thr)
         rec = generate_recommendation(p, bcg, by_cat[p["category"]])
         conf = confidence_level(p["_has_trends"], p["_has_momentum"], n_days, p["_growth_basis"])
+        # Veri-kalitesi düzeltmesi: yüksek iade veya promo-şişmiş büyüme güveni düşürür.
+        conf = adjust_confidence(conf, p.get("risk_rate", 0.0), p.get("has_campaign", False),
+                                 p.get("promo_share", 0.0), p["_growth"])
         scored.append({
             "id": p["id"], "name": p["name"], "category": p["category"],
             "price": p["price"], "rating": p["rating"], "review_count": p["review_count"],
@@ -742,6 +814,10 @@ def run_analysis():
             "bcg_class": bcg, "recommendation": rec,
             "composite_score": round((p["_share"] + p["_growth"]) / 2, 1),
             "confidence": conf,
+            # alerts + tablo için taşı (kabarcık/risk)
+            "net_retention_pct": p.get("net_retention_pct"),
+            "risk_rate": p.get("risk_rate", 0.0),
+            "sales_per_day": p.get("sales_per_day", 0.0),
         })
 
     # ── Birleşik ürün dizisi (192 hepsi; DİĞER dahil) — frontend tablo/atama için ──
@@ -765,6 +841,16 @@ def run_analysis():
             "discount": p.get("discount"),         # indirim % (None → "—")
             "color": p.get("color"),               # renk (attribute)
             "category_name": p.get("category_name"),  # Trendyol kategorisi (referans)
+            # API zenginleştirme (pasif üründe de dolu olabilir)
+            "net_retention_pct": p.get("net_retention_pct"),  # Net Tahsilat % (kabarcık + kolon)
+            "risk_rate": p.get("risk_rate", 0.0),             # iade/iptal %
+            "promo_share": p.get("promo_share", 0.0),
+            "has_campaign": p.get("has_campaign", False),
+            "product_main_id": p.get("product_main_id"),      # varyant modeli
+            "variant_count": p.get("variant_count", 1),
+            "age_days": p.get("age_days"),
+            "sales_per_day": p.get("sales_per_day", 0.0),     # yaşa-göre satış hızı
+            "reviews_per_day": p.get("reviews_per_day", 0.0),
             # skor alanları — sinyalli ürünler skorlu; pasif (sinyalsiz) ürünlerde None
             "share_score": sc["share_score"] if sc else None,
             "growth_score": sc["growth_score"] if sc else None,
@@ -788,6 +874,17 @@ def run_analysis():
     # "Scored" = matriste skorlanan sinyalli ürünler (~261; quadrant toplamıyla tutarlı).
     payload["kpis"]["total_products"] = len(products_payload)
     payload["kpis"]["scored_products"] = len(scored)
+    # Yeni KPI'lar: yaşa-göre satış hızı (winsorize'lı ort.) + ort. Net Tahsilat + yüksek iade sayısı.
+    velocities = sorted(p["sales_per_day"] for p in products_payload if (p.get("sales_per_day") or 0) > 0)
+    if velocities:
+        cut = max(1, int(len(velocities) * 0.05))          # üst %5 winsorize (outlier dampening)
+        capped = velocities[:-cut] if len(velocities) > 2 * cut else velocities
+        payload["kpis"]["avg_sales_velocity"] = round(sum(capped) / len(capped), 2)
+    else:
+        payload["kpis"]["avg_sales_velocity"] = 0.0
+    retentions = [p["net_retention_pct"] for p in products_payload if p.get("net_retention_pct") is not None]
+    payload["kpis"]["avg_net_retention"] = round(sum(retentions) / len(retentions), 1) if retentions else 0.0
+    payload["kpis"]["high_return_count"] = sum(1 for p in products_payload if (p.get("risk_rate") or 0) >= HIGH_RETURN_PCT)
 
     # Ham skor dosyası (debug/denetim için)
     bcg_scores = {
@@ -798,6 +895,7 @@ def run_analysis():
             "catalog_total": len(products_payload),  # aktif ürün sayısı (tablo evreni)
             "active_total": len(products_payload),   # aktif (on_sale=True) — açık ad
             "passive_count": passive_count,          # aktif ama sinyalsiz (skorsuz; tablo-only)
+            "health_filtered": health_filtered,      # on_sale ama arşiv/kara-liste/reddedilmiş/kilitli (evren dışı)
             "other_count": sum(1 for p in analyzable if p["category"] == OTHER_CATEGORY),  # DİĞER (skorlu)
             "excluded_count": excluded,              # category_map "Hariç Tut" (analiz dışı; DİĞER değil)
 

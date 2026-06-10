@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Package, Grid3X3, Star, AlertTriangle, TrendingUp, BarChart3, Activity, Target } from 'lucide-react'
+import { Package, Grid3X3, Star, AlertTriangle, TrendingUp, BarChart3, Activity, Target, Zap } from 'lucide-react'
 import { formatNumber } from '../utils/helpers'
 
 const cardVariants = {
@@ -71,11 +71,12 @@ export default function KPISection({ kpis, categories }) {
     { icon: Activity, label: 'Question Marks', value: kpis.question_marks, sub: 'Requires decision', accent: '#3B82F6', pulse: true },
     { icon: AlertTriangle, label: 'Risk Products', value: kpis.risk_products, sub: 'Dogs + Question Marks', accent: '#EF4444', pulse: kpis.risk_products > 0 },
     { icon: TrendingUp, label: 'Avg Trend Score', value: kpis.avg_trend_score, sub: 'Google Trends index', accent: '#06B6D4', pulse: false },
+    { icon: Zap, label: 'Ort. Satış Hızı', value: kpis.avg_sales_velocity, sub: 'adet/gün · yaşa göre', accent: '#22D3EE', pulse: false, tooltip: kpis.avg_net_retention != null ? `Ort. Net Tahsilat %${kpis.avg_net_retention} · ${kpis.high_return_count ?? 0} yüksek-iadeli ürün` : undefined },
     { icon: AlertTriangle, label: 'High Alerts', value: kpis.high_priority_alerts, sub: 'Require immediate action', accent: '#F97316', pulse: kpis.high_priority_alerts > 0 },
   ]
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-10 gap-3">
       {cards.map((card, i) => (
         <KPICard key={card.label} {...card} index={i} />
       ))}
