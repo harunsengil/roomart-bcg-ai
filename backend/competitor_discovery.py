@@ -56,6 +56,15 @@ def _merchant(html):
     return None, None
 
 
+def _store_url(html, mid):
+    """Ürün sayfasından bu satıcının GERÇEK mağaza linkini çıkar: /magaza/<slug>-m-<mid>.
+    (sr?mid= kalıbı 404 verir; doğru biçim slug içerir ve competitors.json formatıyla aynı.)"""
+    m = re.search(r'/magaza/([a-z0-9-]+-m-' + str(mid) + r')', html)
+    if m:
+        return "https://www.trendyol.com/magaza/" + m.group(1)
+    return None
+
+
 def _rating_price(html):
     puan, deg, fiyat = 0.0, 0, 0.0
     rs = re.search(r'"ratingScore":\s*\{([^}]*)\}', html)
@@ -100,7 +109,7 @@ def discover_category(page, category, query):
     urls = _collect_search_urls(page, query, PER_CATEGORY)
     print(f"  {len(urls)} ürün taranıyor...")
     agg = defaultdict(lambda: {"name": "", "products": 0, "reviews": 0,
-                               "rating_sum": 0.0, "rated": 0, "sample": ""})
+                               "rating_sum": 0.0, "rated": 0, "sample": "", "store_url": ""})
     for i, url in enumerate(urls, 1):
         try:
             r = page.goto(url, wait_until="domcontentloaded", timeout=30000)
@@ -123,6 +132,8 @@ def discover_category(page, category, query):
             a["rated"] += 1
         if not a["sample"]:
             a["sample"] = url
+        if not a["store_url"]:
+            a["store_url"] = _store_url(html, mid) or ""
         if i % 10 == 0:
             print(f"    {i}/{len(urls)}")
     rows = []
@@ -133,6 +144,7 @@ def discover_category(page, category, query):
             "products_seen": a["products"],
             "total_reviews": a["reviews"],
             "avg_rating": round(a["rating_sum"] / a["rated"], 2) if a["rated"] else None,
+            "store_url": a["store_url"],         # gerçek mağaza linki (/magaza/<slug>-m-<id>)
             "sample_url": a["sample"],
         })
     rows.sort(key=lambda x: -x["total_reviews"])
