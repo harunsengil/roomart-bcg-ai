@@ -23,6 +23,7 @@ NOT:
 from playwright.sync_api import sync_playwright
 import json
 import re
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -37,7 +38,10 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
-MAX_PAGES = 12        # mağaza başına sayfa tavanı (CI maliyeti + kibarlık)
+MAX_PAGES = 5         # mağaza başına sayfa tavanı (CI maliyeti + kibarlık).
+                      # Trendyol "Önerilen" sırası popüler/çok-yorumlu ürünleri öne alır →
+                      # ilk 5 sayfa rakibin güçlü ürünlerini yakalar; en-çok-yorumlu seçimi
+                      # ayrıca competitor_analyzer'da kategori başına top-N ile yapılır.
 
 
 def parse_rating_price(html):
@@ -260,6 +264,11 @@ def load_existing_output():
 
 def calistir():
     stores = load_competitor_stores()
+    # Dev/test: argümanla mağaza sayısını sınırla (ör. `competitor_bot.py 6` → ilk 6 mağaza).
+    if len(sys.argv) > 1 and sys.argv[1].isdigit():
+        n = int(sys.argv[1])
+        stores = stores[:n]
+        print(f"[DEV] mağaza limiti: ilk {n}")
     print(f"Tekilleştirilmiş aktif rakip mağaza sayısı: {len(stores)}")
     for s in stores:
         print(f"  • {s['marka']}: {s['magaza_url']}")
