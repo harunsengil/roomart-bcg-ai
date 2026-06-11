@@ -37,6 +37,25 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
+MAX_PAGES = 12        # mağaza başına sayfa tavanı (CI maliyeti + kibarlık)
+
+
+def parse_rating_price(html):
+    """Gömülü JSON state'ten puan/deg/fiyat çıkar — RENDER BAĞIMSIZ (scraper.py ile aynı
+    sağlam desen; DOM selektöründen güvenilir). deg = totalCount (Değerlendirme sayısı)."""
+    puan, deg, fiyat = 0.0, 0, 0.0
+    rs = re.search(r'"ratingScore":\s*\{([^}]*)\}', html)
+    if rs:
+        a = re.search(r'"averageRating":\s*([0-9.]+)', rs.group(1))
+        t = re.search(r'"totalCount":\s*(\d+)', rs.group(1))
+        if a:
+            puan = round(float(a.group(1)), 1)
+        if t:
+            deg = int(t.group(1))
+    pr = re.search(r'"sellingPrice":\s*\{\s*"value":\s*([0-9.]+)', html)
+    if pr:
+        fiyat = float(pr.group(1))
+    return puan, deg, fiyat
 
 
 # ── Girdi: rakip mağaza listesi (tekilleştirilmiş) ────────────────────────────
@@ -112,6 +131,9 @@ def urlleri_topla(page, magaza_url):
         if not sonraki:
             print("  → Son sayfa.")
             break
+        if sayfa >= MAX_PAGES:
+            print(f"  → Sayfa tavanı ({MAX_PAGES}) — duruldu.")
+            break
 
         sayfa += 1
         time.sleep(1)
@@ -144,61 +166,55 @@ def ozellikleri_cek(page):
     return hedef
 
 
-def urun_verisi_cek(page, url, marka):
+def _ad_from_json(html):
+    """DOM başlık alınamazsa gömülü JSON-LD / state'ten ürün adı (yedek)."""
+    m = re.search(r'"@type":"Product"[^{]*?"name":"([^"]{3,200})"', html)
+    if not m:
+        m = re.search(r'"productName":"([^"]{3,200})"', html)
+    return m.group(1).strip() if m else None
+
+
+def urun_verisi_cek(page, url, marka, retries=1):
     """
-    Tek ürün detay sayfasından snapshot kaydı çek.
+    Tek ürün detay sayfasından snapshot kaydı çek (RENDER BAĞIMSIZ — gömülü JSON).
     Dönüş: {ad, fiyat, puan, deg, url, marka} (snapshots.json formatıyla pariteli).
+    ad alınamazsa None (kötü/yönlendirilmiş sayfa) → çağıran atlar; %başarı eşiğine düşer.
     """
-    try:
-        page.goto(url)
-        page.wait_for_load_state("domcontentloaded")
-        time.sleep(1.5)
-        page.keyboard.press("Escape")
-        # Konum seç tooltip'ini kapat
+    for attempt in range(retries + 1):
         try:
-            page.get_by_role("button", name="Anladım").click(timeout=2000)
-        except Exception:
-            pass
-
-        try:
-            ad = page.get_by_test_id("product-title").inner_text().strip()
-        except Exception:
-            ad = "—"
-
-        try:
-            # Önce indirimli fiyat (span.discounted), sonra normal fiyat
-            fiyat_el = (
-                page.query_selector("span.discounted") or
-                page.query_selector("span.prc-dsc") or
-                page.get_by_test_id("lowest-price")
-            )
-            fiyat_raw = fiyat_el.inner_text() if fiyat_el else "0"
-            fiyat = float(re.sub(r"[^\d,]", "", fiyat_raw).replace(",", ".") or "0")
-        except Exception:
-            fiyat = 0.0
-
-        try:
-            puan_el = (
-                page.query_selector("span.reviews-summary-average-rating") or
-                page.query_selector("div.product-rating-score span") or
-                page.query_selector("span.ratingScore")
-            )
-            puan = float(puan_el.inner_text().strip()) if puan_el else 0.0
-        except Exception:
-            puan = 0.0
-
-        try:
-            deg_raw = page.get_by_test_id("review-info-link").inner_text()
-            deg = int(re.sub(r"[^\d]", "", deg_raw) or "0")
-        except Exception:
-            deg = 0
-
-        # snapshots.json ile AYNI alanlar + marka
-        return {"ad": ad, "fiyat": fiyat, "puan": puan, "deg": deg,
-                "url": url, "marka": marka}
-    except Exception as e:
-        print(f"    [HATA] {e}")
-        return None
+            resp = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            if resp and resp.status >= 400:
+                return None
+            time.sleep(1.2)
+            # ad: DOM başlık (server-render), yoksa gömülü JSON'a düş
+            try:
+                ad = page.get_by_test_id("product-title").inner_text().strip()
+            except Exception:
+                ad = ""
+            html = page.content()
+            if not ad:
+                ad = _ad_from_json(html) or ""
+            puan, deg, fiyat = parse_rating_price(html)
+            # fiyat JSON'dan gelmezse DOM'a düş (yedek)
+            if fiyat == 0.0:
+                try:
+                    el = page.query_selector("span.discounted") or page.query_selector("span.prc-dsc")
+                    if el:
+                        fiyat = float(re.sub(r"[^\d,]", "", el.inner_text()).replace(",", ".") or "0")
+                except Exception:
+                    pass
+            if not ad:
+                if attempt < retries:
+                    continue          # transient → tek tekrar
+                return None            # ad yok → güvenilmez, atla
+            return {"ad": ad[:160], "fiyat": fiyat, "puan": puan, "deg": deg,
+                    "url": url, "marka": marka}
+        except Exception as e:
+            if attempt < retries:
+                time.sleep(1.0)
+                continue
+            print(f"    [HATA] {str(e)[:80]}")
+            return None
 
 
 def extract_product_id(url):
