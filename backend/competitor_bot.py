@@ -278,25 +278,33 @@ def calistir():
         return
 
     tarih = datetime.now().strftime("%Y-%m-%d")
-    gun_snapshot = {}
+    data = load_existing_output()
+    gun_snapshot = data.get(tarih, {})       # aynı gün tekrar koşarsa devam et (idempotent/resume)
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
+    def _flush():
+        """Her mağaza sonrası ARTIMLI yaz — çökme/internet kesintisi ilerlemeyi kaybetmesin."""
+        data[tarih] = gun_snapshot
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    done = 0
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=HEADLESS)
         page = browser.new_context(user_agent=USER_AGENT).new_page()
         for s in stores:
-            urunler = scrape_store(page, s["magaza_url"], s["marka"])
-            gun_snapshot.update(urunler)
+            try:
+                urunler = scrape_store(page, s["magaza_url"], s["marka"])
+                gun_snapshot.update(urunler)
+                done += 1
+                _flush()                      # mağaza bitince hemen diske yaz
+            except Exception as e:            # bir mağaza çökse (ör. ağ) diğerlerine devam
+                print(f"  [MAĞAZA HATA] {s['marka']}: {str(e)[:90]} — atlandı, devam.")
+                _flush()
         browser.close()
 
-    data = load_existing_output()
-    data[tarih] = gun_snapshot
-
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
     print(f"\n{'─' * 55}")
-    print(f"[TAMAMLANDI] {tarih}: {len(gun_snapshot)} rakip ürün → {OUTPUT_FILE}")
+    print(f"[TAMAMLANDI] {tarih}: {len(gun_snapshot)} rakip ürün, {done}/{len(stores)} mağaza → {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
