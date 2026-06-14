@@ -130,6 +130,27 @@ def load_ours():
     return out
 
 
+def load_store_urls():
+    """competitors.json → marka → temiz mağaza linki (pi/sst eklentileri olmadan)."""
+    f = DATA / "competitors.json"
+    out = {"ROOMART": "https://www.trendyol.com/magaza/roomart-m-362387"}
+    if not f.exists():
+        return out
+    try:
+        doc = json.load(open(f, encoding="utf-8"))
+        for rakipler in doc.get("kategoriler", {}).values():
+            for r in rakipler:
+                marka, url = r.get("marka"), r.get("magaza_url", "")
+                if marka and url:
+                    out.setdefault(marka, url.split("?")[0])
+    except Exception:
+        pass
+    return out
+
+
+_STORE_URLS = {}
+
+
 def _brand_row(brand, items, is_roomart, cat_total_reviews):
     prices = [i["price"] for i in items if i["price"] > 0]
     ratings = [i["rating"] for i in items if i["rating"] > 0]
@@ -138,6 +159,7 @@ def _brand_row(brand, items, is_roomart, cat_total_reviews):
     return {
         "brand": brand,
         "is_roomart": is_roomart,
+        "store_url": _STORE_URLS.get(brand),    # marka adına tıklayınca mağazaya gider
         "product_count": len(items),
         "avg_price": round(statistics.mean(prices), 0) if prices else None,
         "median_price": round(statistics.median(prices), 0) if prices else None,
@@ -195,6 +217,7 @@ def build_matches(ours, comps):
             continue
         matches.append({
             "our_id": o["id"], "our_name": o["name"], "category": o["category"],
+            "our_url": o.get("url", ""),
             "our_price": round(o["price"]) or None, "our_rating": o["rating"], "our_reviews": o["reviews"],
             "bcg_class": o["bcg_class"],
             "competitors": [{
@@ -271,6 +294,8 @@ def main():
         logger.warning("competitor_snapshots.json yok/boş — rekabet analizi atlanıyor.")
         return
     ours = load_ours()
+    global _STORE_URLS
+    _STORE_URLS = load_store_urls()
     days = sorted(json.load(open(COMP_SNAP, encoding="utf-8")).keys())
     categories = build_categories(ours, comps)
     matches = build_matches(ours, comps)
