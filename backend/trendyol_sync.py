@@ -118,6 +118,7 @@ def aggregate_products(products: list) -> tuple[dict, dict]:
             # Kolon zenginleştirme: Trendyol'un kendi kategorisi (referans) + Renk (attribute).
             "category_name": p.get("categoryName"),
             "color": _attr(p.get("attributes"), "Renk"),
+            "image": (p.get("images") or [{}])[0].get("url"),   # ilk ürün görseli (hover önizleme)
             # API zenginleştirme: ürün yaşı (createDateTime, epoch ms) → analyzer'da age_days/hız;
             # kampanya bayrağı; varyant modeli + kardeş sayısı; katalog-sağlığı bayrakları (evren filtresi).
             "created_at": p.get("createDateTime"),

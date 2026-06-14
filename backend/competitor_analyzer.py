@@ -111,6 +111,7 @@ def load_competitors():
             "reviews": deg,
             "review_delta": max(0, deg - prev_deg),   # haftalık yorum artışı (hız vekili)
             "url": r.get("url", ""),
+            "image": r.get("gorsel"),
             "category": cat,
         })
     return latest, prev, comps
@@ -127,6 +128,7 @@ def load_ours():
             "id": p["id"], "name": p.get("name", ""), "category": p["category"],
             "price": float(p.get("price", 0) or 0), "rating": float(p.get("rating", 0) or 0),
             "reviews": int(p.get("review_count", 0) or 0), "url": p.get("url", ""),
+            "image": p.get("image"),
             "bcg_class": p.get("bcg_class"),
         })
     return out
@@ -219,12 +221,12 @@ def build_matches(ours, comps):
             continue
         matches.append({
             "our_id": o["id"], "our_name": o["name"], "category": o["category"],
-            "our_url": o.get("url", ""),
+            "our_url": o.get("url", ""), "our_image": o.get("image"),
             "our_price": round(o["price"]) or None, "our_rating": o["rating"], "our_reviews": o["reviews"],
             "bcg_class": o["bcg_class"],
             "competitors": [{
                 "brand": s["brand"], "name": s["name"], "price": round(s["price"]) or None,
-                "rating": s["rating"], "reviews": s["reviews"], "url": s["url"], "score": s["score"],
+                "rating": s["rating"], "reviews": s["reviews"], "url": s["url"], "image": s.get("image"), "score": s["score"],
                 "price_delta_pct": round((s["price"] - o["price"]) / o["price"] * 100) if o["price"] else None,
                 "rating_delta": round(s["rating"] - o["rating"], 1),
                 "review_delta": s["reviews"] - o["reviews"],

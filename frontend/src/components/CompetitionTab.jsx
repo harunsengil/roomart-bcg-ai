@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import { Swords, Search, ExternalLink, X } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
@@ -161,6 +162,13 @@ const GRID = 'grid grid-cols-[minmax(0,1fr)_104px_88px_64px_76px_84px_120px] ite
 
 function ProductView({ matches, light }) {
   const [q, setQ] = useState('')
+  const [img, setImg] = useState({ show: false, x: 0, top: 0, src: null, name: '' })
+  const showImg = (e, src, name) => {
+    if (!src) return
+    const r = e.currentTarget.getBoundingClientRect()
+    setImg({ show: true, x: r.right, top: r.top, src, name })
+  }
+  const hideImg = () => setImg(s => ({ ...s, show: false }))
   const filtered = useMemo(() => {
     const query = q.trim()
     const op = query ? priceOp(query) : null
@@ -204,7 +212,8 @@ function ProductView({ matches, light }) {
           return (
             <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
               {/* bizim ürün */}
-              <div className={`${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
+              <div className={`${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}
+                onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
                 <a href={m.our_url} target="_blank" rel="noreferrer" title={m.our_name}
                   className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0">
                   <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
@@ -221,7 +230,8 @@ function ProductView({ matches, light }) {
               </div>
               {/* rakipler */}
               {m.competitors.map((c, i) => (
-                <div key={i} className={`${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
+                <div key={i} className={`${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}
+                  onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
                   <a href={c.url} target="_blank" rel="noreferrer" title={c.name}
                     className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3">
                     <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
@@ -242,6 +252,21 @@ function ProductView({ matches, light }) {
           )
         })}
       </div>
+
+      {/* Hover ürün görseli — portal (backdrop-filter kırpmasına karşı), satırın sağında */}
+      {img.show && img.src && typeof document !== 'undefined' && createPortal((() => {
+        const W = 230, H = 250
+        const vw = window.innerWidth, vh = window.innerHeight
+        const left = img.x + 12 + W > vw ? Math.max(8, img.x - W - 12) : img.x + 12
+        const top = Math.min(Math.max(8, img.top - 20), vh - H - 8)
+        return (
+          <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
+            style={{ background: 'var(--bg-secondary)', left, top, width: W }}>
+            <img src={img.src} alt="" className="w-full h-[190px] object-contain rounded bg-white/5" loading="lazy" />
+            <div className="text-[10px] font-mono text-white/60 mt-1.5 line-clamp-2">{img.name}</div>
+          </div>
+        )
+      })(), document.body)}
     </div>
   )
 }
