@@ -280,7 +280,8 @@ MIN_SUCCESS_RATIO = 0.5
 def load_seed():
     """En güncel snapshot gününü seed al: {pid: {url, marka}} (URL'i olan ürünler)."""
     data = load_existing_output()
-    days = sorted(data)
+    # En son DOLU günü seed al (boş/engellenmiş refresh günü seed'i bozmasın).
+    days = [d for d in sorted(data) if data.get(d)]
     if not days:
         return {}, data
     last = data[days[-1]]

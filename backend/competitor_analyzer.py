@@ -88,7 +88,9 @@ def load_competitors():
     if not COMP_SNAP.exists():
         return None, {}, []
     snap = json.load(open(COMP_SNAP, encoding="utf-8"))
-    days = sorted(snap)
+    # En son DOLU günü al (boş günleri atla — başarısız/engellenmiş bir refresh günü
+    # competitive.json'u sıfırlamasın). Hız için bir önceki DOLU gün.
+    days = [d for d in sorted(snap) if snap.get(d)]
     if not days:
         return None, {}, []
     latest = snap[days[-1]]
