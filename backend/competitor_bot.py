@@ -218,8 +218,11 @@ def urun_verisi_cek(page, url, marka, retries=1):
                 if attempt < retries:
                     continue          # transient → tek tekrar
                 return None            # ad yok → güvenilmez, atla
+            # ilk ürün görseli (og:image — temiz CDN linki; hover önizleme için)
+            mg = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+            gorsel = mg.group(1) if mg else None
             return {"ad": ad[:160], "fiyat": fiyat, "puan": puan, "deg": deg,
-                    "url": url, "marka": marka}
+                    "url": url, "marka": marka, "gorsel": gorsel}
         except Exception as e:
             if attempt < retries:
                 time.sleep(1.0)

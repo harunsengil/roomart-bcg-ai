@@ -705,6 +705,7 @@ def run_analysis():
             discount = round(100 * (1 - price / list_price))
         color = api.get("color")                   # attribute "Renk"
         category_name = api.get("category_name")   # Trendyol'un kendi kategorisi (referans)
+        image = api.get("image")                    # ilk ürün görseli (hover önizleme)
         # ── API zenginleştirme: kârlılık / risk / kampanya / varyant / yaş & hız ──
         net_retention_pct = srec.get("net_retention_pct")  # komisyon+promo sonrası satıcıya kalan % (COGS hariç)
         risk_rate = srec.get("risk_rate", 0.0)             # iade/iptal oranı %
@@ -737,6 +738,7 @@ def run_analysis():
             "discount": discount,             # indirim % (None → "—")
             "color": color,                   # renk (attribute)
             "category_name": category_name,   # Trendyol kategorisi (referans; bizim BCG kategorisi ≠)
+            "image": image,                   # ilk ürün görseli
             # API zenginleştirme alanları (tabloya/matrise gider)
             "net_retention_pct": net_retention_pct,  # Net Tahsilat % (kabarcık boyutu + kolon)
             "risk_rate": risk_rate,                   # iade/iptal %
@@ -842,6 +844,7 @@ def run_analysis():
             "list_price": p.get("list_price"),     # liste fiyatı
             "discount": p.get("discount"),         # indirim % (None → "—")
             "color": p.get("color"),               # renk (attribute)
+            "image": p.get("image"),               # ilk ürün görseli (hover önizleme)
             "category_name": p.get("category_name"),  # Trendyol kategorisi (referans)
             # API zenginleştirme (pasif üründe de dolu olabilir)
             "units": p.get("units", 0),                       # net satış adedi (BCG kabarcık boyutu)
