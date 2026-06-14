@@ -45,8 +45,11 @@ jobs:
         if: steps.pw-cache.outputs.cache-hit == 'true'
         run: python -m playwright install-deps chromium
 
-      - name: Run competitor scraper
-        run: python backend/competitor_bot.py
+      # REFRESH modu: bilinen rakip ürün URL'lerini (seed) gezip fiyat/puan/yorum tazeler.
+      # Ürün-detay sayfaları server-render → CI'da bot-korumasına TAKILMAZ (scrape.yml ile aynı).
+      # Seed'i `collect` modu (yerel/residential) üretir; CI listeleme YAPMAZ.
+      - name: Refresh competitor products (seed-refresh, scrape.yml deseni)
+        run: python backend/competitor_bot.py refresh
         env:
           PYTHONUNBUFFERED: 1
 

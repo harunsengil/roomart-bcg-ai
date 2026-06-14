@@ -66,6 +66,12 @@ async function loadFromFirestore() {
   ])
   if (!snapshot.exists()) throw new Error('Firestore: koleksiyon boş')
   const d = snapshot.data()
+  // Rekabet verisi AYRI dokümanda (competitive_latest); yoksa sekme boş-durum gösterir.
+  let competitive = null
+  try {
+    const cs = await getDoc(doc(db, 'roomart-bcg-dev', 'competitive_latest'))
+    if (cs.exists()) competitive = cs.data()
+  } catch { /* yoksa null */ }
   return {
     kpis: d.kpis,
     categories: normalizeCategories(d.categories ?? d.category_summary),
@@ -73,15 +79,17 @@ async function loadFromFirestore() {
     quadrantDistribution: d.quadrant_distribution,
     trends: d.trends,
     alerts: d.alerts,
+    competitive,
     generatedAt: d.generated_at,
   }
 }
 
 async function loadFromJSON() {
-  const [bcgScores, trends, alertsData] = await Promise.all([
+  const [bcgScores, trends, alertsData, competitive] = await Promise.all([
     fetchJSON('data/bcg_scores.json'),
     fetchJSON('data/trends.json'),
     fetchJSON('data/alerts.json'),
+    fetchJSON('data/competitive.json').catch(() => null),   // yoksa rekabet sekmesi boş-durum
   ])
   return {
     kpis: bcgScores.kpis,
@@ -92,6 +100,7 @@ async function loadFromJSON() {
     quadrantDistribution: bcgScores.quadrant_distribution,
     trends: trends.trends,
     alerts: alertsData.alerts,
+    competitive,
     generatedAt: bcgScores.generated_at,
   }
 }

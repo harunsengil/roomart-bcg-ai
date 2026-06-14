@@ -57,6 +57,13 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
+      # Rakip rekabet analizi: competitor_snapshots.json VARSA competitive.json üretir (yoksa atlar).
+      # bcg_scores.json'a bağımlı → BCG analizinden SONRA. BCG akışını bozmaz.
+      - name: Run competitor analysis (varsa)
+        run: python backend/competitor_analyzer.py
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
       # GÜVENLİK: gerçek satış/ciro dosyasını public frontend'e KOPYALAMA (rakip istihbaratı).
       - name: Copy data to frontend public (sales hariç)
         run: |
