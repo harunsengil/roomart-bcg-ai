@@ -3,10 +3,9 @@ import { Swords, Search, ExternalLink, X } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
-// Rakip metriği YORUM tabanlı (gerçek satış değil) — BCG'den AYRI.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 
-// ── Akıllı arama yardımcıları (ProductTable ile aynı: binlik-ayraç duyarsız + fiyat operatörleri)
+// Akıllı arama yardımcıları (ProductTable ile aynı: binlik-ayraç duyarsız + fiyat operatörleri)
 const norm = (s) => String(s).toLowerCase().replace(/[.,\s₺]/g, '')
 const cellMatch = (cell, q) => {
   const c = String(cell).toLowerCase()
@@ -28,7 +27,17 @@ function priceOp(q) {
   return null
 }
 
-const SIM_TOOLTIP = 'Benzerlik skoru = 0.6 × ad-token örtüşmesi (Jaccard) + 0.4 × fiyat yakınlığı. Yüksek = ürünler daha benzer.'
+const T = {
+  urun: 'Bu markanın bu kategorideki taranan ürün sayısı',
+  fiyat: 'Markanın bu kategorideki ortalama satış fiyatı',
+  puan: 'Ortalama müşteri puanı (0-5)',
+  yorum: 'Toplam değerlendirme (yorum) sayısı — gerçek satış yerine talep/görünürlük vekili',
+  yorumPct: 'Bu markanın kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)',
+  hiz: 'Bu haftaki yorum artışı (talep ivmesi). En az 2 haftalık veri birikince dolar.',
+  endeks: 'Fiyat endeksi = marka ort. fiyatı ÷ kategori ort. fiyatı. Örn. 1.74× = ortalamadan %74 PAHALI; 0.66× = %34 UCUZ.',
+  sim: 'Benzerlik skoru = 0.6 × ad-token örtüşmesi (Jaccard) + 0.4 × fiyat yakınlığı. Yüksek = ürünler daha benzer.',
+  delta: 'Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).',
+}
 
 function StoreLink({ brand, url, isRoomart }) {
   const label = isRoomart ? '★ ROOMART' : brand
@@ -42,14 +51,51 @@ function StoreLink({ brand, url, isRoomart }) {
   )
 }
 
-// ── KATEGORİ GÖRÜNÜMÜ ─────────────────────────────────────────────────────────
+// ── KATEGORİ + MARKA(toplam) GÖRÜNÜMÜ ─────────────────────────────────────────
 function CategoryView({ categories }) {
+  const ALL = '__all__'
   const [sel, setSel] = useState(categories[0]?.category)
-  const cat = categories.find(c => c.category === sel) || categories[0]
-  if (!cat) return null
+
+  // Marka toplamı: her markanın TÜM kategorilerdeki birleşik metrikleri
+  const brandTotals = useMemo(() => {
+    const map = {}
+    categories.forEach(c => c.brands.forEach(b => {
+      const m = map[b.brand] || (map[b.brand] = {
+        brand: b.brand, is_roomart: b.is_roomart, store_url: b.store_url,
+        product_count: 0, total_reviews: 0, cats: 0, _pS: 0, _pW: 0, _rS: 0, _rW: 0,
+      })
+      m.product_count += b.product_count
+      m.total_reviews += b.total_reviews
+      m.cats += 1
+      if (b.avg_price) { m._pS += b.avg_price * b.product_count; m._pW += b.product_count }
+      if (b.avg_rating) { m._rS += b.avg_rating * b.product_count; m._rW += b.product_count }
+    }))
+    const totalReviews = Object.values(map).reduce((s, m) => s + m.total_reviews, 0)
+    return Object.values(map).map(m => ({
+      ...m,
+      avg_price: m._pW ? Math.round(m._pS / m._pW) : null,
+      avg_rating: m._rW ? +(m._rS / m._rW).toFixed(2) : null,
+      review_share: totalReviews ? +(m.total_reviews / totalReviews * 100).toFixed(1) : 0,
+    })).sort((a, b) => b.total_reviews - a.total_reviews)
+  }, [categories])
+
+  const cat = categories.find(c => c.category === sel)
+  const isAll = sel === ALL
+  const rows = isAll ? brandTotals : (cat?.brands || [])
+
   return (
     <div className="flex flex-col min-h-0">
       <div className="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
+        <button onClick={() => setSel(ALL)}
+          className="px-3 py-1.5 text-xs font-mono rounded-lg border transition-all"
+          style={{
+            borderColor: isAll ? 'var(--gold)' : 'var(--border-subtle)',
+            color: isAll ? 'var(--gold)' : 'var(--text-secondary)',
+            background: isAll ? 'var(--gold)15' : 'transparent',
+          }}>
+          ⊕ Tüm Markalar
+        </button>
+        <span className="self-center text-white/15">|</span>
         {categories.map(c => (
           <button key={c.category} onClick={() => setSel(c.category)}
             className="px-3 py-1.5 text-xs font-mono rounded-lg border transition-all"
@@ -62,10 +108,14 @@ function CategoryView({ categories }) {
           </button>
         ))}
       </div>
+
       <div className="flex items-center gap-3 text-xs font-mono text-white/50 mb-2 flex-shrink-0">
-        <span>Yorum lideri: <b className="text-white/80">{cat.leader}</b></span>
-        {cat.roomart_rank && <span>· RoomArt sıra: <b className="text-gold">{cat.roomart_rank}/{cat.brands.length}</b></span>}
-        <span className="text-white/30">· tüm marka sıralaması (yorum hacmine göre)</span>
+        {isAll
+          ? <span>Markaların <b className="text-white/80">tüm kategoriler toplamı</b> · yorum hacmine göre sıralı</span>
+          : <>
+            <span>Yorum lideri: <b className="text-white/80">{cat?.leader}</b></span>
+            {cat?.roomart_rank && <span>· RoomArt sıra: <b className="text-gold">{cat.roomart_rank}/{cat.brands.length}</b></span>}
+          </>}
       </div>
 
       <div className="overflow-y-auto overflow-x-hidden rounded-lg border border-white/5" style={{ maxHeight: 'calc(100vh - 400px)' }}>
@@ -74,28 +124,29 @@ function CategoryView({ categories }) {
             <tr className="border-b border-white/10 text-[11px] font-mono text-white/40 text-left" style={{ background: 'var(--bg-card)' }}>
               <th className="px-3 py-2.5 w-8" title="Yorum hacmine göre sıra">#</th>
               <th className="px-3 py-2.5" title="Mağaza — tıkla, Trendyol mağazasına git">Marka</th>
-              <th className="px-3 py-2.5 text-right" title="Bu kategorideki ürün sayısı (taranan)">Ürün</th>
-              <th className="px-3 py-2.5 text-right" title="Markanın bu kategorideki ortalama satış fiyatı">Ort. Fiyat</th>
-              <th className="px-3 py-2.5 text-right" title="Ortalama müşteri puanı (0-5)">Ort. Puan</th>
-              <th className="px-3 py-2.5 text-right" title="Toplam değerlendirme (yorum) sayısı — talep/görünürlük vekili">Yorum</th>
-              <th className="px-3 py-2.5 text-right" title="Kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)">Yorum %</th>
-              <th className="px-3 py-2.5 text-right" title="Bu haftaki yorum artışı (talep ivmesi). Veri biriktikçe dolar.">Hız</th>
-              <th className="px-3 py-2.5 text-right" title="Marka ort. fiyatı ÷ kategori ort. fiyatı. >1 pahalı, <1 ucuz.">Fiyat Endeksi</th>
+              {isAll && <th className="px-3 py-2.5 text-right" title="Markanın ürün sattığı kategori sayısı (6 üzerinden)">Kategori</th>}
+              <th className="px-3 py-2.5 text-right" title={T.urun}>Ürün</th>
+              <th className="px-3 py-2.5 text-right" title={T.fiyat}>Ort. Fiyat</th>
+              <th className="px-3 py-2.5 text-right" title={T.puan}>Ort. Puan</th>
+              <th className="px-3 py-2.5 text-right" title={T.yorum}>Yorum</th>
+              <th className="px-3 py-2.5 text-right" title={T.yorumPct}>Yorum %</th>
+              {!isAll && <th className="px-3 py-2.5 text-right" title={T.hiz}>Hız</th>}
+              {!isAll && <th className="px-3 py-2.5 text-right" title={T.endeks}>Fiyat Endeksi</th>}
             </tr>
           </thead>
           <tbody>
-            {cat.brands.map((b, i) => (
-              <tr key={b.brand} className="zebra-row border-b border-white/5 transition-colors"
-                style={b.is_roomart ? { background: 'var(--gold)12' } : undefined}>
+            {rows.map((b, i) => (
+              <tr key={b.brand} className={`zebra-row border-b border-white/5 transition-colors ${b.is_roomart ? 'border-l-2 border-l-gold' : ''}`}>
                 <td className="px-3 py-2 font-mono text-white/30">{i + 1}</td>
                 <td className="px-3 py-2"><StoreLink brand={b.brand} url={b.store_url} isRoomart={b.is_roomart} /></td>
+                {isAll && <td className="px-3 py-2 text-right font-mono text-white/50">{b.cats}/6</td>}
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.product_count}</td>
                 <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? formatCurrency(b.avg_price) : '—'}</td>
                 <td className="px-3 py-2 text-right font-mono">{b.avg_rating != null ? <span className="text-gold-400">★ {b.avg_rating}</span> : '—'}</td>
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.total_reviews}</td>
                 <td className="px-3 py-2 text-right font-mono text-white/60">%{b.review_share}</td>
-                <td className="px-3 py-2 text-right font-mono">{b.review_velocity > 0 ? <span className="text-cyan-300">+{b.review_velocity}</span> : <span className="text-white/25">—</span>}</td>
-                <td className="px-3 py-2 text-right font-mono">{b.price_index != null ? <span className={b.price_index > 1 ? 'text-rose-300' : 'text-emerald-300'}>{b.price_index}×</span> : '—'}</td>
+                {!isAll && <td className="px-3 py-2 text-right font-mono">{b.review_velocity > 0 ? <span className="text-cyan-300">+{b.review_velocity}</span> : <span className="text-white/25">—</span>}</td>}
+                {!isAll && <td className="px-3 py-2 text-right font-mono">{b.price_index != null ? <span className={b.price_index > 1 ? 'text-rose-300' : 'text-emerald-300'}>{b.price_index}×</span> : '—'}</td>}
               </tr>
             ))}
           </tbody>
@@ -105,7 +156,9 @@ function CategoryView({ categories }) {
   )
 }
 
-// ── ÜRÜN GÖRÜNÜMÜ ─────────────────────────────────────────────────────────────
+// ── ÜRÜN GÖRÜNÜMÜ (her eşleşme seti ayrı çerçevede) ───────────────────────────
+const GRID = 'grid grid-cols-[minmax(0,1fr)_104px_88px_64px_76px_84px_120px] items-center'
+
 function ProductView({ matches, light }) {
   const [q, setQ] = useState('')
   const filtered = useMemo(() => {
@@ -132,76 +185,62 @@ function ProductView({ matches, light }) {
         <span className="text-[11px] font-mono text-white/30 whitespace-nowrap">{filtered.length} ürün · en yakın 3 rakip</span>
       </div>
 
-      <div className="overflow-y-auto overflow-x-hidden rounded-lg border border-white/5" style={{ maxHeight: 'calc(100vh - 380px)' }}>
-        <table className="w-full table-fixed text-sm">
-          <colgroup>
-            <col style={{ width: '40%' }} />{/* Ürün / Rakip */}
-            <col style={{ width: '11%' }} />{/* Fiyat */}
-            <col style={{ width: '9%' }} />{/* Fiyat Farkı */}
-            <col style={{ width: '8%' }} />{/* Puan */}
-            <col style={{ width: '9%' }} />{/* Yorum */}
-            <col style={{ width: '10%' }} />{/* Benzerlik */}
-            <col style={{ width: '13%' }} />{/* Kategori/BCG */}
-          </colgroup>
-          <thead className="sticky top-0 z-10">
-            <tr className="border-b border-white/10 text-[11px] font-mono text-white/40 text-left" style={{ background: 'var(--bg-card)' }}>
-              <th className="px-3 py-2.5">Ürün / Rakip</th>
-              <th className="px-3 py-2.5 text-right">Fiyat</th>
-              <th className="px-3 py-2.5 text-right" title="Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).">Fiyat Farkı</th>
-              <th className="px-3 py-2.5 text-right">Puan</th>
-              <th className="px-3 py-2.5 text-right">Yorum</th>
-              <th className="px-3 py-2.5 text-right" title={SIM_TOOLTIP}>Benzerlik</th>
-              <th className="px-3 py-2.5 text-left">Kategori</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map(m => {
-              const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280', label: '—' }
-              const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
-              return [
-                /* bizim ürün — grup başlığı satırı */
-                <tr key={m.our_id} className="zebra-row border-t border-white/10 transition-colors" style={{ background: 'var(--gold)0c' }}>
-                  <td className="px-3 py-2">
-                    <a href={m.our_url} target="_blank" rel="noreferrer" title={m.our_name}
-                      className="font-medium text-white hover:text-gold inline-flex items-center gap-1 line-clamp-1">
-                      ★ {m.our_name}<ExternalLink size={10} className="text-white/25 flex-shrink-0" />
-                    </a>
-                  </td>
-                  <td className="px-3 py-2 text-right font-mono text-white">{m.our_price != null ? formatCurrency(m.our_price) : '—'}</td>
-                  <td className="px-3 py-2 text-right font-mono text-white/30">—</td>
-                  <td className="px-3 py-2 text-right font-mono text-gold-400">{m.our_rating > 0 ? `★ ${m.our_rating}` : '—'}</td>
-                  <td className="px-3 py-2 text-right font-mono text-white/70">{m.our_reviews}</td>
-                  <td className="px-3 py-2 text-right font-mono text-white/30">—</td>
-                  <td className="px-3 py-2 text-left">
-                    <span className="text-[10px] font-mono text-white/40">{m.category}</span>
-                    {m.bcg_class && <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono" style={{ background: `${cfg.color}15`, color: cfg.color }}>{BCG_SHORT[m.bcg_class]}</span>}
-                  </td>
-                </tr>,
-                /* rakip eşleşmeler */
-                ...m.competitors.map((c, i) => (
-                  <tr key={m.our_id + '-' + i} className="zebra-row border-b border-white/5 transition-colors text-white/70">
-                    <td className="px-3 py-1.5 pl-6">
-                      <a href={c.url} target="_blank" rel="noreferrer" title={c.name}
-                        className="inline-flex items-center gap-1.5 hover:text-gold line-clamp-1">
-                        <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
-                        <span className="truncate">{c.name}</span>
-                        <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
-                      </a>
-                    </td>
-                    <td className="px-3 py-1.5 text-right font-mono text-white/80">{c.price != null ? formatCurrency(c.price) : '—'}</td>
-                    <td className="px-3 py-1.5 text-right font-mono">
-                      {c.price_delta_pct == null ? '—' : <span className={c.price_delta_pct < 0 ? 'text-rose-400' : c.price_delta_pct > 0 ? 'text-emerald-400' : 'text-white/40'}>{c.price_delta_pct > 0 ? '+' : ''}%{c.price_delta_pct}</span>}
-                    </td>
-                    <td className="px-3 py-1.5 text-right font-mono text-white/60">{c.rating > 0 ? `${c.rating}★` : '—'}</td>
-                    <td className="px-3 py-1.5 text-right font-mono text-white/50">{c.reviews}</td>
-                    <td className="px-3 py-1.5 text-right font-mono text-white/40" title={SIM_TOOLTIP}>{Math.round(c.score * 100)}%</td>
-                    <td className="px-3 py-1.5"></td>
-                  </tr>
-                )),
-              ]
-            })}
-          </tbody>
-        </table>
+      {/* sabit başlık */}
+      <div className={`${GRID} flex-shrink-0 px-3 py-2 text-[11px] font-mono text-white/40 border-b border-white/10 rounded-t-lg`} style={{ background: 'var(--bg-card)' }}>
+        <span>Ürün / Rakip</span>
+        <span className="text-right" title={T.fiyat}>Fiyat</span>
+        <span className="text-right" title={T.delta}>Fiyat Farkı</span>
+        <span className="text-right" title={T.puan}>Puan</span>
+        <span className="text-right" title={T.yorum}>Yorum</span>
+        <span className="text-right" title={T.sim}>Benzerlik</span>
+        <span className="text-left pl-2">Kategori</span>
+      </div>
+
+      {/* kayan liste — her set ayrı çerçeve */}
+      <div className="overflow-y-auto overflow-x-hidden space-y-2 pt-2" style={{ maxHeight: 'calc(100vh - 410px)' }}>
+        {filtered.map(m => {
+          const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280', label: '—' }
+          const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
+          return (
+            <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
+              {/* bizim ürün */}
+              <div className={`${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
+                <a href={m.our_url} target="_blank" rel="noreferrer" title={m.our_name}
+                  className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0">
+                  <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
+                </a>
+                <span className="text-right font-mono text-white">{m.our_price != null ? formatCurrency(m.our_price) : '—'}</span>
+                <span className="text-right font-mono text-white/30">—</span>
+                <span className="text-right font-mono text-gold-400">{m.our_rating > 0 ? `★ ${m.our_rating}` : '—'}</span>
+                <span className="text-right font-mono text-white/70">{m.our_reviews}</span>
+                <span className="text-right font-mono text-white/30">—</span>
+                <span className="text-left pl-2 truncate">
+                  <span className="text-[10px] font-mono text-white/40">{m.category}</span>
+                  {m.bcg_class && <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono" style={{ background: `${cfg.color}15`, color: cfg.color }}>{BCG_SHORT[m.bcg_class]}</span>}
+                </span>
+              </div>
+              {/* rakipler */}
+              {m.competitors.map((c, i) => (
+                <div key={i} className={`${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
+                  <a href={c.url} target="_blank" rel="noreferrer" title={c.name}
+                    className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3">
+                    <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
+                    <span className="truncate">{c.name}</span>
+                    <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
+                  </a>
+                  <span className="text-right font-mono text-white/80">{c.price != null ? formatCurrency(c.price) : '—'}</span>
+                  <span className="text-right font-mono">
+                    {c.price_delta_pct == null ? '—' : <span className={c.price_delta_pct < 0 ? 'text-rose-400' : c.price_delta_pct > 0 ? 'text-emerald-400' : 'text-white/40'}>{c.price_delta_pct > 0 ? '+' : ''}%{c.price_delta_pct}</span>}
+                  </span>
+                  <span className="text-right font-mono text-white/60">{c.rating > 0 ? `${c.rating}★` : '—'}</span>
+                  <span className="text-right font-mono text-white/50">{c.reviews}</span>
+                  <span className="text-right font-mono text-white/40" title={T.sim}>{Math.round(c.score * 100)}%</span>
+                  <span className="text-left pl-2"></span>
+                </div>
+              ))}
+            </div>
+          )
+        })}
       </div>
     </div>
   )
@@ -216,7 +255,6 @@ export default function CompetitionTab({ data }) {
       <div className="card p-10 text-center">
         <Swords size={28} className="mx-auto text-white/20 mb-3" />
         <p className="text-white/50 font-mono text-sm">Rakip verisi henüz toplanıyor.</p>
-        <p className="text-white/30 font-mono text-xs mt-1">Haftalık rakip taraması (competitor.yml) çalıştıktan sonra burada görünecek.</p>
       </div>
     )
   }
