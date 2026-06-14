@@ -104,15 +104,22 @@ def urlleri_topla(page, magaza_url):
     while True:
         url = magaza_url.format(sayfa)
         print(f"  [Sayfa {sayfa}] {url}")
-        page.goto(url)
-        page.wait_for_load_state("domcontentloaded")
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
         sayfa_temizle(page)
-
-        # Lazy load scroll
+        # Ürün ızgarası SPA ile sonradan render olur (headless/CI'da domcontentloaded YETMEZ) →
+        # ürün linki GÖRÜNENE kadar açıkça bekle; gelmezse networkidle + JS-scroll ile zorla.
+        try:
+            page.wait_for_selector("a[href*='-p-']", timeout=15000)
+        except Exception:
+            try:
+                page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+        # JS scroll (keyboard End headless'ta focus gerektirir; window.scrollTo daha güvenilir)
         for _ in range(6):
-            page.keyboard.press("End")
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
             time.sleep(0.7)
-        page.keyboard.press("Home")
+        page.evaluate("window.scrollTo(0, 0)")
         time.sleep(0.5)
 
         yeni = []
