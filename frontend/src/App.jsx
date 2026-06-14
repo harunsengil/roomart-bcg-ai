@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Table2 } from 'lucide-react'
+import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Table2, Swords } from 'lucide-react'
 import Header from './components/Header'
 import KPISection from './components/KPISection'
 import BCGMatrix from './components/BCGMatrix'
@@ -9,14 +9,16 @@ import { TrendGrid, TrendAreaChart, ScoreRadarChart } from './components/TrendCh
 import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
 import ProductTable from './components/ProductTable'
+import CompetitionTab from './components/CompetitionTab'
 import { useTheme } from './hooks/useTheme'
 
 const TABS = [
-  { id: 'overview',  label: 'Overview',        icon: LayoutDashboard },
-  { id: 'products',  label: 'Products',         icon: Table2 },
-  { id: 'trends',    label: 'Trends',           icon: TrendingUp },
-  { id: 'alerts',    label: 'Alerts & Signals', icon: Bell },
-  { id: 'strategy',  label: 'AI Strategy',      icon: Lightbulb },
+  { id: 'overview',     label: 'Overview',        icon: LayoutDashboard },
+  { id: 'products',     label: 'Products',         icon: Table2 },
+  { id: 'competition',  label: 'Rekabet',          icon: Swords },
+  { id: 'trends',       label: 'Trends',           icon: TrendingUp },
+  { id: 'alerts',       label: 'Alerts & Signals', icon: Bell },
+  { id: 'strategy',     label: 'AI Strategy',      icon: Lightbulb },
 ]
 
 function LoadingScreen() {
@@ -188,6 +190,11 @@ export default function App() {
             {/* ── PRODUCTS ── */}
             {activeTab === 'products' && (
               <ProductTable products={data?.products ?? []} />
+            )}
+
+            {/* ── REKABET ── */}
+            {activeTab === 'competition' && (
+              <CompetitionTab data={data?.competitive} />
             )}
 
             {/* ── TRENDS ── */}

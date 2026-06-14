@@ -269,11 +269,69 @@ def load_existing_output():
     return {}
 
 
+# ── REFRESH modu (CI, korumaya takılmaz — scrape.yml/scraper.py ile AYNI desen) ──
+# Mağaza LİSTELEME sayfaları SPA/arama-API olduğu için GitHub Actions IP'lerinde boş döner
+# (bot-koruması). Ama ÜRÜN-DETAY sayfaları server-render → CI'da sorunsuz açılır (scrape.yml
+# kanıtı). Bu yüzden CI'da listeleme YAPMAYIZ; bilinen rakip ürün URL'lerini (seed) gezip
+# fiyat/puan/yorum tazeleriz. Seed'i `collect` modu (yerel/residential) üretir/genişletir.
+MIN_SUCCESS_RATIO = 0.5
+
+
+def load_seed():
+    """En güncel snapshot gününü seed al: {pid: {url, marka}} (URL'i olan ürünler)."""
+    data = load_existing_output()
+    days = sorted(data)
+    if not days:
+        return {}, data
+    last = data[days[-1]]
+    seed = {pid: {"url": r.get("url"), "marka": r.get("marka", "?")}
+            for pid, r in last.items() if r.get("url")}
+    return seed, data
+
+
+def refresh_run():
+    """CI haftalık: seed ürün URL'lerini gez, detay sayfasından tazele (listeleme YOK)."""
+    seed, data = load_seed()
+    if not seed:
+        print("[UYARI] Seed yok (competitor_snapshots.json boş). Önce yerelde "
+              "`python backend/competitor_bot.py collect` ile seed kur.")
+        return
+    tarih = datetime.now().strftime("%Y-%m-%d")
+    gun = data.get(tarih, {})        # aynı gün resume
+    print(f"REFRESH modu — seed {len(seed)} rakip ürün → {tarih}")
+
+    def _flush():
+        data[tarih] = gun
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    ok = 0
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=HEADLESS)
+        page = browser.new_context(user_agent=USER_AGENT).new_page()
+        page.set_default_timeout(8000)
+        items = [(pid, s) for pid, s in seed.items() if pid not in gun]
+        for i, (pid, s) in enumerate(items, 1):
+            veri = urun_verisi_cek(page, s["url"], s["marka"])
+            if veri:
+                gun[pid] = veri
+                ok += 1
+            if i % 25 == 0:
+                _flush()
+                print(f"  {i}/{len(items)} ({ok} taze)")
+        browser.close()
+    _flush()
+    ratio = ok / len(seed) if seed else 0
+    print(f"\n[REFRESH TAMAM] {tarih}: {ok}/{len(seed)} ürün tazelendi (oran {ratio:.0%}).")
+    if ratio < MIN_SUCCESS_RATIO:
+        print(f"[UYARI] başarı {ratio:.0%} < %{int(MIN_SUCCESS_RATIO*100)} — sayfalar engellenmiş olabilir.")
+
+
 def calistir():
     stores = load_competitor_stores()
-    # Dev/test: argümanla mağaza sayısını sınırla (ör. `competitor_bot.py 6` → ilk 6 mağaza).
-    if len(sys.argv) > 1 and sys.argv[1].isdigit():
-        n = int(sys.argv[1])
+    # Dev/test: `collect N` → ilk N mağaza ile sınırla.
+    if len(sys.argv) > 2 and sys.argv[2].isdigit():
+        n = int(sys.argv[2])
         stores = stores[:n]
         print(f"[DEV] mağaza limiti: ilk {n}")
     print(f"Tekilleştirilmiş aktif rakip mağaza sayısı: {len(stores)}")
@@ -315,5 +373,12 @@ def calistir():
 
 
 if __name__ == "__main__":
-    print("RoomArt Rakip Scraper — Trendyol Mağaza (parametrik)\n")
-    calistir()
+    # Mod: `collect` (listeleme; seed kur/genişlet — YEREL/residential, CI'da bot-koruması engeller)
+    #      varsayılan `refresh` (seed ürün URL'lerini detay sayfasından tazele — CI-uyumlu)
+    mode = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].isdigit() else "refresh"
+    if mode == "collect":
+        print("RoomArt Rakip Scraper — COLLECT (listeleme, yerel/residential)\n")
+        calistir()
+    else:
+        print("RoomArt Rakip Scraper — REFRESH (ürün-detay, CI-uyumlu)\n")
+        refresh_run()
