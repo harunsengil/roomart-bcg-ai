@@ -262,8 +262,10 @@ function ProductView({ matches, light }) {
       {/* Hover ürün görseli — portal (backdrop-filter kırpmasına karşı), satırın sağında */}
       {img.show && img.src && typeof document !== 'undefined' && createPortal((() => {
         const W = 230, H = 250
-        const vw = window.innerWidth, vh = window.innerHeight
-        const left = img.x + 12 + W > vw ? Math.max(8, img.x - W - 12) : img.x + 12
+        const vh = window.innerHeight
+        // img.x = "Ürün/Rakip" kolonunun SAĞ sınırı → popup SOLA açılır, sağ kenarı sınırda biter
+        // (Fiyat/Puan/Yorum kolonlarını ÖRTMEZ; ad alanının üzerinde durur).
+        const left = Math.max(8, img.x - W - 8)
         const top = Math.min(Math.max(8, img.top - 20), vh - H - 8)
         return (
           <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
