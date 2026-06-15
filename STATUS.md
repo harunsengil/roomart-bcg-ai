@@ -6,26 +6,23 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-10
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — PR #14–#17 merge + canlı doğrulama)
-- **Aktif branch:** `main` (PR #14 + #15 merge oldu; working tree main'de, temiz). Geliştirme **VS Code
-  Claude Code eklentisi** (sürücü) + Chat (düşünme) ile sürüyor. ⚠️ Aynı repoda eklenti + terminal
-  claude'u **AYNI ANDA** aktif session'la çalıştırma (paylaşılan working tree → çakışma).
+- **Tarih:** 2026-06-16
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — competitor pipeline uçtan uca doğrulama)
+- **Aktif branch:** `main` (temiz). Geliştirme **VS Code Claude Code eklentisi** (sürücü) + Chat
+  (düşünme) ile sürüyor.
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Açık kod işi yok** — PR #14 (API zenginleştirmesi) + #15 (kabarcık=satış adedi + sales_history)
->   + #16 (satış sparkline'ı, son 13 hafta) + #17 (sparkline hover konumu) main'de ve canlı. Canlı:
->   satış-tabanlı pazar payı + satış-momentumu büyüme + AKTİF+SAĞLIKLI ürün evreni + **6 yeni sinyal**
->   (Net Tahsilat %, İade %, kampanya, varyant, yaş, ömür-boyu satış) + yaşa-göre hız KPI'ı + BCG
->   kabarcık boyutu = satış adedi + **'Satış 3a' sparkline kolonu** (hover→büyük grafik).
->   **sales_history/{tarih}** günlük arşivleniyor.
-> - **Adaylar:** (a) **Public dashboard kilidi** — `units` (satış hacmi) artık public payload'da;
->   Firestore okuma kuralı / kimlik-korumalı Pages istenirse. (b) **sales_history üstüne ciro-trend
->   grafiği** (frontend; veri birikmeye başladı). (c) `competitor_bot.py`'yi analyzer'a bağla
->   (göreceli-pay, marka bazlı; CANLI doğrulanmamış). (d) Aşama 2 (Supabase/Next.js göçü).
+> - **Rekabet Sekmesi (PR-C) hazır hale geldi** — `competitive.json` canlıda: 6 kategori, 466 ürün
+>   eşleşmesi, 11 uyarı, ROOMART her kategoride görünüyor. Frontend CompetitionTab gerçek veriyi
+>   gösteriyor.
+> - **Sıradaki seçenekler:**
+>   (a) **Seed tamamlama:** `python3 backend/competitor_bot.py collect` → seyrek kategoriler için
+>   daha fazla rakip ürün topla (Sehpa/Mutfak/Çalışma masası rakipleri az, çok 'Diğer' düşüyor).
+>   (b) **CompetitionTab geliştirme:** kategori scatter grafiği (fiyat×puan), ürün eşleşme detayı.
+>   (c) **Public dashboard kilidi** — `units` satış hacmi public payload'da; Firestore kural/Pages auth.
+>   (d) **Aşama 2** (Supabase/Next.js göçü, ayrı oturum).
 > - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu (eski token
->   sohbette göründü). **Token ŞU AN geçerli** (2026-06-10 CI'da 6452 sipariş çekti). Bayat token'da
->   `analyze.yml`'in "Verify Trendyol sync" adımı görünür `::warning::` verir.
+>   sohbette göründü). Token hâlâ geçerli; bayat olunca `analyze.yml` `::warning::` verir.
 > - ⚠️ **Güvenlik (lokal):** `git remote origin` URL'inde plaintext GitHub PAT (`ghp_…`) var
 >   (yalnız yerel `.git/config`, commit'li değil) → rotasyon + credential-helper önerilir.
 
@@ -63,12 +60,9 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-10) PR #14–#17 merge + canlı doğrulama tamamlandı.** Aktif kod görevi yok. Trendyol API
-  zenginleştirmesi (kârlılık/iade/hız/varyant + yaşa-göre KPI), kabarcık=satış adedi + tarihli satış
-  arşivi (sales_history), ürün **satış sparkline'ı** (son 13 hafta, hover→büyük grafik kendi satırının
-  altında) canlı. Kullanıcı kararı bekleyen adaylar: **public dashboard kilidi** (units + haftalık satış
-  hacmi public oldu) ve **ciro-trend grafiği** (sales_history üstüne; veri günlük birikiyor). Sonraki
-  büyük adım yine **Aşama 2 = Supabase/Next.js göçü (ayrı oturum)**.
+- **(2026-06-15/16) Competitor pipeline uçtan uca tamamlandı ve doğrulandı.** Mac runner launchd
+  servis olarak kuruldu (terminal bağımsız, yeniden başlatmada otomatik). Competitor refresh
+  1401/1401 ürün başarıyla çekti. competitive.json canlıda. Aktif kod görevi yok.
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -81,6 +75,13 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-15/16) Competitor pipeline uçtan uca doğrulandı.** Self-hosted Mac runner
+      (residential IP, Trendyol 403 engeli aşıldı) → launchd kalıcı servis kuruldu (terminal
+      bağımsız, Mac yeniden başlatmada otomatik). Competitor refresh: 1401/1401 ürün başarılı
+      (seed 06-14 + refresh 06-15, 1400 görselli). `competitive.json` main'de: **6 kategori,
+      466 ürün eşleşmesi** (RoomArt ürünü başına en yakın 3 rakip, token+fiyat benzerliği),
+      **11 rekabet uyarısı**. ROOMART her kategoride görünüyor. Firestore'a da yazıldı.
+      runner: `~/actions-runner`, launchd plist: `~/Library/LaunchAgents/`.
 - [x] **(2026-06-10) PR #16 + #17 — ürün satış sparkline'ı (son 13 hafta) + hover grafik** (`fcc7585`,
       `679723e`). ProductTable'a **'Satış 3a'** kolonu (Sat. Hızı yanı): bağımlılıksız inline SVG
       sparkline (recharts değil, 402 satır perf); hover'da **fixed-position büyük grafik** (alan+nokta+
@@ -250,10 +251,15 @@
       her ekranda çalışır.
 
 ## Sıradaki Adımlar
-1. **Aşama 2 — Mimari göç (ayrı oturum):** Next.js + Supabase (Auth/Postgres/RLS) + Vercel.
+1. **Seed tamamlama:** `python3 backend/competitor_bot.py collect` — Sehpa/Mutfak Adası/Kitaplıklı
+   Çalışma Masası kategorilerinde rakip sayısı az (sırasıyla 66/18/211 ürün vs Banyo 79);
+   yeni mağaza ekle → `competitors.json` güncelle.
+2. **CompetitionTab geliştirme (opsiyonel):** kategori scatter (fiyat×puan, kabarcık=yorum),
+   ürün eşleşme detay kartı.
+3. **Aşama 2 — Mimari göç (ayrı oturum):** Next.js + Supabase (Auth/Postgres/RLS) + Vercel.
    Kategori atama API→DB anlık; scrape/analiz job→Postgres; analyzer/categorize/scraper mantığı
    taşınır. Detay: DECISIONS.md (2026-06-01).
-2. (Göç kapsamında) Gürültü/atama yönetimi DB+Auth'lu admin panelinden; v2 yeni-ürün keşfi;
+4. (Göç kapsamında) Gürültü/atama yönetimi DB+Auth'lu admin panelinden; v2 yeni-ürün keşfi;
    snapshot delta arşiv; ürün-kodu kapsamı; Actions Node20 yükseltmesi.
 
 ## Bilinen Sorunlar / Riskler
