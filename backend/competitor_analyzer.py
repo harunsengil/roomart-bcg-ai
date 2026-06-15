@@ -52,6 +52,10 @@ OUT_FILE = DATA / "competitive.json"
 
 TOP_PER_CATEGORY = 60     # kategori başına en çok yorumlu N rakip ürün (gürültü/uzun-kuyruk kırpma)
 MATCHES_PER_PRODUCT = 3   # her ürün için en yakın N rakip
+# Fiyat-bandı kapısı: rakip fiyatı bizim fiyatın bu aralığında DEĞİLSE eşleşme adayı OLMAZ
+# (ör. premium 240cm ürünümüz, standart ucuz dolapla eşleşmesin). Eşik altı skorlar gizlenir.
+PRICE_BAND = (0.5, 2.0)
+MIN_MATCH_SCORE = 0.35
 HIGH_RETURN = None        # (kullanılmıyor; rakipte iade yok)
 
 # Eşleştirme/skor stopword'leri (ayırt edici olmayan kelimeler).
@@ -73,14 +77,16 @@ def _tokens(name: str) -> set:
 
 
 def _similarity(our_name, our_price, c_name, c_price):
-    """0-1 benzerlik: ad-token Jaccard (0.6) + fiyat yakınlığı (0.4)."""
+    """0-1 benzerlik: ad-token Jaccard (0.5) + fiyat yakınlığı (0.5).
+    Fiyat ağırlığı yükseltildi → farklı segment (ör. premium 240cm vs standart) yanlış eşleşmez.
+    Ön-eleme (fiyat-bandı) build_matches'te yapılır; bu skor banttakileri SIRALAR."""
     a, b = _tokens(our_name), _tokens(c_name)
     jac = len(a & b) / len(a | b) if (a or b) else 0.0
     if our_price and c_price and our_price > 0:
         prox = max(0.0, 1.0 - abs(our_price - c_price) / our_price)
     else:
         prox = 0.0
-    return round(0.6 * jac + 0.4 * prox, 4)
+    return round(0.5 * jac + 0.5 * prox, 4)
 
 
 def load_competitors():
@@ -213,10 +219,14 @@ def build_matches(ours, comps):
     matches = []
     for o in ours:
         cands = by_cat.get(o["category"], [])
+        # FİYAT-BANDI KAPISI: çok farklı fiyatlı muadilleri ele (segment uyumu)
+        if o["price"] and o["price"] > 0:
+            lo, hi = o["price"] * PRICE_BAND[0], o["price"] * PRICE_BAND[1]
+            cands = [c for c in cands if c["price"] and lo <= c["price"] <= hi]
         scored = sorted(
             ({**c, "score": _similarity(o["name"], o["price"], c["name"], c["price"])} for c in cands),
             key=lambda x: -x["score"])[:MATCHES_PER_PRODUCT]
-        scored = [s for s in scored if s["score"] > 0.05]
+        scored = [s for s in scored if s["score"] >= MIN_MATCH_SCORE]
         if not scored:
             continue
         matches.append({
