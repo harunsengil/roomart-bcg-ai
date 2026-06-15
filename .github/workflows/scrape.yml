@@ -10,44 +10,22 @@ permissions:
 
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    # SELF-HOSTED Mac runner (residential IP) — Trendyol GitHub Actions datacenter IP'lerini
+    # 403 ile engelliyor; Playwright scraping yalnız residential IP'de çalışır. analyze/deploy
+    # bulutta kalır (API/build, 403 yok). Runner agent makinede kurulu olmalı.
+    runs-on: [self-hosted, macOS]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('backend/requirements.txt') }}
-
-      - name: Install dependencies
-        run: pip install -r backend/requirements.txt
-
-      # Playwright tarayıcı binary'lerini sürüm-anahtarlı cache'le (~150MB/koşu tasarrufu).
-      # playwright sürümü requirements.txt'te pinli; değişince cache otomatik tazelenir.
-      - name: Cache Playwright browsers
-        id: pw-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('backend/requirements.txt') }}
-
-      - name: Install Chromium (cache miss → tarayıcı + sistem bağımlılıkları)
-        if: steps.pw-cache.outputs.cache-hit != 'true'
-        run: python -m playwright install --with-deps chromium
-
-      - name: Install Playwright system deps (cache hit → yalnız apt; tarayıcı zaten cache'te)
-        if: steps.pw-cache.outputs.cache-hit == 'true'
-        run: python -m playwright install-deps chromium
+      # Mac'te sistem python3 + Playwright zaten kurulu; pip/playwright idempotent (hızlı).
+      - name: Install dependencies (idempotent)
+        run: |
+          python3 -m pip install -r backend/requirements.txt
+          python3 -m playwright install chromium
 
       - name: Run data scraper
-        run: python backend/scraper.py
+        run: python3 backend/scraper.py
         env:
           PYTHONUNBUFFERED: 1
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
