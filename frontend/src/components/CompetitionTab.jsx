@@ -201,12 +201,12 @@ function ProductView({ matches, light }) {
         {/* sabit başlık (sticky) — kartlarla aynı 1px yatay kenar (border-x) → kolonlar birebir hizalı */}
         <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
           <span>Ürün / Rakip</span>
-          <span className="text-right" title={T.fiyat}>Fiyat</span>
-          <span className="text-right" title={T.delta}>Fiyat Farkı</span>
-          <span className="text-right" title={T.puan}>Puan</span>
-          <span className="text-right" title={T.yorum}>Yorum</span>
-          <span className="text-right" title={T.sim}>Benzerlik</span>
-          <span className="text-left pl-2">Kategori</span>
+          <span className="text-center" title={T.fiyat}>Fiyat</span>
+          <span className="text-center" title={T.delta}>Fiyat Farkı</span>
+          <span className="text-center" title={T.puan}>Puan</span>
+          <span className="text-center" title={T.yorum}>Yorum</span>
+          <span className="text-center" title={T.sim}>Benzerlik</span>
+          <span className="text-center">Kategori</span>
         </div>
 
         <div className="space-y-2 pt-2">
@@ -217,7 +217,7 @@ function ProductView({ matches, light }) {
             <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
               {/* bizim ürün */}
               <div className={`cmp-prow ${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
-                <a href={m.our_url} target="_blank" rel="noreferrer" title={m.our_name}
+                <a href={m.our_url} target="_blank" rel="noreferrer"
                   className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0"
                   onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
                   <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
@@ -236,7 +236,7 @@ function ProductView({ matches, light }) {
               {/* rakipler */}
               {m.competitors.map((c, i) => (
                 <div key={i} className={`cmp-prow ${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
-                  <a href={c.url} target="_blank" rel="noreferrer" title={c.name}
+                  <a href={c.url} target="_blank" rel="noreferrer"
                     className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3"
                     onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
                     <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
