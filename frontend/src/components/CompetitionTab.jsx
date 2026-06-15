@@ -165,8 +165,11 @@ function ProductView({ matches, light }) {
   const [img, setImg] = useState({ show: false, x: 0, top: 0, src: null, name: '' })
   const showImg = (e, src, name) => {
     if (!src) return
-    const r = e.currentTarget.getBoundingClientRect()
-    setImg({ show: true, x: r.right, top: r.top, src, name })
+    const row = e.currentTarget.closest('.cmp-prow')
+    const r = (row || e.currentTarget).getBoundingClientRect()
+    // "Ürün/Rakip" kolonunun sağ kenarı: satır sağ − sabit kolonlar (536) − sağ padding (12)
+    const x = row ? r.right - 548 : r.right
+    setImg({ show: true, x, top: r.top, src, name })
   }
   const hideImg = () => setImg(s => ({ ...s, show: false }))
   const filtered = useMemo(() => {
@@ -193,29 +196,30 @@ function ProductView({ matches, light }) {
         <span className="text-[11px] font-mono text-white/30 whitespace-nowrap">{filtered.length} ürün · en yakın 3 rakip</span>
       </div>
 
-      {/* sabit başlık */}
-      <div className={`${GRID} flex-shrink-0 px-3 py-2 text-[11px] font-mono text-white/40 border-b border-white/10 rounded-t-lg`} style={{ background: 'var(--bg-card)' }}>
-        <span>Ürün / Rakip</span>
-        <span className="text-right" title={T.fiyat}>Fiyat</span>
-        <span className="text-right" title={T.delta}>Fiyat Farkı</span>
-        <span className="text-right" title={T.puan}>Puan</span>
-        <span className="text-right" title={T.yorum}>Yorum</span>
-        <span className="text-right" title={T.sim}>Benzerlik</span>
-        <span className="text-left pl-2">Kategori</span>
-      </div>
+      {/* başlık + kayan liste TEK scroll kutusunda → scrollbar ikisini de eşit kaydırır (hizalı) */}
+      <div className="overflow-y-auto overflow-x-hidden" style={{ maxHeight: 'calc(100vh - 380px)' }}>
+        {/* sabit başlık (sticky) — kartlarla aynı 1px yatay kenar (border-x) → kolonlar birebir hizalı */}
+        <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
+          <span>Ürün / Rakip</span>
+          <span className="text-right" title={T.fiyat}>Fiyat</span>
+          <span className="text-right" title={T.delta}>Fiyat Farkı</span>
+          <span className="text-right" title={T.puan}>Puan</span>
+          <span className="text-right" title={T.yorum}>Yorum</span>
+          <span className="text-right" title={T.sim}>Benzerlik</span>
+          <span className="text-left pl-2">Kategori</span>
+        </div>
 
-      {/* kayan liste — her set ayrı çerçeve */}
-      <div className="overflow-y-auto overflow-x-hidden space-y-2 pt-2" style={{ maxHeight: 'calc(100vh - 410px)' }}>
+        <div className="space-y-2 pt-2">
         {filtered.map(m => {
-          const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280', label: '—' }
+          const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280' }
           const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
           return (
             <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
               {/* bizim ürün */}
-              <div className={`${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}
-                onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
+              <div className={`cmp-prow ${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
                 <a href={m.our_url} target="_blank" rel="noreferrer" title={m.our_name}
-                  className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0">
+                  className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0"
+                  onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
                   <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
                 </a>
                 <span className="text-right font-mono text-white">{m.our_price != null ? formatCurrency(m.our_price) : '—'}</span>
@@ -225,15 +229,16 @@ function ProductView({ matches, light }) {
                 <span className="text-right font-mono text-white/30">—</span>
                 <span className="text-left pl-2 truncate">
                   <span className="text-[10px] font-mono text-white/40">{m.category}</span>
-                  {m.bcg_class && <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono" style={{ background: `${cfg.color}15`, color: cfg.color }}>{BCG_SHORT[m.bcg_class]}</span>}
+                  <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono"
+                    style={{ background: `${cfg.color}15`, color: cfg.color }}>{m.bcg_class ? BCG_SHORT[m.bcg_class] : '—'}</span>
                 </span>
               </div>
               {/* rakipler */}
               {m.competitors.map((c, i) => (
-                <div key={i} className={`${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}
-                  onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
+                <div key={i} className={`cmp-prow ${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
                   <a href={c.url} target="_blank" rel="noreferrer" title={c.name}
-                    className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3">
+                    className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3"
+                    onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
                     <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
                     <span className="truncate">{c.name}</span>
                     <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
@@ -251,6 +256,7 @@ function ProductView({ matches, light }) {
             </div>
           )
         })}
+        </div>
       </div>
 
       {/* Hover ürün görseli — portal (backdrop-filter kırpmasına karşı), satırın sağında */}
