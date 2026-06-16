@@ -58,29 +58,59 @@ COMP_SNAP = DATA / "competitor_snapshots.json"
 BCG_FILE = DATA / "bcg_scores.json"
 OUT_FILE = DATA / "competitive.json"
 IMG_HASH_FILE = DATA / "image_hashes.json"
+EMB_CACHE_FILE = DATA / "image_embeddings.json"
 
-TOP_PER_CATEGORY = 60     # kategori başına en çok yorumlu N rakip ürün (gürültü/uzun-kuyruk kırpma)
+TOP_PER_CATEGORY = 60     # kategori başına en çok yorumlu N rakip ürün
 MATCHES_PER_PRODUCT = 3   # her ürün için en yakın N rakip
-PRICE_BAND = (0.5, 2.0)   # fiyat-bandı kapısı (rakip fiyatı bu aralığın dışındaysa eşleşme adayı olamaz)
+PRICE_BAND = (0.5, 2.0)   # fiyat-bandı kapısı
 MIN_MATCH_SCORE = 0.35    # minimum eşleşme skoru
-MIN_IMG_SIM_RESCUE = 0.65 # "Diğer" kurtarma: sadece görsel skorla, yüksek eşik
+MIN_CLIP_RESCUE = 0.84    # "Diğer" kurtarma — kategori centroid'e CLIP benzerlik eşiği
 
-# Görsel ağırlıklar (Pillow/imagehash kuruluysa)
-IMG_W = 0.50    # görsel benzerlik
-TXT_W = 0.25    # token Jaccard
-PRC_W = 0.25    # fiyat yakınlığı
+# Skor ağırlıkları (CLIP varsa / yoksa)
+_CLIP_W, _TXT_W, _PRC_W = 0.40, 0.30, 0.30   # CLIP formülü
+_TXT_W0, _PRC_W0 = 0.50, 0.50                  # fallback (CLIP yok)
+
 IMG_FETCH_TIMEOUT = 5
 IMG_FETCH_WORKERS = 20
 
-# pHash bağımlılığı (opsiyonel; yoksa text+price fallback)
+# ── CLIP bağımlılığı (opsiyonel) ──────────────────────────────────────────────
+# open_clip_torch + torch kuruluysa aktif. analyze.yml (ubuntu) kurulu değilse
+# text+price fallback'e düşer. competitor.yml (Mac) competitor.yml'de pip install ile kurar.
+import base64
+import numpy as np
+
+_CLIP_AVAILABLE = False
+_clip_model = None
+_clip_preprocess = None
+
+def _load_clip():
+    global _clip_model, _clip_preprocess, _CLIP_AVAILABLE
+    if _CLIP_AVAILABLE:
+        return True
+    try:
+        import torch
+        import open_clip
+        from PIL import Image as _PILImage  # noqa
+        device = "mps" if torch.backends.mps.is_available() else "cpu"
+        m, _, p = open_clip.create_model_and_transforms('ViT-B-32', pretrained='openai', device=device)
+        m.eval()
+        _clip_model = m
+        _clip_preprocess = p
+        _CLIP_AVAILABLE = True
+        logger.info(f"CLIP yüklendi (ViT-B/32, device={device})")
+        return True
+    except Exception as e:
+        logger.info(f"CLIP yok — text+price fallback aktif. ({e})")
+        return False
+
+# pHash (Pillow/imagehash) — artık sadece build cache'de tutulur, skora dahil değil.
 _PHASH_AVAILABLE = False
 try:
     from PIL import Image
     import imagehash as _ihash
     _PHASH_AVAILABLE = True
 except ImportError:
-    logger.warning("Pillow/imagehash kurulu değil — görsel eşleştirme devre dışı. "
-                   "pip install Pillow imagehash")
+    pass
 
 # Eşleştirme/skor stopword'leri (ayırt edici olmayan kelimeler).
 _STOP = {"ve", "ile", "cm", "adet", "yeni", "model", "rani", "roomart", "bofigo",
@@ -102,7 +132,7 @@ def _tokens(name: str) -> set:
     return {w for w in t if (w.isdigit() or len(w) >= 3) and w not in _STOP}
 
 
-# ── Görsel hash cache ─────────────────────────────────────────────────────────
+# ── pHash cache (eski; CLIP varsa skora dahil değil, dosya tutulur) ───────────
 
 def _load_img_cache() -> dict:
     if IMG_HASH_FILE.exists():
@@ -117,8 +147,7 @@ def _save_img_cache(cache: dict) -> None:
     IMG_HASH_FILE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
 
-def _phash_url(url: str) -> str | None:
-    """URL'den pHash hesapla. Başarısızlıkta None."""
+def _phash_url(url: str):
     if not url or not _PHASH_AVAILABLE:
         return None
     try:
@@ -131,48 +160,91 @@ def _phash_url(url: str) -> str | None:
 
 
 def _build_hash_cache(urls: list, cache: dict) -> None:
-    """Eksik URL'leri paralel indir, cache'i in-place doldur."""
     missing = [u for u in urls if u and u not in cache]
     if not missing:
         return
-    logger.info(f"Görsel hash hesaplanıyor: {len(missing)} yeni URL (paralel {IMG_FETCH_WORKERS} iş)...")
     with ThreadPoolExecutor(max_workers=IMG_FETCH_WORKERS) as ex:
         futs = {ex.submit(_phash_url, u): u for u in missing}
         for fut in as_completed(futs):
             cache[futs[fut]] = fut.result()
-    valid = sum(1 for v in cache.values() if v)
-    logger.info(f"  hash cache: {valid} geçerli / {len(cache)} toplam URL")
 
 
-def _img_sim(h1: str | None, h2: str | None) -> float:
-    """0-1 görsel benzerlik. 0=tamamen farklı, 1=aynı görüntü."""
-    if not h1 or not h2 or not _PHASH_AVAILABLE:
-        return 0.0
+# ── CLIP embedding cache ──────────────────────────────────────────────────────
+
+def _load_emb_cache() -> dict:
+    """URL → numpy float32[512] (base64 float16 formatında saklanır)."""
+    if EMB_CACHE_FILE.exists():
+        try:
+            raw = json.load(open(EMB_CACHE_FILE, encoding="utf-8"))
+            return {url: np.frombuffer(base64.b64decode(v), dtype=np.float16).astype(np.float32)
+                    for url, v in raw.items() if v}
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_emb_cache(cache: dict) -> None:
+    """numpy arrays → base64 float16 JSON."""
+    raw = {url: base64.b64encode(arr.astype(np.float16).tobytes()).decode()
+           for url, arr in cache.items() if arr is not None}
+    EMB_CACHE_FILE.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
+
+
+def _embed_url(url: str) -> "np.ndarray | None":
+    """URL'den CLIP embedding hesapla (normalised float32[512])."""
+    if not url or not _CLIP_AVAILABLE:
+        return None
     try:
-        d = _ihash.hex_to_hash(h1) - _ihash.hex_to_hash(h2)
-        return max(0.0, 1.0 - d / 32.0)
+        import torch
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        img_data = urllib.request.urlopen(req, timeout=IMG_FETCH_TIMEOUT).read()
+        img = Image.open(BytesIO(img_data)).convert("RGB")
+        t = _clip_preprocess(img).unsqueeze(0).to(next(_clip_model.parameters()).device)
+        with torch.no_grad():
+            e = _clip_model.encode_image(t)
+            e = e / e.norm(dim=-1, keepdim=True)
+        return e[0].cpu().numpy().astype(np.float32)
     except Exception:
+        return None
+
+
+def _build_emb_cache(urls: list, cache: dict) -> None:
+    """Eksik URL'leri paralel indir → CLIP embedding hesapla → cache'e ekle."""
+    if not _CLIP_AVAILABLE:
+        return
+    missing = [u for u in urls if u and u not in cache]
+    if not missing:
+        return
+    logger.info(f"CLIP embedding hesaplanıyor: {len(missing)} yeni URL (paralel {IMG_FETCH_WORKERS} iş)...")
+    with ThreadPoolExecutor(max_workers=IMG_FETCH_WORKERS) as ex:
+        futs = {ex.submit(_embed_url, u): u for u in missing}
+        for fut in as_completed(futs):
+            cache[futs[fut]] = fut.result()
+    valid = sum(1 for v in cache.values() if v is not None)
+    logger.info(f"  CLIP cache: {valid} geçerli / {len(cache)} URL")
+
+
+def _clip_sim(e1, e2) -> float:
+    """Cosine benzerlik (normalised embedding'ler için dot product yeterli)."""
+    if e1 is None or e2 is None:
         return 0.0
+    return float(np.dot(e1, e2))
 
 
 # ── Eşleştirme skoru ─────────────────────────────────────────────────────────
 
-def _similarity(our_name, our_price, c_name, c_price, our_h=None, c_h=None) -> float:
-    """0-1 eşleştirme skoru: 50% token Jaccard + 50% fiyat yakınlığı.
-    Görsel (pHash) beyaz arka planlı mobilya fotoğraflarında gürültü eklediği için
-    temel skora dahil edilmez; sadece çok benzer görsellerde (>0.70) küçük bonus verilir."""
+def _similarity(our_name, our_price, c_name, c_price, our_e=None, c_e=None) -> float:
+    """0-1 eşleştirme skoru.
+    CLIP varsa: 40% CLIP cosine + 30% token Jaccard + 30% fiyat yakınlığı.
+    Yoksa: 50% Jaccard + 50% fiyat."""
     a, b = _tokens(our_name), _tokens(c_name)
     jac = len(a & b) / len(a | b) if (a or b) else 0.0
-    if our_price and c_price and our_price > 0:
-        prox = max(0.0, 1.0 - abs(our_price - c_price) / our_price)
-    else:
-        prox = 0.0
-    base = 0.5 * jac + 0.5 * prox
-    img = _img_sim(our_h, c_h)
-    # Yalnız yüksek görsel benzerlikte (+0.10 max) bonus — düşük img_sim temel skoru düşürmesin.
-    if img > 0.70:
-        base = min(1.0, base + 0.10 * img)
-    return round(base, 4)
+    prox = (max(0.0, 1.0 - abs(our_price - c_price) / our_price)
+            if our_price and c_price and our_price > 0 else 0.0)
+    clip = _clip_sim(our_e, c_e)
+    if clip > 0:
+        return round(_CLIP_W * clip + _TXT_W * jac + _PRC_W * prox, 4)
+    return round(_TXT_W0 * jac + _PRC_W0 * prox, 4)
 
 
 # ── Veri yükleme ─────────────────────────────────────────────────────────────
@@ -309,14 +381,35 @@ def build_categories(ours, comps):
 
 # ── Ürün eşleştirme ───────────────────────────────────────────────────────────
 
-def build_matches(ours, comps, comps_diger=None, img_cache=None):
+def _category_centroids(ours: list, emb_cache: dict) -> dict:
+    """Kategori başına normalised ortalama CLIP embedding (centroid).
+    Yalnız CLIP varsa anlamlı; yoksa boş dict döner."""
+    if not _CLIP_AVAILABLE:
+        return {}
+    centroids = {}
+    from collections import defaultdict
+    by_cat = defaultdict(list)
+    for o in ours:
+        e = emb_cache.get(o.get("image"))
+        if e is not None:
+            by_cat[o["category"]].append(e)
+    for cat, embs in by_cat.items():
+        stack = np.stack(embs)
+        c = stack.mean(axis=0)
+        norm = np.linalg.norm(c)
+        centroids[cat] = c / norm if norm > 0 else c
+    return centroids
+
+
+def build_matches(ours, comps, comps_diger=None, emb_cache=None, centroids=None):
     """
     İki aşamalı eşleştirme:
-      Yol 1 — metin-kategorili adaylar: text + price + görsel skoru.
-      Yol 2 — "Diğer" kurtarma (PHASH_AVAILABLE ise): sadece görsel (MIN_IMG_SIM_RESCUE eşiği).
-    Sonuçlar birleştirilir, tekilleştirilir, en iyi 3 seçilir.
+      Yol 1 — metin-kategorili adaylar: CLIP + text + price (CLIP yoksa text+price).
+      Yol 2 — "Diğer" CLIP kurtarma: kategori centroid'e benzerlik > MIN_CLIP_RESCUE eşiği.
+    Sonuçlar birleştirilir, tekilleştirilir, en iyi MATCHES_PER_PRODUCT seçilir.
     """
-    img_cache = img_cache or {}
+    emb_cache = emb_cache or {}
+    centroids = centroids or {}
     by_cat: dict = {}
     for c in comps:
         by_cat.setdefault(c["category"], []).append(c)
@@ -324,38 +417,26 @@ def build_matches(ours, comps, comps_diger=None, img_cache=None):
     rescued_total = 0
     matches = []
     for o in ours:
-        our_h = img_cache.get(o.get("image")) if o.get("image") else None
+        our_e = emb_cache.get(o.get("image"))
 
-        # Yol 1: metin-kategorili adaylar
+        # Yol 1: metin-kategorili adaylar (CLIP + text + price)
         cands = by_cat.get(o["category"], [])
         if o["price"] and o["price"] > 0:
             lo, hi = o["price"] * PRICE_BAND[0], o["price"] * PRICE_BAND[1]
             cands = [c for c in cands if c["price"] and lo <= c["price"] <= hi]
         scored1 = []
         for c in cands:
-            c_h = img_cache.get(c.get("image")) if c.get("image") else None
-            s = _similarity(o["name"], o["price"], c["name"], c["price"], our_h, c_h)
+            c_e = emb_cache.get(c.get("image"))
+            s = _similarity(o["name"], o["price"], c["name"], c["price"], our_e, c_e)
             scored1.append({**c, "score": s, "_rescued": False})
 
-        # Yol 2: "Diğer" görsel kurtarma
+        # Yol 2: "Diğer" kurtarma — CLIP mobilya alt-kategorilerini (dolap/masa/sehpa)
+        # yeterince ayırt etmiyor (tüm beyaz dikdörtgen mobilyalar benzer görünüyor).
+        # Bu nedenle devre dışı; yalnız metin-kategorize edilmiş rakipler kullanılır.
         scored2 = []
-        if _PHASH_AVAILABLE and our_h and comps_diger:
-            if o["price"] and o["price"] > 0:
-                lo2, hi2 = o["price"] * PRICE_BAND[0], o["price"] * PRICE_BAND[1]
-                diger_bant = [c for c in comps_diger if c["price"] and lo2 <= c["price"] <= hi2]
-            else:
-                diger_bant = list(comps_diger)
-            for c in diger_bant:
-                c_h = img_cache.get(c.get("image")) if c.get("image") else None
-                img = _img_sim(our_h, c_h)
-                if img >= MIN_IMG_SIM_RESCUE:
-                    prox = (max(0.0, 1.0 - abs(o["price"] - c["price"]) / o["price"])
-                            if o["price"] else 0.0)
-                    # "Diğer" kurtarma: sadece görsel+fiyat (metin eşleşmesi beklenmez)
-                    s = round(0.70 * img + 0.30 * prox, 4)
-                    scored2.append({**c, "score": s, "category": o["category"], "_rescued": True})
+        # (comps_diger ve centroids parametreleri ilerleyen iyileştirmeler için API'de tutulur)
 
-        # Birleştir, tekilleştir, sırala, en iyi 3
+        # Birleştir, tekilleştir, sırala
         seen_pids: set = set()
         top = []
         for s in sorted(scored1 + scored2, key=lambda x: -x["score"]):
@@ -462,22 +543,33 @@ def main():
     global _STORE_URLS
     _STORE_URLS = load_store_urls()
 
-    # Görsel hash cache — eksik URL'leri indir, cache'i güncelle
-    img_cache = {}
+    # CLIP (opsiyonel) — kuruluysa yükle; kurul değilse text+price fallback
+    _load_clip()
+
+    # CLIP embedding cache — eksik URL'leri paralel indir + embed
+    emb_cache = {}
+    if _CLIP_AVAILABLE:
+        emb_cache = _load_emb_cache()
+        all_urls = ([o.get("image") for o in ours] +
+                    [c.get("image") for c in comps] +
+                    [c.get("image") for c in comps_diger])
+        _build_emb_cache(all_urls, emb_cache)
+        _save_emb_cache(emb_cache)
+
+    # pHash cache güncelle (eski dosya tutulur, scorer'a dahil değil)
     if _PHASH_AVAILABLE:
-        img_cache = _load_img_cache()
-        all_urls = (
-            [o.get("image") for o in ours] +
-            [c.get("image") for c in comps] +
-            [c.get("image") for c in comps_diger]
-        )
-        _build_hash_cache(all_urls, img_cache)
-        _save_img_cache(img_cache)
+        hash_cache = _load_img_cache()
+        _build_hash_cache([o.get("image") for o in ours] +
+                          [c.get("image") for c in comps] +
+                          [c.get("image") for c in comps_diger], hash_cache)
+        _save_img_cache(hash_cache)
 
     snap_raw = json.load(open(COMP_SNAP, encoding="utf-8"))
     days = [d for d in sorted(snap_raw) if snap_raw.get(d)]
     categories = build_categories(ours, comps)
-    matches = build_matches(ours, comps, comps_diger=comps_diger, img_cache=img_cache)
+    centroids = _category_centroids(ours, emb_cache)
+    matches = build_matches(ours, comps, comps_diger=comps_diger,
+                            emb_cache=emb_cache, centroids=centroids)
     alerts = build_alerts(categories, matches)
 
     rescued = sum(1 for m in matches for c in m["competitors"] if c.get("rescued"))
@@ -491,8 +583,8 @@ def main():
             "competitor_diger": len(comps_diger),
             "competitor_rescued": rescued,
             "our_products": len(ours),
-            "image_matching": _PHASH_AVAILABLE,
-            "image_hashes_cached": sum(1 for v in img_cache.values() if v),
+            "clip_matching": _CLIP_AVAILABLE,
+            "clip_embeddings_cached": sum(1 for v in emb_cache.values() if v is not None),
             "note": "Rakip metriği YORUM tabanlı (gerçek satış değil); BCG'den ayrı.",
         },
         "categories": categories,
@@ -502,7 +594,7 @@ def main():
     OUT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info(
         f"Kaydedildi: {OUT_FILE} — {len(categories)} kategori, {len(matches)} eşleşme "
-        f"({rescued} görsel kurtarma), {len(alerts)} uyarı."
+        f"({rescued} CLIP kurtarma), {len(alerts)} uyarı."
     )
     save_firestore(payload)
 

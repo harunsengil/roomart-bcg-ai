@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies (idempotent)
         run: |
           python3 -m pip install -r backend/requirements.txt
+          python3 -m pip install torch torchvision open_clip_torch --quiet
           python3 -m playwright install chromium
 
       # REFRESH modu: bilinen rakip ürün URL'lerini (seed) gezip fiyat/puan/yorum tazeler
