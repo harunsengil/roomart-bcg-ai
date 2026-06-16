@@ -1,0 +1,55 @@
+name: Trendyol IP Probe (cloud)
+
+# GitHub-hosted (ubuntu) IP'sinden Trendyol erişimini test eder.
+# AMAÇ: Mac runner'a hâlâ gerek var mı? (Trendyol datacenter IP'lerini 403'lüyordu.)
+# 200 + içerik → bulutta scrape mümkün, Mac'ten kurtulabiliriz.
+# 403 / boş → engel sürüyor, Mac (veya residential proxy) gerekli.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Trendyol (requests + Playwright)
+        run: |
+          python3 -m pip install requests playwright --quiet
+          python3 -m playwright install chromium --quiet
+          python3 - << 'PY'
+          import requests
+
+          # Test 1: basit HTTP (ürün detay — server-render gömülü JSON)
+          urls = [
+              ("Ürün detay", "https://www.trendyol.com/rani-mobilya/rani-je135-cok-amacli-dolap-p-1"),
+              ("Mağaza listeleme", "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0"),
+              ("Arama", "https://www.trendyol.com/sr?q=banyo+dolabi"),
+          ]
+          hdr = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+          print("=== requests (basit HTTP) ===")
+          for ad, u in urls:
+              try:
+                  r = requests.get(u, headers=hdr, timeout=15)
+                  has_data = "__SEARCH_APP_INITIAL_STATE__" in r.text or "productDetail" in r.text or len(r.text) > 50000
+                  print(f"  [{ad}] HTTP {r.status_code} | {len(r.text)} byte | veri-var={has_data}")
+              except Exception as e:
+                  print(f"  [{ad}] HATA: {str(e)[:80]}")
+
+          # Test 2: Playwright (gerçek tarayıcı — JS render)
+          print("\n=== Playwright (headless Chromium) ===")
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              br = p.chromium.launch(headless=True)
+              pg = br.new_context(user_agent=hdr["User-Agent"]).new_page()
+              for ad, u in urls:
+                  try:
+                      resp = pg.goto(u, wait_until="domcontentloaded", timeout=30000)
+                      body = pg.content()
+                      has_data = "-p-" in body and ("productDetail" in body or "prc-" in body or len(body) > 80000)
+                      print(f"  [{ad}] HTTP {resp.status if resp else '?'} | {len(body)} byte | veri-var={has_data}")
+                  except Exception as e:
+                      print(f"  [{ad}] HATA: {str(e)[:80]}")
+              br.close()
+
+          print("\nSONUÇ: 200 + veri-var=True ise bulutta scrape MÜMKÜN (Mac gerekmez).")
+          print("       403 / veri-var=False ise engel sürüyor (Mac/proxy gerekli).")
+          PY
