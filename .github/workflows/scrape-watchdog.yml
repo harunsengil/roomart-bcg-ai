@@ -1,0 +1,56 @@
+name: Scrape Watchdog
+
+# Mac kapalıyken 05:00 UTC'de çalışması gereken job kuyruğa alınır; runner
+# açılınca otomatik işler. Bu watchdog 07:00 UTC (10:00 TR) ve 09:00 UTC (12:00 TR)
+# çalışır — Mac o saat açıksa veri eksikse yeniden tetikler.
+# Mac hiç açılmadıysa job zaten kuyruğa bekler (GitHub 24 saat tutar).
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 07:00 UTC = 10:00 TR
+    - cron: '0 9 * * *'   # 09:00 UTC = 12:00 TR (yedek)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check today's snapshot
+        id: check
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          COUNT=$(python3 -c "
+          import json, sys
+          try:
+              d = json.load(open('data/snapshots.json'))
+              print(len(d.get('$TODAY', {})))
+          except Exception:
+              print(0)
+          ")
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Bugün ($TODAY) snapshot sayısı: $COUNT"
+
+      - name: Re-trigger scrape if missing
+        if: steps.check.outputs.count == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = '${{ steps.check.outputs.today }}'
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'scrape.yml',
+              ref: 'main'
+            })
+            core.notice(`Scrape yeniden tetiklendi: ${today} için veri yoktu.`)
+
+      - name: All good
+        if: steps.check.outputs.count != '0'
+        run: echo "✓ ${{ steps.check.outputs.today }} verisi mevcut (${{ steps.check.outputs.count }} ürün) — yeniden tetiklemeye gerek yok."
