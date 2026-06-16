@@ -158,19 +158,21 @@ def _img_sim(h1: str | None, h2: str | None) -> float:
 # ── Eşleştirme skoru ─────────────────────────────────────────────────────────
 
 def _similarity(our_name, our_price, c_name, c_price, our_h=None, c_h=None) -> float:
-    """0-1 eşleştirme skoru.
-    Görsel hash varsa: 50% görsel + 25% token Jaccard + 25% fiyat yakınlığı.
-    Yoksa: 50% Jaccard + 50% fiyat (orijinal formül)."""
+    """0-1 eşleştirme skoru: 50% token Jaccard + 50% fiyat yakınlığı.
+    Görsel (pHash) beyaz arka planlı mobilya fotoğraflarında gürültü eklediği için
+    temel skora dahil edilmez; sadece çok benzer görsellerde (>0.70) küçük bonus verilir."""
     a, b = _tokens(our_name), _tokens(c_name)
     jac = len(a & b) / len(a | b) if (a or b) else 0.0
     if our_price and c_price and our_price > 0:
         prox = max(0.0, 1.0 - abs(our_price - c_price) / our_price)
     else:
         prox = 0.0
+    base = 0.5 * jac + 0.5 * prox
     img = _img_sim(our_h, c_h)
-    if img > 0:
-        return round(IMG_W * img + TXT_W * jac + PRC_W * prox, 4)
-    return round(0.5 * jac + 0.5 * prox, 4)
+    # Yalnız yüksek görsel benzerlikte (+0.10 max) bonus — düşük img_sim temel skoru düşürmesin.
+    if img > 0.70:
+        base = min(1.0, base + 0.10 * img)
+    return round(base, 4)
 
 
 # ── Veri yükleme ─────────────────────────────────────────────────────────────
