@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-15T21:15:40.846762+00:00",
+    "last_updated": "2026-06-16T10:14:29.778037+00:00",
     "total_alerts": 7
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (100/100).",
       "product_id": "1143914128",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-2",
@@ -20,7 +20,7 @@
       "title": "Mutfak Adası — lider STAR",
       "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 100.",
       "product_id": "877650214",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-3",
@@ -29,7 +29,7 @@
       "title": "Kahve Köşesi — lider STAR",
       "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 61, büyüme 100.",
       "product_id": "885510233",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-4",
@@ -38,16 +38,16 @@
       "title": "Banyo Dolabı — yüksek iade riski",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
       "product_id": "971265574",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-5",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Oval Lavabolu Mat Mdf 105 Cm Çekmeceli Banyo Dolabı + Aynalı iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "829585339",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "title": "Sehpa — yüksek iade riski",
+      "message": "Helsinki Orta Sehpa Suntalam 110 cm iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "866194463",
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-6",
@@ -56,7 +56,7 @@
       "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
       "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "855574483",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     },
     {
       "id": "alert-7",
@@ -65,7 +65,7 @@
       "title": "Banyo Dolabı — kârsız hacim uyarısı",
       "message": "Ad7 Kulpsuz Çift Kapaklı Ahşap-mat Beyaz Mdf 80 Cm Aynalı Ba hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
       "product_id": "277743440",
-      "timestamp": "2026-06-15T21:15:40.822518+00:00"
+      "timestamp": "2026-06-16T10:14:29.753875+00:00"
     }
   ]
 }
