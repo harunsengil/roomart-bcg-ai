@@ -38,7 +38,7 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
-MAX_PAGES = 5         # mağaza başına sayfa tavanı (CI maliyeti + kibarlık).
+MAX_PAGES = 10        # mağaza başına sayfa tavanı (~240 ürün/mağaza).
                       # Trendyol "Önerilen" sırası popüler/çok-yorumlu ürünleri öne alır →
                       # ilk 5 sayfa rakibin güçlü ürünlerini yakalar; en-çok-yorumlu seçimi
                       # ayrıca competitor_analyzer'da kategori başına top-N ile yapılır.
