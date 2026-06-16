@@ -231,6 +231,27 @@ def _clip_sim(e1, e2) -> float:
     return float(np.dot(e1, e2))
 
 
+# ── Rakibe-özel kategorize ───────────────────────────────────────────────────
+
+def comp_categorize(ad: str) -> str:
+    """Rakip ürünler için genişletilmiş kategorize.
+    Önce mevcut analyzer.categorize() çalışır (BCG ile aynı kural, dokunulmaz).
+    'Diğer' çıkarsa rakip adlandırma kalıplarına bak:
+      - banyo + dolap → Banyo Dolabı  (lavabolu olmadan adlandırılanlar)
+      - kiler/erzak + dolap → Kahve Köşesi  (bizim KK ürünleri = kiler dolabı)
+    Gürültü ürünleri (gardırop, makyaj, ayakkabılık, saksı…) 'Diğer' kalır.
+    """
+    cat = categorize(ad)
+    if cat in CATEGORIES:
+        return cat
+    n = _norm(ad)
+    if "banyo" in n and "dolap" in n:
+        return "Banyo Dolabı"
+    if ("kiler" in n or "erzak" in n) and "dolap" in n:
+        return "Kahve Köşesi"
+    return cat
+
+
 # ── Eşleştirme skoru ─────────────────────────────────────────────────────────
 
 def _similarity(our_name, our_price, c_name, c_price, our_e=None, c_e=None) -> float:
@@ -266,7 +287,7 @@ def load_competitors():
     prev = snap[days[-2]] if len(days) >= 2 else {}
     comps, comps_diger = [], []
     for pid, r in latest.items():
-        cat = categorize(r.get("ad", ""))
+        cat = comp_categorize(r.get("ad", ""))
         deg = int(r.get("deg", 0) or 0)
         prev_deg = int(prev.get(pid, {}).get("deg", deg) or deg)
         item = {
