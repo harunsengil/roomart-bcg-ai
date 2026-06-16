@@ -10,7 +10,9 @@ import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
 import ProductTable from './components/ProductTable'
 import CompetitionTab from './components/CompetitionTab'
+import LoginScreen from './components/LoginScreen'
 import { useTheme } from './hooks/useTheme'
+import { useAuth } from './hooks/useAuth'
 
 const TABS = [
   { id: 'overview',     label: 'Overview',        icon: LayoutDashboard },
@@ -60,7 +62,7 @@ function ErrorScreen({ error, onRetry }) {
   )
 }
 
-export default function App() {
+function Dashboard({ onLogout, userEmail }) {
   const { data, loading, error, lastUpdated, refetch } = useData(30 * 60 * 1000)
   const { isKiosk, toggleKiosk } = useKioskMode()
   const { theme, toggleTheme } = useTheme()
@@ -95,6 +97,8 @@ export default function App() {
         loading={loading}
         theme={theme}
         onToggleTheme={toggleTheme}
+        onLogout={onLogout}
+        userEmail={userEmail}
       />
 
       {/* ── TAB BAR ───────────────────────────────────── */}
@@ -251,4 +255,15 @@ export default function App() {
       </div>
     </div>
   )
+}
+
+// ── AUTH GATE (Seviye A arayüz kilidi) ──────────────────────────────────────
+// Dashboard yalnız giriş yapıldıktan sonra render edilir → veri (useData) de
+// ancak o zaman yüklenir. Hesaplar Firebase Console'da elle açılır.
+export default function App() {
+  const { user, loading, error, login, logout, setError } = useAuth()
+
+  if (loading) return <LoadingScreen />
+  if (!user) return <LoginScreen login={login} error={error} setError={setError} />
+  return <Dashboard onLogout={logout} userEmail={user.email} />
 }

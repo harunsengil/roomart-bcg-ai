@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Monitor, RefreshCw, Maximize2, Minimize2, Wifi, Sun, Moon } from 'lucide-react'
+import { Monitor, RefreshCw, Maximize2, Minimize2, Wifi, Sun, Moon, LogOut } from 'lucide-react'
 
 function formatDateTime(d) {
   if (!d) return '—'
@@ -9,7 +9,7 @@ function formatDateTime(d) {
   })
 }
 
-export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk, loading, theme, onToggleTheme }) {
+export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk, loading, theme, onToggleTheme, onLogout, userEmail }) {
   const [now, setNow] = useState(new Date())
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 1000)
@@ -104,6 +104,27 @@ export default function Header({ lastUpdated, onRefresh, isKiosk, onToggleKiosk,
             <Monitor size={11} className="text-gold-400" />
             <span className="text-[10px] font-mono text-gold-400 tracking-wider">1920×1080</span>
           </div>
+
+          {/* Oturum: email + çıkış */}
+          {onLogout && (
+            <>
+              {userEmail && (
+                <span className="hidden xl:inline text-[10px] font-mono text-white/35 max-w-[160px] truncate" title={userEmail}>
+                  {userEmail}
+                </span>
+              )}
+              <button
+                onClick={onLogout}
+                title="Çıkış yap"
+                className="p-2 rounded-lg border border-white/5 bg-white/5 hover:bg-rose-500/10 hover:border-rose-500/30 transition-all group relative"
+              >
+                <LogOut size={14} className="text-white/50 group-hover:text-rose-400 transition-colors" />
+                <span className="absolute -top-7 right-0 text-[9px] font-mono bg-black/80 text-white px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  ÇIKIŞ
+                </span>
+              </button>
+            </>
+          )}
         </div>
       </div>
 
