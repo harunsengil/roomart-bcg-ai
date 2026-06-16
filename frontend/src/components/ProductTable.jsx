@@ -130,6 +130,15 @@ export default function ProductTable({ products }) {
   const [sortDir, setSortDir] = useState('desc')
   const [page, setPage] = useState(0)
   const [spark, setSpark] = useState({ show: false, left: 0, top: 0, bottom: 0, series: null, name: '' })
+  const [hoverImg, setHoverImg] = useState({ show: false, x: 0, y: 0, src: null, name: '' })
+  const showHoverImg = (e, src, name) => {
+    if (!src) return
+    const r = e.currentTarget.getBoundingClientRect()
+    const W = 210
+    const x = (r.right + 8 + W <= window.innerWidth - 8) ? r.right + 8 : r.left - W - 8
+    setHoverImg({ show: true, x, y: r.top, src, name })
+  }
+  const hideHoverImg = () => setHoverImg(s => ({ ...s, show: false }))
   const scrollBoxRef = useRef(null)
   const didMount = useRef(false)
   const light = useIsLight()
@@ -396,8 +405,10 @@ export default function ProductTable({ products }) {
                 <tr key={p.id} className="zebra-row border-b border-white/5 transition-colors align-top">
                   <td className="px-2 py-2.5 font-mono text-xs text-white/30">{safePage * PAGE_SIZE + i + 1}</td>
                   <td className="px-2 py-2.5">
-                    <a href={p.url} target="_blank" rel="noreferrer" title={p.name}
-                      className="font-medium text-white text-sm hover:text-gold line-clamp-3 break-words">
+                    <a href={p.url} target="_blank" rel="noreferrer"
+                      className="font-medium text-white text-sm hover:text-gold line-clamp-3 break-words"
+                      onMouseEnter={e => showHoverImg(e, p.image, p.name)}
+                      onMouseLeave={hideHoverImg}>
                       {p.has_campaign && <span title="Aktif kampanya" className="mr-1">🏷️</span>}{p.name}
                     </a>
                   </td>
@@ -485,6 +496,19 @@ export default function ProductTable({ products }) {
       {/* Sparkline hover popup — kendi sparkline'ının HEMEN ALTINA sabitlenir (imleç değil).
           PORTAL ile document.body'ye render edilir: aksi halde .card'ın backdrop-filter'ı
           'position: fixed'i viewport yerine kendine göre konumlar → popup ~2 satır kayardı. */}
+      {hoverImg.show && hoverImg.src && typeof document !== 'undefined' && createPortal((() => {
+        const W = 210, H = 240
+        const vh = window.innerHeight
+        const top = Math.min(Math.max(8, hoverImg.y - 20), vh - H - 8)
+        return (
+          <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
+            style={{ background: 'var(--bg-secondary)', left: hoverImg.x, top, width: W }}>
+            <img src={hoverImg.src} alt="" className="w-full h-[190px] object-contain rounded bg-white/5" loading="lazy" />
+            <div className="text-[10px] font-mono text-white/60 mt-1.5 line-clamp-2">{hoverImg.name}</div>
+          </div>
+        )
+      })(), document.body)}
+
       {spark.show && spark.series && typeof document !== 'undefined' && createPortal((() => {
         const W = BIGCHART_W + 20, H = 178, gap = 4
         const vw = window.innerWidth, vh = window.innerHeight
