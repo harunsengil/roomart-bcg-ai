@@ -1,198 +1,65 @@
 {
-  "_aciklama": "Kategori-bazli rakip magaza haritasi. competitor_bot.py aktif=true ve magaza_url placeholder olmayanlari scrape eder. magaza_url formati: https://www.trendyol.com/magaza/<slug>-m-<kod>?sst=0&channelId=1&pi={} (pi sayfa numarasi icin format placeholder). Liste competitor_discovery.py ile veriyle genişletildi (2026-06-11). NOT: Kenzlife='bakbudaiyi'; analyzer kategori filtresi şart.",
-  "_son_guncelleme": "2026-06-11",
+  "_aciklama": "Kategori-bazli rakip magaza haritasi. competitor_bot.py aktif=true olan magaza_url'leri scrape eder. magaza_url: https://www.trendyol.com/magaza/<slug>-m-<kod>?sst=0&channelId=1&pi={} (pi sayfa numarasi). NOT: Kenzlife='bakbudaiyi' (merchant 141465). Tum magaza urunleri scrape edilir; categori atamasini comp_categorize() yapar. Demonte/flat-pack ureten markalara odaklanildi (2026-06-16 keşif guncellemesi).",
+  "_son_guncelleme": "2026-06-16",
   "kategoriler": {
     "Çamaşır Makinesi Dolabı": [
-      {
-        "marka": "Rani Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "DEKORFİM",
-        "magaza_url": "https://www.trendyol.com/magaza/dekorfim-m-649488?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Kenzlife",
-        "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Egecan Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/egecan-m-385417?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Bofigo",
-        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "AEKA mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Remaks",
-        "magaza_url": "https://www.trendyol.com/magaza/remaks-m-107554?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Moonlife",
-        "magaza_url": "https://www.trendyol.com/magaza/moonlife-m-106944?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "Rani Mobilya",  "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true, "max_pages": null },
+      { "marka": "DEKORFİM",      "magaza_url": "https://www.trendyol.com/magaza/dekorfim-m-649488?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Kenzlife",      "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Egecan Mobilya","magaza_url": "https://www.trendyol.com/magaza/egecan-m-385417?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Bofigo",        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "AEKA mobilya",  "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Remaks",        "magaza_url": "https://www.trendyol.com/magaza/remaks-m-107554?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Moonlife",      "magaza_url": "https://www.trendyol.com/magaza/moonlife-m-106944?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "ERİZA HOME",    "magaza_url": "https://www.trendyol.com/magaza/eriza-home-m-342500?sst=0&channelId=1&pi={}", "aktif": true }
     ],
     "Lavabolu Banyo Dolabı": [
-      {
-        "marka": "KAREN BANYO",
-        "magaza_url": "https://www.trendyol.com/magaza/karen-banyo-m-330260?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Rani Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Kenzlife",
-        "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Bofigo",
-        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "DEMİR DİZAYN",
-        "magaza_url": "https://www.trendyol.com/magaza/demir-dizayn-m-786938?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "BALNEOM",
-        "magaza_url": "https://www.trendyol.com/magaza/balneom-m-829445?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Özceden",
-        "magaza_url": "https://www.trendyol.com/magaza/ozceden-m-149118?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "Rani Mobilya",  "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true, "max_pages": null },
+      { "marka": "Kenzlife",      "magaza_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Bofigo",        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "AEKA mobilya",  "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Remaks",        "magaza_url": "https://www.trendyol.com/magaza/remaks-m-107554?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "DEKORFİM",      "magaza_url": "https://www.trendyol.com/magaza/dekorfim-m-649488?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Özceden",       "magaza_url": "https://www.trendyol.com/magaza/ozceden-m-149118?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "KAREN BANYO",   "magaza_url": "https://www.trendyol.com/magaza/karen-banyo-m-330260?sst=0&channelId=1&pi={}", "aktif": true }
     ],
     "Mutfak Adası": [
-      {
-        "marka": "Rani Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Asra Trend",
-        "magaza_url": "https://www.trendyol.com/magaza/asratrend-m-374428?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Robin Home",
-        "magaza_url": "https://www.trendyol.com/magaza/robin-home-m-299300?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "AVVİO",
-        "magaza_url": "https://www.trendyol.com/magaza/avvio-m-125075?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "AEKA mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Ankara Orman Ürünleri",
-        "magaza_url": "https://www.trendyol.com/magaza/ankara-orman-urunleri-m-144944?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "Rani Mobilya",           "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "AEKA mobilya",           "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "DEKORFİM",               "magaza_url": "https://www.trendyol.com/magaza/dekorfim-m-649488?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Asra Trend",             "magaza_url": "https://www.trendyol.com/magaza/asratrend-m-374428?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "AVVİO",                  "magaza_url": "https://www.trendyol.com/magaza/avvio-m-125075?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Ankara Orman Ürünleri", "magaza_url": "https://www.trendyol.com/magaza/ankara-orman-urunleri-m-144944?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Waspco",                 "magaza_url": "https://www.trendyol.com/magaza/waspco-m-464192?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "COSARGROUP",             "magaza_url": "https://www.trendyol.com/magaza/cosargroup-m-974406?sst=0&channelId=1&pi={}", "aktif": true }
     ],
     "Kitaplıklı Çalışma Masası": [
-      {
-        "marka": "Bofigo",
-        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Rani Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Mobetto",
-        "magaza_url": "https://www.trendyol.com/magaza/mobetto-m-427243?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Modamed Yatak by Modalife",
-        "magaza_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Yurudesign",
-        "magaza_url": "https://www.trendyol.com/magaza/yurudesign-m-106314?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "Bofigo",                    "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Rani Mobilya",              "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Mobetto",                   "magaza_url": "https://www.trendyol.com/magaza/mobetto-m-427243?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Modamed Yatak by Modalife", "magaza_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Yurudesign",                "magaza_url": "https://www.trendyol.com/magaza/yurudesign-m-106314?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Rabi Mobilya",              "magaza_url": "https://www.trendyol.com/magaza/rabi-mobilya-m-107067?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "DEKOMONTE",                 "magaza_url": "https://www.trendyol.com/magaza/dekomonte-m-430219?sst=0&channelId=1&pi={}", "aktif": true }
     ],
     "Kahve Köşesi": [
-      {
-        "marka": "Asra Trend",
-        "magaza_url": "https://www.trendyol.com/magaza/asratrend-m-374428?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Robin Home",
-        "magaza_url": "https://www.trendyol.com/magaza/robin-home-m-299300?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Rani Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Avmpark",
-        "magaza_url": "https://www.trendyol.com/magaza/avmpark-m-106609?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "KZNHOME Demonte Ürünler",
-        "magaza_url": "https://www.trendyol.com/magaza/kznhome-demonte-urunler-m-315937?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Moonlife",
-        "magaza_url": "https://www.trendyol.com/magaza/moonlife-m-106944?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "AEKA mobilya",         "magaza_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Rani Mobilya",         "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "KZNHOME Demonte Ürünler", "magaza_url": "https://www.trendyol.com/magaza/kznhome-demonte-urunler-m-315937?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Moonlife",             "magaza_url": "https://www.trendyol.com/magaza/moonlife-m-106944?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Avmpark",              "magaza_url": "https://www.trendyol.com/magaza/avmpark-m-106609?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Bofigo",              "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "COSARGROUP",           "magaza_url": "https://www.trendyol.com/magaza/cosargroup-m-974406?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Diodor",               "magaza_url": "https://www.trendyol.com/magaza/diodor-m-652543?sst=0&channelId=1&pi={}", "aktif": true }
     ],
     "Sehpa": [
-      {
-        "marka": "Bofigo",
-        "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Tapacım",
-        "magaza_url": "https://www.trendyol.com/magaza/tapacim-m-285523?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Dekopratik Mobilya",
-        "magaza_url": "https://www.trendyol.com/magaza/dekopratik-mobilya-m-403137?sst=0&channelId=1&pi={}",
-        "aktif": true
-      },
-      {
-        "marka": "Monte Sehpa",
-        "magaza_url": "https://www.trendyol.com/magaza/monte-sehpa-m-105195?sst=0&channelId=1&pi={}",
-        "aktif": true
-      }
+      { "marka": "Bofigo",             "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Tapacım",            "magaza_url": "https://www.trendyol.com/magaza/tapacim-m-285523?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Dekopratik Mobilya", "magaza_url": "https://www.trendyol.com/magaza/dekopratik-mobilya-m-403137?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Monte Sehpa",        "magaza_url": "https://www.trendyol.com/magaza/monte-sehpa-m-105195?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Falez Mobilya",      "magaza_url": "https://www.trendyol.com/magaza/falez-mobilya-aksesuar-m-108694?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "ERİZA HOME",         "magaza_url": "https://www.trendyol.com/magaza/eriza-home-m-342500?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Peka Mobilya",       "magaza_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380?sst=0&channelId=1&pi={}", "aktif": true }
     ]
   }
 }
