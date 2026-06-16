@@ -67,10 +67,11 @@ def load_competitor_stores():
     """
     competitors.json'dan aktif=true rakipleri oku, magaza_url'e göre TEKİLLEŞTİR.
     Aynı mağaza birden çok kategoride geçtiğinden gereksiz tekrar scrape önlenir.
-    Dönüş: [{"marka": ..., "magaza_url": ...}, ...] (her mağaza bir kez).
+    Dönüş: [{"marka": ..., "magaza_url": ..., "max_pages": int|None}, ...]
+    max_pages=None → tüm sayfalar (sınır yok).
     """
     doc = json.load(open(COMPETITORS_FILE, encoding="utf-8"))
-    seen = {}  # magaza_url -> marka
+    seen = {}  # magaza_url -> {"marka", "max_pages"}
     for kategori, rakipler in doc.get("kategoriler", {}).items():
         for r in rakipler:
             if not r.get("aktif"):
@@ -78,8 +79,14 @@ def load_competitor_stores():
             url = r.get("magaza_url", "")
             if not url or "{}" not in url:
                 continue
-            seen.setdefault(url, r.get("marka", "?"))
-    return [{"marka": marka, "magaza_url": url} for url, marka in seen.items()]
+            if url not in seen:
+                seen[url] = {"marka": r.get("marka", "?"),
+                             "max_pages": r.get("max_pages", MAX_PAGES)}
+            elif r.get("max_pages") is None:
+                # Herhangi bir kategoride sınırsız işaretlendiyse → sınırsız
+                seen[url]["max_pages"] = None
+    return [{"marka": v["marka"], "magaza_url": url, "max_pages": v["max_pages"]}
+            for url, v in seen.items()]
 
 
 # ── Sayfa yardımcıları (rani_bot.py'den taşındı) ──────────────────────────────
@@ -96,8 +103,11 @@ def sayfa_temizle(page):
     time.sleep(0.5)
 
 
-def urlleri_topla(page, magaza_url):
-    """Mağazanın tüm sayfalarını gez, ürün URL'lerini topla. magaza_url '{}' içerir."""
+def urlleri_topla(page, magaza_url, max_pages=None):
+    """Mağazanın tüm sayfalarını gez, ürün URL'lerini topla. magaza_url '{}' içerir.
+    max_pages=None → tüm sayfalar (sınır yok)."""
+    if max_pages is None:
+        max_pages = MAX_PAGES  # default
     tum_urller = []
     sayfa = 1
 
@@ -142,8 +152,8 @@ def urlleri_topla(page, magaza_url):
         if not sonraki:
             print("  → Son sayfa.")
             break
-        if sayfa >= MAX_PAGES:
-            print(f"  → Sayfa tavanı ({MAX_PAGES}) — duruldu.")
+        if sayfa >= max_pages:
+            print(f"  → Sayfa tavanı ({max_pages}) — duruldu.")
             break
 
         sayfa += 1
@@ -238,11 +248,12 @@ def extract_product_id(url):
 
 
 # ── Mağaza bazında scrape ─────────────────────────────────────────────────────
-def scrape_store(page, magaza_url, marka):
+def scrape_store(page, magaza_url, marka, max_pages=None):
     """Tek mağazanın tüm ürünlerini çek → {urun_id: kayit}."""
-    print(f"\n── Mağaza: {marka} ──")
+    limit = max_pages if max_pages is not None else MAX_PAGES
+    print(f"\n── Mağaza: {marka} (max {limit if max_pages is not None else limit} sayfa) ──")
     print("  Aşama 1: URL toplama")
-    urller = urlleri_topla(page, magaza_url)
+    urller = urlleri_topla(page, magaza_url, max_pages=limit)
     print(f"  → {len(urller)} ürün bulundu.")
 
     sonuc = {}
@@ -363,7 +374,8 @@ def calistir():
         page = browser.new_context(user_agent=USER_AGENT).new_page()
         for s in stores:
             try:
-                urunler = scrape_store(page, s["magaza_url"], s["marka"])
+                urunler = scrape_store(page, s["magaza_url"], s["marka"],
+                                      max_pages=s.get("max_pages"))
                 gun_snapshot.update(urunler)
                 done += 1
                 _flush()                      # mağaza bitince hemen diske yaz
