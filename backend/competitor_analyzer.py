@@ -404,8 +404,8 @@ def build_categories(ours, comps):
 
 def _category_centroids(ours: list, emb_cache: dict) -> dict:
     """Kategori başına normalised ortalama CLIP embedding (centroid).
-    Yalnız CLIP varsa anlamlı; yoksa boş dict döner."""
-    if not _CLIP_AVAILABLE:
+    emb_cache doluysa (torch'suz da olabilir) hesaplar; yoksa boş döner."""
+    if not emb_cache:
         return {}
     centroids = {}
     from collections import defaultdict
@@ -567,15 +567,21 @@ def main():
     # CLIP (opsiyonel) — kuruluysa yükle; kurul değilse text+price fallback
     _load_clip()
 
-    # CLIP embedding cache — eksik URL'leri paralel indir + embed
-    emb_cache = {}
+    # CLIP embedding cache.
+    # ÖNEMLİ: Cache'i OKUMAK + benzerlik hesaplamak yalnız numpy ister (torch DEĞİL).
+    # Bu yüzden cache dosyası varsa torch'suz CI'da (analyze.yml/ubuntu) da CLIP skoru
+    # kullanılır. Yeni embedding HESAPLAMAK için torch (open_clip) gerekir → sadece
+    # _CLIP_AVAILABLE iken (Mac runner) eksik URL'ler indirilir.
+    emb_cache = _load_emb_cache()           # dosya varsa yükle (torch'suz da çalışır)
     if _CLIP_AVAILABLE:
-        emb_cache = _load_emb_cache()
         all_urls = ([o.get("image") for o in ours] +
                     [c.get("image") for c in comps] +
                     [c.get("image") for c in comps_diger])
         _build_emb_cache(all_urls, emb_cache)
         _save_emb_cache(emb_cache)
+    elif emb_cache:
+        logger.info(f"CLIP cache OKUNDU ({len(emb_cache)} embedding) — torch yok, "
+                    f"yeni embedding hesaplanmaz; mevcut cache ile CLIP skoru aktif.")
 
     # pHash cache güncelle (eski dosya tutulur, scorer'a dahil değil)
     if _PHASH_AVAILABLE:
@@ -604,7 +610,8 @@ def main():
             "competitor_diger": len(comps_diger),
             "competitor_rescued": rescued,
             "our_products": len(ours),
-            "clip_matching": _CLIP_AVAILABLE,
+            "clip_matching": bool(emb_cache),   # cache varsa (torch'suz CI dahil) CLIP skoru aktif
+            "clip_can_embed": _CLIP_AVAILABLE,   # yeni embedding hesaplanabilir mi (torch var mı)
             "clip_embeddings_cached": sum(1 for v in emb_cache.values() if v is not None),
             "note": "Rakip metriği YORUM tabanlı (gerçek satış değil); BCG'den ayrı.",
         },

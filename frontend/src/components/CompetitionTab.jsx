@@ -36,7 +36,7 @@ const T = {
   yorumPct: 'Bu markanın kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)',
   hiz: 'Bu haftaki yorum artışı (talep ivmesi). En az 2 haftalık veri birikince dolar.',
   endeks: 'Fiyat endeksi = marka ort. fiyatı ÷ kategori ort. fiyatı. Örn. 1.74× = ortalamadan %74 PAHALI; 0.66× = %34 UCUZ.',
-  sim: 'Benzerlik skoru = 0.6 × ad-token örtüşmesi (Jaccard) + 0.4 × fiyat yakınlığı. Yüksek = ürünler daha benzer.',
+  sim: 'Benzerlik skoru = %40 görsel (CLIP) + %30 ad-token örtüşmesi (Jaccard) + %30 fiyat yakınlığı. Yüksek = ürünler daha benzer.',
   delta: 'Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).',
 }
 
@@ -298,7 +298,7 @@ export default function CompetitionTab({ data }) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 flex-shrink-0">
         <div>
           <h2 className="font-display text-xl text-white font-semibold flex items-center gap-2">
-            <Swords size={18} className="text-gold-400" /> Rekabet
+            <Swords size={18} className="text-gold-400" /> Competition
           </h2>
           <p className="text-[11px] text-white/40 font-mono mt-0.5">
             {md.competitor_products} rakip ürün · {md.latest_snapshot} · <span className="text-amber-300/70">yorum-tabanlı (BCG gerçek-satıştan ayrı)</span>

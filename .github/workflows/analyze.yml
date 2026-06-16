@@ -70,6 +70,8 @@ jobs:
           cp data/*.json frontend/public/data/
           rm -f frontend/public/data/trendyol_sales.json
           rm -f frontend/public/data/image_hashes.json
+          rm -f frontend/public/data/image_embeddings.json
+          rm -f frontend/public/data/competitor_snapshots.json
 
       - name: Commit analysis results
         id: commit

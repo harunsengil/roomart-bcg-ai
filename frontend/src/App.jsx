@@ -15,7 +15,7 @@ import { useTheme } from './hooks/useTheme'
 const TABS = [
   { id: 'overview',     label: 'Overview',        icon: LayoutDashboard },
   { id: 'products',     label: 'Products',         icon: Table2 },
-  { id: 'competition',  label: 'Rekabet',          icon: Swords },
+  { id: 'competition',  label: 'Competition',      icon: Swords },
   { id: 'trends',       label: 'Trends',           icon: TrendingUp },
   { id: 'alerts',       label: 'Alerts & Signals', icon: Bell },
   { id: 'strategy',     label: 'AI Strategy',      icon: Lightbulb },

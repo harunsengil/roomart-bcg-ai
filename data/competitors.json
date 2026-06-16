@@ -37,7 +37,7 @@
       { "marka": "Bofigo",                    "magaza_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931?sst=0&channelId=1&pi={}", "aktif": true },
       { "marka": "Rani Mobilya",              "magaza_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735?sst=0&channelId=1&pi={}", "aktif": true },
       { "marka": "Mobetto",                   "magaza_url": "https://www.trendyol.com/magaza/mobetto-m-427243?sst=0&channelId=1&pi={}", "aktif": true },
-      { "marka": "Modamed Yatak by Modalife", "magaza_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061?sst=0&channelId=1&pi={}", "aktif": true },
+      { "marka": "Modamed Yatak by Modalife", "magaza_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061?sst=0&channelId=1&pi={}", "aktif": false, "_not": "koltuk/kanepe/bahce mobilyasi — calisma masasi rakibi degil, devre disi" },
       { "marka": "Yurudesign",                "magaza_url": "https://www.trendyol.com/magaza/yurudesign-m-106314?sst=0&channelId=1&pi={}", "aktif": true },
       { "marka": "Rabi Mobilya",              "magaza_url": "https://www.trendyol.com/magaza/rabi-mobilya-m-107067?sst=0&channelId=1&pi={}", "aktif": true },
       { "marka": "DEKOMONTE",                 "magaza_url": "https://www.trendyol.com/magaza/dekomonte-m-430219?sst=0&channelId=1&pi={}", "aktif": true }
