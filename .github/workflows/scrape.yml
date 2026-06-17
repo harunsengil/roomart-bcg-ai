@@ -1,7 +1,10 @@
 name: Data Collection
 on:
   schedule:
-    - cron: '0 5 * * *'        # 05:00 UTC = 08:00 TR, her sabah
+    # HAFTALIK Pazartesi 05:00 UTC (08:00 TR) — yalnız PUAN + YORUM (deg) tazeler
+    # (API bunları vermez → Playwright scrape şart, Mac runner residential IP).
+    # Fiyat/stok/satış GÜNLÜK analyze.yml'de API'den gelir (bulut). Bu yüzden günlük değil.
+    - cron: '0 5 * * 1'
   workflow_dispatch:
 
 permissions:

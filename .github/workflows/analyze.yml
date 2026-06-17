@@ -1,6 +1,11 @@
 name: BCG Analysis
 
 on:
+  schedule:
+    # GÜNLÜK 05:30 UTC (08:30 TR) — bulutta API sync (fiyat/stok/satış/sinyaller TAZE).
+    # Kendi ürün verisi resmî Trendyol API'den gelir (403 yok); Mac GEREKMEZ.
+    # Puan/yorum (deg) yalnız haftalık Mac scrape ile tazelenir (API vermez).
+    - cron: '30 5 * * *'
   push:
     paths:
       - 'data/snapshots.json'

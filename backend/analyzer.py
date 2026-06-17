@@ -691,8 +691,10 @@ def run_analysis():
         srec = sales_by_product.get(pid, {})
         units = int(srec.get("net_units", 0) or 0)
         sales_momentum = srec.get("sales_momentum")  # None ise büyüme deg'e düşer
-        # scrape öncelikli (görünen fiyat/yorum); snapshot'ta yoksa API'den
-        price = (raw.get("fiyat") if raw else None) or api.get("sale_price") or 0.0
+        # FİYAT: API sale_price ÖNCELİKLİ (günlük bulut sync ile taze); snapshot fiyatı
+        # (scrape, haftalık) yedek. Böylece fiyat günlük güncel kalır, scrape Mac'te haftalık.
+        price = api.get("sale_price") or (raw.get("fiyat") if raw else None) or 0.0
+        # PUAN/YORUM: yalnız scrape'ten gelir (API vermez) → haftalık Mac scrape tazeler.
         rating = raw.get("puan", 0.0) if raw else 0.0
         review_count = raw.get("deg", 0) if raw else 0
         kod = (raw.get("kod") if raw else None) or api.get("stock_code")
