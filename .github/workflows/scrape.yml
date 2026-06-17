@@ -10,19 +10,31 @@ permissions:
 
 jobs:
   scrape:
-    # SELF-HOSTED Mac runner (residential IP) — Trendyol GitHub Actions datacenter IP'lerini
-    # 403 ile engelliyor; Playwright scraping yalnız residential IP'de çalışır. analyze/deploy
-    # bulutta kalır (API/build, 403 yok). Runner agent makinede kurulu olmalı.
-    runs-on: [self-hosted, macOS]
+    # BULUT (ubuntu) — Trendyol basit HTTP'yi (requests) 403'ler AMA Playwright (gerçek
+    # tarayıcı) ile bulut IP'sinden 200 + veri döner (2026-06-17 probe ile doğrulandı).
+    # scraper.py Playwright kullanır → datacenter IP engeli aşılır, Mac runner gerekmez.
+    # 403 rate-limit riskine karşı scraper'ın %başarı eşiği var (düşükse görünür uyarı).
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Mac'te sistem python3 + Playwright zaten kurulu; pip/playwright idempotent (hızlı).
-      - name: Install dependencies (idempotent)
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Playwright Chromium'u sürüm-anahtarlı cache'le (ci-resource-efficiency) → cache-hit'te indirme yok.
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-chromium
+
+      - name: Install dependencies
         run: |
           python3 -m pip install -r backend/requirements.txt
-          python3 -m playwright install chromium
+          python3 -m playwright install --with-deps chromium
 
       - name: Run data scraper
         run: python3 backend/scraper.py
