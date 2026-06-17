@@ -345,4 +345,36 @@
   sabit (alta sığmazsa üste taşar); fixed konum → tablo scroll overflow'undan kırpılmaz. **Güvenlik:**
   haftalık satış adedi de public payload'a girer (units gibi kabul edilen hacim; ciro değil, hâlâ private).
 
+- **2026-06-17 — [Hibrit bulut/Mac mimarisi: günlük veri bulutta (API), Mac yalnız haftalık scrape]**
+  Trendyol GitHub datacenter IP'sini **sürekli scrape'te** 403'ler. Bulut-IP probe'u net gösterdi:
+  basit `requests` her zaman 403; **Playwright 3-5 istek 200 döner AMA gerçek scrape (188 istek) 0/188=403**
+  (hacim/IP-itibarı engeli; UA/context/ayar düzeltmesi çözmez). Kullanıcı talebi "Mac'te çalışan bir şey
+  kalmasın" bu kısıtla çakışıyor. **Çözüm (kullanıcı onaylı): kendi ürün scrape'ini API'ye çevir.** Kendi
+  ürün verisinin tek scrape-only alanı **puan + yorum (deg)** — diğer her şey (fiyat/stok/satış/6-sinyal/
+  momentum) zaten resmî Trendyol API'de (her IP'de çalışır, 403 yok) ve ürün evreni zaten API'den
+  (`active_api.keys()`). **Değişiklikler:** `analyzer.py` fiyat = API sale_price ÖNCELİKLİ (günlük taze),
+  snapshot fiyatı yedek; `analyze.yml` GÜNLÜK cron `30 5 * * *` (bulut/ubuntu, API sync); `scrape.yml`
+  günlük→**haftalık Pzt** `0 5 * * 1` (yalnız puan/deg, Mac/Playwright); `scrape-watchdog.yml` kaldırıldı.
+  **Sonuç:** günlük Mac gereği bitti; Mac yalnız Pazartesi (puan/deg + competitor). puan/deg ≤7 gün bayat
+  olabilir (yavaş değişir, kabul edildi). **Mac tamamen bitmesi residential proxy (~$50-100/ay) ister.**
+
+- **2026-06-17 — [Login: Seviye A arayüz kilidi (Firebase email/şifre); gerçek veri koruması ertelendi]**
+  Dashboard'a giriş paneli istendi (yalnız RoomArt ekibi, tüm dashboard). **Karar: Seviye A** (Firebase
+  Auth email/şifre, client-side gate + "Şifremi unuttum"). **Açıkça kabul edilen kısıt:** GitHub Pages
+  tamamen public → bu SADECE arayüzü gizler; `data/*.json` + `frontend/public/data/*.json` login'siz
+  doğrudan URL'den erişilebilir. **Gerçek veri koruması (Seviye B)** public JSON kaldırıp Firestore-only +
+  Security Rules ister, YA DA Aşama 2 Vercel/Next.js (server-side auth). Kullanıcı şimdilik Seviye A'yı
+  yeterli buldu (trendyol_sales.json zaten gitignored, public'e gitmiyor). Hesaplar Firebase Console'da
+  elle (self-signup YOK = hesap listesi allowlist). `frontend/.env` gitignored (client config public).
+
+- **2026-06-17 — [Rakip eşleştirme: CLIP görsel benzerliği (aynı-kategori); pHash & "Diğer"-kurtarma reddedildi]**
+  Eşleştirme kalitesi düşüktü (banyo dolabımız ucuz alakasız ürünle eşleşiyordu). **Karar: CLIP ViT-B/32**
+  (open_clip, MPS) görsel embedding → skor %40 CLIP + %30 ad-token(Jaccard) + %30 fiyat. Cache
+  `data/image_embeddings.json` (base64 float16); OKUMA+cosine yalnız numpy → analyze.yml (ubuntu, torch yok)
+  commit'li cache'ten CLIP skorunu KORUR, yeni embedding yalnız Mac'te (torch). **Reddedilenler:** (1) pHash
+  — beyaz arka planlı mobilyada gürültü (gardırop=banyo 0.5), kaldırıldı. (2) CLIP ile "Diğer" kategori
+  kurtarma — mobilya alt-tiplerini (dolap/masa/sehpa) ayırmıyor (hepsi ~0.8 benzer), KAPALI. **"Diğer"
+  çözümü:** metin `comp_categorize` (banyo/kiler dolapları, analyzer.py'ye dokunmadan) + seed genişletme
+  (1401→3844 ürün, 28 mağaza). Sonuç: ort skor 0.67→0.73, tam-dolu 412→465/466. Competition sekmesi İngilizce.
+
 <!-- Yeni kararları buraya ekle -->

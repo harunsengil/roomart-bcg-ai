@@ -6,25 +6,31 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-16
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — competitor pipeline uçtan uca doğrulama)
+- **Tarih:** 2026-06-17
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — bulut migration + CLIP eşleştirme + login)
 - **Aktif branch:** `main` (temiz). Geliştirme **VS Code Claude Code eklentisi** (sürücü) + Chat
   (düşünme) ile sürüyor.
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **Rekabet Sekmesi (PR-C) hazır hale geldi** — `competitive.json` canlıda: 6 kategori, 466 ürün
->   eşleşmesi, 11 uyarı, ROOMART her kategoride görünüyor. Frontend CompetitionTab gerçek veriyi
->   gösteriyor.
+> - **🆕 HİBRİT BULUT/MAC MİMARİSİ (2026-06-17):** Günlük veri artık **bulutta** (Trendyol API,
+>   `analyze.yml` cron 05:30 UTC) — fiyat/stok/satış/sinyal/momentum. **Günlük Mac gereği BİTTİ.**
+>   Mac yalnız **Pazartesi**: `scrape.yml` (05:00, kendi puan/deg — API vermez) + `competitor.yml`
+>   (06:00, rakip). Trendyol sürekli scrape'i 403'ler (probe: Playwright 3 istek 200 ama 188 istek
+>   0/188); residential IP şart. Detay: DECISIONS 2026-06-17.
+> - **🆕 LOGIN (Seviye A, 2026-06-17):** Dashboard Firebase email/şifre ile korunuyor (arayüz kilidi).
+>   Hesaplar Firebase Console'da (harunsengil@gmail.com + hasan.demirelli@roomart...). "Şifremi
+>   unuttum" linki var. **KISIT:** GitHub Pages public → `data/*.json` hâlâ doğrudan erişilebilir
+>   (gerçek koruma = Seviye B/Firestore-only veya Aşama 2 Vercel). `frontend/.env` lokal (gitignored).
+> - **🆕 RAKİP EŞLEŞTİRME (2026-06-17):** CLIP ViT-B/32 görsel (%40) + ad-token (%30) + fiyat (%30);
+>   `comp_categorize` (banyo/kiler dolapları kurtarma); seed 1401→**3844 ürün** (28 mağaza). Skor
+>   0.67→0.73, tam-dolu 412→**465/466**. pHash ve CLIP-"Diğer"-kurtarma denendi, başarısız (kapalı).
 > - **Sıradaki seçenekler:**
->   (a) **Seed tamamlama:** `python3 backend/competitor_bot.py collect` → seyrek kategoriler için
->   daha fazla rakip ürün topla (Sehpa/Mutfak/Çalışma masası rakipleri az, çok 'Diğer' düşüyor).
->   (b) **CompetitionTab geliştirme:** kategori scatter grafiği (fiyat×puan), ürün eşleşme detayı.
->   (c) **Public dashboard kilidi** — `units` satış hacmi public payload'da; Firestore kural/Pages auth.
->   (d) **Aşama 2** (Supabase/Next.js göçü, ayrı oturum).
-> - 🟡 **Bekleyen kullanıcı aksiyonu (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu (eski token
->   sohbette göründü). Token hâlâ geçerli; bayat olunca `analyze.yml` `::warning::` verir.
-> - ⚠️ **Güvenlik (lokal):** `git remote origin` URL'inde plaintext GitHub PAT (`ghp_…`) var
->   (yalnız yerel `.git/config`, commit'li değil) → rotasyon + credential-helper önerilir.
+>   (a) **Uyumsuz mağaza temizliği:** COSARGROUP (aggregator), KAREN BANYO (montajlı, demonte değil),
+>   Mobetto (koltuk) — `competitors.json`'da `aktif:false` yapılacak mı (kullanıcı kararı bekliyor).
+>   (b) **CompetitionTab geliştirme:** kategori scatter grafiği (fiyat×puan).
+>   (c) **Seviye B veri koruması** (Firestore-only + rules) veya **Aşama 2** (Supabase/Next.js).
+> - 🟡 **Bekleyen (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext
+>   PAT (yalnız yerel `.git/config`). Node.js 20 deprecation uyarısı (actions sürüm yükseltmesi).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
@@ -60,9 +66,9 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-15/16) Competitor pipeline uçtan uca tamamlandı ve doğrulandı.** Mac runner launchd
-  servis olarak kuruldu (terminal bağımsız, yeniden başlatmada otomatik). Competitor refresh
-  1401/1401 ürün başarıyla çekti. competitive.json canlıda. Aktif kod görevi yok.
+- **(2026-06-17) Bulut migration + CLIP eşleştirme + login tamamlandı.** Aktif kod görevi yok.
+  Tek bekleyen kullanıcı kararı: uyumsuz mağazaların (COSARGROUP/KAREN BANYO/Mobetto) listeden
+  çıkarılması. Sistem canlı ve otonom: günlük bulut (API) + haftalık Mac (puan/deg + rakip).
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -75,6 +81,22 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-17) Hibrit bulut/Mac mimarisi — günlük veri buluta (API).** Trendyol bulut IP'sini
+      sürekli scrape'te 403'ler (probe kanıtı: Playwright 3 istek 200 AMA 188 istek 0/188=403; hacim/IP
+      itibarı, UA çözmez). Çözüm: kendi ürün fiyat/stok/satış/sinyal/momentum **resmî API**'den (her IP'de
+      çalışır) → `analyze.yml` GÜNLÜK cron 05:30 UTC, bulutta. `analyzer.py` fiyat artık API sale_price
+      öncelikli (snapshot yedek). `scrape.yml` günlük→**haftalık Pzt** (yalnız puan/deg, API vermez,
+      Mac/Playwright şart). `scrape-watchdog.yml` kaldırıldı. **Günlük Mac gereği bitti**; Mac yalnız Pzt.
+- [x] **(2026-06-17) Login paneli (Seviye A) + şifre sıfırlama.** Firebase email/şifre arayüz kilidi:
+      `useAuth.js`, `LoginScreen.jsx`, `App.jsx` auth gate (giriş yapılmadan Dashboard+useData render
+      edilmez), Header çıkış butonu, "Şifremi unuttum" (sendPasswordResetEmail). Hesaplar Console'da elle
+      (2 kullanıcı). `frontend/.env` lokal (gitignored). KISIT: Pages public → data/*.json hâlâ açık.
+- [x] **(2026-06-17) Rakip eşleştirme: CLIP görsel + comp_categorize + seed.** competitor_analyzer skoru
+      %40 CLIP(ViT-B/32, MPS) + %30 ad-token + %30 fiyat; cache `data/image_embeddings.json` (torch'suz
+      CI'da okunur). `comp_categorize` banyo/kiler dolaplarını kurtarır (analyzer.py'ye dokunmadan).
+      Seed 1401→**3844 ürün** (28 mağaza, Rani sınırsız sayfa, MAX_PAGES 5→10). Skor 0.67→0.73, tam-dolu
+      412→465/466. **Başarısız denemeler:** pHash (gürültü), CLIP-"Diğer"-kurtarma (mobilya alt-tipi
+      ayırmıyor) → kapalı. Competition sekmesi başlık/etiket İngilizce.
 - [x] **(2026-06-15/16) Competitor pipeline uçtan uca doğrulandı.** Self-hosted Mac runner
       (residential IP, Trendyol 403 engeli aşıldı) → launchd kalıcı servis kuruldu (terminal
       bağımsız, Mac yeniden başlatmada otomatik). Competitor refresh: 1401/1401 ürün başarılı
