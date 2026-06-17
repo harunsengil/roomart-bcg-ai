@@ -11,7 +11,6 @@ import { useData, useKioskMode } from './hooks/useData'
 import ProductTable from './components/ProductTable'
 import CompetitionTab from './components/CompetitionTab'
 import LoginScreen from './components/LoginScreen'
-import ResetPasswordHandler from './components/ResetPasswordHandler'
 import { useTheme } from './hooks/useTheme'
 import { useAuth } from './hooks/useAuth'
 
@@ -263,13 +262,6 @@ function Dashboard({ onLogout, userEmail }) {
 // ancak o zaman yüklenir. Hesaplar Firebase Console'da elle açılır.
 export default function App() {
   const { user, loading, error, login, logout, resetPassword, setError } = useAuth()
-
-  // Firebase action handler: parola sıfırlama linki ?mode=resetPassword&oobCode=... ile gelir.
-  // Kendi UI'mızı (ResetPasswordHandler) göster → çift şifre + giriş linki.
-  const params = new URLSearchParams(window.location.search)
-  if (params.get('mode') === 'resetPassword' && params.get('oobCode')) {
-    return <ResetPasswordHandler oobCode={params.get('oobCode')} />
-  }
 
   if (loading) return <LoadingScreen />
   if (!user) return <LoginScreen login={login} error={error} setError={setError} resetPassword={resetPassword} />
