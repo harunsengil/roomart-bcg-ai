@@ -14,5 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
 export const auth = getAuth(app)
+// Parola sıfırlama / doğrulama e-postaları TÜRKÇE gelsin (Firebase'in yerel şablonu).
+auth.languageCode = 'tr'
 // Oturum kalıcı (sekme/sayfa kapansa da açık kalır; logout'ta temizlenir).
 setPersistence(auth, browserLocalPersistence).catch(() => {})
