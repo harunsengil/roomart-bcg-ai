@@ -14,7 +14,7 @@ jobs:
       - name: Probe Trendyol (requests + Playwright)
         run: |
           python3 -m pip install requests playwright --quiet
-          python3 -m playwright install chromium --quiet
+          python3 -m playwright install chromium
           python3 - << 'PY'
           import requests
 
