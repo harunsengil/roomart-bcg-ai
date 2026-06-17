@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut,
 } from 'firebase/auth'
 import { auth } from '../firebase'
@@ -42,7 +43,25 @@ export function useAuth() {
     }
   }, [])
 
+  const resetPassword = useCallback(async (email) => {
+    setError(null)
+    try {
+      await sendPasswordResetEmail(auth, email.trim())
+      return true
+    } catch (e) {
+      const map = {
+        'auth/invalid-email': 'Geçersiz e-posta adresi.',
+        'auth/user-not-found': 'Bu e-posta ile kayıtlı hesap yok.',
+        'auth/missing-email': 'Önce e-posta adresinizi girin.',
+        'auth/too-many-requests': 'Çok fazla deneme. Lütfen biraz sonra tekrar deneyin.',
+        'auth/network-request-failed': 'Ağ hatası. Bağlantınızı kontrol edin.',
+      }
+      setError(map[e.code] || 'Sıfırlama e-postası gönderilemedi.')
+      return false
+    }
+  }, [])
+
   const logout = useCallback(() => signOut(auth), [])
 
-  return { user, loading, error, login, logout, setError }
+  return { user, loading, error, login, logout, resetPassword, setError }
 }

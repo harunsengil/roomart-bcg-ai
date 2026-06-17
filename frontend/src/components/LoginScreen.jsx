@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Loader2, Lock, Mail, AlertCircle } from 'lucide-react'
+import { Loader2, Lock, Mail, AlertCircle, CheckCircle2 } from 'lucide-react'
 
 // Seviye A arayüz kilidi — email/şifre. Hesaplar Firebase Console'da elle açılır.
-export default function LoginScreen({ login, error, setError, busy }) {
+export default function LoginScreen({ login, error, setError, resetPassword, busy }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [resetMsg, setResetMsg] = useState(null)
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -14,6 +15,15 @@ export default function LoginScreen({ login, error, setError, busy }) {
     setSubmitting(true)
     await login(email, password)
     setSubmitting(false)
+  }
+
+  const onReset = async () => {
+    setResetMsg(null)
+    if (!email) { setError('Önce e-posta adresinizi girin.'); return }
+    setSubmitting(true)
+    const ok = await resetPassword(email)
+    setSubmitting(false)
+    if (ok) setResetMsg('Şifre sıfırlama bağlantısı e-postanıza gönderildi. Gelen kutunuzu (ve spam) kontrol edin.')
   }
 
   const loading = submitting || busy
@@ -69,10 +79,24 @@ export default function LoginScreen({ login, error, setError, busy }) {
           </motion.div>
         )}
 
+        {resetMsg && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            className="flex items-start gap-2 mb-4 text-emerald-400 text-xs font-mono">
+            <CheckCircle2 size={13} className="flex-shrink-0 mt-0.5" />
+            <span>{resetMsg}</span>
+          </motion.div>
+        )}
+
         <button
           type="submit" disabled={loading || !email || !password}
           className="w-full py-2.5 rounded-lg font-mono text-sm tracking-wide bg-gold-500/90 text-black font-semibold hover:bg-gold-400 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
           {loading ? <><Loader2 size={15} className="animate-spin" /> Giriş yapılıyor…</> : 'Giriş Yap'}
+        </button>
+
+        <button
+          type="button" onClick={onReset} disabled={loading}
+          className="w-full mt-3 text-[11px] font-mono text-white/40 hover:text-gold-400 transition-colors disabled:opacity-40">
+          Şifremi unuttum
         </button>
 
         <p className="mt-5 text-[10px] font-mono text-white/25 text-center leading-relaxed">

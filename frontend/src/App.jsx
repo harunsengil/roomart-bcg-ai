@@ -261,9 +261,9 @@ function Dashboard({ onLogout, userEmail }) {
 // Dashboard yalnız giriş yapıldıktan sonra render edilir → veri (useData) de
 // ancak o zaman yüklenir. Hesaplar Firebase Console'da elle açılır.
 export default function App() {
-  const { user, loading, error, login, logout, setError } = useAuth()
+  const { user, loading, error, login, logout, resetPassword, setError } = useAuth()
 
   if (loading) return <LoadingScreen />
-  if (!user) return <LoginScreen login={login} error={error} setError={setError} />
+  if (!user) return <LoginScreen login={login} error={error} setError={setError} resetPassword={resetPassword} />
   return <Dashboard onLogout={logout} userEmail={user.email} />
 }
