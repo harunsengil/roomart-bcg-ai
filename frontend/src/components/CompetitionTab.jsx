@@ -41,7 +41,7 @@ const T = {
   yorum: 'Toplam değerlendirme (yorum) sayısı — gerçek satış yerine talep/görünürlük vekili',
   yorumPct: 'Bu markanın kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)',
   hiz: 'Bu haftaki yorum artışı (talep ivmesi). En az 2 haftalık veri birikince dolar.',
-  endeks: 'Fiyat endeksi = marka ort. fiyatı ÷ kategori ort. fiyatı. Örn. 1.74× = ortalamadan %74 PAHALI; 0.66× = %34 UCUZ.',
+  endeks: 'Fiyat Endeksi = bu markanın kategori içi ort. fiyatı ÷ tüm markaların ort. fiyatı.\n\n1.74× → ortalamadan %74 PAHALI (kırmızı) — premium konum; yüksek puan/yorum eşliğinde iyidir, yoksa satışı köstekliyor olabilir.\n0.66× → ortalamadan %34 UCUZ (yeşil) — bütçe konumu; hacim stratejisine uygunsa pozitif, marjı eritiyorsa dikkat.\n1.00× → tam kategori ortalamasında.\n\nSadece tek kategori seçiliyken gösterilir; kategoriler arası fiyat çok farklılaştığı için "Tüm Markalar" görünümünde yoktur.',
   simHead: `Benzerlik skoru = ${SIM_FORMULA}. Bu kolon, ürünün EN YAKIN rakibinin skoruyla sıralanır (artan = en zayıf eşleşmeler üstte).`,
   simCell: `Bu rakip ürünün RoomArt ürününe benzerlik skoru = ${SIM_FORMULA}. Yüksek = ürünler daha benzer.`,
   delta: 'Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).',
