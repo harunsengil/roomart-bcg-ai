@@ -52,7 +52,16 @@ function ProductDetail({ product, onClose }) {
           </div>
           <button type="button" onClick={onClose} className="flex-shrink-0 text-white/30 hover:text-white/70" title="Kapat"><X size={16} /></button>
         </div>
-        <span className="text-xs font-mono font-bold tracking-wider" style={{ color: qm.color }}>{qm.emoji} {qm.label}</span>
+        <div className="flex items-center justify-between gap-2 mt-1">
+          <span className="text-xs font-mono font-bold tracking-wider" style={{ color: qm.color }}>{qm.emoji} {qm.label}</span>
+          {p.url && (
+            <a href={p.url} target="_blank" rel="noreferrer"
+              className="flex items-center gap-1 text-[10px] font-mono text-white/35 hover:text-gold-400 transition-colors"
+              title="Trendyol ürün sayfası">
+              <ExternalLink size={11} /> ürün sayfası
+            </a>
+          )}
+        </div>
       </div>
 
       <div className="space-y-3">

@@ -73,9 +73,10 @@ function Dashboard({ onLogout, userEmail }) {
   const [loadingTimeout, setLoadingTimeout] = useState(false)
   const [productSearch, setProductSearch] = useState('')                 // Alerts → Products navigasyonu
 
-  // Uyarıdan ürün sayfasına git: product_id ile ProductTable'ı filtrele
+  // Uyarıdan ürün sayfasına git: product_id → ürün adıyla arama (id SEARCH_FIELDS'ta yok, name var)
   const goToProduct = (productId) => {
-    setProductSearch(String(productId || ''))
+    const product = data?.products?.find(p => String(p.id) === String(productId))
+    setProductSearch(product?.name || String(productId || ''))
     setActiveTab('products')
   }
   // AI Strategy → Overview: kategori seçili olarak BCG'ye git
