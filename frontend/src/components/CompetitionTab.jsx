@@ -1,13 +1,14 @@
 import { useState, useMemo } from 'react'
 import { createPortal } from 'react-dom'
-import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-react'
+import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown, AlertTriangle } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 
-// "En yüksek" hücre vurgusu (kategori-içi / grup-içi en yüksek fiyat-puan-yorum).
-const HI_CELL = 'bg-gold-500/15 text-gold-300 font-semibold rounded px-1'
+// "En yüksek" hücre vurgusu (grup-içi en yüksek değer). Dolgu/pill yok — yalnız
+// hafif altın metin + kalınlık, böylece tablo rengârenk olmaz, sadece lider belli olur.
+const HI_CELL = 'text-gold-300 font-semibold'
 
 // Akıllı arama yardımcıları (ProductTable ile aynı: binlik-ayraç duyarsız + fiyat operatörleri)
 const norm = (s) => String(s).toLowerCase().replace(/[.,\s₺]/g, '')
@@ -31,15 +32,22 @@ function priceOp(q) {
   return null
 }
 
+// Benzerlik formülü — tek doğruluk kaynağı; hem başlık hem hücre buradan türetilir.
+const SIM_FORMULA = '%40 görsel (CLIP) + %30 ad-token örtüşmesi (Jaccard) + %30 fiyat yakınlığı'
+
 const T = {
   urun: 'Bu markanın bu kategorideki taranan ürün sayısı',
   fiyat: 'Markanın bu kategorideki ortalama satış fiyatı',
+  urunFiyat: 'Ürünün güncel satış fiyatı (Trendyol). Bizim satırda RoomArt fiyatı, rakip satırlarda o rakip ürünün fiyatı.',
   puan: 'Ortalama müşteri puanı (0-5)',
   yorum: 'Toplam değerlendirme (yorum) sayısı — gerçek satış yerine talep/görünürlük vekili',
   yorumPct: 'Bu markanın kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)',
   hiz: 'Bu haftaki yorum artışı (talep ivmesi). En az 2 haftalık veri birikince dolar.',
   endeks: 'Fiyat endeksi = marka ort. fiyatı ÷ kategori ort. fiyatı. Örn. 1.74× = ortalamadan %74 PAHALI; 0.66× = %34 UCUZ.',
-  sim: 'Benzerlik skoru = %40 görsel (CLIP) + %30 ad-token örtüşmesi (Jaccard) + %30 fiyat yakınlığı. Yüksek = ürünler daha benzer.',
+  // Başlık: kolon, grubun EN YAKIN rakip skoruyla sıralanır.
+  simHead: `Benzerlik skoru = ${SIM_FORMULA}. Bu kolon, ürünün EN YAKIN rakibinin skoruyla sıralanır (artan = en zayıf eşleşmeler üstte, tutarsızları bulmak için).`,
+  // Hücre: o tek rakip ürünün bizim ürüne benzerliği.
+  simCell: `Bu rakip ürünün RoomArt ürününe benzerlik skoru = ${SIM_FORMULA}. Yüksek = ürünler daha benzer.`,
   delta: 'Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).',
 }
 
@@ -92,7 +100,8 @@ function CategoryView({ categories }) {
     const vals = rows.map(b => b[key]).filter(v => v != null && v > 0)
     return vals.length ? Math.max(...vals) : null
   }
-  const mx = { avg_price: maxOf('avg_price'), avg_rating: maxOf('avg_rating'), total_reviews: maxOf('total_reviews') }
+  // Fiyat vurgusu kaldırıldı (en yüksek fiyat "iyi" değil; yanıltıcıydı). Puan + yorum kalır.
+  const mx = { avg_rating: maxOf('avg_rating'), total_reviews: maxOf('total_reviews') }
   const hi = HI_CELL   // en yüksek vurgusu
 
   return (
@@ -153,7 +162,7 @@ function CategoryView({ categories }) {
                 <td className="px-3 py-2"><StoreLink brand={b.brand} url={b.store_url} isRoomart={b.is_roomart} /></td>
                 {isAll && <td className="px-3 py-2 text-right font-mono text-white/50">{b.cats}/6</td>}
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.product_count}</td>
-                <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? <span className={b.avg_price === mx.avg_price ? hi : ''}>{formatCurrency(b.avg_price)}</span> : '—'}</td>
+                <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? formatCurrency(b.avg_price) : '—'}</td>
                 <td className="px-3 py-2 text-right font-mono">{b.avg_rating != null ? <span className={b.avg_rating === mx.avg_rating ? hi : 'text-gold-400'}>★ {b.avg_rating}</span> : '—'}</td>
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.total_reviews > 0 && b.total_reviews === mx.total_reviews ? <span className={hi}>{b.total_reviews}</span> : b.total_reviews}</td>
                 <td className="px-3 py-2 text-right font-mono text-white/60">%{b.review_share}</td>
@@ -257,11 +266,11 @@ function ProductView({ matches, light }) {
         {/* sabit başlık (sticky) — kartlarla aynı 1px yatay kenar (border-x) → kolonlar birebir hizalı */}
         <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
           <SortHead field="name" label="Ürün / Rakip" align="left" tip="RoomArt ürün adına göre sırala" />
-          <SortHead field="price" label="Fiyat" tip={T.fiyat} />
+          <SortHead field="price" label="Fiyat" tip={T.urunFiyat} />
           <span className="text-center" title={T.delta}>Fiyat Farkı</span>
           <SortHead field="rating" label="Puan" tip={T.puan} />
           <SortHead field="reviews" label="Yorum" tip={T.yorum} />
-          <SortHead field="sim" label="Benzerlik" tip={`${T.sim} — sıralamada en yakın rakibin skoru baz alınır (artan=en kötü üstte).`} />
+          <SortHead field="sim" label="Benzerlik" tip={T.simHead} />
           <SortHead field="category" label="Kategori" tip="Kategoriye göre grupla/sırala" />
         </div>
 
@@ -278,7 +287,7 @@ function ProductView({ matches, light }) {
               {/* bizim ürün */}
               <div className={`cmp-prow ${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
                 <a href={m.our_url} target="_blank" rel="noreferrer"
-                  className="font-medium text-white hover:text-gold inline-flex items-center gap-1 min-w-0"
+                  className="font-medium text-white hover:text-gold flex items-center gap-1 min-w-0 overflow-hidden"
                   onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
                   <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
                 </a>
@@ -297,7 +306,7 @@ function ProductView({ matches, light }) {
               {m.competitors.map((c, i) => (
                 <div key={i} className={`cmp-prow ${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
                   <a href={c.url} target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 hover:text-gold min-w-0 pl-3"
+                    className="flex items-center gap-1.5 hover:text-gold min-w-0 overflow-hidden pl-3"
                     onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
                     <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
                     <span className="truncate">{c.name}</span>
@@ -309,7 +318,7 @@ function ProductView({ matches, light }) {
                   </span>
                   <span className="text-right font-mono text-white/60">{c.rating > 0 ? <span className={c.rating === gr ? HI_CELL : ''}>{c.rating}★</span> : '—'}</span>
                   <span className="text-right font-mono text-white/50">{c.reviews > 0 && c.reviews === gv ? <span className={HI_CELL}>{c.reviews}</span> : c.reviews}</span>
-                  <span className="text-right font-mono text-white/40" title={T.sim}>{Math.round(c.score * 100)}%</span>
+                  <span className="text-right font-mono text-white/40" title={T.simCell}>{Math.round(c.score * 100)}%</span>
                   <span className="text-left pl-2"></span>
                 </div>
               ))}
@@ -335,6 +344,37 @@ function ProductView({ matches, light }) {
           </div>
         )
       })(), document.body)}
+    </div>
+  )
+}
+
+// ── REKABET UYARILARI (analyzer üretir; varsayılan kapalı, gürültü yapmasın) ──
+const SEV_DOT = { HIGH: 'bg-rose-400', MEDIUM: 'bg-amber-400', LOW: 'bg-white/40' }
+function CompetitiveAlerts({ alerts }) {
+  const [open, setOpen] = useState(false)
+  if (!alerts?.length) return null
+  const high = alerts.filter(a => a.severity === 'HIGH').length
+  return (
+    <div className="flex-shrink-0 mb-3">
+      <button type="button" onClick={() => setOpen(o => !o)}
+        className="flex items-center gap-2 text-[11px] font-mono text-white/55 hover:text-white/80 transition-colors">
+        <AlertTriangle size={12} className={high ? 'text-rose-400' : 'text-amber-300/70'} />
+        <span>{alerts.length} rakip uyarısı{high ? ` · ${high} yüksek` : ''}</span>
+        {open ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+      </button>
+      {open && (
+        <ul className="mt-2 space-y-1.5 rounded-lg border border-white/10 p-2.5" style={{ background: 'var(--bg-card)' }}>
+          {alerts.map(a => (
+            <li key={a.id} className="flex items-start gap-2 text-[11px] leading-snug">
+              <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEV_DOT[a.severity] || SEV_DOT.LOW}`} />
+              <span className="min-w-0">
+                <span className="text-white/80 font-medium">{a.title}</span>
+                <span className="text-white/45"> — {a.message}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
@@ -379,6 +419,8 @@ export default function CompetitionTab({ data }) {
           ))}
         </div>
       </div>
+
+      <CompetitiveAlerts alerts={data.alerts} />
 
       {view === 'kategori'
         ? <CategoryView categories={data.categories} />
