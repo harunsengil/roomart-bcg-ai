@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "generated_at": "2026-06-17T10:04:03.044262+00:00",
+    "generated_at": "2026-06-18T09:56:42.589329+00:00",
     "snapshot_days": 3,
     "latest_snapshot": "2026-06-16",
     "has_velocity": true,
-    "competitor_products": 2114,
-    "competitor_diger": 1730,
+    "competitor_products": 1355,
+    "competitor_diger": 1030,
     "competitor_rescued": 0,
     "our_products": 465,
     "clip_matching": true,
-    "clip_can_embed": false,
+    "clip_can_embed": true,
     "clip_embeddings_cached": 4339,
     "note": "Rakip metriği YORUM tabanlı (gerçek satış değil); BCG'den ayrı."
   },
@@ -17,32 +17,6 @@
     {
       "category": "Çamaşır Makinesi Dolabı",
       "brands": [
-        {
-          "brand": "Remaks",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/remaks-m-107554",
-          "product_count": 12,
-          "avg_price": 1676.0,
-          "median_price": 1732.0,
-          "avg_rating": 3.74,
-          "total_reviews": 4526,
-          "review_share": 18.6,
-          "review_velocity": 1,
-          "price_index": 0.46
-        },
-        {
-          "brand": "COSARGROUP",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/cosargroup-m-974406",
-          "product_count": 5,
-          "avg_price": 648.0,
-          "median_price": 602.0,
-          "avg_rating": 3.76,
-          "total_reviews": 4476,
-          "review_share": 18.4,
-          "review_velocity": 0,
-          "price_index": 0.18
-        },
         {
           "brand": "Bofigo",
           "is_roomart": false,
@@ -52,22 +26,22 @@
           "median_price": 3547.0,
           "avg_rating": 3.92,
           "total_reviews": 2922,
-          "review_share": 12.0,
+          "review_share": 18.7,
           "review_velocity": 7,
-          "price_index": 0.94
+          "price_index": 0.82
         },
         {
           "brand": "Kenzlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465",
-          "product_count": 10,
-          "avg_price": 3228.0,
-          "median_price": 2379.0,
-          "avg_rating": 3.85,
-          "total_reviews": 2541,
-          "review_share": 10.5,
+          "product_count": 21,
+          "avg_price": 5186.0,
+          "median_price": 3200.0,
+          "avg_rating": 3.7,
+          "total_reviews": 2817,
+          "review_share": 18.0,
           "review_velocity": 3,
-          "price_index": 0.89
+          "price_index": 1.25
         },
         {
           "brand": "ROOMART",
@@ -78,9 +52,9 @@
           "median_price": 6699.0,
           "avg_rating": 4.48,
           "total_reviews": 2273,
-          "review_share": 9.4,
+          "review_share": 14.5,
           "review_velocity": null,
-          "price_index": 2.08
+          "price_index": 1.81
         },
         {
           "brand": "Rani Mobilya",
@@ -91,92 +65,105 @@
           "median_price": 5950.0,
           "avg_rating": 4.66,
           "total_reviews": 2114,
-          "review_share": 8.7,
+          "review_share": 13.5,
           "review_velocity": 0,
-          "price_index": 1.59
+          "price_index": 1.39
         },
         {
           "brand": "ERİZA HOME",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/eriza-home-m-342500",
-          "product_count": 4,
-          "avg_price": 4370.0,
-          "median_price": 3863.0,
-          "avg_rating": 3.4,
-          "total_reviews": 1664,
-          "review_share": 6.8,
+          "product_count": 5,
+          "avg_price": 4315.0,
+          "median_price": 4094.0,
+          "avg_rating": 3.34,
+          "total_reviews": 1693,
+          "review_share": 10.8,
           "review_velocity": 0,
-          "price_index": 1.2
+          "price_index": 1.04
         },
         {
           "brand": "Moonlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/moonlife-m-106944",
-          "product_count": 3,
-          "avg_price": 2467.0,
-          "median_price": 2470.0,
-          "avg_rating": 4.13,
-          "total_reviews": 1648,
-          "review_share": 6.8,
+          "product_count": 4,
+          "avg_price": 2495.0,
+          "median_price": 2474.0,
+          "avg_rating": 4.08,
+          "total_reviews": 1685,
+          "review_share": 10.8,
           "review_velocity": 0,
-          "price_index": 0.68
+          "price_index": 0.6
         },
         {
           "brand": "DEKORFİM",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/dekorfim-m-649488",
-          "product_count": 6,
-          "avg_price": 2640.0,
-          "median_price": 2517.0,
-          "avg_rating": 3.83,
-          "total_reviews": 976,
-          "review_share": 4.0,
+          "product_count": 7,
+          "avg_price": 2734.0,
+          "median_price": 2535.0,
+          "avg_rating": 3.86,
+          "total_reviews": 1006,
+          "review_share": 6.4,
           "review_velocity": 0,
-          "price_index": 0.73
+          "price_index": 0.66
         },
         {
           "brand": "AEKA mobilya",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617",
-          "product_count": 2,
-          "avg_price": 3750.0,
-          "median_price": 3750.0,
-          "avg_rating": 4.5,
-          "total_reviews": 868,
-          "review_share": 3.6,
+          "product_count": 3,
+          "avg_price": 3602.0,
+          "median_price": 3305.0,
+          "avg_rating": 4.67,
+          "total_reviews": 886,
+          "review_share": 5.7,
           "review_velocity": 0,
-          "price_index": 1.03
+          "price_index": 0.87
         },
         {
           "brand": "Diodor",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/diodor-m-652543",
-          "product_count": 1,
-          "avg_price": 4179.0,
-          "median_price": 4179.0,
+          "product_count": 2,
+          "avg_price": 4325.0,
+          "median_price": 4325.0,
           "avg_rating": 4.2,
-          "total_reviews": 175,
-          "review_share": 0.7,
+          "total_reviews": 216,
+          "review_share": 1.4,
           "review_velocity": 0,
-          "price_index": 1.15
+          "price_index": 1.04
         },
         {
-          "brand": "Modamed Yatak by Modalife",
+          "brand": "Asra Trend",
           "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061",
+          "store_url": "https://www.trendyol.com/magaza/asratrend-m-374428",
           "product_count": 1,
-          "avg_price": 3866.0,
-          "median_price": 3866.0,
-          "avg_rating": 4.6,
-          "total_reviews": 110,
-          "review_share": 0.5,
+          "avg_price": 4850.0,
+          "median_price": 4850.0,
+          "avg_rating": 4.4,
+          "total_reviews": 25,
+          "review_share": 0.2,
           "review_velocity": 0,
-          "price_index": 1.07
+          "price_index": 1.17
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/egecan-m-385417",
+          "product_count": 1,
+          "avg_price": 1499.0,
+          "median_price": 1499.0,
+          "avg_rating": 3.4,
+          "total_reviews": 18,
+          "review_share": 0.1,
+          "review_velocity": 0,
+          "price_index": 0.36
         }
       ],
-      "roomart_rank": 5,
-      "leader": "Remaks",
-      "competitor_brands": 11
+      "roomart_rank": 3,
+      "leader": "Bofigo",
+      "competitor_brands": 10
     },
     {
       "category": "Banyo Dolabı",
@@ -190,9 +177,9 @@
           "median_price": 4119.0,
           "avg_rating": 4.29,
           "total_reviews": 7032,
-          "review_share": 23.2,
+          "review_share": 26.1,
           "review_velocity": 0,
-          "price_index": 1.05
+          "price_index": 0.94
         },
         {
           "brand": "Bofigo",
@@ -203,9 +190,9 @@
           "median_price": 3172.0,
           "avg_rating": 3.98,
           "total_reviews": 5045,
-          "review_share": 16.6,
+          "review_share": 18.7,
           "review_velocity": 1,
-          "price_index": 0.85
+          "price_index": 0.76
         },
         {
           "brand": "KAREN BANYO",
@@ -216,22 +203,22 @@
           "median_price": 6299.0,
           "avg_rating": 4.5,
           "total_reviews": 5010,
-          "review_share": 16.5,
+          "review_share": 18.6,
           "review_velocity": 0,
-          "price_index": 1.72
+          "price_index": 1.53
         },
         {
-          "brand": "COSARGROUP",
+          "brand": "Özceden",
           "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/cosargroup-m-974406",
-          "product_count": 4,
-          "avg_price": 1570.0,
-          "median_price": 1394.0,
-          "avg_rating": 3.77,
-          "total_reviews": 3630,
-          "review_share": 12.0,
+          "store_url": "https://www.trendyol.com/magaza/ozceden-m-149118",
+          "product_count": 18,
+          "avg_price": 7069.0,
+          "median_price": 5824.0,
+          "avg_rating": 4.25,
+          "total_reviews": 3964,
+          "review_share": 14.7,
           "review_velocity": 0,
-          "price_index": 0.4
+          "price_index": 1.6
         },
         {
           "brand": "ROOMART",
@@ -242,22 +229,9 @@
           "median_price": 8000.0,
           "avg_rating": 4.56,
           "total_reviews": 3595,
-          "review_share": 11.9,
+          "review_share": 13.3,
           "review_velocity": null,
-          "price_index": 2.12
-        },
-        {
-          "brand": "Özceden",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/ozceden-m-149118",
-          "product_count": 13,
-          "avg_price": 6900.0,
-          "median_price": 5649.0,
-          "avg_rating": 4.23,
-          "total_reviews": 3329,
-          "review_share": 11.0,
-          "review_velocity": 0,
-          "price_index": 1.76
+          "price_index": 1.89
         },
         {
           "brand": "Rani Mobilya",
@@ -268,35 +242,35 @@
           "median_price": 5050.0,
           "avg_rating": 4.63,
           "total_reviews": 819,
-          "review_share": 2.7,
+          "review_share": 3.0,
           "review_velocity": 0,
-          "price_index": 1.33
-        },
-        {
-          "brand": "Remaks",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/remaks-m-107554",
-          "product_count": 2,
-          "avg_price": 1537.0,
-          "median_price": 1537.0,
-          "avg_rating": 4.25,
-          "total_reviews": 412,
-          "review_share": 1.4,
-          "review_velocity": 0,
-          "price_index": 0.39
+          "price_index": 1.18
         },
         {
           "brand": "Kenzlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465",
-          "product_count": 2,
-          "avg_price": 1378.0,
-          "median_price": 1378.0,
-          "avg_rating": 4.15,
-          "total_reviews": 369,
-          "review_share": 1.2,
+          "product_count": 3,
+          "avg_price": 1233.0,
+          "median_price": 942.0,
+          "avg_rating": 4.07,
+          "total_reviews": 493,
+          "review_share": 1.8,
           "review_velocity": 1,
-          "price_index": 0.35
+          "price_index": 0.28
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/egecan-m-385417",
+          "product_count": 2,
+          "avg_price": 1499.0,
+          "median_price": 1499.0,
+          "avg_rating": 3.9,
+          "total_reviews": 398,
+          "review_share": 1.5,
+          "review_velocity": 0,
+          "price_index": 0.34
         },
         {
           "brand": "Diodor",
@@ -307,35 +281,9 @@
           "median_price": 3844.0,
           "avg_rating": 3.85,
           "total_reviews": 362,
-          "review_share": 1.2,
+          "review_share": 1.3,
           "review_velocity": 0,
-          "price_index": 0.98
-        },
-        {
-          "brand": "Peka Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380",
-          "product_count": 2,
-          "avg_price": 1647.0,
-          "median_price": 1647.0,
-          "avg_rating": 4.6,
-          "total_reviews": 310,
-          "review_share": 1.0,
-          "review_velocity": 0,
-          "price_index": 0.42
-        },
-        {
-          "brand": "Egecan Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/egecan-m-385417",
-          "product_count": 1,
-          "avg_price": 1499.0,
-          "median_price": 1499.0,
-          "avg_rating": 3.9,
-          "total_reviews": 271,
-          "review_share": 0.9,
-          "review_velocity": 0,
-          "price_index": 0.38
+          "price_index": 0.87
         },
         {
           "brand": "ERİZA HOME",
@@ -348,12 +296,25 @@
           "total_reviews": 138,
           "review_share": 0.5,
           "review_velocity": 0,
-          "price_index": 1.25
+          "price_index": 1.11
+        },
+        {
+          "brand": "Moonlife",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/moonlife-m-106944",
+          "product_count": 1,
+          "avg_price": 2149.0,
+          "median_price": 2149.0,
+          "avg_rating": 4.1,
+          "total_reviews": 124,
+          "review_share": 0.5,
+          "review_velocity": 0,
+          "price_index": 0.49
         }
       ],
       "roomart_rank": 5,
       "leader": "AEKA mobilya",
-      "competitor_brands": 12
+      "competitor_brands": 10
     },
     {
       "category": "Mutfak Adası",
@@ -367,9 +328,9 @@
           "median_price": 5645.0,
           "avg_rating": 4.63,
           "total_reviews": 1330,
-          "review_share": 53.5,
+          "review_share": 55.4,
           "review_velocity": 4,
-          "price_index": 0.93
+          "price_index": 0.85
         },
         {
           "brand": "Rani Mobilya",
@@ -380,9 +341,9 @@
           "median_price": 6300.0,
           "avg_rating": 4.75,
           "total_reviews": 739,
-          "review_share": 29.7,
+          "review_share": 30.8,
           "review_velocity": 0,
-          "price_index": 0.99
+          "price_index": 0.91
         },
         {
           "brand": "ROOMART",
@@ -393,22 +354,9 @@
           "median_price": 6564.0,
           "avg_rating": 4.78,
           "total_reviews": 223,
-          "review_share": 9.0,
+          "review_share": 9.3,
           "review_velocity": null,
-          "price_index": 1.08
-        },
-        {
-          "brand": "Peka Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380",
-          "product_count": 2,
-          "avg_price": 2599.0,
-          "median_price": 2599.0,
-          "avg_rating": 4.55,
-          "total_reviews": 84,
-          "review_share": 3.4,
-          "review_velocity": 0,
-          "price_index": 0.41
+          "price_index": 0.99
         },
         {
           "brand": "Bofigo",
@@ -419,9 +367,9 @@
           "median_price": 3821.0,
           "avg_rating": 3.98,
           "total_reviews": 50,
-          "review_share": 2.0,
+          "review_share": 2.1,
           "review_velocity": 0,
-          "price_index": 0.6
+          "price_index": 0.55
         },
         {
           "brand": "DEKORFİM",
@@ -432,9 +380,9 @@
           "median_price": 10499.0,
           "avg_rating": 4.74,
           "total_reviews": 48,
-          "review_share": 1.9,
+          "review_share": 2.0,
           "review_velocity": 0,
-          "price_index": 1.12
+          "price_index": 1.04
         },
         {
           "brand": "ERİZA HOME",
@@ -447,7 +395,7 @@
           "total_reviews": 6,
           "review_share": 0.2,
           "review_velocity": 0,
-          "price_index": 1.05
+          "price_index": 0.97
         },
         {
           "brand": "Avmpark",
@@ -460,132 +408,80 @@
           "total_reviews": 6,
           "review_share": 0.2,
           "review_velocity": 0,
-          "price_index": 1.82
+          "price_index": 1.68
         }
       ],
       "roomart_rank": 3,
       "leader": "AEKA mobilya",
-      "competitor_brands": 7
+      "competitor_brands": 6
     },
     {
       "category": "Kitaplıklı Çalışma Masası",
       "brands": [
         {
-          "brand": "COSARGROUP",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/cosargroup-m-974406",
-          "product_count": 10,
-          "avg_price": 1012.0,
-          "median_price": 829.0,
-          "avg_rating": 3.74,
-          "total_reviews": 29674,
-          "review_share": 33.8,
-          "review_velocity": 0,
-          "price_index": 0.34
-        },
-        {
           "brand": "Moonlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/moonlife-m-106944",
-          "product_count": 14,
-          "avg_price": 2103.0,
-          "median_price": 2035.0,
-          "avg_rating": 4.24,
-          "total_reviews": 17974,
-          "review_share": 20.4,
+          "product_count": 24,
+          "avg_price": 2111.0,
+          "median_price": 2147.0,
+          "avg_rating": 4.25,
+          "total_reviews": 20333,
+          "review_share": 47.7,
           "review_velocity": 0,
-          "price_index": 0.7
-        },
-        {
-          "brand": "Falez Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/falez-mobilya-aksesuar-m-108694",
-          "product_count": 5,
-          "avg_price": 1168.0,
-          "median_price": 969.0,
-          "avg_rating": 4.3,
-          "total_reviews": 7525,
-          "review_share": 8.6,
-          "review_velocity": 0,
-          "price_index": 0.39
+          "price_index": 0.58
         },
         {
           "brand": "Bofigo",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931",
-          "product_count": 4,
-          "avg_price": 2056.0,
-          "median_price": 2234.0,
-          "avg_rating": 4.05,
-          "total_reviews": 5627,
-          "review_share": 6.4,
-          "review_velocity": 7,
-          "price_index": 0.68
-        },
-        {
-          "brand": "Modamed Yatak by Modalife",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/modamed-yatak-by-modalife-m-995061",
-          "product_count": 2,
-          "avg_price": 4519.0,
-          "median_price": 4519.0,
-          "avg_rating": 4.7,
-          "total_reviews": 4769,
-          "review_share": 5.4,
-          "review_velocity": 0,
-          "price_index": 1.5
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/dekopratik-mobilya-m-403137",
-          "product_count": 5,
-          "avg_price": 2888.0,
-          "median_price": 2899.0,
-          "avg_rating": 4.62,
-          "total_reviews": 4196,
-          "review_share": 4.8,
-          "review_velocity": 0,
-          "price_index": 0.96
-        },
-        {
-          "brand": "Remaks",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/remaks-m-107554",
-          "product_count": 4,
-          "avg_price": 1469.0,
-          "median_price": 1611.0,
-          "avg_rating": 4.15,
-          "total_reviews": 3706,
-          "review_share": 4.2,
-          "review_velocity": 0,
-          "price_index": 0.49
+          "product_count": 10,
+          "avg_price": 2207.0,
+          "median_price": 2403.0,
+          "avg_rating": 4.18,
+          "total_reviews": 7284,
+          "review_share": 17.1,
+          "review_velocity": 8,
+          "price_index": 0.61
         },
         {
           "brand": "DEKOMONTE",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/dekomonte-m-430219",
-          "product_count": 1,
-          "avg_price": 1280.0,
-          "median_price": 1280.0,
-          "avg_rating": 3.7,
-          "total_reviews": 3475,
-          "review_share": 4.0,
+          "product_count": 2,
+          "avg_price": 1540.0,
+          "median_price": 1540.0,
+          "avg_rating": 3.65,
+          "total_reviews": 3827,
+          "review_share": 9.0,
           "review_velocity": 0,
-          "price_index": 0.43
+          "price_index": 0.42
+        },
+        {
+          "brand": "Rani Mobilya",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735",
+          "product_count": 10,
+          "avg_price": 5795.0,
+          "median_price": 5475.0,
+          "avg_rating": 4.64,
+          "total_reviews": 2905,
+          "review_share": 6.8,
+          "review_velocity": 0,
+          "price_index": 1.59
         },
         {
           "brand": "Kenzlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465",
-          "product_count": 2,
-          "avg_price": 417.0,
-          "median_price": 417.0,
-          "avg_rating": 4.25,
-          "total_reviews": 2381,
-          "review_share": 2.7,
+          "product_count": 3,
+          "avg_price": 556.0,
+          "median_price": 419.0,
+          "avg_rating": 4.2,
+          "total_reviews": 2630,
+          "review_share": 6.2,
           "review_velocity": 1,
-          "price_index": 0.14
+          "price_index": 0.15
         },
         {
           "brand": "Rabi Mobilya",
@@ -596,61 +492,35 @@
           "median_price": 4844.0,
           "avg_rating": 4.3,
           "total_reviews": 1965,
-          "review_share": 2.2,
+          "review_share": 4.6,
           "review_velocity": 0,
-          "price_index": 1.61
-        },
-        {
-          "brand": "Peka Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380",
-          "product_count": 1,
-          "avg_price": 2429.0,
-          "median_price": 2429.0,
-          "avg_rating": 4.6,
-          "total_reviews": 1483,
-          "review_share": 1.7,
-          "review_velocity": 0,
-          "price_index": 0.81
-        },
-        {
-          "brand": "KZNHOME Demonte Ürünler",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/kznhome-demonte-urunler-m-315937",
-          "product_count": 2,
-          "avg_price": 3670.0,
-          "median_price": 3670.0,
-          "avg_rating": 4.3,
-          "total_reviews": 1175,
-          "review_share": 1.3,
-          "review_velocity": 0,
-          "price_index": 1.22
-        },
-        {
-          "brand": "Rani Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735",
-          "product_count": 2,
-          "avg_price": 7375.0,
-          "median_price": 7375.0,
-          "avg_rating": 4.7,
-          "total_reviews": 920,
-          "review_share": 1.0,
-          "review_velocity": 0,
-          "price_index": 2.45
+          "price_index": 1.33
         },
         {
           "brand": "DEKORFİM",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/dekorfim-m-649488",
-          "product_count": 1,
-          "avg_price": 3160.0,
-          "median_price": 3160.0,
+          "product_count": 2,
+          "avg_price": 3142.0,
+          "median_price": 3142.0,
           "avg_rating": 4.4,
-          "total_reviews": 546,
-          "review_share": 0.6,
-          "review_velocity": 2,
-          "price_index": 1.05
+          "total_reviews": 781,
+          "review_share": 1.8,
+          "review_velocity": 3,
+          "price_index": 0.86
+        },
+        {
+          "brand": "ERİZA HOME",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/eriza-home-m-342500",
+          "product_count": 2,
+          "avg_price": 3095.0,
+          "median_price": 3095.0,
+          "avg_rating": 3.85,
+          "total_reviews": 606,
+          "review_share": 1.4,
+          "review_velocity": 0,
+          "price_index": 0.85
         },
         {
           "brand": "ROOMART",
@@ -661,9 +531,9 @@
           "median_price": 5000.0,
           "avg_rating": 4.61,
           "total_reviews": 529,
-          "review_share": 0.6,
+          "review_share": 1.2,
           "review_velocity": null,
-          "price_index": 1.71
+          "price_index": 1.41
         },
         {
           "brand": "AEKA mobilya",
@@ -674,22 +544,9 @@
           "median_price": 4100.0,
           "avg_rating": 4.5,
           "total_reviews": 442,
-          "review_share": 0.5,
+          "review_share": 1.0,
           "review_velocity": 2,
-          "price_index": 1.36
-        },
-        {
-          "brand": "Ankara Orman Ürünleri",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/ankara-orman-urunleri-m-144944",
-          "product_count": 1,
-          "avg_price": 4784.0,
-          "median_price": 4784.0,
-          "avg_rating": 4.3,
-          "total_reviews": 393,
-          "review_share": 0.4,
-          "review_velocity": 0,
-          "price_index": 1.59
+          "price_index": 1.13
         },
         {
           "brand": "Yurudesign",
@@ -700,22 +557,9 @@
           "median_price": 4416.0,
           "avg_rating": 4.5,
           "total_reviews": 389,
-          "review_share": 0.4,
+          "review_share": 0.9,
           "review_velocity": 0,
-          "price_index": 1.47
-        },
-        {
-          "brand": "ERİZA HOME",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/eriza-home-m-342500",
-          "product_count": 1,
-          "avg_price": 1200.0,
-          "median_price": 1200.0,
-          "avg_rating": 3.8,
-          "total_reviews": 377,
-          "review_share": 0.4,
-          "review_velocity": 0,
-          "price_index": 0.4
+          "price_index": 1.21
         },
         {
           "brand": "Diodor",
@@ -726,134 +570,95 @@
           "median_price": 2121.0,
           "avg_rating": 3.8,
           "total_reviews": 368,
-          "review_share": 0.4,
+          "review_share": 0.9,
           "review_velocity": 0,
-          "price_index": 0.71
+          "price_index": 0.58
+        },
+        {
+          "brand": "Asra Trend",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/asratrend-m-374428",
+          "product_count": 1,
+          "avg_price": 8300.0,
+          "median_price": 8300.0,
+          "avg_rating": 4.8,
+          "total_reviews": 356,
+          "review_share": 0.8,
+          "review_velocity": 0,
+          "price_index": 2.28
+        },
+        {
+          "brand": "Avmpark",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/avmpark-m-106609",
+          "product_count": 1,
+          "avg_price": 3589.0,
+          "median_price": 3589.0,
+          "avg_rating": 4.3,
+          "total_reviews": 211,
+          "review_share": 0.5,
+          "review_velocity": 0,
+          "price_index": 0.99
         }
       ],
-      "roomart_rank": 15,
-      "leader": "COSARGROUP",
-      "competitor_brands": 19
+      "roomart_rank": 9,
+      "leader": "Moonlife",
+      "competitor_brands": 13
     },
     {
       "category": "Sehpa",
       "brands": [
         {
-          "brand": "Falez Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/falez-mobilya-aksesuar-m-108694",
-          "product_count": 35,
-          "avg_price": 1121.0,
-          "median_price": 949.0,
-          "avg_rating": 4.47,
-          "total_reviews": 38839,
-          "review_share": 58.9,
-          "review_velocity": 0,
-          "price_index": 0.58
-        },
-        {
           "brand": "Monte Sehpa",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/monte-sehpa-m-105195",
-          "product_count": 7,
-          "avg_price": 1232.0,
-          "median_price": 1291.0,
-          "avg_rating": 3.89,
-          "total_reviews": 9657,
-          "review_share": 14.6,
+          "product_count": 14,
+          "avg_price": 1220.0,
+          "median_price": 1284.0,
+          "avg_rating": 3.91,
+          "total_reviews": 10877,
+          "review_share": 54.9,
           "review_velocity": 0,
-          "price_index": 0.63
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/dekopratik-mobilya-m-403137",
-          "product_count": 7,
-          "avg_price": 2942.0,
-          "median_price": 2655.0,
-          "avg_rating": 4.26,
-          "total_reviews": 5832,
-          "review_share": 8.8,
-          "review_velocity": 0,
-          "price_index": 1.51
-        },
-        {
-          "brand": "Tapacım",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/tapacim-m-285523",
-          "product_count": 3,
-          "avg_price": 2165.0,
-          "median_price": 2117.0,
-          "avg_rating": 4.3,
-          "total_reviews": 5322,
-          "review_share": 8.1,
-          "review_velocity": 0,
-          "price_index": 1.11
+          "price_index": 0.47
         },
         {
           "brand": "ERİZA HOME",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/eriza-home-m-342500",
-          "product_count": 3,
-          "avg_price": 2311.0,
-          "median_price": 2855.0,
-          "avg_rating": 4.17,
-          "total_reviews": 2679,
-          "review_share": 4.1,
+          "product_count": 15,
+          "avg_price": 4954.0,
+          "median_price": 5900.0,
+          "avg_rating": 4.12,
+          "total_reviews": 4284,
+          "review_share": 21.6,
           "review_velocity": 0,
-          "price_index": 1.19
-        },
-        {
-          "brand": "Peka Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380",
-          "product_count": 2,
-          "avg_price": 1099.0,
-          "median_price": 1099.0,
-          "avg_rating": 4.55,
-          "total_reviews": 1570,
-          "review_share": 2.4,
-          "review_velocity": 0,
-          "price_index": 0.57
+          "price_index": 1.92
         },
         {
           "brand": "Bofigo",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931",
-          "product_count": 1,
-          "avg_price": 547.0,
-          "median_price": 547.0,
-          "avg_rating": 4.4,
-          "total_reviews": 1024,
-          "review_share": 1.6,
-          "review_velocity": 3,
-          "price_index": 0.28
-        },
-        {
-          "brand": "COSARGROUP",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/cosargroup-m-974406",
-          "product_count": 1,
-          "avg_price": 783.0,
-          "median_price": 783.0,
-          "avg_rating": 3.7,
-          "total_reviews": 440,
-          "review_share": 0.7,
-          "review_velocity": 0,
-          "price_index": 0.4
+          "product_count": 18,
+          "avg_price": 1508.0,
+          "median_price": 1466.0,
+          "avg_rating": 4.27,
+          "total_reviews": 2990,
+          "review_share": 15.1,
+          "review_velocity": 5,
+          "price_index": 0.58
         },
         {
           "brand": "Rani Mobilya",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735",
-          "product_count": 1,
-          "avg_price": 5000.0,
-          "median_price": 5000.0,
-          "avg_rating": 4.6,
-          "total_reviews": 412,
-          "review_share": 0.6,
+          "product_count": 7,
+          "avg_price": 6514.0,
+          "median_price": 7550.0,
+          "avg_rating": 4.69,
+          "total_reviews": 1254,
+          "review_share": 6.3,
           "review_velocity": 0,
-          "price_index": 2.57
+          "price_index": 2.52
         },
         {
           "brand": "ROOMART",
@@ -864,14 +669,53 @@
           "median_price": 2500.0,
           "avg_rating": 4.7,
           "total_reviews": 165,
-          "review_share": 0.3,
+          "review_share": 0.8,
           "review_velocity": null,
-          "price_index": 1.14
+          "price_index": 0.86
+        },
+        {
+          "brand": "Kenzlife",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/bak-bu-da-iyi-m-141465",
+          "product_count": 4,
+          "avg_price": 612.0,
+          "median_price": 565.0,
+          "avg_rating": 3.62,
+          "total_reviews": 140,
+          "review_share": 0.7,
+          "review_velocity": 0,
+          "price_index": 0.24
+        },
+        {
+          "brand": "Moonlife",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/moonlife-m-106944",
+          "product_count": 1,
+          "avg_price": 2218.0,
+          "median_price": 2218.0,
+          "avg_rating": 4.2,
+          "total_reviews": 83,
+          "review_share": 0.4,
+          "review_velocity": 0,
+          "price_index": 0.86
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "is_roomart": false,
+          "store_url": "https://www.trendyol.com/magaza/egecan-m-385417",
+          "product_count": 1,
+          "avg_price": 1399.0,
+          "median_price": 1399.0,
+          "avg_rating": 3.8,
+          "total_reviews": 37,
+          "review_share": 0.2,
+          "review_velocity": 0,
+          "price_index": 0.54
         }
       ],
-      "roomart_rank": 10,
-      "leader": "Falez Mobilya",
-      "competitor_brands": 9
+      "roomart_rank": 5,
+      "leader": "Monte Sehpa",
+      "competitor_brands": 7
     },
     {
       "category": "Kahve Köşesi",
@@ -880,105 +724,66 @@
           "brand": "Bofigo",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/bofigogrup-m-529931",
-          "product_count": 10,
-          "avg_price": 3208.0,
-          "median_price": 2519.0,
-          "avg_rating": 4.39,
-          "total_reviews": 10802,
-          "review_share": 25.4,
-          "review_velocity": 1,
-          "price_index": 0.71
+          "product_count": 14,
+          "avg_price": 3459.0,
+          "median_price": 3780.0,
+          "avg_rating": 4.3,
+          "total_reviews": 11602,
+          "review_share": 33.1,
+          "review_velocity": 4,
+          "price_index": 0.67
         },
         {
           "brand": "Avmpark",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/avmpark-m-106609",
-          "product_count": 10,
-          "avg_price": 8357.0,
-          "median_price": 7329.0,
-          "avg_rating": 4.23,
-          "total_reviews": 7249,
-          "review_share": 17.0,
+          "product_count": 13,
+          "avg_price": 7867.0,
+          "median_price": 7299.0,
+          "avg_rating": 4.25,
+          "total_reviews": 7930,
+          "review_share": 22.6,
           "review_velocity": 0,
-          "price_index": 1.86
+          "price_index": 1.53
         },
         {
           "brand": "Rani Mobilya",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/rani-mobilya-m-106735",
-          "product_count": 15,
-          "avg_price": 9050.0,
-          "median_price": 7400.0,
+          "product_count": 21,
+          "avg_price": 8845.0,
+          "median_price": 8000.0,
           "avg_rating": 4.7,
-          "total_reviews": 6106,
-          "review_share": 14.3,
+          "total_reviews": 7259,
+          "review_share": 20.7,
           "review_velocity": 5,
-          "price_index": 2.01
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/dekopratik-mobilya-m-403137",
-          "product_count": 8,
-          "avg_price": 1948.0,
-          "median_price": 1687.0,
-          "avg_rating": 4.59,
-          "total_reviews": 4110,
-          "review_share": 9.7,
-          "review_velocity": 0,
-          "price_index": 0.43
-        },
-        {
-          "brand": "COSARGROUP",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/cosargroup-m-974406",
-          "product_count": 4,
-          "avg_price": 1924.0,
-          "median_price": 1999.0,
-          "avg_rating": 3.95,
-          "total_reviews": 3676,
-          "review_share": 8.6,
-          "review_velocity": 0,
-          "price_index": 0.43
+          "price_index": 1.72
         },
         {
           "brand": "AEKA mobilya",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/aeka-mobilya-m-106617",
-          "product_count": 3,
-          "avg_price": 3185.0,
-          "median_price": 3450.0,
-          "avg_rating": 4.37,
-          "total_reviews": 3224,
-          "review_share": 7.6,
+          "product_count": 5,
+          "avg_price": 3088.0,
+          "median_price": 3300.0,
+          "avg_rating": 4.38,
+          "total_reviews": 3617,
+          "review_share": 10.3,
           "review_velocity": 5,
-          "price_index": 0.71
-        },
-        {
-          "brand": "KZNHOME Demonte Ürünler",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/kznhome-demonte-urunler-m-315937",
-          "product_count": 3,
-          "avg_price": 6696.0,
-          "median_price": 6861.0,
-          "avg_rating": 4.1,
-          "total_reviews": 2547,
-          "review_share": 6.0,
-          "review_velocity": 0,
-          "price_index": 1.49
+          "price_index": 0.6
         },
         {
           "brand": "Moonlife",
           "is_roomart": false,
           "store_url": "https://www.trendyol.com/magaza/moonlife-m-106944",
-          "product_count": 3,
-          "avg_price": 5521.0,
-          "median_price": 4542.0,
-          "avg_rating": 4.13,
-          "total_reviews": 1991,
-          "review_share": 4.7,
+          "product_count": 4,
+          "avg_price": 5255.0,
+          "median_price": 4498.0,
+          "avg_rating": 4.17,
+          "total_reviews": 2196,
+          "review_share": 6.3,
           "review_velocity": 0,
-          "price_index": 1.23
+          "price_index": 1.02
         },
         {
           "brand": "Monte Sehpa",
@@ -989,9 +794,9 @@
           "median_price": 1525.0,
           "avg_rating": 3.6,
           "total_reviews": 1256,
-          "review_share": 3.0,
+          "review_share": 3.6,
           "review_velocity": 0,
-          "price_index": 0.34
+          "price_index": 0.3
         },
         {
           "brand": "ROOMART",
@@ -1002,9 +807,9 @@
           "median_price": 6449.0,
           "avg_rating": 4.68,
           "total_reviews": 641,
-          "review_share": 1.5,
+          "review_share": 1.8,
           "review_velocity": null,
-          "price_index": 1.49
+          "price_index": 1.3
         },
         {
           "brand": "Diodor",
@@ -1015,27 +820,14 @@
           "median_price": 4454.0,
           "avg_rating": 4.05,
           "total_reviews": 552,
-          "review_share": 1.3,
+          "review_share": 1.6,
           "review_velocity": 0,
-          "price_index": 0.99
-        },
-        {
-          "brand": "Peka Mobilya",
-          "is_roomart": false,
-          "store_url": "https://www.trendyol.com/magaza/peka-mobilya-m-231380",
-          "product_count": 1,
-          "avg_price": 1399.0,
-          "median_price": 1399.0,
-          "avg_rating": 4.6,
-          "total_reviews": 419,
-          "review_share": 1.0,
-          "review_velocity": 0,
-          "price_index": 0.31
+          "price_index": 0.86
         }
       ],
-      "roomart_rank": 10,
+      "roomart_rank": 7,
       "leader": "Bofigo",
-      "competitor_brands": 11
+      "competitor_brands": 7
     }
   ],
   "matches": [
@@ -1216,44 +1008,44 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Maia Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Siyah Suntalam",
-          "price": 6600,
-          "rating": 0.0,
-          "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/maia-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-siyah-suntalam-p-1155461627?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1943/prod/QC_PREP/20260611/17/a0ecec00-fea6-3c14-952c-3578b927fbe7/1_org_zoom.jpg",
-          "score": 0.7314,
+          "brand": "Kenzlife",
+          "name": "Kenzlife 2 Kapılı Dolap Çilem 188*090*032 Byz Kilitli Ayaklı Banyo Mutfak Ofis Kitaplık Ayakkabılık Kiler",
+          "price": 5100,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/kenzlife/2-kapili-dolap-cilem-188-090-032-byz-kilitli-ayakli-banyo-mutfak-ofis-kitaplik-ayakkabilik-kiler-p-37769546?boutiqueId=61&merchantId=141465&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1643/prod/QC/20250225/04/c3d9bbbc-a673-389a-92e4-0cd804f3a45f/1_org_zoom.jpg",
+          "score": 0.6795,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": -4.3,
-          "review_delta": -58
+          "price_delta_pct": -13,
+          "rating_delta": -3.3,
+          "review_delta": -57
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Esco Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Siyah Suntalam",
-          "price": 6600,
-          "rating": 0.0,
-          "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/esco-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-siyah-suntalam-p-1155462117?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1928/prod/QC_PREP/20260611/17/b552b580-1ed7-3c41-9cbe-e68c15d57376/1_org_zoom.jpg",
-          "score": 0.7281,
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF01107AC Pratik, Katlanır, Açılır Kapanır, Çam 3 Raflı 3 Çekmeceli Mutfak, Yemek, Çalışma Masası",
+          "price": 5912,
+          "rating": 3.9,
+          "reviews": 26,
+          "url": "https://www.trendyol.com/dekor-fim/df01107ac-pratik-katlanir-acilir-kapanir-cam-3-rafli-3-cekmeceli-mutfak-yemek-calisma-masasi-p-88289645?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1711/prod/QC_ENRICHMENT/20250718/16/7aa995e1-b63e-33ca-8ac9-9c49b2858bdd/1_org_zoom.jpg",
+          "score": 0.6642,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": -4.3,
-          "review_delta": -58
+          "price_delta_pct": 0,
+          "rating_delta": -0.4,
+          "review_delta": -32
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Maia Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Atlantikçam Sunta",
-          "price": 6600,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Home Kitaplık Kumtaşı Mermer Desen 60Cm HC-5339",
+          "price": 6050,
           "rating": 0.0,
           "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/maia-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-atlantikcam-sunta-p-1155462619?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1915/prod/QC_PREP/20260611/17/140c4264-0b38-384f-a283-62f1ded045e8/1_org_zoom.jpg",
-          "score": 0.7216,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-home-kitaplik-kumtasi-mermer-desen-60cm-hc-5339-p-1154681556?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1933/prod/QC_PREP/20260609/12/aed6cc25-0d90-3e2e-9704-587f17af89ee/1_org_zoom.jpg",
+          "score": 0.6557,
           "rescued": false,
-          "price_delta_pct": 12,
+          "price_delta_pct": 3,
           "rating_delta": -4.3,
           "review_delta": -58
         }
@@ -2261,20 +2053,6 @@
       "bcg_class": "CASH_COW",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6952,
-          "rescued": false,
-          "price_delta_pct": -3,
-          "rating_delta": 0.1,
-          "review_delta": 69
-        },
-        {
           "brand": "DEKORFİM",
           "name": "dekor fim DF01107B Pratik, Katlanır, Açılır Kapanır, Beyaz 3 Raflı 3 Çekmeceli Mutfak, Yemek, Çalışma Masası",
           "price": 5900,
@@ -2301,6 +2079,20 @@
           "price_delta_pct": 17,
           "rating_delta": 0.3,
           "review_delta": -97
+        },
+        {
+          "brand": "Avmpark",
+          "name": "Avmpark Remy Ahşap Kulplu Çalışma Masası Raflı Sepet-beyaz",
+          "price": 4799,
+          "rating": 4.3,
+          "reviews": 134,
+          "url": "https://www.trendyol.com/avmpark/remy-ahsap-kulplu-calisma-masasi-rafli-sepet-beyaz-p-831353150?boutiqueId=61&merchantId=106609&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1484/product/media/images/prod/QC/20240816/09/cccb65c0-341d-3e65-b424-137c88f92ba3/1_org_zoom.jpg",
+          "score": 0.6691,
+          "rescued": false,
+          "price_delta_pct": -26,
+          "rating_delta": -0.3,
+          "review_delta": 11
         }
       ]
     },
@@ -2935,20 +2727,6 @@
           "review_delta": 0
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6984,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya 5 Raflı Banyo Boy Dolabı Beyaz",
           "price": 2149,
@@ -2961,6 +2739,20 @@
           "price_delta_pct": 16,
           "rating_delta": 4.1,
           "review_delta": 124
+        },
+        {
+          "brand": "Kenzlife",
+          "name": "Kenzlife Hazır Mutfak Fulvus22 Byz 060*120*22 Mutfak Banyo Dolabı Kapaklı Raflı",
+          "price": 1972,
+          "rating": 3.8,
+          "reviews": 24,
+          "url": "https://www.trendyol.com/kenzlife/hazir-mutfak-fulvus22-byz-060-120-22-mutfak-banyo-dolabi-kapakli-rafli-p-37767905?boutiqueId=61&merchantId=141465&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1617/prod/QC/20250101/13/488c0432-93e5-38ca-9274-e65736677f4e/1_org_zoom.jpg",
+          "score": 0.6761,
+          "rescued": false,
+          "price_delta_pct": 7,
+          "rating_delta": 3.8,
+          "review_delta": 24
         }
       ]
     },
@@ -3196,20 +2988,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.5,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-900600478?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/14/f3e1e355-15ac-3339-9e34-d2dcd11dc208/1_org_zoom.jpg",
-          "score": 0.7604,
-          "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.5,
-          "review_delta": 11
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Elips Sehpa C Sehpa Yan Sehpa Koltuk Sehpası Beyaz",
           "price": 1180,
@@ -3224,18 +3002,32 @@
           "review_delta": 7
         },
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.6,
-          "reviews": 14,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-887358319?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1643/prod/QC/20250224/14/8f2f0f17-6602-3701-b3e9-0c68cc6195c6/1_org_zoom.jpg",
-          "score": 0.7397,
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Zigon Sehpa Yan Sehpa Kahve Sehpası Hilal Antrasit",
+          "price": 1274,
+          "rating": 3.8,
+          "reviews": 34,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-zigon-sehpa-yan-sehpa-kahve-sehpasi-hilal-antrasit-p-1054040720?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1795/prod/QC_ENRICHMENT/20251128/07/6899b128-b013-35f6-abdd-10df15295115/1_org_zoom.jpg",
+          "score": 0.7075,
           "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.6,
-          "review_delta": 14
+          "price_delta_pct": 6,
+          "rating_delta": 3.8,
+          "review_delta": 34
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Zigon Sehpa Yan Sehpa Kahve Sehpası Hilal Çam",
+          "price": 1274,
+          "rating": 3.8,
+          "reviews": 37,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-zigon-sehpa-yan-sehpa-kahve-sehpasi-hilal-cam-p-1054040722?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1796/prod/QC_ENRICHMENT/20251128/07/d65f0532-b91d-3c74-b0b4-af3219aab452/1_org_zoom.jpg",
+          "score": 0.7043,
+          "rescued": false,
+          "price_delta_pct": 6,
+          "rating_delta": 3.8,
+          "review_delta": 37
         }
       ]
     },
@@ -3650,20 +3442,6 @@
           "review_delta": 0
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6846,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
           "price": 1792,
@@ -3676,6 +3454,20 @@
           "price_delta_pct": 2,
           "rating_delta": 4.5,
           "review_delta": 4
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 5 Raflı Banyo Boy Dolabı Beyaz",
+          "price": 2149,
+          "rating": 4.1,
+          "reviews": 124,
+          "url": "https://www.trendyol.com/moonlife-mobilya/5-rafli-banyo-boy-dolabi-beyaz-p-4037982?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1676/prod/QC/20250508/11/d9b59991-f882-3a84-80c3-e9ddc815c506/1_org_zoom.jpg",
+          "score": 0.6737,
+          "rescued": false,
+          "price_delta_pct": 23,
+          "rating_delta": 4.1,
+          "review_delta": 124
         }
       ]
     },
@@ -3911,20 +3703,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.5,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-900600478?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/14/f3e1e355-15ac-3339-9e34-d2dcd11dc208/1_org_zoom.jpg",
-          "score": 0.7576,
-          "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.5,
-          "review_delta": 11
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Elips Sehpa C Sehpa Yan Sehpa Koltuk Sehpası Beyaz",
           "price": 1180,
@@ -3939,18 +3717,32 @@
           "review_delta": 7
         },
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.6,
-          "reviews": 14,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-887358319?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1643/prod/QC/20250224/14/8f2f0f17-6602-3701-b3e9-0c68cc6195c6/1_org_zoom.jpg",
-          "score": 0.7409,
+          "brand": "Bofigo",
+          "name": "Bofigo Komodin 2 Bölmeli Komodin Kapaklı Komodin Yan Sehpa Mikonos Beyaz",
+          "price": 1222,
+          "rating": 4.4,
+          "reviews": 120,
+          "url": "https://www.trendyol.com/bofigo/komodin-2-bolmeli-komodin-kapakli-komodin-yan-sehpa-mikonos-beyaz-p-899171071?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1636/prod/QC/20250212/16/516050f7-90cd-30ea-8f79-a70b4512db88/1_org_zoom.jpg",
+          "score": 0.6956,
           "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.6,
-          "review_delta": 14
+          "price_delta_pct": 2,
+          "rating_delta": 4.4,
+          "review_delta": 120
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Zigon Sehpa Yan Sehpa Kahve Sehpası Hilal Antrasit",
+          "price": 1274,
+          "rating": 3.8,
+          "reviews": 34,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-zigon-sehpa-yan-sehpa-kahve-sehpasi-hilal-antrasit-p-1054040720?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1795/prod/QC_ENRICHMENT/20251128/07/6899b128-b013-35f6-abdd-10df15295115/1_org_zoom.jpg",
+          "score": 0.6946,
+          "rescued": false,
+          "price_delta_pct": 6,
+          "rating_delta": 3.8,
+          "review_delta": 34
         }
       ]
     },
@@ -3994,18 +3786,18 @@
           "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Berlin Orta Sehpa 60 cm",
-          "price": 1584,
-          "rating": 4.6,
-          "reviews": 286,
-          "url": "https://www.trendyol.com/dekopratik/berlin-orta-sehpa-60-cm-p-656115610?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1661/prod/QC/20250408/12/cfedcc46-4ed5-3a1b-8b36-85ede6790c40/1_org_zoom.jpg",
-          "score": 0.735,
+          "brand": "Monte Sehpa",
+          "name": "Skandi homeworks Stones Orta sehpa",
+          "price": 1507,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/skandi-homeworks/stones-orta-sehpa-p-1151566192?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1893/prod/QC_PREP/20260601/12/5eb4fbc4-b191-36c4-b5c6-41cee893eb08/1_org_zoom.jpg",
+          "score": 0.7325,
           "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.6,
-          "review_delta": 286
+          "price_delta_pct": -6,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -4035,32 +3827,32 @@
           "review_delta": 2
         },
         {
-          "brand": "COSARGROUP",
-          "name": "Cosargroup Trend 2 Kapaklı 4 Raflı Banyo Malzeme Dolabı Dekoratif Çok Amaçlı Banyo Dolabı",
-          "price": 1292,
-          "rating": 3.9,
-          "reviews": 177,
-          "url": "https://www.trendyol.com/cosargroup/trend-2-kapakli-4-rafli-banyo-malzeme-dolabi-dekoratif-cok-amacli-banyo-dolabi-p-868591063?boutiqueId=61&merchantId=974406&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1592/prod/QC/20241021/15/73497208-ee36-34a5-bbb1-1c1c2281753e/1_org_zoom.jpg",
-          "score": 0.6691,
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı Askıda 3 Raflı Banyo Dolabı Havlu Dolabı Sabunluk Kiler Dolabı Erzak Dolabı Ekmek Dolabı",
+          "price": 1099,
+          "rating": 4.8,
+          "reviews": 5,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-askida-3-rafli-banyo-dolabi-havlu-dolabi-sabunluk-kiler-dolabi-erzak-dolabi-ekmek-dolabi-p-847261027?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1457/product/media/images/prod/QC/20240802/12/6dd79bf7-00df-346e-839c-1260fe4bb169/1_org_zoom.jpg",
+          "score": 0.6484,
           "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 3.9,
-          "review_delta": 177
+          "price_delta_pct": -8,
+          "rating_delta": 4.8,
+          "review_delta": 5
         },
         {
-          "brand": "COSARGROUP",
-          "name": "Cosargroup Trend 2 Kapaklı 4 Raflı Banyo Malzeme Dolabı Dekoratif Çok Amaçlı Banyo Dolabı",
-          "price": 1299,
-          "rating": 3.5,
-          "reviews": 152,
-          "url": "https://www.trendyol.com/cosargroup/trend-2-kapakli-4-rafli-banyo-malzeme-dolabi-dekoratif-cok-amacli-banyo-dolabi-p-868591017?boutiqueId=61&merchantId=974406&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1591/prod/QC/20241021/15/21d5c35e-6167-34c0-87df-3d3d6f45929f/1_org_zoom.jpg",
-          "score": 0.6678,
+          "brand": "Kenzlife",
+          "name": "Kenzlife Kilitli Dolap Rana29 Byz 68*29*29 Banyo Dolabı Hazır Mutfak Ofis Kiler Kitaplık Evrak Ayaklı",
+          "price": 1102,
+          "rating": 3.8,
+          "reviews": 57,
+          "url": "https://www.trendyol.com/kenzlife/kilitli-dolap-rana29-byz-68-29-29-banyo-dolabi-hazir-mutfak-ofis-kiler-kitaplik-evrak-ayakli-p-34907622?boutiqueId=61&merchantId=141465&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1616/prod/QC/20241218/17/9387c977-598d-327f-bf3b-5708fa24594c/1_org_zoom.jpg",
+          "score": 0.6478,
           "rescued": false,
-          "price_delta_pct": 9,
-          "rating_delta": 3.5,
-          "review_delta": 152
+          "price_delta_pct": -8,
+          "rating_delta": 3.8,
+          "review_delta": 57
         }
       ]
     },
@@ -4131,20 +3923,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6964,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": 4.7,
-          "review_delta": 192
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Antrasit - Sepet Ceviz",
           "price": 7200,
@@ -4171,6 +3949,20 @@
           "price_delta_pct": 13,
           "rating_delta": 4.9,
           "review_delta": 26
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani HA125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 7100,
+          "rating": 4.6,
+          "reviews": 147,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha125-kitaplikli-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-853417962?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000039/product/media/images/prod/PIM/20251204/12/81da69fa-eff7-4ba9-a1cb-f21220a61c2a/1_org_zoom.jpg",
+          "score": 0.6735,
+          "rescued": false,
+          "price_delta_pct": 5,
+          "rating_delta": 4.6,
+          "review_delta": 147
         }
       ]
     },
@@ -5011,20 +4803,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.7001,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": 4.7,
-          "review_delta": 192
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Antrasit - Sepet Ceviz",
           "price": 7200,
@@ -5051,6 +4829,20 @@
           "price_delta_pct": 13,
           "rating_delta": 4.9,
           "review_delta": 26
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani HA125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 7100,
+          "rating": 4.6,
+          "reviews": 147,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha125-kitaplikli-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-853417962?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000039/product/media/images/prod/PIM/20251204/12/81da69fa-eff7-4ba9-a1cb-f21220a61c2a/1_org_zoom.jpg",
+          "score": 0.6712,
+          "rescued": false,
+          "price_delta_pct": 5,
+          "rating_delta": 4.6,
+          "review_delta": 147
         }
       ]
     },
@@ -5465,32 +5257,32 @@
           "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7105,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Siyah Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/eriza/titan-siyah-ahsap-modern-yeni-nesil-orta-sehpa-p-801171317?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1149/product/media/images/prod/SPM/PIM/20240128/01/a2827cf4-542f-3f4b-a0ee-bf3b0f7d5c52/1_org_zoom.jpg",
+          "score": 0.6827,
           "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 297
+          "price_delta_pct": 4,
+          "rating_delta": 4.7,
+          "review_delta": 3
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7038,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Ekru Naturel Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/eriza/titan-ekru-naturel-ahsap-modern-yeni-nesil-orta-sehpa-p-923177466?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1655/prod/QC/20250328/03/d2b20f08-4bb9-3f28-9ca7-eab114f6320b/1_org_zoom.jpg",
+          "score": 0.6806,
           "rescued": false,
-          "price_delta_pct": -10,
-          "rating_delta": 4.5,
-          "review_delta": 327
+          "price_delta_pct": 4,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -5671,20 +5463,6 @@
       "bcg_class": null,
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Viva Çalışma Masası Bilgisayar Masası Ofis Masası 110x55",
-          "price": 2404,
-          "rating": 4.5,
-          "reviews": 75,
-          "url": "https://www.trendyol.com/dekopratik/viva-calisma-masasi-bilgisayar-masasi-ofis-masasi-110x55-p-796179548?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1707/prod/QC_ENRICHMENT/20250710/17/e959457f-6ed4-3329-95da-d6336c2dade6/1_org_zoom.jpg",
-          "score": 0.7167,
-          "rescued": false,
-          "price_delta_pct": 9,
-          "rating_delta": 4.5,
-          "review_delta": 75
-        },
-        {
           "brand": "DEKOMONTE",
           "name": "Dekomonte Çalışma Masası. Bilgisayar Masası. Kitaplıklı Çalışma Masası",
           "price": 2000,
@@ -5699,18 +5477,32 @@
           "review_delta": 29
         },
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "KZNMOB HOME Study Raflı Çalışma Masası Bilgisayar Masası Ofis Masası Meşe - Tamamı 1. Kalite Mdf",
-          "price": 2199,
-          "rating": 4.2,
-          "reviews": 22,
-          "url": "https://www.trendyol.com/kznmob-home/study-rafli-calisma-masasi-bilgisayar-masasi-ofis-masasi-mese-tamami-1-kalite-mdf-p-153135106?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1790/prod/QC_ENRICHMENT/20251118/09/33452017-7b53-3d9d-840d-b088d97f4032/1_org_zoom.jpg",
-          "score": 0.7158,
+          "brand": "Bofigo",
+          "name": "Bofigo Kitaplıklı Çalışma Masası Çocuk Çalışma Masası Bilgisayar Çalışma Masası Beyaz",
+          "price": 2729,
+          "rating": 3.9,
+          "reviews": 269,
+          "url": "https://www.trendyol.com/bofigo/kitaplikli-calisma-masasi-cocuk-calisma-masasi-bilgisayar-calisma-masasi-beyaz-p-886545443?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1617/prod/QC/20241231/08/2265c41f-e93e-3e0d-a03e-65fde2f4d6ce/1_org_zoom.jpg",
+          "score": 0.6987,
+          "rescued": false,
+          "price_delta_pct": 24,
+          "rating_delta": 3.9,
+          "review_delta": 269
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Duru Kitaplıklı Çalışma Masası Çam",
+          "price": 2207,
+          "rating": 4.1,
+          "reviews": 340,
+          "url": "https://www.trendyol.com/moonlife-mobilya/duru-kitaplikli-calisma-masasi-cam-p-924569133?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1657/prod/QC/20250404/15/375c38ac-a04a-3ff2-850d-0ef04629c42b/1_org_zoom.jpg",
+          "score": 0.6882,
           "rescued": false,
           "price_delta_pct": 0,
-          "rating_delta": 4.2,
-          "review_delta": 22
+          "rating_delta": 4.1,
+          "review_delta": 340
         }
       ]
     },
@@ -5726,46 +5518,46 @@
       "bcg_class": null,
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7086,
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Dekoratif Sehpa Yan Sehpa Açelya Vizon Krem",
+          "price": 2230,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-dekoratif-sehpa-yan-sehpa-acelya-vizon-krem-p-1152383653?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260603/14/25cce87e-8e28-3891-9d78-30b02ef0fdf7/1_org_zoom.jpg",
+          "score": 0.6877,
           "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 4.5,
-          "review_delta": 327
+          "price_delta_pct": -11,
+          "rating_delta": 0.0,
+          "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.708,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6849,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": 4.3,
-          "review_delta": 297
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 90
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Füme Cam",
-          "price": 2337,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 151,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-fume-cam-p-744895733?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1455/product/media/images/prod/QC/20240801/22/1a50e140-f3a3-323b-a5b4-fbed97ededc1/1_org_zoom.jpg",
-          "score": 0.6954,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6841,
           "rescued": false,
-          "price_delta_pct": -7,
+          "price_delta_pct": -11,
           "rating_delta": 4.2,
-          "review_delta": 151
+          "review_delta": 83
         }
       ]
     },
@@ -5850,20 +5642,6 @@
           "review_delta": 0
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6976,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya 5 Raflı Banyo Boy Dolabı Beyaz",
           "price": 2149,
@@ -5876,6 +5654,20 @@
           "price_delta_pct": 16,
           "rating_delta": 4.1,
           "review_delta": 124
+        },
+        {
+          "brand": "Kenzlife",
+          "name": "Kenzlife Hazır Mutfak Fulvus22 Byz 060*120*22 Mutfak Banyo Dolabı Kapaklı Raflı",
+          "price": 1972,
+          "rating": 3.8,
+          "reviews": 24,
+          "url": "https://www.trendyol.com/kenzlife/hazir-mutfak-fulvus22-byz-060-120-22-mutfak-banyo-dolabi-kapakli-rafli-p-37767905?boutiqueId=61&merchantId=141465&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1617/prod/QC/20250101/13/488c0432-93e5-38ca-9274-e65736677f4e/1_org_zoom.jpg",
+          "score": 0.6779,
+          "rescued": false,
+          "price_delta_pct": 7,
+          "rating_delta": 3.8,
+          "review_delta": 24
         }
       ]
     },
@@ -6194,18 +5986,18 @@
           "review_delta": 124
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.694,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
+          "price": 1792,
+          "rating": 4.5,
+          "reviews": 4,
+          "url": "https://www.trendyol.com/moonlife-mobilya/2-kapakli-l-cok-amacli-banyo-dolabi-siyah-p-4624877?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1615/prod/QC/20241216/16/d7883392-539f-3cba-a99c-557392ba139b/1_org_zoom.jpg",
+          "score": 0.6778,
           "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 169
+          "price_delta_pct": -3,
+          "rating_delta": 4.5,
+          "review_delta": 4
         }
       ]
     },
@@ -6276,20 +6068,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Genç Eva Çalışma Masası -sarı Meşe&beyaz",
-          "price": 4919,
-          "rating": 4.7,
-          "reviews": 1905,
-          "url": "https://www.trendyol.com/modalife/genc-eva-calisma-masasi-sari-mese-beyaz-p-283401446?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1754/prod/QC_ENRICHMENT/20250910/14/a5d02e60-86fc-35fc-a85f-e0048d82c7b0/1_org_zoom.jpg",
-          "score": 0.64,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": -0.2,
-          "review_delta": 1898
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha106 Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
           "price": 4800,
@@ -6316,6 +6094,20 @@
           "price_delta_pct": 0,
           "rating_delta": -0.6,
           "review_delta": 56
+        },
+        {
+          "brand": "Avmpark",
+          "name": "Avmpark Remy Ahşap Kulplu Çalışma Masası Raflı Sepet-beyaz",
+          "price": 4799,
+          "rating": 4.3,
+          "reviews": 134,
+          "url": "https://www.trendyol.com/avmpark/remy-ahsap-kulplu-calisma-masasi-rafli-sepet-beyaz-p-831353150?boutiqueId=61&merchantId=106609&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1484/product/media/images/prod/QC/20240816/09/cccb65c0-341d-3e65-b424-137c88f92ba3/1_org_zoom.jpg",
+          "score": 0.6326,
+          "rescued": false,
+          "price_delta_pct": -4,
+          "rating_delta": -0.6,
+          "review_delta": 127
         }
       ]
     },
@@ -6565,20 +6357,6 @@
           "review_delta": 269
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Viva Çalışma Masası Bilgisayar Masası Ofis Masası 110x55",
-          "price": 2404,
-          "rating": 4.5,
-          "reviews": 75,
-          "url": "https://www.trendyol.com/dekopratik/viva-calisma-masasi-bilgisayar-masasi-ofis-masasi-110x55-p-796179548?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1707/prod/QC_ENRICHMENT/20250710/17/e959457f-6ed4-3329-95da-d6336c2dade6/1_org_zoom.jpg",
-          "score": 0.713,
-          "rescued": false,
-          "price_delta_pct": -14,
-          "rating_delta": 4.5,
-          "review_delta": 75
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Çalışma Masası Ofis Masası Köşe Masa Bilgisayar Masası Odin Çam",
           "price": 2977,
@@ -6591,6 +6369,20 @@
           "price_delta_pct": 6,
           "rating_delta": 4.2,
           "review_delta": 352
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çalışma Masası Ofis Masası Köşe Masa Bilgisayar Masası Odin Beyaz",
+          "price": 2977,
+          "rating": 3.9,
+          "reviews": 382,
+          "url": "https://www.trendyol.com/bofigo/calisma-masasi-ofis-masasi-kose-masa-bilgisayar-masasi-odin-beyaz-p-928936020?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1674/prod/QC/20250508/12/c0db0cce-a427-33ae-a252-df50f66fa533/1_org_zoom.jpg",
+          "score": 0.7118,
+          "rescued": false,
+          "price_delta_pct": 6,
+          "rating_delta": 3.9,
+          "review_delta": 382
         }
       ]
     },
@@ -6689,18 +6481,18 @@
           "review_delta": 336
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Viva L Çalışma Masası Bilgisayar Masası Ofis Masası 150x55 Beyaz",
-          "price": 4046,
+          "brand": "Diodor",
+          "name": "MONTENERO Çalışma Masası Parlak Beyaz Kitaplıklı Raflı Bilgisayar Masası",
+          "price": 4190,
           "rating": 3.8,
-          "reviews": 69,
-          "url": "https://www.trendyol.com/dekopratik/viva-l-calisma-masasi-bilgisayar-masasi-ofis-masasi-150x55-beyaz-p-846266389?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250722/08/c010d4fc-07c0-3805-ab30-f7539b71612d/1_org_zoom.jpg",
-          "score": 0.7486,
+          "reviews": 82,
+          "url": "https://www.trendyol.com/montenero/calisma-masasi-parlak-beyaz-kitaplikli-rafli-bilgisayar-masasi-p-899946068?boutiqueId=61&merchantId=652543&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1636/prod/QC/20250217/12/50ce15ab-30db-3e30-b37c-a659b2051d54/1_org_zoom.jpg",
+          "score": 0.7429,
           "rescued": false,
-          "price_delta_pct": 1,
+          "price_delta_pct": 5,
           "rating_delta": 3.8,
-          "review_delta": 69
+          "review_delta": 82
         }
       ]
     },
@@ -6881,20 +6673,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7221,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Klozet Üstü 40 cm Beyaz MDF Banyo Boy Dolabı",
           "price": 2049,
@@ -6921,6 +6699,20 @@
           "price_delta_pct": -17,
           "rating_delta": 4.5,
           "review_delta": 62
+        },
+        {
+          "brand": "Özceden",
+          "name": "ÖZCEDEN Yıldız 45 cm Beyaz MDF Aynalı Asma Banyo Üst Dolabı",
+          "price": 1999,
+          "rating": 4.8,
+          "reviews": 27,
+          "url": "https://www.trendyol.com/ozceden/yildiz-45-cm-beyaz-mdf-aynali-asma-banyo-ust-dolabi-p-358497333?boutiqueId=61&merchantId=149118&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1017/product/media/images/prod/SPM/PIM/20231018/14/d4aa2812-6384-317a-be98-140a174ebb0f/1_org_zoom.jpg",
+          "score": 0.673,
+          "rescued": false,
+          "price_delta_pct": 11,
+          "rating_delta": 4.8,
+          "review_delta": 27
         }
       ]
     },
@@ -6935,20 +6727,6 @@
       "our_reviews": 1,
       "bcg_class": "CASH_COW",
       "competitors": [
-        {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7152,
-          "rescued": false,
-          "price_delta_pct": 5,
-          "rating_delta": -0.7,
-          "review_delta": 168
-        },
         {
           "brand": "Egecan Mobilya",
           "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
@@ -6976,6 +6754,20 @@
           "price_delta_pct": -12,
           "rating_delta": -0.7,
           "review_delta": 28
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
+          "price": 1499,
+          "rating": 4.5,
+          "reviews": 62,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-3-rafli-cok-amacli-banyo-dolabi-mutfak-dolabi-havlu-dolabi-erzak-dolabi-p-331431587?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1148/product/media/images/prod/SPM/PIM/20240126/14/2b5b3efa-f902-300b-acc6-17f1591b220c/1_org_zoom.jpg",
+          "score": 0.6854,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": -0.5,
+          "review_delta": 61
         }
       ]
     },
@@ -8036,46 +7828,46 @@
       "bcg_class": "CASH_COW",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7266,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6971,
           "rescued": false,
-          "price_delta_pct": 7,
-          "rating_delta": -0.3,
-          "review_delta": 300
+          "price_delta_pct": -10,
+          "rating_delta": -0.4,
+          "review_delta": 63
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7134,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Çam",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 129,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-cam-p-958926274?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1714/prod/QC_PREP/20250721/08/efba4922-acf1-3310-841d-e4c495c1b31f/1_org_zoom.jpg",
+          "score": 0.6926,
           "rescued": false,
-          "price_delta_pct": 11,
-          "rating_delta": -0.5,
-          "review_delta": 270
+          "price_delta_pct": -10,
+          "rating_delta": -0.4,
+          "review_delta": 102
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Belarus Orta Sehpa Ikili Şeffaf Camlı Gold 60cm",
-          "price": 2576,
-          "rating": 4.3,
-          "reviews": 320,
-          "url": "https://www.trendyol.com/dekopratik/belarus-orta-sehpa-ikili-seffaf-camli-gold-60cm-p-769909158?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1538/product/media/images/prod/QC/20240911/15/585335ad-5e46-3f69-9556-8a9fe253022e/1_org_zoom.jpg",
-          "score": 0.6972,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
+          "rating": 4.2,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6822,
           "rescued": false,
-          "price_delta_pct": 2,
-          "rating_delta": -0.5,
-          "review_delta": 293
+          "price_delta_pct": -12,
+          "rating_delta": -0.6,
+          "review_delta": 56
         }
       ]
     },
@@ -8311,46 +8103,46 @@
       "bcg_class": "DOG",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Atlantik Çam",
-          "price": 2022,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Manolya  Orta Sehpa Siyah",
+          "price": 1946,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/moonlife-mobilya/manolya-orta-sehpa-siyah-p-901855653?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/18/58b42c57-f13f-3a5f-bf26-588ed690cf10/1_org_zoom.jpg",
+          "score": 0.6881,
+          "rescued": false,
+          "price_delta_pct": -3,
+          "rating_delta": 0.0,
+          "review_delta": 0
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6844,
+          "rescued": false,
+          "price_delta_pct": 14,
+          "rating_delta": 4.4,
+          "review_delta": 90
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 9,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-atlantik-cam-p-744896006?boutiqueId=61&merchantId=403137&os=1",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250723/15/4e2beb1f-3d22-307a-b3be-b9f0497870e9/1_org_zoom.jpg",
-          "score": 0.728,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6831,
           "rescued": false,
-          "price_delta_pct": 1,
+          "price_delta_pct": 11,
           "rating_delta": 4.2,
-          "review_delta": 9
-        },
-        {
-          "brand": "Tapacım",
-          "name": "Pinkcloset OSLO 60 ÇAP ORTA SEHPA ÇAM",
-          "price": 1961,
-          "rating": 4.3,
-          "reviews": 10,
-          "url": "https://www.trendyol.com/pinkcloset/oslo-60-cap-orta-sehpa-cam-p-827833956?boutiqueId=61&merchantId=285523&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1368/product/media/images/prod/QC/20240618/19/70bc8c77-f682-33c9-a6ee-dec60255519d/1_org_zoom.jpg",
-          "score": 0.7149,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.3,
-          "review_delta": 10
-        },
-        {
-          "brand": "Tapacım",
-          "name": "Pinkcloset Oslo 60 Çap Orta Sehpa Siyah",
-          "price": 1961,
-          "rating": 4.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/pinkcloset/oslo-60-cap-orta-sehpa-siyah-p-827842716?boutiqueId=61&merchantId=285523&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1308/product/media/images/prod/QC/20240511/17/e6e06937-acc5-305c-8e1f-5a3b7cea0625/1_org_zoom.jpg",
-          "score": 0.7109,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.0,
-          "review_delta": 1
+          "review_delta": 83
         }
       ]
     },
@@ -8490,32 +8282,32 @@
           "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7142,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Siyah Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/eriza/titan-siyah-ahsap-modern-yeni-nesil-orta-sehpa-p-801171317?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1149/product/media/images/prod/SPM/PIM/20240128/01/a2827cf4-542f-3f4b-a0ee-bf3b0f7d5c52/1_org_zoom.jpg",
+          "score": 0.6859,
           "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 297
+          "price_delta_pct": 4,
+          "rating_delta": 4.7,
+          "review_delta": 3
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7041,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Ekru Naturel Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/eriza/titan-ekru-naturel-ahsap-modern-yeni-nesil-orta-sehpa-p-923177466?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1655/prod/QC/20250328/03/d2b20f08-4bb9-3f28-9ca7-eab114f6320b/1_org_zoom.jpg",
+          "score": 0.6783,
           "rescued": false,
-          "price_delta_pct": -10,
-          "rating_delta": 4.5,
-          "review_delta": 327
+          "price_delta_pct": 4,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -8971,20 +8763,6 @@
       "bcg_class": "DOG",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7087,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": 0.0,
-          "review_delta": 163
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Yıldız 45 cm Beyaz MDF Aynalı Asma Banyo Üst Dolabı",
           "price": 1999,
@@ -9011,6 +8789,20 @@
           "price_delta_pct": 0,
           "rating_delta": 0.2,
           "review_delta": -2
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
+          "price": 1499,
+          "rating": 4.5,
+          "reviews": 62,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-3-rafli-cok-amacli-banyo-dolabi-mutfak-dolabi-havlu-dolabi-erzak-dolabi-p-331431587?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1148/product/media/images/prod/SPM/PIM/20240126/14/2b5b3efa-f902-300b-acc6-17f1591b220c/1_org_zoom.jpg",
+          "score": 0.6672,
+          "rescued": false,
+          "price_delta_pct": -17,
+          "rating_delta": 0.2,
+          "review_delta": 56
         }
       ]
     },
@@ -9205,20 +8997,6 @@
           "review_delta": 269
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Viva Çalışma Masası Bilgisayar Masası Ofis Masası 110x55",
-          "price": 2404,
-          "rating": 4.5,
-          "reviews": 75,
-          "url": "https://www.trendyol.com/dekopratik/viva-calisma-masasi-bilgisayar-masasi-ofis-masasi-110x55-p-796179548?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1707/prod/QC_ENRICHMENT/20250710/17/e959457f-6ed4-3329-95da-d6336c2dade6/1_org_zoom.jpg",
-          "score": 0.7213,
-          "rescued": false,
-          "price_delta_pct": -14,
-          "rating_delta": 4.5,
-          "review_delta": 75
-        },
-        {
           "brand": "Monte Sehpa",
           "name": "Skandi homeworks Nardo Çalışma Masası Bilgisayar Masası Ofis Masası Ders Çalışma Masası Meşe 90x60 cm",
           "price": 2995,
@@ -9227,6 +9005,20 @@
           "url": "https://www.trendyol.com/skandi-homeworks/nardo-calisma-masasi-bilgisayar-masasi-ofis-masasi-ders-calisma-masasi-mese-90x60-cm-p-1156981018?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
           "image": "https://cdn.dsmcdn.com/ty1891/prod/QC_PREP/20260616/13/9ad2ff10-94ce-3eb2-a923-37bae2c99de9/1_org_zoom.jpg",
           "score": 0.7159,
+          "rescued": false,
+          "price_delta_pct": 7,
+          "rating_delta": 0.0,
+          "review_delta": 0
+        },
+        {
+          "brand": "Monte Sehpa",
+          "name": "Skandi homeworks Nardo Çalışma Masası Bilgisayar Masası Ofis Masası Ders Çalışma Masası Meşe 90x60 cm",
+          "price": 2995,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/skandi-homeworks/nardo-calisma-masasi-bilgisayar-masasi-ofis-masasi-ders-calisma-masasi-mese-90x60-cm-p-1156981171?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1922/prod/QC_PREP/20260616/13/e6c57d52-e283-33ba-ac6e-f32ecb528ec6/1_org_zoom.jpg",
+          "score": 0.7153,
           "rescued": false,
           "price_delta_pct": 7,
           "rating_delta": 0.0,
@@ -9521,20 +9313,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6914,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": 4.7,
-          "review_delta": 192
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Antrasit - Sepet Ceviz",
           "price": 7200,
@@ -9561,6 +9339,20 @@
           "price_delta_pct": 13,
           "rating_delta": 4.9,
           "review_delta": 26
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani HA125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 7100,
+          "rating": 4.6,
+          "reviews": 147,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha125-kitaplikli-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-853417962?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000039/product/media/images/prod/PIM/20251204/12/81da69fa-eff7-4ba9-a1cb-f21220a61c2a/1_org_zoom.jpg",
+          "score": 0.6774,
+          "rescued": false,
+          "price_delta_pct": 5,
+          "rating_delta": 4.6,
+          "review_delta": 147
         }
       ]
     },
@@ -9686,20 +9478,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7114,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 297
-        },
-        {
           "brand": "Monte Sehpa",
           "name": "Skandi homeworks Bridge Orta Sehpa",
           "price": 2924,
@@ -9714,18 +9492,32 @@
           "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7003,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Siyah Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/eriza/titan-siyah-ahsap-modern-yeni-nesil-orta-sehpa-p-801171317?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1149/product/media/images/prod/SPM/PIM/20240128/01/a2827cf4-542f-3f4b-a0ee-bf3b0f7d5c52/1_org_zoom.jpg",
+          "score": 0.6803,
           "rescued": false,
-          "price_delta_pct": -10,
-          "rating_delta": 4.5,
-          "review_delta": 327
+          "price_delta_pct": 4,
+          "rating_delta": 4.7,
+          "review_delta": 3
+        },
+        {
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Ekru Naturel Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/eriza/titan-ekru-naturel-ahsap-modern-yeni-nesil-orta-sehpa-p-923177466?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1655/prod/QC/20250328/03/d2b20f08-4bb9-3f28-9ca7-eab114f6320b/1_org_zoom.jpg",
+          "score": 0.6765,
+          "rescued": false,
+          "price_delta_pct": 4,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -9961,20 +9753,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Viva Çalışma Masası Bilgisayar Masası Ofis Masası 110x55",
-          "price": 2404,
-          "rating": 4.5,
-          "reviews": 75,
-          "url": "https://www.trendyol.com/dekopratik/viva-calisma-masasi-bilgisayar-masasi-ofis-masasi-110x55-p-796179548?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1707/prod/QC_ENRICHMENT/20250710/17/e959457f-6ed4-3329-95da-d6336c2dade6/1_org_zoom.jpg",
-          "score": 0.7229,
-          "rescued": false,
-          "price_delta_pct": 9,
-          "rating_delta": 4.5,
-          "review_delta": 75
-        },
-        {
           "brand": "DEKOMONTE",
           "name": "Dekomonte Çalışma Masası. Bilgisayar Masası. Kitaplıklı Çalışma Masası",
           "price": 2000,
@@ -9989,18 +9767,32 @@
           "review_delta": 29
         },
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "KZNMOB HOME Study Raflı Çalışma Masası Bilgisayar Masası Ofis Masası Meşe - Tamamı 1. Kalite Mdf",
-          "price": 2199,
-          "rating": 4.2,
-          "reviews": 22,
-          "url": "https://www.trendyol.com/kznmob-home/study-rafli-calisma-masasi-bilgisayar-masasi-ofis-masasi-mese-tamami-1-kalite-mdf-p-153135106?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1790/prod/QC_ENRICHMENT/20251118/09/33452017-7b53-3d9d-840d-b088d97f4032/1_org_zoom.jpg",
-          "score": 0.7158,
+          "brand": "Bofigo",
+          "name": "Bofigo Kitaplıklı Çalışma Masası Çocuk Çalışma Masası Bilgisayar Çalışma Masası Beyaz",
+          "price": 2729,
+          "rating": 3.9,
+          "reviews": 269,
+          "url": "https://www.trendyol.com/bofigo/kitaplikli-calisma-masasi-cocuk-calisma-masasi-bilgisayar-calisma-masasi-beyaz-p-886545443?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1617/prod/QC/20241231/08/2265c41f-e93e-3e0d-a03e-65fde2f4d6ce/1_org_zoom.jpg",
+          "score": 0.708,
           "rescued": false,
-          "price_delta_pct": 0,
+          "price_delta_pct": 24,
+          "rating_delta": 3.9,
+          "review_delta": 269
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Çınar Kitaplıklı Çalışma Masası Beyaz",
+          "price": 2146,
+          "rating": 4.2,
+          "reviews": 1762,
+          "url": "https://www.trendyol.com/moonlife-mobilya/cinar-kitaplikli-calisma-masasi-beyaz-p-88491670?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1530/product/media/images/prod/QC/20240909/16/66fca452-9334-3600-8d5a-ac92d01dae93/1_org_zoom.jpg",
+          "score": 0.6868,
+          "rescued": false,
+          "price_delta_pct": -2,
           "rating_delta": 4.2,
-          "review_delta": 22
+          "review_delta": 1762
         }
       ]
     },
@@ -10566,20 +10358,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6931,
-          "rescued": false,
-          "price_delta_pct": -3,
-          "rating_delta": 0.1,
-          "review_delta": -41
-        },
-        {
           "brand": "Diodor",
           "name": "MONTENERO Çalışma Masası Parlak Beyaz Kitaplıklı Raflı Modern Masa",
           "price": 4177,
@@ -10606,6 +10384,20 @@
           "price_delta_pct": -9,
           "rating_delta": -0.9,
           "review_delta": -81
+        },
+        {
+          "brand": "Diodor",
+          "name": "MONTENERO Çalışma Masası Parlak Beyaz-Marbella Kitaplıklı Raflı Masa",
+          "price": 4344,
+          "rating": 4.1,
+          "reviews": 153,
+          "url": "https://www.trendyol.com/montenero/calisma-masasi-parlak-beyaz-marbella-kitaplikli-rafli-masa-p-821584583?boutiqueId=61&merchantId=652543&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1461/product/media/images/prod/QC/20240805/10/c4a3a504-b37b-375a-a807-f110d7a9de14/1_org_zoom.jpg",
+          "score": 0.6709,
+          "rescued": false,
+          "price_delta_pct": -33,
+          "rating_delta": -0.5,
+          "review_delta": -80
         }
       ]
     },
@@ -10621,34 +10413,6 @@
       "bcg_class": null,
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7158,
-          "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 4.5,
-          "review_delta": 327
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7107,
-          "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": 4.3,
-          "review_delta": 297
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
           "price": 2218,
@@ -10661,6 +10425,34 @@
           "price_delta_pct": -11,
           "rating_delta": 4.2,
           "review_delta": 83
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6893,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 90
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Dekoratif Sehpa Yan Sehpa Açelya Vizon Krem",
+          "price": 2230,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-dekoratif-sehpa-yan-sehpa-acelya-vizon-krem-p-1152383653?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260603/14/25cce87e-8e28-3891-9d78-30b02ef0fdf7/1_org_zoom.jpg",
+          "score": 0.6833,
+          "rescued": false,
+          "price_delta_pct": -11,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -11006,20 +10798,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7019,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Klozet Üstü 40 cm Beyaz MDF Banyo Boy Dolabı",
           "price": 2049,
@@ -11046,6 +10824,20 @@
           "price_delta_pct": -3,
           "rating_delta": 4.7,
           "review_delta": 3
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
+          "price": 1792,
+          "rating": 4.5,
+          "reviews": 4,
+          "url": "https://www.trendyol.com/moonlife-mobilya/2-kapakli-l-cok-amacli-banyo-dolabi-siyah-p-4624877?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1615/prod/QC/20241216/16/d7883392-539f-3cba-a99c-557392ba139b/1_org_zoom.jpg",
+          "score": 0.6629,
+          "rescued": false,
+          "price_delta_pct": 2,
+          "rating_delta": 4.5,
+          "review_delta": 4
         }
       ]
     },
@@ -11391,20 +11183,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7057,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 297
-        },
-        {
           "brand": "Monte Sehpa",
           "name": "Skandi homeworks Bridge Orta Sehpa",
           "price": 2924,
@@ -11419,18 +11197,32 @@
           "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Belarus Orta Sehpa Gold 80cm",
-          "price": 3053,
-          "rating": 4.3,
-          "reviews": 690,
-          "url": "https://www.trendyol.com/dekopratik/belarus-orta-sehpa-gold-80cm-p-332246570?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1415/product/media/images/prod/QC/20240710/17/ef730130-f6a0-3189-b698-07e33ef8dc8e/1_org_zoom.jpg",
-          "score": 0.6981,
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Siyah Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/eriza/titan-siyah-ahsap-modern-yeni-nesil-orta-sehpa-p-801171317?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1149/product/media/images/prod/SPM/PIM/20240128/01/a2827cf4-542f-3f4b-a0ee-bf3b0f7d5c52/1_org_zoom.jpg",
+          "score": 0.6801,
           "rescued": false,
-          "price_delta_pct": 2,
-          "rating_delta": 4.3,
-          "review_delta": 690
+          "price_delta_pct": 4,
+          "rating_delta": 4.7,
+          "review_delta": 3
+        },
+        {
+          "brand": "ERİZA HOME",
+          "name": "ERİZA Titan Ekru Naturel Ahşap Modern Yeni Nesil Orta Sehpa",
+          "price": 3125,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/eriza/titan-ekru-naturel-ahsap-modern-yeni-nesil-orta-sehpa-p-923177466?boutiqueId=61&merchantId=342500&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1655/prod/QC/20250328/03/d2b20f08-4bb9-3f28-9ca7-eab114f6320b/1_org_zoom.jpg",
+          "score": 0.6745,
+          "rescued": false,
+          "price_delta_pct": 4,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -13646,20 +13438,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Viva L Çalışma Masası Bilgisayar Masası Ofis Masası 150x55 Beyaz",
-          "price": 4046,
-          "rating": 3.8,
-          "reviews": 69,
-          "url": "https://www.trendyol.com/dekopratik/viva-l-calisma-masasi-bilgisayar-masasi-ofis-masasi-150x55-beyaz-p-846266389?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250722/08/c010d4fc-07c0-3805-ab30-f7539b71612d/1_org_zoom.jpg",
-          "score": 0.7585,
-          "rescued": false,
-          "price_delta_pct": 4,
-          "rating_delta": 3.8,
-          "review_delta": 69
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Çalışma Masası Fonksiyonel Çalışma Masası Ofis Masası Beyaz",
           "price": 3787,
@@ -13674,18 +13452,32 @@
           "review_delta": 20
         },
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "SANDALİE Eva 50x110 Cm Çalışma Masası Bilgisayar Masası Ofis Ders Yemek Masası Beyaz",
-          "price": 4119,
-          "rating": 4.7,
-          "reviews": 2864,
-          "url": "https://www.trendyol.com/sandalie/eva-50x110-cm-calisma-masasi-bilgisayar-masasi-ofis-ders-yemek-masasi-beyaz-p-140901371?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1749/prod/QC_ENRICHMENT/20250910/11/03a745d7-c565-348a-b005-24bd3aa2c07c/1_org_zoom.jpg",
-          "score": 0.7455,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Ha104 Kitaplıklı Raflı Bilgisayar Çalışma Masası Beyaz",
+          "price": 4100,
+          "rating": 4.4,
+          "reviews": 244,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha104-kitaplikli-rafli-bilgisayar-calisma-masasi-beyaz-p-214973773?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000036/product/media/images/prod/PIM/20251126/08/5c010ee5-5e52-482d-a3cb-a37bb81c4dd7/1_org_zoom.jpg",
+          "score": 0.737,
           "rescued": false,
-          "price_delta_pct": 6,
-          "rating_delta": 4.7,
-          "review_delta": 2864
+          "price_delta_pct": 5,
+          "rating_delta": 4.4,
+          "review_delta": 244
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çalışma Masası Fonksiyonel Çalışma Masası Ofis Masası Safir Meşe-Beyaz",
+          "price": 3787,
+          "rating": 3.4,
+          "reviews": 35,
+          "url": "https://www.trendyol.com/bofigo/calisma-masasi-fonksiyonel-calisma-masasi-ofis-masasi-safir-mese-beyaz-p-1076536724?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1824/prod/QC_ENRICHMENT/20260216/17/8352bd4f-dfca-31b0-b027-145080aa6ad4/1_org_zoom.jpg",
+          "score": 0.7345,
+          "rescued": false,
+          "price_delta_pct": -3,
+          "rating_delta": 3.4,
+          "review_delta": 35
         }
       ]
     },
@@ -13756,20 +13548,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Mobetto",
-          "name": "MOBETTO Nehir Genç Odası Çalışma Bilgisayar Masası, Çocuk Çalışma Masası",
-          "price": 4549,
-          "rating": 4.7,
-          "reviews": 52,
-          "url": "https://www.trendyol.com/mobetto/nehir-genc-odasi-calisma-bilgisayar-masasi-cocuk-calisma-masasi-p-967928282?boutiqueId=61&merchantId=427243&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1724/prod/QC_ENRICHMENT/20250808/13/89a4609c-873e-3744-a98b-41fced575dc8/1_org_zoom.jpg",
-          "score": 0.7546,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.7,
-          "review_delta": 52
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha113 Çalışma Ofis Bilgisayar Masası 4 Raflı Köşeli Masa Beyaz - Sepet Ceviz 120 Cm",
           "price": 4650,
@@ -13796,6 +13574,20 @@
           "price_delta_pct": 3,
           "rating_delta": 4.7,
           "review_delta": 107
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Ha109 Çekmeceli Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 4750,
+          "rating": 4.7,
+          "reviews": 78,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha109-cekmeceli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-470299837?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000036/product/media/images/prod/PIM/20251126/08/f4c32ab9-055f-4809-935b-edb99a769775/1_org_zoom.jpg",
+          "score": 0.7004,
+          "rescued": false,
+          "price_delta_pct": 2,
+          "rating_delta": 4.7,
+          "review_delta": 78
         }
       ]
     },
@@ -15475,20 +15267,6 @@
           "review_delta": 8
         },
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "Genel Markalar 2 Kapaklı 5 Bölmeli Geniş Çok Amaçlı Banyo Dolabı - Tamamı 1. Kalite MDF",
-          "price": 4149,
-          "rating": 3.9,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/genel-markalar/2-kapakli-5-bolmeli-genis-cok-amacli-banyo-dolabi-tamami-1-kalite-mdf-p-787208523?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1788/prod/QC_ENRICHMENT/20251118/08/a45f17cf-457e-38e7-b63f-824e3985d88e/1_org_zoom.jpg",
-          "score": 0.7056,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": -0.2,
-          "review_delta": -4
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Yıldız 35*130 cm Beyaz-Füme Balon MDF Asma Banyo Boy Dolabı",
           "price": 4349,
@@ -15501,6 +15279,20 @@
           "price_delta_pct": 0,
           "rating_delta": -4.1,
           "review_delta": -15
+        },
+        {
+          "brand": "Özceden",
+          "name": "ÖZCEDEN 35*167 cm Beyaz MDF Sepetli Ayaklı Banyo Boy Dolabı",
+          "price": 4249,
+          "rating": 4.2,
+          "reviews": 353,
+          "url": "https://www.trendyol.com/ozceden/35-167-cm-beyaz-mdf-sepetli-ayakli-banyo-boy-dolabi-p-375475082?boutiqueId=61&merchantId=149118&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1549/product/media/images/ty1550/prod/QC/20240916/20/fd2ec055-c9e5-33e1-bc9b-7946c34e4726/1_org_zoom.jpg",
+          "score": 0.6935,
+          "rescued": false,
+          "price_delta_pct": -2,
+          "rating_delta": 0.1,
+          "review_delta": 338
         }
       ]
     },
@@ -15736,20 +15528,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6915,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Klozet Üstü 40 cm Beyaz MDF Banyo Boy Dolabı",
           "price": 2049,
@@ -15776,6 +15554,20 @@
           "price_delta_pct": 2,
           "rating_delta": 4.5,
           "review_delta": 4
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Antrasit",
+          "price": 1697,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/moonlife-mobilya/2-kapakli-l-cok-amacli-banyo-dolabi-antrasit-p-902473728?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1645/prod/QC/20250305/13/d9c4dca1-12d5-3086-bf4b-4eab66532b1a/1_org_zoom.jpg",
+          "score": 0.6795,
+          "rescued": false,
+          "price_delta_pct": -3,
+          "rating_delta": 4.7,
+          "review_delta": 3
         }
       ]
     },
@@ -16369,18 +16161,18 @@
           "review_delta": -33
         },
         {
-          "brand": "COSARGROUP",
-          "name": "Cosargroup Eva Dekoratif Kapaklı 8 Raflı Banyo Malzeme Dolabı Çok Amaçlı Banyo Dolabı Havluluk Deterjanlık",
-          "price": 2199,
-          "rating": 3.9,
-          "reviews": 319,
-          "url": "https://www.trendyol.com/cosargroup/eva-dekoratif-kapakli-8-rafli-banyo-malzeme-dolabi-cok-amacli-banyo-dolabi-havluluk-deterjanlik-p-870705707?boutiqueId=61&merchantId=974406&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1593/prod/QC/20241030/03/3d57f6c2-a74d-3a25-aa4c-4650e37161e6/1_org_zoom.jpg",
-          "score": 0.6945,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 5 Raflı Kapaklı Çok Amaçlı Banyo Boy Dolabı Beyaz",
+          "price": 2349,
+          "rating": 3.5,
+          "reviews": 2,
+          "url": "https://www.trendyol.com/moonlife-mobilya/5-rafli-kapakli-cok-amacli-banyo-boy-dolabi-beyaz-p-977776555?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1739/prod/QC_PREP/20250825/15/a83034a6-1310-373c-b7b5-820da8e0ee53/1_org_zoom.jpg",
+          "score": 0.6875,
           "rescued": false,
-          "price_delta_pct": -3,
-          "rating_delta": -0.5,
-          "review_delta": 283
+          "price_delta_pct": 3,
+          "rating_delta": -0.9,
+          "review_delta": -34
         }
       ]
     },
@@ -16396,46 +16188,46 @@
       "bcg_class": "DOG",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Atlantik Çam",
-          "price": 2022,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 9,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-atlantik-cam-p-744896006?boutiqueId=61&merchantId=403137&os=1",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250723/15/4e2beb1f-3d22-307a-b3be-b9f0497870e9/1_org_zoom.jpg",
-          "score": 0.726,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.692,
           "rescued": false,
-          "price_delta_pct": 1,
+          "price_delta_pct": 11,
           "rating_delta": 4.2,
-          "review_delta": 9
+          "review_delta": 83
         },
         {
-          "brand": "Tapacım",
-          "name": "Pinkcloset OSLO 60 ÇAP ORTA SEHPA ÇAM",
-          "price": 1961,
-          "rating": 4.3,
-          "reviews": 10,
-          "url": "https://www.trendyol.com/pinkcloset/oslo-60-cap-orta-sehpa-cam-p-827833956?boutiqueId=61&merchantId=285523&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1368/product/media/images/prod/QC/20240618/19/70bc8c77-f682-33c9-a6ee-dec60255519d/1_org_zoom.jpg",
-          "score": 0.709,
+          "brand": "Bofigo",
+          "name": "Bofigo Yan Sehpa Koltuk Yanı Sehpa Koltuk Sehpası Orta Sehpa Çam",
+          "price": 1784,
+          "rating": 4.4,
+          "reviews": 319,
+          "url": "https://www.trendyol.com/bofigo/yan-sehpa-koltuk-yani-sehpa-koltuk-sehpasi-orta-sehpa-cam-p-832472529?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1386/product/media/images/prod/QC/20240628/14/a108db80-7328-30b9-887f-079106cf36ce/1_org_zoom.jpg",
+          "score": 0.6842,
           "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.3,
-          "review_delta": 10
+          "price_delta_pct": -11,
+          "rating_delta": 4.4,
+          "review_delta": 319
         },
         {
-          "brand": "Tapacım",
-          "name": "BETA AKSESUAR Oslo Orta Sehpa - Füme Cam / Atlantik Çam",
-          "price": 2117,
-          "rating": 4.3,
-          "reviews": 2698,
-          "url": "https://www.trendyol.com/beta-aksesuar/oslo-orta-sehpa-fume-cam-antik-cam-p-74186685?boutiqueId=61&merchantId=285523&os=1",
-          "image": "https://cdn.dsmcdn.com/ty1817/prod/QC_ENRICHMENT/20260127/11/f9ef01e4-fca8-3e7b-ae48-cacc3e12f3b7/1_org_zoom.jpg",
-          "score": 0.7056,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Manolya  Orta Sehpa Siyah",
+          "price": 1946,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/moonlife-mobilya/manolya-orta-sehpa-siyah-p-901855653?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/18/58b42c57-f13f-3a5f-bf26-588ed690cf10/1_org_zoom.jpg",
+          "score": 0.6815,
           "rescued": false,
-          "price_delta_pct": 6,
-          "rating_delta": 4.3,
-          "review_delta": 2698
+          "price_delta_pct": -3,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -16561,20 +16353,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "Genel Markalar 2 Kapaklı 5 Bölmeli Geniş Çok Amaçlı Banyo Dolabı - Tamamı 1. Kalite MDF",
-          "price": 4149,
-          "rating": 3.9,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/genel-markalar/2-kapakli-5-bolmeli-genis-cok-amacli-banyo-dolabi-tamami-1-kalite-mdf-p-787208523?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1788/prod/QC_ENRICHMENT/20251118/08/a45f17cf-457e-38e7-b63f-824e3985d88e/1_org_zoom.jpg",
-          "score": 0.7021,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": 3.9,
-          "review_delta": 11
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Yeni Boy 35*167 cm Antrasit Gri Mat MDF Tek Kapaklı Asma Banyo Boy Dolabı",
           "price": 4099,
@@ -16601,6 +16379,20 @@
           "price_delta_pct": 0,
           "rating_delta": 0.0,
           "review_delta": 0
+        },
+        {
+          "brand": "Özceden",
+          "name": "ÖZCEDEN Yıldız 55 cm Antrasit Gri Mat MDF Seramik Lavabolu Asma Banyo Alt Dolabı",
+          "price": 4249,
+          "rating": 4.3,
+          "reviews": 46,
+          "url": "https://www.trendyol.com/ozceden/yildiz-55-cm-antrasit-gri-mat-mdf-seramik-lavabolu-asma-banyo-alt-dolabi-p-235532276?boutiqueId=61&merchantId=149118&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1082/product/media/images/prod/SPM/PIM/20231208/11/5a9e2e0b-4033-3ef8-a730-1848860461f7/1_org_zoom.jpg",
+          "score": 0.6903,
+          "rescued": false,
+          "price_delta_pct": -2,
+          "rating_delta": 4.3,
+          "review_delta": 46
         }
       ]
     },
@@ -16615,20 +16407,6 @@
       "our_reviews": 0,
       "bcg_class": "QUESTION_MARK",
       "competitors": [
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Berlin Orta Sehpa 60 cm",
-          "price": 1584,
-          "rating": 4.6,
-          "reviews": 286,
-          "url": "https://www.trendyol.com/dekopratik/berlin-orta-sehpa-60-cm-p-656115610?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1661/prod/QC/20250408/12/cfedcc46-4ed5-3a1b-8b36-85ede6790c40/1_org_zoom.jpg",
-          "score": 0.7341,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.6,
-          "review_delta": 286
-        },
         {
           "brand": "Monte Sehpa",
           "name": "Skandi homeworks Cloud Orta Sehpa",
@@ -16654,6 +16432,20 @@
           "score": 0.7254,
           "rescued": false,
           "price_delta_pct": -4,
+          "rating_delta": 0.0,
+          "review_delta": 0
+        },
+        {
+          "brand": "Monte Sehpa",
+          "name": "Skandi homeworks Cloud Orta Sehpa",
+          "price": 1507,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/skandi-homeworks/cloud-orta-sehpa-p-1151562966?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1928/prod/QC_PREP/20260601/11/0c72dd49-3c78-3d63-b62a-6486f61bd7d2/1_org_zoom.jpg",
+          "score": 0.7195,
+          "rescued": false,
+          "price_delta_pct": -6,
           "rating_delta": 0.0,
           "review_delta": 0
         }
@@ -17331,20 +17123,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.5,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-900600478?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/14/f3e1e355-15ac-3339-9e34-d2dcd11dc208/1_org_zoom.jpg",
-          "score": 0.7631,
-          "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.5,
-          "review_delta": 11
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Elips Sehpa C Sehpa Yan Sehpa Koltuk Sehpası Beyaz",
           "price": 1180,
@@ -17359,18 +17137,32 @@
           "review_delta": 7
         },
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Ahşap Ayaklı C Sehpa Koltuk Sehpası Yan Sehpa Zigon Sehpa Servis Sehpası",
-          "price": 999,
-          "rating": 4.6,
-          "reviews": 14,
-          "url": "https://www.trendyol.com/peka/ahsap-ayakli-c-sehpa-koltuk-sehpasi-yan-sehpa-zigon-sehpa-servis-sehpasi-p-887358319?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1643/prod/QC/20250224/14/8f2f0f17-6602-3701-b3e9-0c68cc6195c6/1_org_zoom.jpg",
-          "score": 0.7415,
+          "brand": "Bofigo",
+          "name": "Bofigo Komodin 2 Bölmeli Komodin Kapaklı Komodin Yan Sehpa Mikonos Beyaz",
+          "price": 1222,
+          "rating": 4.4,
+          "reviews": 120,
+          "url": "https://www.trendyol.com/bofigo/komodin-2-bolmeli-komodin-kapakli-komodin-yan-sehpa-mikonos-beyaz-p-899171071?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1636/prod/QC/20250212/16/516050f7-90cd-30ea-8f79-a70b4512db88/1_org_zoom.jpg",
+          "score": 0.6992,
           "rescued": false,
-          "price_delta_pct": -17,
-          "rating_delta": 4.6,
-          "review_delta": 14
+          "price_delta_pct": 2,
+          "rating_delta": 4.4,
+          "review_delta": 120
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Zigon Sehpa Yan Sehpa Kahve Sehpası Hilal Antrasit",
+          "price": 1274,
+          "rating": 3.8,
+          "reviews": 34,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-zigon-sehpa-yan-sehpa-kahve-sehpasi-hilal-antrasit-p-1054040720?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1795/prod/QC_ENRICHMENT/20251128/07/6899b128-b013-35f6-abdd-10df15295115/1_org_zoom.jpg",
+          "score": 0.6989,
+          "rescued": false,
+          "price_delta_pct": 6,
+          "rating_delta": 3.8,
+          "review_delta": 34
         }
       ]
     },
@@ -17496,20 +17288,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7151,
-          "rescued": false,
-          "price_delta_pct": 5,
-          "rating_delta": -0.3,
-          "review_delta": 154
-        },
-        {
           "brand": "Egecan Mobilya",
           "name": "Egecan Mobilya Tek Kapaklı Duvara Monte 3 Raflı Banyo Dolabı Havlu Dolabı Sabunluk  Erzak Dolabı Kiler Dolabı",
           "price": 1449,
@@ -17536,6 +17314,20 @@
           "price_delta_pct": -9,
           "rating_delta": -0.8,
           "review_delta": 34
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
+          "price": 1499,
+          "rating": 4.5,
+          "reviews": 62,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-3-rafli-cok-amacli-banyo-dolabi-mutfak-dolabi-havlu-dolabi-erzak-dolabi-p-331431587?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1148/product/media/images/prod/SPM/PIM/20240126/14/2b5b3efa-f902-300b-acc6-17f1591b220c/1_org_zoom.jpg",
+          "score": 0.6831,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": -0.1,
+          "review_delta": 47
         }
       ]
     },
@@ -17826,20 +17618,6 @@
       "bcg_class": "CASH_COW",
       "competitors": [
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "Genel Markalar 2 Kapaklı 5 Bölmeli Geniş Çok Amaçlı Banyo Dolabı - Tamamı 1. Kalite MDF",
-          "price": 4149,
-          "rating": 3.9,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/genel-markalar/2-kapakli-5-bolmeli-genis-cok-amacli-banyo-dolabi-tamami-1-kalite-mdf-p-787208523?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1788/prod/QC_ENRICHMENT/20251118/08/a45f17cf-457e-38e7-b63f-824e3985d88e/1_org_zoom.jpg",
-          "score": 0.7079,
-          "rescued": false,
-          "price_delta_pct": 6,
-          "rating_delta": -0.6,
-          "review_delta": -35
-        },
-        {
           "brand": "Özceden",
           "name": "ÖZCEDEN Yeni Boy 35*167 cm Antrasit Gri Mat MDF Tek Kapaklı Asma Banyo Boy Dolabı",
           "price": 4099,
@@ -17866,6 +17644,20 @@
           "price_delta_pct": 1,
           "rating_delta": 0.2,
           "review_delta": 445
+        },
+        {
+          "brand": "KAREN BANYO",
+          "name": "KAREN BANYO Magma Sonomo 50 Cm, Lavabolu Alt Banyo Dolabı, Kapaklı Banyo Dolabı, Seramik Lavabo Dahil Sonomo Mdf",
+          "price": 3519,
+          "rating": 3.8,
+          "reviews": 5,
+          "url": "https://www.trendyol.com/karen-banyo/magma-sonomo-50-cm-lavabolu-alt-banyo-dolabi-kapakli-banyo-dolabi-seramik-lavabo-dahil-sonomo-mdf-p-1126383569?boutiqueId=61&merchantId=330260&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1848/prod/QC_PREP/20260331/17/c01e7acf-73a8-3a15-910f-114fd1f49114/1_org_zoom.jpg",
+          "score": 0.7025,
+          "rescued": false,
+          "price_delta_pct": -10,
+          "rating_delta": -0.7,
+          "review_delta": -41
         }
       ]
     },
@@ -18156,20 +17948,6 @@
       "bcg_class": "CASH_COW",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6875,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": 4.7,
-          "review_delta": 192
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Antrasit - Sepet Ceviz",
           "price": 7200,
@@ -18196,6 +17974,20 @@
           "price_delta_pct": 13,
           "rating_delta": 4.9,
           "review_delta": 26
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani HA125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 7100,
+          "rating": 4.6,
+          "reviews": 147,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha125-kitaplikli-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-853417962?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000039/product/media/images/prod/PIM/20251204/12/81da69fa-eff7-4ba9-a1cb-f21220a61c2a/1_org_zoom.jpg",
+          "score": 0.6673,
+          "rescued": false,
+          "price_delta_pct": 5,
+          "rating_delta": 4.6,
+          "review_delta": 147
         }
       ]
     },
@@ -18871,20 +18663,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6833,
-          "rescued": false,
-          "price_delta_pct": -9,
-          "rating_delta": 4.7,
-          "review_delta": 192
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani HA127 Kitaplıklı Raflı 2 Kapaklı 1 Çekmeceli Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
           "price": 7600,
@@ -18911,6 +18689,20 @@
           "price_delta_pct": 4,
           "rating_delta": 4.7,
           "review_delta": 217
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Hc107 Metal 14 Raflı Geniş Kitaplık Ofis Çalışma Odası Çocuk Odası Sepet Ceviz",
+          "price": 7100,
+          "rating": 4.8,
+          "reviews": 121,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-hc107-metal-14-rafli-genis-kitaplik-ofis-calisma-odasi-cocuk-odasi-sepet-ceviz-p-382891090?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000036/product/media/images/prod/PIM/20251126/11/190ed77e-a45e-4c8c-b03b-d044514c35ce/1_org_zoom.jpg",
+          "score": 0.6637,
+          "rescued": false,
+          "price_delta_pct": 3,
+          "rating_delta": 4.8,
+          "review_delta": 121
         }
       ]
     },
@@ -19394,18 +19186,18 @@
           "review_delta": 480
         },
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "Genel Markalar 2 Kapaklı 5 Bölmeli Geniş Çok Amaçlı Banyo Dolabı - Tamamı 1. Kalite MDF",
-          "price": 4149,
-          "rating": 3.9,
-          "reviews": 11,
-          "url": "https://www.trendyol.com/genel-markalar/2-kapakli-5-bolmeli-genis-cok-amacli-banyo-dolabi-tamami-1-kalite-mdf-p-787208523?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1788/prod/QC_ENRICHMENT/20251118/08/a45f17cf-457e-38e7-b63f-824e3985d88e/1_org_zoom.jpg",
-          "score": 0.705,
+          "brand": "Özceden",
+          "name": "ÖZCEDEN Çiğdem 80 cm Beyaz MDF Aynalı Asma Banyo Üst Dolabı",
+          "price": 3199,
+          "rating": 3.2,
+          "reviews": 4,
+          "url": "https://www.trendyol.com/ozceden/cigdem-80-cm-beyaz-mdf-aynali-asma-banyo-ust-dolabi-p-656887052?boutiqueId=61&merchantId=149118&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1850/prod/QC_ENRICHMENT/20260403/22/180f2828-73f8-3350-b8f7-e208920261bc/1_org_zoom.jpg",
+          "score": 0.7,
           "rescued": false,
-          "price_delta_pct": 6,
-          "rating_delta": -1.1,
-          "review_delta": 0
+          "price_delta_pct": -18,
+          "rating_delta": -1.8,
+          "review_delta": -7
         }
       ]
     },
@@ -19476,20 +19268,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Viva L Çalışma Masası Bilgisayar Masası Ofis Masası 150x55 Beyaz",
-          "price": 4046,
-          "rating": 3.8,
-          "reviews": 69,
-          "url": "https://www.trendyol.com/dekopratik/viva-l-calisma-masasi-bilgisayar-masasi-ofis-masasi-150x55-beyaz-p-846266389?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250722/08/c010d4fc-07c0-3805-ab30-f7539b71612d/1_org_zoom.jpg",
-          "score": 0.7632,
-          "rescued": false,
-          "price_delta_pct": 4,
-          "rating_delta": 3.8,
-          "review_delta": 69
-        },
-        {
           "brand": "Bofigo",
           "name": "Bofigo Çalışma Masası Fonksiyonel Çalışma Masası Ofis Masası Beyaz",
           "price": 3787,
@@ -19504,18 +19282,32 @@
           "review_delta": 20
         },
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "SANDALİE Eva 50x110 Cm Çalışma Masası Bilgisayar Masası Ofis Ders Yemek Masası Beyaz",
-          "price": 4119,
-          "rating": 4.7,
-          "reviews": 2864,
-          "url": "https://www.trendyol.com/sandalie/eva-50x110-cm-calisma-masasi-bilgisayar-masasi-ofis-ders-yemek-masasi-beyaz-p-140901371?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1749/prod/QC_ENRICHMENT/20250910/11/03a745d7-c565-348a-b005-24bd3aa2c07c/1_org_zoom.jpg",
-          "score": 0.7486,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Ha104 Kitaplıklı Raflı Bilgisayar Çalışma Masası Beyaz",
+          "price": 4100,
+          "rating": 4.4,
+          "reviews": 244,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha104-kitaplikli-rafli-bilgisayar-calisma-masasi-beyaz-p-214973773?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000036/product/media/images/prod/PIM/20251126/08/5c010ee5-5e52-482d-a3cb-a37bb81c4dd7/1_org_zoom.jpg",
+          "score": 0.7407,
           "rescued": false,
-          "price_delta_pct": 6,
-          "rating_delta": 4.7,
-          "review_delta": 2864
+          "price_delta_pct": 5,
+          "rating_delta": 4.4,
+          "review_delta": 244
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çalışma Masası Fonksiyonel Çalışma Masası Ofis Masası Safir Meşe-Beyaz",
+          "price": 3787,
+          "rating": 3.4,
+          "reviews": 35,
+          "url": "https://www.trendyol.com/bofigo/calisma-masasi-fonksiyonel-calisma-masasi-ofis-masasi-safir-mese-beyaz-p-1076536724?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1824/prod/QC_ENRICHMENT/20260216/17/8352bd4f-dfca-31b0-b027-145080aa6ad4/1_org_zoom.jpg",
+          "score": 0.7404,
+          "rescued": false,
+          "price_delta_pct": -3,
+          "rating_delta": 3.4,
+          "review_delta": 35
         }
       ]
     },
@@ -20095,20 +19887,6 @@
           "review_delta": 269
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Viva Çalışma Masası Bilgisayar Masası Ofis Masası 110x55",
-          "price": 2404,
-          "rating": 4.5,
-          "reviews": 75,
-          "url": "https://www.trendyol.com/dekopratik/viva-calisma-masasi-bilgisayar-masasi-ofis-masasi-110x55-p-796179548?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1707/prod/QC_ENRICHMENT/20250710/17/e959457f-6ed4-3329-95da-d6336c2dade6/1_org_zoom.jpg",
-          "score": 0.7224,
-          "rescued": false,
-          "price_delta_pct": -14,
-          "rating_delta": 4.5,
-          "review_delta": 75
-        },
-        {
           "brand": "Monte Sehpa",
           "name": "Skandi homeworks Nardo Çalışma Masası Bilgisayar Masası Ofis Masası Ders Çalışma Masası Meşe 90x60 cm",
           "price": 2995,
@@ -20117,6 +19895,20 @@
           "url": "https://www.trendyol.com/skandi-homeworks/nardo-calisma-masasi-bilgisayar-masasi-ofis-masasi-ders-calisma-masasi-mese-90x60-cm-p-1156981304?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
           "image": "https://cdn.dsmcdn.com/ty1935/prod/QC_PREP/20260616/13/955784ac-5eba-3609-ad3a-3883ef4580f6/1_org_zoom.jpg",
           "score": 0.7201,
+          "rescued": false,
+          "price_delta_pct": 7,
+          "rating_delta": 0.0,
+          "review_delta": 0
+        },
+        {
+          "brand": "Monte Sehpa",
+          "name": "Skandi homeworks Nardo Çalışma Masası Bilgisayar Masası Ofis Masası Ders Çalışma Masası Meşe 90x60 cm",
+          "price": 2995,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/skandi-homeworks/nardo-calisma-masasi-bilgisayar-masasi-ofis-masasi-ders-calisma-masasi-mese-90x60-cm-p-1156981171?boutiqueId=61&merchantId=105195&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1922/prod/QC_PREP/20260616/13/e6c57d52-e283-33ba-ac6e-f32ecb528ec6/1_org_zoom.jpg",
+          "score": 0.7189,
           "rescued": false,
           "price_delta_pct": 7,
           "rating_delta": 0.0,
@@ -21236,20 +21028,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Modamed Yatak by Modalife",
-          "name": "Modalife Parla Genç&Çocuk Odası Çalışma Masası",
-          "price": 6279,
-          "rating": 4.7,
-          "reviews": 192,
-          "url": "https://www.trendyol.com/modalife/parla-genc-cocuk-odasi-calisma-masasi-p-897186432?boutiqueId=61&merchantId=995061&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1752/prod/QC_ENRICHMENT/20250910/13/d4a97ba4-7ea7-344d-829e-072e7f470a0b/1_org_zoom.jpg",
-          "score": 0.6994,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": 0.0,
-          "review_delta": 145
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Antrasit - Sepet Ceviz",
           "price": 7200,
@@ -21276,6 +21054,20 @@
           "price_delta_pct": 13,
           "rating_delta": 0.2,
           "review_delta": -21
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani HA125 Kitaplıklı Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 7100,
+          "rating": 4.6,
+          "reviews": 147,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha125-kitaplikli-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-853417962?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000039/product/media/images/prod/PIM/20251204/12/81da69fa-eff7-4ba9-a1cb-f21220a61c2a/1_org_zoom.jpg",
+          "score": 0.6718,
+          "rescued": false,
+          "price_delta_pct": 5,
+          "rating_delta": -0.1,
+          "review_delta": 100
         }
       ]
     },
@@ -22295,18 +22087,18 @@
           "review_delta": 0
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6752,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
+          "price": 1792,
+          "rating": 4.5,
+          "reviews": 4,
+          "url": "https://www.trendyol.com/moonlife-mobilya/2-kapakli-l-cok-amacli-banyo-dolabi-siyah-p-4624877?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1615/prod/QC/20241216/16/d7883392-539f-3cba-a99c-557392ba139b/1_org_zoom.jpg",
+          "score": 0.6725,
           "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 4.3,
-          "review_delta": 169
+          "price_delta_pct": -3,
+          "rating_delta": 4.5,
+          "review_delta": 4
         }
       ]
     },
@@ -22446,20 +22238,6 @@
           "review_delta": 119
         },
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.6821,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": -0.5,
-          "review_delta": 164
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
           "price": 1792,
@@ -22472,6 +22250,20 @@
           "price_delta_pct": -3,
           "rating_delta": -0.3,
           "review_delta": -1
+        },
+        {
+          "brand": "Özceden",
+          "name": "ÖZCEDEN Klozet Üstü 40 cm Beyaz MDF Banyo Boy Dolabı",
+          "price": 2049,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/ozceden/klozet-ustu-40-cm-beyaz-mdf-banyo-boy-dolabi-p-1139369978?boutiqueId=61&merchantId=149118&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260428/12/020808d3-21bc-3004-9bdb-c4af6fe80fd9/1_org_zoom.jpg",
+          "score": 0.6768,
+          "rescued": false,
+          "price_delta_pct": 11,
+          "rating_delta": -4.8,
+          "review_delta": -5
         }
       ]
     },
@@ -22872,34 +22664,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7064,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı siyah",
-          "price": 1341,
-          "rating": 4.2,
-          "reviews": 243,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-siyah-p-4692486?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1325/product/media/images/prod/QC/20240523/11/28856f66-182d-3f16-bfa0-1bed74cb9778/1_org_zoom.jpg",
-          "score": 0.6716,
-          "rescued": false,
-          "price_delta_pct": -23,
-          "rating_delta": 4.2,
-          "review_delta": 243
-        },
-        {
           "brand": "Moonlife",
           "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Siyah",
           "price": 1792,
@@ -22912,6 +22676,34 @@
           "price_delta_pct": 2,
           "rating_delta": 4.5,
           "review_delta": 4
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
+          "price": 1499,
+          "rating": 3.9,
+          "reviews": 127,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-3-rafli-cok-amacli-banyo-dolabi-mutfak-dolabi-havlu-dolabi-erzak-dolabi-p-331467775?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1350/product/media/images/prod/QC/20240606/10/c049fb03-ca96-38a4-824c-9f8c6cf3882d/1_org_zoom.jpg",
+          "score": 0.6642,
+          "rescued": false,
+          "price_delta_pct": -14,
+          "rating_delta": 3.9,
+          "review_delta": 127
+        },
+        {
+          "brand": "Egecan Mobilya",
+          "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
+          "price": 1499,
+          "rating": 4.5,
+          "reviews": 62,
+          "url": "https://www.trendyol.com/egecan-mobilya/tek-kapakli-3-rafli-cok-amacli-banyo-dolabi-mutfak-dolabi-havlu-dolabi-erzak-dolabi-p-331431587?boutiqueId=61&merchantId=385417&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1148/product/media/images/prod/SPM/PIM/20240126/14/2b5b3efa-f902-300b-acc6-17f1591b220c/1_org_zoom.jpg",
+          "score": 0.6623,
+          "rescued": false,
+          "price_delta_pct": -14,
+          "rating_delta": 4.5,
+          "review_delta": 62
         }
       ]
     },
@@ -23381,32 +23173,32 @@
           "review_delta": 90
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Füme Cam",
-          "price": 2337,
-          "rating": 4.2,
-          "reviews": 151,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-fume-cam-p-744895733?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1455/product/media/images/prod/QC/20240801/22/1a50e140-f3a3-323b-a5b4-fbed97ededc1/1_org_zoom.jpg",
-          "score": 0.7057,
+          "brand": "Bofigo",
+          "name": "Bofigo 2li Orta Sehpa Dekoratif Sehpa Yan Sehpa Açelya Vizon Krem",
+          "price": 2230,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/bofigo/2li-orta-sehpa-dekoratif-sehpa-yan-sehpa-acelya-vizon-krem-p-1152383653?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260603/14/25cce87e-8e28-3891-9d78-30b02ef0fdf7/1_org_zoom.jpg",
+          "score": 0.7003,
           "rescued": false,
-          "price_delta_pct": -3,
-          "rating_delta": 4.2,
-          "review_delta": 151
+          "price_delta_pct": -7,
+          "rating_delta": 0.0,
+          "review_delta": 0
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7005,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Çam",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 129,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-cam-p-958926274?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1714/prod/QC_PREP/20250721/08/efba4922-acf1-3310-841d-e4c495c1b31f/1_org_zoom.jpg",
+          "score": 0.6985,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": 4.5,
-          "review_delta": 327
+          "price_delta_pct": -5,
+          "rating_delta": 4.4,
+          "review_delta": 129
         }
       ]
     },
@@ -23972,20 +23764,6 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Remaks",
-          "name": "Remaks Aynalı Banyo Dolabı beyaz",
-          "price": 1732,
-          "rating": 4.3,
-          "reviews": 169,
-          "url": "https://www.trendyol.com/remaks/aynali-banyo-dolabi-beyaz-p-4692489?boutiqueId=61&merchantId=107554&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1441/product/media/images/prod/QC/20240725/11/1a8f2c2f-7abc-31fa-bbae-4db6f1387c31/1_org_zoom.jpg",
-          "score": 0.7133,
-          "rescued": false,
-          "price_delta_pct": 5,
-          "rating_delta": 4.3,
-          "review_delta": 169
-        },
-        {
           "brand": "Egecan Mobilya",
           "name": "Egecan Mobilya Tek Kapaklı 3 Raflı Çok Amaçlı Banyo Dolabı Mutfak Dolabı Havlu Dolabı Erzak Dolabı",
           "price": 1499,
@@ -24012,6 +23790,20 @@
           "price_delta_pct": -9,
           "rating_delta": 3.9,
           "review_delta": 127
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya 2 Kapaklı L Çok Amaçlı Banyo Dolabı Antrasit",
+          "price": 1697,
+          "rating": 4.7,
+          "reviews": 3,
+          "url": "https://www.trendyol.com/moonlife-mobilya/2-kapakli-l-cok-amacli-banyo-dolabi-antrasit-p-902473728?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1645/prod/QC/20250305/13/d9c4dca1-12d5-3086-bf4b-4eab66532b1a/1_org_zoom.jpg",
+          "score": 0.6931,
+          "rescued": false,
+          "price_delta_pct": 3,
+          "rating_delta": 4.7,
+          "review_delta": 3
         }
       ]
     },
@@ -24357,44 +24149,44 @@
       "bcg_class": "STAR",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Maia Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Siyah Suntalam",
-          "price": 6600,
-          "rating": 0.0,
-          "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/maia-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-siyah-suntalam-p-1155461627?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1943/prod/QC_PREP/20260611/17/a0ecec00-fea6-3c14-952c-3578b927fbe7/1_org_zoom.jpg",
-          "score": 0.7326,
+          "brand": "Kenzlife",
+          "name": "Kenzlife 2 Kapılı Dolap Çilem 188*090*032 Byz Kilitli Ayaklı Banyo Mutfak Ofis Kitaplık Ayakkabılık Kiler",
+          "price": 5100,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/kenzlife/2-kapili-dolap-cilem-188-090-032-byz-kilitli-ayakli-banyo-mutfak-ofis-kitaplik-ayakkabilik-kiler-p-37769546?boutiqueId=61&merchantId=141465&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1643/prod/QC/20250225/04/c3d9bbbc-a673-389a-92e4-0cd804f3a45f/1_org_zoom.jpg",
+          "score": 0.679,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": -4.5,
-          "review_delta": -35
+          "price_delta_pct": -13,
+          "rating_delta": -3.5,
+          "review_delta": -34
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Esco Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Siyah Suntalam",
-          "price": 6600,
-          "rating": 0.0,
-          "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/esco-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-siyah-suntalam-p-1155462117?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1928/prod/QC_PREP/20260611/17/b552b580-1ed7-3c41-9cbe-e68c15d57376/1_org_zoom.jpg",
-          "score": 0.7277,
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF01107AC Pratik, Katlanır, Açılır Kapanır, Çam 3 Raflı 3 Çekmeceli Mutfak, Yemek, Çalışma Masası",
+          "price": 5912,
+          "rating": 3.9,
+          "reviews": 26,
+          "url": "https://www.trendyol.com/dekor-fim/df01107ac-pratik-katlanir-acilir-kapanir-cam-3-rafli-3-cekmeceli-mutfak-yemek-calisma-masasi-p-88289645?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1711/prod/QC_ENRICHMENT/20250718/16/7aa995e1-b63e-33ca-8ac9-9c49b2858bdd/1_org_zoom.jpg",
+          "score": 0.6745,
           "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": -4.5,
-          "review_delta": -35
+          "price_delta_pct": 0,
+          "rating_delta": -0.6,
+          "review_delta": -9
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK Maia Çok Amaçlı Metal Dolap Mutfak Kiler Kitaplık Vitrin - Siyah Metal - Atlantikçam Sunta",
-          "price": 6600,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Home Kitaplık Kumtaşı Mermer Desen 60Cm HC-5339",
+          "price": 6050,
           "rating": 0.0,
           "reviews": 0,
-          "url": "https://www.trendyol.com/dekopratik/maia-cok-amacli-metal-dolap-mutfak-kiler-kitaplik-vitrin-siyah-metal-atlantikcam-sunta-p-1155462619?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1915/prod/QC_PREP/20260611/17/140c4264-0b38-384f-a283-62f1ded045e8/1_org_zoom.jpg",
-          "score": 0.7206,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-home-kitaplik-kumtasi-mermer-desen-60cm-hc-5339-p-1154681556?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1933/prod/QC_PREP/20260609/12/aed6cc25-0d90-3e2e-9704-587f17af89ee/1_org_zoom.jpg",
+          "score": 0.6505,
           "rescued": false,
-          "price_delta_pct": 12,
+          "price_delta_pct": 3,
           "rating_delta": -4.5,
           "review_delta": -35
         }
@@ -24577,46 +24369,46 @@
       "bcg_class": null,
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7138,
-          "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 4.5,
-          "review_delta": 327
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7103,
-          "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": 4.3,
-          "review_delta": 297
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Füme Cam",
-          "price": 2337,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 151,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-fume-cam-p-744895733?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1455/product/media/images/prod/QC/20240801/22/1a50e140-f3a3-323b-a5b4-fbed97ededc1/1_org_zoom.jpg",
-          "score": 0.7046,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.698,
           "rescued": false,
-          "price_delta_pct": -7,
+          "price_delta_pct": -11,
           "rating_delta": 4.2,
-          "review_delta": 151
+          "review_delta": 83
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6839,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 90
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Çam",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 129,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-cam-p-958926274?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1714/prod/QC_PREP/20250721/08/efba4922-acf1-3310-841d-e4c495c1b31f/1_org_zoom.jpg",
+          "score": 0.682,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 129
         }
       ]
     },
@@ -24687,46 +24479,46 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7142,
-          "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 4.5,
-          "review_delta": 327
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7078,
-          "rescued": false,
-          "price_delta_pct": 12,
-          "rating_delta": 4.3,
-          "review_delta": 297
-        },
-        {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Füme Cam",
-          "price": 2337,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 151,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-fume-cam-p-744895733?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1455/product/media/images/prod/QC/20240801/22/1a50e140-f3a3-323b-a5b4-fbed97ededc1/1_org_zoom.jpg",
-          "score": 0.7064,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6955,
           "rescued": false,
-          "price_delta_pct": -7,
+          "price_delta_pct": -11,
           "rating_delta": 4.2,
-          "review_delta": 151
+          "review_delta": 83
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Çam",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 129,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-cam-p-958926274?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1714/prod/QC_PREP/20250721/08/efba4922-acf1-3310-841d-e4c495c1b31f/1_org_zoom.jpg",
+          "score": 0.6827,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 129
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6825,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": 4.4,
+          "review_delta": 90
         }
       ]
     },
@@ -25127,46 +24919,46 @@
       "bcg_class": "DOG",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Lizbon Orta Sehpa - Atlantik Çam",
-          "price": 2022,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
           "rating": 4.2,
-          "reviews": 9,
-          "url": "https://www.trendyol.com/dekopratik/lizbon-orta-sehpa-atlantik-cam-p-744896006?boutiqueId=61&merchantId=403137&os=1",
-          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_ENRICHMENT/20250723/15/4e2beb1f-3d22-307a-b3be-b9f0497870e9/1_org_zoom.jpg",
-          "score": 0.722,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6864,
           "rescued": false,
-          "price_delta_pct": 1,
+          "price_delta_pct": 11,
           "rating_delta": 4.2,
-          "review_delta": 9
+          "review_delta": 83
         },
         {
-          "brand": "Tapacım",
-          "name": "Pinkcloset OSLO 60 ÇAP ORTA SEHPA ÇAM",
-          "price": 1961,
-          "rating": 4.3,
-          "reviews": 10,
-          "url": "https://www.trendyol.com/pinkcloset/oslo-60-cap-orta-sehpa-cam-p-827833956?boutiqueId=61&merchantId=285523&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1368/product/media/images/prod/QC/20240618/19/70bc8c77-f682-33c9-a6ee-dec60255519d/1_org_zoom.jpg",
-          "score": 0.7164,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.3,
-          "review_delta": 10
-        },
-        {
-          "brand": "Tapacım",
-          "name": "Pinkcloset 60 Çap Oslo Orta Sehpa Şeffaf Temperli Cam",
-          "price": 1961,
+          "brand": "Bofigo",
+          "name": "Bofigo Yan Sehpa Koltuk Yanı Sehpa Koltuk Sehpası Orta Sehpa Çam",
+          "price": 1784,
           "rating": 4.4,
-          "reviews": 5,
-          "url": "https://www.trendyol.com/pinkcloset/60-cap-oslo-orta-sehpa-seffaf-temperli-cam-p-836523940?boutiqueId=61&merchantId=285523&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1365/product/media/images/prod/QC/20240615/21/5b9344ff-6cfe-39d0-ab99-ae7065ed4b79/1_org_zoom.jpg",
-          "score": 0.7114,
+          "reviews": 319,
+          "url": "https://www.trendyol.com/bofigo/yan-sehpa-koltuk-yani-sehpa-koltuk-sehpasi-orta-sehpa-cam-p-832472529?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1386/product/media/images/prod/QC/20240628/14/a108db80-7328-30b9-887f-079106cf36ce/1_org_zoom.jpg",
+          "score": 0.6846,
           "rescued": false,
-          "price_delta_pct": -2,
+          "price_delta_pct": -11,
           "rating_delta": 4.4,
-          "review_delta": 5
+          "review_delta": 319
+        },
+        {
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Manolya  Orta Sehpa Siyah",
+          "price": 1946,
+          "rating": 0.0,
+          "reviews": 0,
+          "url": "https://www.trendyol.com/moonlife-mobilya/manolya-orta-sehpa-siyah-p-901855653?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/18/58b42c57-f13f-3a5f-bf26-588ed690cf10/1_org_zoom.jpg",
+          "score": 0.6837,
+          "rescued": false,
+          "price_delta_pct": -3,
+          "rating_delta": 0.0,
+          "review_delta": 0
         }
       ]
     },
@@ -26172,20 +25964,6 @@
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "Mobetto",
-          "name": "MOBETTO Nehir Genç Odası Çalışma Bilgisayar Masası, Çocuk Çalışma Masası",
-          "price": 4549,
-          "rating": 4.7,
-          "reviews": 52,
-          "url": "https://www.trendyol.com/mobetto/nehir-genc-odasi-calisma-bilgisayar-masasi-cocuk-calisma-masasi-p-967928282?boutiqueId=61&merchantId=427243&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1724/prod/QC_ENRICHMENT/20250808/13/89a4609c-873e-3744-a98b-41fced575dc8/1_org_zoom.jpg",
-          "score": 0.7441,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 4.7,
-          "review_delta": 52
-        },
-        {
           "brand": "Rani Mobilya",
           "name": "Rani Mobilya Rani Ha113 Çalışma Ofis Bilgisayar Masası 4 Raflı Köşeli Masa Beyaz - Sepet Ceviz 120 Cm",
           "price": 4650,
@@ -26200,18 +25978,32 @@
           "review_delta": 270
         },
         {
-          "brand": "KZNHOME Demonte Ürünler",
-          "name": "KZNMOB HOME Kartopu Çalışma Masası, Bilgisayar Masası, Ofis Masası Beyaz - Tamamı 1. Kalite Mdf",
-          "price": 4690,
-          "rating": 4.2,
-          "reviews": 590,
-          "url": "https://www.trendyol.com/kznmob-home/kartopu-calisma-masasi-bilgisayar-masasi-ofis-masasi-beyaz-tamami-1-kalite-mdf-p-249983964?boutiqueId=61&merchantId=315937&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1788/prod/QC_ENRICHMENT/20251118/08/f4016c6c-8161-30df-a262-942a5bf7fb41/1_org_zoom.jpg",
-          "score": 0.7301,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Ha106 Raflı Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 4800,
+          "rating": 4.7,
+          "reviews": 107,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha106-rafli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-353236673?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000037/product/media/images/prod/PIM/20251201/11/0cb2d1f1-6b34-4bbb-8085-3c28452dcda2/1_org_zoom.jpg",
+          "score": 0.7257,
           "rescued": false,
-          "price_delta_pct": 1,
-          "rating_delta": 4.2,
-          "review_delta": 590
+          "price_delta_pct": 3,
+          "rating_delta": 4.7,
+          "review_delta": 107
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Ha109 Çekmeceli Çalışma Ofis Bilgisayar Masası Sepet Ceviz - Beyaz",
+          "price": 4750,
+          "rating": 4.7,
+          "reviews": 78,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-ha109-cekmeceli-calisma-ofis-bilgisayar-masasi-sepet-ceviz-beyaz-p-470299837?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000036/product/media/images/prod/PIM/20251126/08/f4c32ab9-055f-4809-935b-edb99a769775/1_org_zoom.jpg",
+          "score": 0.692,
+          "rescued": false,
+          "price_delta_pct": 2,
+          "rating_delta": 4.7,
+          "review_delta": 78
         }
       ]
     },
@@ -26392,46 +26184,46 @@
       "bcg_class": "CASH_COW",
       "competitors": [
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Sevay Orta Sehpa",
-          "price": 2699,
-          "rating": 4.5,
-          "reviews": 327,
-          "url": "https://www.trendyol.com/dekopratik/sevay-orta-sehpa-p-336125109?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1721/prod/QC_ENRICHMENT/20250805/08/8e375f1f-882e-381e-92af-cea4c2d61e26/1_org_zoom.jpg",
-          "score": 0.7192,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Beyaz",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 90,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-beyaz-p-958926271?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1715/prod/QC_PREP/20250721/08/c50ebc49-c59a-34c9-8df7-015e2516669f/1_org_zoom.jpg",
+          "score": 0.6934,
           "rescued": false,
-          "price_delta_pct": 7,
-          "rating_delta": -0.1,
-          "review_delta": 189
+          "price_delta_pct": -10,
+          "rating_delta": -0.2,
+          "review_delta": -48
         },
         {
-          "brand": "Dekopratik Mobilya",
-          "name": "DEKOPRATİK - Uranüs Orta Sehpa",
-          "price": 2811,
-          "rating": 4.3,
-          "reviews": 297,
-          "url": "https://www.trendyol.com/dekopratik/uranus-orta-sehpa-p-131345643?boutiqueId=61&merchantId=403137&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1413/product/media/images/prod/QC/20240711/17/becd08b0-93e6-3874-a5c4-a87ed6f53586/1_org_zoom.jpg",
-          "score": 0.7158,
+          "brand": "Bofigo",
+          "name": "Bofigo 4lü Orta Sehpa Yan Sehpa Dekoratif Sehpa Metal Sehpa Yonca Çam",
+          "price": 2279,
+          "rating": 4.4,
+          "reviews": 129,
+          "url": "https://www.trendyol.com/bofigo/4lu-orta-sehpa-yan-sehpa-dekoratif-sehpa-metal-sehpa-yonca-cam-p-958926274?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1714/prod/QC_PREP/20250721/08/efba4922-acf1-3310-841d-e4c495c1b31f/1_org_zoom.jpg",
+          "score": 0.6903,
           "rescued": false,
-          "price_delta_pct": 11,
-          "rating_delta": -0.3,
-          "review_delta": 159
+          "price_delta_pct": -10,
+          "rating_delta": -0.2,
+          "review_delta": -9
         },
         {
-          "brand": "Peka Mobilya",
-          "name": "PEKA Orta Sehpa Çevir Kur 3'ü 1 Arada 2 Raflı Ve Dekoratif Yan Sehpa",
-          "price": 2537,
-          "rating": 4.1,
-          "reviews": 97,
-          "url": "https://www.trendyol.com/peka/orta-sehpa-cevir-kur-3-u-1-arada-2-rafli-ve-dekoratif-yan-sehpa-p-887255207?boutiqueId=61&merchantId=231380&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250224/15/0fc4552f-a6f3-3be5-87a1-d8dbdc3be290/1_org_zoom.jpg",
-          "score": 0.6952,
+          "brand": "Moonlife",
+          "name": "Moonlife Mobilya Sedef Orta Sehpa Beyaz Ceviz",
+          "price": 2218,
+          "rating": 4.2,
+          "reviews": 83,
+          "url": "https://www.trendyol.com/moonlife-mobilya/sedef-orta-sehpa-beyaz-ceviz-p-93605583?boutiqueId=61&merchantId=106944&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1642/prod/QC/20250226/18/0a4d977b-1f7b-3ffb-a532-edfd6fdff792/1_org_zoom.jpg",
+          "score": 0.6896,
           "rescued": false,
-          "price_delta_pct": 0,
-          "rating_delta": -0.5,
-          "review_delta": -41
+          "price_delta_pct": -12,
+          "rating_delta": -0.4,
+          "review_delta": -55
         }
       ]
     },
@@ -26608,7 +26400,7 @@
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — fiyatta altımızda rakip",
       "message": "Kenzlife 'Kenzlife Çamaşır-kurutma Makinesi Dolabı Ve Gi' %46 daha ucuz (bizim Çamaşır-kurutma Makinesi Dolabı + Üs).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-2",
@@ -26616,7 +26408,7 @@
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — fiyatta altımızda rakip",
       "message": "Kenzlife 'Kenzlife Çamaşır-Kurutma Makinesi Dolabı Gutas' %46 daha ucuz (bizim 2 Çekmeceli Çamaşır ve Kurutma Makin).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-3",
@@ -26624,55 +26416,55 @@
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — fiyatta altımızda rakip",
       "message": "Kenzlife 'Kenzlife Çamaşır-Kurutma Makinesi Dolabı Şahru' %46 daha ucuz (bizim 4 Çekmeceli Çamaşır ve Kurutma Makin).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-4",
       "type": "MARKET",
       "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — yorum lideri Remaks",
-      "message": "Remaks 4526 yorum vs bizim 2273 (sıra 5/12).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Banyo Dolabı — yorum lideri AEKA mobilya",
+      "message": "AEKA mobilya 7032 yorum vs bizim 3595 (sıra 5/11).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-5",
       "type": "MARKET",
       "severity": "INFO",
-      "title": "Banyo Dolabı — yorum lideri AEKA mobilya",
-      "message": "AEKA mobilya 7032 yorum vs bizim 3595 (sıra 5/13).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Mutfak Adası — yorum lideri AEKA mobilya",
+      "message": "AEKA mobilya 1330 yorum vs bizim 223 (sıra 3/7).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-6",
       "type": "MARKET",
       "severity": "INFO",
-      "title": "Mutfak Adası — yorum lideri AEKA mobilya",
-      "message": "AEKA mobilya 1330 yorum vs bizim 223 (sıra 3/8).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Kitaplıklı Çalışma Masası — yorum lideri Moonlife",
+      "message": "Moonlife 20333 yorum vs bizim 529 (sıra 9/14).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-7",
       "type": "MARKET",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — yorum lideri COSARGROUP",
-      "message": "COSARGROUP 29674 yorum vs bizim 529 (sıra 15/20).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Sehpa — yorum lideri Monte Sehpa",
+      "message": "Monte Sehpa 10877 yorum vs bizim 165 (sıra 5/8).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-8",
       "type": "MARKET",
       "severity": "INFO",
-      "title": "Sehpa — yorum lideri Falez Mobilya",
-      "message": "Falez Mobilya 38839 yorum vs bizim 165 (sıra 10/10).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Kahve Köşesi — yorum lideri Bofigo",
+      "message": "Bofigo 11602 yorum vs bizim 641 (sıra 7/8).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-9",
-      "type": "MARKET",
+      "type": "MOMENTUM",
       "severity": "INFO",
-      "title": "Kahve Köşesi — yorum lideri Bofigo",
-      "message": "Bofigo 10802 yorum vs bizim 641 (sıra 10/12).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "title": "Kitaplıklı Çalışma Masası — hızlı büyüyen rakip",
+      "message": "Bofigo bu hafta +8 yorum (talep ivmesi).",
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     },
     {
       "id": "comp-10",
@@ -26680,15 +26472,7 @@
       "severity": "INFO",
       "title": "Çamaşır Makinesi Dolabı — hızlı büyüyen rakip",
       "message": "Bofigo bu hafta +7 yorum (talep ivmesi).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
-    },
-    {
-      "id": "comp-11",
-      "type": "MOMENTUM",
-      "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — hızlı büyüyen rakip",
-      "message": "Bofigo bu hafta +7 yorum (talep ivmesi).",
-      "timestamp": "2026-06-17T10:04:03.043800+00:00"
+      "timestamp": "2026-06-18T09:56:42.588212+00:00"
     }
   ]
 }

@@ -270,6 +270,29 @@ def _similarity(our_name, our_price, c_name, c_price, our_e=None, c_e=None) -> f
 
 # ── Veri yükleme ─────────────────────────────────────────────────────────────
 
+def _load_inactive_merchants() -> set:
+    """competitors.json'da HİÇBİR kategoride aktif olmayan (aktif=false) mağazaların
+    merchantId kümesi. Bir mağaza herhangi bir kategoride aktifse listede OLMAZ."""
+    f = DATA / "competitors.json"
+    if not f.exists():
+        return set()
+    try:
+        doc = json.load(open(f, encoding="utf-8"))
+    except Exception:
+        return set()
+    active, seen = set(), set()
+    for rakipler in doc.get("kategoriler", {}).values():
+        for r in rakipler:
+            m = re.search(r"-m-(\d+)", r.get("magaza_url", ""))
+            if not m:
+                continue
+            mid = m.group(1)
+            seen.add(mid)
+            if r.get("aktif"):
+                active.add(mid)
+    return seen - active   # her yerde pasif olanlar
+
+
 def load_competitors():
     """En güncel rakip snapshot'ı + bir önceki (yorum-hızı için).
 
@@ -285,8 +308,18 @@ def load_competitors():
         return None, {}, [], []
     latest = snap[days[-1]]
     prev = snap[days[-2]] if len(days) >= 2 else {}
+
+    # competitors.json'da aktif=false yapılan mağazaların ürünlerini ELE (merchantId ile).
+    # Böylece bir mağaza kapatılınca snapshot'ı yeniden çekmeden anında düşer.
+    inactive_mids = _load_inactive_merchants()
+    dropped_inactive = 0
+
     comps, comps_diger = [], []
     for pid, r in latest.items():
+        mid = re.search(r"merchantId=(\d+)", r.get("url", ""))
+        if mid and mid.group(1) in inactive_mids:
+            dropped_inactive += 1
+            continue
         cat = comp_categorize(r.get("ad", ""))
         deg = int(r.get("deg", 0) or 0)
         prev_deg = int(prev.get(pid, {}).get("deg", deg) or deg)
@@ -306,7 +339,8 @@ def load_competitors():
             comps_diger.append(item)
         else:
             comps.append(item)
-    logger.info(f"Rakip ürünler: {len(comps)} kategorili + {len(comps_diger)} Diğer")
+    logger.info(f"Rakip ürünler: {len(comps)} kategorili + {len(comps_diger)} Diğer "
+                f"({dropped_inactive} ürün kapalı mağazadan elendi)")
     return latest, prev, comps, comps_diger
 
 
