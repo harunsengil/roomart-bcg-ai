@@ -6,7 +6,7 @@ import { QUADRANT_META, ACTION_META, formatNumber, formatScore, formatCurrency, 
 import { useIsLight } from '../hooks/useTheme'
 
 // Matriste bir ürüne tıklanınca sağ panelde açılan ürün kartı (Trendyol linkli)
-function ProductDetail({ product, onClose }) {
+function ProductDetail({ product, onClose, onGoToProduct }) {
   const p = product
   const light = useIsLight()
   const qmB = QUADRANT_META[p.bcg_class] || { label: 'ATANMADI', emoji: '∅', color: '#6B7280', bg: 'rgba(107,114,128,0.12)', border: 'rgba(107,114,128,0.3)' }
@@ -54,12 +54,12 @@ function ProductDetail({ product, onClose }) {
         </div>
         <div className="flex items-center justify-between gap-2 mt-1">
           <span className="text-xs font-mono font-bold tracking-wider" style={{ color: qm.color }}>{qm.emoji} {qm.label}</span>
-          {p.url && (
-            <a href={p.url} target="_blank" rel="noreferrer"
+          {onGoToProduct && (
+            <button type="button" onClick={() => onGoToProduct(p.id)}
               className="flex items-center gap-1 text-[10px] font-mono text-white/35 hover:text-gold-400 transition-colors"
-              title="Trendyol ürün sayfası">
-              <ExternalLink size={11} /> ürün sayfası
-            </a>
+              title="Ürün tablosunda filtrele">
+              <ExternalLink size={11} /> tabloda gör
+            </button>
           )}
         </div>
       </div>
@@ -266,7 +266,7 @@ function ScoreBar({ label, value, max, color }) {
   )
 }
 
-export default function CategoryPanel({ categories, selectedCategory, onSelectCategory, selectedProduct, onClearProduct }) {
+export default function CategoryPanel({ categories, selectedCategory, onSelectCategory, selectedProduct, onClearProduct, onGoToProduct }) {
   return (
     <div className="glass-card flex flex-col h-full overflow-hidden">
       {/* Panel header */}
@@ -296,7 +296,7 @@ export default function CategoryPanel({ categories, selectedCategory, onSelectCa
 
         {/* Detail panel — ürün seçiliyse ürün kartı (Trendyol linkli), yoksa kategori detayı */}
         {selectedProduct
-          ? <ProductDetail product={selectedProduct} onClose={onClearProduct} />
+          ? <ProductDetail product={selectedProduct} onClose={onClearProduct} onGoToProduct={onGoToProduct} />
           : <CategoryDetail category={selectedCategory} />}
       </div>
     </div>

@@ -200,6 +200,7 @@ function Dashboard({ onLogout, userEmail }) {
                       onSelectCategory={(c) => { setSelectedCategory(c); setSelectedProduct(null) }}
                       selectedProduct={selectedProduct}
                       onClearProduct={() => setSelectedProduct(null)}
+                      onGoToProduct={goToProduct}
                     />
                   </div>
                 </div>
