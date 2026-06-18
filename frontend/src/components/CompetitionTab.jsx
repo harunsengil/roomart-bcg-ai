@@ -6,6 +6,9 @@ import { useIsLight } from '../hooks/useTheme'
 
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 
+// "En yüksek" hücre vurgusu (kategori-içi / grup-içi en yüksek fiyat-puan-yorum).
+const HI_CELL = 'bg-gold-500/15 text-gold-300 font-semibold rounded px-1'
+
 // Akıllı arama yardımcıları (ProductTable ile aynı: binlik-ayraç duyarsız + fiyat operatörleri)
 const norm = (s) => String(s).toLowerCase().replace(/[.,\s₺]/g, '')
 const cellMatch = (cell, q) => {
@@ -84,6 +87,14 @@ function CategoryView({ categories }) {
   const isAll = sel === ALL
   const rows = isAll ? brandTotals : (cat?.brands || [])
 
+  // Kategori (veya tüm-markalar) içinde her metriğin EN YÜKSEĞİ → o hücre vurgulanır.
+  const maxOf = (key) => {
+    const vals = rows.map(b => b[key]).filter(v => v != null && v > 0)
+    return vals.length ? Math.max(...vals) : null
+  }
+  const mx = { avg_price: maxOf('avg_price'), avg_rating: maxOf('avg_rating'), total_reviews: maxOf('total_reviews') }
+  const hi = HI_CELL   // en yüksek vurgusu
+
   return (
     <div className="flex flex-col min-h-0">
       <div className="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
@@ -142,9 +153,9 @@ function CategoryView({ categories }) {
                 <td className="px-3 py-2"><StoreLink brand={b.brand} url={b.store_url} isRoomart={b.is_roomart} /></td>
                 {isAll && <td className="px-3 py-2 text-right font-mono text-white/50">{b.cats}/6</td>}
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.product_count}</td>
-                <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? formatCurrency(b.avg_price) : '—'}</td>
-                <td className="px-3 py-2 text-right font-mono">{b.avg_rating != null ? <span className="text-gold-400">★ {b.avg_rating}</span> : '—'}</td>
-                <td className="px-3 py-2 text-right font-mono text-white/70">{b.total_reviews}</td>
+                <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? <span className={b.avg_price === mx.avg_price ? hi : ''}>{formatCurrency(b.avg_price)}</span> : '—'}</td>
+                <td className="px-3 py-2 text-right font-mono">{b.avg_rating != null ? <span className={b.avg_rating === mx.avg_rating ? hi : 'text-gold-400'}>★ {b.avg_rating}</span> : '—'}</td>
+                <td className="px-3 py-2 text-right font-mono text-white/70">{b.total_reviews > 0 && b.total_reviews === mx.total_reviews ? <span className={hi}>{b.total_reviews}</span> : b.total_reviews}</td>
                 <td className="px-3 py-2 text-right font-mono text-white/60">%{b.review_share}</td>
                 {!isAll && <td className="px-3 py-2 text-right font-mono">{b.review_velocity > 0 ? <span className="text-cyan-300">+{b.review_velocity}</span> : <span className="text-white/25">—</span>}</td>}
                 {!isAll && <td className="px-3 py-2 text-right font-mono">{b.price_index != null ? <span className={b.price_index > 1 ? 'text-rose-300' : 'text-emerald-300'}>{b.price_index}×</span> : '—'}</td>}
@@ -258,6 +269,10 @@ function ProductView({ matches, light }) {
         {filtered.map(m => {
           const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280' }
           const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
+          // Grup içi (RoomArt + rakipler) en yükseği vurgula
+          const gp = Math.max(m.our_price || 0, ...m.competitors.map(c => c.price || 0))
+          const gr = Math.max(m.our_rating || 0, ...m.competitors.map(c => c.rating || 0))
+          const gv = Math.max(m.our_reviews || 0, ...m.competitors.map(c => c.reviews || 0))
           return (
             <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
               {/* bizim ürün */}
@@ -267,10 +282,10 @@ function ProductView({ matches, light }) {
                   onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
                   <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
                 </a>
-                <span className="text-right font-mono text-white">{m.our_price != null ? formatCurrency(m.our_price) : '—'}</span>
+                <span className="text-right font-mono text-white">{m.our_price != null ? <span className={m.our_price === gp && gp > 0 ? HI_CELL : ''}>{formatCurrency(m.our_price)}</span> : '—'}</span>
                 <span className="text-right font-mono text-white/30">—</span>
-                <span className="text-right font-mono text-gold-400">{m.our_rating > 0 ? `★ ${m.our_rating}` : '—'}</span>
-                <span className="text-right font-mono text-white/70">{m.our_reviews}</span>
+                <span className="text-right font-mono text-gold-400">{m.our_rating > 0 ? <span className={m.our_rating === gr ? HI_CELL : ''}>★ {m.our_rating}</span> : '—'}</span>
+                <span className="text-right font-mono text-white/70">{m.our_reviews > 0 && m.our_reviews === gv ? <span className={HI_CELL}>{m.our_reviews}</span> : m.our_reviews}</span>
                 <span className="text-right font-mono text-white/30">—</span>
                 <span className="text-left pl-2 truncate">
                   <span className="text-[10px] font-mono text-white/40">{m.category}</span>
@@ -288,12 +303,12 @@ function ProductView({ matches, light }) {
                     <span className="truncate">{c.name}</span>
                     <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
                   </a>
-                  <span className="text-right font-mono text-white/80">{c.price != null ? formatCurrency(c.price) : '—'}</span>
+                  <span className="text-right font-mono text-white/80">{c.price != null ? <span className={c.price === gp && gp > 0 ? HI_CELL : ''}>{formatCurrency(c.price)}</span> : '—'}</span>
                   <span className="text-right font-mono">
                     {c.price_delta_pct == null ? '—' : <span className={c.price_delta_pct < 0 ? 'text-rose-400' : c.price_delta_pct > 0 ? 'text-emerald-400' : 'text-white/40'}>{c.price_delta_pct > 0 ? '+' : ''}%{c.price_delta_pct}</span>}
                   </span>
-                  <span className="text-right font-mono text-white/60">{c.rating > 0 ? `${c.rating}★` : '—'}</span>
-                  <span className="text-right font-mono text-white/50">{c.reviews}</span>
+                  <span className="text-right font-mono text-white/60">{c.rating > 0 ? <span className={c.rating === gr ? HI_CELL : ''}>{c.rating}★</span> : '—'}</span>
+                  <span className="text-right font-mono text-white/50">{c.reviews > 0 && c.reviews === gv ? <span className={HI_CELL}>{c.reviews}</span> : c.reviews}</span>
                   <span className="text-right font-mono text-white/40" title={T.sim}>{Math.round(c.score * 100)}%</span>
                   <span className="text-left pl-2"></span>
                 </div>
