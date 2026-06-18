@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { AlertTriangle, Zap, Info, TrendingUp, Clock, ChevronRight } from 'lucide-react'
+import { AlertTriangle, Zap, Info, TrendingUp, Clock, ChevronRight, Swords } from 'lucide-react'
 import { ACTION_META, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
@@ -44,9 +44,12 @@ function AlertCard({ alert, index }) {
     </motion.div>
   )
 }
-export function AlertsPanel({ alerts }) {
+export function AlertsPanel({ alerts, competitive, onNavigateToCompetition }) {
   const high = alerts?.filter(a => a.severity === 'HIGH') || []
   const sorted = [...high, ...(alerts?.filter(a => a.severity !== 'HIGH') || [])]
+  const compAlerts = competitive?.alerts || []
+  const compHigh = compAlerts.filter(a => a.severity === 'HIGH').length
+
   return (
     <div className="glass-card p-4 flex flex-col h-full">
       <div className="flex items-center justify-between mb-3 flex-shrink-0">
@@ -68,6 +71,46 @@ export function AlertsPanel({ alerts }) {
           </div>
         ) : (
           <AnimatePresence>{sorted.map((alert, i) => <AlertCard key={alert.id} alert={alert} index={i} />)}</AnimatePresence>
+        )}
+
+        {/* ── Rakip uyarıları bölümü ── */}
+        {compAlerts.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-white/8">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <Swords size={12} className="text-amber-400/80" />
+                <span className="font-display text-[11px] tracking-[0.15em] text-white/70">COMPETITOR ALERTS</span>
+                <span className="text-[10px] font-mono text-white/30">{compAlerts.length} signals{compHigh ? ` · ${compHigh} high` : ''}</span>
+              </div>
+              {onNavigateToCompetition && (
+                <button onClick={onNavigateToCompetition}
+                  className="flex items-center gap-1 text-[10px] font-mono text-gold/60 hover:text-gold transition-colors">
+                  Competition <ChevronRight size={10} />
+                </button>
+              )}
+            </div>
+            <AnimatePresence>
+              {compAlerts.map((alert, i) => (
+                <motion.div key={alert.id}
+                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}
+                  className="p-3 rounded-xl border-l-2 mb-2"
+                  style={{
+                    borderLeftColor: alert.severity === 'HIGH' ? '#EF4444' : alert.severity === 'MEDIUM' ? '#F59E0B' : '#6B7280',
+                    background: alert.severity === 'HIGH' ? 'rgba(239,68,68,0.04)' : 'rgba(245,158,11,0.04)',
+                  }}>
+                  <div className="flex items-start gap-2">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[11px] font-mono font-medium text-white/75 leading-snug">{alert.title}</p>
+                      <p className="text-[10px] text-white/40 leading-snug mt-0.5">{alert.message}</p>
+                      <div className="flex items-center gap-1 mt-1 text-[9px] text-white/25 font-mono">
+                        <Clock size={8} />{timeAgo(alert.timestamp)}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
         )}
       </div>
     </div>

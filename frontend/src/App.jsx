@@ -83,7 +83,10 @@ function Dashboard({ onLogout, userEmail }) {
   if (loadingTimeout && loading) return <ErrorScreen error="Veri yüklenemedi — sunucu yanıt vermedi (15s). JSON yedeğine geçiliyor..." onRetry={refetch} />
   if (error) return <ErrorScreen error={error} onRetry={refetch} />
 
-  const highAlertCount = data?.alerts?.filter(a => a.severity === 'HIGH').length ?? 0
+  const highAlertCount = [
+    ...(data?.alerts || []),
+    ...(data?.competitive?.alerts || []),
+  ].filter(a => a.severity === 'HIGH').length
 
   return (
     <div className={`h-[100dvh] overflow-hidden grid-bg flex flex-col ${theme}`}>
@@ -213,7 +216,11 @@ function Dashboard({ onLogout, userEmail }) {
             {activeTab === 'alerts' && (
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                 <div style={{ minHeight: 600 }}>
-                  <AlertsPanel alerts={data?.alerts} />
+                  <AlertsPanel
+                    alerts={data?.alerts}
+                    competitive={data?.competitive}
+                    onNavigateToCompetition={() => setActiveTab('competition')}
+                  />
                 </div>
                 <div>
                   <ScoreRadarChart categories={data?.categories} theme={theme} />

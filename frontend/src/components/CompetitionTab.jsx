@@ -1,16 +1,15 @@
 import { useState, useMemo } from 'react'
 import { createPortal } from 'react-dom'
-import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown, AlertTriangle } from 'lucide-react'
+import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 
-// "En yüksek" hücre vurgusu (grup-içi en yüksek değer). Dolgu/pill yok — yalnız
-// hafif altın metin + kalınlık, böylece tablo rengârenk olmaz, sadece lider belli olur.
-const HI_CELL = 'text-gold-300 font-semibold'
+// Tek vurgu rengi = yıldız sarısı (gold-400). Hiçbir yerde iki farklı sarı yok.
+const HI_CELL = 'text-gold-400 font-semibold'
 
-// Akıllı arama yardımcıları (ProductTable ile aynı: binlik-ayraç duyarsız + fiyat operatörleri)
+// Akıllı arama yardımcıları
 const norm = (s) => String(s).toLowerCase().replace(/[.,\s₺]/g, '')
 const cellMatch = (cell, q) => {
   const c = String(cell).toLowerCase()
@@ -32,7 +31,6 @@ function priceOp(q) {
   return null
 }
 
-// Benzerlik formülü — tek doğruluk kaynağı; hem başlık hem hücre buradan türetilir.
 const SIM_FORMULA = '%40 görsel (CLIP) + %30 ad-token örtüşmesi (Jaccard) + %30 fiyat yakınlığı'
 
 const T = {
@@ -44,11 +42,11 @@ const T = {
   yorumPct: 'Bu markanın kategorideki tüm yorumların yüzdesi (pazar görünürlüğü payı)',
   hiz: 'Bu haftaki yorum artışı (talep ivmesi). En az 2 haftalık veri birikince dolar.',
   endeks: 'Fiyat endeksi = marka ort. fiyatı ÷ kategori ort. fiyatı. Örn. 1.74× = ortalamadan %74 PAHALI; 0.66× = %34 UCUZ.',
-  // Başlık: kolon, grubun EN YAKIN rakip skoruyla sıralanır.
-  simHead: `Benzerlik skoru = ${SIM_FORMULA}. Bu kolon, ürünün EN YAKIN rakibinin skoruyla sıralanır (artan = en zayıf eşleşmeler üstte, tutarsızları bulmak için).`,
-  // Hücre: o tek rakip ürünün bizim ürüne benzerliği.
+  simHead: `Benzerlik skoru = ${SIM_FORMULA}. Bu kolon, ürünün EN YAKIN rakibinin skoruyla sıralanır (artan = en zayıf eşleşmeler üstte).`,
   simCell: `Bu rakip ürünün RoomArt ürününe benzerlik skoru = ${SIM_FORMULA}. Yüksek = ürünler daha benzer.`,
   delta: 'Rakip fiyatı − bizim fiyat. Kırmızı = rakip daha ucuz (altımızda).',
+  fiyatMin: 'Gruptaki EN DÜŞÜK fiyat vurgulanır (altın). Düşük fiyat = rekabetçi konum.',
+  puanMax: 'Gruptaki EN YÜKSEK puan vurgulanır (altın).',
 }
 
 function StoreLink({ brand, url, isRoomart }) {
@@ -63,12 +61,32 @@ function StoreLink({ brand, url, isRoomart }) {
   )
 }
 
+// ── Sıralanabilir başlık — hem Kategori hem Ürün görünümünde kullanılır ──────────
+function SortHead({ field, label, align = 'center', tip, sort, onSort }) {
+  const active = sort.field === field
+  const Icon = !active ? ChevronsUpDown : sort.dir === 'asc' ? ChevronUp : ChevronDown
+  const justify = align === 'left' ? 'justify-start' : align === 'right' ? 'justify-end' : 'justify-center'
+  if (!field) return <span className={`flex ${justify}`} title={tip}>{label}</span>
+  return (
+    <button type="button" onClick={() => onSort(field)} title={tip}
+      className={`flex items-center gap-1 ${justify} w-full hover:text-gold transition-colors ${active ? 'text-gold-400' : ''}`}>
+      {label}<Icon size={11} className={active ? 'text-gold-400' : 'text-white/25'} />
+    </button>
+  )
+}
+
 // ── KATEGORİ + MARKA(toplam) GÖRÜNÜMÜ ─────────────────────────────────────────
 function CategoryView({ categories }) {
   const ALL = '__all__'
   const [sel, setSel] = useState(categories[0]?.category)
+  const [sort, setSort] = useState({ field: 'total_reviews', dir: 'desc' })
 
-  // Marka toplamı: her markanın TÜM kategorilerdeki birleşik metrikleri
+  const toggleSort = (field) => setSort(s =>
+    s.field === field
+      ? { field, dir: s.dir === 'asc' ? 'desc' : 'asc' }
+      : { field, dir: field === 'brand' ? 'asc' : 'desc' }
+  )
+
   const brandTotals = useMemo(() => {
     const map = {}
     categories.forEach(c => c.brands.forEach(b => {
@@ -88,21 +106,36 @@ function CategoryView({ categories }) {
       avg_price: m._pW ? Math.round(m._pS / m._pW) : null,
       avg_rating: m._rW ? +(m._rS / m._rW).toFixed(2) : null,
       review_share: totalReviews ? +(m.total_reviews / totalReviews * 100).toFixed(1) : 0,
-    })).sort((a, b) => b.total_reviews - a.total_reviews)
+    }))
   }, [categories])
 
-  const cat = categories.find(c => c.category === sel)
   const isAll = sel === ALL
-  const rows = isAll ? brandTotals : (cat?.brands || [])
+  const cat = categories.find(c => c.category === sel)
 
-  // Kategori (veya tüm-markalar) içinde her metriğin EN YÜKSEĞİ → o hücre vurgulanır.
-  const maxOf = (key) => {
-    const vals = rows.map(b => b[key]).filter(v => v != null && v > 0)
-    return vals.length ? Math.max(...vals) : null
-  }
-  // Fiyat vurgusu kaldırıldı (en yüksek fiyat "iyi" değil; yanıltıcıydı). Puan + yorum kalır.
-  const mx = { avg_rating: maxOf('avg_rating'), total_reviews: maxOf('total_reviews') }
-  const hi = HI_CELL   // en yüksek vurgusu
+  const rows = useMemo(() => {
+    const base = isAll ? brandTotals : (cat?.brands || [])
+    const f = sort.field || 'total_reviews'
+    const d = sort.dir || 'desc'
+    return [...base].sort((a, b) => {
+      const va = a[f], vb = b[f]
+      if (va == null && vb == null) return 0
+      if (va == null) return 1
+      if (vb == null) return -1
+      const r = typeof va === 'string' ? String(va).localeCompare(String(vb), 'tr') : (va - vb)
+      return d === 'asc' ? r : -r
+    })
+  }, [sel, isAll, brandTotals, cat, sort])
+
+  // En yüksek puan + yorum, en düşük fiyat vurgulanır (gold-400).
+  const maxOf = (key) => { const v = rows.map(b => b[key]).filter(v => v != null && v > 0); return v.length ? Math.max(...v) : null }
+  const minOf = (key) => { const v = rows.map(b => b[key]).filter(v => v != null && v > 0); return v.length ? Math.min(...v) : null }
+  const mx = { avg_price: minOf('avg_price'), avg_rating: maxOf('avg_rating'), total_reviews: maxOf('total_reviews') }
+
+  const sh = (field, label, align = 'right', tip) => (
+    <th className={`px-3 py-2.5 text-${align}`}>
+      <SortHead field={field} label={label} align={align} tip={tip} sort={sort} onSort={toggleSort} />
+    </th>
+  )
 
   return (
     <div className="flex flex-col min-h-0">
@@ -132,10 +165,10 @@ function CategoryView({ categories }) {
 
       <div className="flex items-center gap-3 text-xs font-mono text-white/50 mb-2 flex-shrink-0">
         {isAll
-          ? <span>Markaların <b className="text-white/80">tüm kategoriler toplamı</b> · yorum hacmine göre sıralı</span>
+          ? <span>Markaların <b className="text-white/80">tüm kategoriler toplamı</b></span>
           : <>
             <span>Yorum lideri: <b className="text-white/80">{cat?.leader}</b></span>
-            {cat?.roomart_rank && <span>· RoomArt sıra: <b className="text-gold">{cat.roomart_rank}/{cat.brands.length}</b></span>}
+            {cat?.roomart_rank && <span>· RoomArt sıra: <b className="text-gold-400">{cat.roomart_rank}/{cat.brands.length}</b></span>}
           </>}
       </div>
 
@@ -143,16 +176,18 @@ function CategoryView({ categories }) {
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10">
             <tr className="border-b border-white/10 text-[11px] font-mono text-white/40 text-left" style={{ background: 'var(--bg-card)' }}>
-              <th className="px-3 py-2.5 w-8" title="Yorum hacmine göre sıra">#</th>
-              <th className="px-3 py-2.5" title="Mağaza — tıkla, Trendyol mağazasına git">Marka</th>
+              <th className="px-3 py-2.5 w-8">#</th>
+              <th className="px-3 py-2.5">
+                <SortHead field="brand" label="Marka" align="left" tip="Marka adına göre sırala" sort={sort} onSort={toggleSort} />
+              </th>
               {isAll && <th className="px-3 py-2.5 text-right" title="Markanın ürün sattığı kategori sayısı (6 üzerinden)">Kategori</th>}
-              <th className="px-3 py-2.5 text-right" title={T.urun}>Ürün</th>
-              <th className="px-3 py-2.5 text-right" title={T.fiyat}>Ort. Fiyat</th>
-              <th className="px-3 py-2.5 text-right" title={T.puan}>Ort. Puan</th>
-              <th className="px-3 py-2.5 text-right" title={T.yorum}>Yorum</th>
-              <th className="px-3 py-2.5 text-right" title={T.yorumPct}>Yorum %</th>
-              {!isAll && <th className="px-3 py-2.5 text-right" title={T.hiz}>Hız</th>}
-              {!isAll && <th className="px-3 py-2.5 text-right" title={T.endeks}>Fiyat Endeksi</th>}
+              {sh('product_count', 'Ürün', 'right', T.urun)}
+              {sh('avg_price', 'Ort. Fiyat', 'right', T.fiyat + ' · En düşük altın.')}
+              {sh('avg_rating', 'Ort. Puan', 'right', T.puan + ' · En yüksek altın.')}
+              {sh('total_reviews', 'Yorum', 'right', T.yorum + ' · En yüksek altın.')}
+              {sh('review_share', 'Yorum %', 'right', T.yorumPct)}
+              {!isAll && sh('review_velocity', 'Hız', 'right', T.hiz)}
+              {!isAll && sh('price_index', 'Fiyat Endeksi', 'right', T.endeks)}
             </tr>
           </thead>
           <tbody>
@@ -162,9 +197,21 @@ function CategoryView({ categories }) {
                 <td className="px-3 py-2"><StoreLink brand={b.brand} url={b.store_url} isRoomart={b.is_roomart} /></td>
                 {isAll && <td className="px-3 py-2 text-right font-mono text-white/50">{b.cats}/6</td>}
                 <td className="px-3 py-2 text-right font-mono text-white/70">{b.product_count}</td>
-                <td className="px-3 py-2 text-right font-mono text-white">{b.avg_price != null ? formatCurrency(b.avg_price) : '—'}</td>
-                <td className="px-3 py-2 text-right font-mono">{b.avg_rating != null ? <span className={b.avg_rating === mx.avg_rating ? hi : 'text-gold-400'}>★ {b.avg_rating}</span> : '—'}</td>
-                <td className="px-3 py-2 text-right font-mono text-white/70">{b.total_reviews > 0 && b.total_reviews === mx.total_reviews ? <span className={hi}>{b.total_reviews}</span> : b.total_reviews}</td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {b.avg_price != null
+                    ? <span className={b.avg_price === mx.avg_price ? HI_CELL : 'text-white'}>{formatCurrency(b.avg_price)}</span>
+                    : '—'}
+                </td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {b.avg_rating != null
+                    ? <span className={b.avg_rating === mx.avg_rating ? HI_CELL : 'text-white/70'}>★ {b.avg_rating}</span>
+                    : '—'}
+                </td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {b.total_reviews > 0
+                    ? <span className={b.total_reviews === mx.total_reviews ? HI_CELL : 'text-white/70'}>{b.total_reviews}</span>
+                    : '—'}
+                </td>
                 <td className="px-3 py-2 text-right font-mono text-white/60">%{b.review_share}</td>
                 {!isAll && <td className="px-3 py-2 text-right font-mono">{b.review_velocity > 0 ? <span className="text-cyan-300">+{b.review_velocity}</span> : <span className="text-white/25">—</span>}</td>}
                 {!isAll && <td className="px-3 py-2 text-right font-mono">{b.price_index != null ? <span className={b.price_index > 1 ? 'text-rose-300' : 'text-emerald-300'}>{b.price_index}×</span> : '—'}</td>}
@@ -177,21 +224,19 @@ function CategoryView({ categories }) {
   )
 }
 
-// ── ÜRÜN GÖRÜNÜMÜ (her eşleşme seti ayrı çerçevede) ───────────────────────────
+// ── ÜRÜN GÖRÜNÜMÜ ──────────────────────────────────────────────────────────────
 const GRID = 'grid grid-cols-[minmax(0,1fr)_104px_88px_64px_76px_84px_120px] items-center'
 
-// Grup-seviyesi sıralama anahtarı: RoomArt ürününün değeri (4'lü grup yapısı KORUNUR,
-// rakip satırları kendi grubuyla birlikte taşınır). 'sim' = en yakın rakibin benzerliği.
 const bestSim = (m) => m.competitors.length ? Math.max(...m.competitors.map(c => c.score || 0)) : 0
 const sortVal = (m, f) => {
   switch (f) {
-    case 'name': return m.our_name || ''
-    case 'price': return m.our_price ?? -Infinity
-    case 'rating': return m.our_rating ?? -Infinity
+    case 'name':    return m.our_name || ''
+    case 'price':   return m.our_price ?? -Infinity
+    case 'rating':  return m.our_rating ?? -Infinity
     case 'reviews': return m.our_reviews ?? -Infinity
     case 'category': return m.category || ''
-    case 'sim': return bestSim(m)
-    default: return 0
+    case 'sim':     return bestSim(m)
+    default:        return 0
   }
 }
 const STR_FIELDS = new Set(['name', 'category'])
@@ -200,17 +245,16 @@ function ProductView({ matches, light }) {
   const [q, setQ] = useState('')
   const [sort, setSort] = useState({ field: null, dir: 'asc' })
   const [img, setImg] = useState({ show: false, x: 0, top: 0, src: null, name: '' })
+
   const showImg = (e, src, name) => {
     if (!src) return
     const row = e.currentTarget.closest('.cmp-prow')
     const r = (row || e.currentTarget).getBoundingClientRect()
-    // "Ürün/Rakip" kolonunun sağ kenarı: satır sağ − sabit kolonlar (536) − sağ padding (12)
     const x = row ? r.right - 548 : r.right
     setImg({ show: true, x, top: r.top, src, name })
   }
   const hideImg = () => setImg(s => ({ ...s, show: false }))
-  // Bir başlığa tıkla: aynı alan → yön değiştir; farklı alan → o alana geç (sim/benzerlik için
-  // ilk tık 'asc' = en kötü eşleşmeler üstte, tutarsızları hızlı bulmak için).
+
   const toggleSort = (field) => setSort(s =>
     s.field === field ? { field, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { field, dir: 'asc' })
 
@@ -234,20 +278,6 @@ function ProductView({ matches, light }) {
     return out
   }, [matches, q, sort])
 
-  // Sıralanabilir başlık hücresi (grid span). field=null → düz başlık (tıklanamaz).
-  const SortHead = ({ field, label, align = 'center', tip }) => {
-    const active = sort.field === field
-    const Icon = !active ? ChevronsUpDown : sort.dir === 'asc' ? ChevronUp : ChevronDown
-    const justify = align === 'left' ? 'justify-start' : 'justify-center'
-    if (!field) return <span className={`text-${align}`} title={tip}>{label}</span>
-    return (
-      <button type="button" onClick={() => toggleSort(field)} title={tip}
-        className={`flex items-center gap-1 ${justify} hover:text-gold transition-colors ${active ? 'text-gold' : ''}`}>
-        {label}<Icon size={11} className={active ? '' : 'text-white/25'} />
-      </button>
-    )
-  }
-
   return (
     <div className="flex flex-col min-h-0">
       <div className="flex items-center gap-2 mb-2 flex-shrink-0">
@@ -261,79 +291,103 @@ function ProductView({ matches, light }) {
         <span className="text-[11px] font-mono text-white/30 whitespace-nowrap">{filtered.length} ürün · en yakın 3 rakip</span>
       </div>
 
-      {/* başlık + kayan liste TEK scroll kutusunda → scrollbar ikisini de eşit kaydırır (hizalı) */}
       <div className="overflow-y-auto overflow-x-hidden" style={{ maxHeight: 'calc(100vh - 380px)' }}>
-        {/* sabit başlık (sticky) — kartlarla aynı 1px yatay kenar (border-x) → kolonlar birebir hizalı */}
         <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
-          <SortHead field="name" label="Ürün / Rakip" align="left" tip="RoomArt ürün adına göre sırala" />
-          <SortHead field="price" label="Fiyat" tip={T.urunFiyat} />
+          <SortHead field="name"     label="Ürün / Rakip" align="left"   tip="RoomArt ürün adına göre sırala"  sort={sort} onSort={toggleSort} />
+          <SortHead field="price"    label="Fiyat"        align="right"  tip={`${T.urunFiyat} ${T.fiyatMin}`} sort={sort} onSort={toggleSort} />
           <span className="text-center" title={T.delta}>Fiyat Farkı</span>
-          <SortHead field="rating" label="Puan" tip={T.puan} />
-          <SortHead field="reviews" label="Yorum" tip={T.yorum} />
-          <SortHead field="sim" label="Benzerlik" tip={T.simHead} />
-          <SortHead field="category" label="Kategori" tip="Kategoriye göre grupla/sırala" />
+          <SortHead field="rating"   label="Puan"         align="center" tip={`${T.puan} ${T.puanMax}`}       sort={sort} onSort={toggleSort} />
+          <SortHead field="reviews"  label="Yorum"        align="center" tip={T.yorum}                        sort={sort} onSort={toggleSort} />
+          <SortHead field="sim"      label="Benzerlik"    align="center" tip={T.simHead}                      sort={sort} onSort={toggleSort} />
+          <SortHead field="category" label="Kategori"     align="center" tip="Kategoriye göre grupla/sırala"  sort={sort} onSort={toggleSort} />
         </div>
 
         <div className="space-y-2 pt-2">
-        {filtered.map(m => {
-          const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280' }
-          const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
-          // Grup içi (RoomArt + rakipler) en yükseği vurgula
-          const gp = Math.max(m.our_price || 0, ...m.competitors.map(c => c.price || 0))
-          const gr = Math.max(m.our_rating || 0, ...m.competitors.map(c => c.rating || 0))
-          const gv = Math.max(m.our_reviews || 0, ...m.competitors.map(c => c.reviews || 0))
-          return (
-            <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
-              {/* bizim ürün */}
-              <div className={`cmp-prow ${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
-                <a href={m.our_url} target="_blank" rel="noreferrer"
-                  className="font-medium text-white hover:text-gold flex items-center gap-1 min-w-0 overflow-hidden"
-                  onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
-                  <span className="truncate">★ {m.our_name}</span><ExternalLink size={10} className="text-white/25 flex-shrink-0" />
-                </a>
-                <span className="text-right font-mono text-white">{m.our_price != null ? <span className={m.our_price === gp && gp > 0 ? HI_CELL : ''}>{formatCurrency(m.our_price)}</span> : '—'}</span>
-                <span className="text-right font-mono text-white/30">—</span>
-                <span className="text-right font-mono text-gold-400">{m.our_rating > 0 ? <span className={m.our_rating === gr ? HI_CELL : ''}>★ {m.our_rating}</span> : '—'}</span>
-                <span className="text-right font-mono text-white/70">{m.our_reviews > 0 && m.our_reviews === gv ? <span className={HI_CELL}>{m.our_reviews}</span> : m.our_reviews}</span>
-                <span className="text-right font-mono text-white/30">—</span>
-                <span className="text-left pl-2 truncate">
-                  <span className="text-[10px] font-mono text-white/40">{m.category}</span>
-                  <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono"
-                    style={{ background: `${cfg.color}15`, color: cfg.color }}>{m.bcg_class ? BCG_SHORT[m.bcg_class] : '—'}</span>
-                </span>
-              </div>
-              {/* rakipler */}
-              {m.competitors.map((c, i) => (
-                <div key={i} className={`cmp-prow ${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
-                  <a href={c.url} target="_blank" rel="noreferrer"
-                    className="flex items-center gap-1.5 hover:text-gold min-w-0 overflow-hidden pl-3"
-                    onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
-                    <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
-                    <span className="truncate">{c.name}</span>
-                    <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
+          {filtered.map(m => {
+            const cfgRaw = QUADRANT_META[m.bcg_class] || { color: '#6B7280' }
+            const cfg = { ...cfgRaw, color: tone(cfgRaw.color, light) }
+            // En düşük fiyat altın; en yüksek puan + yorum altın.
+            const allPrices = [m.our_price, ...m.competitors.map(c => c.price)].filter(p => p && p > 0)
+            const gp = allPrices.length ? Math.min(...allPrices) : -1
+            const gr = Math.max(m.our_rating || 0, ...m.competitors.map(c => c.rating || 0))
+            const gv = Math.max(m.our_reviews || 0, ...m.competitors.map(c => c.reviews || 0))
+            return (
+              <div key={m.our_id} className="rounded-lg border border-white/10 overflow-hidden">
+                {/* bizim ürün */}
+                <div className={`cmp-prow ${GRID} px-3 py-2 hover:bg-white/[0.03] transition-colors`} style={{ background: 'var(--gold)0d' }}>
+                  <a href={m.our_url} target="_blank" rel="noreferrer"
+                    className="font-medium text-white hover:text-gold flex items-center gap-1 min-w-0 overflow-hidden"
+                    onMouseEnter={e => showImg(e, m.our_image, m.our_name)} onMouseLeave={hideImg}>
+                    <span className="flex-1 min-w-0 truncate">★ {m.our_name}</span>
+                    <ExternalLink size={10} className="text-white/25 flex-shrink-0" />
                   </a>
-                  <span className="text-right font-mono text-white/80">{c.price != null ? <span className={c.price === gp && gp > 0 ? HI_CELL : ''}>{formatCurrency(c.price)}</span> : '—'}</span>
                   <span className="text-right font-mono">
-                    {c.price_delta_pct == null ? '—' : <span className={c.price_delta_pct < 0 ? 'text-rose-400' : c.price_delta_pct > 0 ? 'text-emerald-400' : 'text-white/40'}>{c.price_delta_pct > 0 ? '+' : ''}%{c.price_delta_pct}</span>}
+                    {m.our_price != null
+                      ? <span className={m.our_price === gp && gp > 0 ? HI_CELL : 'text-white'}>{formatCurrency(m.our_price)}</span>
+                      : '—'}
                   </span>
-                  <span className="text-right font-mono text-white/60">{c.rating > 0 ? <span className={c.rating === gr ? HI_CELL : ''}>{c.rating}★</span> : '—'}</span>
-                  <span className="text-right font-mono text-white/50">{c.reviews > 0 && c.reviews === gv ? <span className={HI_CELL}>{c.reviews}</span> : c.reviews}</span>
-                  <span className="text-right font-mono text-white/40" title={T.simCell}>{Math.round(c.score * 100)}%</span>
-                  <span className="text-left pl-2"></span>
+                  <span className="text-right font-mono text-white/30">—</span>
+                  <span className="text-right font-mono text-white/70">
+                    {m.our_rating > 0
+                      ? <span className={m.our_rating === gr ? HI_CELL : ''}>★ {m.our_rating}</span>
+                      : '—'}
+                  </span>
+                  <span className="text-right font-mono text-white/70">
+                    {m.our_reviews > 0
+                      ? <span className={m.our_reviews === gv ? HI_CELL : ''}>{m.our_reviews}</span>
+                      : m.our_reviews}
+                  </span>
+                  <span className="text-right font-mono text-white/30">—</span>
+                  <span className="text-left pl-2 truncate">
+                    <span className="text-[10px] font-mono text-white/40">{m.category}</span>
+                    <span className="ml-1 px-1.5 py-0.5 rounded-full text-[10px] font-mono"
+                      style={{ background: `${cfg.color}15`, color: cfg.color }}>{m.bcg_class ? BCG_SHORT[m.bcg_class] : '—'}</span>
+                  </span>
                 </div>
-              ))}
-            </div>
-          )
-        })}
+                {/* rakipler */}
+                {m.competitors.map((c, i) => (
+                  <div key={i} className={`cmp-prow ${GRID} px-3 py-1.5 text-white/70 hover:bg-white/[0.04] transition-colors border-t border-white/5 ${i % 2 ? 'bg-white/[0.015]' : ''}`}>
+                    <a href={c.url} target="_blank" rel="noreferrer"
+                      className="flex items-center gap-1.5 hover:text-gold min-w-0 overflow-hidden pl-3"
+                      onMouseEnter={e => showImg(e, c.image, c.name)} onMouseLeave={hideImg}>
+                      <span className="text-white/40 font-mono flex-shrink-0">{c.brand}</span>
+                      <span className="flex-1 min-w-0 truncate">{c.name}</span>
+                      <ExternalLink size={9} className="flex-shrink-0 text-white/20" />
+                    </a>
+                    <span className="text-right font-mono">
+                      {c.price != null
+                        ? <span className={c.price === gp && gp > 0 ? HI_CELL : 'text-white/80'}>{formatCurrency(c.price)}</span>
+                        : '—'}
+                    </span>
+                    <span className="text-right font-mono">
+                      {c.price_delta_pct == null ? '—'
+                        : <span className={c.price_delta_pct < 0 ? 'text-rose-400' : c.price_delta_pct > 0 ? 'text-emerald-400' : 'text-white/40'}>
+                            {c.price_delta_pct > 0 ? '+' : ''}%{c.price_delta_pct}
+                          </span>}
+                    </span>
+                    <span className="text-right font-mono text-white/60">
+                      {c.rating > 0
+                        ? <span className={c.rating === gr ? HI_CELL : ''}>{c.rating}★</span>
+                        : '—'}
+                    </span>
+                    <span className="text-right font-mono text-white/50">
+                      {c.reviews > 0
+                        ? <span className={c.reviews === gv ? HI_CELL : ''}>{c.reviews}</span>
+                        : c.reviews}
+                    </span>
+                    <span className="text-right font-mono text-white/40" title={T.simCell}>{Math.round(c.score * 100)}%</span>
+                    <span className="text-left pl-2"></span>
+                  </div>
+                ))}
+              </div>
+            )
+          })}
         </div>
       </div>
 
-      {/* Hover ürün görseli — portal (backdrop-filter kırpmasına karşı), satırın sağında */}
       {img.show && img.src && typeof document !== 'undefined' && createPortal((() => {
         const W = 230, H = 250
         const vh = window.innerHeight
-        // img.x = "Ürün/Rakip" kolonunun SAĞ sınırı → popup SOLA açılır, sağ kenarı sınırda biter
-        // (Fiyat/Puan/Yorum kolonlarını ÖRTMEZ; ad alanının üzerinde durur).
         const left = Math.max(8, img.x - W - 8)
         const top = Math.min(Math.max(8, img.top - 20), vh - H - 8)
         return (
@@ -344,37 +398,6 @@ function ProductView({ matches, light }) {
           </div>
         )
       })(), document.body)}
-    </div>
-  )
-}
-
-// ── REKABET UYARILARI (analyzer üretir; varsayılan kapalı, gürültü yapmasın) ──
-const SEV_DOT = { HIGH: 'bg-rose-400', MEDIUM: 'bg-amber-400', LOW: 'bg-white/40' }
-function CompetitiveAlerts({ alerts }) {
-  const [open, setOpen] = useState(false)
-  if (!alerts?.length) return null
-  const high = alerts.filter(a => a.severity === 'HIGH').length
-  return (
-    <div className="flex-shrink-0 mb-3">
-      <button type="button" onClick={() => setOpen(o => !o)}
-        className="flex items-center gap-2 text-[11px] font-mono text-white/55 hover:text-white/80 transition-colors">
-        <AlertTriangle size={12} className={high ? 'text-rose-400' : 'text-amber-300/70'} />
-        <span>{alerts.length} rakip uyarısı{high ? ` · ${high} yüksek` : ''}</span>
-        {open ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
-      </button>
-      {open && (
-        <ul className="mt-2 space-y-1.5 rounded-lg border border-white/10 p-2.5" style={{ background: 'var(--bg-card)' }}>
-          {alerts.map(a => (
-            <li key={a.id} className="flex items-start gap-2 text-[11px] leading-snug">
-              <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEV_DOT[a.severity] || SEV_DOT.LOW}`} />
-              <span className="min-w-0">
-                <span className="text-white/80 font-medium">{a.title}</span>
-                <span className="text-white/45"> — {a.message}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   )
 }
@@ -419,8 +442,6 @@ export default function CompetitionTab({ data }) {
           ))}
         </div>
       </div>
-
-      <CompetitiveAlerts alerts={data.alerts} />
 
       {view === 'kategori'
         ? <CategoryView categories={data.categories} />
