@@ -569,7 +569,10 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
     trends_list = []
     for cat in cat_map:
         tkey = TRENDS_BRIDGE.get(cat)
-        if tkey and tkey in trends_cats:
+        if tkey is None:
+            # TRENDS_BRIDGE'de eşlemesi olmayan kategoriler (ör. "Diğer") Trends tab'ına dahil edilmez.
+            continue
+        if tkey in trends_cats:
             td = trends_cats[tkey]
             haftalik = td.get("haftalik", [])
             trends_list.append({
@@ -579,17 +582,11 @@ def build_frontend_payload(scored, alerts, trends_cats, n_days):
                 # frontend recharts {value} objesi bekler (ham sayı değil)
                 "data_points": [{"week": i + 1, "value": v} for i, v in enumerate(haftalik)],
                 "peak_interest": td.get("maks", max(haftalik) if haftalik else 0),
+                "trend_label": td.get("trend", ""),
                 "fetched_at": datetime.now(timezone.utc).isoformat(),
                 "has_trends": True,
             })
-        else:
-            trends_list.append({
-                "category": cat, "slug": slugify(cat), "keyword": cat.lower(),
-                "trend_score": 50.0, "growth_rate": 0.0, "data_points": [],
-                "peak_interest": 0,
-                "fetched_at": datetime.now(timezone.utc).isoformat(),
-                "has_trends": False,
-            })
+        # else: TRENDS_BRIDGE'de anahtar var ama trends_sonuc'ta veri yok → atla
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),

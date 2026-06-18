@@ -114,6 +114,8 @@ function TrendCard({ trend, index, color, weekDates }) {
 }
 
 export function TrendGrid({ trends }) {
+  // data_points'i olmayan kategorileri filtrele (ör. Firestore'dan gelen eski "Diğer" stub'ları)
+  trends = (trends || []).filter(t => t.data_points?.length > 0)
   const weekDates = useMemo(() => weekLabels(12), [])
 
   if (!trends?.length) return (
@@ -152,6 +154,7 @@ export function TrendGrid({ trends }) {
 }
 
 export function TrendAreaChart({ trends }) {
+  trends = (trends || []).filter(t => t.data_points?.length > 0)
   const weekDates = useMemo(() => weekLabels(12), [])
 
   if (!trends?.length) return null
@@ -171,8 +174,9 @@ export function TrendAreaChart({ trends }) {
       <div className="flex items-start justify-between mb-4 gap-4">
         <div>
           <h2 className="font-display text-sm tracking-[0.15em] text-white">KATEGORI TREND KARŞILAŞTIRMA</h2>
-          <p className="text-[10px] font-mono text-white/30 mt-0.5">
-            Son 12 hafta · Google Trends normalize (0–100) · <span className="text-amber-300/60">Türkiye</span>
+          <p className="text-[10px] font-mono text-white/30 mt-0.5"
+            title="Google Trends 0–100: Her arama terimi kendi içinde normalize edilir. 100 = o terimin son 3 ayda ulaştığı en yüksek haftalık arama hacmi. Kategoriler birbiriyle değil, kendi geçmişiyle karşılaştırılır.">
+            Son 12 hafta · <span className="border-b border-dotted border-white/25 cursor-help">Google Trends normalize (0–100)</span> · <span className="text-amber-300/60">Türkiye</span>
           </p>
         </div>
         {/* Renkli legend özeti */}
