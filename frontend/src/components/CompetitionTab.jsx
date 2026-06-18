@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useCallback, forwardRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
@@ -172,8 +172,8 @@ function CategoryView({ categories }) {
           </>}
       </div>
 
-      <div className="overflow-y-auto overflow-x-hidden rounded-lg border border-white/5" style={{ maxHeight: 'calc(100vh - 400px)' }}>
-        <table className="w-full text-sm">
+      <div className="overflow-y-auto overflow-x-auto rounded-lg border border-white/5" style={{ maxHeight: 'calc(100vh - 400px)' }}>
+        <table className="w-full text-sm min-w-[640px]">
           <thead className="sticky top-0 z-10">
             <tr className="border-b border-white/10 text-[11px] font-mono text-white/40 text-left" style={{ background: 'var(--bg-card)' }}>
               <th className="px-3 py-2.5 w-8">#</th>
@@ -224,6 +224,19 @@ function CategoryView({ categories }) {
   )
 }
 
+// ── Hover görsel popup — DOM-direct, React state yok → re-render yok ─────────
+const HoverImgPopup = forwardRef(function HoverImgPopup(_, ref) {
+  if (typeof document === 'undefined') return null
+  return createPortal(
+    <div ref={ref} className="pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
+      style={{ display: 'none', position: 'fixed', zIndex: 100, width: 230, background: 'var(--bg-secondary)' }}>
+      <img alt="" className="w-full h-[190px] object-contain rounded bg-white/5" />
+      <div data-cap className="text-[10px] font-mono text-white/60 mt-1.5 line-clamp-2" />
+    </div>,
+    document.body
+  )
+})
+
 // ── ÜRÜN GÖRÜNÜMÜ ──────────────────────────────────────────────────────────────
 const GRID = 'grid grid-cols-[minmax(0,1fr)_104px_88px_64px_76px_84px_120px] items-center'
 
@@ -244,16 +257,25 @@ const STR_FIELDS = new Set(['name', 'category'])
 function ProductView({ matches, light }) {
   const [q, setQ] = useState('')
   const [sort, setSort] = useState({ field: null, dir: 'asc' })
-  const [img, setImg] = useState({ show: false, x: 0, top: 0, src: null, name: '' })
+  const popupRef = useRef(null)
 
-  const showImg = (e, src, name) => {
-    if (!src) return
+  // DOM-direct: hover → no React state change → no list re-render (407 rows × 4 = ~1600 elements)
+  const showImg = useCallback((e, src, name) => {
+    const el = popupRef.current
+    if (!el || !src) return
     const row = e.currentTarget.closest('.cmp-prow')
     const r = (row || e.currentTarget).getBoundingClientRect()
     const x = row ? r.right - 548 : r.right
-    setImg({ show: true, x, top: r.top, src, name })
-  }
-  const hideImg = () => setImg(s => ({ ...s, show: false }))
+    const W = 230, H = 250, vh = window.innerHeight
+    el.style.left = `${Math.max(8, x - W - 8)}px`
+    el.style.top  = `${Math.min(Math.max(8, r.top - 20), vh - H - 8)}px`
+    el.style.display = 'block'
+    const img = el.querySelector('img')
+    if (img && img.getAttribute('data-src') !== src) { img.src = src; img.setAttribute('data-src', src) }
+    const cap = el.querySelector('[data-cap]')
+    if (cap) cap.textContent = name
+  }, [])
+  const hideImg = useCallback(() => { if (popupRef.current) popupRef.current.style.display = 'none' }, [])
 
   const toggleSort = (field) => setSort(s =>
     s.field === field ? { field, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { field, dir: 'asc' })
@@ -279,7 +301,9 @@ function ProductView({ matches, light }) {
   }, [matches, q, sort])
 
   return (
-    <div className="flex flex-col min-h-0">
+    <>
+      <HoverImgPopup ref={popupRef} />
+      <div className="flex flex-col min-h-0">
       <div className="flex items-center gap-2 mb-2 flex-shrink-0">
         <div className="relative max-w-md flex-1">
           <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-white/25" />
@@ -291,7 +315,9 @@ function ProductView({ matches, light }) {
         <span className="text-[11px] font-mono text-white/30 whitespace-nowrap">{filtered.length} ürün · en yakın 3 rakip</span>
       </div>
 
-      <div className="overflow-y-auto overflow-x-hidden" style={{ maxHeight: 'calc(100vh - 380px)' }}>
+      {/* overflow-x-auto → mobilde yatay kaydırılır; min-w → kolon genişlikleri korunur */}
+      <div className="overflow-y-auto overflow-x-auto" style={{ maxHeight: 'calc(100vh - 380px)' }}>
+        <div className="min-w-[640px]">
         <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
           <SortHead field="name"     label="Ürün / Rakip" align="left"   tip="RoomArt ürün adına göre sırala"  sort={sort} onSort={toggleSort} />
           <SortHead field="price"    label="Fiyat"        align="right"  tip={`${T.urunFiyat} ${T.fiyatMin}`} sort={sort} onSort={toggleSort} />
@@ -383,22 +409,10 @@ function ProductView({ matches, light }) {
             )
           })}
         </div>
+        </div>{/* min-w */}
       </div>
-
-      {img.show && img.src && typeof document !== 'undefined' && createPortal((() => {
-        const W = 230, H = 250
-        const vh = window.innerHeight
-        const left = Math.max(8, img.x - W - 8)
-        const top = Math.min(Math.max(8, img.top - 20), vh - H - 8)
-        return (
-          <div className="fixed z-[100] pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
-            style={{ background: 'var(--bg-secondary)', left, top, width: W }}>
-            <img src={img.src} alt="" className="w-full h-[190px] object-contain rounded bg-white/5" loading="lazy" />
-            <div className="text-[10px] font-mono text-white/60 mt-1.5 line-clamp-2">{img.name}</div>
-          </div>
-        )
-      })(), document.body)}
     </div>
+    </>
   )
 }
 

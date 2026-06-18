@@ -1,0 +1,18 @@
+rules_version = '2';
+// RoomArt BCG Intelligence — Firestore güvenlik kuralları
+// Dashboard verileri yalnız kimliği doğrulanmış kullanıcılar okuyabilir.
+// Yazım: backend Admin SDK kullanır (kuralları atlar) → write: false yeterli.
+// Deploy: firebase deploy --only firestore:rules
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // BCG analiz verileri (latest, competitive_latest, tarihli dokümanlar)
+    match /roomart-bcg-dev/{document=**} {
+      allow read:  if request.auth != null;
+      allow write: if false;   // Admin SDK (CI) kuralları bypass eder
+    }
+    // Diğer her şeyi kapat
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

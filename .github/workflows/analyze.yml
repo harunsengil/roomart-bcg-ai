@@ -77,6 +77,10 @@ jobs:
           rm -f frontend/public/data/image_hashes.json
           rm -f frontend/public/data/image_embeddings.json
           rm -f frontend/public/data/competitor_snapshots.json
+          # GÜVENLİK GARANTI: satış verisi asla public olmayacak
+          if [ -f frontend/public/data/trendyol_sales.json ]; then
+            echo "CRITICAL: satış verisi public/data'ya sızdı!" && exit 1
+          fi
 
       - name: Commit analysis results
         id: commit

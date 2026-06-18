@@ -230,3 +230,43 @@ body {
 /* Sekme çubuğu mobilde yatay kaydırılabilir; scrollbar gizli */
 .tab-bar { scrollbar-width: none; }
 .tab-bar::-webkit-scrollbar { display: none; }
+
+/* ═══════════════════════════════════════════
+   LIGHT MODE — eksik arbitrary bg değerleri (Competition tab satır renkleri)
+═══════════════════════════════════════════ */
+.light .bg-white\/\[0\.015\] { background: rgba(15,23,42,0.02) !important; }
+.light .bg-white\/\[0\.02\]  { background: rgba(15,23,42,0.02) !important; }
+.light .bg-white\/\[0\.03\]  { background: rgba(15,23,42,0.03) !important; }
+.light .bg-white\/\[0\.04\]  { background: rgba(15,23,42,0.04) !important; }
+.light .hover\:bg-white\/\[0\.03\]:hover { background: rgba(15,23,42,0.04) !important; }
+.light .hover\:bg-white\/\[0\.04\]:hover { background: rgba(15,23,42,0.05) !important; }
+/* bg-black kullanımları (Header tooltip vb.) */
+.light .bg-black\/80  { background: rgba(255,255,255,0.96) !important; }
+.light .bg-black\/70  { background: rgba(255,255,255,0.94) !important; }
+.light .bg-black\/90  { background: rgba(255,255,255,0.98) !important; }
+/* border-white arbitrary */
+.light .border-white\/8  { border-color: rgba(0,0,0,0.08) !important; }
+.light .border-white\/15 { border-color: rgba(0,0,0,0.15) !important; }
+.light .border-white\/20 { border-color: rgba(0,0,0,0.18) !important; }
+/* zebra-row light mode */
+.light .zebra-row:nth-child(even) { background: rgba(15,23,42,0.025); }
+/* Cyan / emerald / rose text renkleri light modda okunabilir */
+.light .text-cyan-300   { color: #0284c7 !important; }
+.light .text-emerald-300 { color: #059669 !important; }
+.light .text-rose-300   { color: #dc2626 !important; }
+.light .text-emerald-400 { color: #047857 !important; }
+.light .text-rose-400   { color: #b91c1c !important; }
+.light .text-red-400    { color: #b91c1c !important; }
+.light .text-amber-200  { color: #92400e !important; }
+
+/* ═══════════════════════════════════════════
+   MOBİL — yatay kaydırma yardımcıları
+═══════════════════════════════════════════ */
+/* ProductTable ve CompetitionTab'ın scroll container'ları
+   için scrollbar stilini gizle (dokunmatik ekranlarda zaten swipe çalışır) */
+.overflow-x-auto { -webkit-overflow-scrolling: touch; }
+@media (max-width: 767px) {
+  /* Alerts sekmesinde radar mobilde gizli — tek kolon alert yeterli */
+  .alerts-radar-col { display: none !important; }
+}
+.tab-bar::-webkit-scrollbar { display: none; }

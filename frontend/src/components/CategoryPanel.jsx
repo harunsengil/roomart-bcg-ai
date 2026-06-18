@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, TrendingUp, TrendingDown, Star, DollarSign, ExternalLink, X } from 'lucide-react'
 import { QUADRANT_META, ACTION_META, formatNumber, formatScore, formatCurrency, tone } from '../utils/helpers'
@@ -11,13 +13,42 @@ function ProductDetail({ product, onClose }) {
   const qm = { ...qmB, color: tone(qmB.color, light) }
   const am0 = ACTION_META[p.recommendation?.action] || {}
   const am = { ...am0, color: tone(am0.color, light) }
+
+  // Ürün adı üzerine gelince görsel popup (portal, DOM-direct → sıfır re-render)
+  const imgPopupRef = useRef(null)
+  const showProductImg = (e) => {
+    const el = imgPopupRef.current
+    if (!el || !p.image) return
+    const r = e.currentTarget.getBoundingClientRect()
+    const W = 220, H = 235, vh = window.innerHeight
+    el.style.left  = `${Math.max(8, r.left - W - 16)}px`
+    el.style.top   = `${Math.min(Math.max(8, r.top - 20), vh - H - 8)}px`
+    el.style.display = 'block'
+  }
+  const hideProductImg = () => { if (imgPopupRef.current) imgPopupRef.current.style.display = 'none' }
+
   return (
     <div className="relative z-20 flex-1 overflow-y-auto p-4 space-y-4">
+      {/* Görsel hover popup portal — her zaman mount, display:none */}
+      {p.image && typeof document !== 'undefined' && createPortal(
+        <div ref={imgPopupRef}
+          className="pointer-events-none rounded-lg border border-white/15 p-2 shadow-2xl backdrop-blur-xl"
+          style={{ display: 'none', position: 'fixed', zIndex: 200, width: 220, background: 'var(--bg-secondary)' }}>
+          <img src={p.image} alt={p.name}
+            className="w-full h-[155px] object-contain rounded bg-white/5" loading="lazy" />
+          <div className="text-[9px] font-mono text-white/50 mt-1.5 line-clamp-2">{p.name}</div>
+        </div>,
+        document.body
+      )}
       <div className="rounded-xl p-4" style={{ background: qm.bg, border: `1px solid ${qm.border}` }}>
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="min-w-0">
             <p className="text-[10px] font-mono tracking-widest" style={{ color: qm.color + '80' }}>ÜRÜN · {p.category}</p>
-            <h3 className="font-body text-base text-white mt-0.5 leading-snug">{p.name}</h3>
+            <h3 className="font-body text-base text-white mt-0.5 leading-snug"
+              onMouseEnter={showProductImg} onMouseLeave={hideProductImg}
+              title={p.image ? 'Üzerine gel → görseli gör' : ''}>
+              {p.name}
+            </h3>
           </div>
           <button type="button" onClick={onClose} className="flex-shrink-0 text-white/30 hover:text-white/70" title="Kapat"><X size={16} /></button>
         </div>
