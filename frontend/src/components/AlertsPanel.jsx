@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, Zap, Info, TrendingUp, Clock, ChevronRight, ChevronUp, ChevronDown, Swords } from 'lucide-react'
-import { ACTION_META, tone } from '../utils/helpers'
+import { ACTION_META, QUADRANT_META, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
 const ALERT_ICONS = { RISK: AlertTriangle, OPPORTUNITY: TrendingUp, QUADRANT_CHANGE: Zap, INFO: Info, SUCCESS: Info }
@@ -195,6 +195,7 @@ export function RecommendationsPanel({ categories, onGoToCategory }) {
         {sorted.map((cat, i) => {
           const am0 = ACTION_META[cat.recommendation?.action] || {}
           const am  = { ...am0, color: tone(am0.color, light) }
+          const qm  = QUADRANT_META[cat.bcg?.quadrant] || {}
           const rec = cat.recommendation || {}
           const clickable = !!onGoToCategory
           return (
@@ -202,8 +203,8 @@ export function RecommendationsPanel({ categories, onGoToCategory }) {
               onClick={() => onGoToCategory?.(cat)}
               className={`p-3 rounded-xl border border-white/5 bg-white/[0.02] transition-all ${clickable ? 'cursor-pointer hover:border-gold/25 hover:bg-white/[0.04]' : 'cursor-default'}`}>
               <div className="flex items-start gap-3">
-                <div className="text-lg w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: am.bg }}>
-                  {cat.bcg?.emoji || '📊'}
+                <div className="text-lg w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: qm.bg || am.bg }}>
+                  {qm.emoji || '📊'}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
