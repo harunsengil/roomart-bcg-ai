@@ -63,7 +63,8 @@ EMB_CACHE_FILE = DATA / "image_embeddings.json"
 TOP_PER_CATEGORY = 60     # kategori başına en çok yorumlu N rakip ürün
 MATCHES_PER_PRODUCT = 3   # her ürün için en yakın N rakip
 PRICE_BAND = (0.5, 2.0)   # fiyat-bandı kapısı
-MIN_MATCH_SCORE = 0.35    # minimum eşleşme skoru
+MIN_MATCH_SCORE = 0.70    # minimum eşleşme skoru (0.70 = en zayıf ~%20 elenir, tutarlılık ↑;
+                          # not: skorlar ~0.86 tavanlı → 0.80+ tabloyu boşaltır, 0.70 dengeli)
 MIN_CLIP_RESCUE = 0.84    # "Diğer" kurtarma — kategori centroid'e CLIP benzerlik eşiği
 
 # Skor ağırlıkları (CLIP varsa / yoksa)

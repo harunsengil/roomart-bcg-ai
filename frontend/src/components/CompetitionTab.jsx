@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { createPortal } from 'react-dom'
-import { Swords, Search, ExternalLink, X } from 'lucide-react'
+import { Swords, Search, ExternalLink, X, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-react'
 import { QUADRANT_META, formatCurrency, tone } from '../utils/helpers'
 import { useIsLight } from '../hooks/useTheme'
 
@@ -160,8 +160,25 @@ function CategoryView({ categories }) {
 // ── ÜRÜN GÖRÜNÜMÜ (her eşleşme seti ayrı çerçevede) ───────────────────────────
 const GRID = 'grid grid-cols-[minmax(0,1fr)_104px_88px_64px_76px_84px_120px] items-center'
 
+// Grup-seviyesi sıralama anahtarı: RoomArt ürününün değeri (4'lü grup yapısı KORUNUR,
+// rakip satırları kendi grubuyla birlikte taşınır). 'sim' = en yakın rakibin benzerliği.
+const bestSim = (m) => m.competitors.length ? Math.max(...m.competitors.map(c => c.score || 0)) : 0
+const sortVal = (m, f) => {
+  switch (f) {
+    case 'name': return m.our_name || ''
+    case 'price': return m.our_price ?? -Infinity
+    case 'rating': return m.our_rating ?? -Infinity
+    case 'reviews': return m.our_reviews ?? -Infinity
+    case 'category': return m.category || ''
+    case 'sim': return bestSim(m)
+    default: return 0
+  }
+}
+const STR_FIELDS = new Set(['name', 'category'])
+
 function ProductView({ matches, light }) {
   const [q, setQ] = useState('')
+  const [sort, setSort] = useState({ field: null, dir: 'asc' })
   const [img, setImg] = useState({ show: false, x: 0, top: 0, src: null, name: '' })
   const showImg = (e, src, name) => {
     if (!src) return
@@ -172,16 +189,44 @@ function ProductView({ matches, light }) {
     setImg({ show: true, x, top: r.top, src, name })
   }
   const hideImg = () => setImg(s => ({ ...s, show: false }))
+  // Bir başlığa tıkla: aynı alan → yön değiştir; farklı alan → o alana geç (sim/benzerlik için
+  // ilk tık 'asc' = en kötü eşleşmeler üstte, tutarsızları hızlı bulmak için).
+  const toggleSort = (field) => setSort(s =>
+    s.field === field ? { field, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { field, dir: 'asc' })
+
   const filtered = useMemo(() => {
     const query = q.trim()
     const op = query ? priceOp(query) : null
-    return matches.filter(m => {
+    const out = matches.filter(m => {
       if (op) return op(m.our_price)
       if (!query) return true
       const hay = [m.our_name, m.category, ...m.competitors.flatMap(c => [c.brand, c.name])]
       return hay.some(h => cellMatch(h, query)) || cellMatch(formatCurrency(m.our_price), query)
     })
-  }, [matches, q])
+    if (sort.field) {
+      const isStr = STR_FIELDS.has(sort.field)
+      out.sort((a, b) => {
+        const va = sortVal(a, sort.field), vb = sortVal(b, sort.field)
+        const r = isStr ? String(va).localeCompare(String(vb), 'tr') : va - vb
+        return sort.dir === 'asc' ? r : -r
+      })
+    }
+    return out
+  }, [matches, q, sort])
+
+  // Sıralanabilir başlık hücresi (grid span). field=null → düz başlık (tıklanamaz).
+  const SortHead = ({ field, label, align = 'center', tip }) => {
+    const active = sort.field === field
+    const Icon = !active ? ChevronsUpDown : sort.dir === 'asc' ? ChevronUp : ChevronDown
+    const justify = align === 'left' ? 'justify-start' : 'justify-center'
+    if (!field) return <span className={`text-${align}`} title={tip}>{label}</span>
+    return (
+      <button type="button" onClick={() => toggleSort(field)} title={tip}
+        className={`flex items-center gap-1 ${justify} hover:text-gold transition-colors ${active ? 'text-gold' : ''}`}>
+        {label}<Icon size={11} className={active ? '' : 'text-white/25'} />
+      </button>
+    )
+  }
 
   return (
     <div className="flex flex-col min-h-0">
@@ -200,13 +245,13 @@ function ProductView({ matches, light }) {
       <div className="overflow-y-auto overflow-x-hidden" style={{ maxHeight: 'calc(100vh - 380px)' }}>
         {/* sabit başlık (sticky) — kartlarla aynı 1px yatay kenar (border-x) → kolonlar birebir hizalı */}
         <div className={`${GRID} sticky top-0 z-10 px-3 py-2 text-[11px] font-mono text-white/40 border-x border-transparent border-b border-white/10`} style={{ background: 'var(--bg-card)' }}>
-          <span>Ürün / Rakip</span>
-          <span className="text-center" title={T.fiyat}>Fiyat</span>
+          <SortHead field="name" label="Ürün / Rakip" align="left" tip="RoomArt ürün adına göre sırala" />
+          <SortHead field="price" label="Fiyat" tip={T.fiyat} />
           <span className="text-center" title={T.delta}>Fiyat Farkı</span>
-          <span className="text-center" title={T.puan}>Puan</span>
-          <span className="text-center" title={T.yorum}>Yorum</span>
-          <span className="text-center" title={T.sim}>Benzerlik</span>
-          <span className="text-center">Kategori</span>
+          <SortHead field="rating" label="Puan" tip={T.puan} />
+          <SortHead field="reviews" label="Yorum" tip={T.yorum} />
+          <SortHead field="sim" label="Benzerlik" tip={`${T.sim} — sıralamada en yakın rakibin skoru baz alınır (artan=en kötü üstte).`} />
+          <SortHead field="category" label="Kategori" tip="Kategoriye göre grupla/sırala" />
         </div>
 
         <div className="space-y-2 pt-2">
