@@ -73,11 +73,11 @@ EXCLUDE_TOKEN = "__EXCLUDE__"
 # ve kategori MEDYAN eşik hesabından HARİÇ tutulur (suni nötr-50 medyanı bozmasın).
 TRENDS_BRIDGE = {
     "Çamaşır Makinesi Dolabı": "çamaşır makinesi dolabı",
-    "Banyo Dolabı": "lavabolu banyo dolabı",
-    "Mutfak Adası": None,
-    "Kitaplıklı Çalışma Masası": None,
-    "Sehpa": None,
-    "Kahve Köşesi": None,
+    "Banyo Dolabı":             "banyo dolabı",           # fix: lavabolu banyo dolabı avg=3.6 yanlıştı
+    "Mutfak Adası":             "mutfak adası",
+    "Kitaplıklı Çalışma Masası": "çalışma masası",
+    "Sehpa":                    "sehpa",
+    "Kahve Köşesi":             "kiler dolabı",           # kiler/depolama → en yakın proxy
 }
 
 

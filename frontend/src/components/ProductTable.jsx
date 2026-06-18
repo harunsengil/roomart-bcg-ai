@@ -247,7 +247,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
       style={{ borderColor: active ? 'var(--gold)' : 'var(--border-subtle)', color: active ? 'var(--gold)' : 'var(--text-secondary)' }}>{children}</button>
   )
 
-  const HeadCell = ({ field, label }) => {
+  const HeadCell = ({ field, label, tooltip }) => {
     const sel = colFilters[field] || []
     const cs = (colSearch[field] || '').toLowerCase()
     const values = openCol === field ? distinctValues(field).filter(v => !cs || v.toLowerCase().includes(cs) || norm(v).includes(norm(cs))) : []
@@ -256,7 +256,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
         {/* Üst satır: yalnız etiket (tıkla = sırala). Sıralama oku burada DEĞİL → etiket
             satırı asla sarmaz/kaymaz. Alt satır: filtre + sıralama oku (her zaman solda). */}
         <div className="flex flex-col gap-1.5">
-          <span className="cursor-pointer hover:text-white/70 break-words" onClick={() => toggleSort(field)} title="Sırala">
+          <span className="cursor-pointer hover:text-white/70 break-words" onClick={() => toggleSort(field)} title={tooltip || 'Sırala'}>
             {label}
           </span>
           <div className="flex items-center gap-1">
@@ -384,7 +384,8 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="composite_score" label="Score" />
               <HeadCell field="rating" label="Puan" />
               <HeadCell field="review_count" label="Yorum" />
-              <HeadCell field="net_retention_pct" label="Net Tah. %" />
+              <HeadCell field="net_retention_pct" label="Net Tah. %"
+                tooltip="Net Tahsilat %: Trendyol komisyonu, promosyon indirimi ve kampanya maliyeti düşüldükten sonra RoomArt'a kalan tutarın satış fiyatına oranı. Örn. %85 → ₺100 satıştan ₺85 kalıyor. Ürün maliyeti (COGS) dahil değil." />
               <HeadCell field="risk_rate" label="İade %" />
               <HeadCell field="sales_per_day" label="Sat. Hızı" />
               <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top" title="Son 13 haftalık net satış (üzerine gel → büyük grafik)">Satış 3a</th>

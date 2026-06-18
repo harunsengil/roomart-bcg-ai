@@ -194,12 +194,14 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             <line x1="5%" y1="95%" x2="5%" y2="5%" stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
           </svg>
 
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-white/30 tracking-widest uppercase pointer-events-none">
-            MARKET SHARE SCORE →
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+            <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">MARKET SHARE SCORE →</div>
+            <div className="text-[8px] font-mono text-white/18 tracking-wider">Pazar Payı Skoru</div>
           </div>
-          <div className="absolute left-0 top-1/2 text-[9px] font-mono text-white/30 tracking-widest uppercase pointer-events-none"
+          <div className="absolute left-0 top-1/2 text-center pointer-events-none"
             style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-2%' }}>
-            ↑ MARKET GROWTH SCORE
+            <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">↑ MARKET GROWTH SCORE</div>
+            <div className="text-[8px] font-mono text-white/18 tracking-wider">Büyüme Skoru</div>
           </div>
 
           {zoom ? (

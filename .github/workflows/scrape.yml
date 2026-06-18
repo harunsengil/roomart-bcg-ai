@@ -33,6 +33,12 @@ jobs:
           PYTHONUNBUFFERED: 1
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
+      - name: Fetch Google Trends (6 kategori, TR)
+        run: python3 backend/trends_fetch.py
+        env:
+          PYTHONUNBUFFERED: 1
+        continue-on-error: true   # Trends API geçici hata verirse scrape'i durdurmasın
+
       - name: Commit updated data
         id: commit
         run: |
