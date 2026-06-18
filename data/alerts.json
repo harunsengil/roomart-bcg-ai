@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-06-18T10:11:51.223087+00:00",
-    "total_alerts": 8
+    "last_updated": "2026-06-18T20:33:40.438136+00:00",
+    "total_alerts": 9
   },
   "alerts": [
     {
@@ -11,70 +11,79 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (100/100).",
       "product_id": "1143914128",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Banos Banyo Cd11 Çamaşır-kurutma Makinesi Dolabı 3 R büyüme momentumu yüksek (71/100).",
-      "product_id": "341261445",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "title": "Kahve Köşesi — yükselen fırsat",
+      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (100/100).",
+      "product_id": "1143914048",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-3",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Mutfak Adası — lider STAR",
-      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 100.",
-      "product_id": "877650214",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "type": "OPPORTUNITY",
+      "severity": "HIGH",
+      "title": "Kahve Köşesi — yükselen fırsat",
+      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (82/100).",
+      "product_id": "1143914080",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "ROOMART Napoli Çok Amaçlı Dolap Kiler Dolabı Kitaplık Mutfak pay 100, büyüme 100.",
-      "product_id": "873329385",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "title": "Mutfak Adası — lider STAR",
+      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 74.",
+      "product_id": "877650214",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-5",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
-      "product_id": "971265574",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 65.",
+      "product_id": "962085213",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-6",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Sehpa — yüksek iade riski",
-      "message": "Helsinki Orta Sehpa Suntalam 110 cm iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "866321554",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "title": "Banyo Dolabı — yüksek iade riski",
+      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
+      "product_id": "971265574",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
-      "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
-      "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
-      "product_id": "855574483",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "severity": "HIGH",
+      "title": "Banyo Dolabı — yüksek iade riski",
+      "message": "Banyo Dolabı Mat Mdf 150 X 35 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "828218377",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
       "severity": "INFO",
+      "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
+      "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
+      "product_id": "855574483",
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
+    },
+    {
+      "id": "alert-9",
+      "type": "RISK",
+      "severity": "INFO",
       "title": "Mutfak Adası — kârsız hacim uyarısı",
       "message": "Dublin Bar Masası Açık Raflı Yüksek Mutfak Yemek Masası , Mu hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "876821483",
-      "timestamp": "2026-06-18T10:11:51.199413+00:00"
+      "timestamp": "2026-06-18T20:33:40.414122+00:00"
     }
   ]
 }
