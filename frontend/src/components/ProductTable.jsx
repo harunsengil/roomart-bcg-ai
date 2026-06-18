@@ -119,8 +119,8 @@ function BigChart({ data, name }) {
   )
 }
 
-export default function ProductTable({ products }) {
-  const [search, setSearch] = useState('')
+export default function ProductTable({ products, initialSearch = '' }) {
+  const [search, setSearch] = useState(initialSearch)
   const [bcgFilter, setBcgFilter] = useState('ALL')
   const [actionFilter, setActionFilter] = useState('ALL')
   const [colFilters, setColFilters] = useState({})   // { field: [seçili değerler] }

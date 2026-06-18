@@ -71,6 +71,19 @@ function Dashboard({ onLogout, userEmail }) {
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [loadingTimeout, setLoadingTimeout] = useState(false)
+  const [productSearch, setProductSearch] = useState('')                 // Alerts → Products navigasyonu
+
+  // Uyarıdan ürün sayfasına git: product_id ile ProductTable'ı filtrele
+  const goToProduct = (productId) => {
+    setProductSearch(String(productId || ''))
+    setActiveTab('products')
+  }
+  // AI Strategy → Overview: kategori seçili olarak BCG'ye git
+  const goToCategory = (cat) => {
+    setSelectedCategory(cat)
+    setSelectedProduct(null)
+    setActiveTab('overview')
+  }
 
   // 15 saniye sonra hâlâ loading'deyse timeout ekranı göster
   useEffect(() => {
@@ -196,7 +209,7 @@ function Dashboard({ onLogout, userEmail }) {
 
             {/* ── PRODUCTS ── */}
             {activeTab === 'products' && (
-              <ProductTable products={data?.products ?? []} />
+              <ProductTable key={productSearch} products={data?.products ?? []} initialSearch={productSearch} />
             )}
 
             {/* ── REKABET ── */}
@@ -212,17 +225,21 @@ function Dashboard({ onLogout, userEmail }) {
               </>
             )}
 
-            {/* ── ALERTS ── */}
+            {/* ── ALERTS ── Sol kaydırılır, sağ (radar) sabit */}
             {activeTab === 'alerts' && (
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-                <div style={{ minHeight: 600 }}>
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-stretch"
+                   style={{ height: 'calc(100vh - 180px)' }}>
+                {/* Sol: iç scroll, büyüdükçe aşağı kayar */}
+                <div className="min-h-0 h-full">
                   <AlertsPanel
                     alerts={data?.alerts}
                     competitive={data?.competitive}
                     onNavigateToCompetition={() => setActiveTab('competition')}
+                    onGoToProduct={goToProduct}
                   />
                 </div>
-                <div>
+                {/* Sağ: radar sabit, scroll etkilemez */}
+                <div className="min-h-0 h-full hidden xl:block">
                   <ScoreRadarChart categories={data?.categories} theme={theme} />
                 </div>
               </div>
@@ -232,7 +249,10 @@ function Dashboard({ onLogout, userEmail }) {
             {activeTab === 'strategy' && (
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                 <div style={{ minHeight: 600 }}>
-                  <RecommendationsPanel categories={data?.categories} />
+                  <RecommendationsPanel
+                    categories={data?.categories}
+                    onGoToCategory={goToCategory}
+                  />
                 </div>
                 <div>
                   <CategoryPanel

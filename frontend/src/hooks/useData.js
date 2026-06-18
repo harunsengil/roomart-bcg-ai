@@ -4,6 +4,21 @@ import { db } from '../firebase'
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
 
+// trends_sonuc.json → TrendCharts の beklediği format
+function transformTrendsSonuc(sonuc) {
+  if (!sonuc?.kategoriler) return []
+  return Object.entries(sonuc.kategoriler).map(([keyword, data]) => ({
+    slug: keyword.replace(/\s+/g, '-').replace(/[üÜ]/g, 'u').replace(/[çÇ]/g, 'c').replace(/[şŞ]/g, 's').replace(/[ğĞ]/g, 'g').replace(/[ıİ]/g, 'i').replace(/[öÖ]/g, 'o'),
+    category: keyword.charAt(0).toUpperCase() + keyword.slice(1),
+    growth_rate: data.buyume_yuzde ?? 0,
+    trend_score: data.ortalama ?? 50,
+    peak_interest: data.maks ?? 0,
+    trend_label: data.trend || '',
+    data_points: (data.haftalik || []).map((value, i) => ({ week: i, value: value ?? 0 })),
+    synthetic: false,
+  }))
+}
+
 async function fetchJSON(path) {
   const url = (BASE_URL + path).replace(/\/\//g, '/')
   const response = await fetch(url + '?t=' + Date.now())
@@ -85,11 +100,11 @@ async function loadFromFirestore() {
 }
 
 async function loadFromJSON() {
-  const [bcgScores, trends, alertsData, competitive] = await Promise.all([
+  const [bcgScores, trendsSonuc, alertsData, competitive] = await Promise.all([
     fetchJSON('data/bcg_scores.json'),
-    fetchJSON('data/trends.json'),
+    fetchJSON('data/trends_sonuc.json').catch(() => null),
     fetchJSON('data/alerts.json'),
-    fetchJSON('data/competitive.json').catch(() => null),   // yoksa rekabet sekmesi boş-durum
+    fetchJSON('data/competitive.json').catch(() => null),
   ])
   return {
     kpis: bcgScores.kpis,
@@ -98,7 +113,7 @@ async function loadFromJSON() {
     ),
     products: bcgScores.products ?? [],
     quadrantDistribution: bcgScores.quadrant_distribution,
-    trends: trends.trends,
+    trends: transformTrendsSonuc(trendsSonuc),
     alerts: alertsData.alerts,
     competitive,
     generatedAt: bcgScores.generated_at,
@@ -124,6 +139,13 @@ export function useData(refreshInterval = 6 * 60 * 60 * 1000) {
         console.warn('Firestore yüklenemedi, JSON fallback:', fsErr.message)
         result = await loadFromJSON()
         setSource('json')
+      }
+      // Firestore path'ta trends gelmemişse JSON'dan yükle
+      if (!result.trends?.length) {
+        try {
+          const ts = await fetchJSON('data/trends_sonuc.json')
+          result = { ...result, trends: transformTrendsSonuc(ts) }
+        } catch { /* veri yoksa Trends sekmesi boş-durum gösterir */ }
       }
       setData(result)
       setLastUpdated(new Date())
