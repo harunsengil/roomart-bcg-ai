@@ -14,13 +14,14 @@ import LoginScreen from './components/LoginScreen'
 import { useTheme } from './hooks/useTheme'
 import { useAuth } from './hooks/useAuth'
 
+// shortLabel: mobilde (sm altında) gösterilir; label: sm+ ekranlarda
 const TABS = [
-  { id: 'overview',     label: 'Overview',        icon: LayoutDashboard },
-  { id: 'products',     label: 'Products',         icon: Table2 },
-  { id: 'competition',  label: 'Competition',      icon: Swords },
-  { id: 'trends',       label: 'Trends',           icon: TrendingUp },
-  { id: 'alerts',       label: 'Alerts & Signals', icon: Bell },
-  { id: 'strategy',     label: 'AI Strategy',      icon: Lightbulb },
+  { id: 'overview',    label: 'Overview',        shortLabel: 'Overview',    icon: LayoutDashboard },
+  { id: 'products',    label: 'Products',         shortLabel: 'Ürünler',     icon: Table2 },
+  { id: 'competition', label: 'Competition',      shortLabel: 'Rekabet',     icon: Swords },
+  { id: 'trends',      label: 'Trends',           shortLabel: 'Trends',      icon: TrendingUp },
+  { id: 'alerts',      label: 'Alerts & Signals', shortLabel: 'Uyarılar',    icon: Bell },
+  { id: 'strategy',    label: 'AI Strategy',      shortLabel: 'Strateji',    icon: Lightbulb },
 ]
 
 function LoadingScreen() {
@@ -144,7 +145,8 @@ function Dashboard({ onLogout, userEmail }) {
               ].join(' ')}
             >
               <Icon size={12} />
-              {tab.label}
+              <span className="hidden xs:inline sm:hidden">{tab.shortLabel}</span>
+              <span className="hidden sm:inline">{tab.label}</span>
               {badgeCount > 0 && (
                 <span className="w-4 h-4 rounded-full bg-red-500 text-white text-[8px] flex items-center justify-center font-bold">
                   {badgeCount}
@@ -164,7 +166,7 @@ function Dashboard({ onLogout, userEmail }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
-            className="p-3 sm:p-5 space-y-4"
+            className="p-2 xs:p-3 sm:p-5 space-y-3 sm:space-y-4"
           >
             {/* ── OVERVIEW ── */}
             {activeTab === 'overview' && (
@@ -183,7 +185,7 @@ function Dashboard({ onLogout, userEmail }) {
                   </div>
                 )}
                 <KPISection kpis={data?.kpis} categories={data?.categories} />
-                <div className="grid grid-cols-1 xl:grid-cols-5 gap-4" style={{ minHeight: 480 }}>
+                <div className="grid grid-cols-1 xl:grid-cols-5 gap-3 xl:gap-4" style={{ minHeight: 480 }}>
                   <div className="xl:col-span-3">
                     <BCGMatrix
                       products={data?.products}
@@ -227,12 +229,10 @@ function Dashboard({ onLogout, userEmail }) {
               </>
             )}
 
-            {/* ── ALERTS ── Sol kaydırılır, sağ (radar) sabit */}
+            {/* ── ALERTS ── Mobil: tek kolon scroll | Masaüstü: sol scroll + sağ sabit radar */}
             {activeTab === 'alerts' && (
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-stretch"
-                   style={{ height: 'calc(100vh - 180px)' }}>
-                {/* Sol: iç scroll, büyüdükçe aşağı kayar */}
-                <div className="min-h-0 h-full">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-stretch xl:h-[calc(100vh-180px)]">
+                <div className="min-h-0 xl:h-full">
                   <AlertsPanel
                     alerts={data?.alerts}
                     competitive={data?.competitive}
@@ -240,8 +240,7 @@ function Dashboard({ onLogout, userEmail }) {
                     onGoToProduct={goToProduct}
                   />
                 </div>
-                {/* Sağ: radar sabit, scroll etkilemez */}
-                <div className="min-h-0 h-full hidden xl:block">
+                <div className="hidden xl:block min-h-0 xl:h-full">
                   <ScoreRadarChart categories={data?.categories} theme={theme} />
                 </div>
               </div>

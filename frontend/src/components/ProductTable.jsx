@@ -341,8 +341,10 @@ export default function ProductTable({ products, initialSearch = '' }) {
         </div>
       </div>
 
-      <div ref={scrollBoxRef} className="overflow-y-auto overflow-x-hidden rounded-lg border border-white/5"
+      <div ref={scrollBoxRef} className="overflow-y-auto overflow-x-auto rounded-lg border border-white/5"
         style={{ maxHeight: 'calc(100vh - 360px)' }}>
+        {/* min-w: mobilde yatay kaydırılabilir; masaüstünde tam genişlik */}
+        <div className="min-w-[960px]">
         <table className="w-full table-fixed">
           <colgroup>
             <col style={{ width: '3%' }} />{/* No */}
@@ -478,6 +480,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
             })}
           </tbody>
         </table>
+        </div>{/* min-w */}
       </div>
 
       {totalPages > 1 && (

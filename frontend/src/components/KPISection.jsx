@@ -76,7 +76,7 @@ export default function KPISection({ kpis, categories }) {
   ]
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-10 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-3">
       {cards.map((card, i) => (
         <KPICard key={card.label} {...card} index={i} />
       ))}

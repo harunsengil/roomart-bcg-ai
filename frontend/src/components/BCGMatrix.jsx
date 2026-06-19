@@ -170,7 +170,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
         </div>
       </div>
 
-      <div ref={containerRef} className={`relative ${zoom ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+      <div ref={containerRef} className={`bcg-plot relative ${zoom ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
         style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
         <div className="absolute inset-0">
           <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">

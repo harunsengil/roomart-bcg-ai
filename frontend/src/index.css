@@ -260,13 +260,49 @@ body {
 .light .text-amber-200  { color: #92400e !important; }
 
 /* ═══════════════════════════════════════════
-   MOBİL — yatay kaydırma yardımcıları
+   MOBİL — genel iyileştirmeler
 ═══════════════════════════════════════════ */
-/* ProductTable ve CompetitionTab'ın scroll container'ları
-   için scrollbar stilini gizle (dokunmatik ekranlarda zaten swipe çalışır) */
+/* Dokunmatik yatay scroll */
 .overflow-x-auto { -webkit-overflow-scrolling: touch; }
-@media (max-width: 767px) {
-  /* Alerts sekmesinde radar mobilde gizli — tek kolon alert yeterli */
-  .alerts-radar-col { display: none !important; }
+
+/* Scrollbar'ları gizle (yatay scroll hâlâ çalışır) */
+.tab-bar::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar { display: none; }
+.tab-bar,
+.overflow-x-auto { scrollbar-width: none; }
+
+@media (max-width: 639px) {
+  /* ── Genel aralık küçültme ── */
+  .card, .glass-card { padding: 0.75rem !important; }
+
+  /* ── KPI kartları mobilde daha kompakt ── */
+  .kpi-card { padding: 0.6rem !important; }
+  .kpi-card .font-display { font-size: 1.5rem !important; }
+  .kpi-card .w-10.h-10 { width: 2rem !important; height: 2rem !important; }
+
+  /* ── BCG Matrix yüksekliği mobilde daralt ── */
+  .bcg-plot { padding-bottom: 75% !important; }
+
+  /* ── Header kompakt ── */
+  .themed-header { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+
+  /* ── Tab bar butonları küçük ── */
+  .tab-bar button { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+
+  /* ── ProductTable arama alanı tam genişlik ── */
+  .product-search { width: 100% !important; }
+
+  /* ── Competition tab min genişlik mobilde kaydırılır ── */
+  .cmp-scroll-inner { min-width: 600px; }
 }
-.tab-bar::-webkit-scrollbar { display: none; }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Tablet: KPI kartları 2 sıra × 5 — karta göre orantılı */
+  .kpi-card .font-display { font-size: 1.75rem !important; }
+}
+
+/* Mobilde sayfa taşmaları engelle */
+@media (max-width: 767px) {
+  html, body { overflow-x: hidden; }
+  .scan-line { display: none; } /* Performans: mobilde scan line animasyonu kaldır */
+}
