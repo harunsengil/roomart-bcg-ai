@@ -6,10 +6,9 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-17
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — bulut migration + CLIP eşleştirme + login)
-- **Aktif branch:** `main` (temiz). Geliştirme **VS Code Claude Code eklentisi** (sürücü) + Chat
-  (düşünme) ile sürüyor.
+- **Tarih:** 2026-06-19
+- **Güncelleyen:** Code (VS Code Claude Code eklentisi — dashboard UI iyileştirmeleri + mobil + güvenlik)
+- **Aktif branch:** `main` (temiz). Son commit: `2d65ffb`.
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 > - **🆕 HİBRİT BULUT/MAC MİMARİSİ (2026-06-17):** Günlük veri artık **bulutta** (Trendyol API,
@@ -21,14 +20,14 @@
 >   Hesaplar Firebase Console'da (harunsengil@gmail.com + hasan.demirelli@roomart...). "Şifremi
 >   unuttum" linki var. **KISIT:** GitHub Pages public → `data/*.json` hâlâ doğrudan erişilebilir
 >   (gerçek koruma = Seviye B/Firestore-only veya Aşama 2 Vercel). `frontend/.env` lokal (gitignored).
-> - **🆕 RAKİP EŞLEŞTİRME (2026-06-17):** CLIP ViT-B/32 görsel (%40) + ad-token (%30) + fiyat (%30);
->   `comp_categorize` (banyo/kiler dolapları kurtarma); seed 1401→**3844 ürün** (28 mağaza). Skor
->   0.67→0.73, tam-dolu 412→**465/466**. pHash ve CLIP-"Diğer"-kurtarma denendi, başarısız (kapalı).
+> - **🆕 DASHBOARD UI (2026-06-19):** Competition/Alerts/Navigation/BCGMatrix/Trends/Login kapsamlı
+>   iyileştirmeler tamamlandı (bkz. Son Tamamlananlar). Firestore rules oluşturuldu (`firebase deploy
+>   --only firestore:rules` kullanıcı tarafından çalıştırılmalı — push'landı ama deploy edilmedi).
 > - **Sıradaki seçenekler:**
 >   (a) **Uyumsuz mağaza temizliği:** COSARGROUP (aggregator), KAREN BANYO (montajlı, demonte değil),
 >   Mobetto (koltuk) — `competitors.json`'da `aktif:false` yapılacak mı (kullanıcı kararı bekliyor).
->   (b) **CompetitionTab geliştirme:** kategori scatter grafiği (fiyat×puan).
->   (c) **Seviye B veri koruması** (Firestore-only + rules) veya **Aşama 2** (Supabase/Next.js).
+>   (b) **Aşama 2 — Mimari göç:** Next.js + Supabase + Vercel (ayrı oturum).
+>   (c) **Firestore rules deploy:** `firebase deploy --only firestore:rules` (rules repo'da var, deploy yok).
 > - 🟡 **Bekleyen (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext
 >   PAT (yalnız yerel `.git/config`). Node.js 20 deprecation uyarısı (actions sürüm yükseltmesi).
 
@@ -66,9 +65,9 @@
   `days_until_confident≈10`). Günlük cron biriktiriyor.
 
 ## Şu An Çalışılan
-- **(2026-06-17) Bulut migration + CLIP eşleştirme + login tamamlandı.** Aktif kod görevi yok.
-  Tek bekleyen kullanıcı kararı: uyumsuz mağazaların (COSARGROUP/KAREN BANYO/Mobetto) listeden
-  çıkarılması. Sistem canlı ve otonom: günlük bulut (API) + haftalık Mac (puan/deg + rakip).
+- **(2026-06-19) Tüm planlı UI işleri tamamlandı.** Aktif kod görevi yok. Sistem canlı ve otonom
+  (günlük bulut API + haftalık Mac puan/deg + rakip). Sonraki büyük iş: firmaya teslim planı
+  (Google Auth, client server scraper, gözlem kopyası) — ayrı oturum/plan gerekir.
 
 ## Bekleyen / Bloke
 - [x] ~~Gürültü temizliği: iPhone vb. mobilya-dışı ürünler DİĞER'de.~~ **PR #1 ile çözüldü:**
@@ -81,6 +80,27 @@
       Şu an seed sabit (snapshots.json son günü), yeni ürün otomatik gelmiyor.
 
 ## Son Tamamlananlar
+- [x] **(2026-06-19) Dashboard UI — kapsamlı iyileştirme paketi** (commit `2d65ffb` + önceki):
+  - **Competition sekmesi:** tüm kategori/ürün başlıklarında sıralama; `HI_CELL=text-gold-400` (tek ton);
+    en düşük fiyat ve en yüksek puan gold-400 vurgusu; `HoverImgPopup` forwardRef + DOM-direct (400+ satır ×
+    4 → sıfır React re-render); mobile overflow-x-auto + min-w wrapper; Fiyat Endeksi kapsamlı tooltip.
+  - **Alerts & Signals:** Strategic + Competitor alertler ayrı collapsible section; AlertCard/CompAlertCard
+    "Ürüne git →" butonu; RecommendationsPanel tıklanabilir kartlar (→ Overview kategori seçili).
+  - **Navigasyon:** alert.product_id → `data.products.find(p.id)` → Products tab arama; AI Strategy →
+    Overview kategori pre-seçili; CategoryPanel BCG rozeti yanına "tabloda gör" butonu (Products tab, Trendyol değil).
+  - **BCGMatrix:** tooltip'te ürün görseli (90px); eksen etiketlerine Türkçe alt yazı.
+  - **Trends sayfası:** `trends_fetch.py` (YENİ) 6 kategoriyi bağımsız sorgular (her biri kendi 0-100);
+    `data/trends_sonuc.json` gerçek veriyle dolduruldu; TRENDS_BRIDGE "Banyo Dolabı" düzeltildi (avg 3.6→68.8);
+    `if tkey is None: continue` ile "Diğer" filtresi; `scrape.yml`'e Trends adımı eklendi.
+  - **Login animasyonu:** 32 noktalı BCGMatrix SVG arka plan (4 kadran rengi, sonar pulse, deterministic).
+  - **Mobil uyum:** `xs:480px` Tailwind breakpoint; KPISection `md:grid-cols-5`; ProductTable `overflow-x-auto +
+    min-w-[960px]`; BCGMatrix `bcg-plot` CSS class; tab shortLabel'ları; `p-2 xs:p-3 sm:p-5`; alerts `xl:h-[...]`.
+  - **Light mode:** index.css bg-white/[0.015..0.04] / border-white / text renk override'ları.
+  - **Güvenlik:** `firestore.rules` (auth required, write:false); `analyze.yml` satış dosyası sızma guard.
+  - **Excel export:** `reports/roomart_stok_20260619_1504.xlsx` (979 aktif ürün, gitignored).
+  - **Küçük düzeltmeler:** QUADRANT_META icon fix (AI Strategy); ProductTable Net Tah.% tooltip; BCG
+    eksen Türkçe alt yazı; alert→Products arama ID/isim uyuşmazlığı düzeltmesi.
+
 - [x] **(2026-06-17) Hibrit bulut/Mac mimarisi — günlük veri buluta (API).** Trendyol bulut IP'sini
       sürekli scrape'te 403'ler (probe kanıtı: Playwright 3 istek 200 AMA 188 istek 0/188=403; hacim/IP
       itibarı, UA çözmez). Çözüm: kendi ürün fiyat/stok/satış/sinyal/momentum **resmî API**'den (her IP'de
@@ -273,16 +293,13 @@
       her ekranda çalışır.
 
 ## Sıradaki Adımlar
-1. **Seed tamamlama:** `python3 backend/competitor_bot.py collect` — Sehpa/Mutfak Adası/Kitaplıklı
-   Çalışma Masası kategorilerinde rakip sayısı az (sırasıyla 66/18/211 ürün vs Banyo 79);
+1. **Firmaya teslim planı (sonraki oturum):** Google Workspace Auth (Firebase + Google provider);
+   scraper Mac→firma server'ı (self-hosted runner veya cron VM); benim hesapta gözlem kopyası
+   (fork veya ikinci deployment). Detay ayrı plan oturumunda çıkarılacak.
+2. **Firestore rules deploy:** `firebase deploy --only firestore:rules` (rules repo'da hazır, deploy'u henüz yapılmadı).
+3. **Seed tamamlama (opsiyonel):** Sehpa/Mutfak Adası/Kitaplıklı kategorilerinde rakip ürün sayısı az;
    yeni mağaza ekle → `competitors.json` güncelle.
-2. **CompetitionTab geliştirme (opsiyonel):** kategori scatter (fiyat×puan, kabarcık=yorum),
-   ürün eşleşme detay kartı.
-3. **Aşama 2 — Mimari göç (ayrı oturum):** Next.js + Supabase (Auth/Postgres/RLS) + Vercel.
-   Kategori atama API→DB anlık; scrape/analiz job→Postgres; analyzer/categorize/scraper mantığı
-   taşınır. Detay: DECISIONS.md (2026-06-01).
-4. (Göç kapsamında) Gürültü/atama yönetimi DB+Auth'lu admin panelinden; v2 yeni-ürün keşfi;
-   snapshot delta arşiv; ürün-kodu kapsamı; Actions Node20 yükseltmesi.
+4. **Aşama 2 — Mimari göç:** Next.js + Supabase (Auth/Postgres/RLS) + Vercel (ayrı oturum/firma teslimi kapsamında).
 
 ## Bilinen Sorunlar / Riskler
 - Momentum güveni için ≥14 farklı gün gerek. Şu an 2 gün (growth_axis_active=true ama
