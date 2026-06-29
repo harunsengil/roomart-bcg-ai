@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-28T08:32:40.195197+00:00",
+    "last_updated": "2026-06-29T09:58:06.227296+00:00",
     "total_alerts": 10
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (100/100).",
       "product_id": "1156641360",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-2",
@@ -19,8 +19,8 @@
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (82/100).",
-      "product_id": "1156641710",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "product_id": "1156641550",
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-3",
@@ -29,7 +29,7 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (82/100).",
       "product_id": "1156642072",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-4",
@@ -38,7 +38,7 @@
       "title": "Banyo Dolabı — çıkış adayı",
       "message": "ROOMART Dubai Kapaklı ve Sepetli 92.2 cm Mdflam Banyo Dolabı zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
       "product_id": "962231369",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-5",
@@ -47,7 +47,7 @@
       "title": "Kahve Köşesi — lider STAR",
       "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 100.",
       "product_id": "885510279",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-6",
@@ -56,7 +56,7 @@
       "title": "Çamaşır Makinesi Dolabı — lider STAR",
       "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 99.",
       "product_id": "920575303",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-7",
@@ -65,16 +65,16 @@
       "title": "Banyo Dolabı — yüksek iade riski",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
       "product_id": "971265574",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Sehpa — yüksek iade riski",
-      "message": "Helsinki Orta Sehpa Suntalam 110 cm iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "866321554",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "title": "Diğer — yüksek iade riski",
+      "message": "Rt4 Metal Çerçeveli Baharatlık Çok Amaçlı Banyo Ve Mutfak Du iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "684213881",
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Banyo Dolabı — kârsız hacim uyarısı",
       "message": "Likya Ayaksız Tek Kapaklı Açık Raflı Lavabolu 72 Cm Banyo Do hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
       "product_id": "941956257",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     },
     {
       "id": "alert-10",
@@ -92,7 +92,7 @@
       "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
       "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "855574483",
-      "timestamp": "2026-06-28T08:32:40.171757+00:00"
+      "timestamp": "2026-06-29T09:58:06.203222+00:00"
     }
   ]
 }
