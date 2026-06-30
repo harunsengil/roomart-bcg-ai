@@ -6,30 +6,30 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-19
-- **Güncelleyen:** Code (VS Code Claude Code eklentisi — dashboard UI iyileştirmeleri + mobil + güvenlik)
-- **Aktif branch:** `main` (temiz). Son commit: `2d65ffb`.
+- **Tarih:** 2026-06-30
+- **Güncelleyen:** Code (platform entegrasyonları + fiyat düzeltmesi + veri güncelleme)
+- **Aktif branch:** `main` (temiz). Son commit: `b97ff1b`.
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
-> - **🆕 HİBRİT BULUT/MAC MİMARİSİ (2026-06-17):** Günlük veri artık **bulutta** (Trendyol API,
->   `analyze.yml` cron 05:30 UTC) — fiyat/stok/satış/sinyal/momentum. **Günlük Mac gereği BİTTİ.**
->   Mac yalnız **Pazartesi**: `scrape.yml` (05:00, kendi puan/deg — API vermez) + `competitor.yml`
->   (06:00, rakip). Trendyol sürekli scrape'i 403'ler (probe: Playwright 3 istek 200 ama 188 istek
->   0/188); residential IP şart. Detay: DECISIONS 2026-06-17.
-> - **🆕 LOGIN (Seviye A, 2026-06-17):** Dashboard Firebase email/şifre ile korunuyor (arayüz kilidi).
->   Hesaplar Firebase Console'da (harunsengil@gmail.com + hasan.demirelli@roomart...). "Şifremi
->   unuttum" linki var. **KISIT:** GitHub Pages public → `data/*.json` hâlâ doğrudan erişilebilir
->   (gerçek koruma = Seviye B/Firestore-only veya Aşama 2 Vercel). `frontend/.env` lokal (gitignored).
-> - **🆕 DASHBOARD UI (2026-06-19):** Competition/Alerts/Navigation/BCGMatrix/Trends/Login kapsamlı
->   iyileştirmeler tamamlandı (bkz. Son Tamamlananlar). Firestore rules oluşturuldu (`firebase deploy
->   --only firestore:rules` kullanıcı tarafından çalıştırılmalı — push'landı ama deploy edilmedi).
-> - **Sıradaki seçenekler:**
->   (a) **Uyumsuz mağaza temizliği:** COSARGROUP (aggregator), KAREN BANYO (montajlı, demonte değil),
->   Mobetto (koltuk) — `competitors.json`'da `aktif:false` yapılacak mı (kullanıcı kararı bekliyor).
->   (b) **Aşama 2 — Mimari göç:** Next.js + Supabase + Vercel (ayrı oturum).
->   (c) **Firestore rules deploy:** `firebase deploy --only firestore:rules` (rules repo'da var, deploy yok).
-> - 🟡 **Bekleyen (güvenlik, opsiyonel):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext
->   PAT (yalnız yerel `.git/config`). Node.js 20 deprecation uyarısı (actions sürüm yükseltmesi).
+>
+> **🔴 DESTEK BEKLENİYOR (platform API'leri):**
+> - **n11:** Yeni appKey (`5ee5c441-7e43-4d8f-a1be-9d6e4aa0dad3`) oluşturuldu, 403 → destek talebi açıldı (hesap aktivasyonu gerekiyor). `backend/n11_api.py` + `n11_sync.py` hazır, creds `.env.n11.local`'de.
+> - **Hepsiburada:** `258ae7fe-...` merchantId bilindi, yeni entegratör oluşturmak için HB onayı gerekiyor → destek talebi açıldı. `backend/hepsiburada_api.py` + `hepsiburada_sync.py` hazır.
+> - **Shopify:** `shpss_` shared secret (yanlış alan), doğru Admin API token (`shpat_`) yenilenmesi IT onayı bekliyor. `backend/shopify_api.py` + `shopify_sync.py` hazır.
+>
+> **Çözüm gelince yapılacaklar (sırayla):**
+> 1. Platform sync'leri test et: `source backend/.env.X.local && python3 backend/X_api.py`
+> 2. `product_registry.json` — EAN/barkod üzerinden platform eşleştirmesi (`backend/registry_builder.py`)
+> 3. Çok platformlu analiz motoru (analyzer.py genişletme)
+> 4. Dashboard'a platform fiyat kolonları (HB Fiyat, n11 Fiyat, Shopify Fiyat)
+>
+> **🆕 2026-06-30 TAMAMLANANLAR:**
+> - Fiyat önceliği düzeltildi: scraper fiyatı (görünen) > API fiyatı; kampanya indirimi liste-fiyata çevrildi
+> - Stok kolonu kaldırıldı (sanal veri)
+> - TY Fiyat/Liste/İnd. etiketleri + fiyata Trendyol linki
+> - Tam güncelleme: 188 scrape + 6564 sipariş + 2677 rakip ürün + BCG analiz
+>
+> **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy (`firebase deploy --only firestore:rules`).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
