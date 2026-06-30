@@ -699,7 +699,6 @@ def run_analysis():
         review_count = raw.get("deg", 0) if raw else 0
         kod = (raw.get("kod") if raw else None) or api.get("stock_code")
         url = (raw.get("url") if raw else None) or api.get("product_url") or ""
-        stock = api.get("stock")          # API quantity (snapshot'ta yok); None → tabloda "—"
         # LİSTE FİYATI + İNDİRİM:
         # 1) API listPrice > satış fiyatı → gerçek katalog indirimi (varsa).
         # 2) API salePrice > scraper fiyatı → Trendyol kampanyası var; API fiyatı "önce" referansı.
@@ -744,7 +743,6 @@ def run_analysis():
             "review_count": review_count,
             "kod": kod,                       # Trendyol ürün kodu (scrape v1.1 veya API stockCode)
             "url": url,
-            "stock": stock,                   # API stok adedi (envanter görünürlüğü)
             "list_price": list_price,         # liste (üstü çizili) fiyat
             "discount": discount,             # indirim % (None → "—")
             "color": color,                   # renk (attribute)
@@ -851,7 +849,6 @@ def run_analysis():
             "review_count": p["review_count"],
             "kod": p.get("kod"),
             "url": p["url"],
-            "stock": p.get("stock"),         # API stok adedi (envanter; pasif üründe de dolu)
             "list_price": p.get("list_price"),     # liste fiyatı
             "discount": p.get("discount"),         # indirim % (None → "—")
             "color": p.get("color"),               # renk (attribute)

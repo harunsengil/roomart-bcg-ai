@@ -9,11 +9,11 @@ const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 // Sağ yarıdaki kolonların filtre açılır menüsü sağa yaslanır (overflow-x-hidden kırpmasın).
-const DROP_RIGHT = new Set(['net_retention_pct', 'risk_rate', 'sales_per_day', 'price', 'list_price', 'discount', 'stock', 'bcg', 'action'])
+const DROP_RIGHT = new Set(['net_retention_pct', 'risk_rate', 'sales_per_day', 'price', 'list_price', 'discount', 'bcg', 'action'])
 const BCG_FILTERS = ['ALL', 'STAR', 'CASH_COW', 'QUESTION_MARK', 'DOG']
 const ACTION_FILTERS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const STRING_SORT = new Set(['name', 'category', 'category_name', 'color', 'kod', 'product_main_id', 'bcg', 'action'])
-const SEARCH_FIELDS = ['name', 'category', 'category_name', 'color', 'kod', 'product_main_id', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'net_retention_pct', 'risk_rate', 'sales_per_day', 'variant_count', 'price', 'list_price', 'discount', 'stock']
+const SEARCH_FIELDS = ['name', 'category', 'category_name', 'color', 'kod', 'product_main_id', 'bcg', 'action', 'share_score', 'growth_score', 'composite_score', 'rating', 'review_count', 'net_retention_pct', 'risk_rate', 'sales_per_day', 'variant_count', 'price', 'list_price', 'discount']
 const PAGE_SIZE = 100
 
 function colText(p, field) {
@@ -37,7 +37,6 @@ function colText(p, field) {
     case 'price': return p.price == null ? '' : Math.round(p.price)
     case 'list_price': return p.list_price == null ? '' : Math.round(p.list_price)
     case 'discount': return p.discount ?? ''
-    case 'stock': return p.stock ?? ''
     case 'bcg': return p.bcg_class || ''
     case 'action': return p.recommendation?.action || ''
     default: return ''
@@ -223,10 +222,10 @@ export default function ProductTable({ products, initialSearch = '' }) {
   const pageWindow = Array.from({ length: Math.min(totalPages, winStart + MAX_BTN) - winStart }, (_, i) => winStart + i)
 
   const exportCSV = () => {
-    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Model', 'Varyant #', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Net Tahsilat %', 'İade %', 'Sat. Hızı (adet/gün)', 'Satış 13h (eski→yeni)', 'Kampanya', 'Price', 'Liste', 'İndirim %', 'Stok', 'BCG', 'Action', 'URL']
+    const header = ['No', 'Ürün', 'Kategori', 'Trendyol Kat.', 'Renk', 'Kod', 'Model', 'Varyant #', 'Share', 'Growth', 'Score', 'Puan', 'Yorum', 'Net Tahsilat %', 'İade %', 'Sat. Hızı (adet/gün)', 'Satış 13h (eski→yeni)', 'Kampanya', 'Price', 'Liste', 'İndirim %', 'BCG', 'Action', 'URL']
     const rows = filtered.map((p, i) => [
       i + 1, p.name, p.category, p.category_name || '', p.color || '', p.kod || '', p.product_main_id || '', p.variant_count ?? '', p.share_score ?? '', p.growth_score ?? '',
-      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.net_retention_pct ?? '', p.risk_rate ?? '', p.sales_per_day ?? '', p.sales_series ? p.sales_series.join('|') : '', p.has_campaign ? 'Evet' : '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.stock ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
+      p.composite_score ?? '', p.rating ?? '', p.review_count ?? '', p.net_retention_pct ?? '', p.risk_rate ?? '', p.sales_per_day ?? '', p.sales_series ? p.sales_series.join('|') : '', p.has_campaign ? 'Evet' : '', p.price ?? '', p.list_price ?? '', p.discount ?? '', p.bcg_class || '', p.recommendation?.action || '', p.url || '',
     ])
     const esc = v => `"${String(v).replace(/"/g, '""')}"`
     const csv = '﻿' + [header, ...rows].map(r => r.map(esc).join(';')).join('\r\n')
@@ -367,7 +366,6 @@ export default function ProductTable({ products, initialSearch = '' }) {
             <col style={{ width: '4%' }} />{/* Price */}
             <col style={{ width: '4%' }} />{/* Liste */}
             <col style={{ width: '4%' }} />{/* İndirim */}
-            <col style={{ width: '3%' }} />{/* Stok */}
             <col style={{ width: '5%' }} />{/* BCG */}
             <col style={{ width: '5%' }} />{/* Action */}
           </colgroup>
@@ -394,7 +392,6 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="price" label="Price" />
               <HeadCell field="list_price" label="Liste" />
               <HeadCell field="discount" label="İndirim" />
-              <HeadCell field="stock" label="Stok" />
               <HeadCell field="bcg" label="BCG" />
               <HeadCell field="action" label="Action" />
             </tr>
@@ -463,9 +460,6 @@ export default function ProductTable({ products, initialSearch = '' }) {
                   </td>
                   <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
-                  </td>
-                  <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
-                    {p.stock != null ? <span className={p.stock > 0 ? 'text-white/70' : 'text-rose-400'}>{p.stock}</span> : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-2 py-2.5">
                     <span title={cfg.label} className="text-xs font-mono px-1.5 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {BCG_SHORT[p.bcg_class] || cfg.label}</span>
