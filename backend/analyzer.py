@@ -688,18 +688,30 @@ def run_analysis():
         srec = sales_by_product.get(pid, {})
         units = int(srec.get("net_units", 0) or 0)
         sales_momentum = srec.get("sales_momentum")  # None ise büyüme deg'e düşer
-        # FİYAT: API sale_price ÖNCELİKLİ (günlük bulut sync ile taze); snapshot fiyatı
-        # (scrape, haftalık) yedek. Böylece fiyat günlük güncel kalır, scrape Mac'te haftalık.
-        price = api.get("sale_price") or (raw.get("fiyat") if raw else None) or 0.0
+        # FİYAT: Scraper (site) fiyatı ÖNCELİKLİ — Trendyol platform kampanyaları (Avantajlı Ürün
+        # vb.) API salePrice'a yansımaz, scraper gerçek görünen fiyatı alır. API fiyatı yedek
+        # (henüz scrape edilmemiş ürünler için). Öncelik: scraper > API.
+        api_sale = api.get("sale_price") or 0.0
+        scraper_fiyat = (raw.get("fiyat") if raw else 0.0) or 0.0
+        price = scraper_fiyat or api_sale or 0.0
         # PUAN/YORUM: yalnız scrape'ten gelir (API vermez) → haftalık Mac scrape tazeler.
         rating = raw.get("puan", 0.0) if raw else 0.0
         review_count = raw.get("deg", 0) if raw else 0
         kod = (raw.get("kod") if raw else None) or api.get("stock_code")
         url = (raw.get("url") if raw else None) or api.get("product_url") or ""
         stock = api.get("stock")          # API quantity (snapshot'ta yok); None → tabloda "—"
-        # Kolon zenginleştirme (API): liste fiyatı + indirim % + renk + Trendyol kategorisi.
-        list_price = api.get("list_price")
-        discount = None                   # liste > satış ise indirim yüzdesi; değilse None ("—")
+        # LİSTE FİYATI + İNDİRİM:
+        # 1) API listPrice > satış fiyatı → gerçek katalog indirimi (varsa).
+        # 2) API salePrice > scraper fiyatı → Trendyol kampanyası var; API fiyatı "önce" referansı.
+        # 3) İkisi de yoksa / eşitse → indirim yok.
+        api_list = api.get("list_price")
+        if api_list and price and api_list > price * 1.005:   # %0.5 tolerans (yuvarlama farkı)
+            list_price = api_list
+        elif api_sale and price and api_sale > price * 1.005:
+            list_price = api_sale   # API fiyatı "kampanya öncesi" referans olarak göster
+        else:
+            list_price = None
+        discount = None
         if list_price and price and list_price > price:
             discount = round(100 * (1 - price / list_price))
         color = api.get("color")                   # attribute "Renk"
