@@ -13,6 +13,17 @@ frontend/public/data/trendyol_sales.json
 
 # Yerel inceleme dökümleri (hassas: net satış) — commit'lenmez
 reports/
-# Yerel Trendyol creds (ASLA commit'lenmez)
+# Yerel platform creds (ASLA commit'lenmez)
 backend/.env.trendyol.local
 .env.trendyol.local
+backend/.env.hb.local
+backend/.env.n11.local
+backend/.env.shopify.local
+
+# Platform satış verileri (gelir = rekabetçi istihbarat — private kalır)
+data/hb_sales.json
+data/n11_sales.json
+data/shopify_sales.json
+frontend/public/data/hb_sales.json
+frontend/public/data/n11_sales.json
+frontend/public/data/shopify_sales.json
