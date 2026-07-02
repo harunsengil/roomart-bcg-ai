@@ -35,3 +35,8 @@ data/manual_margin_inputs.csv
 data/manual_operation_inputs.csv
 data/clear_scores.json
 frontend/public/data/clear_scores.json
+
+# Çok-platform ürün kütüğü — platform ciro/satış agregatı içerir (rakip istihbaratı).
+# Yalnız Firestore (private) + yerel; public repo'ya gitmez.
+data/product_registry.json
+frontend/public/data/product_registry.json
