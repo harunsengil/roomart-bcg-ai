@@ -466,7 +466,10 @@ export default function ProductTable({ products, initialSearch = '' }) {
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
                   </td>
                   <td className="px-2 py-2.5">
-                    <span title={cfg.label} className="text-xs font-mono px-1.5 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {BCG_SHORT[p.bcg_class] || cfg.label}</span>
+                    {p.bcg_class
+                      ? <span title={cfg.label} className="text-xs font-mono px-1.5 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {BCG_SHORT[p.bcg_class]}</span>
+                      : <span title="Trendyol'da henüz yorum yok — BCG skoru hesaplanamıyor. Ürün yorum kazandıkça otomatik skorlanır." className="text-[10px] font-mono text-white/20 cursor-help border-b border-dashed border-white/15">veri yok</span>
+                    }
                   </td>
                   <td className="px-2 py-2.5">
                     {p.recommendation?.action ? (

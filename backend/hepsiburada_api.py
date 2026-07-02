@@ -1,14 +1,16 @@
 """Hepsiburada Marketplace API istemcisi (RoomArt satıcı hesabı).
 
-Kimlik bilgileri YALNIZCA ortam değişkenlerinden okunur:
-  HB_MERCHANT_ID   — Hepsiburada Satıcı ID
-  HB_USERNAME      — API kullanıcı adı
-  HB_PASSWORD      — API şifresi
+HB auth modeli (panelden alınan bilgilere göre):
+  Basic Auth: username = Merchant ID (UUID), password = Secret key
+  User-Agent: Developer Username (örn. roomart_dev)
 
-Auth: Basic base64(username:password)
+Kimlik bilgileri YALNIZCA ortam değişkenlerinden okunur:
+  HB_MERCHANT_ID    — UUID (hem Basic Auth username'i hem merchant kimliği)
+  HB_SECRET_KEY     — Basic Auth password (panelden gelen secret)
+  HB_DEV_USERNAME   — User-Agent header'ı (Developer Username, örn. roomart_dev)
 
 Yerel test:
-  source backend/.env.hb.local && python backend/hepsiburada_api.py
+  source backend/.env.hb.local && python3 backend/hepsiburada_api.py
 """
 from __future__ import annotations
 
@@ -35,21 +37,24 @@ class HBAuthError(RuntimeError):
 
 
 def _config() -> tuple[str, str, str]:
-    mid  = os.environ.get("HB_MERCHANT_ID", "").strip()
-    user = os.environ.get("HB_USERNAME", "").strip()
-    pwd  = os.environ.get("HB_PASSWORD", "").strip()
-    missing = [n for n, v in [("HB_MERCHANT_ID", mid), ("HB_USERNAME", user), ("HB_PASSWORD", pwd)] if not v]
+    mid     = os.environ.get("HB_MERCHANT_ID", "").strip()
+    secret  = os.environ.get("HB_SECRET_KEY", "").strip()
+    dev_usr = os.environ.get("HB_DEV_USERNAME", "").strip()
+    missing = [n for n, v in [("HB_MERCHANT_ID", mid), ("HB_SECRET_KEY", secret),
+                               ("HB_DEV_USERNAME", dev_usr)] if not v]
     if missing:
         raise SystemExit("Eksik ortam değişkeni: " + ", ".join(missing))
-    return mid, user, pwd
+    return mid, secret, dev_usr
 
 
 def make_session() -> tuple[requests.Session, str]:
-    mid, user, pwd = _config()
-    token = base64.b64encode(f"{user}:{pwd}".encode()).decode()
+    mid, secret, dev_usr = _config()
+    # Basic Auth: username = Merchant ID, password = Secret key
+    token = base64.b64encode(f"{mid}:{secret}".encode()).decode()
     sess = requests.Session()
     sess.headers.update({
         "Authorization": f"Basic {token}",
+        "User-Agent":    dev_usr,          # Developer Username — zorunlu
         "Content-Type":  "application/json",
         "Accept":        "application/json",
     })
