@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-01T09:03:21.255217+00:00",
-    "total_alerts": 10
+    "last_updated": "2026-07-02T08:28:43.766555+00:00",
+    "total_alerts": 9
   },
   "alerts": [
     {
@@ -9,36 +9,36 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (100/100).",
-      "product_id": "1156641360",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (82/100).",
+      "product_id": "1156645277",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (82/100).",
-      "product_id": "1156645277",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (82/100).",
+      "product_id": "1143914080",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (82/100).",
-      "product_id": "1156641710",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (82/100).",
+      "product_id": "1143914275",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-4",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
-      "product_id": "971265574",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
+      "product_id": "962085213",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-5",
@@ -47,52 +47,43 @@
       "title": "Kahve Köşesi — lider STAR",
       "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 100.",
       "product_id": "885510279",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-6",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Diğer — lider STAR",
-      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
-      "product_id": "962085213",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "Banyo Dolabı — yüksek iade riski",
+      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
+      "product_id": "971265574",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
-      "product_id": "971265574",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "message": "Lavabolu Mat Mdf 90 Cm Çekmeceli Banyo Dolabı + Aynalı Üst D iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "829592750",
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
       "id": "alert-8",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Lavabolu Mat Mdf 90 Cm Çekmeceli Banyo Dolabı + Aynalı Üst D iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "829592750",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
-    },
-    {
-      "id": "alert-9",
       "type": "RISK",
       "severity": "INFO",
       "title": "Kahve Köşesi — kârsız hacim uyarısı",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "1156645277",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     },
     {
-      "id": "alert-10",
+      "id": "alert-9",
       "type": "RISK",
       "severity": "INFO",
       "title": "Banyo Dolabı — kârsız hacim uyarısı",
       "message": "Likya Ayaksız Tek Kapaklı Açık Raflı Lavabolu 72 Cm Banyo Do hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
       "product_id": "941956257",
-      "timestamp": "2026-07-01T09:03:21.231292+00:00"
+      "timestamp": "2026-07-02T08:28:43.741651+00:00"
     }
   ]
 }
