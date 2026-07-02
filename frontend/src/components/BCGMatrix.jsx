@@ -2,15 +2,19 @@ import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { QUADRANT_META, ACTION_META, formatScore } from '../utils/helpers'
 
+// Quadrant labels at center of each dot-area quadrant: mid = PAD + 0.5*SPAN = 50
+// Left-half center x = (PAD + 50) / 2 = 29%,  Right = (50 + PAD+SPAN) / 2 = 71%
+// Top-half center y = (PAD + 50) / 2 = 29%,   Bottom = (50 + PAD+SPAN) / 2 = 71%
 const QUADRANT_LABELS = [
-  { id: 'QUESTION_MARK', x: '25%', y: '25%', label: '❓ QUESTION MARKS', sub: 'High Growth · Low Share', color: '#3B82F6' },
-  { id: 'STAR', x: '75%', y: '25%', label: '⭐ STARS', sub: 'High Growth · High Share', color: '#F59E0B' },
-  { id: 'DOG', x: '25%', y: '75%', label: '🐕 DOGS', sub: 'Low Growth · Low Share', color: '#EF4444' },
-  { id: 'CASH_COW', x: '75%', y: '75%', label: '🐄 CASH COWS', sub: 'Low Growth · High Share', color: '#10B981' },
+  { id: 'QUESTION_MARK', x: '29%', y: '29%', label: '❓ QUESTION MARKS', sub: 'High Growth · Low Share', color: '#3B82F6' },
+  { id: 'STAR',          x: '71%', y: '29%', label: '⭐ STARS',          sub: 'High Growth · High Share', color: '#F59E0B' },
+  { id: 'DOG',           x: '29%', y: '71%', label: '🐕 DOGS',           sub: 'Low Growth · Low Share',  color: '#EF4444' },
+  { id: 'CASH_COW',      x: '71%', y: '71%', label: '🐄 CASH COWS',      sub: 'Low Growth · High Share', color: '#10B981' },
 ]
 const ACTIONS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const PAD = 8
-const SPAN = 100 - 2 * PAD
+const SPAN = 100 - 2 * PAD  // 84
+const MID = PAD + SPAN / 2  // 50  (quadrant divider, matches median threshold)
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
 
 function median(arr) {
@@ -23,11 +27,12 @@ function frac(v, thr) {
   if (v <= thr) return thr <= 0 ? 0.5 : (v / thr) * 0.5
   return thr >= 100 ? 0.5 : 0.5 + ((v - thr) / (100 - thr)) * 0.5
 }
+// Jitter azaltıldı (±1.5): median sınırına yakın noktalar karşı kadranda görünmesin.
 function jitter(id) {
   let h = 0
   const s = String(id)
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0
-  return [((h % 1000) / 1000 - 0.5) * 3.0, (((h >>> 10) % 1000) / 1000 - 0.5) * 3.0]
+  return [((h % 1000) / 1000 - 0.5) * 1.5, (((h >>> 10) % 1000) / 1000 - 0.5) * 1.5]
 }
 // Kabarcık boyutu = SATIŞ HACMİ (net adet) — klasik BCG "pazar büyüklüğü" kabarcığı.
 // Alan-orantılı (yarıçap ∝ √adet) → görsel alan satışla orantılı, büyük satıcılar baskın çıkmaz.
@@ -88,6 +93,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
   const [zoom, setZoom] = useState(null)
   const [actionFilter, setActionFilter] = useState('ALL')
+  const [highlightId, setHighlightId] = useState(null)   // zoom list hover
   const containerRef = useRef(null)
 
   const scored = (products || []).filter(
@@ -116,9 +122,24 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
       const r = QRANGE[zoom]
       const xf = r.hiS > r.loS ? (p.share_score - r.loS) / (r.hiS - r.loS) : 0.5
       const yf = r.hiG > r.loG ? (p.growth_score - r.loG) / (r.hiG - r.loG) : 0.5
-      return [PAD + clamp(xf, 0, 1) * SPAN + jx, PAD + (1 - clamp(yf, 0, 1)) * SPAN + jy]
+      // Zoom: nokta alanı kenarlarından 3px boşluk bırak, sonra jitter uygula
+      return [
+        PAD + clamp(clamp(xf, 0, 1) * SPAN + jx, 3, SPAN - 3),
+        PAD + clamp((1 - clamp(yf, 0, 1)) * SPAN + jy, 3, SPAN - 3),
+      ]
     }
-    return [PAD + frac(p.share_score, shareThr) * SPAN + jx, PAD + (1 - frac(p.growth_score, growthThr)) * SPAN + jy]
+    const xBase = PAD + frac(p.share_score, shareThr) * SPAN
+    const yBase = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
+    // Jitter'ı kadran sınırında kes: median sınırından karşı tarafa geçilmesin.
+    // Sınır = MID (50). STAR/CC sağda (x > MID), QM/DOG solda (x < MID).
+    // STAR/QM üstte (y < MID), CC/DOG altta (y > MID).
+    const isRight = p.bcg_class === 'STAR' || p.bcg_class === 'CASH_COW'
+    const isTop   = p.bcg_class === 'STAR' || p.bcg_class === 'QUESTION_MARK'
+    const xMin = p.bcg_class ? (isRight ? MID + 0.5 : PAD + 0.5) : PAD
+    const xMax = p.bcg_class ? (isRight ? PAD + SPAN - 0.5 : MID - 0.5) : PAD + SPAN
+    const yMin = p.bcg_class ? (isTop ? PAD + 0.5 : MID + 0.5) : PAD
+    const yMax = p.bcg_class ? (isTop ? MID - 0.5 : PAD + SPAN - 0.5) : PAD + SPAN
+    return [clamp(xBase + jx, xMin, xMax), clamp(yBase + jy, yMin, yMax)]
   }
 
   const handleMouseEnter = (e, product) => {
@@ -190,8 +211,12 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                 <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
               </marker>
             </defs>
-            <line x1="5%" y1="95%" x2="95%" y2="95%" stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
-            <line x1="5%" y1="95%" x2="5%" y2="5%" stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+            {/* Eksen okları: köken nokta-alanının sol-alt köşesinde (PAD%, PAD+SPAN%) = (8%,92%).
+                Önceki (5%,95%) origin nokta alanıyla 3% hizasız kalıyordu. */}
+            <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
+              stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+            <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
+              stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
           </svg>
 
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
@@ -224,24 +249,57 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             const [x, y] = posOf(p)
             const qm = QUADRANT_META[p.bcg_class] || {}
             const size = dotSize(p)
+            const isHighlighted = highlightId === p.id
             return (
               <div key={p.id} className="absolute cursor-pointer"
-                style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)', zIndex: tooltip.product?.id === p.id ? 30 : 5 }}
+                style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)', zIndex: isHighlighted ? 40 : (tooltip.product?.id === p.id ? 30 : 5) }}
                 onMouseEnter={(e) => handleMouseEnter(e, p)}
                 onMouseLeave={clearTip}
                 onClick={(e) => {
                   e.stopPropagation()
-                  onSelectProduct && onSelectProduct(p) // sağ panelde ürün kartı + Trendyol linki
+                  onSelectProduct && onSelectProduct(p)
                 }}>
                 <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
                   style={{
-                    width: size, height: size,
+                    width: isHighlighted ? size * 1.8 : size,
+                    height: isHighlighted ? size * 1.8 : size,
                     background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
-                    border: `1px solid ${qm.color}`, opacity: 0.85, boxShadow: `0 0 5px ${qm.color}55`,
+                    border: `${isHighlighted ? 2 : 1}px solid ${qm.color}`,
+                    opacity: isHighlighted ? 1 : 0.85,
+                    boxShadow: isHighlighted ? `0 0 12px ${qm.color}99` : `0 0 5px ${qm.color}55`,
                   }} />
               </div>
             )
           })}
+
+          {/* Zoom modunda yığılma çözümü: kaydırılabilir ürün listesi */}
+          {zoom && shown.length > 0 && (
+            <div className="absolute top-6 right-1 z-20 w-48 rounded-lg border overflow-hidden"
+              style={{ background: 'rgba(10,12,20,0.85)', borderColor: (zoomMeta?.color || '#fff') + '30', backdropFilter: 'blur(8px)' }}
+              onClick={e => e.stopPropagation()}>
+              <div className="px-2 py-1.5 border-b text-[9px] font-mono text-white/40 flex items-center justify-between"
+                style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+                <span>{shown.length} ürün · composite skora göre</span>
+              </div>
+              <div className="overflow-y-auto" style={{ maxHeight: '52%', minHeight: 80 }}>
+                {[...shown]
+                  .sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0))
+                  .map(p => (
+                    <div key={p.id}
+                      className="px-2 py-1 text-[10px] font-mono truncate cursor-pointer transition-colors"
+                      style={{
+                        color: highlightId === p.id ? '#fff' : 'rgba(255,255,255,0.45)',
+                        background: highlightId === p.id ? 'rgba(255,255,255,0.1)' : 'transparent',
+                      }}
+                      onMouseEnter={(e) => { setHighlightId(p.id); handleMouseEnter(e, p) }}
+                      onMouseLeave={() => { setHighlightId(null); clearTip() }}
+                      onClick={(e) => { e.stopPropagation(); onSelectProduct?.(p) }}>
+                      {p.name}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {tooltip.visible && (

@@ -40,21 +40,22 @@ def _categorize(name: str) -> str:
 
 
 def aggregate_products(products: list) -> dict:
-    """n11 ürünlerini barkod → {fiyat, stok, url, sku} tablosuna indir."""
+    """n11 ürünlerini STOK KODU → {fiyat, stok, url} tablosuna indir (registry anahtarı)."""
     table = {}
     for p in products:
-        barcode = str(p.get("barcode") or "").strip()
-        sku     = p.get("product_code") or ""
-        key     = barcode or sku
+        stock_code = str(p.get("stock_code") or "").strip()
+        barcode    = str(p.get("barcode") or "").strip()
+        key        = stock_code or barcode
         if not key:
             continue
         table[key] = {
             "product_id": p.get("product_id"),
-            "sku":        sku,
+            "sku":        stock_code,
             "barcode":    barcode,
-            "name":       p.get("title") or sku,
+            "name":       p.get("title") or stock_code,
             "category":   _categorize(p.get("title") or ""),
             "price":      p.get("price") or 0.0,
+            "list_price": p.get("list_price"),
             "status":     p.get("status") or "",
             "url":        p.get("url") or "",
         }
@@ -73,19 +74,14 @@ def aggregate_sales(orders: list, product_table: dict) -> tuple[dict, dict]:
     by_product, by_category = {}, {}
 
     for order in orders:
-        od_raw = order.get("order_date") or ""
-        try:
-            # n11 format: "dd/MM/yyyy HH:mm:ss"
-            od = datetime.strptime(od_raw, "%d/%m/%Y %H:%M:%S").replace(
-                tzinfo=timezone.utc).timestamp() * 1000
-        except Exception:
-            od = 0
+        od = order.get("order_ms") or 0   # REST'te zaten epoch ms
 
         for ln in order.get("lines") or []:
-            barcode  = str(ln.get("product_code") or "").strip()  # n11'de productCode genelde barkod
-            name     = ln.get("product_name") or barcode
-            status   = ln.get("status") or order.get("status") or ""
-            is_net   = status not in EXCLUDED_STATUSES
+            stock_code = str(ln.get("stock_code") or "").strip()   # registry anahtarı
+            barcode    = str(ln.get("barcode") or "").strip()
+            name       = ln.get("product_name") or stock_code
+            status     = ln.get("status") or order.get("status") or ""
+            is_net     = status not in EXCLUDED_STATUSES
             try:
                 qty    = int(float(ln.get("quantity") or 0))
                 price  = float(str(ln.get("unit_price") or "0").replace(",", "."))
@@ -93,15 +89,15 @@ def aggregate_sales(orders: list, product_table: dict) -> tuple[dict, dict]:
                 qty, price = 0, 0.0
             amount = qty * price
 
-            # Kategori: önce product_table'dan, yoksa isimden
-            prod   = product_table.get(barcode, {})
+            # Kategori: önce product_table'dan (stok kodu), yoksa isimden
+            key    = stock_code or barcode or "?"
+            prod   = product_table.get(key, {})
             cat    = prod.get("category") or _categorize(name)
-            key    = barcode or ln.get("product_id") or "?"
 
             win = "recent" if od >= c_recent else ("prior" if od >= c_prior else None)
 
             bp = by_product.setdefault(key, {
-                "name": name, "barcode": barcode, "category": cat,
+                "name": name, "barcode": barcode, "sku": stock_code, "category": cat,
                 "gross_units": 0, "gross_amount": 0.0,
                 "net_units": 0,   "net_amount": 0.0,
                 "units_recent": 0, "units_prior": 0,

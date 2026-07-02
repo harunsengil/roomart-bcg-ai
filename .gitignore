@@ -27,3 +27,16 @@ data/shopify_sales.json
 frontend/public/data/hb_sales.json
 frontend/public/data/n11_sales.json
 frontend/public/data/shopify_sales.json
+
+# CLEAR karar katmanı — MANUEL maliyet/marj girdisi (birim maliyet = en hassas veri).
+# Ham CSV'ler ve türetilmiş marj içeren çıktı ASLA public repo'ya gitmez;
+# dashboard'a yalnız Firestore (private, authed) üzerinden servis edilir. (trendyol_sales.json deseni.)
+data/manual_margin_inputs.csv
+data/manual_operation_inputs.csv
+data/clear_scores.json
+frontend/public/data/clear_scores.json
+
+# Çok-platform ürün kütüğü — platform ciro/satış agregatı içerir (rakip istihbaratı).
+# Yalnız Firestore (private) + yerel; public repo'ya gitmez.
+data/product_registry.json
+frontend/public/data/product_registry.json

@@ -87,6 +87,17 @@ async function loadFromFirestore() {
     const cs = await getDoc(doc(db, 'roomart-bcg-dev', 'competitive_latest'))
     if (cs.exists()) competitive = cs.data()
   } catch { /* yoksa null */ }
+  // CLEAR karar katmanı AYRI dokümanda (clear_latest) — hassas marj içerdiği için
+  // yalnız Firestore'da (public JSON yok). Yoksa Karar sekmesi boş-durum gösterir.
+  let clear = null
+  try {
+    const cl = await getDoc(doc(db, 'roomart-bcg-dev', 'clear_latest'))
+    if (cl.exists()) clear = cl.data()
+  } catch { /* yoksa null */ }
+  // Firestore'da CLEAR yoksa yerel JSON'a düş (yerel dev önizleme; public'te yok = null kalır)
+  if (!clear) {
+    clear = await fetchJSON('data/clear_scores.json').catch(() => null)
+  }
   return {
     kpis: d.kpis,
     categories: normalizeCategories(d.categories ?? d.category_summary),
@@ -95,16 +106,18 @@ async function loadFromFirestore() {
     trends: d.trends,
     alerts: d.alerts,
     competitive,
+    clear,
     generatedAt: d.generated_at,
   }
 }
 
 async function loadFromJSON() {
-  const [bcgScores, trendsSonuc, alertsData, competitive] = await Promise.all([
+  const [bcgScores, trendsSonuc, alertsData, competitive, clear] = await Promise.all([
     fetchJSON('data/bcg_scores.json'),
     fetchJSON('data/trends_sonuc.json').catch(() => null),
     fetchJSON('data/alerts.json'),
     fetchJSON('data/competitive.json').catch(() => null),
+    fetchJSON('data/clear_scores.json').catch(() => null),  // yerel dev; public'te yok (gitignored)
   ])
   return {
     kpis: bcgScores.kpis,
@@ -116,6 +129,7 @@ async function loadFromJSON() {
     trends: transformTrendsSonuc(trendsSonuc),
     alerts: alertsData.alerts,
     competitive,
+    clear,
     generatedAt: bcgScores.generated_at,
   }
 }
