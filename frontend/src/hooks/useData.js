@@ -94,6 +94,10 @@ async function loadFromFirestore() {
     const cl = await getDoc(doc(db, 'roomart-bcg-dev', 'clear_latest'))
     if (cl.exists()) clear = cl.data()
   } catch { /* yoksa null */ }
+  // Firestore'da CLEAR yoksa yerel JSON'a düş (yerel dev önizleme; public'te yok = null kalır)
+  if (!clear) {
+    clear = await fetchJSON('data/clear_scores.json').catch(() => null)
+  }
   return {
     kpis: d.kpis,
     categories: normalizeCategories(d.categories ?? d.category_summary),
