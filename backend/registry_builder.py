@@ -1,0 +1,310 @@
+"""Çok-platform ürün kütüğü — ürünleri STOK KODUNDA birleştir.
+
+Her platformun (Trendyol, Shopify, ileride HB/n11) ürün + satış verisini okur,
+ortak STOK KODU (stockCode / Shopify sku) anahtarında tek ürüne birleştirir.
+Barkod (EAN) ikincil kimlik + yedek eşleşme anahtarıdır.
+
+Ampirik: RoomArt aynı stok kodunu platformlar arası tutar → stok kodu örtüşmesi (608)
+barkod örtüşmesinden (471) yüksek. Bu yüzden birincil anahtar = stok kodu.
+
+Çıktı: data/product_registry.json (gitignored — ciro içerir) + Firestore registry_latest.
+Platformlar arası fiyat farkı (price_spread) da raporlanır.
+
+  python3 backend/registry_builder.py
+"""
+from __future__ import annotations
+
+import json
+import logging
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+DATA_DIR = Path(__file__).parent.parent / "data"
+OUT_FILE = DATA_DIR / "product_registry.json"
+
+PRICE_CONFLICT_PCT = 5.0   # platformlar arası fiyat farkı bu %'yi aşarsa "çakışma"
+
+
+def _load(name: str) -> dict | None:
+    p = DATA_DIR / name
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception as e:
+        logger.warning(f"{name} okunamadı: {e}")
+        return None
+
+
+def _norm(code) -> str:
+    return str(code or "").strip()
+
+
+# ── Platform yükleyiciler → {stock_code: {kanonik ürün + satış}} ───────────────
+def load_trendyol() -> dict:
+    """Trendyol: products (barcode-anahtarlı, stock_code taşır) + sales_by_product (barcode ile eşle)."""
+    doc = _load("trendyol_sales.json")
+    if not doc:
+        logger.info("trendyol_sales.json yok — Trendyol atlanıyor.")
+        return {}
+    products = doc.get("products", {})
+    sales    = doc.get("sales_by_product", {})
+    # barcode → satış agregası
+    sales_by_bc = {}
+    for v in sales.values():
+        bc = _norm(v.get("barcode"))
+        if bc:
+            sales_by_bc[bc] = v
+
+    out = {}
+    for v in products.values():
+        sc = _norm(v.get("stock_code"))
+        bc = _norm(v.get("barcode"))
+        if not sc and not bc:
+            continue
+        key = sc or bc
+        s = sales_by_bc.get(bc, {})
+        out[key] = {
+            "stock_code": sc,
+            "barcode":    bc,
+            "name":       v.get("title") or "",
+            "category":   v.get("category") or "",
+            "price":      v.get("sale_price") or 0.0,
+            "list_price": v.get("list_price"),
+            "url":        v.get("product_url") or "",
+            "on_sale":    bool(v.get("on_sale")),
+            "image":      v.get("image") or "",
+            "units_90d":  s.get("net_units", 0),
+            "amount_90d": round(s.get("net_amount", 0.0)),
+            "momentum":   s.get("sales_momentum"),
+        }
+    logger.info(f"Trendyol: {len(out)} ürün (stok kodu anahtarlı).")
+    return out
+
+
+def load_shopify() -> dict:
+    """Shopify: products (sku=stok kodu) + by_product (sku/barkod ile satış)."""
+    doc = _load("shopify_sales.json")
+    if not doc:
+        logger.info("shopify_sales.json yok — Shopify atlanıyor.")
+        return {}
+    products = doc.get("products", {})
+    sales    = doc.get("by_product", {})
+    # sku VE barcode → satış (ikisiyle de eşleşebilsin)
+    sales_idx = {}
+    for v in sales.values():
+        for k in (_norm(v.get("sku")), _norm(v.get("barcode"))):
+            if k:
+                sales_idx[k] = v
+
+    out = {}
+    for v in products.values():
+        sc = _norm(v.get("sku"))
+        bc = _norm(v.get("barcode"))
+        if not sc and not bc:
+            continue
+        key = sc or bc
+        s = sales_idx.get(sc) or sales_idx.get(bc) or {}
+        # aynı stok kodu birden çok varyantta olabilir → satışı topla, ilk ürün bilgisini tut
+        if key in out:
+            out[key]["units_90d"]  += s.get("net_units", 0)
+            out[key]["amount_90d"] += round(s.get("net_amount", 0.0))
+            continue
+        out[key] = {
+            "stock_code": sc,
+            "barcode":    bc,
+            "name":       v.get("name") or "",
+            "category":   v.get("category") or "",
+            "price":      v.get("price") or 0.0,
+            "list_price": v.get("list_price"),
+            "url":        v.get("url") or "",
+            "on_sale":    (v.get("status") == "active"),
+            "image":      v.get("image") or "",
+            "units_90d":  s.get("net_units", 0),
+            "amount_90d": round(s.get("net_amount", 0.0)),
+            "momentum":   s.get("sales_momentum"),
+        }
+    logger.info(f"Shopify: {len(out)} ürün (stok kodu anahtarlı).")
+    return out
+
+
+def load_hb() -> dict:
+    """Hepsiburada — hb_sales.json hazır olunca doldurulacak (aktivasyon bekliyor)."""
+    doc = _load("hb_sales.json")
+    if not doc:
+        return {}
+    products = doc.get("products", {})
+    sales    = doc.get("by_product", {})
+    out = {}
+    for v in products.values():
+        sc = _norm(v.get("sku") or v.get("merchant_sku"))
+        bc = _norm(v.get("barcode"))
+        key = sc or bc
+        if not key:
+            continue
+        s = sales.get(sc) or sales.get(bc) or {}
+        out[key] = {
+            "stock_code": sc, "barcode": bc,
+            "name": v.get("name") or "", "category": v.get("category") or "",
+            "price": v.get("price") or 0.0, "list_price": v.get("list_price"),
+            "url": v.get("url") or "", "on_sale": True, "image": v.get("image") or "",
+            "units_90d": s.get("net_units", 0), "amount_90d": round(s.get("net_amount", 0.0)),
+            "momentum": s.get("sales_momentum"),
+        }
+    logger.info(f"Hepsiburada: {len(out)} ürün.")
+    return out
+
+
+def load_n11() -> dict:
+    """n11 — n11_sales.json hazır olunca doldurulacak (aktivasyon bekliyor)."""
+    doc = _load("n11_sales.json")
+    if not doc:
+        return {}
+    products = doc.get("products", {})
+    sales    = doc.get("by_product", {})
+    out = {}
+    for v in products.values():
+        sc = _norm(v.get("sku"))
+        bc = _norm(v.get("barcode"))
+        key = sc or bc
+        if not key:
+            continue
+        s = sales.get(sc) or sales.get(bc) or {}
+        out[key] = {
+            "stock_code": sc, "barcode": bc,
+            "name": v.get("name") or "", "category": v.get("category") or "",
+            "price": v.get("price") or 0.0, "list_price": v.get("list_price"),
+            "url": v.get("url") or "", "on_sale": True, "image": v.get("image") or "",
+            "units_90d": s.get("net_units", 0), "amount_90d": round(s.get("net_amount", 0.0)),
+            "momentum": s.get("sales_momentum"),
+        }
+    logger.info(f"n11: {len(out)} ürün.")
+    return out
+
+
+PLATFORM_LOADERS = {
+    "trendyol": load_trendyol,
+    "shopify":  load_shopify,
+    "hb":       load_hb,
+    "n11":      load_n11,
+}
+
+
+def build_registry() -> dict:
+    per_platform = {name: fn() for name, fn in PLATFORM_LOADERS.items()}
+    active = [p for p, d in per_platform.items() if d]
+    logger.info(f"Aktif platformlar: {active}")
+
+    # barkod → stok kodu köprüsü (bir platformda stok kodu yoksa barkodla birleştir)
+    bc_to_sc = {}
+    for d in per_platform.values():
+        for key, v in d.items():
+            sc, bc = v.get("stock_code"), v.get("barcode")
+            if sc and bc:
+                bc_to_sc[bc] = sc
+
+    registry = {}
+    for platform, prods in per_platform.items():
+        for key, v in prods.items():
+            # Birleştirme anahtarı: stok kodu > (barkod→stok kodu köprüsü) > barkod
+            sc = v.get("stock_code")
+            bc = v.get("barcode")
+            merge_key = sc or bc_to_sc.get(bc) or bc or key
+
+            entry = registry.setdefault(merge_key, {
+                "stock_code": sc or "",
+                "barcode":    bc or "",
+                "name":       v["name"],
+                "category":   v["category"],
+                "image":      v.get("image", ""),
+                "platforms":  {},
+            })
+            # Kanonik ad/kategori/barkod boşsa doldur
+            if not entry["stock_code"] and sc: entry["stock_code"] = sc
+            if not entry["barcode"] and bc:    entry["barcode"] = bc
+            if not entry["name"] and v["name"]: entry["name"] = v["name"]
+            if (not entry["category"] or entry["category"] == "Diğer") and v["category"]:
+                entry["category"] = v["category"]
+            if not entry["image"] and v.get("image"): entry["image"] = v["image"]
+
+            entry["platforms"][platform] = {
+                "price":      v["price"],
+                "list_price": v["list_price"],
+                "url":        v["url"],
+                "on_sale":    v["on_sale"],
+                "units_90d":  v["units_90d"],
+                "amount_90d": v["amount_90d"],
+                "momentum":   v["momentum"],
+            }
+
+    # Türev alanlar: present_on, fiyat aralığı, toplam satış
+    conflicts = 0
+    for e in registry.values():
+        present = sorted(e["platforms"].keys())
+        e["present_on"] = present
+        e["platform_count"] = len(present)
+        prices = [p["price"] for p in e["platforms"].values() if p["price"]]
+        e["price_min"] = min(prices) if prices else None
+        e["price_max"] = max(prices) if prices else None
+        e["price_spread_pct"] = (round(100 * (max(prices) - min(prices)) / min(prices), 1)
+                                 if len(prices) >= 2 and min(prices) else None)
+        if e["price_spread_pct"] and e["price_spread_pct"] > PRICE_CONFLICT_PCT:
+            e["price_conflict"] = True
+            conflicts += 1
+        else:
+            e["price_conflict"] = False
+        e["total_units_90d"]  = sum(p["units_90d"] for p in e["platforms"].values())
+        e["total_amount_90d"] = sum(p["amount_90d"] for p in e["platforms"].values())
+
+    multi = sum(1 for e in registry.values() if e["platform_count"] >= 2)
+    by_platform_count = {p: sum(1 for e in registry.values() if p in e["platforms"]) for p in active}
+
+    return {
+        "metadata": {
+            "generated_at":        datetime.now(timezone.utc).isoformat(),
+            "merge_key":           "stock_code (yedek: barcode)",
+            "platforms":           active,
+            "total_products":      len(registry),
+            "multi_platform_count": multi,
+            "by_platform_count":   by_platform_count,
+            "price_conflict_count": conflicts,
+        },
+        "products": registry,
+    }
+
+
+def save_to_firestore(payload: dict) -> None:
+    sa = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
+    if not sa:
+        logger.warning("FIREBASE_SERVICE_ACCOUNT yok — Firestore yazımı atlanıyor.")
+        return
+    try:
+        import firebase_admin
+        from firebase_admin import credentials, firestore as fs
+        if not firebase_admin._apps:
+            firebase_admin.initialize_app(credentials.Certificate(json.loads(sa)))
+        fs.client().collection("roomart-bcg-dev").document("registry_latest").set(payload)
+        logger.info("Firestore write OK: roomart-bcg-dev/registry_latest")
+    except Exception as e:
+        logger.error(f"Firestore write failed: {e}")
+
+
+def run() -> None:
+    logger.info("Ürün kütüğü (stok kodu birleştirme) başlıyor...")
+    payload = build_registry()
+    DATA_DIR.mkdir(exist_ok=True)
+    OUT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    m = payload["metadata"]
+    logger.info(f"Kaydedildi: {OUT_FILE}")
+    logger.info(f"Toplam ürün: {m['total_products']} | çok-platform: {m['multi_platform_count']} "
+                f"| fiyat çakışması: {m['price_conflict_count']}")
+    logger.info(f"Platform başına: {m['by_platform_count']}")
+    save_to_firestore(payload)
+
+
+if __name__ == "__main__":
+    run()

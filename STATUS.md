@@ -6,30 +6,41 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-06-30
-- **Güncelleyen:** Code (platform entegrasyonları + fiyat düzeltmesi + veri güncelleme)
-- **Aktif branch:** `main` (temiz). Son commit: `b97ff1b`.
+- **Tarih:** 2026-07-02
+- **Güncelleyen:** Code (CLEAR karar katmanı + Shopify/n11 API çözümü + stok kodu registry)
+- **Aktif branch:** `feat/clear-decision-intelligence`. CLEAR → **PR #32 açık**. Platform API işi henüz commit edilmedi (branch düzeni bekliyor).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 >
-> **🔴 DESTEK BEKLENİYOR (platform API'leri):**
-> - **n11:** Yeni appKey (`5ee5c441-7e43-4d8f-a1be-9d6e4aa0dad3`) oluşturuldu, 403 → destek talebi açıldı (hesap aktivasyonu gerekiyor). `backend/n11_api.py` + `n11_sync.py` hazır, creds `.env.n11.local`'de.
-> - **Hepsiburada:** `258ae7fe-...` merchantId bilindi, yeni entegratör oluşturmak için HB onayı gerekiyor → destek talebi açıldı. `backend/hepsiburada_api.py` + `hepsiburada_sync.py` hazır.
-> - **Shopify:** `shpss_` shared secret (yanlış alan), doğru Admin API token (`shpat_`) yenilenmesi IT onayı bekliyor. `backend/shopify_api.py` + `shopify_sync.py` hazır.
+> **✅ 2026-07-02 ÇÖZÜLEN PLATFORM API'leri:**
+> - **Shopify: ÇALIŞIYOR.** İki hata düzeltildi: (1) store adı `roomartstore-com-tr.myshopify.com` (`-com-tr` eksikti),
+>   (2) auth = **Client Credentials Grant** (statik token değil; client_id+secret → geçici `shpat_`). `shopify_api.py`
+>   `get_access_token()` eklendi. Sonuç: **684 ürün + 527 sipariş** → `shopify_sales.json`.
+> - **n11: ÇALIŞIYOR.** Kök neden: n11 **SOAP API'yi kapatmış** → `n11_api.py` REST'e yeniden yazıldı
+>   (`GET /ms/product-query`, `GET /rest/delivery/v1/shipmentPackages`; auth = `appkey`/`appsecret` header).
+>   Creds hep geçerliymiş. Sonuç: **699 ürün + 59 sipariş** → `n11_sales.json`.
 >
-> **Çözüm gelince yapılacaklar (sırayla):**
-> 1. Platform sync'leri test et: `source backend/.env.X.local && python3 backend/X_api.py`
-> 2. `product_registry.json` — EAN/barkod üzerinden platform eşleştirmesi (`backend/registry_builder.py`)
-> 3. Çok platformlu analiz motoru (analyzer.py genişletme)
-> 4. Dashboard'a platform fiyat kolonları (HB Fiyat, n11 Fiyat, Shopify Fiyat)
+> **🔴 HÂLÂ BLOKE (idari, koddan çözülemez):**
+> - **Hepsiburada:** `HB_USERNAME=lojimod_dev` üçüncü-taraf entegratör, merchant `258ae7fe` için YETKİSİZ →
+>   401. Çözüm: RoomArt HB Merchant Panel → Hesabım → Bilgilerime → Entegratör bilgileri'nde kendi entegratör
+>   adını ekleyip HB'nin AKTİVE etmesi (veya Yardım > Talepler > API Entegrasyon İşlemleri ile kendi API kullanıcısı).
+>   Kod hazır (`hepsiburada_api.py` auth/endpoint doğru); aktive olunca çalışır.
 >
-> **🆕 2026-06-30 TAMAMLANANLAR:**
-> - Fiyat önceliği düzeltildi: scraper fiyatı (görünen) > API fiyatı; kampanya indirimi liste-fiyata çevrildi
-> - Stok kolonu kaldırıldı (sanal veri)
-> - TY Fiyat/Liste/İnd. etiketleri + fiyata Trendyol linki
-> - Tam güncelleme: 188 scrape + 6564 sipariş + 2677 rakip ürün + BCG analiz
+> **✅ Stok kodu birleştirme (registry_builder.py):** ürünler STOK KODUNDA birleşti (ampirik: stok kodu örtüşmesi
+>   608 > barkod 471). `product_registry.json`: **1080 ürün, 736 çok-platform, 608 fiyat çakışması**. HB/n11 loader
+>   hazır. Örüntü: n11 fiyatları ~%7 sistematik yüksek. Çıktı gitignored (ciro içerir), Firestore `registry_latest`.
 >
-> **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy (`firebase deploy --only firestore:rules`).
+> **✅ CLEAR Decision Intelligence (PR #32):** BCG üstüne 5-boyutlu karar katmanı + "Decision (CLEAR)" sekmesi.
+>   Yerel çalışır; `data/manual_margin_inputs.csv` + `manual_operation_inputs.csv` doldurulunca marj bazlı kararlar açılır.
+>
+> **Sıradaki adımlar:**
+> 1. **HB'yi aç:** RoomArt kendi HB entegratörünü panelde ekleyip aktive ettirsin (yukarıdaki adım).
+> 2. Branch düzeni: platform API işi (Shopify/n11 fix + registry) commit → ayrı PR mı, PR #32'ye mi?
+> 3. Registry'yi dashboard'a bağla (ProductTable'a TY/Shopify/n11 fiyat kolonları + fiyat çakışması uyarısı).
+> 4. CLEAR CSV'lerini doldur → gerçek marj/operasyon kararları.
+>
+> **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy.
+> Shopify `.env`'deki eski `SHOPIFY_ADMIN_TOKEN` artık kullanılmıyor (silinebilir).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only

@@ -1,10 +1,15 @@
-"""n11 Marketplace SOAP API istemcisi (RoomArt satıcı hesabı).
+"""n11 Marketplace REST API istemcisi (RoomArt satıcı hesabı).
+
+n11 ESKİ SOAP API'sini (api.n11.com/ws) kapattı → YENİ REST API kullanılır.
+Kimlik: appkey + appsecret HTTP HEADER olarak (Authorization YOK).
 
 Kimlik bilgileri YALNIZCA ortam değişkenlerinden okunur:
-  N11_APP_KEY     — n11 Satıcı Paneli → API Entegrasyonu → App Key
-  N11_APP_SECRET  — n11 Satıcı Paneli → API Entegrasyonu → App Secret
+  N11_APP_KEY     — n11 Satıcı Paneli → Hesabım → API İşlemleri → App Key
+  N11_APP_SECRET  — App Secret
 
-n11 API SOAP tabanlı; requests + xml.etree ile çalışır, zeep gerekmez.
+Endpoint'ler:
+  Ürünler:    GET  https://api.n11.com/ms/product-query        (Spring sayfalama)
+  Siparişler: GET  https://api.n11.com/rest/delivery/v1/shipmentPackages  (page/totalPages)
 
 Yerel test:
   source backend/.env.n11.local && python3 backend/n11_api.py
@@ -14,26 +19,23 @@ from __future__ import annotations
 import logging
 import os
 import time
-import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 
 import requests
 
 logger = logging.getLogger(__name__)
 
-BASE_URL    = "https://api.n11.com/ws"
-PRODUCT_SVC = f"{BASE_URL}/ProductService"
-ORDER_SVC   = f"{BASE_URL}/OrderService"
+BASE_URL    = "https://api.n11.com"
+PRODUCT_URL = f"{BASE_URL}/ms/product-query"
+ORDER_URL   = f"{BASE_URL}/rest/delivery/v1/shipmentPackages"
 
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 MAX_RETRIES    = 3
 BACKOFF_BASE   = 2.0
 
-NS = "http://www.n11.com/ws/schemas"
-
 
 class N11AuthError(RuntimeError):
-    """appKey/appSecret geçersiz veya hesap API erişimine kapalı."""
+    """appkey/appsecret geçersiz veya hesap API erişimine kapalı."""
 
 
 def _config() -> tuple[str, str]:
@@ -45,191 +47,131 @@ def _config() -> tuple[str, str]:
     return key, secret
 
 
-def _auth_header(key: str, secret: str) -> str:
-    return f"""<sch:auth xmlns:sch="{NS}">
-      <sch:appKey>{key}</sch:appKey>
-      <sch:appSecret>{secret}</sch:appSecret>
-    </sch:auth>"""
+def _headers(key: str, secret: str) -> dict:
+    # DİKKAT: header adları küçük harf 'appkey'/'appsecret'; Authorization YOK.
+    return {"appkey": key, "appsecret": secret, "Content-Type": "application/json"}
 
 
-def _soap_envelope(header_xml: str, body_xml: str) -> str:
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
-<soapenv:Envelope
-    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-    xmlns:sch="{NS}">
-  <soapenv:Header>{header_xml}</soapenv:Header>
-  <soapenv:Body>{body_xml}</soapenv:Body>
-</soapenv:Envelope>"""
-
-
-def _post(endpoint: str, body_xml: str, key: str, secret: str) -> ET.Element:
-    envelope = _soap_envelope(_auth_header(key, secret), body_xml)
-    headers  = {"Content-Type": "text/xml; charset=UTF-8", "SOAPAction": ""}
+def _get(url: str, headers: dict, params: dict) -> dict:
     for attempt in range(MAX_RETRIES + 1):
         try:
-            r = requests.post(endpoint, data=envelope.encode("utf-8"),
-                              headers=headers, timeout=30)
+            r = requests.get(url, headers=headers, params=params, timeout=40)
             if r.status_code in (401, 403):
-                raise N11AuthError(f"n11 auth hatası {r.status_code}: {r.text[:300]}")
+                raise N11AuthError(f"n11 auth hatası {r.status_code}: {r.text[:200]}")
             if r.status_code in RETRY_STATUSES and attempt < MAX_RETRIES:
                 time.sleep(BACKOFF_BASE ** attempt)
                 continue
             r.raise_for_status()
-            root = ET.fromstring(r.content)
-            # Hata kodu kontrolü (n11 200 döndürüp body'de hata bildirebilir)
-            err = root.find(".//{%s}errorCode" % NS) or root.find(".//errorCode")
-            if err is not None and err.text not in (None, "0", ""):
-                msg_el = root.find(".//{%s}errorMessage" % NS) or root.find(".//errorMessage")
-                raise RuntimeError(f"n11 API hatası {err.text}: {msg_el.text if msg_el is not None else ''}")
-            return root
-        except (N11AuthError, RuntimeError):
+            return r.json()
+        except N11AuthError:
             raise
         except Exception as e:
             if attempt < MAX_RETRIES:
                 time.sleep(BACKOFF_BASE ** attempt)
                 continue
-            raise RuntimeError(f"n11 isteği başarısız: {e}") from e
-    return ET.Element("empty")
-
-
-def _text(el: ET.Element | None) -> str:
-    return (el.text or "").strip() if el is not None else ""
-
-
-def _find(root: ET.Element, *tags: str) -> ET.Element | None:
-    for tag in tags:
-        el = root.find(f".//{{{NS}}}{tag}") or root.find(f".//{tag}")
-        if el is not None:
-            return el
-    return None
+            raise RuntimeError(f"n11 isteği başarısız: {url} → {e}") from e
+    return {}
 
 
 # ── Ürün kataloğu ─────────────────────────────────────────────────────────────
-
 def fetch_products(key: str, secret: str) -> list[dict]:
-    """Tüm onaylı ürünleri sayfalayarak çek."""
-    products, page, page_size = [], 0, 100
-    logger.info("n11 ürün kataloğu çekiliyor...")
+    """Tüm ürünleri sayfalayarak çek (Spring sayfalama: number/totalPages/last)."""
+    headers = _headers(key, secret)
+    products, page, size = [], 0, 100
+    logger.info("n11 ürün kataloğu çekiliyor (REST)...")
     while True:
-        body = f"""<sch:GetProductListRequest>
-          <sch:pagingData>
-            <sch:currentPage>{page}</sch:currentPage>
-            <sch:pageSize>{page_size}</sch:pageSize>
-          </sch:pagingData>
-        </sch:GetProductListRequest>"""
-        root = _post(PRODUCT_SVC, body, key, secret)
-
-        items = root.findall(f".//{{{NS}}}product") or root.findall(".//product")
-        if not items:
-            break
-
-        for item in items:
-            def t(tag: str) -> str: return _text(_find(item, tag))
-            # Barkod: n11'de birden fazla olabilir → ilkini al
-            barcodes = item.findall(f".//{{{NS}}}barcode") or item.findall(".//barcode")
-            barcode  = _text(barcodes[0]) if barcodes else ""
-            price_raw = t("displayPrice") or t("price") or t("buyingPrice") or "0"
-            try:
-                price = float(str(price_raw).replace(",", "."))
-            except ValueError:
-                price = 0.0
-
+        data = _get(PRODUCT_URL, headers, {"page": page, "size": size})
+        items = data.get("content", [])
+        for it in items:
+            imgs = it.get("imageUrls") or []
             products.append({
-                "product_id":   t("id"),
-                "product_code": t("productCode"),   # satıcı SKU kodu
-                "barcode":      barcode,
-                "title":        t("title") or t("displayName"),
-                "price":        price,
-                "stock":        t("stockAmount") or t("quantity"),
-                "status":       t("status") or t("approvalStatus"),
-                "url":          t("productUrl") or t("canonicalUrl"),
+                "product_id":   str(it.get("n11ProductId") or ""),
+                "stock_code":   str(it.get("stockCode") or "").strip(),
+                "barcode":      str(it.get("barcode") or "").strip(),
+                "title":        it.get("title") or "",
+                "price":        it.get("salePrice") or 0.0,
+                "list_price":   it.get("listPrice"),
+                "stock":        it.get("quantity"),
+                "status":       it.get("status") or it.get("saleStatus") or "",
+                "commission":   it.get("commissionRate"),
+                "image":        imgs[0] if imgs else "",
+                "url":          f"https://www.n11.com/urun/-{it.get('n11ProductId')}",
             })
-
         logger.info(f"  sayfa {page}: {len(items)} ürün ({len(products)} toplam)")
-        if len(items) < page_size:
+        if data.get("last") or not items or page + 1 >= data.get("totalPages", 1):
             break
         page += 1
-        time.sleep(0.4)
-
+        time.sleep(0.3)
     logger.info(f"n11 katalog toplam: {len(products)} ürün")
     return products
 
 
 # ── Siparişler ────────────────────────────────────────────────────────────────
+def _created_ms(pkg: dict) -> int:
+    """packageHistories içindeki 'Created' kaydından sipariş epoch ms'i."""
+    for h in pkg.get("packageHistories") or []:
+        if h.get("status") == "Created" and h.get("createdDate"):
+            return int(h["createdDate"])
+    # yedek: ilk history
+    hist = pkg.get("packageHistories") or []
+    return int(hist[0].get("createdDate")) if hist and hist[0].get("createdDate") else 0
+
 
 def fetch_orders(key: str, secret: str, days_back: int = 90) -> list[dict]:
-    """Son N günlük siparişleri çek."""
-    end   = datetime.now(timezone.utc)
-    begin = end - timedelta(days=days_back)
-    fmt   = "%d/%m/%Y %H:%M:%S"
-
-    orders, page, page_size = [], 0, 100
-    logger.info(f"n11 siparişler çekiliyor ({begin.strftime('%Y-%m-%d')} → {end.strftime('%Y-%m-%d')})...")
+    """shipmentPackages sayfalarını çek, days_back'e göre süz. PII satırda AYIKLANIR."""
+    headers = _headers(key, secret)
+    cutoff  = (datetime.now(timezone.utc) - timedelta(days=days_back)).timestamp() * 1000
+    orders, page, size = [], 0, 100
+    logger.info(f"n11 siparişler çekiliyor (son {days_back} gün)...")
     while True:
-        body = f"""<sch:GetOrderListRequest>
-          <sch:searchData>
-            <sch:period>
-              <sch:startDate>{begin.strftime(fmt)}</sch:startDate>
-              <sch:endDate>{end.strftime(fmt)}</sch:endDate>
-            </sch:period>
-            <sch:sortForUpdateDate>true</sch:sortForUpdateDate>
-          </sch:searchData>
-          <sch:pagingData>
-            <sch:currentPage>{page}</sch:currentPage>
-            <sch:pageSize>{page_size}</sch:pageSize>
-          </sch:pagingData>
-        </sch:GetOrderListRequest>"""
-        root = _post(ORDER_SVC, body, key, secret)
-
-        items = root.findall(f".//{{{NS}}}order") or root.findall(".//order")
+        data = _get(ORDER_URL, headers, {"page": page, "size": size})
+        items = data.get("content", [])
         if not items:
             break
-
-        for order in items:
-            def t(el: ET.Element, tag: str) -> str: return _text(_find(el, tag))
-            lines = order.findall(f".//{{{NS}}}orderItem") or order.findall(".//orderItem")
+        stop = False
+        for pkg in items:
+            od = _created_ms(pkg)
+            if od and od < cutoff:
+                stop = True   # sayfalar tarih azalanına yakın; eski görülünce dur
+                continue
             orders.append({
-                "order_id":   t(order, "id"),
-                "order_date": t(order, "createDate"),
-                "status":     t(order, "status"),
+                "order_id":   str(pkg.get("id") or ""),
+                "order_no":   str(pkg.get("orderNumber") or ""),
+                "order_ms":   od,
+                "status":     pkg.get("shipmentPackageStatus") or "",
                 "lines": [{
-                    "product_id":   t(ln, "productId"),
-                    "product_code": t(ln, "productCode"),
-                    "product_name": t(ln, "name") or t(ln, "productName"),
-                    "quantity":     t(ln, "quantity"),
-                    "unit_price":   t(ln, "unitPrice") or t(ln, "price"),
-                    "status":       t(ln, "status"),
-                } for ln in lines],
+                    "stock_code":   str(ln.get("stockCode") or "").strip(),
+                    "barcode":      str(ln.get("barcode") or "").strip(),
+                    "product_name": ln.get("productName") or "",
+                    "quantity":     ln.get("quantity") or 0,
+                    # net satış fiyatı: satıcı indirimli fiyat > price
+                    "unit_price":   ln.get("sellerDiscountedPrice") or ln.get("price") or 0.0,
+                    "status":       ln.get("orderItemLineItemStatusName") or "",
+                } for ln in (pkg.get("lines") or [])],
             })
-
-        logger.info(f"  sayfa {page}: {len(items)} sipariş ({len(orders)} toplam)")
-        total_el = _find(root, "totalCount") or _find(root, "totalRecord")
-        total    = int(_text(total_el) or "0")
-        if len(orders) >= total or len(items) < page_size:
+        total_pages = data.get("totalPages", 1)
+        logger.info(f"  sayfa {page}: {len(items)} paket ({len(orders)} toplam)")
+        if stop or page + 1 >= total_pages:
             break
         page += 1
-        time.sleep(0.4)
-
+        time.sleep(0.3)
     logger.info(f"n11 sipariş toplam: {len(orders)}")
     return orders
 
 
 # ── Doğrulama testi ───────────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     import json
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     key, secret = _config()
-    logger.info("n11 API bağlantı testi...")
+    logger.info("n11 REST API bağlantı testi...")
 
     prods = fetch_products(key, secret)
     if prods:
-        logger.info(f"İlk ürün: {json.dumps(prods[0], ensure_ascii=False, indent=2)}")
-    else:
-        logger.warning("Ürün bulunamadı.")
+        logger.info(f"İlk ürün: {json.dumps(prods[0], ensure_ascii=False)[:200]}")
 
-    orders = fetch_orders(key, secret, days_back=30)
+    orders = fetch_orders(key, secret, days_back=90)
     if orders:
-        logger.info(f"İlk sipariş: {json.dumps(orders[0], ensure_ascii=False, indent=2)}")
+        logger.info(f"İlk sipariş satırı: {json.dumps(orders[0]['lines'][0], ensure_ascii=False)}")
     else:
         logger.warning("Sipariş bulunamadı.")

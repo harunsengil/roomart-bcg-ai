@@ -1,10 +1,14 @@
-"""Shopify Admin API istemcisi (roomartstore.com.tr).
+"""Shopify Admin API istemcisi (roomartstore-com-tr.myshopify.com).
+
+Dev Dashboard uygulaması **Client Credentials Grant** kullanır (statik token DEĞİL):
+önce client_id + client_secret → geçici access_token (shpat_...) değiş-tokuş edilir,
+sonra o token X-Shopify-Access-Token header'ında kullanılır.
 
 Kimlik bilgileri YALNIZCA ortam değişkenlerinden okunur:
-  SHOPIFY_STORE_URL    — örn. roomartstore.myshopify.com (veya roomartstore.com.tr)
-  SHOPIFY_ADMIN_TOKEN  — Admin API access token (shpat_...)
-
-REST Admin API v2024-01 kullanılır.
+  SHOPIFY_STORE_URL      — roomartstore-com-tr.myshopify.com (DİKKAT: -com-tr)
+  SHOPIFY_CLIENT_ID      — Dev Dashboard → API credentials → Client ID
+  SHOPIFY_CLIENT_SECRET  — Dev Dashboard → API credentials → Client secret (shpss_...)
+  SHOPIFY_API_VERSION    — opsiyonel (varsayılan 2024-01)
 
 Yerel test:
   source backend/.env.shopify.local && python3 backend/shopify_api.py
@@ -20,7 +24,7 @@ import requests
 
 logger = logging.getLogger(__name__)
 
-API_VERSION = "2024-01"
+API_VERSION = os.environ.get("SHOPIFY_API_VERSION", "2024-01").strip() or "2024-01"
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 MAX_RETRIES    = 4
 BACKOFF_BASE   = 1.5
@@ -30,16 +34,37 @@ class ShopifyAuthError(RuntimeError):
     """401/403 — token geçersiz veya yetersiz scope."""
 
 
-def _config() -> tuple[str, str]:
-    store = os.environ.get("SHOPIFY_STORE_URL", "").strip().rstrip("/")
-    token = os.environ.get("SHOPIFY_ADMIN_TOKEN", "").strip()
-    missing = [n for n, v in [("SHOPIFY_STORE_URL", store), ("SHOPIFY_ADMIN_TOKEN", token)] if not v]
+def _config() -> tuple[str, str, str]:
+    """(store_url, client_id, client_secret) döndür — hepsi ortamdan."""
+    store  = os.environ.get("SHOPIFY_STORE_URL", "").strip().rstrip("/")
+    cid    = os.environ.get("SHOPIFY_CLIENT_ID", "").strip()
+    secret = os.environ.get("SHOPIFY_CLIENT_SECRET", "").strip()
+    missing = [n for n, v in [("SHOPIFY_STORE_URL", store), ("SHOPIFY_CLIENT_ID", cid),
+                              ("SHOPIFY_CLIENT_SECRET", secret)] if not v]
     if missing:
         raise SystemExit("Eksik ortam değişkeni: " + ", ".join(missing))
-    # myshopify.com veya özel domain — her ikisi de çalışır
     if not store.startswith("http"):
         store = f"https://{store}"
-    return store, token
+    return store, cid, secret
+
+
+def get_access_token(store: str, client_id: str, client_secret: str) -> str:
+    """Client Credentials Grant: client_id+secret → geçici access_token (shpat_...).
+    Dev Dashboard uygulamaları statik token vermez; her oturumda değiş-tokuş gerekir."""
+    url = f"{store}/admin/oauth/access_token"
+    r = requests.post(url, data={
+        "grant_type":    "client_credentials",
+        "client_id":     client_id,
+        "client_secret": client_secret,
+    }, timeout=30)
+    if r.status_code in (401, 403):
+        raise ShopifyAuthError(f"Token exchange başarısız {r.status_code}: {r.text[:200]}")
+    r.raise_for_status()
+    token = r.json().get("access_token", "")
+    if not token:
+        raise ShopifyAuthError(f"access_token dönmedi: {r.text[:200]}")
+    logger.info(f"Access token alındı (Client Credentials) — {token[:10]}...")
+    return token
 
 
 def make_session(token: str) -> requests.Session:
@@ -91,7 +116,7 @@ def fetch_products(sess: requests.Session, store: str) -> list[dict]:
     logger.info("Shopify ürün kataloğu çekiliyor...")
 
     while True:
-        params = {"limit": 250, "fields": "id,title,status,variants,images"}
+        params = {"limit": 250, "fields": "id,title,handle,status,variants,images"}
         if page_info:
             params = {"limit": 250, "page_info": page_info}
 
@@ -150,7 +175,7 @@ def fetch_products_paginated(sess: requests.Session, store: str) -> list[dict]:
     products, url = [], f"{_base(store)}/products.json"
     logger.info("Shopify ürün kataloğu çekiliyor (sayfalı)...")
 
-    params = {"limit": 250, "fields": "id,title,status,variants,images"}
+    params = {"limit": 250, "fields": "id,title,handle,status,variants,images"}
     while url:
         r = sess.get(url, params=params, timeout=30)
         if r.status_code == 429:
@@ -235,9 +260,10 @@ def fetch_orders(sess: requests.Session, store: str, days_back: int = 90) -> lis
 if __name__ == "__main__":
     import json
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    store, token = _config()
+    store, cid, secret = _config()
+    token = get_access_token(store, cid, secret)
     sess = make_session(token)
-    logger.info(f"Shopify bağlantı testi → {store}")
+    logger.info(f"Shopify bağlantı testi → {store} (api {API_VERSION})")
 
     products = fetch_products_paginated(sess, store)
     if products:

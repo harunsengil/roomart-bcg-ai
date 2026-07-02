@@ -156,7 +156,8 @@ def aggregate_sales(orders: list, product_table: dict) -> tuple[dict, dict]:
 
 def run() -> None:
     logger.info("Shopify senkronu başlıyor...")
-    store, token = sh._config()
+    store, cid, secret = sh._config()
+    token = sh.get_access_token(store, cid, secret)
     sess = sh.make_session(token)
 
     variants      = sh.fetch_products_paginated(sess, store)
