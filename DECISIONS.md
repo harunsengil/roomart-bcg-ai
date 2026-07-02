@@ -377,4 +377,16 @@
   çözümü:** metin `comp_categorize` (banyo/kiler dolapları, analyzer.py'ye dokunmadan) + seed genişletme
   (1401→3844 ürün, 28 mağaza). Sonuç: ort skor 0.67→0.73, tam-dolu 412→465/466. Competition sekmesi İngilizce.
 
+- **2026-07-02 — [CLEAR Decision Intelligence katmanı: BCG üstüne 5-boyutlu karar motoru]**
+  BCG "hangi kadran?" sorusunu "şimdi ne yapmalı?"ya genişlettik. **Karar:** BCG'ye DOKUNMADAN ayrı
+  `backend/clear_engine.py` + "Decision (CLEAR)" sekmesi. 5 boyut: Talep(=BCG growth) · Rekabet(=BCG share) ·
+  Kâr(manuel maliyet CSV) · Operasyon(manuel stok CSV) · Veri Güveni(kaynak ağırlığı − eksik veri cezası).
+  Sıralı **hard-gate** kuralları (düşük güven/negatif marj/stok riski yüksek skorla TELAFİ EDİLMEZ) →
+  önerilen aksiyon (scale/protect/test/fix_margin/fix_operation/reduce_stock/prepare_exit/complete_data/monitor).
+  **Gizlilik:** birim maliyet = en hassas veri → `manual_margin_inputs.csv`, `manual_operation_inputs.csv`,
+  `clear_scores.json` GİTIGNORED (trendyol_sales deseni); dashboard'a yalnız Firestore `clear_latest`
+  (private, authed). **Yerel çalışır** (marj manuel); Firestore yazımı marj/op verisi YOKKEN atlanır →
+  bulut CI marjsız sürümle private clear_latest'i ezmez. Boş CSV = dürüst "Veriyi Tamamla" (negatif marjlı
+  ürüne "Ölçekle" dememek için kasıtlı). GTÜ eğitimi için framework olarak genelleştirilebilir.
+
 <!-- Yeni kararları buraya ekle -->
