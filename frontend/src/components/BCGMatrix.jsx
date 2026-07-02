@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { QUADRANT_META, ACTION_META, formatScore } from '../utils/helpers'
 
@@ -93,46 +93,48 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
   const [zoom, setZoom] = useState(null)
   const [actionFilter, setActionFilter] = useState('ALL')
-  const [highlightId, setHighlightId] = useState(null)   // zoom list hover
+  const [highlightId, setHighlightId] = useState(null)
   const containerRef = useRef(null)
 
-  const scored = (products || []).filter(
-    p => p.share_score != null && p.growth_score != null
-  )
+  const scored = (products || []).filter(p => p.share_score != null && p.growth_score != null)
   if (!scored.length) return null
 
   const shareThr = median(scored.map(p => p.share_score))
   const growthThr = median(scored.map(p => p.growth_score))
-  const QRANGE = {
-    STAR: { loS: shareThr, hiS: 100, loG: growthThr, hiG: 100 },
-    QUESTION_MARK: { loS: 0, hiS: shareThr, loG: growthThr, hiG: 100 },
-    CASH_COW: { loS: shareThr, hiS: 100, loG: 0, hiG: growthThr },
-    DOG: { loS: 0, hiS: shareThr, loG: 0, hiG: growthThr },
-  }
 
-  // Filtreler: aksiyon çipi + seçili kategori + (zoom kadranı)
   const base = scored
     .filter(p => actionFilter === 'ALL' || p.recommendation?.action === actionFilter)
     .filter(p => !selectedCategory || p.category === selectedCategory.category)
   const shown = zoom ? base.filter(p => p.bcg_class === zoom) : base
 
+  // Zoom modunda rank tabanlı konumlandırma: skoru benzer ürünler alta yığılmaz,
+  // sıralama içindeki yerine göre alanın tamamına eşit dağıtılır.
+  const zoomRanks = useMemo(() => {
+    if (!zoom || !shown.length) return {}
+    const byShare  = [...shown].sort((a, b) => a.share_score - b.share_score)
+    const byGrowth = [...shown].sort((a, b) => a.growth_score - b.growth_score)
+    const n = Math.max(1, shown.length - 1)
+    const ranks = {}
+    shown.forEach(p => {
+      ranks[p.id] = {
+        xr: byShare.findIndex(q => q.id === p.id) / n,
+        yr: byGrowth.findIndex(q => q.id === p.id) / n,
+      }
+    })
+    return ranks
+  }, [zoom, shown])
+
   const posOf = (p) => {
     const [jx, jy] = jitter(p.id)
     if (zoom) {
-      const r = QRANGE[zoom]
-      const xf = r.hiS > r.loS ? (p.share_score - r.loS) / (r.hiS - r.loS) : 0.5
-      const yf = r.hiG > r.loG ? (p.growth_score - r.loG) / (r.hiG - r.loG) : 0.5
-      // Zoom: nokta alanı kenarlarından 3px boşluk bırak, sonra jitter uygula
+      const r = zoomRanks[p.id] || { xr: 0.5, yr: 0.5 }
       return [
-        PAD + clamp(clamp(xf, 0, 1) * SPAN + jx, 3, SPAN - 3),
-        PAD + clamp((1 - clamp(yf, 0, 1)) * SPAN + jy, 3, SPAN - 3),
+        PAD + clamp(r.xr * SPAN + jx, 3, SPAN - 3),
+        PAD + clamp((1 - r.yr) * SPAN + jy, 3, SPAN - 3),
       ]
     }
     const xBase = PAD + frac(p.share_score, shareThr) * SPAN
     const yBase = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
-    // Jitter'ı kadran sınırında kes: median sınırından karşı tarafa geçilmesin.
-    // Sınır = MID (50). STAR/CC sağda (x > MID), QM/DOG solda (x < MID).
-    // STAR/QM üstte (y < MID), CC/DOG altta (y > MID).
     const isRight = p.bcg_class === 'STAR' || p.bcg_class === 'CASH_COW'
     const isTop   = p.bcg_class === 'STAR' || p.bcg_class === 'QUESTION_MARK'
     const xMin = p.bcg_class ? (isRight ? MID + 0.5 : PAD + 0.5) : PAD
@@ -160,18 +162,47 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   }
 
   const zoomMeta = zoom ? QUADRANT_META[zoom] : null
+  const sortedZoom = useMemo(() =>
+    [...shown].sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0)),
+    [shown]
+  )
+
+  // ── Dots render (ortak, her iki layout'ta kullanılır) ────────────────────────
+  const renderDots = () => shown.map(p => {
+    const [x, y] = posOf(p)
+    const qm = QUADRANT_META[p.bcg_class] || {}
+    const size = dotSize(p)
+    const isHL = highlightId === p.id
+    return (
+      <div key={p.id} className="absolute cursor-pointer"
+        style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)', zIndex: isHL ? 40 : (tooltip.product?.id === p.id ? 30 : 5) }}
+        onMouseEnter={e => handleMouseEnter(e, p)}
+        onMouseLeave={clearTip}
+        onClick={e => { e.stopPropagation(); onSelectProduct?.(p) }}>
+        <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
+          style={{
+            width: isHL ? size * 1.8 : size, height: isHL ? size * 1.8 : size,
+            background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
+            border: `${isHL ? 2 : 1}px solid ${qm.color}`,
+            opacity: isHL ? 1 : 0.85,
+            boxShadow: isHL ? `0 0 12px ${qm.color}99` : `0 0 5px ${qm.color}55`,
+          }} />
+      </div>
+    )
+  })
 
   return (
-    <div className="glass-card p-5 h-full">
-      <div className="relative z-20 flex items-start justify-between mb-3 gap-3">
+    <div className="glass-card p-5 h-full flex flex-col overflow-hidden">
+      {/* ── Header ── */}
+      <div className="relative z-20 flex items-start justify-between mb-3 gap-3 flex-shrink-0">
         <div className="min-w-0">
           <h2 className="font-display text-lg tracking-[0.15em] text-white">BCG MATRIX</h2>
           <p className="text-[10px] font-mono text-white/30 tracking-wider">
             {zoom
-              ? `🔍 ${zoomMeta.label} · ${shown.length} ürün — boşluğa tıkla: geri`
+              ? `🔍 ${zoomMeta.label} · ${shown.length} ürün (sıraya göre dağıtıldı) — boşluğa tıkla: geri`
               : `${shown.length}/${scored.length} ürün · ⬤ boyut = satış adedi · boş kadrana tıkla: yakınlaştır`}
             {selectedCategory && (
-              <button onClick={(e) => { e.stopPropagation(); onSelectCategory(null) }}
+              <button onClick={e => { e.stopPropagation(); onSelectCategory(null) }}
                 className="ml-2 text-gold-400 hover:text-gold-300">· {selectedCategory.category} ✕</button>
             )}
           </p>
@@ -191,123 +222,123 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
         </div>
       </div>
 
-      <div ref={containerRef} className={`bcg-plot relative ${zoom ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
-        style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
-        <div className="absolute inset-0">
-          <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-            {!zoom && (
-              <>
-                <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
-                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
-                <rect x="0" y="0" width="50%" height="50%" fill="rgba(59,130,246,0.04)" />
-                <rect x="50%" y="0" width="50%" height="50%" fill="rgba(245,158,11,0.06)" />
-                <rect x="0" y="50%" width="50%" height="50%" fill="rgba(239,68,68,0.04)" />
-                <rect x="50%" y="50%" width="50%" height="50%" fill="rgba(16,185,129,0.04)" />
-              </>
-            )}
-            {zoom && <rect x="0" y="0" width="100%" height="100%" fill={zoomMeta.color + '0c'} />}
-            <defs>
-              <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
-              </marker>
-            </defs>
-            {/* Eksen okları: köken nokta-alanının sol-alt köşesinde (PAD%, PAD+SPAN%) = (8%,92%).
-                Önceki (5%,95%) origin nokta alanıyla 3% hizasız kalıyordu. */}
-            <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
-              stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
-            <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
-              stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
-          </svg>
-
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
-            <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">MARKET SHARE SCORE →</div>
-            <div className="text-[8px] font-mono text-white/18 tracking-wider">Pazar Payı Skoru</div>
-          </div>
-          <div className="absolute left-0 top-1/2 text-center pointer-events-none"
-            style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-2%' }}>
-            <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">↑ MARKET GROWTH SCORE</div>
-            <div className="text-[8px] font-mono text-white/18 tracking-wider">Büyüme Skoru</div>
-          </div>
-
-          {zoom ? (
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 text-center pointer-events-none">
-              <p className="text-[10px] font-mono tracking-widest font-bold" style={{ color: zoomMeta.color + '90' }}>
-                {zoomMeta.emoji} {zoomMeta.label} (yakınlaştırıldı)
+      {zoom ? (
+        /* ── ZOOM LAYOUT: scatter sol + kaydırılabilir liste sağ ── */
+        <div className="flex flex-1 min-h-0 gap-2">
+          {/* Scatter alanı — flex ile kart içinde sabit yükseklikte */}
+          <div ref={containerRef} className="relative flex-1 min-w-0 min-h-0 cursor-zoom-out overflow-hidden rounded-lg"
+            style={{ background: (zoomMeta?.color || '#fff') + '05' }}
+            onClick={handlePlotClick}>
+            <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+              <rect x="0" y="0" width="100%" height="100%" fill={zoomMeta.color + '06'} />
+              <defs>
+                <marker id="arrow-z" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
+                </marker>
+              </defs>
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
+                stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
+                stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
+            </svg>
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 pointer-events-none">
+              <p className="text-[10px] font-mono tracking-widest font-bold" style={{ color: zoomMeta.color + '80' }}>
+                {zoomMeta.emoji} {zoomMeta.label} · skor sırası
               </p>
             </div>
-          ) : (
-            QUADRANT_LABELS.map(q => (
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-mono text-white/20 pointer-events-none">
+              Pazar Payı Skoru →
+            </div>
+            <div className="absolute left-0 top-1/2 text-[8px] font-mono text-white/20 pointer-events-none"
+              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-1%' }}>
+              ↑ Büyüme Skoru
+            </div>
+            {renderDots()}
+            {tooltip.visible && (
+              <div style={{ position: 'absolute', left: tooltip.x, top: tooltip.y, zIndex: 100 }}>
+                <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
+              </div>
+            )}
+          </div>
+
+          {/* Ürün listesi — flex-1 ile kart yüksekliğine kilitli, kendi içinde scroll */}
+          <div className="w-52 flex-shrink-0 flex flex-col min-h-0 rounded-lg border overflow-hidden"
+            style={{ borderColor: (zoomMeta?.color || '#fff') + '25', background: 'rgba(8,10,18,0.9)' }}>
+            <div className="px-2.5 py-2 border-b flex-shrink-0 text-[9px] font-mono text-white/35"
+              style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+              {shown.length} ürün · composite skora göre
+            </div>
+            <div className="flex-1 overflow-y-auto min-h-0">
+              {sortedZoom.map((p, i) => (
+                <div key={p.id}
+                  className="flex items-center gap-2 px-2.5 py-1.5 cursor-pointer transition-colors border-b"
+                  style={{
+                    borderColor: 'rgba(255,255,255,0.04)',
+                    background: highlightId === p.id ? 'rgba(255,255,255,0.08)' : 'transparent',
+                    color: highlightId === p.id ? '#fff' : 'rgba(255,255,255,0.45)',
+                  }}
+                  onMouseEnter={e => { setHighlightId(p.id); handleMouseEnter(e, p) }}
+                  onMouseLeave={() => { setHighlightId(null); clearTip() }}
+                  onClick={e => { e.stopPropagation(); onSelectProduct?.(p) }}>
+                  <span className="text-[9px] font-mono text-white/20 w-5 flex-shrink-0 text-right">{i + 1}</span>
+                  <span className="text-[10px] font-mono truncate flex-1">{p.name}</span>
+                  {p.composite_score != null && (
+                    <span className="text-[9px] font-mono flex-shrink-0" style={{ color: zoomMeta?.color + '90' }}>
+                      {Math.round(p.composite_score)}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* ── NORMAL LAYOUT: tam genişlik scatter ── */
+        <div ref={containerRef} className="bcg-plot relative cursor-zoom-in flex-shrink-0"
+          style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
+          <div className="absolute inset-0">
+            <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
+              <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
+              <rect x="0" y="0" width="50%" height="50%" fill="rgba(59,130,246,0.04)" />
+              <rect x="50%" y="0" width="50%" height="50%" fill="rgba(245,158,11,0.06)" />
+              <rect x="0" y="50%" width="50%" height="50%" fill="rgba(239,68,68,0.04)" />
+              <rect x="50%" y="50%" width="50%" height="50%" fill="rgba(16,185,129,0.04)" />
+              <defs>
+                <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
+                </marker>
+              </defs>
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
+                stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
+                stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+            </svg>
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+              <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">MARKET SHARE SCORE →</div>
+              <div className="text-[8px] font-mono text-white/18 tracking-wider">Pazar Payı Skoru</div>
+            </div>
+            <div className="absolute left-0 top-1/2 text-center pointer-events-none"
+              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-2%' }}>
+              <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">↑ MARKET GROWTH SCORE</div>
+              <div className="text-[8px] font-mono text-white/18 tracking-wider">Büyüme Skoru</div>
+            </div>
+            {QUADRANT_LABELS.map(q => (
               <div key={q.id} className="absolute text-center pointer-events-none"
                 style={{ left: q.x, top: q.y, transform: 'translate(-50%, -50%)' }}>
                 <p className="text-[9px] font-mono tracking-widest font-bold" style={{ color: q.color + '60' }}>{q.label}</p>
                 <p className="text-[8px] font-mono text-white/15">{q.sub}</p>
               </div>
-            ))
-          )}
-
-          {shown.map((p) => {
-            const [x, y] = posOf(p)
-            const qm = QUADRANT_META[p.bcg_class] || {}
-            const size = dotSize(p)
-            const isHighlighted = highlightId === p.id
-            return (
-              <div key={p.id} className="absolute cursor-pointer"
-                style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)', zIndex: isHighlighted ? 40 : (tooltip.product?.id === p.id ? 30 : 5) }}
-                onMouseEnter={(e) => handleMouseEnter(e, p)}
-                onMouseLeave={clearTip}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onSelectProduct && onSelectProduct(p)
-                }}>
-                <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
-                  style={{
-                    width: isHighlighted ? size * 1.8 : size,
-                    height: isHighlighted ? size * 1.8 : size,
-                    background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
-                    border: `${isHighlighted ? 2 : 1}px solid ${qm.color}`,
-                    opacity: isHighlighted ? 1 : 0.85,
-                    boxShadow: isHighlighted ? `0 0 12px ${qm.color}99` : `0 0 5px ${qm.color}55`,
-                  }} />
-              </div>
-            )
-          })}
-
-          {/* Zoom modunda yığılma çözümü: kaydırılabilir ürün listesi */}
-          {zoom && shown.length > 0 && (
-            <div className="absolute top-6 right-1 z-20 w-48 rounded-lg border overflow-hidden"
-              style={{ background: 'rgba(10,12,20,0.85)', borderColor: (zoomMeta?.color || '#fff') + '30', backdropFilter: 'blur(8px)' }}
-              onClick={e => e.stopPropagation()}>
-              <div className="px-2 py-1.5 border-b text-[9px] font-mono text-white/40 flex items-center justify-between"
-                style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-                <span>{shown.length} ürün · composite skora göre</span>
-              </div>
-              <div className="overflow-y-auto" style={{ maxHeight: '52%', minHeight: 80 }}>
-                {[...shown]
-                  .sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0))
-                  .map(p => (
-                    <div key={p.id}
-                      className="px-2 py-1 text-[10px] font-mono truncate cursor-pointer transition-colors"
-                      style={{
-                        color: highlightId === p.id ? '#fff' : 'rgba(255,255,255,0.45)',
-                        background: highlightId === p.id ? 'rgba(255,255,255,0.1)' : 'transparent',
-                      }}
-                      onMouseEnter={(e) => { setHighlightId(p.id); handleMouseEnter(e, p) }}
-                      onMouseLeave={() => { setHighlightId(null); clearTip() }}
-                      onClick={(e) => { e.stopPropagation(); onSelectProduct?.(p) }}>
-                      {p.name}
-                    </div>
-                  ))}
-              </div>
+            ))}
+            {renderDots()}
+          </div>
+          {tooltip.visible && (
+            <div style={{ position: 'absolute', left: tooltip.x, top: tooltip.y, zIndex: 100 }}>
+              <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
             </div>
           )}
         </div>
-
-        {tooltip.visible && (
-          <div style={{ position: 'absolute', left: tooltip.x, top: tooltip.y, zIndex: 100 }}>
-            <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
-          </div>
-        )}
-      </div>
+      )}
     </div>
   )
 }
