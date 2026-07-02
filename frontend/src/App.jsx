@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Table2, Swords } from 'lucide-react'
+import { Loader2, WifiOff, LayoutDashboard, TrendingUp, Bell, Lightbulb, Table2, Swords, Target } from 'lucide-react'
 import Header from './components/Header'
 import KPISection from './components/KPISection'
 import BCGMatrix from './components/BCGMatrix'
@@ -10,6 +10,7 @@ import { AlertsPanel, RecommendationsPanel } from './components/AlertsPanel'
 import { useData, useKioskMode } from './hooks/useData'
 import ProductTable from './components/ProductTable'
 import CompetitionTab from './components/CompetitionTab'
+import DecisionTab from './components/DecisionTab'
 import LoginScreen from './components/LoginScreen'
 import { useTheme } from './hooks/useTheme'
 import { useAuth } from './hooks/useAuth'
@@ -18,6 +19,7 @@ import { useAuth } from './hooks/useAuth'
 const TABS = [
   { id: 'overview',    label: 'Overview',        shortLabel: 'Overview',    icon: LayoutDashboard },
   { id: 'products',    label: 'Products',         shortLabel: 'Ürünler',     icon: Table2 },
+  { id: 'decision',    label: 'Decision (CLEAR)', shortLabel: 'Karar',       icon: Target },
   { id: 'competition', label: 'Competition',      shortLabel: 'Rekabet',     icon: Swords },
   { id: 'trends',      label: 'Trends',           shortLabel: 'Trends',      icon: TrendingUp },
   { id: 'alerts',      label: 'Alerts & Signals', shortLabel: 'Uyarılar',    icon: Bell },
@@ -214,6 +216,11 @@ function Dashboard({ onLogout, userEmail }) {
             {/* ── PRODUCTS ── */}
             {activeTab === 'products' && (
               <ProductTable key={productSearch} products={data?.products ?? []} initialSearch={productSearch} />
+            )}
+
+            {/* ── KARAR (CLEAR) ── */}
+            {activeTab === 'decision' && (
+              <DecisionTab data={data?.clear} />
             )}
 
             {/* ── REKABET ── */}
