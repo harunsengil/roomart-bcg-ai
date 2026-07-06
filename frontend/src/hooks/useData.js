@@ -116,14 +116,15 @@ async function loadFromFirestore() {
   if (!clear) {
     clear = await fetchJSON('data/clear_scores.json').catch(() => null)
   }
-  // Çok-platform registry (registry_latest) — hassas ciro içerir, yalnız Firestore + yerel JSON.
+  // Çok-platform registry: public-safe sürüm (fiyat+yorum+url, ciro YOK) build'de bulunur.
+  // Tam sürüm (ciro dahil) Firestore registry_latest'te (private); varsa onu tercih et.
   let registry = null
   try {
     const rg = await getDoc(doc(db, 'roomart-bcg-dev', 'registry_latest'))
     if (rg.exists()) registry = rg.data()
   } catch { /* yoksa null */ }
   if (!registry) {
-    registry = await fetchJSON('data/product_registry.json').catch(() => null)
+    registry = await fetchJSON('data/product_registry_public.json').catch(() => null)
   }
   return {
     kpis: d.kpis,
@@ -145,8 +146,8 @@ async function loadFromJSON() {
     fetchJSON('data/trends_sonuc.json').catch(() => null),
     fetchJSON('data/alerts.json'),
     fetchJSON('data/competitive.json').catch(() => null),
-    fetchJSON('data/clear_scores.json').catch(() => null),       // yerel dev; public'te yok (gitignored)
-    fetchJSON('data/product_registry.json').catch(() => null),   // yerel dev; public'te yok (gitignored)
+    fetchJSON('data/clear_scores.json').catch(() => null),              // yerel dev; public'te yok (gitignored)
+    fetchJSON('data/product_registry_public.json').catch(() => null),   // public-safe (ciro'suz), build'de var
   ])
   return {
     kpis: bcgScores.kpis,

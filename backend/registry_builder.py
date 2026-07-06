@@ -23,8 +23,11 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-OUT_FILE = DATA_DIR / "product_registry.json"
+DATA_DIR   = Path(__file__).parent.parent / "data"
+PUBLIC_DIR = Path(__file__).parent.parent / "frontend" / "public" / "data"
+OUT_FILE   = DATA_DIR / "product_registry.json"
+# Public-safe: fiyat + yorum + url (ciro/satış YOK) → committable, dashboard kolonları için.
+PUBLIC_OUT = DATA_DIR / "product_registry_public.json"
 
 PRICE_CONFLICT_PCT = 5.0   # platformlar arası fiyat farkı bu %'yi aşarsa "çakışma"
 
@@ -317,6 +320,38 @@ def save_to_firestore(payload: dict) -> None:
         logger.error(f"Firestore write failed: {e}")
 
 
+def build_public(payload: dict) -> dict:
+    """Ciro/satış alanlarını (units_90d, amount_90d, momentum, total_*) ATARAK
+    public-safe registry üret. Fiyat + yorum + url pazaryerlerinde zaten herkese açık."""
+    pub = {}
+    for sc, e in payload["products"].items():
+        plats = {}
+        for k, pd in e["platforms"].items():
+            plats[k] = {
+                "price":      pd.get("price"),
+                "list_price": pd.get("list_price"),
+                "url":        pd.get("url"),
+                "on_sale":    pd.get("on_sale"),
+            }
+        pub[sc] = {
+            "stock_code":       e.get("stock_code"),
+            "name":             e.get("name"),
+            "category":         e.get("category"),
+            "platforms":        plats,
+            "reviews":          e.get("reviews", {}),
+            "total_reviews":    e.get("total_reviews", 0),
+            "present_on":       e.get("present_on", []),
+            "platform_count":   e.get("platform_count", 0),
+            "price_min":        e.get("price_min"),
+            "price_max":        e.get("price_max"),
+            "price_spread_pct": e.get("price_spread_pct"),
+            "price_conflict":   e.get("price_conflict", False),
+        }
+    return {"metadata": {**payload["metadata"], "public_safe": True,
+                         "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."},
+            "products": pub}
+
+
 def run() -> None:
     logger.info("Ürün kütüğü (stok kodu birleştirme) başlıyor...")
     payload = build_registry()
@@ -327,6 +362,15 @@ def run() -> None:
     logger.info(f"Toplam ürün: {m['total_products']} | çok-platform: {m['multi_platform_count']} "
                 f"| fiyat çakışması: {m['price_conflict_count']}")
     logger.info(f"Platform başına: {m['by_platform_count']}")
+
+    # Public-safe sürüm (committable) → data/ + frontend/public/data/
+    public = build_public(payload)
+    pub_json = json.dumps(public, ensure_ascii=False, indent=2)
+    PUBLIC_OUT.write_text(pub_json, encoding="utf-8")
+    if PUBLIC_DIR.exists():
+        (PUBLIC_DIR / "product_registry_public.json").write_text(pub_json, encoding="utf-8")
+    logger.info(f"Public-safe kaydedildi: {PUBLIC_OUT} (ciro'suz)")
+
     save_to_firestore(payload)
 
 
