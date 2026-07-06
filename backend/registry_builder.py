@@ -137,21 +137,21 @@ def load_hb() -> dict:
     doc = _load("hb_sales.json")
     if not doc:
         return {}
-    products = doc.get("products", {})
+    # HB sync 'listings' anahtarına yazar (merchantSku=stok kodu; barkod YOK)
+    products = doc.get("listings", {}) or doc.get("products", {})
     sales    = doc.get("by_product", {})
     out = {}
-    for v in products.values():
-        sc = _norm(v.get("sku") or v.get("merchant_sku"))
-        bc = _norm(v.get("barcode"))
-        key = sc or bc
-        if not key:
+    for key0, v in products.items():
+        sc = _norm(v.get("sku") or v.get("merchant_sku") or key0)
+        if not sc:
             continue
-        s = sales.get(sc) or sales.get(bc) or {}
-        out[key] = {
-            "stock_code": sc, "barcode": bc,
+        s = sales.get(sc) or {}
+        out[sc] = {
+            "stock_code": sc, "barcode": "",
             "name": v.get("name") or "", "category": v.get("category") or "",
             "price": v.get("price") or 0.0, "list_price": v.get("list_price"),
-            "url": v.get("url") or "", "on_sale": True, "image": v.get("image") or "",
+            "url": v.get("url") or "", "on_sale": (v.get("status") != "Suspended"),
+            "image": v.get("image") or "",
             "units_90d": s.get("net_units", 0), "amount_90d": round(s.get("net_amount", 0.0)),
             "momentum": s.get("sales_momentum"),
         }
@@ -241,9 +241,13 @@ def build_registry() -> dict:
                 "momentum":   v["momentum"],
             }
 
-    # Türev alanlar: present_on, fiyat aralığı, toplam satış
+    # Yorum/yıldız verisi (platform_reviews.json → stok kodu bazlı)
+    reviews_doc = _load("platform_reviews.json") or {}
+    reviews_by_sc = reviews_doc.get("by_stock_code", {})
+
+    # Türev alanlar: present_on, fiyat aralığı, toplam satış, yorum
     conflicts = 0
-    for e in registry.values():
+    for sc, e in registry.items():
         present = sorted(e["platforms"].keys())
         e["present_on"] = present
         e["platform_count"] = len(present)
@@ -259,6 +263,17 @@ def build_registry() -> dict:
             e["price_conflict"] = False
         e["total_units_90d"]  = sum(p["units_90d"] for p in e["platforms"].values())
         e["total_amount_90d"] = sum(p["amount_90d"] for p in e["platforms"].values())
+
+        # Platform yorumları: her platformun rating + review_count'unu ekle
+        rev = reviews_by_sc.get(sc, {})
+        e["reviews"] = {}
+        for plat, rdata in rev.items():
+            e["reviews"][plat] = {
+                "rating":       rdata.get("rating"),
+                "review_count": rdata.get("review_count"),
+            }
+        # Toplam yorum sayısı (platformlar arası)
+        e["total_reviews"] = sum((r.get("review_count") or 0) for r in e["reviews"].values())
 
     multi = sum(1 for e in registry.values() if e["platform_count"] >= 2)
     by_platform_count = {p: sum(1 for e in registry.values() if p in e["platforms"]) for p in active}

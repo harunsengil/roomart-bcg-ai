@@ -25,7 +25,7 @@ import requests
 logger = logging.getLogger(__name__)
 
 BASE_LISTING = "https://listing-external.hepsiburada.com"
-BASE_ORDER   = "https://merchant-order-info.hepsiburada.com"
+BASE_ORDER   = "https://oms-external.hepsiburada.com"
 
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 MAX_RETRIES    = 4
@@ -36,25 +36,27 @@ class HBAuthError(RuntimeError):
     """401/403 — kimlik/şifre geçersiz veya hesap askıya alınmış."""
 
 
-def _config() -> tuple[str, str, str]:
-    mid     = os.environ.get("HB_MERCHANT_ID", "").strip()
-    secret  = os.environ.get("HB_SECRET_KEY", "").strip()
-    dev_usr = os.environ.get("HB_DEV_USERNAME", "").strip()
-    missing = [n for n, v in [("HB_MERCHANT_ID", mid), ("HB_SECRET_KEY", secret),
-                               ("HB_DEV_USERNAME", dev_usr)] if not v]
+def _config() -> tuple[str, str, str, str]:
+    """(merchant_id, username, password, user_agent) — 4 ayrı alan."""
+    mid      = os.environ.get("HB_MERCHANT_ID", "").strip()
+    username = os.environ.get("HB_USERNAME", "").strip()
+    password = os.environ.get("HB_PASSWORD", "").strip()
+    user_ag  = os.environ.get("HB_USER_AGENT", "").strip()
+    missing = [n for n, v in [("HB_MERCHANT_ID", mid), ("HB_USERNAME", username),
+                               ("HB_PASSWORD", password), ("HB_USER_AGENT", user_ag)] if not v]
     if missing:
         raise SystemExit("Eksik ortam değişkeni: " + ", ".join(missing))
-    return mid, secret, dev_usr
+    return mid, username, password, user_ag
 
 
 def make_session() -> tuple[requests.Session, str]:
-    mid, secret, dev_usr = _config()
-    # Basic Auth: username = Merchant ID, password = Secret key
-    token = base64.b64encode(f"{mid}:{secret}".encode()).decode()
+    mid, username, password, user_ag = _config()
+    # Basic Auth: username:password (username = entegratör kullanıcı adı, merchantId'den AYRI)
+    token = base64.b64encode(f"{username}:{password}".encode()).decode()
     sess = requests.Session()
     sess.headers.update({
         "Authorization": f"Basic {token}",
-        "User-Agent":    dev_usr,          # Developer Username — zorunlu
+        "User-Agent":    user_ag,          # Developer Username
         "Content-Type":  "application/json",
         "Accept":        "application/json",
     })
@@ -114,26 +116,24 @@ def fetch_orders(sess: requests.Session, merchant_id: str,
     fmt   = "%Y-%m-%dT%H:%M:%SZ"
 
     orders, offset, limit = [], 0, 100
-    logger.info(f"HB siparişler çekiliyor ({begin.strftime('%Y-%m-%d')} → {end.strftime('%Y-%m-%d')})...")
+    cutoff_ms = begin.timestamp() * 1000
+    logger.info(f"HB siparişler çekiliyor (son {days_back} gün, istemci-taraflı süzülür)...")
     while True:
-        data = _get(sess, f"{BASE_ORDER}/order/api/orders/merchantid/{merchant_id}",
-                    params={
-                        "beginDate": begin.strftime(fmt),
-                        "endDate":   end.strftime(fmt),
-                        "offset":    offset,
-                        "limit":     limit,
-                    })
-        items = data.get("data") or data.get("orders") or []
+        # oms-external: /orders/merchantid/{mid}; her 'item' DÜZ bir sipariş satırıdır.
+        # NOT: beginDate/endDate parametreleri 400 veriyor → tümü çekilir, tarih burada süzülür.
+        data = _get(sess, f"{BASE_ORDER}/orders/merchantid/{merchant_id}",
+                    params={"offset": offset, "limit": limit})
+        items = data.get("items") or data.get("data") or data.get("orders") or []
         if not items:
             break
         orders.extend(items)
-        logger.info(f"  → {len(orders)} sipariş")
+        logger.info(f"  → {len(orders)} sipariş satırı")
         total = data.get("totalCount") or data.get("total") or 0
         if len(orders) >= total or len(items) < limit:
             break
         offset += limit
         time.sleep(0.3)
-    logger.info(f"HB sipariş toplam: {len(orders)}")
+    logger.info(f"HB sipariş toplam: {len(orders)} satır")
     return orders
 
 

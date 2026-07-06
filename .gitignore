@@ -19,6 +19,7 @@ backend/.env.trendyol.local
 backend/.env.hb.local
 backend/.env.n11.local
 backend/.env.shopify.local
+backend/.env.judgeme.local
 
 # Platform satış verileri (gelir = rekabetçi istihbarat — private kalır)
 data/hb_sales.json
@@ -40,3 +41,6 @@ frontend/public/data/clear_scores.json
 # Yalnız Firestore (private) + yerel; public repo'ya gitmez.
 data/product_registry.json
 frontend/public/data/product_registry.json
+
+# Platform yorum/yıldız scrape verisi
+data/platform_reviews.json

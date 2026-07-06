@@ -71,6 +71,25 @@ function normalizeCategories(raw) {
   })
 }
 
+// Çok-platform registry'yi ürünlere STOK KODU (kod) ile bağla.
+// Her ürüne platform fiyatları + platform yorumları eklenir (Trendyol tablosu zenginleşir).
+function joinRegistry(products, registry) {
+  if (!registry?.products || !Array.isArray(products)) return products
+  const bySc = registry.products
+  return products.map(p => {
+    const entry = bySc[String(p.kod || '').trim()]
+    if (!entry) return p
+    return {
+      ...p,
+      platforms: entry.platforms || {},        // {trendyol,shopify,n11,hb: {price,...}}
+      platform_reviews: entry.reviews || {},   // {n11,shopify: {rating,review_count}}
+      total_reviews_all: entry.total_reviews ?? null,
+      price_spread_pct: entry.price_spread_pct ?? null,
+      price_conflict: entry.price_conflict ?? false,
+    }
+  })
+}
+
 async function loadFromFirestore() {
   const docRef = doc(db, 'roomart-bcg-dev', 'latest')
   const snapshot = await Promise.race([
@@ -94,42 +113,53 @@ async function loadFromFirestore() {
     const cl = await getDoc(doc(db, 'roomart-bcg-dev', 'clear_latest'))
     if (cl.exists()) clear = cl.data()
   } catch { /* yoksa null */ }
-  // Firestore'da CLEAR yoksa yerel JSON'a düş (yerel dev önizleme; public'te yok = null kalır)
   if (!clear) {
     clear = await fetchJSON('data/clear_scores.json').catch(() => null)
+  }
+  // Çok-platform registry (registry_latest) — hassas ciro içerir, yalnız Firestore + yerel JSON.
+  let registry = null
+  try {
+    const rg = await getDoc(doc(db, 'roomart-bcg-dev', 'registry_latest'))
+    if (rg.exists()) registry = rg.data()
+  } catch { /* yoksa null */ }
+  if (!registry) {
+    registry = await fetchJSON('data/product_registry.json').catch(() => null)
   }
   return {
     kpis: d.kpis,
     categories: normalizeCategories(d.categories ?? d.category_summary),
-    products: d.products ?? [],
+    products: joinRegistry(d.products ?? [], registry),
     quadrantDistribution: d.quadrant_distribution,
     trends: d.trends,
     alerts: d.alerts,
     competitive,
     clear,
+    registry,
     generatedAt: d.generated_at,
   }
 }
 
 async function loadFromJSON() {
-  const [bcgScores, trendsSonuc, alertsData, competitive, clear] = await Promise.all([
+  const [bcgScores, trendsSonuc, alertsData, competitive, clear, registry] = await Promise.all([
     fetchJSON('data/bcg_scores.json'),
     fetchJSON('data/trends_sonuc.json').catch(() => null),
     fetchJSON('data/alerts.json'),
     fetchJSON('data/competitive.json').catch(() => null),
-    fetchJSON('data/clear_scores.json').catch(() => null),  // yerel dev; public'te yok (gitignored)
+    fetchJSON('data/clear_scores.json').catch(() => null),       // yerel dev; public'te yok (gitignored)
+    fetchJSON('data/product_registry.json').catch(() => null),   // yerel dev; public'te yok (gitignored)
   ])
   return {
     kpis: bcgScores.kpis,
     categories: normalizeCategories(
       bcgScores.categories ?? bcgScores.category_summary
     ),
-    products: bcgScores.products ?? [],
+    products: joinRegistry(bcgScores.products ?? [], registry),
     quadrantDistribution: bcgScores.quadrant_distribution,
     trends: transformTrendsSonuc(trendsSonuc),
     alerts: alertsData.alerts,
     competitive,
     clear,
+    registry,
     generatedAt: bcgScores.generated_at,
   }
 }

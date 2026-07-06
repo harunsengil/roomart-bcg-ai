@@ -44,33 +44,37 @@ def _categorize(name: str) -> str:
 
 
 def aggregate_listings(listings: list) -> dict:
-    """HB ürün listesini barkod → {fiyat, stok, durum, sku, url} tablosuna indir."""
+    """HB ürün listesini STOK KODU (merchantSku) → {fiyat, stok, sku, url} tablosuna indir.
+    NOT: HB listing API'si barkod DÖNDÜRMEZ; anahtar = merchantSku (registry stok kodu)."""
     table = {}
     for item in listings:
-        # HB API alan adları: merchantSku, barcode, price, availableStock, status, productName
-        barcode = str(item.get("barcode") or item.get("Barcode") or "")
-        sku     = item.get("merchantSku") or item.get("MerchantSku") or ""
+        # HB API alanları: merchantSku, hepsiburadaSku, price, availableStock, productId, listingId
+        sku     = str(item.get("merchantSku") or item.get("MerchantSku") or "").strip()
+        hb_sku  = str(item.get("hepsiburadaSku") or "").strip()
         price   = item.get("price") or item.get("Price") or 0.0
         try:
             price = float(str(price).replace(",", "."))
         except (ValueError, TypeError):
             price = 0.0
         stock  = item.get("availableStock") or item.get("AvailableStock")
-        status = item.get("status") or item.get("Status") or ""
+        status = "Suspended" if item.get("isSuspended") else ("Salable" if item.get("isSalable") else "")
         name   = item.get("productName") or item.get("ProductName") or sku
-        # HB ürün sayfası linki (listing varsa hb.com/p/... formatı)
         listing_id = item.get("listingId") or item.get("ListingId") or ""
-        url = f"https://www.hepsiburada.com/{listing_id}" if listing_id else ""
+        # HB ürün sayfası linki: hepsiburadaSku ile /p-{sku} formatı
+        url = f"https://www.hepsiburada.com/p-{hb_sku}" if hb_sku else ""
 
-        if barcode:
-            table[barcode] = {
-                "sku":      sku,
-                "name":     name,
-                "category": _categorize(name),
-                "price":    price,
-                "stock":    stock,
-                "status":   status,
-                "url":      url,
+        key = sku or hb_sku
+        if key:
+            table[key] = {
+                "sku":        sku,
+                "hb_sku":     hb_sku,
+                "barcode":    "",   # HB API barkod vermiyor
+                "name":       name,
+                "category":   _categorize(name),
+                "price":      price,
+                "stock":      stock,
+                "status":     status,
+                "url":        url,
                 "listing_id": listing_id,
             }
     return table
@@ -97,25 +101,29 @@ def aggregate_sales(orders: list, listing_table: dict) -> tuple[dict, dict]:
         else:
             od = float(od_raw or 0)
 
-        lines = order.get("orderlines") or order.get("lines") or order.get("items") or []
+        # oms-external: her 'order' zaten DÜZ bir satır → kendini tek satır olarak işle.
+        lines = order.get("orderlines") or order.get("lines") or [order]
         for ln in lines:
-            barcode  = str(ln.get("barcode") or ln.get("Barcode") or "")
-            sku      = ln.get("merchantSku") or ln.get("sku") or barcode
+            sku      = str(ln.get("sku") or ln.get("merchantSku") or "").strip()
             name     = ln.get("productName") or ln.get("name") or sku
             qty      = int(ln.get("quantity") or ln.get("Quantity") or 0)
-            amount   = float(ln.get("price") or ln.get("Price") or 0) * qty
+            # HB oms: totalPrice = satır toplamı; yoksa unitPrice*qty
+            _tp = ln.get("totalPrice") or (ln.get("unitPrice") or 0)
+            if isinstance(_tp, dict):
+                _tp = _tp.get("amount", 0)
+            amount   = float(_tp or 0) if ln.get("totalPrice") else float(_tp or 0) * qty
             status   = ln.get("status") or ln.get("Status") or ""
             is_net   = status not in EXCLUDED_STATUSES
 
-            # Barkod üzerinden kategori (listing_table'dan; yoksa isimden)
-            listing = listing_table.get(barcode, {})
+            # Stok kodu üzerinden kategori (listing_table'dan; yoksa isimden)
+            listing = listing_table.get(sku, {})
             cat     = listing.get("category") or _categorize(name)
-            key     = barcode or sku
+            key     = sku or "?"
 
             win = "recent" if od >= c_recent else ("prior" if od >= c_prior else None)
 
             bp = by_product.setdefault(key, {
-                "name": name, "barcode": barcode, "sku": sku, "category": cat,
+                "name": name, "barcode": "", "sku": sku, "category": cat,
                 "gross_units": 0, "gross_amount": 0.0,
                 "net_units": 0,   "net_amount": 0.0,
                 "units_recent": 0, "units_prior": 0,

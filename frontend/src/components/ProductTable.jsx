@@ -6,6 +6,51 @@ import { useIsLight } from '../hooks/useTheme'
 
 // Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
+
+// Diğer pazaryeri fiyatları (Trendyol TY kolonunda; burada Shopify/n11/HB).
+const PLAT_META = {
+  shopify:  { short: 'SH',  color: '#10B981' },
+  n11:      { short: 'n11', color: '#8B5CF6' },
+  hb:       { short: 'HB',  color: '#F97316' },
+}
+const fmtK = (n) => n == null ? '—' : (n >= 1000 ? (n / 1000).toFixed(1) + 'K' : Math.round(n))
+
+// Kompakt çok-platform fiyat + yorum hücresi. En ucuz (TY dahil) altın vurgulu.
+function PlatformPrices({ p }) {
+  const plats = p.platforms || {}
+  const revs = p.platform_reviews || {}
+  const others = ['shopify', 'n11', 'hb'].filter(k => plats[k]?.price)
+  if (!others.length) return <span className="text-white/20 text-xs font-mono">—</span>
+  // En ucuz fiyat (Trendyol dahil tüm platformlar)
+  const allPrices = [p.price, ...others.map(k => plats[k].price)].filter(v => v)
+  const cheapest = allPrices.length ? Math.min(...allPrices) : null
+  return (
+    <div className="flex flex-col gap-0.5">
+      {others.map(k => {
+        const m = PLAT_META[k]
+        const price = plats[k].price
+        const isCheapest = cheapest != null && price <= cheapest + 0.5
+        const rev = revs[k]
+        const revTip = rev?.review_count ? ` · ${rev.review_count} yorum ★${rev.rating}` : ''
+        const url = plats[k].url
+        const inner = (
+          <>
+            <span style={{ color: m.color }} className="font-semibold">{m.short}</span>
+            <span className={isCheapest ? 'text-gold-400 font-semibold' : 'text-white/60'}>{fmtK(price)}</span>
+          </>
+        )
+        return (
+          <span key={k} className="flex items-center gap-1 text-[10px] font-mono whitespace-nowrap"
+            title={`${k.toUpperCase()}: ${formatCurrency(price)}${revTip}${isCheapest ? ' · EN UCUZ' : ''}`}>
+            {url
+              ? <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:opacity-80">{inner}</a>
+              : inner}
+          </span>
+        )
+      })}
+    </div>
+  )
+}
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
 // Sağ yarıdaki kolonların filtre açılır menüsü sağa yaslanır (overflow-x-hidden kırpmasın).
@@ -366,6 +411,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
             <col style={{ width: '4%' }} />{/* Price */}
             <col style={{ width: '4%' }} />{/* Liste */}
             <col style={{ width: '4%' }} />{/* İndirim */}
+            <col style={{ width: '7%' }} />{/* Platform Fiyatları */}
             <col style={{ width: '5%' }} />{/* BCG */}
             <col style={{ width: '5%' }} />{/* Action */}
           </colgroup>
@@ -392,6 +438,9 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="price" label="TY Fiyat" tooltip="Trendyol satış fiyatı (platform kampanyası dahil)" />
               <HeadCell field="list_price" label="TY Liste" tooltip="Trendyol katalog (liste) fiyatı — kampanya öncesi" />
               <HeadCell field="discount" label="TY İnd." tooltip="Trendyol kampanya indirimi %" />
+              <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top"
+                title="Diğer pazaryeri fiyatları (Shopify · n11 · HB) — en ucuz altın renkli. Üzerine gel → yorum/rating.">
+                Platform ₺</th>
               <HeadCell field="bcg" label="BCG" />
               <HeadCell field="action" label="Action" />
             </tr>
@@ -465,6 +514,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
                   <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.discount ? <span className="text-emerald-400">−%{p.discount}</span> : <span className="text-white/30">—</span>}
                   </td>
+                  <td className="px-2 py-2.5"><PlatformPrices p={p} /></td>
                   <td className="px-2 py-2.5">
                     {p.bcg_class
                       ? <span title={cfg.label} className="text-xs font-mono px-1.5 py-0.5 rounded-full whitespace-nowrap" style={{ background: `${cfg.color}15`, color: cfg.color }}>{cfg.emoji} {BCG_SHORT[p.bcg_class]}</span>
