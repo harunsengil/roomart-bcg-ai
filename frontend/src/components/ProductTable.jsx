@@ -7,12 +7,14 @@ import { useIsLight } from '../hooks/useTheme'
 // Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 
-// Diğer pazaryeri kısaltmaları + renkleri (Trendyol TY kolonunda; burada RS/n11/HB).
+// Pazaryeri kısaltmaları + renkleri.
 const PLAT_META = {
-  shopify:  { short: 'RS',  color: '#10B981' },  // roomartstore.com
-  n11:      { short: 'n11', color: '#8B5CF6' },
-  hb:       { short: 'HB',  color: '#F97316' },
+  trendyol: { short: 'TY',  color: '#F59E0B' },  // amber
+  shopify:  { short: 'RS',  color: '#10B981' },  // roomartstore.com — yeşil
+  n11:      { short: 'n11', color: '#8B5CF6' },  // mor
+  hb:       { short: 'HB',  color: '#F97316' },  // turuncu
 }
+// Fiyat kolonunda Trendyol AYRI (TY Fiyat) → burada sadece diğerleri.
 const OTHER_PLATS = ['shopify', 'n11', 'hb']
 
 // Kompakt çok-platform FİYAT hücresi. Tam fiyat; en ucuz (TY dahil) altın vurgulu.
@@ -48,21 +50,28 @@ function PlatformPrices({ p }) {
   )
 }
 
-// Kompakt çok-platform YORUM hücresi. Platform bazında yorum sayısı + rating, alt alta.
+// Kompakt çok-platform YORUM hücresi. TY + RS + n11 + HB yorum sayısı + yıldız, alt alta.
 function PlatformReviews({ p }) {
   const revs = p.platform_reviews || {}
-  const rows = OTHER_PLATS
-    .map(k => ({ k, m: PLAT_META[k], r: revs[k] }))
-    .filter(x => x.r?.review_count)
+  const rows = []
+  // Trendyol (ürünün kendi alanlarından: review_count + rating)
+  if ((p.review_count || 0) > 0) {
+    rows.push({ k: 'trendyol', m: PLAT_META.trendyol, count: p.review_count, rating: p.rating })
+  }
+  // Diğer platformlar (registry yorumlarından)
+  for (const k of OTHER_PLATS) {
+    const r = revs[k]
+    if (r?.review_count) rows.push({ k, m: PLAT_META[k], count: r.review_count, rating: r.rating })
+  }
   if (!rows.length) return <span className="text-white/20 text-xs font-mono">—</span>
   return (
     <div className="flex flex-col gap-0.5">
-      {rows.map(({ k, m, r }) => (
+      {rows.map(({ k, m, count, rating }) => (
         <span key={k} className="flex items-center gap-1 text-[10px] font-mono whitespace-nowrap"
-          title={`${m.short}: ${r.review_count} yorum · ort ★${r.rating}`}>
+          title={`${m.short}: ${count} yorum · ort ★${rating ?? '—'}`}>
           <span style={{ color: m.color }} className="font-semibold w-6 flex-shrink-0">{m.short}</span>
-          <span className="text-white/70">{r.review_count}</span>
-          {r.rating != null && <span className="text-gold-400/80">★{r.rating}</span>}
+          <span className="text-white/70">{count}</span>
+          {rating != null && <span className="text-gold-400/80">★{Number(rating).toFixed(1)}</span>}
         </span>
       ))}
     </div>
