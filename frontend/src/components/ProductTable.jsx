@@ -7,21 +7,19 @@ import { useIsLight } from '../hooks/useTheme'
 // Defensif fallback (DİĞER dahil tüm ürünler artık skorlu; bcg_class boşsa nadiren)
 const FALLBACK_META = { label: '—', emoji: '', color: '#6B7280' }
 
-// Diğer pazaryeri fiyatları (Trendyol TY kolonunda; burada Shopify/n11/HB).
+// Diğer pazaryeri kısaltmaları + renkleri (Trendyol TY kolonunda; burada RS/n11/HB).
 const PLAT_META = {
-  shopify:  { short: 'SH',  color: '#10B981' },
+  shopify:  { short: 'RS',  color: '#10B981' },  // roomartstore.com
   n11:      { short: 'n11', color: '#8B5CF6' },
   hb:       { short: 'HB',  color: '#F97316' },
 }
-const fmtK = (n) => n == null ? '—' : (n >= 1000 ? (n / 1000).toFixed(1) + 'K' : Math.round(n))
+const OTHER_PLATS = ['shopify', 'n11', 'hb']
 
-// Kompakt çok-platform fiyat + yorum hücresi. En ucuz (TY dahil) altın vurgulu.
+// Kompakt çok-platform FİYAT hücresi. Tam fiyat; en ucuz (TY dahil) altın vurgulu.
 function PlatformPrices({ p }) {
   const plats = p.platforms || {}
-  const revs = p.platform_reviews || {}
-  const others = ['shopify', 'n11', 'hb'].filter(k => plats[k]?.price)
+  const others = OTHER_PLATS.filter(k => plats[k]?.price)
   if (!others.length) return <span className="text-white/20 text-xs font-mono">—</span>
-  // En ucuz fiyat (Trendyol dahil tüm platformlar)
   const allPrices = [p.price, ...others.map(k => plats[k].price)].filter(v => v)
   const cheapest = allPrices.length ? Math.min(...allPrices) : null
   return (
@@ -30,18 +28,16 @@ function PlatformPrices({ p }) {
         const m = PLAT_META[k]
         const price = plats[k].price
         const isCheapest = cheapest != null && price <= cheapest + 0.5
-        const rev = revs[k]
-        const revTip = rev?.review_count ? ` · ${rev.review_count} yorum ★${rev.rating}` : ''
         const url = plats[k].url
         const inner = (
           <>
-            <span style={{ color: m.color }} className="font-semibold">{m.short}</span>
-            <span className={isCheapest ? 'text-gold-400 font-semibold' : 'text-white/60'}>{fmtK(price)}</span>
+            <span style={{ color: m.color }} className="font-semibold w-6 flex-shrink-0">{m.short}</span>
+            <span className={isCheapest ? 'text-gold-400 font-semibold' : 'text-white/70'}>{formatCurrency(price)}</span>
           </>
         )
         return (
           <span key={k} className="flex items-center gap-1 text-[10px] font-mono whitespace-nowrap"
-            title={`${k.toUpperCase()}: ${formatCurrency(price)}${revTip}${isCheapest ? ' · EN UCUZ' : ''}`}>
+            title={`${m.short}: ${formatCurrency(price)}${isCheapest ? ' · EN UCUZ' : ''}`}>
             {url
               ? <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:opacity-80">{inner}</a>
               : inner}
@@ -50,6 +46,34 @@ function PlatformPrices({ p }) {
       })}
     </div>
   )
+}
+
+// Kompakt çok-platform YORUM hücresi. Platform bazında yorum sayısı + rating, alt alta.
+function PlatformReviews({ p }) {
+  const revs = p.platform_reviews || {}
+  const rows = OTHER_PLATS
+    .map(k => ({ k, m: PLAT_META[k], r: revs[k] }))
+    .filter(x => x.r?.review_count)
+  if (!rows.length) return <span className="text-white/20 text-xs font-mono">—</span>
+  return (
+    <div className="flex flex-col gap-0.5">
+      {rows.map(({ k, m, r }) => (
+        <span key={k} className="flex items-center gap-1 text-[10px] font-mono whitespace-nowrap"
+          title={`${m.short}: ${r.review_count} yorum · ort ★${r.rating}`}>
+          <span style={{ color: m.color }} className="font-semibold w-6 flex-shrink-0">{m.short}</span>
+          <span className="text-white/70">{r.review_count}</span>
+          {r.rating != null && <span className="text-gold-400/80">★{r.rating}</span>}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+// Toplam yorum sayısı (TY + RS + n11 + HB)
+function totalReviews(p) {
+  const revs = p.platform_reviews || {}
+  const other = OTHER_PLATS.reduce((s, k) => s + (revs[k]?.review_count || 0), 0)
+  return (p.review_count || 0) + other
 }
 // Tabloda kompakt BCG rozeti (tam ad title'da): QUESTION MARK gibi uzun etiketler dar kolona sığmaz.
 const BCG_SHORT = { STAR: 'STAR', CASH_COW: 'CC', QUESTION_MARK: 'QM', DOG: 'DOG' }
@@ -403,7 +427,8 @@ export default function ProductTable({ products, initialSearch = '' }) {
             <col style={{ width: '4%' }} />{/* Growth */}
             <col style={{ width: '4%' }} />{/* Score */}
             <col style={{ width: '4%' }} />{/* Puan */}
-            <col style={{ width: '4%' }} />{/* Yorum (review_count) */}
+            <col style={{ width: '4%' }} />{/* Yorum (toplam) */}
+            <col style={{ width: '6%' }} />{/* Platform Yorum */}
             <col style={{ width: '4%' }} />{/* Net Tah. % */}
             <col style={{ width: '4%' }} />{/* İade % */}
             <col style={{ width: '4%' }} />{/* Sat. Hızı */}
@@ -430,6 +455,9 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="composite_score" label="Score" />
               <HeadCell field="rating" label="Puan" />
               <HeadCell field="review_count" label="Yorum" />
+              <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top"
+                title="Platform bazında yorum sayısı + ortalama puan (RS · n11 · HB). Soldaki Yorum = toplam.">
+                Platform ★</th>
               <HeadCell field="net_retention_pct" label="Net Tah. %"
                 tooltip="Net Tahsilat %: Trendyol komisyonu, promosyon indirimi ve kampanya maliyeti düşüldükten sonra RoomArt'a kalan tutarın satış fiyatına oranı. Örn. %85 → ₺100 satıştan ₺85 kalıyor. Ürün maliyeti (COGS) dahil değil." />
               <HeadCell field="risk_rate" label="İade %" />
@@ -439,7 +467,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="list_price" label="TY Liste" tooltip="Trendyol katalog (liste) fiyatı — kampanya öncesi" />
               <HeadCell field="discount" label="TY İnd." tooltip="Trendyol kampanya indirimi %" />
               <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top"
-                title="Diğer pazaryeri fiyatları (Shopify · n11 · HB) — en ucuz altın renkli. Üzerine gel → yorum/rating.">
+                title="Diğer pazaryeri fiyatları (RS=roomartstore · n11 · HB) — en ucuz altın renkli.">
                 Platform ₺</th>
               <HeadCell field="bcg" label="BCG" />
               <HeadCell field="action" label="Action" />
@@ -480,9 +508,13 @@ export default function ProductTable({ products, initialSearch = '' }) {
                   <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap">
                     {p.rating > 0 ? <span className="text-gold-400">★ {p.rating.toFixed(1)}</span> : <span className="text-white/30">—</span>}
                   </td>
-                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap">
-                    {p.review_count > 0 ? p.review_count : <span className="text-white/30">—</span>}
+                  <td className="px-2 py-2.5 font-mono text-sm text-white/70 whitespace-nowrap"
+                    title="Tüm platformlardaki toplam yorum sayısı (TY + RS + n11 + HB)">
+                    {(() => { const t = totalReviews(p); return t > 0
+                      ? <span className={t > (p.review_count || 0) ? 'text-white' : 'text-white/70'}>{t}</span>
+                      : <span className="text-white/30">—</span> })()}
                   </td>
+                  <td className="px-2 py-2.5"><PlatformReviews p={p} /></td>
                   <td className="px-2 py-2.5 font-mono text-sm whitespace-nowrap" title="Net Tahsilat % (komisyon+promo sonrası, COGS hariç)">
                     {p.net_retention_pct != null ? <span className="text-white/80">%{Math.round(p.net_retention_pct)}</span> : <span className="text-white/30">—</span>}
                   </td>

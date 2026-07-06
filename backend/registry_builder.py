@@ -114,6 +114,8 @@ def load_shopify() -> dict:
             out[key]["units_90d"]  += s.get("net_units", 0)
             out[key]["amount_90d"] += round(s.get("net_amount", 0.0))
             continue
+        # Shopify URL'i temiz alan adına çevir (myshopify.com → roomartstore.com.tr)
+        url = (v.get("url") or "").replace("roomartstore-com-tr.myshopify.com", "roomartstore.com.tr")
         out[key] = {
             "stock_code": sc,
             "barcode":    bc,
@@ -121,7 +123,7 @@ def load_shopify() -> dict:
             "category":   v.get("category") or "",
             "price":      v.get("price") or 0.0,
             "list_price": v.get("list_price"),
-            "url":        v.get("url") or "",
+            "url":        url,
             "on_sale":    (v.get("status") == "active"),
             "image":      v.get("image") or "",
             "units_90d":  s.get("net_units", 0),
@@ -272,6 +274,13 @@ def build_registry() -> dict:
                 "rating":       rdata.get("rating"),
                 "review_count": rdata.get("review_count"),
             }
+            # n11 API URL'i bozuk (/urun/-{id} → 404); scraper'ın GERÇEK URL'i varsa onu kullan.
+            real_url = rdata.get("n11_url")
+            if plat == "n11" and real_url and "n11" in e["platforms"]:
+                e["platforms"]["n11"]["url"] = real_url
+        # n11 gerçek URL yoksa bozuk API URL'i yerine mağaza sayfasına düş
+        if "n11" in e["platforms"] and "/urun/-" in (e["platforms"]["n11"].get("url") or ""):
+            e["platforms"]["n11"]["url"] = "https://www.n11.com/magaza/roomart"
         # Toplam yorum sayısı (platformlar arası)
         e["total_reviews"] = sum((r.get("review_count") or 0) for r in e["reviews"].values())
 
