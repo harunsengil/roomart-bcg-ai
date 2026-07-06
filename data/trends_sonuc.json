@@ -1,54 +1,12 @@
 {
-  "tarih": "2026-06-22",
+  "tarih": "2026-07-06",
   "geo": "TR",
   "zaman": "last 3 months (bireysel sorgular, kendi ölçeğinde)",
   "kategoriler": {
-    "banyo dolabı": {
-      "keyword": "banyo dolabı",
-      "ortalama": 65.3,
-      "maks": 73.9,
-      "buyume_yuzde": -14.7,
-      "trend": "Düşüyor",
-      "haftalik": [
-        73.9,
-        69.4,
-        70.9,
-        72.7,
-        64.7,
-        61.6,
-        72.7,
-        46.3,
-        62.7,
-        63.4,
-        62.1,
-        63.0
-      ]
-    },
-    "çamaşır makinesi dolabı": {
-      "keyword": "çamaşır makinesi dolabı",
-      "ortalama": 25.1,
-      "maks": 44.4,
-      "buyume_yuzde": 29.3,
-      "trend": "Yükseliyor",
-      "haftalik": [
-        29.4,
-        16.7,
-        18.9,
-        26.1,
-        16.3,
-        15.3,
-        44.4,
-        6.9,
-        15.4,
-        36.1,
-        37.3,
-        38.0
-      ]
-    },
     "mutfak adası": {
       "keyword": "mutfak adası",
-      "ortalama": 17.2,
-      "maks": 72.4,
+      "ortalama": 5.7,
+      "maks": 20.0,
       "buyume_yuzde": 0,
       "trend": "Yükseliyor",
       "haftalik": [
@@ -57,76 +15,34 @@
         0.0,
         0.0,
         0.0,
+        14.3,
         0.0,
         0.0,
         0.0,
-        0.0,
-        72.4,
-        68.6,
-        66.0
+        15.4,
+        18.6,
+        20.0
       ]
     },
     "çalışma masası": {
       "keyword": "çalışma masası",
-      "ortalama": 55.2,
-      "maks": 64.1,
-      "buyume_yuzde": -12.6,
+      "ortalama": 71.8,
+      "maks": 78.6,
+      "buyume_yuzde": -7.2,
       "trend": "Düşüyor",
       "haftalik": [
-        64.1,
-        60.9,
-        51.1,
-        59.0,
-        55.1,
-        53.1,
-        54.6,
-        51.9,
-        53.6,
-        52.1,
-        51.3,
-        56.0
-      ]
-    },
-    "sehpa": {
-      "keyword": "sehpa",
-      "ortalama": 64.3,
-      "maks": 74.1,
-      "buyume_yuzde": -21.7,
-      "trend": "Düşüyor",
-      "haftalik": [
-        74.1,
-        69.1,
-        71.0,
-        68.0,
-        67.6,
-        64.3,
-        68.7,
-        58.9,
-        58.3,
-        57.4,
-        56.4,
-        58.0
-      ]
-    },
-    "kiler dolabı": {
-      "keyword": "kiler dolabı",
-      "ortalama": 14.1,
-      "maks": 31.7,
-      "buyume_yuzde": 50.3,
-      "trend": "Yükseliyor",
-      "haftalik": [
-        19.3,
-        0.0,
-        31.7,
-        0.0,
-        0.0,
-        0.0,
-        28.1,
-        0.0,
-        0.0,
-        30.1,
-        31.3,
-        29.0
+        67.9,
+        75.9,
+        70.1,
+        71.3,
+        76.3,
+        72.4,
+        69.0,
+        70.1,
+        71.7,
+        78.6,
+        75.7,
+        63.0
       ]
     }
   }
