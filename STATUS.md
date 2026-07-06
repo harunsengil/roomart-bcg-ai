@@ -6,41 +6,41 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-07-02
-- **Güncelleyen:** Code (CLEAR karar katmanı + Shopify/n11 API çözümü + stok kodu registry)
-- **Aktif branch:** `feat/clear-decision-intelligence`. CLEAR → **PR #32 açık**. Platform API işi henüz commit edilmedi (branch düzeni bekliyor).
+- **Tarih:** 2026-07-06
+- **Güncelleyen:** Code (4 platform API tam + yorum sync + dashboard platform kolonları — DEPLOY edildi)
+- **Aktif branch:** `main` (deploy: `ca7aa98`). `feat/platform-reviews` merge edildi. CLEAR ayrı `feat/clear-decision-intelligence` (PR #32).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 >
-> **✅ 2026-07-02 ÇÖZÜLEN PLATFORM API'leri:**
-> - **Shopify: ÇALIŞIYOR.** İki hata düzeltildi: (1) store adı `roomartstore-com-tr.myshopify.com` (`-com-tr` eksikti),
->   (2) auth = **Client Credentials Grant** (statik token değil; client_id+secret → geçici `shpat_`). `shopify_api.py`
->   `get_access_token()` eklendi. Sonuç: **684 ürün + 527 sipariş** → `shopify_sales.json`.
-> - **n11: ÇALIŞIYOR.** Kök neden: n11 **SOAP API'yi kapatmış** → `n11_api.py` REST'e yeniden yazıldı
->   (`GET /ms/product-query`, `GET /rest/delivery/v1/shipmentPackages`; auth = `appkey`/`appsecret` header).
->   Creds hep geçerliymiş. Sonuç: **699 ürün + 59 sipariş** → `n11_sales.json`.
+> **✅ 4 PLATFORM API'si de ÇALIŞIYOR:**
+> - **Trendyol:** ~1002 ürün (mevcut) · **Shopify:** 684 ürün/527 sipariş (Client Credentials Grant) ·
+>   **n11:** 699 ürün/59 sipariş (SOAP→REST) · **Hepsiburada:** 925 ürün/6 sipariş **YENİ ÇÖZÜLDÜ**.
+> - **HB auth (final):** Basic Auth username=merchantId, password=secret, `User-Agent=webticari_dev` (4 alan).
+>   Order endpoint = `oms-external.hepsiburada.com/orders/merchantid` (düz satır; tarih filtresi 400 → istemci süz).
+>   Listing = `merchantSku` (HB barkod vermiyor).
 >
-> **🔴 HÂLÂ BLOKE (idari, koddan çözülemez):**
-> - **Hepsiburada:** `HB_USERNAME=lojimod_dev` üçüncü-taraf entegratör, merchant `258ae7fe` için YETKİSİZ →
->   401. Çözüm: RoomArt HB Merchant Panel → Hesabım → Bilgilerime → Entegratör bilgileri'nde kendi entegratör
->   adını ekleyip HB'nin AKTİVE etmesi (veya Yardım > Talepler > API Entegrasyon İşlemleri ile kendi API kullanıcısı).
->   Kod hazır (`hepsiburada_api.py` auth/endpoint doğru); aktive olunca çalışır.
+> **✅ YORUM/YILDIZ (kendi ürünlerimiz):**
+> - **Shopify → Judge.me API** (`judgeme_sync.py`): 337 yorum → 81 ürün %100 eşleşti (handle→stok kodu).
+> - **n11 → Playwright scraper** (`platform_review_scraper.py`): mağaza sayfası + JSON-LD; 17 ürün test.
+> - **HB:** listing API'de rating YOK, ürün sayfası Cloudflare korumalı → stealth scraping SONRAYA.
+> - Çıktı: `platform_reviews.json` (gitignored). n11 tam scrape (~21 sayfa) henüz yapılmadı.
 >
-> **✅ Stok kodu birleştirme (registry_builder.py):** ürünler STOK KODUNDA birleşti (ampirik: stok kodu örtüşmesi
->   608 > barkod 471). `product_registry.json`: **1080 ürün, 736 çok-platform, 608 fiyat çakışması**. HB/n11 loader
->   hazır. Örüntü: n11 fiyatları ~%7 sistematik yüksek. Çıktı gitignored (ciro içerir), Firestore `registry_latest`.
->
-> **✅ CLEAR Decision Intelligence (PR #32):** BCG üstüne 5-boyutlu karar katmanı + "Decision (CLEAR)" sekmesi.
->   Yerel çalışır; `data/manual_margin_inputs.csv` + `manual_operation_inputs.csv` doldurulunca marj bazlı kararlar açılır.
+> **✅ REGISTRY + DASHBOARD (DEPLOY EDİLDİ):**
+> - `product_registry.json`: 4 platform birleşik **1130 ürün, 980 çok-platform, 96 yorumlu** (stok kodu anahtar).
+> - **Public-safe sürüm** `product_registry_public.json` (ciro'suz: fiyat+yorum+url) → committable, build'e girer.
+>   Tam sürüm (ciro'lu) gitignored + Firestore `registry_latest`. [[bkz DECISIONS 2026-07-06]]
+> - **ProductTable:** "Platform ₺" (RS/n11/HB fiyat, en ucuz altın) + "Platform ★" (TY+RS+n11+HB yorum/yıldız alt alta),
+>   sol "Yorum" = toplam. Linkler: RS→roomartstore.com.tr, n11→gerçek/mağaza, HB→p-{sku}.
 >
 > **Sıradaki adımlar:**
-> 1. **HB'yi aç:** RoomArt kendi HB entegratörünü panelde ekleyip aktive ettirsin (yukarıdaki adım).
-> 2. Branch düzeni: platform API işi (Shopify/n11 fix + registry) commit → ayrı PR mı, PR #32'ye mi?
-> 3. Registry'yi dashboard'a bağla (ProductTable'a TY/Shopify/n11 fiyat kolonları + fiyat çakışması uyarısı).
-> 4. CLEAR CSV'lerini doldur → gerçek marj/operasyon kararları.
+> 1. **n11 tam yorum scrape** (`platform_review_scraper.py --platform n11`, ~21 sayfa) → tüm n11 ürün linkleri gerçek olur.
+> 2. **HB yorumları:** `playwright-stealth` ile Cloudflare aş, ya da HB'nin yorum API'sini araştır.
+> 3. **Firestore registry_latest:** yerelde Firebase creds YOK (proje uyuşmazlığı) → tam registry Firestore'a CI'dan yazılmalı.
+> 4. **CLEAR** (PR #32): CSV'leri doldur → gerçek marj/operasyon kararları; sonra merge.
+> 5. Fiyat çakışması uyarı paneli (registry price_conflict: 801 ürün >%5 fark).
 >
 > **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy.
-> Shopify `.env`'deki eski `SHOPIFY_ADMIN_TOKEN` artık kullanılmıyor (silinebilir).
+> Platform `.env.*.local` dosyaları gitignored (HB/n11/Shopify/Judge.me creds).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only
