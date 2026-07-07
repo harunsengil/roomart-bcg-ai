@@ -405,4 +405,15 @@
   scrape'inden) korur, yalnız shopify'ı tazeler. Kanıt: run 28865139695 success, 4 platform gerçek veri
   çekti, sızıntı-guard geçti (hiçbir satış dosyası public'e gitmedi).
 
+- **2026-07-07 — [Fiyat/URL düzeltme arkı]** Dashboard'daki pazaryeri linkleri ve fiyatları düzeltildi (PR #35/#36 + TY işaret PR'ı).
+  **URL'ler (scrape'siz, API'den):** n11 ürün URL id = **`groupId`** (n11ProductId satıcı-listing id'si, URL'de kullanılmaz);
+  HB = `/{slug}-p-{hepsiburadaSku}` (HB listing API ad vermez → slug stok-kodu ortak üründen). Shopify çok-varyantlı
+  ürünlerde `?variant={id}` (yoksa sayfa varsayılan bedeni açıyordu). Doğrulama: n11/HB curl'e 403 → tarayıcı teyidi (kullanıcı).
+  **TY kampanya fiyatı:** Trendyol satıcı API'si platform kampanya fiyatını VERMEZ (`has_campaign=True` ama sale=list; 475/1005
+  üründe). Yalnız ürün-sayfası scrape'i yakalar. **Karar:** (A) ProductTable'da kampanyalı-ama-liste ürünleri 🏷️ ile işaretle
+  (dürüst; gerçek fiyat daha düşük); (B) analyzer zaten scrape fiyatını API'ye tercih ediyor (`scraper_fiyat or api_sale`) →
+  28 üründe yakalanmış. Tam çözüm haftalık scrape kapsamını (Mac, ~187 ürün) genişletmeyi ister; bulut 403'ler.
+  **Private repo (askıda):** Free plan private yapınca Pages kapanır (dashboard 404); amaç kaynak-kodu-gizleme ise Pro ($4/ay)
+  ya da Cloudflare/Netlify (ücretsiz, URL değişir) gerekir. [[platform-product-url-formats]] · [[daily-platform-sync]].
+
 <!-- Yeni kararları buraya ekle -->
