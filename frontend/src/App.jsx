@@ -193,6 +193,7 @@ function Dashboard({ onLogout, userEmail }) {
                       onSelectCategory={setSelectedCategory}
                       selectedCategory={selectedCategory}
                       onSelectProduct={setSelectedProduct}
+                      selectedProduct={selectedProduct}
                     />
                   </div>
                   <div className="xl:col-span-2">

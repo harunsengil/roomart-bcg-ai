@@ -17,10 +17,13 @@ const ACTIONS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const PAD = 8
 const SPAN = 100 - 2 * PAD  // 84
 const MID = PAD + SPAN / 2  // 50  (quadrant divider, matches median threshold)
-// Ana görünüm eksen çerçevesi: sol=AXL, alt=AXB, sağ=AXR, üst=AXT (yüzde).
-// Eksenler içeriğin dışında (solda+altta); içerik bu çerçeveye yayılır.
-const AXL = 4, AXR = 98, AXT = 2, AXB = 95
+// Eksen çerçevesi: sol=AXL, alt=AXB, sağ=AXR, üst=AXT (yüzde). Eksenler içeriğin dışında.
+const AXL = 3, AXR = 98, AXT = 3, AXB = 95
+const IM = 3                      // içerik iç kenar boşluğu (eksenlerden)
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
+// frac (0..1, medyan=0.5) → çerçeve konumu; medyan TAM MID'e (bölücü) hizalanır.
+const mapFrame = (f, lo, hi) => f <= 0.5 ? lo + (f / 0.5) * (MID - lo)
+                                         : MID + ((f - 0.5) / 0.5) * (hi - MID)
 
 function median(arr) {
   if (!arr.length) return 50
@@ -94,7 +97,7 @@ function ProductTooltip({ p }) {
   )
 }
 
-export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory, onSelectProduct }) {
+export default function BCGMatrix({ products, categories, onSelectCategory, selectedCategory, onSelectProduct, selectedProduct }) {
   const [tooltip, setTooltip] = useState({ visible: false, product: null, x: 0, y: 0 })
   const [zoom, setZoom] = useState(null)
   const [actionFilter, setActionFilter] = useState('ALL')
@@ -113,57 +116,40 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
     .filter(p => !selectedCategory || p.category === selectedCategory.category)
   const shown = zoom ? base.filter(p => p.bcg_class === zoom) : base
 
-  // Rank tabanlı konumlandırma: aynı/yakın skorlu ürünler tek çizgiye yığılmaz,
-  // sıralama içindeki yerine göre alana eşit dağıtılır (zoom + ana görünüm ortak).
-  // Zoom: tüm kadran tek alana yayılır. Ana görünüm: her kadran KENDİ çeyreğine yayılır.
-  const ranks = useMemo(() => {
-    if (!shown.length) return {}
-    const out = {}
-    const assign = (list) => {
-      const byShare  = [...list].sort((a, b) => a.share_score - b.share_score)
-      const byGrowth = [...list].sort((a, b) => a.growth_score - b.growth_score)
-      const xIdx = new Map(byShare.map((p, i) => [p.id, i]))
-      const yIdx = new Map(byGrowth.map((p, i) => [p.id, i]))
-      const n = Math.max(1, list.length - 1)
-      list.forEach(p => { out[p.id] = { xr: xIdx.get(p.id) / n, yr: yIdx.get(p.id) / n } })
-    }
-    if (zoom) {
-      assign(shown)
-    } else {
-      // Kadran bazında grupla (her çeyrek kendi içinde sıralanır)
-      const byQuad = {}
-      shown.forEach(p => { (byQuad[p.bcg_class || 'NONE'] ??= []).push(p) })
-      Object.values(byQuad).forEach(assign)
-    }
-    return out
+  // Zoom: gösterilen ürünlerin GERÇEK skor min/max aralığı — alanı doldurmak için normalize.
+  // (Rank değil: konum gerçek skoru yansıtır; yakın skorlar yakın kalır.)
+  const zoomExtent = useMemo(() => {
+    if (!zoom || !shown.length) return null
+    const ss = shown.map(p => p.share_score), gs = shown.map(p => p.growth_score)
+    return { minS: Math.min(...ss), maxS: Math.max(...ss), minG: Math.min(...gs), maxG: Math.max(...gs) }
   }, [zoom, shown])
 
+  // HESAPLAMA-TABANLI konumlandırma: konum = gerçek skor (yakın skorlar yakın durur).
   const posOf = (p) => {
     const [jx, jy] = jitter(p.id)
-    const r = ranks[p.id] || { xr: 0.5, yr: 0.5 }
+    const xLoF = AXL + IM, xHiF = AXR - IM, yLoF = AXT + IM, yHiF = AXB - IM
     if (zoom) {
+      // Kadran içi skoru gerçek min/max ile normalize et → tüm alana yay + jitter
+      const e = zoomExtent || { minS: 0, maxS: 100, minG: 0, maxG: 100 }
+      const fx = e.maxS > e.minS ? (p.share_score - e.minS) / (e.maxS - e.minS) : 0.5
+      const fy = e.maxG > e.minG ? (p.growth_score - e.minG) / (e.maxG - e.minG) : 0.5
       return [
-        PAD + clamp(r.xr * SPAN + jx, 3, SPAN - 3),
-        PAD + clamp((1 - r.yr) * SPAN + jy, 3, SPAN - 3),
+        clamp(xLoF + fx * (xHiF - xLoF) + jx, xLoF - 1, xHiF + 1),
+        clamp(yLoF + (1 - fy) * (yHiF - yLoF) + jy, yLoF - 1, yHiF + 1),
       ]
     }
-    // Ana görünüm: kadranın kendi çeyreğine rank ile yay (paralel çizgi yığılması olmaz).
-    // Çeyrekler eksen çerçevesi (AXL..AXR × AXT..AXB) içine, medyan bölücüden (MID) boşluklu.
+    // Ana görünüm: frac(skor) → çerçeve; medyan TAM bölücüye (MID) hizalı, kadran doğru.
+    const xB = mapFrame(frac(p.share_score, shareThr), xLoF, xHiF)
+    const yB = mapFrame(1 - frac(p.growth_score, growthThr), yLoF, yHiF)  // yüksek büyüme = üst
+    // Kadran clamp: jitter medyan bölücüsünü geçip karşı kadrana taşımasın
     const q = p.bcg_class
-    const gap = 3    // dış eksenden boşluk (sol/alt/sağ/üst)
-    const m = 2      // merkez bölücüden boşluk
-    if (!q) {        // sınıfsız (nadir) → skor tabanlı yedek
-      const xB = AXL + gap + frac(p.share_score, shareThr) * (AXR - AXL - 2 * gap)
-      const yB = AXT + gap + (1 - frac(p.growth_score, growthThr)) * (AXB - AXT - 2 * gap)
-      return [clamp(xB + jx, AXL + gap, AXR - gap), clamp(yB + jy, AXT + gap, AXB - gap)]
-    }
     const isRight = q === 'STAR' || q === 'CASH_COW'
     const isTop   = q === 'STAR' || q === 'QUESTION_MARK'
-    const xLo = isRight ? MID + m : AXL + gap,  xHi = isRight ? AXR - gap : MID - m
-    const yLo = isTop ? AXT + gap : MID + m,    yHi = isTop ? MID - m : AXB - gap
-    const x = xLo + r.xr * (xHi - xLo) + jx
-    const y = yLo + (1 - r.yr) * (yHi - yLo) + jy
-    return [clamp(x, xLo - m, xHi + m), clamp(y, yLo - m, yHi + m)]
+    const xMin = q ? (isRight ? MID + 0.5 : xLoF) : xLoF
+    const xMax = q ? (isRight ? xHiF : MID - 0.5) : xHiF
+    const yMin = q ? (isTop ? yLoF : MID + 0.5) : yLoF
+    const yMax = q ? (isTop ? MID - 0.5 : yHiF) : yHiF
+    return [clamp(xB + jx, xMin, xMax), clamp(yB + jy, yMin, yMax)]
   }
 
   const handleMouseEnter = (e, product) => {
@@ -195,19 +181,23 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
     const qm = QUADRANT_META[p.bcg_class] || {}
     const size = dotSize(p)
     const isHL = highlightId === p.id
+    const isSel = selectedProduct?.id === p.id     // sağ panelde seçili ürün
     return (
       <div key={p.id} className="absolute cursor-pointer"
-        style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)', zIndex: isHL ? 40 : (tooltip.product?.id === p.id ? 30 : 5) }}
+        style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)',
+                 zIndex: isSel ? 45 : isHL ? 40 : (tooltip.product?.id === p.id ? 30 : 5) }}
         onMouseEnter={e => handleMouseEnter(e, p)}
         onMouseLeave={clearTip}
         onClick={e => { e.stopPropagation(); onSelectProduct?.(p) }}>
         <div className="rounded-full transition-all duration-150 hover:scale-[2.2]"
           style={{
-            width: isHL ? size * 1.8 : size, height: isHL ? size * 1.8 : size,
+            width: (isSel || isHL) ? size * 1.8 : size, height: (isSel || isHL) ? size * 1.8 : size,
             background: `radial-gradient(circle at 35% 35%, ${qm.color}, ${qm.color}70)`,
-            border: `${isHL ? 2 : 1}px solid ${qm.color}`,
-            opacity: isHL ? 1 : 0.85,
-            boxShadow: isHL ? `0 0 12px ${qm.color}99` : `0 0 5px ${qm.color}55`,
+            // Seçili ürün: KALIN beyaz halka + güçlü glow → hangi ürün seçili net belli olsun
+            border: isSel ? '3px solid #fff' : `${isHL ? 2 : 1}px solid ${qm.color}`,
+            opacity: (isSel || isHL) ? 1 : 0.85,
+            boxShadow: isSel ? `0 0 0 2px ${qm.color}, 0 0 14px #fff9`
+                             : isHL ? `0 0 12px ${qm.color}99` : `0 0 5px ${qm.color}55`,
           }} />
       </div>
     )
@@ -221,7 +211,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
           <h2 className="font-display text-lg tracking-[0.15em] text-white">BCG MATRIX</h2>
           <p className="text-[10px] font-mono text-white/30 tracking-wider">
             {zoom
-              ? `🔍 ${zoomMeta.label} · ${shown.length} ürün (sıraya göre dağıtıldı) — boşluğa tıkla: geri`
+              ? `🔍 ${zoomMeta.label} · ${shown.length} ürün (skora göre) — boşluğa tıkla: geri`
               : `${shown.length}/${scored.length} ürün · ⬤ boyut = satış adedi · boş kadrana tıkla: yakınlaştır`}
             {selectedCategory && (
               <button onClick={e => { e.stopPropagation(); onSelectCategory(null) }}
@@ -252,28 +242,30 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
             <div ref={containerRef} className="relative flex-1 min-w-0 cursor-zoom-out overflow-hidden rounded-lg"
               style={{ background: (zoomMeta?.color || '#fff') + '05' }}
               onClick={handlePlotClick}>
+              {/* Zoom ekseni: ana görünümle AYNI çerçeve (sol=AXL, alt=AXB), oklar sağ/yukarı */}
               <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
                 <rect x="0" y="0" width="100%" height="100%" fill={zoomMeta.color + '06'} />
                 <defs>
                   <marker id="arrow-z" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                    <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
+                    <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.55)" />
                   </marker>
                 </defs>
-                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2="99%" y2={`${PAD + SPAN}%`}
-                  stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
-                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2="1%"
-                  stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
+                <line x1={`${AXL}%`} y1={`${AXB}%`} x2={`${AXR + 1}%`} y2={`${AXB}%`}
+                  stroke="rgba(120,124,150,0.55)" strokeWidth="1.2" markerEnd="url(#arrow-z)" />
+                <line x1={`${AXL}%`} y1={`${AXB}%`} x2={`${AXL}%`} y2={`${AXT - 1}%`}
+                  stroke="rgba(120,124,150,0.55)" strokeWidth="1.2" markerEnd="url(#arrow-z)" />
               </svg>
               <div className="absolute top-2 left-1/2 -translate-x-1/2 pointer-events-none">
-                <p className="text-[10px] font-mono tracking-widest font-bold" style={{ color: zoomMeta.color + '80' }}>
-                  {zoomMeta.emoji} {zoomMeta.label} · skor sırası
+                <p className="text-[10px] font-mono tracking-widest font-bold" style={{ color: zoomMeta.color + '90' }}>
+                  {zoomMeta.emoji} {zoomMeta.label} · skora göre
                 </p>
               </div>
-              <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-mono text-white/20 pointer-events-none">
+              {/* X etiketi altta, Y etiketi solda (okunabilir) */}
+              <div className="absolute left-1/2 -translate-x-1/2 text-[10px] font-mono text-white/50 tracking-widest uppercase pointer-events-none" style={{ bottom: '0.5%' }}>
                 Pazar Payı Skoru →
               </div>
-              <div className="absolute left-0 top-1/2 text-[8px] font-mono text-white/20 pointer-events-none"
-                style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-1%' }}>
+              <div className="absolute left-0 top-1/2 text-[10px] font-mono text-white/50 tracking-widest uppercase pointer-events-none"
+                style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '0.6%' }}>
                 ↑ Büyüme Skoru
               </div>
               {renderDots()}
@@ -354,14 +346,14 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
               <line x1={`${AXL}%`} y1={`${AXB}%`} x2={`${AXL}%`} y2={`${AXT - 1}%`}
                 stroke="rgba(120,124,150,0.55)" strokeWidth="1.2" markerEnd="url(#arrow)" />
             </svg>
-            {/* X etiketi — grafiğin altında, eksen boyunca */}
-            <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none" style={{ bottom: '1%' }}>
-              <div className="text-[9px] font-mono text-white/35 tracking-widest uppercase">Pazar Payı Skoru →</div>
+            {/* X etiketi — grafiğin altında, eksen boyunca (okunabilir) */}
+            <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none" style={{ bottom: '0.5%' }}>
+              <div className="text-[10px] font-mono text-white/55 tracking-widest uppercase">Pazar Payı Skoru →</div>
             </div>
-            {/* Y etiketi — grafiğin solunda, eksen boyunca (dikey) */}
+            {/* Y etiketi — grafiğin solunda, eksene yapışık dikey (okunabilir) */}
             <div className="absolute left-0 top-1/2 text-center pointer-events-none"
-              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-1%' }}>
-              <div className="text-[9px] font-mono text-white/35 tracking-widest uppercase">↑ Büyüme Skoru</div>
+              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '0.6%' }}>
+              <div className="text-[10px] font-mono text-white/55 tracking-widest uppercase">↑ Büyüme Skoru</div>
             </div>
             {QUADRANT_LABELS.map(q => (
               <div key={q.id} className="absolute text-center pointer-events-none"
