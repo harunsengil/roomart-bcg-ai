@@ -152,7 +152,7 @@ def fetch_products(sess: requests.Session, store: str) -> list[dict]:
                     "stock":       var.get("inventory_quantity"),
                     "status":      prod.get("status", ""),     # active/draft/archived
                     "image":       img_url,
-                    "url":         f"{store}/products/{prod.get('handle', '')}",
+                    "url":         f"{store}/products/{prod.get('handle', '')}?variant={var['id']}",
                 })
 
         logger.info(f"  {len(products)} varyant ({len(items)} ürün bu sayfa)")
@@ -203,7 +203,7 @@ def fetch_products_paginated(sess: requests.Session, store: str) -> list[dict]:
                     "stock":            var.get("inventory_quantity"),
                     "status":           prod.get("status", ""),
                     "image":            img_url,
-                    "url":              f"{store}/products/{prod.get('handle', '')}",
+                    "url":              f"{store}/products/{prod.get('handle', '')}?variant={var['id']}",
                 })
 
         # Cursor: Link header → <url>; rel="next"
