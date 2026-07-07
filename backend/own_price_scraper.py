@@ -143,11 +143,28 @@ def load_targets(limit: int | None = None) -> list[dict]:
     return targets
 
 
-async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_ms: int, delay_ms: int) -> dict:
+SAVE_EVERY = 15   # her N üründe ara kayıt → internet/süreç kesilirse ilerleme kaybolmaz
+
+def _save(result: dict) -> None:
+    n11_ok = sum(1 for r in result.values() if r.get("n11"))
+    ty_ok  = sum(1 for r in result.values() if r.get("trendyol"))
+    out = {"metadata": {"scraped_at": datetime.now(timezone.utc).isoformat(),
+                        "count": len(result), "n11_filled": n11_ok, "trendyol_filled": ty_ok,
+                        "platforms": ["n11", "trendyol"],
+                        "note": "Müşterinin ödeyeceği SON fiyat (n11 sepette / TY kampanya). HB dahil değil (Akamai 403)."},
+           "by_stock_code": result}
+    OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_ms: int,
+                     delay_ms: int, result: dict, already: int = 0, total: int | None = None) -> dict:
     """SIRALI + KİBAR. Anti-bot gerçeği: eşzamanlı/hızlı istek IP'yi throttle'lar (kanıtlandı).
-    concurrency=1 + ürünler arası gecikme → haftalık koşuda engellenmez. Yüksek concurrency ÖNERİLMEZ."""
+    concurrency=1 + ürünler arası gecikme → haftalık koşuda engellenmez. Yüksek concurrency ÖNERİLMEZ.
+    `result` önceden yüklenmiş (devam) kayıtlarla gelir; her SAVE_EVERY üründe diske yazılır.
+    Log MUTLAK ilerleme gösterir: [already+bu_koşu / total] (devam'da da doğru X/toplam)."""
     from playwright.async_api import async_playwright
-    result, done = {}, [0]
+    total = total or len(targets)
+    done = [0]
     sem = asyncio.Semaphore(concurrency)
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
@@ -175,8 +192,10 @@ async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_
                 await ctx.close()
                 result[t["sc"]] = rec
                 done[0] += 1
+                if done[0] % SAVE_EVERY == 0:
+                    _save(result)   # ara kayıt → internet/süreç kesilirse ilerleme kalır
                 if verbose:
-                    logger.info(f"[{done[0]}/{len(targets)}] {t['sc']} {t['name'][:26]}: "
+                    logger.info(f"[{already + done[0]}/{total}] {t['sc']} {t['name'][:26]}: "
                                 f"n11={rec.get('n11')} · TY={rec.get('trendyol')}")
 
         await asyncio.gather(*[one(t) for t in targets])
@@ -187,16 +206,30 @@ async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_
 def run(limit: int | None = None, verbose: bool = False, concurrency: int = 1,
         wait_ms: int = 2000, delay_ms: int = 1200) -> None:
     targets = load_targets(limit)
-    logger.info(f"Hedef ürün: {len(targets)} (SIRALI, bekleme {wait_ms}ms, aralık {delay_ms}ms)")
-    result = asyncio.run(_run_async(targets, concurrency, verbose, wait_ms, delay_ms))
+    # DEVAM: mevcut own_final_prices.json'u yükle → tamamlananları (n11 VEYA TY dolu) ATLA.
+    # Böylece internet/süreç kesilip yeniden başlatılınca KALDIĞI YERDEN devam eder.
+    existing = {}
+    if OUT_FILE.exists():
+        try:
+            existing = json.loads(OUT_FILE.read_text(encoding="utf-8")).get("by_stock_code", {})
+        except Exception:
+            existing = {}
+    def _has(sc: str) -> bool:
+        r = existing.get(sc, {})
+        return bool(r.get("n11") or r.get("trendyol"))
+    todo = [t for t in targets if not _has(t["sc"])]
+    result = dict(existing)
+    logger.info(f"Toplam {len(targets)} · tamamlanan {len(targets)-len(todo)} · KALAN {len(todo)} "
+                f"(SIRALI, bekleme {wait_ms}ms, aralık {delay_ms}ms, ara-kayıt/{SAVE_EVERY})")
+    if not todo:
+        logger.info("Yapılacak yok — hepsi tamam.")
+        _save(result)
+        return
+    asyncio.run(_run_async(todo, concurrency, verbose, wait_ms, delay_ms, result,
+                           already=len(targets) - len(todo), total=len(targets)))
+    _save(result)
     n11_ok = sum(1 for r in result.values() if r.get("n11"))
     ty_ok  = sum(1 for r in result.values() if r.get("trendyol"))
-    out = {"metadata": {"scraped_at": datetime.now(timezone.utc).isoformat(),
-                        "count": len(result), "n11_filled": n11_ok, "trendyol_filled": ty_ok,
-                        "platforms": ["n11", "trendyol"],
-                        "note": "Müşterinin ödeyeceği SON fiyat (n11 sepette / TY kampanya). HB dahil değil (Akamai 403)."},
-           "by_stock_code": result}
-    OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info(f"Kaydedildi: {OUT_FILE} ({len(result)} ürün · n11 {n11_ok} · TY {ty_ok})")
 
 
