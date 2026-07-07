@@ -116,40 +116,59 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
     .filter(p => !selectedCategory || p.category === selectedCategory.category)
   const shown = zoom ? base.filter(p => p.bcg_class === zoom) : base
 
-  // Zoom: gösterilen ürünlerin GERÇEK skor min/max aralığı — alanı doldurmak için normalize.
-  // (Rank değil: konum gerçek skoru yansıtır; yakın skorlar yakın kalır.)
-  const zoomExtent = useMemo(() => {
-    if (!zoom || !shown.length) return null
-    const ss = shown.map(p => p.share_score), gs = shown.map(p => p.growth_score)
-    return { minS: Math.min(...ss), maxS: Math.max(...ss), minG: Math.min(...gs), maxG: Math.max(...gs) }
+  // HESAPLAMA-TABANLI ama çizgisel-olmayan dağılım: her ürün için bölge-içi konum =
+  // skor-normalize (%70, gerçek skoru yansıtır) + rank (%30, aynı skorları açar → çizgi olmaz).
+  // Ana görünüm: her kadran KENDİ içinde; zoom: tek kadran tüm alanda.
+  const posData = useMemo(() => {
+    const out = {}
+    const W = 0.7  // skor ağırlığı (kalanı rank)
+    const process = (list) => {
+      if (!list.length) return
+      const ss = list.map(p => p.share_score), gs = list.map(p => p.growth_score)
+      const minS = Math.min(...ss), maxS = Math.max(...ss)
+      const minG = Math.min(...gs), maxG = Math.max(...gs)
+      const sRank = new Map([...list].sort((a, b) => a.share_score - b.share_score).map((p, i) => [p.id, i]))
+      const gRank = new Map([...list].sort((a, b) => a.growth_score - b.growth_score).map((p, i) => [p.id, i]))
+      const n = Math.max(1, list.length - 1)
+      list.forEach(p => {
+        const sScore = maxS > minS ? (p.share_score - minS) / (maxS - minS) : 0.5
+        const gScore = maxG > minG ? (p.growth_score - minG) / (maxG - minG) : 0.5
+        out[p.id] = {
+          xf: W * sScore + (1 - W) * (sRank.get(p.id) / n),
+          yf: W * gScore + (1 - W) * (gRank.get(p.id) / n),
+        }
+      })
+    }
+    if (zoom) {
+      process(shown)
+    } else {
+      const byQ = {}
+      shown.forEach(p => { (byQ[p.bcg_class || 'NONE'] ??= []).push(p) })
+      Object.values(byQ).forEach(process)
+    }
+    return out
   }, [zoom, shown])
 
-  // HESAPLAMA-TABANLI konumlandırma: konum = gerçek skor (yakın skorlar yakın durur).
   const posOf = (p) => {
     const [jx, jy] = jitter(p.id)
+    const d = posData[p.id] || { xf: 0.5, yf: 0.5 }
     const xLoF = AXL + IM, xHiF = AXR - IM, yLoF = AXT + IM, yHiF = AXB - IM
     if (zoom) {
-      // Kadran içi skoru gerçek min/max ile normalize et → tüm alana yay + jitter
-      const e = zoomExtent || { minS: 0, maxS: 100, minG: 0, maxG: 100 }
-      const fx = e.maxS > e.minS ? (p.share_score - e.minS) / (e.maxS - e.minS) : 0.5
-      const fy = e.maxG > e.minG ? (p.growth_score - e.minG) / (e.maxG - e.minG) : 0.5
       return [
-        clamp(xLoF + fx * (xHiF - xLoF) + jx, xLoF - 1, xHiF + 1),
-        clamp(yLoF + (1 - fy) * (yHiF - yLoF) + jy, yLoF - 1, yHiF + 1),
+        clamp(xLoF + d.xf * (xHiF - xLoF) + jx, xLoF - 1, xHiF + 1),
+        clamp(yLoF + (1 - d.yf) * (yHiF - yLoF) + jy, yLoF - 1, yHiF + 1),
       ]
     }
-    // Ana görünüm: frac(skor) → çerçeve; medyan TAM bölücüye (MID) hizalı, kadran doğru.
-    const xB = mapFrame(frac(p.share_score, shareThr), xLoF, xHiF)
-    const yB = mapFrame(1 - frac(p.growth_score, growthThr), yLoF, yHiF)  // yüksek büyüme = üst
-    // Kadran clamp: jitter medyan bölücüsünü geçip karşı kadrana taşımasın
+    // Ana görünüm: kadranın kendi çeyreğine (medyan bölücüden b boşluklu) yay
     const q = p.bcg_class
+    const b = 1.5
     const isRight = q === 'STAR' || q === 'CASH_COW'
     const isTop   = q === 'STAR' || q === 'QUESTION_MARK'
-    const xMin = q ? (isRight ? MID + 0.5 : xLoF) : xLoF
-    const xMax = q ? (isRight ? xHiF : MID - 0.5) : xHiF
-    const yMin = q ? (isTop ? yLoF : MID + 0.5) : yLoF
-    const yMax = q ? (isTop ? MID - 0.5 : yHiF) : yHiF
-    return [clamp(xB + jx, xMin, xMax), clamp(yB + jy, yMin, yMax)]
+    const xLo = q ? (isRight ? MID + b : xLoF) : xLoF, xHi = q ? (isRight ? xHiF : MID - b) : xHiF
+    const yLo = q ? (isTop ? yLoF : MID + b) : yLoF,   yHi = q ? (isTop ? MID - b : yHiF) : yHiF
+    const x = xLo + d.xf * (xHi - xLo) + jx
+    const y = yLo + (1 - d.yf) * (yHi - yLo) + jy
+    return [clamp(x, xLo - 1, xHi + 1), clamp(y, yLo - 1, yHi + 1)]
   }
 
   const handleMouseEnter = (e, product) => {
@@ -204,7 +223,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   })
 
   return (
-    <div className="glass-card p-5 h-full">
+    <div className="glass-card p-5 h-full flex flex-col">
       {/* ── Header ── */}
       <div className="relative z-20 flex items-start justify-between mb-3 gap-3 flex-shrink-0">
         <div className="min-w-0">
@@ -236,7 +255,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
 
       {zoom ? (
         /* ── ZOOM LAYOUT: normal yükseklik korunur (paddingBottom trick) + liste yan panel ── */
-        <div className="relative flex-shrink-0" style={{ paddingBottom: '55%' }}>
+        <div className="relative flex-1 min-h-0" style={{ minHeight: 320 }}>
           <div className="absolute inset-0 flex gap-2">
             {/* Scatter alanı */}
             <div ref={containerRef} className="relative flex-1 min-w-0 cursor-zoom-out overflow-hidden rounded-lg"
@@ -321,8 +340,8 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
         </div>
       ) : (
         /* ── NORMAL LAYOUT: tam genişlik scatter ── */
-        <div ref={containerRef} className="bcg-plot relative cursor-zoom-in flex-shrink-0"
-          style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
+        <div ref={containerRef} className="bcg-plot relative cursor-zoom-in flex-1 min-h-0"
+          style={{ minHeight: 320 }} onClick={handlePlotClick}>
           <div className="absolute inset-0">
             {/* Çerçeve: eksenler solda (x=AXL) ve altta (y=AXB); içerik/kadranlar çerçeve içinde.
                 MID=50 kadran bölücüsü. Arka planlar ve bölücüler çerçeveye hizalı. */}

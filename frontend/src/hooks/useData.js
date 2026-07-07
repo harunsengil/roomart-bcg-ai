@@ -71,6 +71,37 @@ function normalizeCategories(raw) {
   })
 }
 
+// Kategori özeti yoksa ürünlerden TÜRET (panel her zaman dolu kalsın).
+// bcg_scores.json yalnız products içerir; categories ayrı payload'da (Firestore).
+// Firestore boş/erişilemez olursa bu türev devreye girer.
+function deriveCategoriesFromProducts(products) {
+  if (!Array.isArray(products) || !products.length) return []
+  const groups = {}
+  products.forEach(p => {
+    if (p.share_score == null || p.growth_score == null) return  // skorsuz ürün atla
+    const cat = p.category || 'Diğer'
+    ;(groups[cat] ??= []).push(p)
+  })
+  const avg = (list, f) => list.reduce((s, p) => s + (p[f] || 0), 0) / list.length
+  return Object.entries(groups).map(([cat, list], i) => ({
+    id: `cat-${i}`,
+    category: cat,
+    share_score: Math.round(avg(list, 'share_score')),
+    growth_score: Math.round(avg(list, 'growth_score')),
+    product_count: list.length,
+    avg_price: Math.round(avg(list, 'price')),
+    avg_rating: +avg(list, 'rating').toFixed(1),
+    total_reviews: list.reduce((s, p) => s + (p.review_count || 0), 0),
+  })).sort((a, b) => b.product_count - a.product_count)
+}
+
+// Kategori çöz: payload'da varsa onu, yoksa ürünlerden türet.
+function resolveCategories(rawCats, products) {
+  const norm = normalizeCategories(rawCats)
+  if (norm.length) return norm
+  return normalizeCategories(deriveCategoriesFromProducts(products))
+}
+
 // Çok-platform registry'yi ürünlere STOK KODU (kod) ile bağla.
 // Her ürüne platform fiyatları + platform yorumları eklenir (Trendyol tablosu zenginleşir).
 function joinRegistry(products, registry) {
@@ -128,7 +159,7 @@ async function loadFromFirestore() {
   }
   return {
     kpis: d.kpis,
-    categories: normalizeCategories(d.categories ?? d.category_summary),
+    categories: resolveCategories(d.categories ?? d.category_summary, d.products),
     products: joinRegistry(d.products ?? [], registry),
     quadrantDistribution: d.quadrant_distribution,
     trends: d.trends,
@@ -151,9 +182,7 @@ async function loadFromJSON() {
   ])
   return {
     kpis: bcgScores.kpis,
-    categories: normalizeCategories(
-      bcgScores.categories ?? bcgScores.category_summary
-    ),
+    categories: resolveCategories(bcgScores.categories ?? bcgScores.category_summary, bcgScores.products),
     products: joinRegistry(bcgScores.products ?? [], registry),
     quadrantDistribution: bcgScores.quadrant_distribution,
     trends: transformTrendsSonuc(trendsSonuc),

@@ -166,7 +166,7 @@ function Dashboard({ onLogout, userEmail }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
-            className="p-2 xs:p-3 sm:p-5 space-y-3 sm:space-y-4"
+            className="p-2 xs:p-3 sm:p-5 flex flex-col gap-3 sm:gap-4 min-h-full"
           >
             {/* ── OVERVIEW ── */}
             {activeTab === 'overview' && (
@@ -185,7 +185,7 @@ function Dashboard({ onLogout, userEmail }) {
                   </div>
                 )}
                 <KPISection kpis={data?.kpis} categories={data?.categories} />
-                <div className="grid grid-cols-1 xl:grid-cols-5 gap-3 xl:gap-4" style={{ minHeight: 480 }}>
+                <div className="grid grid-cols-1 xl:grid-cols-5 gap-3 xl:gap-4 flex-1 min-h-0" style={{ minHeight: 480 }}>
                   <div className="xl:col-span-3">
                     <BCGMatrix
                       products={data?.products}
