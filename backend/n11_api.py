@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import time
 from datetime import datetime, timezone, timedelta
 
@@ -52,6 +53,16 @@ def _headers(key: str, secret: str) -> dict:
     return {"appkey": key, "appsecret": secret, "Content-Type": "application/json"}
 
 
+_TR_MAP = str.maketrans("ıİşŞğĞüÜöÖçÇ", "iissgguuoocc")
+
+def _slugify(text: str) -> str:
+    """n11 URL slug'ı: Türkçe karakterleri sadeleştir → küçük harf → alfanümerik dışı '-'.
+    Slug SEO amaçlı; n11 sondaki groupId'ye göre kanonik URL'e yönlendirir (slug yaklaşık olabilir)."""
+    s = (text or "").translate(_TR_MAP).lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s[:120]   # aşırı uzun slug'ı kırp (URL id yine sonda)
+
+
 def _get(url: str, headers: dict, params: dict) -> dict:
     for attempt in range(MAX_RETRIES + 1):
         try:
@@ -84,18 +95,29 @@ def fetch_products(key: str, secret: str) -> list[dict]:
         items = data.get("content", [])
         for it in items:
             imgs = it.get("imageUrls") or []
+            # n11 ürün URL'i = /urun/{slug}-{groupId}. groupId = KATALOG ürün id'si (URL'de kullanılan);
+            # n11ProductId satıcı-listing id'sidir, URL'de KULLANILMAZ (eski kod bunu kullanıyordu → 404).
+            # Doğrulandı: groupId = gerçek URL id (7/8 scrape örneği; 8. scraper eşleşme hatası).
+            gid   = str(it.get("groupId") or "").strip()
+            title = it.get("title") or ""
+            slug  = _slugify(title)
+            if gid:
+                url = f"https://www.n11.com/urun/{slug}-{gid}" if slug else f"https://www.n11.com/urun/-{gid}"
+            else:
+                url = "https://www.n11.com/magaza/roomart"   # groupId yoksa mağaza (nadir)
             products.append({
                 "product_id":   str(it.get("n11ProductId") or ""),
+                "group_id":     gid,
                 "stock_code":   str(it.get("stockCode") or "").strip(),
                 "barcode":      str(it.get("barcode") or "").strip(),
-                "title":        it.get("title") or "",
+                "title":        title,
                 "price":        it.get("salePrice") or 0.0,
                 "list_price":   it.get("listPrice"),
                 "stock":        it.get("quantity"),
                 "status":       it.get("status") or it.get("saleStatus") or "",
                 "commission":   it.get("commissionRate"),
                 "image":        imgs[0] if imgs else "",
-                "url":          f"https://www.n11.com/urun/-{it.get('n11ProductId')}",
+                "url":          url,
             })
         logger.info(f"  sayfa {page}: {len(items)} ürün ({len(products)} toplam)")
         if data.get("last") or not items or page + 1 >= data.get("totalPages", 1):

@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -47,6 +48,16 @@ def _load(name: str) -> dict | None:
 
 def _norm(code) -> str:
     return str(code or "").strip()
+
+
+_TR_MAP = str.maketrans("ıİşŞğĞüÜöÖçÇ", "iissgguuoocc")
+
+def _slugify(text: str) -> str:
+    """Pazaryeri URL slug'ı: Türkçe karakterleri sadeleştir → küçük harf → alfanümerik dışı '-'.
+    HB/n11 sondaki id/sku'ya göre kanonik URL'e yönlendirir; slug yaklaşık olabilir."""
+    s = (text or "").translate(_TR_MAP).lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s[:120]
 
 
 # ── Platform yükleyiciler → {stock_code: {kanonik ürün + satış}} ───────────────
@@ -159,6 +170,7 @@ def load_hb() -> dict:
             "price": v.get("price") or 0.0, "list_price": v.get("list_price"),
             "url": v.get("url") or "", "on_sale": (v.get("status") != "Suspended"),
             "image": v.get("image") or "",
+            "hb_sku": v.get("hb_sku") or "",   # hepsiburadaSku → URL kanonik slug'ı için
             "units_90d": s.get("net_units", 0), "amount_90d": round(s.get("net_amount", 0.0)),
             "momentum": s.get("sales_momentum"),
         }
@@ -243,6 +255,7 @@ def build_registry() -> dict:
                 "list_price": v["list_price"],
                 "url":        v["url"],
                 "on_sale":    v["on_sale"],
+                "hb_sku":     v.get("hb_sku", ""),   # yalnız HB'de dolu; URL slug'ı için (post-merge)
                 "units_90d":  v["units_90d"],
                 "amount_90d": v["amount_90d"],
                 "momentum":   v["momentum"],
@@ -279,13 +292,15 @@ def build_registry() -> dict:
                 "rating":       rdata.get("rating"),
                 "review_count": rdata.get("review_count"),
             }
-            # n11 API URL'i bozuk (/urun/-{id} → 404); scraper'ın GERÇEK URL'i varsa onu kullan.
-            real_url = rdata.get("n11_url")
-            if plat == "n11" and real_url and "n11" in e["platforms"]:
-                e["platforms"]["n11"]["url"] = real_url
-        # n11 gerçek URL yoksa bozuk API URL'i yerine mağaza sayfasına düş
-        if "n11" in e["platforms"] and "/urun/-" in (e["platforms"]["n11"].get("url") or ""):
-            e["platforms"]["n11"]["url"] = "https://www.n11.com/magaza/roomart"
+        # HB ürün URL'i: kanonik ad slug'ı + hepsiburadaSku → /{slug}-p-{sku}. HB listing API
+        # ürün adı VERMİYOR → slug'ı stok-kodu ortak üründen (kanonik ad) kur (HB -p-{sku}'ya
+        # göre kanoniğe yönlendirir). n11 URL'i zaten n11_api'de groupId ile doğru (URL id=groupId,
+        # doğrulandı 7/8; eski scraper-override/mağaza-fallback KALDIRILDI → daha güvenilir).
+        hb = e["platforms"].get("hb")
+        if hb and hb.get("hb_sku"):
+            slug = _slugify(e.get("name") or "")
+            hb["url"] = (f"https://www.hepsiburada.com/{slug}-p-{hb['hb_sku']}"
+                         if slug else f"https://www.hepsiburada.com/-p-{hb['hb_sku']}")
         # Toplam yorum sayısı (platformlar arası)
         e["total_reviews"] = sum((r.get("review_count") or 0) for r in e["reviews"].values())
 

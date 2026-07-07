@@ -60,8 +60,10 @@ def aggregate_listings(listings: list) -> dict:
         status = "Suspended" if item.get("isSuspended") else ("Salable" if item.get("isSalable") else "")
         name   = item.get("productName") or item.get("ProductName") or sku
         listing_id = item.get("listingId") or item.get("ListingId") or ""
-        # HB ürün sayfası linki: hepsiburadaSku ile /p-{sku} formatı
-        url = f"https://www.hepsiburada.com/p-{hb_sku}" if hb_sku else ""
+        # HB ürün URL'i = /{slug}-p-{hepsiburadaSku}. Eski /p-{sku} (baştaki '-' YOK) 404 veriyordu.
+        # HB listing API ürün adı vermiyor → burada boş-slug fallback (/-p-{sku}, HB kanoniğe
+        # yönlendirir); registry_builder stok-kodu ortak üründen kanonik slug'ı ekler.
+        url = f"https://www.hepsiburada.com/-p-{hb_sku}" if hb_sku else ""
 
         key = sku or hb_sku
         if key:
