@@ -389,4 +389,20 @@
   bulut CI marjsız sürümle private clear_latest'i ezmez. Boş CSV = dürüst "Veriyi Tamamla" (negatif marjlı
   ürüne "Ölçekle" dememek için kasıtlı). GTÜ eğitimi için framework olarak genelleştirilebilir.
 
+- **2026-07-07 — [Günlük çok-platform sync]** API'den gelen kendi ürün verisi (fiyat/satış/yorum) HER SABAH
+  tazelensin diye Shopify · Judge.me · n11 · Hepsiburada sync + `registry_builder` `analyze.yml`'in GÜNLÜK
+  akışına eklendi (önceden yalnız Trendyol günlüktü; diğer 3 platform yalnız lokaldeydi). Hepsi
+  `continue-on-error` → bir platformun secret'ı/API'si düşse günlük BCG akışı KIRILMAZ (o platform o gün
+  atlanır, eski verisi korunur). Ayrı workflow yerine `analyze.yml`'e eklendi: registry zaten sync
+  çıktılarına + copy/commit/deploy zincirine bağlı, mükerrer altyapı olmasın. 11 secret GitHub Secrets'a
+  (SHOPIFY_*/N11_*/HB_*/JUDGEME_*) `gh secret set` ile eklendi. **Karar (Firestore registry):** registry
+  Firestore'a YAZILMAZ — 1130 ürünlük doküman Firestore'un doküman-başı index-entry limitini aşıyor
+  (INDEX_ENTRIES_COUNT_LIMIT_EXCEEDED) + committed `product_registry_public.json` zaten her gün taze deploy
+  oluyor → Firestore kopyası hem başarısız hem gereksiz. Dashboard registry'yi doğrudan public JSON'dan okur
+  (`useData.js`'ten `registry_latest` okuması kaldırıldı → bayat-Firestore gölge riski yok). **Karar
+  (yorum verisi):** `platform_reviews.json` gitignore'dan çıkarıldı — pazaryeri yorum sayısı/puanı PUBLIC
+  (ciro değil); commit'lenince CI günlük koşuda mevcut dosyayı okuyup n11 yorumlarını (haftalık Mac
+  scrape'inden) korur, yalnız shopify'ı tazeler. Kanıt: run 28865139695 success, 4 platform gerçek veri
+  çekti, sızıntı-guard geçti (hiçbir satış dosyası public'e gitmedi).
+
 <!-- Yeni kararları buraya ekle -->
