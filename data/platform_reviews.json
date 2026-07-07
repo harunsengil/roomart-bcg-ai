@@ -1,0 +1,1263 @@
+{
+  "metadata": {
+    "updated_at": "2026-07-07T12:12:50.223335+00:00",
+    "n11_count": 17,
+    "shopify_count": 81,
+    "total_skus": 96
+  },
+  "by_stock_code": {
+    "2376": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2376",
+        "n11_url": "https://www.n11.com/urun/banyo-dolabi-2312-x-67-cm-camasir-ve-kurutma-makinesi-dolabi-byz-mat-beyaz-51316220",
+        "n11_title": "Banyo Dolabı 231,2 X 67 Cm Çamaşır Ve Kurutma Makinesi Dolabı Byz Mat Beyaz",
+        "rating": 5.0,
+        "review_count": 10,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:18.478997+00:00"
+      }
+    },
+    "2936": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2936",
+        "n11_url": "https://www.n11.com/urun/likya-lavabolu-banyo-dolabi-takimi-mdflam-tek-kapakli-lavabolu-59-cm-banyo-alt-dolabi-ust-dolabi-kumtasi-116345315",
+        "n11_title": "Likya Lavabolu Banyo Dolabı Takımı, Mdflam Tek Kapaklı Lavabolu 59 Cm Banyo Alt Dolabı + Üst Dolabı Kumtaşı",
+        "rating": 4.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:21.100135+00:00"
+      }
+    },
+    "1718": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "1718",
+        "n11_url": "https://www.n11.com/urun/banos-banyo-roomart-ad7-kulpsuz-2-kapakli-mat-beyaz-mdf-80-cm-aynali-banyo-ust-dolabi-mat-beyaz-21001916",
+        "n11_title": "Banos Banyo Roomart Ad7 Kulpsuz 2 Kapaklı Mat Beyaz Mdf 80 Cm Aynalı Banyo Üst Dolabı Mat Beyaz",
+        "rating": 5.0,
+        "review_count": 6,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:24.053858+00:00"
+      },
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1718",
+        "handle": "ad7-aynali-banyo-dolabi",
+        "title": "Aynalı Banyo Dolabı - Atlantic",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-01-21",
+        "scraped_at": "2026-07-07T12:12:50.223136+00:00"
+      }
+    },
+    "2915": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2915",
+        "n11_url": "https://www.n11.com/urun/likya-mdflam-tek-kapakli-lavabolu-49-cm-banyo-dolabi-ust-dolabi-mini-lavabolu-banyo-dolabi-takimi-beyaz-116344841",
+        "n11_title": "Likya Mdflam Tek Kapaklı Lavabolu 49 Cm Banyo Dolabı + Üst Dolabı, Mini Lavabolu Banyo Dolabı Takımı Beyaz",
+        "rating": 5.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:26.755779+00:00"
+      }
+    },
+    "1327": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "1327",
+        "n11_url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-100-cm-aynali-banyo-dolabi-takimi-beyaz-18439561",
+        "n11_title": "Banos Tm3 Lavabolu Beyaz 100 Cm Aynalı Banyo Dolabı Takımı Beyaz",
+        "rating": 5.0,
+        "review_count": 13,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:29.492021+00:00"
+      },
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1327",
+        "handle": "tm3-lavabolu-banyo-dolabi-3lu-set",
+        "title": "Lavabolu Banyo Dolabı 3lü Set - Atria",
+        "rating": 4.93,
+        "review_count": 15,
+        "last_review": "2026-07-04",
+        "scraped_at": "2026-07-07T12:12:50.223050+00:00"
+      }
+    },
+    "2803": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2803",
+        "n11_url": "https://www.n11.com/urun/venedik-kahve-kosesi-cok-amacli-2-kapakli-1-cekmeceli-dolap-65009697",
+        "n11_title": "Venedik Kahve Köşesi, Çok Amaçlı, 2 Kapaklı 1 Çekmeceli Dolap",
+        "rating": 5.0,
+        "review_count": 8,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:32.114380+00:00"
+      }
+    },
+    "2074": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2074",
+        "n11_url": "https://www.n11.com/urun/roma-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-40670895",
+        "n11_title": "Roma Raflı Çalışma Masası , Çalışma Ofis Masası Sol Dolaplı",
+        "rating": 4.5,
+        "review_count": 9,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:34.854610+00:00"
+      }
+    },
+    "2804": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2804",
+        "n11_url": "https://www.n11.com/urun/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-dlp-65009637",
+        "n11_title": "Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1 Çekmeceli Dlp",
+        "rating": 4.0,
+        "review_count": 5,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:37.443817+00:00"
+      }
+    },
+    "2897": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2897",
+        "n11_url": "https://www.n11.com/urun/likya-kulpsuz-tek-kapakli-aynali-mdflam-45-cm-aynali-banyo-ust-dolabi-kumtasi-116546992",
+        "n11_title": "Likya Kulpsuz Tek Kapaklı Aynalı Mdflam 45 Cm Aynalı Banyo Üst Dolabı Kumtaşı",
+        "rating": 5.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:40.256414+00:00"
+      }
+    },
+    "2636": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2636",
+        "n11_url": "https://www.n11.com/urun/paris-calisma-masasi-cocuk-calisma-masasi-ofis-masasi-100-cm-atlantik-cam-beyaz-60480560",
+        "n11_title": "Paris Çalışma Masası , Çocuk Çalışma Masası, Ofis Masası 100 Cm Atlantik Çam - Beyaz",
+        "rating": 5.0,
+        "review_count": 8,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:42.996180+00:00"
+      }
+    },
+    "1954": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "1954",
+        "n11_url": "https://www.n11.com/urun/roomart-ayaksiz-tek-kapakli-lavabolu-50cm-banyo-dolabi-acam-beyz-41149442",
+        "n11_title": "Roomart Ayaksız Tek Kapaklı Lavabolu 50cm Banyo Dolabı A.çam-beyz Atlantik Çam - Beyaz",
+        "rating": 5.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:45.919508+00:00"
+      }
+    },
+    "2580": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2580",
+        "n11_url": "https://www.n11.com/urun/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-65002928",
+        "n11_title": "Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 Cm Atlantik Çam - Beyaz",
+        "rating": 5.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:49.004750+00:00"
+      }
+    },
+    "2928": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2928",
+        "n11_url": "https://www.n11.com/urun/likya-lavabolu-banyo-dolabi-takimi-mdflam-tek-kapakli-lavabolu-59-cm-banyo-alt-dolabi-ust-dolabi-kul-gri-116345296",
+        "n11_title": "Likya Lavabolu Banyo Dolabı Takımı, Mdflam Tek Kapaklı Lavabolu 59 Cm Banyo Alt Dolabı + Üst Dolabı Kül Gri",
+        "rating": 4.0,
+        "review_count": 1,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:54.960706+00:00"
+      }
+    },
+    "2533": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2533",
+        "n11_url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-53908927",
+        "n11_title": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Dolap 45 X 200 Atlantik - Antrasit",
+        "rating": 5.0,
+        "review_count": 4,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:16:57.670769+00:00"
+      }
+    },
+    "2807": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2807",
+        "n11_url": "https://www.n11.com/urun/60-cm-ledli-kahve-kosesi-cok-amacli-dolap2-kapakli-1-cekmeceli-kiler-dolabimutfak-dolabi-atlantik-cam-beyaz-116558910",
+        "n11_title": "60 Cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,mutfak Dolabı Atlantik Çam - Beyaz",
+        "rating": 5.0,
+        "review_count": 2,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:17:00.430143+00:00"
+      }
+    },
+    "2534": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "2534",
+        "n11_url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-60-x-200-53964975",
+        "n11_title": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Dolap 60 X 200 Antrasit- Atlantik Çam",
+        "rating": 5.0,
+        "review_count": 4,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:17:03.161144+00:00"
+      }
+    },
+    "1756": {
+      "n11": {
+        "platform": "n11",
+        "stock_code": "1756",
+        "n11_url": "https://www.n11.com/urun/banos-roomart-lavabolu-ahsap-mat-beyaz-mdf-65-cm-banyo-dolabia-18441291",
+        "n11_title": "Banos Roomart Lavabolu Ahşap-Mat Beyaz Mdf 65 Cm Banyo Dolabı+A.. Beyaz",
+        "rating": 5.0,
+        "review_count": 7,
+        "match_score": 1.0,
+        "scraped_at": "2026-07-02T14:17:06.189356+00:00"
+      }
+    },
+    "2466": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2466",
+        "handle": "lotus-banyo-boy-dolabi",
+        "title": "Banyo Havlu Dolabı - Lotus",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-07-06",
+        "scraped_at": "2026-07-07T12:12:50.223025+00:00"
+      }
+    },
+    "2024": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2024",
+        "handle": "tm9-lavabolu-banyo-dolabi-2li-set",
+        "title": "Lavabolu Banyo Dolabı 2li Set - Mini",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-07-04",
+        "scraped_at": "2026-07-07T12:12:50.223045+00:00"
+      }
+    },
+    "2676": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2676",
+        "handle": "aynali-banyo-dolabi-ada",
+        "title": "Aynalı Banyo Dolabı - Ada",
+        "rating": 4.0,
+        "review_count": 2,
+        "last_review": "2026-07-04",
+        "scraped_at": "2026-07-07T12:12:50.223054+00:00"
+      }
+    },
+    "2808": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2808",
+        "handle": "kahve-kosesi-cok-amacli-dolap-venedik-60cm",
+        "title": "Kahve Köşesi - Çok Amaçlı Dolap -Venedik - 60 CM",
+        "rating": 4.8,
+        "review_count": 5,
+        "last_review": "2026-06-30",
+        "scraped_at": "2026-07-07T12:12:50.223057+00:00"
+      }
+    },
+    "023.09.090.56.21": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "023.09.090.56.21",
+        "handle": "kahve-kosesi-cok-amacli-dolap-defne",
+        "title": "Kahve Köşesi - Çok Amaçlı Dolap - Defne",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2026-06-30",
+        "scraped_at": "2026-07-07T12:12:50.223060+00:00"
+      }
+    },
+    "2802": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2802",
+        "handle": "kahve-kosesi-cok-amacli-dolap-venedik-90cm",
+        "title": "Venedik  Kahve Köşesi - Çok Amaçlı Dolap 90 cm",
+        "rating": 4.71,
+        "review_count": 7,
+        "last_review": "2026-06-29",
+        "scraped_at": "2026-07-07T12:12:50.223064+00:00"
+      }
+    },
+    "2490": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2490",
+        "handle": "rim-camasir-sepetli-cekmeceli-dolap",
+        "title": "RIM - KİRLİ SEPETLİ ÇOK AMAÇLI DOLAP - 125 CM",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2026-06-26",
+        "scraped_at": "2026-07-07T12:12:50.223071+00:00"
+      }
+    },
+    "1831": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1831",
+        "handle": "bd4-banyo-dolabi",
+        "title": "Banyo Havlu Dolabı - Mini",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-06-26",
+        "scraped_at": "2026-07-07T12:12:50.223075+00:00"
+      }
+    },
+    "2202": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2202",
+        "handle": "gusto-aynali-banyo-ust-dolabi",
+        "title": "Aynalı Banyo Dolabı - Gusto",
+        "rating": 5.0,
+        "review_count": 7,
+        "last_review": "2026-06-26",
+        "scraped_at": "2026-07-07T12:12:50.223078+00:00"
+      }
+    },
+    "2671": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2671",
+        "handle": "lavabolu-banyo-dolabi-ada",
+        "title": "Lavabolu Banyo Dolabı - Ada",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-06-26",
+        "scraped_at": "2026-07-07T12:12:50.223081+00:00"
+      }
+    },
+    "2579": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2579",
+        "handle": "kapakli-camasir-ve-kurutma-makinesi-dolabi",
+        "title": "DORA - KAPAKLI ÇAMAŞIR VE KURUTMA MAKİNESİ DOLABI - 185 CM",
+        "rating": 5.0,
+        "review_count": 5,
+        "last_review": "2026-06-16",
+        "scraped_at": "2026-07-07T12:12:50.223083+00:00"
+      }
+    },
+    "2388": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2388",
+        "handle": "aria-cekmeceli-boy-dolabi",
+        "title": "Banyo Dolabı Çekmeceli - Aria",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-06-02",
+        "scraped_at": "2026-07-07T12:12:50.223086+00:00"
+      }
+    },
+    "2981": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2981",
+        "handle": "sepetli-lavabolu-banyo-dolabi-dubai",
+        "title": "Sepetli Lavabolu Banyo Alt Dolabı - Dubai",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-05-31",
+        "scraped_at": "2026-07-07T12:12:50.223089+00:00"
+      }
+    },
+    "1716": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1716",
+        "handle": "atlantic-lavabolu-alt-dolap-100-cm",
+        "title": "Lavabolu Banyo Dolabı - Atlantic",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-05-16",
+        "scraped_at": "2026-07-07T12:12:50.223092+00:00"
+      }
+    },
+    "2522": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2522",
+        "handle": "lotus-oval-canak-lavabolu-banyo-dolabi-2li-set-1",
+        "title": "LOTUS - BANYO DOLABI 2'Lİ TAKIM + OVAL ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-05-15",
+        "scraped_at": "2026-07-07T12:12:50.223094+00:00"
+      }
+    },
+    "1741": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1741",
+        "handle": "eco-camasir-makinesi-dolabi",
+        "title": "Çamaşır Makinesi Dolabı - Eco",
+        "rating": 4.86,
+        "review_count": 7,
+        "last_review": "2026-05-13",
+        "scraped_at": "2026-07-07T12:12:50.223097+00:00"
+      }
+    },
+    "2680": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2680",
+        "handle": "lavabolu-banyo-dolabi-2li-set-ada",
+        "title": "Lavabolu Banyo Dolabı 2li Set - Ada",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-05-06",
+        "scraped_at": "2026-07-07T12:12:50.223100+00:00"
+      }
+    },
+    "1328": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1328",
+        "handle": "tm3-lavabolu-banyo-dolabi-2li-set",
+        "title": "Lavabolu Banyo Dolabı 2li Set - Atria",
+        "rating": 5.0,
+        "review_count": 7,
+        "last_review": "2026-05-04",
+        "scraped_at": "2026-07-07T12:12:50.223102+00:00"
+      }
+    },
+    "2364": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2364",
+        "handle": "leo-lavabolu-banyo-dolabi",
+        "title": "Lavabolu Banyo Dolabı - Leo",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-04-22",
+        "scraped_at": "2026-07-07T12:12:50.223105+00:00"
+      }
+    },
+    "2884": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2884",
+        "handle": "lavabolu-banyo-dolabi-likya",
+        "title": "Lavabolu Banyo Dolabı - Likya",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-04-02",
+        "scraped_at": "2026-07-07T12:12:50.223108+00:00"
+      }
+    },
+    "2526": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2526",
+        "handle": "rim-camasir-sepetli-cekmeceli-dolap-takimi",
+        "title": "RIM - KİRLİ SEPETLİ ÇOK AMAÇLI DOLAP - 200 CM",
+        "rating": 4.93,
+        "review_count": 14,
+        "last_review": "2026-03-30",
+        "scraped_at": "2026-07-07T12:12:50.223110+00:00"
+      }
+    },
+    "2570": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2570",
+        "handle": "gusto-oval-canak-lavabolu-banyo-dolabi-2li-set",
+        "title": "GUSTO - BANYO DOLABI 2'Lİ TAKIM + OVAL ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-03-26",
+        "scraped_at": "2026-07-07T12:12:50.223113+00:00"
+      }
+    },
+    "2851": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2851",
+        "handle": "kose-kitaplik-flat",
+        "title": "Köşe Kitaplık - Flat",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2026-03-20",
+        "scraped_at": "2026-07-07T12:12:50.223115+00:00"
+      }
+    },
+    "1722": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1722",
+        "handle": "atlantic-lavabolu-banyo-dolabi-3lu-set",
+        "title": "Lavabolu Banyo Dolabı 3lü Set - Atlantic",
+        "rating": 5.0,
+        "review_count": 5,
+        "last_review": "2026-03-17",
+        "scraped_at": "2026-07-07T12:12:50.223118+00:00"
+      }
+    },
+    "2921": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2921",
+        "handle": "kapakli-camasir-ve-kurutma-makinesi-dolabi-dora-230cm",
+        "title": "DORA - KAPAKLI ÇAMAŞIR VE KURUTMA MAKİNESİ DOLABI - 230 CM",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-03-17",
+        "scraped_at": "2026-07-07T12:12:50.223121+00:00"
+      }
+    },
+    "2571": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2571",
+        "handle": "gusto-oval-canak-lavabolu-banyo-dolabi-3lu-set",
+        "title": "GUSTO - BANYO DOLABI 3'LÜ SET + OVAL ÇANAK LAVABO",
+        "rating": 4.75,
+        "review_count": 4,
+        "last_review": "2026-02-18",
+        "scraped_at": "2026-07-07T12:12:50.223123+00:00"
+      }
+    },
+    "1725": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1725",
+        "handle": "tm7-lavabolu-banyo-dolabi-2li-set",
+        "title": "Lavabolu Banyo Dolabı 2li Set - Atlantic",
+        "rating": 4.83,
+        "review_count": 6,
+        "last_review": "2026-02-18",
+        "scraped_at": "2026-07-07T12:12:50.223126+00:00"
+      }
+    },
+    "2634": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2634",
+        "handle": "calisma-masasi-paris-100-cm",
+        "title": "Çalışma Masası - Paris 100 cm",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-02-09",
+        "scraped_at": "2026-07-07T12:12:50.223128+00:00"
+      }
+    },
+    "2398": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2398",
+        "handle": "aria-oval-canak-lavabolu-banyo-dolabi-takimi-4lu-set",
+        "title": "Lavabolu Banyo Dolabı Takımı 4lü Set - Aria",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-02-04",
+        "scraped_at": "2026-07-07T12:12:50.223131+00:00"
+      }
+    },
+    "1996": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1996",
+        "handle": "d-d2-camasir-ve-kurutma-makinesi-dolabi",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - D+D2",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-02-01",
+        "scraped_at": "2026-07-07T12:12:50.223133+00:00"
+      }
+    },
+    "2523": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2523",
+        "handle": "lotus-oval-canak-lavabolu-banyo-dolabi-2li-set",
+        "title": "Lotus Banyo Dolabı Lavabolu 3'lü Banyo Dolabı Seti",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2026-01-19",
+        "scraped_at": "2026-07-07T12:12:50.223138+00:00"
+      }
+    },
+    "2772": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2772",
+        "handle": "cok-amacli-dolap-luka",
+        "title": "Çok Amaçlı Dolap - Luka",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2026-01-15",
+        "scraped_at": "2026-07-07T12:12:50.223141+00:00"
+      }
+    },
+    "2764": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2764",
+        "handle": "cok-amacli-dolap-como",
+        "title": "Çok Amaçlı Dolap - Como",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2026-01-10",
+        "scraped_at": "2026-07-07T12:12:50.223144+00:00"
+      }
+    },
+    "1895": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1895",
+        "handle": "bd7-banyo-boy-dolabi",
+        "title": "Banyo Havlu Dolabı - Atlantic",
+        "rating": 5.0,
+        "review_count": 7,
+        "last_review": "2026-01-09",
+        "scraped_at": "2026-07-07T12:12:50.223146+00:00"
+      }
+    },
+    "2985": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2985",
+        "handle": "sepetli-banyo-dolabi-2li-set-dubai-1",
+        "title": "Sepetli Banyo Dolabı 2li Set - Dubai",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-01-05",
+        "scraped_at": "2026-07-07T12:12:50.223149+00:00"
+      }
+    },
+    "2927": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2927",
+        "handle": "lavabolu-banyo-dolabi-2li-set-likya",
+        "title": "Lavabolu Banyo Dolabı 2li Set - Likya",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2026-01-05",
+        "scraped_at": "2026-07-07T12:12:50.223151+00:00"
+      }
+    },
+    "1586": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1586",
+        "handle": "ahsap-metal-mutfak-duvar-rafi-2li-set",
+        "title": "Mutfak Duvar Rafı 2li Set",
+        "rating": 4.5,
+        "review_count": 2,
+        "last_review": "2025-12-19",
+        "scraped_at": "2026-07-07T12:12:50.223154+00:00"
+      }
+    },
+    "2656": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2656",
+        "handle": "tuvalet-kagidi-tutucu-beta",
+        "title": "Tuvalet Kağıdı Tutucu - Beta",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2025-12-02",
+        "scraped_at": "2026-07-07T12:12:50.223156+00:00"
+      }
+    },
+    "2768": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2768",
+        "handle": "bar-masasi-dublin",
+        "title": "Bar Masası - Dublin",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2025-11-14",
+        "scraped_at": "2026-07-07T12:12:50.223159+00:00"
+      }
+    },
+    "BT103": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "BT103",
+        "handle": "lavabo-bataryasi-bt103",
+        "title": "Lavabo Bataryası - BT103",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-11-12",
+        "scraped_at": "2026-07-07T12:12:50.223161+00:00"
+      }
+    },
+    "2486": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2486",
+        "handle": "lotus-lavabolu-banyo-dolabi-2li-set",
+        "title": "LOTUS - BANYO DOLABI 2'Lİ TAKIM + ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2025-11-12",
+        "scraped_at": "2026-07-07T12:12:50.223164+00:00"
+      }
+    },
+    "2078": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2078",
+        "handle": "roma-kitaplikli-calisma-masasi",
+        "title": "Kitaplıklı Çalışma Masası - Roma",
+        "rating": 5.0,
+        "review_count": 11,
+        "last_review": "2025-11-07",
+        "scraped_at": "2026-07-07T12:12:50.223167+00:00"
+      }
+    },
+    "2181": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2181",
+        "handle": "aria-aynali-kapakli-banyo-ust-dolap",
+        "title": "Aynalı Banyo Dolabı - Aria",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2025-11-06",
+        "scraped_at": "2026-07-07T12:12:50.223169+00:00"
+      }
+    },
+    "BT104": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "BT104",
+        "handle": "lavabo-bataryasi-bt104",
+        "title": "Lavabo Bataryası - BT104",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-10-18",
+        "scraped_at": "2026-07-07T12:12:50.223172+00:00"
+      }
+    },
+    "2736": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2736",
+        "handle": "cok-amacli-dolap-napoli",
+        "title": "Çok Amaçlı Dolap - Napoli",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2025-10-15",
+        "scraped_at": "2026-07-07T12:12:50.223174+00:00"
+      }
+    },
+    "2405": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2405",
+        "handle": "lavabolu-banyo-dolabi-2li-set-aria",
+        "title": "ARIA - BANYO DOLABI 2'Lİ TAKIM + ATRIA MOBİLYA UYUMLU LAVABO",
+        "rating": 4.67,
+        "review_count": 3,
+        "last_review": "2025-09-25",
+        "scraped_at": "2026-07-07T12:12:50.223177+00:00"
+      }
+    },
+    "2687": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2687",
+        "handle": "koltuk-yani-sehpa-siena",
+        "title": "Koltuk Yanı Sehpa - Siena",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-09-17",
+        "scraped_at": "2026-07-07T12:12:50.223180+00:00"
+      }
+    },
+    "2487": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2487",
+        "handle": "lotus-lavabolu-banyo-dolabi-3lu-set",
+        "title": "Lavabolu Banyo Dolabı 3lü Set - Lotus",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2025-09-08",
+        "scraped_at": "2026-07-07T12:12:50.223182+00:00"
+      }
+    },
+    "2787": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2787",
+        "handle": "mutfak-adasi-ve-yemek-masasi-milano",
+        "title": "Mutfak Adası ve Yemek Masası - Milano",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-09-05",
+        "scraped_at": "2026-07-07T12:12:50.223185+00:00"
+      }
+    },
+    "2396": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2396",
+        "handle": "aria-oval-canak-lavabolu-banyo-dolabi-takimi-2li-set",
+        "title": "Lavabolu Banyo Dolabı Takımı 2li Set - Aria",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-08-31",
+        "scraped_at": "2026-07-07T12:12:50.223188+00:00"
+      }
+    },
+    "1015.55": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1015.55",
+        "handle": "kapakli-camasir-makinesi-dolabi-1015",
+        "title": "Kapaklı Çamaşır Makinesi Dolabı - 1015",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-08-31",
+        "scraped_at": "2026-07-07T12:12:50.223190+00:00"
+      }
+    },
+    "2907": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2907",
+        "handle": "kitaplikli-calisma-masasi-nora",
+        "title": "Kitaplıklı Çalışma Masası - Nora",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-08-22",
+        "scraped_at": "2026-07-07T12:12:50.223193+00:00"
+      }
+    },
+    "2801": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2801",
+        "handle": "mutfak-adasi-cortado",
+        "title": "Mutfak Adası - Cortado",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2025-08-21",
+        "scraped_at": "2026-07-07T12:12:50.223195+00:00"
+      }
+    },
+    "2896": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2896",
+        "handle": "aynali-banyo-dolabi-likya",
+        "title": "Aynalı Banyo Dolabı - Likya",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-08-20",
+        "scraped_at": "2026-07-07T12:12:50.223198+00:00"
+      }
+    },
+    "2460": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2460",
+        "handle": "lotus-lavabolu-banyo-dolabi",
+        "title": "LOTUS - LAVABOLU BANYO DOLABI + ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2025-08-08",
+        "scraped_at": "2026-07-07T12:12:50.223201+00:00"
+      }
+    },
+    "2562": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2562",
+        "handle": "gusto-oval-canak-lavabolu-banyo-dolabi",
+        "title": "GUSTO - LAVABOLU BANYO DOLABI + OVAL ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-07-08",
+        "scraped_at": "2026-07-07T12:12:50.223203+00:00"
+      }
+    },
+    "2868": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2868",
+        "handle": "lavabolu-banyo-dolabi-3lu-set-ada",
+        "title": "Lavabolu Banyo Dolabı 3lü Set - Ada",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-06-28",
+        "scraped_at": "2026-07-07T12:12:50.223206+00:00"
+      }
+    },
+    "2334": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2334",
+        "handle": "punto-kisa-boy-dolabi",
+        "title": "Kısa Boy Dolabı - Punto",
+        "rating": 4.0,
+        "review_count": 1,
+        "last_review": "2025-06-05",
+        "scraped_at": "2026-07-07T12:12:50.223208+00:00"
+      }
+    },
+    "1016.55": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1016.55",
+        "handle": "kapakli-camasir-makinesi-dolabi-1016",
+        "title": "Kapaklı Çamaşır Makinesi Dolabı - 1016",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2025-05-31",
+        "scraped_at": "2026-07-07T12:12:50.223211+00:00"
+      }
+    },
+    "2827": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2827",
+        "handle": "camasir-makinesi-ust-dolabi-derin-65cm",
+        "title": "Çamaşır Makinesi Üst Dolabı - Derin-65cm",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-05-29",
+        "scraped_at": "2026-07-07T12:12:50.223214+00:00"
+      }
+    },
+    "1990": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1990",
+        "handle": "camasir-ve-kurutma-makinesi-dolabi",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - D",
+        "rating": 4.8,
+        "review_count": 5,
+        "last_review": "2025-05-27",
+        "scraped_at": "2026-07-07T12:12:50.223216+00:00"
+      }
+    },
+    "2752": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2752",
+        "handle": "cok-amacli-dolap-como-125cm",
+        "title": "Çok Amaçlı Dolap - Como 125cm",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-04-21",
+        "scraped_at": "2026-07-07T12:12:50.223219+00:00"
+      }
+    },
+    "2372": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2372",
+        "handle": "duo-camasir-ve-kurutma-makinesi-kabini",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - Duo",
+        "rating": 5.0,
+        "review_count": 5,
+        "last_review": "2025-03-04",
+        "scraped_at": "2026-07-07T12:12:50.223222+00:00"
+      }
+    },
+    "1993": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1993",
+        "handle": "d-d1-camasir-ve-kurutma-makinesi-dolabi",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - D+D1",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2025-03-04",
+        "scraped_at": "2026-07-07T12:12:50.223224+00:00"
+      }
+    },
+    "1915": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1915",
+        "handle": "mk4-camasir-makinesi-dolabi",
+        "title": "Çamaşır Makinesi Dolabı - Mk4",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-02-06",
+        "scraped_at": "2026-07-07T12:12:50.223227+00:00"
+      }
+    },
+    "2375": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2375",
+        "handle": "duo-camasir-ve-kurutma-makinesi-kabini-196-cm",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - Duo+D1",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-01-23",
+        "scraped_at": "2026-07-07T12:12:50.223230+00:00"
+      }
+    },
+    "2642": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2642",
+        "handle": "kitaplikli-calisma-masasi-hera",
+        "title": "Kitaplıklı Çalışma Masası - Hera",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2025-01-06",
+        "scraped_at": "2026-07-07T12:12:50.223232+00:00"
+      }
+    },
+    "2539": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2539",
+        "handle": "gusto-lavabolu-banyo-dolabi",
+        "title": "GUSTO - LAVABOLU BANYO DOLABI + DİKDÖRTGEN ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-11-30",
+        "scraped_at": "2026-07-07T12:12:50.223235+00:00"
+      }
+    },
+    "2559": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2559",
+        "handle": "gusto-lavabolu-banyo-dolabi-3lu-set",
+        "title": "GUSTO - BANYO DOLABI 3'LÜ SET + DİKDÖRTGEN ÇANAK LAVABO",
+        "rating": 5.0,
+        "review_count": 3,
+        "last_review": "2024-11-30",
+        "scraped_at": "2026-07-07T12:12:50.223237+00:00"
+      }
+    },
+    "2082": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2082",
+        "handle": "mara-cok-amacli-dolap",
+        "title": "Çok Amaçlı Mutfak Dolabı Kahve Köşesi - Mara",
+        "rating": 5.0,
+        "review_count": 4,
+        "last_review": "2024-11-28",
+        "scraped_at": "2026-07-07T12:12:50.223239+00:00"
+      }
+    },
+    "1621": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1621",
+        "handle": "retra-4-kapakli-cok-amacli-dolap",
+        "title": "Çok Amaçlı Mutfak Kiler Balkon Dolabı Kitaplık - Retra",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-11-21",
+        "scraped_at": "2026-07-07T12:12:50.223242+00:00"
+      }
+    },
+    "2715": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2715",
+        "handle": "cok-amacli-raf-moka",
+        "title": "Çok Amaçlı Raf - Moka",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-11-20",
+        "scraped_at": "2026-07-07T12:12:50.223244+00:00"
+      }
+    },
+    "2463": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2463",
+        "handle": "lotus-aynali-banyo-ust-dolap",
+        "title": "Aynalı Banyo Dolabı - Lotus",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2024-11-05",
+        "scraped_at": "2026-07-07T12:12:50.223247+00:00"
+      }
+    },
+    "2026": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2026",
+        "handle": "ad5-aynal-banyo-dolabi",
+        "title": "Aynalı Banyo Dolabı - Mini",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2024-10-28",
+        "scraped_at": "2026-07-07T12:12:50.223249+00:00"
+      }
+    },
+    "2378": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2378",
+        "handle": "camasir-ve-kurutma-makinesi-dolabi-231-cm",
+        "title": "Çamaşır ve Kurutma Makinesi Dolabı - Duo+D2",
+        "rating": 5.0,
+        "review_count": 2,
+        "last_review": "2024-10-24",
+        "scraped_at": "2026-07-07T12:12:50.223252+00:00"
+      }
+    },
+    "2025": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2025",
+        "handle": "ld4-lavabolu-banyo-dolabi",
+        "title": "Lavabolu Banyo Dolabı - Mini",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-10-22",
+        "scraped_at": "2026-07-07T12:12:50.223255+00:00"
+      }
+    },
+    "2342": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2342",
+        "handle": "leo-lavabolu-banyo-dolabi-3lu-takim",
+        "title": "Lavabolu Banyo Dolabı 3lü Takım - Leo",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-09-07",
+        "scraped_at": "2026-07-07T12:12:50.223258+00:00"
+      }
+    },
+    "2098": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "2098",
+        "handle": "peta-90-cm-cok-amacli-mutfak-kiler-dolap",
+        "title": "Çok Amaçlı Mutfak Kiler Mikrodalga Dolabı - Peta 90",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-08-21",
+        "scraped_at": "2026-07-07T12:12:50.223260+00:00"
+      }
+    },
+    "1596": {
+      "shopify": {
+        "platform": "shopify",
+        "source": "judgeme",
+        "stock_code": "1596",
+        "handle": "cc2-kose-kitaplik",
+        "title": "5 Raflı Köşe Kitaplık",
+        "rating": 5.0,
+        "review_count": 1,
+        "last_review": "2024-07-12",
+        "scraped_at": "2026-07-07T12:12:50.223263+00:00"
+      }
+    }
+  }
+}

@@ -159,16 +159,10 @@ async function loadFromFirestore() {
   if (!clear) {
     clear = await fetchJSON('data/clear_scores.json').catch(() => null)
   }
-  // Çok-platform registry: public-safe sürüm (fiyat+yorum+url, ciro YOK) build'de bulunur.
-  // Tam sürüm (ciro dahil) Firestore registry_latest'te (private); varsa onu tercih et.
-  let registry = null
-  try {
-    const rg = await getDoc(doc(db, 'roomart-bcg-dev', 'registry_latest'))
-    if (rg.exists()) registry = rg.data()
-  } catch { /* yoksa null */ }
-  if (!registry) {
-    registry = await fetchJSON('data/product_registry_public.json').catch(() => null)
-  }
+  // Çok-platform registry: public-safe sürüm (fiyat+yorum+url, ciro YOK) her gün commit+deploy.
+  // Firestore registry_latest KULLANILMIYOR: 1130 ürünlük doc Firestore'un index-entry limitini
+  // aşıyor (yazım başarısız) + committed public JSON zaten taze → doğrudan onu oku (bayat-gölge yok).
+  const registry = await fetchJSON('data/product_registry_public.json').catch(() => null)
   return {
     kpis: d.kpis,
     categories: resolveCategories(d.categories ?? d.category_summary, d.products),

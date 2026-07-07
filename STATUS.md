@@ -6,38 +6,34 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-07-06
-- **Güncelleyen:** Code (4 platform API tam + yorum sync + dashboard platform kolonları — DEPLOY edildi)
-- **Aktif branch:** `main` (deploy: `ca7aa98`). `feat/platform-reviews` merge edildi. CLEAR ayrı `feat/clear-decision-intelligence` (PR #32).
+- **Tarih:** 2026-07-07
+- **Güncelleyen:** Code (adım 1: GÜNLÜK çok-platform API sync CI'a eklendi — CI'da doğrulandı; PR bekliyor)
+- **Aktif branch:** `feat/daily-platform-sync` (PR açık; **merge → günlük otomasyon aktifleşir**). main deploy: `ca7aa98`.
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 >
-> **✅ 4 PLATFORM API'si de ÇALIŞIYOR:**
-> - **Trendyol:** ~1002 ürün (mevcut) · **Shopify:** 684 ürün/527 sipariş (Client Credentials Grant) ·
->   **n11:** 699 ürün/59 sipariş (SOAP→REST) · **Hepsiburada:** 925 ürün/6 sipariş **YENİ ÇÖZÜLDÜ**.
-> - **HB auth (final):** Basic Auth username=merchantId, password=secret, `User-Agent=webticari_dev` (4 alan).
->   Order endpoint = `oms-external.hepsiburada.com/orders/merchantid` (düz satır; tarih filtresi 400 → istemci süz).
->   Listing = `merchantSku` (HB barkod vermiyor).
+> **✅ ADIM 1 — GÜNLÜK PLATFORM SYNC (CI'da doğrulandı, 2026-07-07):**
+> - `analyze.yml`'e 5 adım eklendi: **Shopify · Judge.me · n11 · Hepsiburada · registry_builder** —
+>   hepsi `continue-on-error` (secret/API hatası günlük BCG akışını kırmaz). Günlük 05:30 UTC koşusu artık
+>   **4 platformun kendi ürün fiyat/satış/yorumunu** her sabah tazeler (önceden yalnız Trendyol günlüktü).
+> - **11 platform secret** GitHub Secrets'a eklendi (SHOPIFY_* · N11_* · HB_* · JUDGEME_*). `gh` CLI
+>   `~/.local/bin/gh` (brew yok); auth: harunsengil (repo+workflow). Secret'lar `.env.*.local`'den set edildi.
+> - **CI doğrulaması** (run 28865139695 success): Shopify 692/545 · n11 699/71 · HB 925/15 · Judge.me 337→81 ·
+>   registry **1130 ürün/980 çok-platform** (trendyol 1002·shopify 682·hb 925·n11 699). Sızıntı-guard geçti;
+>   hiçbir satış dosyası (shopify/n11/hb_sales, product_registry.json) public'e gitmedi.
+> - **Firestore registry yazımı KALDIRILDI:** 1130 ürünlük doküman Firestore doküman-başı index-entry limitini
+>   aşıyordu (INDEX_ENTRIES_COUNT_LIMIT_EXCEEDED) + committed public JSON zaten her gün taze deploy → gereksiz.
+>   `useData.js` registry'yi doğrudan `product_registry_public.json`'dan okur (bayat-Firestore gölge riski yok).
+> - `platform_reviews.json` **gitignore'dan çıktı** (public yorum verisi; ciro değil) → CI arası n11 yorumları
+>   (17) korunur (judgeme yalnız shopify'ı tazeler). Weekly Mac scrape n11'i yeniler.
 >
-> **✅ YORUM/YILDIZ (kendi ürünlerimiz):**
-> - **Shopify → Judge.me API** (`judgeme_sync.py`): 337 yorum → 81 ürün %100 eşleşti (handle→stok kodu).
-> - **n11 → Playwright scraper** (`platform_review_scraper.py`): mağaza sayfası + JSON-LD; 17 ürün test.
-> - **HB:** listing API'de rating YOK, ürün sayfası Cloudflare korumalı → stealth scraping SONRAYA.
-> - Çıktı: `platform_reviews.json` (gitignored). n11 tam scrape (~21 sayfa) henüz yapılmadı.
->
-> **✅ REGISTRY + DASHBOARD (DEPLOY EDİLDİ):**
-> - `product_registry.json`: 4 platform birleşik **1130 ürün, 980 çok-platform, 96 yorumlu** (stok kodu anahtar).
-> - **Public-safe sürüm** `product_registry_public.json` (ciro'suz: fiyat+yorum+url) → committable, build'e girer.
->   Tam sürüm (ciro'lu) gitignored + Firestore `registry_latest`. [[bkz DECISIONS 2026-07-06]]
-> - **ProductTable:** "Platform ₺" (RS/n11/HB fiyat, en ucuz altın) + "Platform ★" (TY+RS+n11+HB yorum/yıldız alt alta),
->   sol "Yorum" = toplam. Linkler: RS→roomartstore.com.tr, n11→gerçek/mağaza, HB→p-{sku}.
->
-> **Sıradaki adımlar:**
-> 1. **n11 tam yorum scrape** (`platform_review_scraper.py --platform n11`, ~21 sayfa) → tüm n11 ürün linkleri gerçek olur.
-> 2. **HB yorumları:** `playwright-stealth` ile Cloudflare aş, ya da HB'nin yorum API'sini araştır.
-> 3. **Firestore registry_latest:** yerelde Firebase creds YOK (proje uyuşmazlığı) → tam registry Firestore'a CI'dan yazılmalı.
-> 4. **CLEAR** (PR #32): CSV'leri doldur → gerçek marj/operasyon kararları; sonra merge.
-> 5. Fiyat çakışması uyarı paneli (registry price_conflict: 801 ürün >%5 fark).
+> **⏭️ ADIM 1 SONRASI — FİYAT/URL DÜZELTMELERİ (kullanıcı sırası: önce 1 bitti):**
+> 2. **n11 ürün URL'leri:** API `/urun/-{id}` → 404; tam n11 scrape (~21 sayfa) veya arama gerek. Şu an
+>    17 eşleşen üründe gerçek scrape URL'i var (platform_reviews.n11_url), kalanı mağaza-fallback.
+> 3. **HB ürün URL'leri:** `p-{sku}` → 404; doğru format `{slug}-p-{productId}` ama slug API'de yok.
+> 4. **TY kampanya fiyatı:** API `salePrice` platform kampanyasını (Avantajlı Ürün) VERMEZ → görünen fiyat
+>    yalnız haftalık Playwright scrape'ten. Günlük hafif TY ürün-scrape eklenebilir.
+> - **Shopify SKU join:** kod 2935 yanlış ürüne (2918) eşleşiyor — düzeltilecek.
 >
 > **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy.
 > Platform `.env.*.local` dosyaları gitignored (HB/n11/Shopify/Judge.me creds).

@@ -42,5 +42,6 @@ frontend/public/data/clear_scores.json
 data/product_registry.json
 frontend/public/data/product_registry.json
 
-# Platform yorum/yıldız scrape verisi
-data/platform_reviews.json
+# Platform yorum/yıldız verisi — PUBLIC (pazaryeri yorum sayısı/puanı; ciro DEĞİL) → commit'lenir.
+# Günlük CI (analyze.yml) bunu okur → judgeme yalnız shopify'ı tazeler, n11 yorumlarını KORUR
+# (n11 yorumları haftalık Mac scrape'inden gelir). Gitignore'dan ÇIKARILDI ki CI arası kaybolmasın.

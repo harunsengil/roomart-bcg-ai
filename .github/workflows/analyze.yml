@@ -57,6 +57,43 @@ jobs:
             echo "✓ trendyol_sales.json hazır ($(wc -c < data/trendyol_sales.json) bayt) — pazar payı GERÇEK SATIŞ tabanında."
           fi
 
+      # ── Çok-platform API sync (Shopify · Judge.me · n11 · Hepsiburada) ──────────
+      # Hepsi continue-on-error: secret yoksa veya API hata verirse GÜNLÜK BCG akışı
+      # KIRILMAZ (o platform o gün atlanır, eski verisi korunur). Kendi ürün
+      # fiyat/satış/yorumu her sabah tazelenir → dashboard platform kolonları güncel.
+      - name: Sync Shopify (own store)
+        run: python backend/shopify_sync.py
+        continue-on-error: true
+        env:
+          SHOPIFY_STORE_URL:     ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_CLIENT_ID:     ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+
+      # Judge.me yorumları shopify_sales.json'daki handle→sku köprüsüne bağlı → Shopify'dan SONRA.
+      # Mevcut platform_reviews.json'u okuyup n11 yorumlarını KORUR (yalnız shopify'ı tazeler).
+      - name: Sync Judge.me reviews (Shopify)
+        run: python backend/judgeme_sync.py
+        continue-on-error: true
+        env:
+          JUDGEME_SHOP_DOMAIN: ${{ secrets.JUDGEME_SHOP_DOMAIN }}
+          JUDGEME_API_TOKEN:   ${{ secrets.JUDGEME_API_TOKEN }}
+
+      - name: Sync n11 (own store)
+        run: python backend/n11_sync.py
+        continue-on-error: true
+        env:
+          N11_APP_KEY:    ${{ secrets.N11_APP_KEY }}
+          N11_APP_SECRET: ${{ secrets.N11_APP_SECRET }}
+
+      - name: Sync Hepsiburada (own store)
+        run: python backend/hepsiburada_sync.py
+        continue-on-error: true
+        env:
+          HB_MERCHANT_ID: ${{ secrets.HB_MERCHANT_ID }}
+          HB_USERNAME:    ${{ secrets.HB_USERNAME }}
+          HB_PASSWORD:    ${{ secrets.HB_PASSWORD }}
+          HB_USER_AGENT:  ${{ secrets.HB_USER_AGENT }}
+
       - name: Run BCG analysis engine
         run: python backend/analyzer.py
         env:
@@ -69,18 +106,34 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-      # GÜVENLİK: gerçek satış/ciro + görsel hash dosyalarını public frontend'e KOPYALAMA.
-      - name: Copy data to frontend public (sales + hash hariç)
+      # Çok-platform ürün kütüğü: stok kodunda birleştir → product_registry_public.json
+      # (dashboard platform fiyat/yorum kolonları). Tüm sync'lerden SONRA çalışır.
+      # Firestore'a YALNIZ public-safe (ciro'suz) payload yazılır (dashboard-bağlı proje).
+      - name: Build product registry (stok kodunda birleştir)
+        run: python backend/registry_builder.py
+        continue-on-error: true
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      # GÜVENLİK: gerçek satış/ciro + tam kütük + görsel hash public frontend'e KOPYALANMAZ.
+      - name: Copy data to frontend public (satış + kütük + hash hariç)
         run: |
           cp data/*.json frontend/public/data/
+          # Gerçek satış/ciro (her platform) + tam kütük (ciro'lu) + görsel hash → public'e GİTMEZ
           rm -f frontend/public/data/trendyol_sales.json
+          rm -f frontend/public/data/shopify_sales.json
+          rm -f frontend/public/data/n11_sales.json
+          rm -f frontend/public/data/hb_sales.json
+          rm -f frontend/public/data/product_registry.json
           rm -f frontend/public/data/image_hashes.json
           rm -f frontend/public/data/image_embeddings.json
           rm -f frontend/public/data/competitor_snapshots.json
-          # GÜVENLİK GARANTI: satış verisi asla public olmayacak
-          if [ -f frontend/public/data/trendyol_sales.json ]; then
-            echo "CRITICAL: satış verisi public/data'ya sızdı!" && exit 1
-          fi
+          # GÜVENLİK GARANTI: hiçbir satış/ciro dosyası public olmayacak
+          for f in trendyol_sales shopify_sales n11_sales hb_sales product_registry; do
+            if [ -f "frontend/public/data/$f.json" ]; then
+              echo "CRITICAL: $f.json public/data'ya sızdı!" && exit 1
+            fi
+          done
 
       - name: Commit analysis results
         id: commit
