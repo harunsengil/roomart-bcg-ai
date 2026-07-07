@@ -6,16 +6,20 @@ import { QUADRANT_META, ACTION_META, formatScore } from '../utils/helpers'
 // Quadrant labels at center of each dot-area quadrant: mid = PAD + 0.5*SPAN = 50
 // Left-half center x = (PAD + 50) / 2 = 29%,  Right = (50 + PAD+SPAN) / 2 = 71%
 // Top-half center y = (PAD + 50) / 2 = 29%,   Bottom = (50 + PAD+SPAN) / 2 = 71%
+// Çeyrek merkezleri: sol=(AXL+MID)/2≈27, sağ=(MID+AXR)/2≈74, üst=(AXT+MID)/2≈26, alt=(MID+AXB)/2≈72
 const QUADRANT_LABELS = [
-  { id: 'QUESTION_MARK', x: '29%', y: '29%', label: '❓ QUESTION MARKS', sub: 'High Growth · Low Share', color: '#3B82F6' },
-  { id: 'STAR',          x: '71%', y: '29%', label: '⭐ STARS',          sub: 'High Growth · High Share', color: '#F59E0B' },
-  { id: 'DOG',           x: '29%', y: '71%', label: '🐕 DOGS',           sub: 'Low Growth · Low Share',  color: '#EF4444' },
-  { id: 'CASH_COW',      x: '71%', y: '71%', label: '🐄 CASH COWS',      sub: 'Low Growth · High Share', color: '#10B981' },
+  { id: 'QUESTION_MARK', x: '27%', y: '26%', label: '❓ QUESTION MARKS', sub: 'High Growth · Low Share', color: '#3B82F6' },
+  { id: 'STAR',          x: '74%', y: '26%', label: '⭐ STARS',          sub: 'High Growth · High Share', color: '#F59E0B' },
+  { id: 'DOG',           x: '27%', y: '72%', label: '🐕 DOGS',           sub: 'Low Growth · Low Share',  color: '#EF4444' },
+  { id: 'CASH_COW',      x: '74%', y: '72%', label: '🐄 CASH COWS',      sub: 'Low Growth · High Share', color: '#10B981' },
 ]
 const ACTIONS = ['ALL', 'INVEST', 'HARVEST', 'TEST', 'EXIT']
 const PAD = 8
 const SPAN = 100 - 2 * PAD  // 84
 const MID = PAD + SPAN / 2  // 50  (quadrant divider, matches median threshold)
+// Ana görünüm eksen çerçevesi: sol=AXL, alt=AXB, sağ=AXR, üst=AXT (yüzde).
+// Eksenler içeriğin dışında (solda+altta); içerik bu çerçeveye yayılır.
+const AXL = 4, AXR = 98, AXT = 2, AXB = 95
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
 
 function median(arr) {
@@ -143,18 +147,20 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
         PAD + clamp((1 - r.yr) * SPAN + jy, 3, SPAN - 3),
       ]
     }
-    // Ana görünüm: kadranın kendi çeyreğine rank ile yay (paralel çizgi yığılması olmaz)
+    // Ana görünüm: kadranın kendi çeyreğine rank ile yay (paralel çizgi yığılması olmaz).
+    // Çeyrekler eksen çerçevesi (AXL..AXR × AXT..AXB) içine, medyan bölücüden (MID) boşluklu.
     const q = p.bcg_class
-    if (!q) {  // sınıfsız (nadir) → skor tabanlı yedek
-      const xB = PAD + frac(p.share_score, shareThr) * SPAN
-      const yB = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
-      return [clamp(xB + jx, PAD, PAD + SPAN), clamp(yB + jy, PAD, PAD + SPAN)]
+    const gap = 3    // dış eksenden boşluk (sol/alt/sağ/üst)
+    const m = 2      // merkez bölücüden boşluk
+    if (!q) {        // sınıfsız (nadir) → skor tabanlı yedek
+      const xB = AXL + gap + frac(p.share_score, shareThr) * (AXR - AXL - 2 * gap)
+      const yB = AXT + gap + (1 - frac(p.growth_score, growthThr)) * (AXB - AXT - 2 * gap)
+      return [clamp(xB + jx, AXL + gap, AXR - gap), clamp(yB + jy, AXT + gap, AXB - gap)]
     }
-    const m = 2.5  // çeyrek iç kenar boşluğu (sınıra yapışmasın)
     const isRight = q === 'STAR' || q === 'CASH_COW'
     const isTop   = q === 'STAR' || q === 'QUESTION_MARK'
-    const xLo = (isRight ? MID : PAD) + m,  xHi = (isRight ? PAD + SPAN : MID) - m
-    const yLo = (isTop ? PAD : MID) + m,    yHi = (isTop ? MID : PAD + SPAN) - m
+    const xLo = isRight ? MID + m : AXL + gap,  xHi = isRight ? AXR - gap : MID - m
+    const yLo = isTop ? AXT + gap : MID + m,    yHi = isTop ? MID - m : AXB - gap
     const x = xLo + r.xr * (xHi - xLo) + jx
     const y = yLo + (1 - r.yr) * (yHi - yLo) + jy
     return [clamp(x, xLo - m, xHi + m), clamp(y, yLo - m, yHi + m)]
@@ -326,31 +332,36 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
         <div ref={containerRef} className="bcg-plot relative cursor-zoom-in flex-shrink-0"
           style={{ paddingBottom: '55%' }} onClick={handlePlotClick}>
           <div className="absolute inset-0">
+            {/* Çerçeve: eksenler solda (x=AXL) ve altta (y=AXB); içerik/kadranlar çerçeve içinde.
+                MID=50 kadran bölücüsü. Arka planlar ve bölücüler çerçeveye hizalı. */}
             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
-              <rect x="0" y="0" width="50%" height="50%" fill="rgba(59,130,246,0.04)" />
-              <rect x="50%" y="0" width="50%" height="50%" fill="rgba(245,158,11,0.06)" />
-              <rect x="0" y="50%" width="50%" height="50%" fill="rgba(239,68,68,0.04)" />
-              <rect x="50%" y="50%" width="50%" height="50%" fill="rgba(16,185,129,0.04)" />
+              {/* Kadran arka planları — çerçeve içinde (AXL..AXR × AXT..AXB) */}
+              <rect x={`${AXL}%`} y={`${AXT}%`} width={`${MID - AXL}%`} height={`${MID - AXT}%`} fill="rgba(59,130,246,0.04)" />
+              <rect x={`${MID}%`} y={`${AXT}%`} width={`${AXR - MID}%`} height={`${MID - AXT}%`} fill="rgba(245,158,11,0.06)" />
+              <rect x={`${AXL}%`} y={`${MID}%`} width={`${MID - AXL}%`} height={`${AXB - MID}%`} fill="rgba(239,68,68,0.04)" />
+              <rect x={`${MID}%`} y={`${MID}%`} width={`${AXR - MID}%`} height={`${AXB - MID}%`} fill="rgba(16,185,129,0.04)" />
+              {/* Kadran bölücüleri (medyan) — çerçeve içinde */}
+              <line x1="50%" y1={`${AXT}%`} x2="50%" y2={`${AXB}%`} stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
+              <line x1={`${AXL}%`} y1="50%" x2={`${AXR}%`} y2="50%" stroke="rgba(120,124,150,0.22)" strokeWidth="1" strokeDasharray="4 4" />
               <defs>
                 <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.55)" />
                 </marker>
               </defs>
-              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2="99%" y2={`${PAD + SPAN}%`}
-                stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
-              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2="1%"
-                stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
+              {/* X ekseni (alt) + Y ekseni (sol) — solda ve altta, oklar sağ/yukarı */}
+              <line x1={`${AXL}%`} y1={`${AXB}%`} x2={`${AXR + 1}%`} y2={`${AXB}%`}
+                stroke="rgba(120,124,150,0.55)" strokeWidth="1.2" markerEnd="url(#arrow)" />
+              <line x1={`${AXL}%`} y1={`${AXB}%`} x2={`${AXL}%`} y2={`${AXT - 1}%`}
+                stroke="rgba(120,124,150,0.55)" strokeWidth="1.2" markerEnd="url(#arrow)" />
             </svg>
-            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
-              <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">MARKET SHARE SCORE →</div>
-              <div className="text-[8px] font-mono text-white/18 tracking-wider">Pazar Payı Skoru</div>
+            {/* X etiketi — grafiğin altında, eksen boyunca */}
+            <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none" style={{ bottom: '1%' }}>
+              <div className="text-[9px] font-mono text-white/35 tracking-widest uppercase">Pazar Payı Skoru →</div>
             </div>
+            {/* Y etiketi — grafiğin solunda, eksen boyunca (dikey) */}
             <div className="absolute left-0 top-1/2 text-center pointer-events-none"
-              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-2%' }}>
-              <div className="text-[9px] font-mono text-white/30 tracking-widest uppercase">↑ MARKET GROWTH SCORE</div>
-              <div className="text-[8px] font-mono text-white/18 tracking-wider">Büyüme Skoru</div>
+              style={{ transform: 'rotate(-90deg) translateX(-50%)', transformOrigin: 'left center', whiteSpace: 'nowrap', left: '-1%' }}>
+              <div className="text-[9px] font-mono text-white/35 tracking-widest uppercase">↑ Büyüme Skoru</div>
             </div>
             {QUADRANT_LABELS.map(q => (
               <div key={q.id} className="absolute text-center pointer-events-none"
