@@ -373,10 +373,11 @@ def run() -> None:
         (PUBLIC_DIR / "product_registry_public.json").write_text(pub_json, encoding="utf-8")
     logger.info(f"Public-safe kaydedildi: {PUBLIC_OUT} (ciro'suz)")
 
-    # Firestore'a YALNIZ public-safe payload (ciro'suz) yazılır: dashboard registry_latest'i
-    # client-side okur (Seviye A login yalnız arayüz kilidi) → ciro tarayıcıya sızmamalı.
-    # Tam kütük (ciro'lu) yalnız yerel data/product_registry.json'da kalır.
-    save_to_firestore(public)
+    # Firestore'a registry YAZILMAZ: 1130 ürünlük doküman Firestore'un doküman-başı index-entry
+    # limitini aşıyor (INDEX_ENTRIES_COUNT_LIMIT_EXCEEDED). Ayrıca committed public JSON zaten
+    # her gün taze deploy oluyor → Firestore kopyası gereksiz. Dashboard registry'yi doğrudan
+    # product_registry_public.json'dan okur (useData.js). save_to_firestore korunur (ileride
+    # size-safe/blob tasarımıyla yeniden kullanılabilir) ama artık çağrılmaz.
 
 
 if __name__ == "__main__":
