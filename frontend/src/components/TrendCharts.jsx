@@ -211,8 +211,7 @@ export function TrendAreaChart({ trends }) {
               stroke={COLORS[i % COLORS.length]} strokeWidth={1.8}
               dot={false} activeDot={{ r: 4, strokeWidth: 0 }}
               connectNulls={false}
-              isAnimationActive animationDuration={900} animationEasing="ease-out"
-              animationBegin={i * 120} />
+              isAnimationActive animationDuration={1500} animationEasing="ease" />
           ))}
         </LineChart>
       </ResponsiveContainer>
