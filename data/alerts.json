@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-07T12:26:01.221149+00:00",
+    "last_updated": "2026-07-07T13:05:47.454697+00:00",
     "total_alerts": 10
   },
   "alerts": [
@@ -11,25 +11,25 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (74/100).",
       "product_id": "1143914275",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (74/100).",
-      "product_id": "1156645277",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (74/100).",
+      "product_id": "1143914080",
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (74/100).",
-      "product_id": "1143914080",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (74/100).",
+      "product_id": "1156645277",
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-4",
@@ -38,7 +38,7 @@
       "title": "Banyo Dolabı — çıkış adayı",
       "message": "ROOMART Dubai Mdflam Sepetli Banyo Dolabı Seti, Lavabolu Alt zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
       "product_id": "971279035",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-5",
@@ -47,7 +47,7 @@
       "title": "Sehpa — lider STAR",
       "message": "ROOMART Helsinki Orta Sehpa Suntalam 80 cm pay 100, büyüme 88.",
       "product_id": "866321311",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-6",
@@ -56,7 +56,7 @@
       "title": "Çamaşır Makinesi Dolabı — lider STAR",
       "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 75.",
       "product_id": "920575303",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-7",
@@ -65,7 +65,7 @@
       "title": "Banyo Dolabı — yüksek iade riski",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
       "product_id": "971265574",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-8",
@@ -74,7 +74,7 @@
       "title": "Diğer — yüksek iade riski",
       "message": "Opal Vestiyer,  Portmanto,  Ayakkabılık, Aynalı Askılı Portm iade/iptal oranı %50. Kalite/lojistik incele.",
       "product_id": "863358108",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Kahve Köşesi — kârsız hacim uyarısı",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "1156645277",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     },
     {
       "id": "alert-10",
@@ -92,7 +92,7 @@
       "title": "Banyo Dolabı — kârsız hacim uyarısı",
       "message": "Likya Ayaksız Tek Kapaklı Açık Raflı Lavabolu 72 Cm Banyo Do hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
       "product_id": "941956257",
-      "timestamp": "2026-07-07T12:26:01.203351+00:00"
+      "timestamp": "2026-07-07T13:05:47.430952+00:00"
     }
   ]
 }
