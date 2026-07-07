@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { QUADRANT_META, ACTION_META, formatScore } from '../utils/helpers'
 
@@ -95,6 +96,7 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
   const [actionFilter, setActionFilter] = useState('ALL')
   const [highlightId, setHighlightId] = useState(null)
   const containerRef = useRef(null)
+  const listRef = useRef(null)
 
   const scored = (products || []).filter(p => p.share_score != null && p.growth_score != null)
   if (!scored.length) return null
@@ -107,41 +109,55 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
     .filter(p => !selectedCategory || p.category === selectedCategory.category)
   const shown = zoom ? base.filter(p => p.bcg_class === zoom) : base
 
-  // Zoom modunda rank tabanlı konumlandırma: skoru benzer ürünler alta yığılmaz,
-  // sıralama içindeki yerine göre alanın tamamına eşit dağıtılır.
-  const zoomRanks = useMemo(() => {
-    if (!zoom || !shown.length) return {}
-    const byShare  = [...shown].sort((a, b) => a.share_score - b.share_score)
-    const byGrowth = [...shown].sort((a, b) => a.growth_score - b.growth_score)
-    const n = Math.max(1, shown.length - 1)
-    const ranks = {}
-    shown.forEach(p => {
-      ranks[p.id] = {
-        xr: byShare.findIndex(q => q.id === p.id) / n,
-        yr: byGrowth.findIndex(q => q.id === p.id) / n,
-      }
-    })
-    return ranks
+  // Rank tabanlı konumlandırma: aynı/yakın skorlu ürünler tek çizgiye yığılmaz,
+  // sıralama içindeki yerine göre alana eşit dağıtılır (zoom + ana görünüm ortak).
+  // Zoom: tüm kadran tek alana yayılır. Ana görünüm: her kadran KENDİ çeyreğine yayılır.
+  const ranks = useMemo(() => {
+    if (!shown.length) return {}
+    const out = {}
+    const assign = (list) => {
+      const byShare  = [...list].sort((a, b) => a.share_score - b.share_score)
+      const byGrowth = [...list].sort((a, b) => a.growth_score - b.growth_score)
+      const xIdx = new Map(byShare.map((p, i) => [p.id, i]))
+      const yIdx = new Map(byGrowth.map((p, i) => [p.id, i]))
+      const n = Math.max(1, list.length - 1)
+      list.forEach(p => { out[p.id] = { xr: xIdx.get(p.id) / n, yr: yIdx.get(p.id) / n } })
+    }
+    if (zoom) {
+      assign(shown)
+    } else {
+      // Kadran bazında grupla (her çeyrek kendi içinde sıralanır)
+      const byQuad = {}
+      shown.forEach(p => { (byQuad[p.bcg_class || 'NONE'] ??= []).push(p) })
+      Object.values(byQuad).forEach(assign)
+    }
+    return out
   }, [zoom, shown])
 
   const posOf = (p) => {
     const [jx, jy] = jitter(p.id)
+    const r = ranks[p.id] || { xr: 0.5, yr: 0.5 }
     if (zoom) {
-      const r = zoomRanks[p.id] || { xr: 0.5, yr: 0.5 }
       return [
         PAD + clamp(r.xr * SPAN + jx, 3, SPAN - 3),
         PAD + clamp((1 - r.yr) * SPAN + jy, 3, SPAN - 3),
       ]
     }
-    const xBase = PAD + frac(p.share_score, shareThr) * SPAN
-    const yBase = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
-    const isRight = p.bcg_class === 'STAR' || p.bcg_class === 'CASH_COW'
-    const isTop   = p.bcg_class === 'STAR' || p.bcg_class === 'QUESTION_MARK'
-    const xMin = p.bcg_class ? (isRight ? MID + 0.5 : PAD + 0.5) : PAD
-    const xMax = p.bcg_class ? (isRight ? PAD + SPAN - 0.5 : MID - 0.5) : PAD + SPAN
-    const yMin = p.bcg_class ? (isTop ? PAD + 0.5 : MID + 0.5) : PAD
-    const yMax = p.bcg_class ? (isTop ? MID - 0.5 : PAD + SPAN - 0.5) : PAD + SPAN
-    return [clamp(xBase + jx, xMin, xMax), clamp(yBase + jy, yMin, yMax)]
+    // Ana görünüm: kadranın kendi çeyreğine rank ile yay (paralel çizgi yığılması olmaz)
+    const q = p.bcg_class
+    if (!q) {  // sınıfsız (nadir) → skor tabanlı yedek
+      const xB = PAD + frac(p.share_score, shareThr) * SPAN
+      const yB = PAD + (1 - frac(p.growth_score, growthThr)) * SPAN
+      return [clamp(xB + jx, PAD, PAD + SPAN), clamp(yB + jy, PAD, PAD + SPAN)]
+    }
+    const m = 2.5  // çeyrek iç kenar boşluğu (sınıra yapışmasın)
+    const isRight = q === 'STAR' || q === 'CASH_COW'
+    const isTop   = q === 'STAR' || q === 'QUESTION_MARK'
+    const xLo = (isRight ? MID : PAD) + m,  xHi = (isRight ? PAD + SPAN : MID) - m
+    const yLo = (isTop ? PAD : MID) + m,    yHi = (isTop ? MID : PAD + SPAN) - m
+    const x = xLo + r.xr * (xHi - xLo) + jx
+    const y = yLo + (1 - r.yr) * (yHi - yLo) + jy
+    return [clamp(x, xLo - m, xHi + m), clamp(y, yLo - m, yHi + m)]
   }
 
   const handleMouseEnter = (e, product) => {
@@ -237,9 +253,9 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                     <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
                   </marker>
                 </defs>
-                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
+                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2="99%" y2={`${PAD + SPAN}%`}
                   stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
-                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
+                <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2="1%"
                   stroke="rgba(120,124,150,0.4)" strokeWidth="1" markerEnd="url(#arrow-z)" />
               </svg>
               <div className="absolute top-2 left-1/2 -translate-x-1/2 pointer-events-none">
@@ -255,15 +271,11 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                 ↑ Büyüme Skoru
               </div>
               {renderDots()}
-              {tooltip.visible && (
-                <div style={{ position: 'absolute', left: tooltip.x, top: tooltip.y, zIndex: 100 }}>
-                  <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
-                </div>
-              )}
+              {/* Zoom tooltip'i liste panelinin dışına (portal) sabitlenir — aşağıda */}
             </div>
 
             {/* Ürün listesi — scatter ile aynı yükseklikte, kendi içinde scroll */}
-            <div className="w-52 flex-shrink-0 flex flex-col overflow-hidden rounded-lg border"
+            <div ref={listRef} className="w-52 flex-shrink-0 flex flex-col overflow-hidden rounded-lg border"
               style={{ borderColor: (zoomMeta?.color || '#fff') + '25', background: 'rgba(8,10,18,0.9)' }}>
               <div className="px-2.5 py-2 border-b flex-shrink-0 text-[9px] font-mono text-white/35"
                 style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
@@ -293,6 +305,21 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
               </div>
             </div>
           </div>
+
+          {/* Zoom ürün kartı: liste kutusunun SAĞ DIŞINA yapışık (ürünü/noktaları örtmez).
+              Sağda yer yoksa listenin soluna geçer. Portal → kart taşmasından etkilenmez. */}
+          {tooltip.product && listRef.current && createPortal((() => {
+            const r = listRef.current.getBoundingClientRect()
+            const W = 240, GAP = 8
+            const roomRight = window.innerWidth - r.right
+            const left = roomRight > W + GAP ? r.right + GAP : Math.max(4, r.left - W - GAP)
+            const top = Math.max(8, Math.min(r.top, window.innerHeight - 340))
+            return (
+              <div style={{ position: 'fixed', left, top, zIndex: 9999 }}>
+                <AnimatePresence><ProductTooltip p={tooltip.product} /></AnimatePresence>
+              </div>
+            )
+          })(), document.body)}
         </div>
       ) : (
         /* ── NORMAL LAYOUT: tam genişlik scatter ── */
@@ -311,9 +338,9 @@ export default function BCGMatrix({ products, categories, onSelectCategory, sele
                   <path d="M0,0 L6,3 L0,6 Z" fill="rgba(120,124,150,0.5)" />
                 </marker>
               </defs>
-              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD + SPAN + 2}%`} y2={`${PAD + SPAN}%`}
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2="99%" y2={`${PAD + SPAN}%`}
                 stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
-              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2={`${PAD - 2}%`}
+              <line x1={`${PAD}%`} y1={`${PAD + SPAN}%`} x2={`${PAD}%`} y2="1%"
                 stroke="rgba(120,124,150,0.5)" strokeWidth="1" markerEnd="url(#arrow)" />
             </svg>
             <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-center pointer-events-none">
