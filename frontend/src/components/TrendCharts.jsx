@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   AreaChart, Area, LineChart, Line,
@@ -163,6 +163,10 @@ export function TrendGrid({ trends }) {
 export function TrendAreaChart({ trends }) {
   trends = (trends || []).filter(t => t.data_points?.length > 0)
   const weekDates = useMemo(() => weekLabels(12), [])
+  // Grafiği sekme geçiş fade'i (App motion.div) OTURDUKTAN sonra mount et → recharts
+  // çizim animasyonu tam görünür (fade sırasında çizilip kaçırılmaz).
+  const [ready, setReady] = useState(false)
+  useEffect(() => { const t = setTimeout(() => setReady(true), 260); return () => clearTimeout(t) }, [])
 
   if (!trends?.length) return null
 
@@ -196,6 +200,7 @@ export function TrendAreaChart({ trends }) {
           ))}
         </div>
       </div>
+      {!ready ? <div style={{ height: 240 }} /> : (
       <ResponsiveContainer width="100%" height={240}>
         <LineChart data={seriesData} margin={{ top: 8, right: 12, bottom: 8, left: -8 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
@@ -211,10 +216,12 @@ export function TrendAreaChart({ trends }) {
               stroke={COLORS[i % COLORS.length]} strokeWidth={1.8}
               dot={false} activeDot={{ r: 4, strokeWidth: 0 }}
               connectNulls={false}
-              isAnimationActive animationDuration={1500} animationEasing="ease" />
+              isAnimationActive animationDuration={1100} animationEasing="ease-out"
+              animationBegin={i * 160} />
           ))}
         </LineChart>
       </ResponsiveContainer>
+      )}
       {/* Proxy açıklaması: doğrudan Trends karşılığı olmayan kategoriler */}
       {trends.some(t => isProxy(t)) && (
         <p className="text-[9px] font-mono text-white/25 mt-2 leading-snug">
