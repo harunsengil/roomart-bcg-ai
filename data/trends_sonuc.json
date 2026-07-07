@@ -1,48 +1,132 @@
 {
-  "tarih": "2026-07-06",
+  "tarih": "2026-07-07",
   "geo": "TR",
   "zaman": "last 3 months (bireysel sorgular, kendi ölçeğinde)",
   "kategoriler": {
-    "mutfak adası": {
-      "keyword": "mutfak adası",
-      "ortalama": 5.7,
-      "maks": 20.0,
+    "banyo dolabı": {
+      "keyword": "banyo dolabı",
+      "ortalama": 75.5,
+      "maks": 85.1,
+      "buyume_yuzde": -11.7,
+      "trend": "Düşüyor",
+      "haftalik": [
+        82.1,
+        85.1,
+        75.1,
+        73.1,
+        83.7,
+        56.0,
+        71.7,
+        70.3,
+        77.6,
+        77.4,
+        81.0,
+        72.5
+      ]
+    },
+    "çamaşır makinesi dolabı": {
+      "keyword": "çamaşır makinesi dolabı",
+      "ortalama": 26.7,
+      "maks": 41.3,
       "buyume_yuzde": 0,
       "trend": "Yükseliyor",
       "haftalik": [
+        0.0,
+        21.6,
+        33.0,
+        20.6,
+        33.4,
+        10.0,
+        30.7,
+        24.3,
+        30.6,
+        34.6,
+        41.3,
+        40.5
+      ]
+    },
+    "çalışma masası": {
+      "keyword": "çalışma masası",
+      "ortalama": 68.2,
+      "maks": 74.9,
+      "buyume_yuzde": -18.0,
+      "trend": "Düşüyor",
+      "haftalik": [
+        67.7,
+        73.1,
+        67.9,
+        64.1,
+        74.9,
+        71.0,
+        64.6,
+        69.0,
+        65.9,
+        73.9,
+        70.3,
+        55.5
+      ]
+    },
+    "sehpa": {
+      "keyword": "sehpa",
+      "ortalama": 44.9,
+      "maks": 71.9,
+      "buyume_yuzde": 15.0,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        46.1,
+        44.7,
+        44.0,
+        41.6,
+        43.7,
+        38.4,
+        38.3,
+        39.0,
+        36.1,
+        42.1,
+        71.9,
+        53.0
+      ]
+    },
+    "kiler dolabı": {
+      "keyword": "kiler dolabı",
+      "ortalama": 16.5,
+      "maks": 33.3,
+      "buyume_yuzde": 20.1,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        25.4,
+        9.1,
+        0.0,
+        10.7,
+        25.9,
+        10.7,
+        0.0,
+        0.0,
+        24.3,
+        27.6,
+        33.3,
+        30.5
+      ]
+    },
+    "mutfak adası": {
+      "keyword": "mutfak adası",
+      "ortalama": 4.7,
+      "maks": 19.3,
+      "buyume_yuzde": 0.9,
+      "trend": "Yükseliyor",
+      "haftalik": [
+        11.4,
+        0.0,
+        0.0,
+        0.0,
         0.0,
         0.0,
         0.0,
         0.0,
         0.0,
         14.3,
-        0.0,
-        0.0,
-        0.0,
-        15.4,
-        18.6,
-        20.0
-      ]
-    },
-    "çalışma masası": {
-      "keyword": "çalışma masası",
-      "ortalama": 71.8,
-      "maks": 78.6,
-      "buyume_yuzde": -7.2,
-      "trend": "Düşüyor",
-      "haftalik": [
-        67.9,
-        75.9,
-        70.1,
-        71.3,
-        76.3,
-        72.4,
-        69.0,
-        70.1,
-        71.7,
-        78.6,
-        75.7,
-        63.0
+        19.3,
+        11.5
       ]
     }
   }

@@ -27,11 +27,23 @@ KEYWORDS = {
     "kiler dolabı":              "kiler dolabı",
 }
 
-def fetch_one(pt, keyword: str):
-    """Tek anahtar kelime için son 12 haftalık Google Trends verisi (günlük → haftalık resample)."""
+def fetch_one(pt, keyword: str, retries: int = 3):
+    """Tek anahtar kelime için son 12 haftalık Google Trends verisi (günlük → haftalık resample).
+    429 (rate-limit) durumunda artan bekleme ile yeniden dener."""
+    for attempt in range(retries + 1):
+        try:
+            pt.build_payload([keyword], cat=0, timeframe="today 3-m", geo="TR", gprop="")
+            df = pt.interest_over_time()
+            break
+        except Exception as e:
+            if "429" in str(e) and attempt < retries:
+                wait = 20 * (attempt + 1)   # 20s, 40s, 60s
+                log.warning(f"  {keyword}: 429 rate-limit → {wait}s bekleniyor (deneme {attempt + 1}/{retries})")
+                time.sleep(wait)
+                continue
+            log.error(f"  {keyword}: {e}")
+            return None
     try:
-        pt.build_payload([keyword], cat=0, timeframe="today 3-m", geo="TR", gprop="")
-        df = pt.interest_over_time()
         if df.empty or keyword not in df.columns:
             log.warning(f"  {keyword}: boş yanıt")
             return None
@@ -64,17 +76,26 @@ def main():
         sys.exit(1)
 
     pt = TrendReq(hl="tr-TR", tz=180, timeout=(10, 30))
+
+    # MEVCUT veriyi yükle → başarısız fetch'ler eski veriyi KAYBETMESİN (merge).
+    outpath = DATA_DIR / "trends_sonuc.json"
     kategoriler: dict = {}
+    if outpath.exists():
+        try:
+            kategoriler = json.load(open(outpath, encoding="utf-8")).get("kategoriler", {})
+            log.info(f"Mevcut {len(kategoriler)} kategori korunuyor (merge).")
+        except Exception:
+            kategoriler = {}
 
     for key, kw in KEYWORDS.items():
         log.info(f"Fetching: {kw} …")
         data = fetch_one(pt, kw)
         if data:
-            kategoriler[key] = data
+            kategoriler[key] = data   # güncelle (yeni veri eskiyi geçersiz kılar)
             log.info(f"  ✓ avg={data['ortalama']}, trend={data['trend']}, vals={data['haftalik']}")
         else:
-            log.warning(f"  ✗ {key} atlandı")
-        time.sleep(3)  # Rate-limit önlemi
+            log.warning(f"  ✗ {key} atlandı (mevcut veri korunur)")
+        time.sleep(6)  # Rate-limit önlemi (429 riskini azalt)
 
     if not kategoriler:
         log.error("Hiç veri alınamadı — çıkılıyor.")
