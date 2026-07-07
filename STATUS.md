@@ -7,36 +7,34 @@
 
 ## Son Güncelleme
 - **Tarih:** 2026-07-07
-- **Güncelleyen:** Code (adım 1: GÜNLÜK çok-platform API sync CI'a eklendi — CI'da doğrulandı; PR bekliyor)
-- **Aktif branch:** `feat/daily-platform-sync` (PR açık; **merge → günlük otomasyon aktifleşir**). main deploy: `ca7aa98`.
+- **Güncelleyen:** Code (fiyat/URL düzeltme arkı — Adım 1-4 tamam, hepsi main'de + deploy edildi)
+- **Aktif branch:** `main` (son analyze commit `b232faf`; Adım 4 = TY kampanya işareti PR bekliyor).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 >
-> **✅ ADIM 1 — GÜNLÜK PLATFORM SYNC (CI'da doğrulandı, 2026-07-07):**
-> - `analyze.yml`'e 5 adım eklendi: **Shopify · Judge.me · n11 · Hepsiburada · registry_builder** —
->   hepsi `continue-on-error` (secret/API hatası günlük BCG akışını kırmaz). Günlük 05:30 UTC koşusu artık
->   **4 platformun kendi ürün fiyat/satış/yorumunu** her sabah tazeler (önceden yalnız Trendyol günlüktü).
-> - **11 platform secret** GitHub Secrets'a eklendi (SHOPIFY_* · N11_* · HB_* · JUDGEME_*). `gh` CLI
->   `~/.local/bin/gh` (brew yok); auth: harunsengil (repo+workflow). Secret'lar `.env.*.local`'den set edildi.
-> - **CI doğrulaması** (run 28865139695 success): Shopify 692/545 · n11 699/71 · HB 925/15 · Judge.me 337→81 ·
->   registry **1130 ürün/980 çok-platform** (trendyol 1002·shopify 682·hb 925·n11 699). Sızıntı-guard geçti;
->   hiçbir satış dosyası (shopify/n11/hb_sales, product_registry.json) public'e gitmedi.
-> - **Firestore registry yazımı KALDIRILDI:** 1130 ürünlük doküman Firestore doküman-başı index-entry limitini
->   aşıyordu (INDEX_ENTRIES_COUNT_LIMIT_EXCEEDED) + committed public JSON zaten her gün taze deploy → gereksiz.
->   `useData.js` registry'yi doğrudan `product_registry_public.json`'dan okur (bayat-Firestore gölge riski yok).
-> - `platform_reviews.json` **gitignore'dan çıktı** (public yorum verisi; ciro değil) → CI arası n11 yorumları
->   (17) korunur (judgeme yalnız shopify'ı tazeler). Weekly Mac scrape n11'i yeniler.
+> **✅ FİYAT/URL DÜZELTME ARKI (2026-07-07) — 4 adım, hepsi CANLI:**
+> 1. **Günlük çok-platform sync** (PR #33 merged): `analyze.yml`'e Shopify·Judge.me·n11·HB·registry adımları
+>    (continue-on-error). 11 secret GitHub'da (`gh`=`~/.local/bin/gh`, brew yok). registry Firestore'a YAZMAZ
+>    (INDEX_ENTRIES limiti) → `useData` doğrudan public JSON okur. `platform_reviews.json` committable
+>    (n11 yorumları CI arası korunur). Detay: [[daily-platform-sync]].
+> 2. **n11/HB ürün URL'leri** (PR #35 merged): n11 URL id = **`groupId`** (n11ProductId DEĞİL); HB =
+>    `/{slug}-p-{hepsiburadaSku}`. Scrape gerekmez, API'den; her ikisi curl'e 403 → tarayıcı teyidi.
+>    Kullanıcı doğruladı. Detay: [[platform-product-url-formats]].
+> 3. **Shopify varyant URL** (PR #36 merged): `/products/{handle}?variant={variant_id}` → çok-varyantlı
+>    ürünlerde doğru beden açılır (kod 2935 = 50cm Kumtaşı 5913₺; eşleşme+fiyat baştan doğruydu, URL varyant seçmiyordu).
+> 4. **TY kampanya fiyatı** (PR bekliyor): satıcı API kampanya fiyatını (5831) VERMEZ — platform indirimi
+>    (`has_campaign=True` ama sale=list). Analyzer zaten scrape'i tercih ediyor (`scraper_fiyat or api_sale`,
+>    analyzer.py:696) → **28 üründe kampanya yakalanmış (B)**. **447 üründe liste gösteriliyor → ProductTable'da
+>    🏷️ uyarısı (A)**. Scrape haftalık + ~187 ürün sınırı (rpa_projesi Mac scraper).
 >
-> **⏭️ ADIM 1 SONRASI — FİYAT/URL DÜZELTMELERİ (kullanıcı sırası: önce 1 bitti):**
-> 2. **n11 ürün URL'leri:** API `/urun/-{id}` → 404; tam n11 scrape (~21 sayfa) veya arama gerek. Şu an
->    17 eşleşen üründe gerçek scrape URL'i var (platform_reviews.n11_url), kalanı mağaza-fallback.
-> 3. **HB ürün URL'leri:** `p-{sku}` → 404; doğru format `{slug}-p-{productId}` ama slug API'de yok.
-> 4. **TY kampanya fiyatı:** API `salePrice` platform kampanyasını (Avantajlı Ürün) VERMEZ → görünen fiyat
->    yalnız haftalık Playwright scrape'ten. Günlük hafif TY ürün-scrape eklenebilir.
-> - **Shopify SKU join:** kod 2935 yanlış ürüne (2918) eşleşiyor — düzeltilecek.
+> **⏭️ AÇIK İŞLER:**
+> - **Private repo (ASKIDA):** Free planı → private, Pages'i kapatır (dashboard 404). Amaç: kaynak kodu gizlemek.
+>   Yol 1: GitHub Pro ($4/ay, sıfır migration). Yol 2: Cloudflare Pages/Netlify (ücretsiz, dashboard URL değişir). Yol 3: public kal.
+> - **TY kampanya kapsamı:** daha çok üründe gerçek fiyat için haftalık scrape'i genişlet (Mac; bulut 403'ler).
+> - **CLEAR** (PR #32): CSV doldur → merge.
 >
-> **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` URL'inde plaintext PAT. Firestore rules deploy.
-> Platform `.env.*.local` dosyaları gitignored (HB/n11/Shopify/Judge.me creds).
+> **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` plaintext PAT; Firestore rules deploy.
+> `.env.*.local` gitignored (HB/n11/Shopify/Judge.me creds).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only

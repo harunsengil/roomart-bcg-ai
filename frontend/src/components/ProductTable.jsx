@@ -472,7 +472,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
               <HeadCell field="risk_rate" label="İade %" />
               <HeadCell field="sales_per_day" label="Sat. Hızı" />
               <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top" title="Son 13 haftalık net satış (üzerine gel → büyük grafik)">Satış 3a</th>
-              <HeadCell field="price" label="TY Fiyat" tooltip="Trendyol satış fiyatı (platform kampanyası dahil)" />
+              <HeadCell field="price" label="TY Fiyat" tooltip="Trendyol satış fiyatı. Haftalık scrape kampanyayı yakaladıysa indirimli gelir; 🏷️ = kampanya var ama LİSTE gösteriliyor (gerçek TY fiyatı daha düşük). Satıcı API'si platform kampanyasını vermez." />
               <HeadCell field="list_price" label="TY Liste" tooltip="Trendyol katalog (liste) fiyatı — kampanya öncesi" />
               <HeadCell field="discount" label="TY İnd." tooltip="Trendyol kampanya indirimi %" />
               <th className="px-2 py-2.5 text-left text-xs font-mono text-white/40 align-top"
@@ -495,7 +495,7 @@ export default function ProductTable({ products, initialSearch = '' }) {
                       className="font-medium text-white text-sm hover:text-gold line-clamp-3 break-words"
                       onMouseEnter={e => showHoverImg(e, p.image, p.name)}
                       onMouseLeave={hideHoverImg}>
-                      {p.has_campaign && <span title="Aktif kampanya" className="mr-1">🏷️</span>}{p.name}
+                      {p.has_campaign && <span title={p.discount ? 'TY kampanyalı — indirimli fiyat gösteriliyor' : 'TY kampanyalı — gösterilen fiyat LİSTE; gerçek TY fiyatı daha düşük (haftalık scrape henüz yakalamadı)'} className="mr-1">🏷️</span>}{p.name}
                     </a>
                   </td>
                   <td className="px-2 py-2.5 text-xs text-white/50 font-mono break-words">{p.category}</td>
@@ -548,6 +548,10 @@ export default function ProductTable({ products, initialSearch = '' }) {
                     {p.url
                       ? <a href={p.url} target="_blank" rel="noreferrer" className="text-white hover:text-gold-400 transition-colors" title="Trendyol'da gör">{formatCurrency(p.price)}</a>
                       : <span className="text-white">{formatCurrency(p.price)}</span>}
+                    {p.has_campaign && !p.discount && (
+                      <span className="ml-1 text-amber-400/80 cursor-help"
+                        title="TY'de kampanya var ama indirimli fiyat API'den gelmiyor — bu LİSTE fiyatı, gerçek TY fiyatı daha düşük. Haftalık scrape yakalarsa güncellenir.">🏷️</span>
+                    )}
                   </td>
                   <td className="px-2 py-2.5 font-mono text-xs whitespace-nowrap">
                     {p.list_price != null && p.discount ? <span className="text-white/40 line-through">{formatCurrency(p.list_price)}</span> : <span className="text-white/30">—</span>}
