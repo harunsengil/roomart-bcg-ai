@@ -265,12 +265,24 @@ def build_registry() -> dict:
     reviews_doc = _load("platform_reviews.json") or {}
     reviews_by_sc = reviews_doc.get("by_stock_code", {})
 
+    # SON/SEPET fiyatı (own_price_scraper, Mac haftalık): n11 sepette + TY kampanya.
+    # Satıcı API'leri son fiyatı vermez → müşterinin ödeyeceği fiyat yalnız scrape'ten.
+    final_doc = _load("own_final_prices.json") or {}
+    final_by_sc = final_doc.get("by_stock_code", {})
+
     # Türev alanlar: present_on, fiyat aralığı, toplam satış, yorum
     conflicts = 0
     for sc, e in registry.items():
         present = sorted(e["platforms"].keys())
         e["present_on"] = present
         e["platform_count"] = len(present)
+        # Son fiyat scrape'i API fiyatını EZER (n11 sepette, TY kampanya) → müşterinin ödeyeceği.
+        fin = final_by_sc.get(sc, {})
+        for _plat, _key in (("n11", "n11"), ("trendyol", "trendyol")):
+            _fp = fin.get(_key)
+            if _fp and _plat in e["platforms"]:
+                e["platforms"][_plat]["price"] = _fp
+                e["platforms"][_plat]["price_final"] = True   # sepette/kampanya (son fiyat)
         prices = [p["price"] for p in e["platforms"].values() if p["price"]]
         e["price_min"] = min(prices) if prices else None
         e["price_max"] = max(prices) if prices else None

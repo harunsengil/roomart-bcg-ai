@@ -30,16 +30,18 @@ function PlatformPrices({ p }) {
         const m = PLAT_META[k]
         const price = plats[k].price
         const isCheapest = cheapest != null && price <= cheapest + 0.5
+        const isFinal = plats[k].price_final   // sepette/son fiyat (scrape) — müşterinin ödeyeceği
         const url = plats[k].url
         const inner = (
           <>
             <span style={{ color: m.color }} className="font-semibold w-6 flex-shrink-0">{m.short}</span>
             <span className={isCheapest ? 'text-gold-400 font-semibold' : 'text-white/70'}>{formatCurrency(price)}</span>
+            {isFinal && <span className="text-emerald-400/70 text-[8px] leading-none" title="Sepette/son fiyat (müşterinin ödeyeceği)">✓</span>}
           </>
         )
         return (
           <span key={k} className="flex items-center gap-1 text-[10px] font-mono whitespace-nowrap"
-            title={`${m.short}: ${formatCurrency(price)}${isCheapest ? ' · EN UCUZ' : ''}`}>
+            title={`${m.short}: ${formatCurrency(price)}${isCheapest ? ' · EN UCUZ' : ''}${isFinal ? ' · sepette/son fiyat' : ''}`}>
             {url
               ? <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:opacity-80">{inner}</a>
               : inner}

@@ -39,6 +39,16 @@ jobs:
           PYTHONUNBUFFERED: 1
         continue-on-error: true   # Trends API geçici hata verirse scrape'i durdurmasın
 
+      # Kendi ürünlerimizin n11 (SEPETTE) + Trendyol (kampanya) SON fiyatı — müşterinin ödeyeceği.
+      # Satıcı API'leri platform kampanya/sepet fiyatını VERMEZ → yalnız ürün sayfası scrape'i.
+      # SIRALI + kibar aralık (eşzamanlı/hızlı istek IP'yi throttle'lar). product_registry_public.json
+      # URL'lerini okur → data/own_final_prices.json. HB dahil değil (Akamai 403). RS zaten API'den.
+      - name: Scrape own final prices (n11 sepette + TY kampanya)
+        run: python3 backend/own_price_scraper.py --verbose
+        env:
+          PYTHONUNBUFFERED: 1
+        continue-on-error: true   # scrape engellenir/uzarsa haftalık akışı durdurmasın
+
       - name: Commit updated data
         id: commit
         run: |

@@ -673,6 +673,11 @@ def run_analysis():
     # uygulanamaz ama analiz çökmesin (graceful degradation).
     all_pids = set(active_api.keys()) if active_api else set(current.keys())
     now_ms = datetime.now(timezone.utc).timestamp() * 1000
+    # SON/SEPET fiyatı (own_price_scraper, Mac haftalık): TY kampanya fiyatı stok kodu bazlı.
+    # Satıcı API'si kampanyayı vermez → müşterinin ödeyeceği fiyat yalnız buradan (varsa).
+    own_final = load_json("own_final_prices.json", default={}).get("by_stock_code", {})
+    if own_final:
+        logger.info(f"own_final_prices: {sum(1 for v in own_final.values() if v.get('trendyol'))} TY son-fiyatı yüklendi.")
     products = []
     excluded = 0
     for pid in all_pids:
@@ -688,16 +693,17 @@ def run_analysis():
         srec = sales_by_product.get(pid, {})
         units = int(srec.get("net_units", 0) or 0)
         sales_momentum = srec.get("sales_momentum")  # None ise büyüme deg'e düşer
-        # FİYAT: Scraper (site) fiyatı ÖNCELİKLİ — Trendyol platform kampanyaları (Avantajlı Ürün
-        # vb.) API salePrice'a yansımaz, scraper gerçek görünen fiyatı alır. API fiyatı yedek
-        # (henüz scrape edilmemiş ürünler için). Öncelik: scraper > API.
+        # FİYAT: müşterinin ödeyeceği SON fiyat önceliği — own_price_scraper (TY kampanya, haftalık)
+        # > snapshot scraper fiyatı > API salePrice. Satıcı API'si platform kampanyasını (Avantajlı
+        # Ürün) VERMEZ → gerçek görünen fiyat yalnız scrape'ten. API yalnız yedek (henüz scrape'siz ürün).
+        kod = (raw.get("kod") if raw else None) or api.get("stock_code")
+        own_ty = own_final.get(str(kod).strip(), {}).get("trendyol") if kod else None
         api_sale = api.get("sale_price") or 0.0
         scraper_fiyat = (raw.get("fiyat") if raw else 0.0) or 0.0
-        price = scraper_fiyat or api_sale or 0.0
+        price = own_ty or scraper_fiyat or api_sale or 0.0
         # PUAN/YORUM: yalnız scrape'ten gelir (API vermez) → haftalık Mac scrape tazeler.
         rating = raw.get("puan", 0.0) if raw else 0.0
         review_count = raw.get("deg", 0) if raw else 0
-        kod = (raw.get("kod") if raw else None) or api.get("stock_code")
         url = (raw.get("url") if raw else None) or api.get("product_url") or ""
         # LİSTE FİYATI + İNDİRİM:
         # 1) API listPrice > satış fiyatı → gerçek katalog indirimi (varsa).
