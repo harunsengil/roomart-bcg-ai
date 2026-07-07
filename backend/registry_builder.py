@@ -361,6 +361,7 @@ def build_public(payload: dict) -> dict:
                 "list_price": pd.get("list_price"),
                 "url":        pd.get("url"),
                 "on_sale":    pd.get("on_sale"),
+                "price_final": pd.get("price_final", False),   # sepette/son fiyat mı (scrape) → ✓ işareti
             }
         pub[sc] = {
             "stock_code":       e.get("stock_code"),
