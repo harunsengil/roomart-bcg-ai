@@ -5,11 +5,23 @@ import { db } from '../firebase'
 const BASE_URL = import.meta.env.BASE_URL || '/'
 
 // trends_sonuc.json → TrendCharts の beklediği format
+// Trends arama terimi → RoomArt kategori adı (analyzer TRENDS_BRIDGE aynası).
+// Firestore yolu kategori adını zaten verir; JSON yolu keyword'lü olduğu için burada eşlenir.
+const TREND_KEYWORD_CATEGORY = {
+  'banyo dolabı': 'Banyo Dolabı',
+  'çamaşır makinesi dolabı': 'Çamaşır Makinesi Dolabı',
+  'mutfak adası': 'Mutfak Adası',
+  'çalışma masası': 'Kitaplıklı Çalışma Masası',
+  'sehpa': 'Sehpa',
+  'kiler dolabı': 'Kahve Köşesi',   // proxy (kiler/depolama → en yakın)
+}
+
 function transformTrendsSonuc(sonuc) {
   if (!sonuc?.kategoriler) return []
   return Object.entries(sonuc.kategoriler).map(([keyword, data]) => ({
     slug: keyword.replace(/\s+/g, '-').replace(/[üÜ]/g, 'u').replace(/[çÇ]/g, 'c').replace(/[şŞ]/g, 's').replace(/[ğĞ]/g, 'g').replace(/[ıİ]/g, 'i').replace(/[öÖ]/g, 'o'),
-    category: keyword.charAt(0).toUpperCase() + keyword.slice(1),
+    category: TREND_KEYWORD_CATEGORY[keyword] || (keyword.charAt(0).toUpperCase() + keyword.slice(1)),
+    keyword,                              // proxy tespiti (isProxy) için ham arama terimi
     growth_rate: data.buyume_yuzde ?? 0,
     trend_score: data.ortalama ?? 50,
     peak_interest: data.maks ?? 0,

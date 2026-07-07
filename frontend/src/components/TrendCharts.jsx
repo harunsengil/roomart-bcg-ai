@@ -66,7 +66,12 @@ function TrendCard({ trend, index, color, weekDates }) {
       {/* Başlık */}
       <div className="flex items-start justify-between mb-2 gap-1">
         <div className="min-w-0">
-          <p className="text-[10px] font-mono text-white/30 truncate">{trend.slug}</p>
+          {isProxy(trend)
+            ? <p className="text-[10px] font-mono text-amber-300/50 truncate cursor-help"
+                title={`"${trend.category}" kategorisinin doğrudan Google Trends karşılığı yok — en yakın arama terimi "${trend.keyword}" ile temsil edilir.`}>
+                ≈ {trend.keyword} (proxy)
+              </p>
+            : <p className="text-[10px] font-mono text-white/30 truncate">{trend.slug}</p>}
           <p className="text-sm font-body font-medium text-white leading-snug">{trend.category}</p>
         </div>
         <div className="flex items-center gap-1 flex-shrink-0">
@@ -92,7 +97,9 @@ function TrendCard({ trend, index, color, weekDates }) {
               </defs>
               <Area type="monotone" dataKey="value"
                 stroke={accentColor} strokeWidth={1.5}
-                fill={`url(#sg-${trend.slug})`} dot={false} />
+                fill={`url(#sg-${trend.slug})`} dot={false}
+                isAnimationActive animationDuration={800} animationEasing="ease-out"
+                animationBegin={index * 80} />
               <Tooltip content={<CustomTooltip />} />
             </AreaChart>
           </ResponsiveContainer>
@@ -203,12 +210,29 @@ export function TrendAreaChart({ trends }) {
             <Line key={t.slug} type="monotone" dataKey={t.category}
               stroke={COLORS[i % COLORS.length]} strokeWidth={1.8}
               dot={false} activeDot={{ r: 4, strokeWidth: 0 }}
-              connectNulls={false} />
+              connectNulls={false}
+              isAnimationActive animationDuration={900} animationEasing="ease-out"
+              animationBegin={i * 120} />
           ))}
         </LineChart>
       </ResponsiveContainer>
+      {/* Proxy açıklaması: doğrudan Trends karşılığı olmayan kategoriler */}
+      {trends.some(t => isProxy(t)) && (
+        <p className="text-[9px] font-mono text-white/25 mt-2 leading-snug">
+          ≈ Proxy: {trends.filter(isProxy).map(t => `${t.category} → "${t.keyword}"`).join(' · ')}
+          {' '}— doğrudan Google Trends karşılığı olmayan kategoriler en yakın arama terimiyle temsil edilir.
+        </p>
+      )}
     </div>
   )
+}
+
+// Kategori adı ile Trends anahtar kelimesi belirgin farklıysa "proxy" say (ör. Kahve Köşesi → kiler dolabı).
+function isProxy(t) {
+  if (!t.keyword) return false
+  const norm = s => String(s).toLowerCase().replace(/[çğıöşü]/g, c => ({ç:'c',ğ:'g',ı:'i',ö:'o',ş:'s',ü:'u'}[c])).replace(/[^a-z]/g, '')
+  const cat = norm(t.category), kw = norm(t.keyword)
+  return !cat.includes(kw) && !kw.includes(cat)
 }
 
 export function ScoreRadarChart({ categories, theme }) {
