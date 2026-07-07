@@ -7,7 +7,9 @@ Barkod (EAN) ikincil kimlik + yedek eşleşme anahtarıdır.
 Ampirik: RoomArt aynı stok kodunu platformlar arası tutar → stok kodu örtüşmesi (608)
 barkod örtüşmesinden (471) yüksek. Bu yüzden birincil anahtar = stok kodu.
 
-Çıktı: data/product_registry.json (gitignored — ciro içerir) + Firestore registry_latest.
+Çıktı: data/product_registry.json (gitignored — ciro içerir, yalnız yerel) +
+       data/product_registry_public.json (committable — fiyat+yorum+url, ciro'suz) +
+       Firestore registry_latest (PUBLIC-safe payload — dashboard client-side okur).
 Platformlar arası fiyat farkı (price_spread) da raporlanır.
 
   python3 backend/registry_builder.py
@@ -371,7 +373,10 @@ def run() -> None:
         (PUBLIC_DIR / "product_registry_public.json").write_text(pub_json, encoding="utf-8")
     logger.info(f"Public-safe kaydedildi: {PUBLIC_OUT} (ciro'suz)")
 
-    save_to_firestore(payload)
+    # Firestore'a YALNIZ public-safe payload (ciro'suz) yazılır: dashboard registry_latest'i
+    # client-side okur (Seviye A login yalnız arayüz kilidi) → ciro tarayıcıya sızmamalı.
+    # Tam kütük (ciro'lu) yalnız yerel data/product_registry.json'da kalır.
+    save_to_firestore(public)
 
 
 if __name__ == "__main__":
