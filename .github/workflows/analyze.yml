@@ -95,6 +95,15 @@ jobs:
           HB_PASSWORD:    ${{ secrets.HB_PASSWORD }}
           HB_USER_AGENT:  ${{ secrets.HB_USER_AGENT }}
 
+      # Koçtaş (Mirakl): offers+orders → koctas_sales.json. Eşleşme BARKOD (EAN) ile (shop_sku bizim değil).
+      - name: Sync Koçtaş (own store)
+        run: python backend/koctas_sync.py
+        continue-on-error: true
+        env:
+          KOCTAS_API_KEY:  ${{ secrets.KOCTAS_API_KEY }}
+          KOCTAS_USERNAME: ${{ secrets.KOCTAS_USERNAME }}
+          KOCTAS_PASSWORD: ${{ secrets.KOCTAS_PASSWORD }}
+
       - name: Run BCG analysis engine
         run: python backend/analyzer.py
         env:
@@ -125,12 +134,13 @@ jobs:
           rm -f frontend/public/data/shopify_sales.json
           rm -f frontend/public/data/n11_sales.json
           rm -f frontend/public/data/hb_sales.json
+          rm -f frontend/public/data/koctas_sales.json
           rm -f frontend/public/data/product_registry.json
           rm -f frontend/public/data/image_hashes.json
           rm -f frontend/public/data/image_embeddings.json
           rm -f frontend/public/data/competitor_snapshots.json
           # GÜVENLİK GARANTI: hiçbir satış/ciro dosyası public olmayacak
-          for f in trendyol_sales shopify_sales n11_sales hb_sales product_registry; do
+          for f in trendyol_sales shopify_sales n11_sales hb_sales koctas_sales product_registry; do
             if [ -f "frontend/public/data/$f.json" ]; then
               echo "CRITICAL: $f.json public/data'ya sızdı!" && exit 1
             fi

@@ -106,6 +106,21 @@ def _parse_hb(body: str) -> dict:
             out["hb_list"] = max(prices) if max(prices) > min(prices) else None
     return out
 
+def _parse_koctas(body: str) -> dict:
+    """Koçtaş: 'Sepette X' (müşterinin ödeyeceği, ~%10 platform indirimi) varsa o; yoksa gösterilen
+    ana fiyat. Taksit tutarı küçük → en yüksek fiyat = liste/ana, Sepette = indirimli."""
+    head = body.split("Taksit Seçenekleri")[0].split("Ürün Açıklaması")[0][:6000]
+    out = {"koctas": None, "koctas_list": None}
+    m = re.search(r"Sepette\s+" + _PRICE_RE.pattern, head)   # "Sepette 15.443,91" ('Sepette %10' değil)
+    prices = _all_prices(head)
+    main = max(prices) if prices else None
+    if m:
+        out["koctas"] = _to_float(m.group(1))
+        out["koctas_list"] = main
+    elif main:
+        out["koctas"] = main                                 # Sepette yok → gösterilen fiyat
+    return out
+
 
 # ── async sayfa okuyucular ─────────────────────────────────────────────────────
 async def _fetch_n11(page) -> dict:
@@ -113,6 +128,9 @@ async def _fetch_n11(page) -> dict:
 
 async def _fetch_hb(page) -> dict:
     return _parse_hb(await page.inner_text("body"))
+
+async def _fetch_koctas(page) -> dict:
+    return _parse_koctas(await page.inner_text("body"))
 
 async def _fetch_ty(page) -> dict:
     state = await page.evaluate("() => window.__PRODUCT_DETAIL_APP_INITIAL_STATE__ || null")
@@ -138,6 +156,9 @@ def extract_ty(page) -> dict:
 def extract_hb(page) -> dict:
     return _parse_hb(page.inner_text("body"))
 
+def extract_koctas(page) -> dict:
+    return _parse_koctas(page.inner_text("body"))
+
 
 def load_targets(limit: int | None = None) -> list[dict]:
     doc = json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -159,11 +180,14 @@ def load_targets(limit: int | None = None) -> list[dict]:
         n11_url = (plats.get("n11") or {}).get("url", "")
         ty_url  = (plats.get("trendyol") or {}).get("url", "")
         hb_url  = (plats.get("hb") or {}).get("url", "")
+        ko_url  = (plats.get("koctas") or {}).get("url", "")
         n11_url = n11_url if "/urun/" in n11_url else ""
         ty_url  = ty_url if ("/roomart/" in ty_url or "-p-" in ty_url) else ""
         hb_url  = hb_url if ("hepsiburada.com" in hb_url and "-p-" in hb_url) else ""
-        if n11_url or ty_url or hb_url:
-            targets.append({"sc": sc, "name": e.get("name", ""), "n11": n11_url, "ty": ty_url, "hb": hb_url})
+        ko_url  = ko_url if ("koctas.com.tr" in ko_url and "/p/" in ko_url) else ""
+        if n11_url or ty_url or hb_url or ko_url:
+            targets.append({"sc": sc, "name": e.get("name", ""),
+                            "n11": n11_url, "ty": ty_url, "hb": hb_url, "koctas": ko_url})
     if limit:
         targets = targets[:limit]
     return targets
@@ -175,10 +199,12 @@ def _save(result: dict) -> None:
     n11_ok = sum(1 for r in result.values() if r.get("n11"))
     ty_ok  = sum(1 for r in result.values() if r.get("trendyol"))
     hb_ok  = sum(1 for r in result.values() if r.get("hb"))
+    ko_ok  = sum(1 for r in result.values() if r.get("koctas"))
     out = {"metadata": {"scraped_at": datetime.now(timezone.utc).isoformat(),
-                        "count": len(result), "n11_filled": n11_ok, "trendyol_filled": ty_ok, "hb_filled": hb_ok,
-                        "platforms": ["n11", "trendyol", "hb"],
-                        "note": "Müşterinin ödeyeceği SON fiyat: n11 sepette / TY kampanya / HB sepete özel. Gerçek Chrome scrape."},
+                        "count": len(result), "n11_filled": n11_ok, "trendyol_filled": ty_ok,
+                        "hb_filled": hb_ok, "koctas_filled": ko_ok,
+                        "platforms": ["n11", "trendyol", "hb", "koctas"],
+                        "note": "Müşterinin ödeyeceği SON fiyat: n11 sepette / TY kampanya / HB sepete özel / Koçtaş sepette. Gerçek Chrome scrape."},
            "by_stock_code": result}
     OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -211,7 +237,8 @@ async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_
                 rec["scraped_at"] = datetime.now(timezone.utc).isoformat()
                 for plat, url, fn, key in (("n11", t["n11"], _fetch_n11, "n11"),
                                            ("trendyol", t["ty"], _fetch_ty, "trendyol"),
-                                           ("hb", t.get("hb", ""), _fetch_hb, "hb")):
+                                           ("hb", t.get("hb", ""), _fetch_hb, "hb"),
+                                           ("koctas", t.get("koctas", ""), _fetch_koctas, "koctas")):
                     if not url or rec.get(key):   # URL yok VEYA bu platform zaten dolu → atla
                         continue
                     try:
@@ -230,8 +257,8 @@ async def _run_async(targets: list[dict], concurrency: int, verbose: bool, wait_
                 if done[0] % SAVE_EVERY == 0:
                     _save(result)   # ara kayıt → internet/süreç kesilirse ilerleme kalır
                 if verbose:
-                    logger.info(f"[{already + done[0]}/{total}] {t['sc']} {t['name'][:22]}: "
-                                f"n11={rec.get('n11')} · TY={rec.get('trendyol')} · HB={rec.get('hb')}")
+                    logger.info(f"[{already + done[0]}/{total}] {t['sc']} {t['name'][:18]}: n11={rec.get('n11')} "
+                                f"TY={rec.get('trendyol')} HB={rec.get('hb')} KO={rec.get('koctas')}")
 
         await asyncio.gather(*[one(t) for t in targets])
         await browser.close()
@@ -255,7 +282,8 @@ def run(limit: int | None = None, verbose: bool = False, concurrency: int = 1,
         r = existing.get(t["sc"], {})
         return ((bool(t["n11"]) and not r.get("n11")) or
                 (bool(t["ty"]) and not r.get("trendyol")) or
-                (bool(t.get("hb")) and not r.get("hb")))
+                (bool(t.get("hb")) and not r.get("hb")) or
+                (bool(t.get("koctas")) and not r.get("koctas")))
     todo = [t for t in targets if _needs(t)]
     result = dict(existing)
     logger.info(f"Toplam {len(targets)} · tamamlanan {len(targets)-len(todo)} · KALAN {len(todo)} "
@@ -270,7 +298,8 @@ def run(limit: int | None = None, verbose: bool = False, concurrency: int = 1,
     n11_ok = sum(1 for r in result.values() if r.get("n11"))
     ty_ok  = sum(1 for r in result.values() if r.get("trendyol"))
     hb_ok  = sum(1 for r in result.values() if r.get("hb"))
-    logger.info(f"Kaydedildi: {OUT_FILE} ({len(result)} ürün · n11 {n11_ok} · TY {ty_ok} · HB {hb_ok})")
+    ko_ok  = sum(1 for r in result.values() if r.get("koctas"))
+    logger.info(f"Kaydedildi: {OUT_FILE} ({len(result)} ürün · n11 {n11_ok} · TY {ty_ok} · HB {hb_ok} · KO {ko_ok})")
 
 
 if __name__ == "__main__":
