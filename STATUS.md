@@ -6,35 +6,36 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-07-07
-- **Güncelleyen:** Code (fiyat/URL düzeltme arkı — Adım 1-4 tamam, hepsi main'de + deploy edildi)
-- **Aktif branch:** `main` (son analyze commit `b232faf`; Adım 4 = TY kampanya işareti PR bekliyor).
+- **Tarih:** 2026-07-08
+- **Güncelleyen:** Code (SON FİYAT scraper 5 platform + HB + Koçtaş tam entegrasyon — hepsi main'de + deploy)
+- **Aktif branch:** `main` (son commit `4af6c32`).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
 >
-> **✅ FİYAT/URL DÜZELTME ARKI (2026-07-07) — 4 adım, hepsi CANLI:**
-> 1. **Günlük çok-platform sync** (PR #33 merged): `analyze.yml`'e Shopify·Judge.me·n11·HB·registry adımları
->    (continue-on-error). 11 secret GitHub'da (`gh`=`~/.local/bin/gh`, brew yok). registry Firestore'a YAZMAZ
->    (INDEX_ENTRIES limiti) → `useData` doğrudan public JSON okur. `platform_reviews.json` committable
->    (n11 yorumları CI arası korunur). Detay: [[daily-platform-sync]].
-> 2. **n11/HB ürün URL'leri** (PR #35 merged): n11 URL id = **`groupId`** (n11ProductId DEĞİL); HB =
->    `/{slug}-p-{hepsiburadaSku}`. Scrape gerekmez, API'den; her ikisi curl'e 403 → tarayıcı teyidi.
->    Kullanıcı doğruladı. Detay: [[platform-product-url-formats]].
-> 3. **Shopify varyant URL** (PR #36 merged): `/products/{handle}?variant={variant_id}` → çok-varyantlı
->    ürünlerde doğru beden açılır (kod 2935 = 50cm Kumtaşı 5913₺; eşleşme+fiyat baştan doğruydu, URL varyant seçmiyordu).
-> 4. **TY kampanya fiyatı** (PR bekliyor): satıcı API kampanya fiyatını (5831) VERMEZ — platform indirimi
->    (`has_campaign=True` ama sale=list). Analyzer zaten scrape'i tercih ediyor (`scraper_fiyat or api_sale`,
->    analyzer.py:696) → **28 üründe kampanya yakalanmış (B)**. **447 üründe liste gösteriliyor → ProductTable'da
->    🏷️ uyarısı (A)**. Scrape haftalık + ~187 ürün sınırı (rpa_projesi Mac scraper).
+> **✅ MÜŞTERİNİN ÖDEYECEĞİ SON FİYAT — 5 PLATFORM CANLI (2026-07-08, PR #38/#39):**
+> Satıcı API'leri platform kampanya/sepet fiyatını VERMEZ → `own_price_scraper.py` (Playwright, **gerçek
+> Chrome `channel="chrome"`** — Akamai'yi aşar) ürün sayfasından çeker: **n11 sepette · TY kampanya · HB
+> sepete özel · Koçtaş sepette**; RS API'den doğru. **SIRALI (concurrency=1) + kibar aralık + devam-edebilir**
+> (eşzamanlı/hızlı istek IP throttle'lar — kanıtlandı; ara-kayıt/15, yeniden başta platform-bazlı dolu-atla).
+> Backfill: n11 449·TY 468·HB 328·KO 389 / 468. `scrape.yml` haftalık Mac adımı günceller. Wiring:
+> registry+analyzer own_final'ı API'ye tercih eder (`price_final` bayrağı → ProductTable ✓). Detay: [[own-final-prices]].
+>
+> **✅ KOÇTAŞ = 5. PLATFORM (PR #39):** Koçtaş=**Mirakl** (`koctas.mirakl.net`, API Key `Authorization`)
+> → 437 aktif ürün, günlük `koctas_sync`. **`shop_sku` bizim stok kodu DEĞİL → BARKOD(EAN) köprüsü %93
+> (408/437)**. `KO` (kırmızı) fiyat kolonu; URL `/{slug}/p/{product_sku}?shop=2262`. Sepette fiyat scrape.
+> Secrets: `KOCTAS_API_KEY/USERNAME/PASSWORD`. Detay: [[koctas-integration]].
+>
+> **✅ FİYAT/URL DÜZELTME ARKI (2026-07-07, PR #33-#37 merged):** günlük 4-platform sync (analyze.yml, 11
+> secret, registry Firestore'a yazmaz) · n11 URL=**groupId** · HB=`/{slug}-p-{hepsiburadaSku}` · Shopify
+> `?variant={id}` · TY kampanya 🏷️. Detay: [[daily-platform-sync]] · [[platform-product-url-formats]].
 >
 > **⏭️ AÇIK İŞLER:**
-> - **Private repo (ASKIDA):** Free planı → private, Pages'i kapatır (dashboard 404). Amaç: kaynak kodu gizlemek.
->   Yol 1: GitHub Pro ($4/ay, sıfır migration). Yol 2: Cloudflare Pages/Netlify (ücretsiz, dashboard URL değişir). Yol 3: public kal.
-> - **TY kampanya kapsamı:** daha çok üründe gerçek fiyat için haftalık scrape'i genişlet (Mac; bulut 403'ler).
+> - **HB/KO son-fiyat kapsamı:** HB 328, KO 389 (bazı üründe URL yok/scrape başarısız); haftalık scrape doldurur.
+> - **Private repo (ASKIDA):** Free → private Pages'i kapatır; yerel-server göçüyle çözülecek. [[repo-visibility-decision]].
 > - **CLEAR** (PR #32): CSV doldur → merge.
 >
 > **🟡 Bekleyen (güvenlik):** `TRENDYOL_TOKEN` rotasyonu; `git remote` plaintext PAT; Firestore rules deploy.
-> `.env.*.local` gitignored (HB/n11/Shopify/Judge.me creds).
+> `.env.*.local` gitignored (HB/n11/Shopify/Judge.me/**Koçtaş** creds). gh CLI `~/.local/bin/gh` (brew yok).
 
 > **✅ MERGE TAMAM (2026-06-03):**
 > - **PR #1** (analyzer mekanik temizlik: non-furniture filtre + Kahve Köşesi + momentum-only

@@ -416,4 +416,16 @@
   **Private repo (askıda):** Free plan private yapınca Pages kapanır (dashboard 404); amaç kaynak-kodu-gizleme ise Pro ($4/ay)
   ya da Cloudflare/Netlify (ücretsiz, URL değişir) gerekir. [[platform-product-url-formats]] · [[daily-platform-sync]].
 
+- **2026-07-08 — [Son fiyat scraper + Koçtaş 5. platform]** Dashboard **müşterinin ödeyeceği son fiyatı**
+  gösterir (liste değil). **Karar (kaynak):** satıcı API'leri platform kampanya/sepet fiyatını VERMEZ
+  (kanıtlandı: HB `pricings` boş, n11/TY/Koçtaş kampanya alanı yok/expired) → yalnız ürün-sayfası scrape.
+  `own_price_scraper.py` (Playwright) çeker: n11 sepette · TY kampanya (gömülü state) · HB sepete özel ·
+  Koçtaş sepette; RS API'den doğru. **Karar (anti-bot):** HB+Koçtaş Akamai → chromium headless 403;
+  **`channel="chrome"` (gerçek Chrome) aşar** (headless bile). Eşzamanlı/hızlı istek IP throttle'lar
+  (kanıtlandı) → **SIRALI + kibar aralık + devam-edebilir** (ara-kayıt/15, platform-bazlı dolu-atla).
+  Mac haftalık (`scrape.yml`). Wiring: registry+analyzer own_final'ı API'ye tercih eder (`price_final`).
+  **Karar (Koçtaş=Mirakl):** `koctas.mirakl.net` API Key auth; **`shop_sku` bizim stok kodu DEĞİL →
+  eşleşme BARKOD(EAN) köprüsüyle %93 (408/437)**; günlük `koctas_sync`, `KO` kolonu. [[own-final-prices]] ·
+  [[koctas-integration]].
+
 <!-- Yeni kararları buraya ekle -->
