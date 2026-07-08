@@ -205,11 +205,39 @@ def load_n11() -> dict:
     return out
 
 
+def load_koctas() -> dict:
+    """Koçtaş — koctas_sales.json. shop_sku bizim stok kodu DEĞİL → BARKOD (EAN) ile köprülenir
+    (build_registry bc_to_sc köprüsü EAN'ı bizim stok kodumuza bağlar, %93 örtüşme)."""
+    doc = _load("koctas_sales.json")
+    if not doc:
+        return {}
+    products = doc.get("products", {})
+    sales    = doc.get("by_product", {})
+    out = {}
+    for key0, v in products.items():
+        bc = _norm(v.get("barcode"))          # EAN — birincil eşleşme anahtarı
+        if not bc:
+            continue
+        s = sales.get(key0) or sales.get(bc) or {}
+        out[bc] = {
+            "stock_code": "",                 # Koçtaş shop_sku bizim değil → boş; barkodla köprü
+            "barcode":    bc,
+            "name":       v.get("name") or "", "category": v.get("category") or "",
+            "price":      v.get("price") or 0.0, "list_price": v.get("list_price"),
+            "url":        v.get("url") or "", "on_sale": True, "image": "",
+            "units_90d":  s.get("net_units", 0), "amount_90d": round(s.get("net_amount", 0.0)),
+            "momentum":   s.get("sales_momentum"),
+        }
+    logger.info(f"Koçtaş: {len(out)} ürün.")
+    return out
+
+
 PLATFORM_LOADERS = {
     "trendyol": load_trendyol,
     "shopify":  load_shopify,
     "hb":       load_hb,
     "n11":      load_n11,
+    "koctas":   load_koctas,
 }
 
 
@@ -278,11 +306,11 @@ def build_registry() -> dict:
         e["platform_count"] = len(present)
         # Son fiyat scrape'i API fiyatını EZER (n11 sepette, TY kampanya) → müşterinin ödeyeceği.
         fin = final_by_sc.get(sc, {})
-        for _plat, _key in (("n11", "n11"), ("trendyol", "trendyol")):
+        for _plat, _key in (("n11", "n11"), ("trendyol", "trendyol"), ("hb", "hb"), ("koctas", "koctas")):
             _fp = fin.get(_key)
             if _fp and _plat in e["platforms"]:
                 e["platforms"][_plat]["price"] = _fp
-                e["platforms"][_plat]["price_final"] = True   # sepette/kampanya (son fiyat)
+                e["platforms"][_plat]["price_final"] = True   # sepette/kampanya/sepete özel (son fiyat)
         prices = [p["price"] for p in e["platforms"].values() if p["price"]]
         e["price_min"] = min(prices) if prices else None
         e["price_max"] = max(prices) if prices else None

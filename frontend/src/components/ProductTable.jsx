@@ -13,9 +13,10 @@ const PLAT_META = {
   shopify:  { short: 'RS',  color: '#10B981' },  // roomartstore.com — yeşil
   n11:      { short: 'n11', color: '#8B5CF6' },  // mor
   hb:       { short: 'HB',  color: '#F97316' },  // turuncu
+  koctas:   { short: 'KO',  color: '#DC2626' },  // Koçtaş — kırmızı
 }
 // Fiyat kolonunda Trendyol AYRI (TY Fiyat) → burada sadece diğerleri.
-const OTHER_PLATS = ['shopify', 'n11', 'hb']
+const OTHER_PLATS = ['shopify', 'n11', 'hb', 'koctas']
 
 // Kompakt çok-platform FİYAT hücresi. Tam fiyat; en ucuz (TY dahil) altın vurgulu.
 function PlatformPrices({ p }) {

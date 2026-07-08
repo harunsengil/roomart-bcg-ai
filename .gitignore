@@ -20,14 +20,17 @@ backend/.env.hb.local
 backend/.env.n11.local
 backend/.env.shopify.local
 backend/.env.judgeme.local
+backend/.env.koctas.local
 
 # Platform satış verileri (gelir = rekabetçi istihbarat — private kalır)
 data/hb_sales.json
 data/n11_sales.json
 data/shopify_sales.json
+data/koctas_sales.json
 frontend/public/data/hb_sales.json
 frontend/public/data/n11_sales.json
 frontend/public/data/shopify_sales.json
+frontend/public/data/koctas_sales.json
 
 # CLEAR karar katmanı — MANUEL maliyet/marj girdisi (birim maliyet = en hassas veri).
 # Ham CSV'ler ve türetilmiş marj içeren çıktı ASLA public repo'ya gitmez;
