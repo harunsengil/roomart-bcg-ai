@@ -278,11 +278,11 @@ def build_registry() -> dict:
         e["platform_count"] = len(present)
         # Son fiyat scrape'i API fiyatını EZER (n11 sepette, TY kampanya) → müşterinin ödeyeceği.
         fin = final_by_sc.get(sc, {})
-        for _plat, _key in (("n11", "n11"), ("trendyol", "trendyol")):
+        for _plat, _key in (("n11", "n11"), ("trendyol", "trendyol"), ("hb", "hb")):
             _fp = fin.get(_key)
             if _fp and _plat in e["platforms"]:
                 e["platforms"][_plat]["price"] = _fp
-                e["platforms"][_plat]["price_final"] = True   # sepette/kampanya (son fiyat)
+                e["platforms"][_plat]["price_final"] = True   # sepette/kampanya/sepete özel (son fiyat)
         prices = [p["price"] for p in e["platforms"].values() if p["price"]]
         e["price_min"] = min(prices) if prices else None
         e["price_max"] = max(prices) if prices else None
