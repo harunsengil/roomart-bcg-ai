@@ -6,6 +6,10 @@ __pycache__/
 .DS_Store
 *.egg-info/
 
+# Sunum kaynak klasörü (yerel staging) — servis edilen kopya frontend/public/sunum.html olarak
+# commit'lenir; 1.5 MB'lık ikizi tekrar commit'lememek için kaynak klasör ignore edilir.
+Presentation/
+
 # RoomArt gerçek satış/ciro agregatı — PUBLIC repo'ya commit'lenmemeli (rakip istihbaratı).
 # Sadece yerel + Firestore'a (private) yazılmalı. (Her iki yol da: data + frontend kopyası.)
 data/trendyol_sales.json
