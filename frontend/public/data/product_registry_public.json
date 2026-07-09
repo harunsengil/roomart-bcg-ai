@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-08T09:46:09.298483+00:00",
+    "generated_at": "2026-07-09T09:02:52.958933+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -804,30 +804,6 @@
       "price_spread_pct": 8.5,
       "price_conflict": true
     },
-    "2987": {
-      "stock_code": "2987",
-      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "trendyol": {
-          "price": 9699.9,
-          "list_price": 9699.9,
-          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 9699.9,
-      "price_max": 9699.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "2986": {
       "stock_code": "2986",
       "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
@@ -875,6 +851,30 @@
       "price_max": 10499.9,
       "price_spread_pct": 15.1,
       "price_conflict": true
+    },
+    "2987": {
+      "stock_code": "2987",
+      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 9699.9,
+          "list_price": 9699.9,
+          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9699.9,
+      "price_max": 9699.9,
+      "price_spread_pct": null,
+      "price_conflict": false
     },
     "2984": {
       "stock_code": "2984",
