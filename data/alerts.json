@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-11T07:25:56.028974+00:00",
+    "last_updated": "2026-07-12T07:42:44.741322+00:00",
     "total_alerts": 9
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kile büyüme momentumu yüksek (74/100).",
       "product_id": "1143914080",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-2",
@@ -20,16 +20,16 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (74/100).",
       "product_id": "1156641710",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Sehpa — yükselen fırsat",
-      "message": "Modena C Sehpa Koltuk Sehpası, Yan Sehpa, Zigon Sehpa, Servi büyüme momentumu yüksek (70/100).",
-      "product_id": "863354754",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "message": "Plato Orta Sehpa Suntalam 110 cm büyüme momentumu yüksek (70/100).",
+      "product_id": "866227965",
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-4",
@@ -38,25 +38,25 @@
       "title": "Mutfak Adası — lider STAR",
       "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 76.",
       "product_id": "877650214",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
       "title": "Kahve Köşesi — lider STAR",
-      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 75, büyüme 92.",
+      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 78, büyüme 92.",
       "product_id": "885510344",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-6",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "971265574",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "title": "Sehpa — yüksek iade riski",
+      "message": "Helsinki Orta Sehpa Suntalam 110 cm iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "866194458",
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-7",
@@ -64,8 +64,8 @@
       "severity": "HIGH",
       "title": "Sehpa — yüksek iade riski",
       "message": "Helsinki Orta Sehpa Suntalam 110 cm iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "866194458",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "product_id": "866321554",
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-8",
@@ -74,7 +74,7 @@
       "title": "Kahve Köşesi — kârsız hacim uyarısı",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "1156645277",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
       "message": "Çamaşır-kurutma Makinesi Dolabı+ Üst Dolabı, Banyo Dolabı 65 hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "897490657",
-      "timestamp": "2026-07-11T07:25:56.010367+00:00"
+      "timestamp": "2026-07-12T07:42:44.718614+00:00"
     }
   ]
 }
