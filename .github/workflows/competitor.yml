@@ -39,7 +39,11 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: update competitor snapshots [skip ci]"
-            git push
+            # 1 saatlik scrape sırasında analyze.yml main'e push edebilir → non-fast-forward.
+            for i in 1 2 3; do
+              git push && break
+              git pull --rebase origin main || exit 1
+            done
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 

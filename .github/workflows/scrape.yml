@@ -59,7 +59,12 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: update scraped data [skip ci]"
-            git push
+            # analyze.yml aynı anda main'e push edebilir → non-fast-forward.
+            # Scrape 40+ dk sürdüğü için yarış kaçınılmaz: rebase edip yeniden dene.
+            for i in 1 2 3; do
+              git push && break
+              git pull --rebase origin main || exit 1
+            done
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
