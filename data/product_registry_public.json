@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-13T10:51:26.229290+00:00",
+    "generated_at": "2026-07-13T11:10:37.265225+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -15875,11 +15875,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17324.9,
+          "price": 13859.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007X2MBY",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14340.99,
@@ -15911,9 +15911,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14340.99,
-      "price_max": 17324.9,
-      "price_spread_pct": 20.8,
+      "price_min": 13859.92,
+      "price_max": 15443.91,
+      "price_spread_pct": 11.4,
       "price_conflict": true
     },
     "2570": {
@@ -15989,11 +15989,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17324.9,
+          "price": 13859.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007X3P2C",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14340.99,
@@ -16020,9 +16020,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14340.99,
-      "price_max": 17324.9,
-      "price_spread_pct": 20.8,
+      "price_min": 13859.92,
+      "price_max": 16499.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2559": {
@@ -16045,11 +16045,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16999.9,
+          "price": 13599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV0000816CUC",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15623.91,
@@ -16081,9 +16081,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 15164.91,
-      "price_max": 16999.9,
-      "price_spread_pct": 12.1,
+      "price_min": 13599.92,
+      "price_max": 16199.9,
+      "price_spread_pct": 19.1,
       "price_conflict": true
     },
     "2558": {
@@ -16154,11 +16154,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16999.9,
+          "price": 13599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-120-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007X37TG",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15623.91,
@@ -16185,9 +16185,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 15164.91,
-      "price_max": 16999.9,
-      "price_spread_pct": 12.1,
+      "price_min": 13599.92,
+      "price_max": 16199.9,
+      "price_spread_pct": 19.1,
       "price_conflict": true
     },
     "2548": {
@@ -16306,11 +16306,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15539.9,
+          "price": 12431.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-90-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00006FADDO",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 13949.91,
@@ -16337,9 +16337,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13571.91,
-      "price_max": 15539.9,
-      "price_spread_pct": 14.5,
+      "price_min": 12431.92,
+      "price_max": 14999.9,
+      "price_spread_pct": 20.7,
       "price_conflict": true
     },
     "2569": {
@@ -16362,11 +16362,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16959.9,
+          "price": 13567.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-105-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007WLLIB",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14036.26,
@@ -16393,9 +16393,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14036.26,
-      "price_max": 16959.9,
-      "price_spread_pct": 20.8,
+      "price_min": 13567.92,
+      "price_max": 16149.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2557": {
@@ -16418,11 +16418,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16649.9,
+          "price": 13319.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-105-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007WJT1A",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15263.91,
@@ -16449,9 +16449,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14673.5,
-      "price_max": 16649.9,
-      "price_spread_pct": 13.5,
+      "price_min": 13319.92,
+      "price_max": 15263.91,
+      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "2547": {
@@ -16570,11 +16570,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16959.9,
+          "price": 13567.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-105-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007WLL1I",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14036.26,
@@ -16601,9 +16601,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14036.26,
-      "price_max": 16959.9,
-      "price_spread_pct": 20.8,
+      "price_min": 13567.92,
+      "price_max": 16149.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2549": {
@@ -16626,11 +16626,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16649.9,
+          "price": 13319.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-105-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007WJSSL",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15263.91,
@@ -16657,9 +16657,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14307.95,
-      "price_max": 16649.9,
-      "price_spread_pct": 16.4,
+      "price_min": 13319.92,
+      "price_max": 15263.91,
+      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "2574": {
@@ -16938,11 +16938,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15539.9,
+          "price": 12431.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-90-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00006FA6CR",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14251.41,
@@ -16969,9 +16969,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13855.41,
-      "price_max": 15539.9,
-      "price_spread_pct": 12.2,
+      "price_min": 12431.92,
+      "price_max": 14259.0,
+      "price_spread_pct": 14.7,
       "price_conflict": true
     },
     "2573": {
@@ -16994,11 +16994,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15539.9,
+          "price": 12431.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-mdf-90-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV00007X9DTV",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14251.41,
@@ -17025,9 +17025,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13829.58,
-      "price_max": 15539.9,
-      "price_spread_pct": 12.4,
+      "price_min": 12431.92,
+      "price_max": 14251.41,
+      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "2546": {
@@ -20535,11 +20535,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 20239.9,
+          "price": 16191.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-beyaz-mdf-100-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-2-adet-boy-dolabi-p-HBCV000066ZFY8",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 18562.41,
@@ -20571,9 +20571,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 17765.0,
-      "price_max": 20239.9,
-      "price_spread_pct": 13.9,
+      "price_min": 16191.92,
+      "price_max": 18562.41,
+      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "2395": {
@@ -20596,11 +20596,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 19699.9,
+          "price": 15759.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-beyaz-mdf-80-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-2-adet-boy-dolabi-p-HBCV000066ZZ6W",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 17999.91,
@@ -20627,9 +20627,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 17558.91,
-      "price_max": 19699.9,
-      "price_spread_pct": 12.2,
+      "price_min": 15759.92,
+      "price_max": 18759.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2380": {
@@ -20700,11 +20700,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17219.9,
+          "price": 13775.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/oval-lavabolu-mat-beyaz-mdf-100-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV000066ZBYV",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15794.91,
@@ -20731,9 +20731,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 15349.41,
-      "price_max": 17219.9,
-      "price_spread_pct": 12.2,
+      "price_min": 13775.92,
+      "price_max": 16399.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2394": {
@@ -20756,11 +20756,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16694.9,
+          "price": 13355.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-beyaz-mdf-80-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV000066ZYQ1",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15299.91,
@@ -20787,9 +20787,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14573.14,
-      "price_max": 16694.9,
-      "price_spread_pct": 14.6,
+      "price_min": 13355.92,
+      "price_max": 15899.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2381": {
@@ -21403,11 +21403,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16274.9,
+          "price": 13019.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mdf-95-cm-lotus-cekmeceli-banyo-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-p-HBCV000065UQLF",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 9829.02,
@@ -21435,8 +21435,8 @@
       ],
       "platform_count": 5,
       "price_min": 9829.02,
-      "price_max": 16274.9,
-      "price_spread_pct": 65.6,
+      "price_max": 15499.9,
+      "price_spread_pct": 57.7,
       "price_conflict": true
     },
     "2475": {
@@ -21459,11 +21459,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16274.9,
+          "price": 13019.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mdf-95-cm-lotus-cekmeceli-banyo-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-p-HBCV000065UQ4X",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 13466.12,
@@ -21482,9 +21482,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13466.12,
-      "price_max": 16274.9,
-      "price_spread_pct": 20.9,
+      "price_min": 13019.92,
+      "price_max": 15499.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2487": {
@@ -23167,11 +23167,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16379.9,
+          "price": 13103.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-beyaz-mdf-80-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV0000645C66",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15029.91,
@@ -23198,9 +23198,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14602.41,
-      "price_max": 16379.9,
-      "price_spread_pct": 12.2,
+      "price_min": 13103.92,
+      "price_max": 15599.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2451": {
@@ -23223,11 +23223,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 19999.9,
+          "price": 15999.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-beyaz-mdf-100-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-2-adet-boy-dolabi-p-HBCV0000646DHQ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 18296.91,
@@ -23254,9 +23254,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 17783.91,
-      "price_max": 19999.9,
-      "price_spread_pct": 12.5,
+      "price_min": 15999.92,
+      "price_max": 18999.9,
+      "price_spread_pct": 18.7,
       "price_conflict": true
     },
     "2450": {
@@ -23279,11 +23279,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 16999.9,
+          "price": 13599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-beyaz-mdf-100-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-boy-dolabi-p-HBCV0000646AX9",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15551.91,
@@ -23310,9 +23310,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 15115.41,
-      "price_max": 16999.9,
-      "price_spread_pct": 12.5,
+      "price_min": 13599.92,
+      "price_max": 16149.9,
+      "price_spread_pct": 18.7,
       "price_conflict": true
     },
     "2447": {
@@ -23335,11 +23335,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 19399.9,
+          "price": 15519.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-beyaz-mdf-80-cm-cekmeceli-banyo-dolabi-aynali-ust-dolabi-2-adet-boy-dolabi-p-HBCV0000645CRN",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 17788.41,
@@ -23366,9 +23366,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 17288.91,
-      "price_max": 19399.9,
-      "price_spread_pct": 12.2,
+      "price_min": 15519.92,
+      "price_max": 18469.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2449": {
@@ -23617,11 +23617,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 18049.9,
+          "price": 14439.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-banyo-dolabi-mat-beyaz-mdf-60-cm-cekmeceli-banyo-dolabi-aynali-ust-dolap-2-adet-boy-dolap-p-HBCV000064HCDT",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 16546.41,
@@ -23648,9 +23648,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 16082.91,
-      "price_max": 18049.9,
-      "price_spread_pct": 12.2,
+      "price_min": 14439.92,
+      "price_max": 17179.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2401": {
@@ -29915,11 +29915,11 @@
           "price_final": true
         },
         "hb": {
-          "price": 29399.9,
+          "price": 23519.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-kurutma-makinesi-dolabi-ust-dolabi-mat-beyaz-240x134-p-HBCV00003XCT3I",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 24338.1,
@@ -29945,9 +29945,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 24338.1,
-      "price_max": 29399.9,
-      "price_spread_pct": 20.8,
+      "price_min": 23519.92,
+      "price_max": 27999.0,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "1938": {
@@ -30059,11 +30059,11 @@
           "price_final": true
         },
         "hb": {
-          "price": 26779.9,
+          "price": 21423.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-kurutma-makinesi-dolabi-ust-dolabi-2-li-mat-beyaz-p-HBCV00003XDWXH",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 22165.67,
@@ -30089,9 +30089,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 22165.67,
-      "price_max": 26779.9,
-      "price_spread_pct": 20.8,
+      "price_min": 21423.92,
+      "price_max": 25499.0,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "1934": {
@@ -30147,11 +30147,11 @@
           "price_final": true
         },
         "hb": {
-          "price": 19999.9,
+          "price": 15999.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-ve-kurutma-makinesi-dolabi-takimi-mat-beyaz-p-HBCV00003XU7JJ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 16513.42,
@@ -30177,9 +30177,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 16513.42,
-      "price_max": 19999.9,
-      "price_spread_pct": 21.1,
+      "price_min": 15999.92,
+      "price_max": 18999.0,
+      "price_spread_pct": 18.7,
       "price_conflict": true
     },
     "1960": {
@@ -31647,11 +31647,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15749.9,
+          "price": 12599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-atlantik-beyaz-mat-mdf-100-cm-banyo-alt-dolap-aynali-ust-dolap-boy-dolap-p-HBCV000037Z67M",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14444.91,
@@ -31678,9 +31678,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13732.85,
-      "price_max": 15749.9,
-      "price_spread_pct": 14.7,
+      "price_min": 12599.92,
+      "price_max": 14444.91,
+      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "1898": {
@@ -32252,11 +32252,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15749.9,
+          "price": 12599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-atlantik-antrasit-mat-mdf-100-cm-alt-dolap-aynali-ust-dolap-boy-dolap-p-HBCV000037R17X",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 13033.6,
@@ -32283,9 +32283,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13033.6,
-      "price_max": 15749.9,
-      "price_spread_pct": 20.8,
+      "price_min": 12599.92,
+      "price_max": 14039.91,
+      "price_spread_pct": 11.4,
       "price_conflict": true
     },
     "1905": {
@@ -38688,11 +38688,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 15749.9,
+          "price": 12599.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi-p-HBV00000GWUM7",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 14444.91,
@@ -38728,9 +38728,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 14039.91,
-      "price_max": 15749.9,
-      "price_spread_pct": 12.2,
+      "price_min": 12599.92,
+      "price_max": 14999.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "1326": {
