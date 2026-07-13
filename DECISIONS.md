@@ -428,4 +428,17 @@
   eşleşme BARKOD(EAN) köprüsüyle %93 (408/437)**; günlük `koctas_sync`, `KO` kolonu. [[own-final-prices]] ·
   [[koctas-integration]].
 
+## 2026-07-13 — CI: uzun scrape'lerde push yarışı → rebase-retry (Code)
+- **Sorun (canlı):** Haftalık `scrape.yml` (Mac, 40-80 dk) veriyi topladı ama `git push` **non-fast-forward**
+  ile reddedildi (run 29235060020) — scrape sürerken günlük `analyze.yml` main'e commit atmıştı.
+  Toplanan haftalık veri sessizce kayboldu (job fail, sonraki checkout working copy'yi temizler).
+- **Karar:** Uzun süren Mac workflow'larının (`scrape.yml`, `competitor.yml`) commit adımı, push
+  reddedilirse `git pull --rebase origin main` ile **3 kez yeniden dener**. Scrape ve analiz farklı
+  `data/*.json` dosyalarına yazdığı için rebase temiz geçer. Alternatif olan "concurrency group ile
+  serileştirme" REDDEDİLDİ: günlük analizi 80 dk bloke ederdi.
+- **Sonuç:** Yeniden tetiklenen zincir uçtan uca yeşil (Competitor `a8bb6e4` → Data Collection `4486f0b`
+  → Analysis → Deploy). Kayıp veri geri alındı; son fiyat kapsamı TY 468 · n11 449 · KO 389 · HB 356 / 468.
+- **Not (kalıcı):** Kök kırılganlık Mac bağımlılığı (uyku/kapanma/internet koşuyu keser). Nihai çözüm
+  scraper'ın sürekli açık firma sunucusuna taşınması — teslim planında.
+
 <!-- Yeni kararları buraya ekle -->

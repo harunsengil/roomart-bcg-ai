@@ -6,11 +6,21 @@
 ---
 
 ## Son Güncelleme
-- **Tarih:** 2026-07-08
-- **Güncelleyen:** Code (SON FİYAT scraper 5 platform + HB + Koçtaş tam entegrasyon — hepsi main'de + deploy)
-- **Aktif branch:** `main` (son commit `4af6c32`).
+- **Tarih:** 2026-07-13
+- **Güncelleyen:** Code (haftalık veri koşusu tamamlandı + CI push-yarışı düzeltildi)
+- **Aktif branch:** `main` (son commit `4486f0b` — haftalık scrape verisi).
 
 > **▶️ SIRADAKİ OTURUM BURADAN DEVAM ETSİN:**
+>
+> **✅ HAFTALIK KOŞU TAMAM (2026-07-13) + CI PUSH-YARIŞI DÜZELTİLDİ (`d31ffd4`):**
+> Pazartesi otomatik `scrape.yml` (run 29235060020) veri toplamayı BAŞARDI ama **`git push`
+> non-fast-forward ile reddedildi** → 41 dk'lık veri KAYBOLDU. Kök neden: Mac scrape'i 40-80 dk
+> sürerken `analyze.yml` main'e commit atıyor. **Fix:** `scrape.yml` + `competitor.yml` commit adımı
+> artık push başarısız olursa `git pull --rebase origin main` ile 3 kez deniyor.
+> **Yeniden tetiklendi → uçtan uca yeşil:** Competitor (1s23dk, `a8bb6e4`) → Data Collection
+> (16dk, `4486f0b`) → BCG Analysis → Deploy ✓. Toplanan: puan/yorum 186/187 (%99, snapshot 20 gün);
+> Trends 6/6 kategori (429 rate-limit'te retry ile geçti); **son fiyat 468 üründe TY 468 · n11 449 ·
+> KO 389 · HB 356** (devam-edebilir mantık kalan 80'i tamamladı).
 >
 > **✅ MÜŞTERİNİN ÖDEYECEĞİ SON FİYAT — 5 PLATFORM CANLI (2026-07-08, PR #38/#39):**
 > Satıcı API'leri platform kampanya/sepet fiyatını VERMEZ → `own_price_scraper.py` (Playwright, **gerçek
@@ -30,7 +40,10 @@
 > `?variant={id}` · TY kampanya 🏷️. Detay: [[daily-platform-sync]] · [[platform-product-url-formats]].
 >
 > **⏭️ AÇIK İŞLER:**
-> - **HB/KO son-fiyat kapsamı:** HB 328, KO 389 (bazı üründe URL yok/scrape başarısız); haftalık scrape doldurur.
+> - **HB/KO son-fiyat kapsamı:** HB 356, KO 389 / 468 (bazı üründe URL yok/scrape başarısız); haftalık scrape doldurur.
+> - **Mac bağımlılığı (kırılganlık):** haftalık scrape self-hosted Mac runner'da; uyku/kapanma/internet
+>   kesintisi koşuyu yarıda bırakır (veri bozulmaz, tekrar tetiklenince kaldığı yerden devam eder).
+>   Kalıcı çözüm = scraper'ı sürekli açık firma sunucusuna taşımak (aşağıdaki teslim planı).
 > - **Private repo (ASKIDA):** Free → private Pages'i kapatır; yerel-server göçüyle çözülecek. [[repo-visibility-decision]].
 > - **CLEAR** (PR #32): CSV doldur → merge.
 >
