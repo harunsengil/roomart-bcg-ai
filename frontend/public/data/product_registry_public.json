@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-14T07:26:30.549542+00:00",
+    "generated_at": "2026-07-15T07:30:45.429781+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -26849,7 +26849,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5979.0,
+          "price": 6749.9,
           "list_price": 7499.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=45343147720991",
           "on_sale": true,
@@ -26887,9 +26887,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 5979.0,
-      "price_max": 6502.41,
-      "price_spread_pct": 8.8,
+      "price_min": 6082.71,
+      "price_max": 6749.9,
+      "price_spread_pct": 11.0,
       "price_conflict": true
     },
     "2075": {
