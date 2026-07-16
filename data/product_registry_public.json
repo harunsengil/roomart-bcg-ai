@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-15T07:30:45.429781+00:00",
+    "generated_at": "2026-07-16T07:37:58.083451+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10567,7 +10567,7 @@
           "price": 2499.9,
           "list_price": 2499.9,
           "url": "https://www.trendyol.com/roomart/luka-4-go-zlu-tek-kapakli-c-ok-amac-li-dolap-ayakkabilik-kiler-dolabi-120-cm-p-876823360?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -13813,7 +13813,7 @@
           "price": 1999.9,
           "list_price": 1999.9,
           "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-110-cm-p-866194463?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
