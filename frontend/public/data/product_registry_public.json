@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-16T07:37:58.083451+00:00",
+    "generated_at": "2026-07-17T07:34:49.580822+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -16,7 +16,7 @@
       "shopify": 682,
       "hb": 925,
       "n11": 699,
-      "koctas": 437
+      "koctas": 438
     },
     "price_conflict_count": 795,
     "public_safe": true,
@@ -14005,7 +14005,7 @@
           "price": 1599.9,
           "list_price": 1599.9,
           "url": "https://www.trendyol.com/roomart/falez-orta-sehpa-suntalam-p-865512241?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -15240,17 +15240,25 @@
           "url": "https://www.n11.com/urun/paris-calisma-masasi-cocuk-calisma-masasi-ofis-masasi-120-cm-60482455",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 4639.9,
+          "list_price": 4639.9,
+          "url": "https://www.koctas.com.tr/paris-calisma-masasi-cocuk-calisma-masasi-ofis-masasi-bilgisayar-masasi-120-cm/p/5001315673?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 4217.85,
       "price_max": 4639.9,
       "price_spread_pct": 10.0,
@@ -26533,7 +26541,7 @@
           "price": 3639.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mara-cok-amacli-dolap?variant=45475403530527",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -26581,7 +26589,7 @@
           "price": 3639.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mara-cok-amacli-dolap?variant=45475403464991",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -26629,7 +26637,7 @@
           "price": 3639.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mara-cok-amacli-dolap?variant=45475403497759",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -26677,7 +26685,7 @@
           "price": 3639.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mara-cok-amacli-dolap?variant=45475403563295",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
