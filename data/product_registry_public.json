@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-17T07:34:49.580822+00:00",
+    "generated_at": "2026-07-18T07:15:44.315274+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -1533,7 +1533,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7162.0,
+          "price": 7099.0,
           "list_price": 8699.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968284987679",
           "on_sale": true,
@@ -1571,9 +1571,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7162.0,
+      "price_min": 7099.0,
       "price_max": 7799.0,
-      "price_spread_pct": 8.9,
+      "price_spread_pct": 9.9,
       "price_conflict": true
     },
     "2908": {
@@ -1645,7 +1645,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7799.9,
+          "price": 7099.0,
           "list_price": 8699.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=52638143971615",
           "on_sale": true,
@@ -1683,9 +1683,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7303.41,
-      "price_max": 7799.9,
-      "price_spread_pct": 6.8,
+      "price_min": 7099.0,
+      "price_max": 7799.0,
+      "price_spread_pct": 9.9,
       "price_conflict": true
     },
     "2909": {
@@ -1978,7 +1978,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10148.0,
+          "price": 9999.0,
           "list_price": 12149.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619139871",
           "on_sale": true,
@@ -3295,7 +3295,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6242.0,
+          "price": 6199.0,
           "list_price": 7439.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955639030047",
           "on_sale": true,
@@ -5216,7 +5216,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 7499.0,
+          "price": 9094.9,
           "list_price": 9094.9,
           "url": "https://www.n11.com/urun/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-boy-dolabi-ant-antrasit-86795370",
           "on_sale": true,
@@ -5240,9 +5240,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7499.0,
-      "price_max": 8924.9,
-      "price_spread_pct": 19.0,
+      "price_min": 8499.9,
+      "price_max": 9094.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2868": {
@@ -5359,7 +5359,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8499.9,
+          "price": 7749.0,
           "list_price": 8844.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-ada?variant=50712253235487",
           "on_sale": true,
@@ -5398,8 +5398,8 @@
       ],
       "platform_count": 5,
       "price_min": 7371.52,
-      "price_max": 8499.9,
-      "price_spread_pct": 15.3,
+      "price_max": 7955.91,
+      "price_spread_pct": 7.9,
       "price_conflict": true
     },
     "2871": {
@@ -7217,7 +7217,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 4949.0,
+          "price": 5989.9,
           "list_price": 6199.9,
           "url": "https://www.n11.com/urun/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-antrasit-atlantik-cam-72236206",
           "on_sale": true,
@@ -7241,9 +7241,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4949.0,
-      "price_max": 5879.9,
-      "price_spread_pct": 18.8,
+      "price_min": 5599,
+      "price_max": 5989.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "1015.55": {
@@ -9020,7 +9020,7 @@
           "price": 4834.9,
           "list_price": 5124.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-verona-rafli?variant=50039496343839",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -9068,7 +9068,7 @@
           "price": 4834.9,
           "list_price": 5124.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-verona-rafli?variant=50039496278303",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -9212,7 +9212,7 @@
           "price": 4834.9,
           "list_price": 5124.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-verona-rafli?variant=50039496376607",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -9260,7 +9260,7 @@
           "price": 4834.9,
           "list_price": 5124.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-verona-rafli?variant=50039496311071",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -12085,7 +12085,7 @@
           "price": 3749.9,
           "list_price": 4174.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-verona?variant=49683916947743",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -12266,7 +12266,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5367.0,
+          "price": 5349.0,
           "list_price": 6574.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-napoli?variant=49683974979871",
           "on_sale": true,
@@ -12386,7 +12386,7 @@
           "price": 3749.9,
           "list_price": 4174.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-verona?variant=49683916849439",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -12434,7 +12434,7 @@
           "price": 3749.9,
           "list_price": 4174.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-verona?variant=49683916914975",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -12482,7 +12482,7 @@
           "price": 3749.9,
           "list_price": 4174.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-verona?variant=49683916882207",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "hb": {
@@ -15277,7 +15277,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4378.0,
+          "price": 4199.0,
           "list_price": 5249.9,
           "url": "https://roomartstore.com.tr/products/calisma-masasi-paris-120-cm?variant=48877311230239",
           "on_sale": true,
@@ -21522,7 +21522,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 13699.0,
+          "price": 16584.9,
           "list_price": 16584.9,
           "url": "https://www.n11.com/urun/lotus-lavabolu-mdf-95-cm-banyo-dolabi-aynali-dlp-atlantik-cam-66882313",
           "on_sale": true,
@@ -21551,9 +21551,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 13699.0,
-      "price_max": 16274.9,
-      "price_spread_pct": 18.8,
+      "price_min": 15499.9,
+      "price_max": 16584.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2473": {
@@ -28603,7 +28603,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 2999.0,
+          "price": 3639.9,
           "list_price": 3854.9,
           "url": "https://www.n11.com/urun/banos-cu3-cok-amacli-camasir-makinesi-ust-banyo-dolabi-beyaz-18439506",
           "on_sale": true,
@@ -28627,9 +28627,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2999.0,
-      "price_max": 3569.9,
-      "price_spread_pct": 19.0,
+      "price_min": 3399.9,
+      "price_max": 3639.9,
+      "price_spread_pct": 7.1,
       "price_conflict": true
     },
     "1554": {
@@ -45081,7 +45081,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 529.0,
+          "price": 639.9,
           "list_price": 639.9,
           "url": "https://www.n11.com/urun/banos-rt1-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-18439557",
           "on_sale": true,
@@ -45097,8 +45097,8 @@
       ],
       "platform_count": 3,
       "price_min": 329.9,
-      "price_max": 604.9,
-      "price_spread_pct": 83.4,
+      "price_max": 639.9,
+      "price_spread_pct": 94.0,
       "price_conflict": true
     },
     "2637": {
@@ -45121,7 +45121,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 2479.0,
+          "price": 2999.9,
           "list_price": 3199.9,
           "url": "https://www.n11.com/urun/paris-calisma-masasi-cocuk-calisma-masasi-100-cm-atlantik-cam-antrasit-60481522",
           "on_sale": true,
@@ -45144,9 +45144,9 @@
         "shopify"
       ],
       "platform_count": 4,
-      "price_min": 2479.0,
-      "price_max": 2939.9,
-      "price_spread_pct": 18.6,
+      "price_min": 2799.9,
+      "price_max": 2999.9,
+      "price_spread_pct": 7.1,
       "price_conflict": true
     },
     "2640": {
@@ -46467,7 +46467,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 10349.0,
+          "price": 12519.9,
           "list_price": 13499.9,
           "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-65-cm-aynali-banyo-dolabi-takimi-beyaz-18439543",
           "on_sale": true,
@@ -46482,9 +46482,9 @@
         "shopify"
       ],
       "platform_count": 3,
-      "price_min": 10349.0,
-      "price_max": 12284.9,
-      "price_spread_pct": 18.7,
+      "price_min": 11699.9,
+      "price_max": 12519.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "1325": {
