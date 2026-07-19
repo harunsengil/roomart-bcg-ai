@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-18T07:15:33.064739+00:00",
+    "last_updated": "2026-07-19T07:40:57.268471+00:00",
     "total_alerts": 11
   },
   "alerts": [
@@ -9,18 +9,18 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Çamaşır-kurutma Makinesi Dolabı+ Üst Dolabı, Banyo Dolabı 10 büyüme momentumu yüksek (82/100).",
-      "product_id": "897254617",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "message": "Çamaşır Ve Kurutma Makinesi Dolabı büyüme momentumu yüksek (82/100).",
+      "product_id": "472880279",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "2 Çekmeceli Çamaşır ve Kurutma Makinesi Dolabı + Üst Dolap,  büyüme momentumu yüksek (82/100).",
-      "product_id": "877711679",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "message": "Çamaşır-kurutma Makinesi Dolabı+ Üst Dolabı, Banyo Dolabı 10 büyüme momentumu yüksek (82/100).",
+      "product_id": "897254617",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-3",
@@ -29,25 +29,25 @@
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
       "message": "Cd2 Çok Amaçlı Banyo Üst Dolaplı Çamaşır Makinesi Dolabı Tak büyüme momentumu yüksek (82/100).",
       "product_id": "691072720",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-4",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART \"Lavabolu\" Mdf 95 Cm Çekmeceli Lotus Oval Lavabolu B zayıf puan (2.0) ve düşük pay. İnceleme önerilir.",
-      "product_id": "817656657",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "message": "ROOMART Oval Lavabolu Mat Mdf 120 Cm Çekmeceli Banyo Dolabı  zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
+      "product_id": "831948948",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-5",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Oval Lavabolu Mat Mdf 120 Cm Çekmeceli Banyo Dolabı  zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
-      "product_id": "831948948",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "message": "ROOMART Dubai Mdflam Sepetli Banyo Dolabı Seti, Lavabolu Alt zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
+      "product_id": "971279035",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-6",
@@ -56,16 +56,16 @@
       "title": "Sehpa — lider STAR",
       "message": "ROOMART Helsinki Orta Sehpa Suntalam 80 cm pay 100, büyüme 90.",
       "product_id": "866321311",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-7",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Diğer — lider STAR",
-      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 65.",
-      "product_id": "962085213",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 75.",
+      "product_id": "920575303",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-8",
@@ -74,16 +74,16 @@
       "title": "Banyo Dolabı — yüksek iade riski",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
       "product_id": "971265574",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-9",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Sehpa — yüksek iade riski",
-      "message": "Siena Sehpa Koltuk Sehpası, Yan Sehpa, Zigon Sehpa, Servis S iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "866370547",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "title": "Diğer — yüksek iade riski",
+      "message": "Rt4 Metal Çerçeveli Baharatlık Çok Amaçlı Banyo Ve Mutfak Du iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "684213881",
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-10",
@@ -92,7 +92,7 @@
       "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
       "message": "Çamaşır-kurutma Makinesi Dolabı+ Üst Dolabı, Banyo Dolabı 65 hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "897490657",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     },
     {
       "id": "alert-11",
@@ -101,7 +101,7 @@
       "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
       "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "855574483",
-      "timestamp": "2026-07-18T07:15:33.041978+00:00"
+      "timestamp": "2026-07-19T07:40:57.244751+00:00"
     }
   ]
 }
