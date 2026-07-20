@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-20T13:42:04.646275+00:00",
+    "last_updated": "2026-07-20T14:00:04.652548+00:00",
     "total_alerts": 11
   },
   "alerts": [
@@ -10,8 +10,8 @@
       "severity": "HIGH",
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (58/100).",
-      "product_id": "1156641550",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "product_id": "1156645277",
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-2",
@@ -20,16 +20,16 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (58/100).",
       "product_id": "1156642072",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
-      "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (58/100).",
-      "product_id": "1156645277",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "title": "Mutfak Adası — yükselen fırsat",
+      "message": "ROOMART Cortado Bar Masası Dolaplı, Kapaklı Mutfak Masası, Y büyüme momentumu yüksek (58/100).",
+      "product_id": "885457375",
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-4",
@@ -38,7 +38,7 @@
       "title": "Banyo Dolabı — çıkış adayı",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
       "product_id": "971265574",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-5",
@@ -47,7 +47,7 @@
       "title": "Banyo Dolabı — çıkış adayı",
       "message": "ROOMART \"Lavabolu\" Mdf 95 Cm Çekmeceli Lotus Oval Lavabolu B zayıf puan (2.0) ve düşük pay. İnceleme önerilir.",
       "product_id": "817656657",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-6",
@@ -56,7 +56,7 @@
       "title": "Kahve Köşesi — lider STAR",
       "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 97, büyüme 75.",
       "product_id": "885510344",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-7",
@@ -65,7 +65,7 @@
       "title": "Diğer — lider STAR",
       "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 65.",
       "product_id": "962085213",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-8",
@@ -74,34 +74,34 @@
       "title": "Banyo Dolabı — yüksek iade riski",
       "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al iade/iptal oranı %60. Kalite/lojistik incele.",
       "product_id": "971265574",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-9",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Lavabolu Mat Mdf 90 Cm Çekmeceli Banyo Dolabı + Aynalı Üst D iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "829592750",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "title": "Diğer — yüksek iade riski",
+      "message": "Rt4 Metal Çerçeveli Baharatlık Çok Amaçlı Banyo Ve Mutfak Du iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "684213881",
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-10",
       "type": "RISK",
       "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
-      "message": "Çamaşır-kurutma Makinesi Dolabı+ Üst Dolabı, Banyo Dolabı 65 hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
-      "product_id": "897490657",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
+      "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
+      "product_id": "855574483",
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     },
     {
       "id": "alert-11",
       "type": "RISK",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — kârsız hacim uyarısı",
-      "message": "Daisy Raflı Çalışma Masası , Çocuk Çalışma Masası, Ofis Masa hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
-      "product_id": "855574483",
-      "timestamp": "2026-07-20T13:42:04.622665+00:00"
+      "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
+      "message": "Çamaşır-kurutma Makinesi Dolabı Kapaklı Üst Dolabı Banyo Dol hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
+      "product_id": "897249244",
+      "timestamp": "2026-07-20T14:00:04.628201+00:00"
     }
   ]
 }
