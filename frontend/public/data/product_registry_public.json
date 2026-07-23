@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-22T07:56:09.624120+00:00",
+    "generated_at": "2026-07-23T07:58:20.986329+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,10 +9,10 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1153,
+    "total_products": 1158,
     "multi_platform_count": 985,
     "by_platform_count": {
-      "trendyol": 1002,
+      "trendyol": 1007,
       "shopify": 682,
       "hb": 925,
       "n11": 699,
@@ -23,6 +23,126 @@
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "057.48.080.78.81": {
+      "stock_code": "057.48.080.78.81",
+      "name": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, 60x80 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 4329.9,
+          "list_price": 4329.9,
+          "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174703617?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4329.9,
+      "price_max": 4329.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "057.48.080.78.80": {
+      "stock_code": "057.48.080.78.80",
+      "name": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, 60x80 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 4959.9,
+          "list_price": 4959.9,
+          "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174452843?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4959.9,
+      "price_max": 4959.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "057.48.080.78.82": {
+      "stock_code": "057.48.080.78.82",
+      "name": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, 60x80 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 3719.9,
+          "list_price": 3719.9,
+          "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174453064?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 3719.9,
+      "price_max": 3719.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "056.48.070.78.79": {
+      "stock_code": "056.48.070.78.79",
+      "name": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Dolabı 70 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 3719.9,
+          "list_price": 3719.9,
+          "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174373102?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 3719.9,
+      "price_max": 3719.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "056.48.070.78.00": {
+      "stock_code": "056.48.070.78.00",
+      "name": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Dolabı 70 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 6174.9,
+          "list_price": 6174.9,
+          "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174372606?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6174.9,
+      "price_max": 6174.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "023.09.060.51.21": {
       "stock_code": "023.09.060.51.21",
       "name": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 60 cm",
