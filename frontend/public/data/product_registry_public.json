@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-27T08:55:56.813928+00:00",
+    "generated_at": "2026-07-27T09:50:38.680079+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -33,7 +33,7 @@
           "list_price": 4329.9,
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174703617?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -57,7 +57,7 @@
           "list_price": 4959.9,
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174452843?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -81,7 +81,7 @@
           "list_price": 3719.9,
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174453064?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -105,7 +105,7 @@
           "list_price": 3719.9,
           "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174373102?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -129,7 +129,7 @@
           "list_price": 6174.9,
           "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174372606?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -19848,9 +19848,9 @@
       "platforms": {
         "trendyol": {
           "price": 7159.0,
-          "list_price": 0,
+          "list_price": 7159,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-820272849?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": true
         },
         "shopify": {
@@ -27030,7 +27030,7 @@
           "list_price": 6749.9,
           "url": "https://www.trendyol.com/roomart/roma-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-atlanti-k-c-am-p-739768975?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6749.9,
@@ -27047,11 +27047,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 5489.0,
+          "price": 899.9,
           "list_price": 6314.9,
           "url": "https://www.n11.com/urun/roma-rafli-calisma-masasi-calisma-ofis-masasi-sag-a-cam-antrasit-40667203",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -27063,9 +27063,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5489.0,
+      "price_min": 899.9,
       "price_max": 6749.9,
-      "price_spread_pct": 23.0,
+      "price_spread_pct": 650.1,
       "price_conflict": true
     },
     "2073": {
