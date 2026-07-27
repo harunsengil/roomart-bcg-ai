@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-26T07:56:02.534604+00:00",
+    "generated_at": "2026-07-27T08:55:56.813928+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -19848,9 +19848,9 @@
       "platforms": {
         "trendyol": {
           "price": 7159.0,
-          "list_price": 7159,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-820272849?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
