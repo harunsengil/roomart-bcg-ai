@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-27T09:50:38.680079+00:00",
+    "generated_at": "2026-07-28T08:01:11.369454+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,15 +10,15 @@
       "koctas"
     ],
     "total_products": 1158,
-    "multi_platform_count": 985,
+    "multi_platform_count": 990,
     "by_platform_count": {
       "trendyol": 1007,
-      "shopify": 682,
+      "shopify": 687,
       "hb": 925,
       "n11": 699,
       "koctas": 438
     },
-    "price_conflict_count": 799,
+    "price_conflict_count": 803,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -34,17 +34,25 @@
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174703617?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 4329.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/gun-isigi-kumlamali-dokunmatik-ledli-ayna-60x80-cm?variant=52708656087327",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 4329.9,
       "price_max": 4329.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "057.48.080.78.80": {
@@ -58,17 +66,25 @@
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174452843?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 4959.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/gun-isigi-kumlamali-dokunmatik-ledli-ayna-60x80-cm?variant=52708607492383",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 4959.9,
       "price_max": 4959.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "057.48.080.78.82": {
@@ -82,17 +98,25 @@
           "url": "https://www.trendyol.com/roomart/banyo-ayna-u-st-dolabi-gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-60x80-cm-p-1174453064?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 3719.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/gun-isigi-kumlamali-dokunmatik-ledli-ayna-60x80-cm?variant=52708656120095",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 3719.9,
       "price_max": 3719.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "056.48.070.78.79": {
@@ -106,17 +130,25 @@
           "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174373102?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 3719.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/tesla-gun-isigi-kumlamali-dokunmatik-ledli-ayna-70-cm?variant=52708682105119",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 3719.9,
       "price_max": 3719.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "056.48.070.78.00": {
@@ -130,17 +162,25 @@
           "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174372606?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 6174.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/tesla-gun-isigi-kumlamali-dokunmatik-ledli-ayna-70-cm?variant=52708682072351",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 6174.9,
       "price_max": 6174.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "023.09.060.51.21": {
@@ -681,7 +721,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5719.0,
+          "price": 6164.9,
           "list_price": 6464.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-ada?variant=50712251629855",
           "on_sale": true,
@@ -729,7 +769,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5711.0,
+          "price": 6164.9,
           "list_price": 6464.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-ada?variant=50712251662623",
           "on_sale": true,
@@ -769,7 +809,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12675.0,
+          "price": 13699.9,
           "list_price": 14879.9,
           "url": "https://roomartstore.com.tr/products/sepetli-banyo-dolabi-3lu-set-dubai?variant=51110271320351",
           "on_sale": true,
@@ -799,9 +839,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12675.0,
-      "price_max": 13669.9,
-      "price_spread_pct": 7.8,
+      "price_min": 12797.91,
+      "price_max": 13699.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2995": {
@@ -961,7 +1001,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10499.9,
+          "price": 9909.0,
           "list_price": 11529.9,
           "url": "https://roomartstore.com.tr/products/sepetli-banyo-dolabi-2li-set-dubai-1?variant=51110271418655",
           "on_sale": true,
@@ -1009,7 +1049,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10499.9,
+          "price": 9876.0,
           "list_price": 11529.9,
           "url": "https://roomartstore.com.tr/products/sepetli-banyo-dolabi-2li-set-dubai-1?variant=51110271385887",
           "on_sale": true,
@@ -1057,7 +1097,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10499.9,
+          "price": 9909.0,
           "list_price": 11529.9,
           "url": "https://roomartstore.com.tr/products/sepetli-banyo-dolabi-2li-set-dubai-1?variant=51110271451423",
           "on_sale": true,
@@ -1110,7 +1150,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5829.0,
+          "price": 6499.9,
           "list_price": 7314.9,
           "url": "https://roomartstore.com.tr/products/sepetli-lavabolu-banyo-dolabi-dubai?variant=51117512655135",
           "on_sale": true,
@@ -1145,9 +1185,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5829.0,
+      "price_min": 6083.91,
       "price_max": 6499.9,
-      "price_spread_pct": 11.5,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2980": {
@@ -1211,7 +1251,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6063.0,
+          "price": 6499.9,
           "list_price": 7314.9,
           "url": "https://roomartstore.com.tr/products/sepetli-lavabolu-banyo-dolabi-dubai?variant=51117512622367",
           "on_sale": true,
@@ -1241,9 +1281,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 6063.0,
+      "price_min": 6083.91,
       "price_max": 6499.9,
-      "price_spread_pct": 7.2,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2983": {
@@ -1339,7 +1379,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5763.0,
+          "price": 6499.9,
           "list_price": 7099.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-venedik-60cm?variant=51479822172447",
           "on_sale": true,
@@ -1383,8 +1423,8 @@
       ],
       "platform_count": 5,
       "price_min": 5651.27,
-      "price_max": 6449.0,
-      "price_spread_pct": 14.1,
+      "price_max": 6499.9,
+      "price_spread_pct": 15.0,
       "price_conflict": true
     },
     "2806": {
@@ -1517,7 +1557,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6831.0,
+          "price": 7349.9,
           "list_price": 8124.9,
           "url": "https://roomartstore.com.tr/products/makyaj-masasi-glamo?variant=50968379064607",
           "on_sale": true,
@@ -1556,7 +1596,7 @@
       ],
       "platform_count": 5,
       "price_min": 6388.52,
-      "price_max": 7349.0,
+      "price_max": 7349.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -1653,7 +1693,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7235.0,
+          "price": 7799.9,
           "list_price": 8699.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968284987679",
           "on_sale": true,
@@ -1691,9 +1731,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7235.0,
-      "price_max": 7799.0,
-      "price_spread_pct": 7.8,
+      "price_min": 7303.41,
+      "price_max": 7799.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2908": {
@@ -1765,7 +1805,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7241.0,
+          "price": 7799.9,
           "list_price": 8699.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=52638143971615",
           "on_sale": true,
@@ -1803,9 +1843,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7241.0,
-      "price_max": 7799.0,
-      "price_spread_pct": 7.7,
+      "price_min": 7303.41,
+      "price_max": 7799.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2909": {
@@ -2042,7 +2082,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12429.0,
+          "price": 13869.9,
           "list_price": 15949.9,
           "url": "https://roomartstore.com.tr/products/cift-lavabolu-banyo-dolabi-takimi-likya?variant=52558325809439",
           "on_sale": true,
@@ -2080,9 +2120,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 12429.0,
+      "price_min": 12821.51,
       "price_max": 13869.9,
-      "price_spread_pct": 11.6,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2942": {
@@ -2098,7 +2138,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10224.0,
+          "price": 10999.9,
           "list_price": 12149.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619139871",
           "on_sale": true,
@@ -2154,7 +2194,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10151.0,
+          "price": 10999.9,
           "list_price": 12149.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619008799",
           "on_sale": true,
@@ -2192,9 +2232,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 10151.0,
+      "price_min": 10163.91,
       "price_max": 10999.9,
-      "price_spread_pct": 8.4,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2950": {
@@ -2522,7 +2562,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9276.0,
+          "price": 9949.9,
           "list_price": 10789.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619074335",
           "on_sale": true,
@@ -2714,7 +2754,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8835.0,
+          "price": 9499.9,
           "list_price": 10169.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619107103",
           "on_sale": true,
@@ -2826,7 +2866,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8789.0,
+          "price": 9499.9,
           "list_price": 10169.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-likya?variant=50955619238175",
           "on_sale": true,
@@ -2882,7 +2922,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7442.0,
+          "price": 7999.9,
           "list_price": 8799.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638964511",
           "on_sale": true,
@@ -2921,8 +2961,8 @@
       ],
       "platform_count": 5,
       "price_min": 6953.74,
-      "price_max": 7487.91,
-      "price_spread_pct": 7.7,
+      "price_max": 7999.9,
+      "price_spread_pct": 15.0,
       "price_conflict": true
     },
     "2938": {
@@ -3018,7 +3058,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7389.0,
+          "price": 7999.9,
           "list_price": 8799.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638702367",
           "on_sale": true,
@@ -3056,9 +3096,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7389.0,
+      "price_min": 7391.91,
       "price_max": 7999.9,
-      "price_spread_pct": 8.3,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2937": {
@@ -3074,7 +3114,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6966.0,
+          "price": 7499.9,
           "list_price": 8299.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638866207",
           "on_sale": true,
@@ -3186,7 +3226,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6976.0,
+          "price": 7499.9,
           "list_price": 8299.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638735135",
           "on_sale": true,
@@ -3298,7 +3338,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6292.0,
+          "price": 6799.9,
           "list_price": 7439.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638898975",
           "on_sale": true,
@@ -3342,8 +3382,8 @@
       ],
       "platform_count": 5,
       "price_min": 6190.34,
-      "price_max": 6547.41,
-      "price_spread_pct": 5.8,
+      "price_max": 6799.9,
+      "price_spread_pct": 9.8,
       "price_conflict": true
     },
     "2916": {
@@ -3359,7 +3399,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6318.0,
+          "price": 6368.0,
           "list_price": 7439.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638767903",
           "on_sale": true,
@@ -3415,7 +3455,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6311.0,
+          "price": 6799.9,
           "list_price": 7439.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955639030047",
           "on_sale": true,
@@ -3556,7 +3596,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5942.0,
+          "price": 6399.9,
           "list_price": 6819.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955638800671",
           "on_sale": true,
@@ -3617,7 +3657,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5935.0,
+          "price": 6399.9,
           "list_price": 6819.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-likya?variant=50955639062815",
           "on_sale": true,
@@ -3661,9 +3701,9 @@
       ],
       "platform_count": 5,
       "price_min": 5890.13,
-      "price_max": 6164.91,
-      "price_spread_pct": 4.7,
-      "price_conflict": false
+      "price_max": 6399.9,
+      "price_spread_pct": 8.7,
+      "price_conflict": true
     },
     "2901": {
       "stock_code": "2901",
@@ -3870,7 +3910,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1878.0,
+          "price": 2039.9,
           "list_price": 2294.9,
           "url": "https://roomartstore.com.tr/products/aynali-banyo-dolabi-likya?variant=50955715019039",
           "on_sale": true,
@@ -3908,9 +3948,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 1878.0,
+      "price_min": 1912.41,
       "price_max": 2039.9,
-      "price_spread_pct": 8.6,
+      "price_spread_pct": 6.7,
       "price_conflict": true
     },
     "2896": {
@@ -3926,7 +3966,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2308.0,
+          "price": 2499.9,
           "list_price": 2764.9,
           "url": "https://roomartstore.com.tr/products/aynali-banyo-dolabi-likya?variant=50955714986271",
           "on_sale": true,
@@ -3969,9 +4009,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2308.0,
+      "price_min": 2339.91,
       "price_max": 2499.9,
-      "price_spread_pct": 8.3,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2894": {
@@ -4208,7 +4248,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1886.0,
+          "price": 2039.9,
           "list_price": 2294.9,
           "url": "https://roomartstore.com.tr/products/aynali-banyo-dolabi-likya?variant=50955714756895",
           "on_sale": true,
@@ -4485,7 +4525,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4773.0,
+          "price": 5099.9,
           "list_price": 5639.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-likya?variant=50955670323487",
           "on_sale": true,
@@ -4541,7 +4581,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4765.0,
+          "price": 5099.9,
           "list_price": 5639.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-likya?variant=50955670585631",
           "on_sale": true,
@@ -4653,7 +4693,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4435.0,
+          "price": 4799.9,
           "list_price": 5329.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-likya?variant=50955670356255",
           "on_sale": true,
@@ -4691,7 +4731,7 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4435.0,
+      "price_min": 4435.11,
       "price_max": 5329.9,
       "price_spread_pct": 20.2,
       "price_conflict": true
@@ -4709,7 +4749,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4441.0,
+          "price": 4799.9,
           "list_price": 5329.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-likya?variant=50955670487327",
           "on_sale": true,
@@ -5037,7 +5077,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10725.0,
+          "price": 11599.9,
           "list_price": 12899.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-ve-kurutma-makinesi-dolabi-dora-230cm?variant=50914210971935",
           "on_sale": true,
@@ -5076,7 +5116,7 @@
       ],
       "platform_count": 5,
       "price_min": 10074.77,
-      "price_max": 11599.0,
+      "price_max": 11599.9,
       "price_spread_pct": 15.1,
       "price_conflict": true
     },
@@ -5093,7 +5133,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10749.0,
+          "price": 11599.9,
           "list_price": 12899.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-ve-kurutma-makinesi-dolabi-dora-230cm?variant=50914211037471",
           "on_sale": true,
@@ -5137,7 +5177,7 @@
       ],
       "platform_count": 5,
       "price_min": 10718.31,
-      "price_max": 11599.0,
+      "price_max": 11599.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -5266,7 +5306,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7875.0,
+          "price": 8499.9,
           "list_price": 8844.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-ada?variant=50712253268255",
           "on_sale": true,
@@ -5423,7 +5463,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7919.0,
+          "price": 8499.9,
           "list_price": 8844.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-3lu-set-ada?variant=50712253202719",
           "on_sale": true,
@@ -6023,7 +6063,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1533.0,
+          "price": 1649.9,
           "list_price": 1699.9,
           "url": "https://roomartstore.com.tr/products/aynali-banyo-dolabi-ada?variant=50712303108383",
           "on_sale": true,
@@ -6132,7 +6172,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4160.0,
+          "price": 4499.9,
           "list_price": 4699.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-ada?variant=52694256156959",
           "on_sale": true,
@@ -6188,7 +6228,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4162.0,
+          "price": 4499.9,
           "list_price": 4699.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-ada?variant=52694256222495",
           "on_sale": true,
@@ -6244,7 +6284,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4149.0,
+          "price": 4499.9,
           "list_price": 4699.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-ada?variant=52694256255263",
           "on_sale": true,
@@ -6287,9 +6327,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4149.0,
+      "price_min": 4157.91,
       "price_max": 4499.9,
-      "price_spread_pct": 8.5,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2670": {
@@ -6305,7 +6345,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4202.0,
+          "price": 4218.0,
           "list_price": 4699.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-ada?variant=52694256189727",
           "on_sale": true,
@@ -7155,7 +7195,7 @@
           "price_final": false
         },
         "shopify": {
-          "price": 3327.0,
+          "price": 3599.9,
           "list_price": 3999.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-makinesi-dolabi-1016?variant=50700983370015",
           "on_sale": true,
@@ -7193,9 +7233,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3327.0,
+      "price_min": 3599,
       "price_max": 3849.9,
-      "price_spread_pct": 15.7,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "1016.51": {
@@ -7211,7 +7251,7 @@
           "price_final": false
         },
         "shopify": {
-          "price": 3339.0,
+          "price": 3599.9,
           "list_price": 3999.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-makinesi-dolabi-1016?variant=50700983435551",
           "on_sale": true,
@@ -7249,9 +7289,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3339.0,
+      "price_min": 3599,
       "price_max": 3849.9,
-      "price_spread_pct": 15.3,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "1016.56": {
@@ -7379,7 +7419,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5177.0,
+          "price": 5245.0,
           "list_price": 6199.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-makinesi-dolabi-1015?variant=50700978225439",
           "on_sale": true,
@@ -7496,7 +7536,7 @@
           "price_final": false
         },
         "shopify": {
-          "price": 5212.0,
+          "price": 5244.0,
           "list_price": 6199.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-makinesi-dolabi-1015?variant=50700978192671",
           "on_sale": true,
@@ -7534,9 +7574,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 5212.0,
+      "price_min": 5244.0,
       "price_max": 5989.9,
-      "price_spread_pct": 14.9,
+      "price_spread_pct": 14.2,
       "price_conflict": true
     },
     "2816": {
@@ -8685,7 +8725,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6863.0,
+          "price": 7399.9,
           "list_price": 8129.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-venedik-90cm?variant=50043259912479",
           "on_sale": true,
@@ -8724,7 +8764,7 @@
       ],
       "platform_count": 5,
       "price_min": 6551.91,
-      "price_max": 7399.0,
+      "price_max": 7399.9,
       "price_spread_pct": 12.9,
       "price_conflict": true
     },
@@ -8741,7 +8781,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6844.0,
+          "price": 7399.9,
           "list_price": 8129.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-venedik-90cm?variant=50043259978015",
           "on_sale": true,
@@ -8785,8 +8825,8 @@
       ],
       "platform_count": 5,
       "price_min": 6551.91,
-      "price_max": 7127.91,
-      "price_spread_pct": 8.8,
+      "price_max": 7399.9,
+      "price_spread_pct": 12.9,
       "price_conflict": true
     },
     "2804": {
@@ -8802,7 +8842,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6908.0,
+          "price": 7399.9,
           "list_price": 8129.9,
           "url": "https://roomartstore.com.tr/products/kahve-kosesi-cok-amacli-dolap-venedik-90cm?variant=50043259945247",
           "on_sale": true,
@@ -8846,7 +8886,7 @@
       ],
       "platform_count": 5,
       "price_min": 6551.91,
-      "price_max": 7399.0,
+      "price_max": 7399.9,
       "price_spread_pct": 12.9,
       "price_conflict": true
     },
@@ -8908,7 +8948,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8569.0,
+          "price": 8461.0,
           "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-cortado?variant=50042856210719",
           "on_sale": true,
@@ -8964,7 +9004,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8569.0,
+          "price": 8999.0,
           "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-cortado?variant=50042856177951",
           "on_sale": true,
@@ -9020,7 +9060,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8569.0,
+          "price": 8573.0,
           "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-cortado?variant=50042856276255",
           "on_sale": true,
@@ -9081,7 +9121,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8569.0,
+          "price": 8999.0,
           "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-cortado?variant=50042856243487",
           "on_sale": true,
@@ -9993,7 +10033,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6054.0,
+          "price": 6564.9,
           "list_price": 7349.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-ve-yemek-masasi-milano?variant=50003626721567",
           "on_sale": true,
@@ -10032,8 +10072,8 @@
       ],
       "platform_count": 5,
       "price_min": 5700.42,
-      "price_max": 6564.0,
-      "price_spread_pct": 15.1,
+      "price_max": 6564.9,
+      "price_spread_pct": 15.2,
       "price_conflict": true
     },
     "2786": {
@@ -10105,7 +10145,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6127.0,
+          "price": 6564.9,
           "list_price": 7349.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-ve-yemek-masasi-milano?variant=50003626787103",
           "on_sale": true,
@@ -10148,9 +10188,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 6127.0,
-      "price_max": 6564.0,
-      "price_spread_pct": 7.1,
+      "price_min": 6146.91,
+      "price_max": 6564.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2784": {
@@ -10222,7 +10262,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4973.0,
+          "price": 5379.9,
           "list_price": 5989.9,
           "url": "https://roomartstore.com.tr/products/camasir-makinesi-dolabi-luna?variant=49883366392095",
           "on_sale": true,
@@ -10261,7 +10301,7 @@
       ],
       "platform_count": 5,
       "price_min": 4971.91,
-      "price_max": 5379.0,
+      "price_max": 5379.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -10334,7 +10374,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4866.0,
+          "price": 5379.9,
           "list_price": 5989.9,
           "url": "https://roomartstore.com.tr/products/camasir-makinesi-dolabi-luna?variant=49883366359327",
           "on_sale": true,
@@ -10372,9 +10412,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4866.0,
-      "price_max": 5379.0,
-      "price_spread_pct": 10.5,
+      "price_min": 4971.91,
+      "price_max": 5379.9,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2777": {
@@ -10390,7 +10430,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4990.0,
+          "price": 5379.9,
           "list_price": 5989.9,
           "url": "https://roomartstore.com.tr/products/camasir-makinesi-dolabi-luna?variant=49883366424863",
           "on_sale": true,
@@ -10429,7 +10469,7 @@
       ],
       "platform_count": 5,
       "price_min": 4971.91,
-      "price_max": 5379.0,
+      "price_max": 5379.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -10936,7 +10976,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6028.0,
+          "price": 6499.9,
           "list_price": 7289.9,
           "url": "https://roomartstore.com.tr/products/bar-masasi-dublin?variant=49808378200351",
           "on_sale": true,
@@ -10974,9 +11014,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 6028.0,
-      "price_max": 6499.0,
-      "price_spread_pct": 7.8,
+      "price_min": 6083.91,
+      "price_max": 6499.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2770": {
@@ -12386,7 +12426,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5498.0,
+          "price": 5889.9,
           "list_price": 6574.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-napoli?variant=49683974979871",
           "on_sale": true,
@@ -12425,7 +12465,7 @@
       ],
       "platform_count": 5,
       "price_min": 5110.62,
-      "price_max": 5889.0,
+      "price_max": 5889.9,
       "price_spread_pct": 15.2,
       "price_conflict": true
     },
@@ -12442,7 +12482,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5513.0,
+          "price": 5548.0,
           "list_price": 6574.9,
           "url": "https://roomartstore.com.tr/products/cok-amacli-dolap-napoli?variant=49683975045407",
           "on_sale": true,
@@ -13596,7 +13636,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2351.0,
+          "price": 2529.9,
           "list_price": 2969.9,
           "url": "https://roomartstore.com.tr/products/orta-sehpa-helsinki-80-cm?variant=49513110798623",
           "on_sale": true,
@@ -13634,9 +13674,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2351.0,
-      "price_max": 2529.0,
-      "price_spread_pct": 7.6,
+      "price_min": 2371.41,
+      "price_max": 2529.9,
+      "price_spread_pct": 6.7,
       "price_conflict": true
     },
     "2708": {
@@ -14238,7 +14278,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5541.0,
+          "price": 6164.9,
           "list_price": 6464.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-ada?variant=49513245245727",
           "on_sale": true,
@@ -14350,7 +14390,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5714.0,
+          "price": 6164.9,
           "list_price": 6464.9,
           "url": "https://roomartstore.com.tr/products/lavabolu-banyo-dolabi-2li-set-ada?variant=49513240428831",
           "on_sale": true,
@@ -14389,9 +14429,9 @@
       ],
       "platform_count": 5,
       "price_min": 5688.88,
-      "price_max": 5939.91,
-      "price_spread_pct": 4.4,
-      "price_conflict": false
+      "price_max": 6164.9,
+      "price_spread_pct": 8.4,
+      "price_conflict": true
     },
     "2659": {
       "stock_code": "2659",
@@ -15397,7 +15437,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4311.0,
+          "price": 4639.9,
           "list_price": 5249.9,
           "url": "https://roomartstore.com.tr/products/calisma-masasi-paris-120-cm?variant=48877311230239",
           "on_sale": true,
@@ -15436,8 +15476,8 @@
       ],
       "platform_count": 5,
       "price_min": 4029.32,
-      "price_max": 4387.41,
-      "price_spread_pct": 8.9,
+      "price_max": 4639.9,
+      "price_spread_pct": 15.2,
       "price_conflict": true
     },
     "2634": {
@@ -15762,7 +15802,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7819.0,
+          "price": 8399.9,
           "list_price": 9289.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-ve-kurutma-makinesi-dolabi?variant=48675063529759",
           "on_sale": true,
@@ -15806,7 +15846,7 @@
       ],
       "platform_count": 5,
       "price_min": 7761.51,
-      "price_max": 8399.0,
+      "price_max": 8399.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -15879,7 +15919,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7850.0,
+          "price": 8399.9,
           "list_price": 9289.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-ve-kurutma-makinesi-dolabi?variant=48675063660831",
           "on_sale": true,
@@ -15923,7 +15963,7 @@
       ],
       "platform_count": 5,
       "price_min": 7302.71,
-      "price_max": 8399.0,
+      "price_max": 8399.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -15940,7 +15980,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7799.0,
+          "price": 8399.9,
           "list_price": 9289.9,
           "url": "https://roomartstore.com.tr/products/kapakli-camasir-ve-kurutma-makinesi-dolabi?variant=48675063595295",
           "on_sale": true,
@@ -15979,7 +16019,7 @@
       ],
       "platform_count": 5,
       "price_min": 7302.71,
-      "price_max": 8399.0,
+      "price_max": 8399.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -16166,7 +16206,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 16199.9,
+          "price": 15701.0,
           "list_price": 17359.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-3lu-set?variant=48622276509983",
           "on_sale": true,
@@ -16227,7 +16267,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13799.9,
+          "price": 13083.0,
           "list_price": 14729.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-2li-set?variant=48622333198623",
           "on_sale": true,
@@ -16258,9 +16298,9 @@
       ],
       "platform_count": 4,
       "price_min": 12919.41,
-      "price_max": 13799.9,
-      "price_spread_pct": 6.8,
-      "price_conflict": true
+      "price_max": 13499.9,
+      "price_spread_pct": 4.5,
+      "price_conflict": false
     },
     "2551": {
       "stock_code": "2551",
@@ -16275,7 +16315,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 16199.9,
+          "price": 15701.0,
           "list_price": 17359.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-3lu-set?variant=48622276608287",
           "on_sale": true,
@@ -16379,7 +16419,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13799.9,
+          "price": 13375.0,
           "list_price": 14729.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-2li-set?variant=48622333296927",
           "on_sale": true,
@@ -16427,7 +16467,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14999.9,
+          "price": 14053.0,
           "list_price": 15899.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-3lu-set?variant=48622276575519",
           "on_sale": true,
@@ -16466,8 +16506,8 @@
       ],
       "platform_count": 5,
       "price_min": 12431.92,
-      "price_max": 14999.9,
-      "price_spread_pct": 20.7,
+      "price_max": 14499.9,
+      "price_spread_pct": 16.6,
       "price_conflict": true
     },
     "2569": {
@@ -16483,7 +16523,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14598.0,
+          "price": 15219.0,
           "list_price": 17799.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-3lu-set?variant=48618667278623",
           "on_sale": true,
@@ -16595,7 +16635,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14999.9,
+          "price": 14053.0,
           "list_price": 15899.9,
           "url": "https://roomartstore.com.tr/products/gusto-lavabolu-banyo-dolabi-3lu-set?variant=48622276673823",
           "on_sale": true,
@@ -16626,8 +16666,8 @@
       ],
       "platform_count": 4,
       "price_min": 13571.91,
-      "price_max": 14999.9,
-      "price_spread_pct": 10.5,
+      "price_max": 14499.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2556": {
@@ -16691,7 +16731,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14853.0,
+          "price": 15500.0,
           "list_price": 17799.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-3lu-set?variant=48618667147551",
           "on_sale": true,
@@ -16803,7 +16843,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13449.9,
+          "price": 12436.0,
           "list_price": 14789.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264320287",
           "on_sale": true,
@@ -16833,9 +16873,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12590.91,
+      "price_min": 12436.0,
       "price_max": 13449.9,
-      "price_spread_pct": 6.8,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2568": {
@@ -16851,7 +16891,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13449.9,
+          "price": 12490.0,
           "list_price": 14789.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264451359",
           "on_sale": true,
@@ -16955,7 +16995,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 11073.0,
+          "price": 11999.9,
           "list_price": 13569.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264484127",
           "on_sale": true,
@@ -16993,10 +17033,10 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 11073.0,
-      "price_max": 11555.91,
-      "price_spread_pct": 4.4,
-      "price_conflict": false
+      "price_min": 11087.91,
+      "price_max": 11999.9,
+      "price_spread_pct": 8.2,
+      "price_conflict": true
     },
     "2554": {
       "stock_code": "2554",
@@ -17227,7 +17267,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12999.9,
+          "price": 11993.0,
           "list_price": 14184.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-3lu-set?variant=48618667344159",
           "on_sale": true,
@@ -17283,7 +17323,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12999.9,
+          "price": 12070.0,
           "list_price": 14184.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-3lu-set?variant=48618667213087",
           "on_sale": true,
@@ -17339,7 +17379,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9755.0,
+          "price": 10349.9,
           "list_price": 11299.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264385823",
           "on_sale": true,
@@ -17395,8 +17435,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1899.9,
-          "list_price": null,
+          "price": 1793.0,
+          "list_price": 1899.9,
           "url": "https://roomartstore.com.tr/products/gusto-banyo-boy-dolabi?variant=48618604036383",
           "on_sale": true,
           "price_final": false
@@ -17491,7 +17531,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2749.9,
+          "price": 2543.0,
           "list_price": 2879.9,
           "url": "https://roomartstore.com.tr/products/gusto-banyo-boy-dolabi?variant=48618604003615",
           "on_sale": true,
@@ -17547,7 +17587,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9736.0,
+          "price": 10349.9,
           "list_price": 11299.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264516895",
           "on_sale": true,
@@ -17603,7 +17643,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2749.9,
+          "price": 2652.0,
           "list_price": 2879.9,
           "url": "https://roomartstore.com.tr/products/gusto-banyo-boy-dolabi?variant=48618604069151",
           "on_sale": true,
@@ -17659,7 +17699,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4025.0,
+          "price": 4066.0,
           "list_price": 4339.9,
           "url": "https://roomartstore.com.tr/products/gusto-aynali-banyo-ust-dolabi?variant=48618570154271",
           "on_sale": true,
@@ -17694,9 +17734,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 4025.0,
+      "price_min": 4063.41,
       "price_max": 4339.9,
-      "price_spread_pct": 7.8,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2215": {
@@ -18109,7 +18149,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8471.0,
+          "price": 9099.9,
           "list_price": 10439.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi?variant=48618233856287",
           "on_sale": true,
@@ -18165,7 +18205,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7619.0,
+          "price": 8249.9,
           "list_price": 9659.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi?variant=48618233889055",
           "on_sale": true,
@@ -18203,9 +18243,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7619.0,
+      "price_min": 7721.91,
       "price_max": 8249.9,
-      "price_spread_pct": 8.3,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2562": {
@@ -18221,7 +18261,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8433.0,
+          "price": 9399.9,
           "list_price": 10789.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi?variant=48618233823519",
           "on_sale": true,
@@ -18330,7 +18370,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7717.0,
+          "price": 7713.0,
           "list_price": 9659.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi?variant=48618233757983",
           "on_sale": true,
@@ -18368,9 +18408,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7717.0,
+      "price_min": 7713.0,
       "price_max": 8249.9,
-      "price_spread_pct": 6.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2541": {
@@ -18594,7 +18634,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8736.0,
+          "price": 9399.9,
           "list_price": 10789.9,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi?variant=48618233692447",
           "on_sale": true,
@@ -18698,8 +18738,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3813.0,
-          "list_price": 4039.9,
+          "price": 4039.9,
+          "list_price": null,
           "url": "https://roomartstore.com.tr/products/lotus-banyo-boy-dolabi?variant=48568612815135",
           "on_sale": true,
           "price_final": false
@@ -18919,8 +18959,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3753.0,
-          "list_price": 4039.9,
+          "price": 4039.9,
+          "list_price": null,
           "url": "https://roomartstore.com.tr/products/lotus-banyo-boy-dolabi?variant=48568612880671",
           "on_sale": true,
           "price_final": false
@@ -18963,9 +19003,9 @@
       ],
       "platform_count": 5,
       "price_min": 3739.91,
-      "price_max": 3887.91,
-      "price_spread_pct": 4.0,
-      "price_conflict": false
+      "price_max": 4039.9,
+      "price_spread_pct": 8.0,
+      "price_conflict": true
     },
     "2461": {
       "stock_code": "2461",
@@ -18980,8 +19020,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2097.0,
-          "list_price": 2274.9,
+          "price": 2274.9,
+          "list_price": null,
           "url": "https://roomartstore.com.tr/products/lotus-aynali-banyo-ust-dolap?variant=48568727011615",
           "on_sale": true,
           "price_final": false
@@ -19018,9 +19058,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2097.0,
-      "price_max": 2249.9,
-      "price_spread_pct": 7.3,
+      "price_min": 2105.42,
+      "price_max": 2274.9,
+      "price_spread_pct": 8.0,
       "price_conflict": true
     },
     "2468": {
@@ -19204,8 +19244,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1619.0,
-          "list_price": 1749.9,
+          "price": 1749.9,
+          "list_price": null,
           "url": "https://roomartstore.com.tr/products/lotus-banyo-boy-dolabi?variant=48568709251359",
           "on_sale": true,
           "price_final": false
@@ -19242,9 +19282,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 1619.0,
-      "price_max": 1739.9,
-      "price_spread_pct": 7.5,
+      "price_min": 1637.91,
+      "price_max": 1749.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2467": {
@@ -19372,7 +19412,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8210.0,
+          "price": 9524.0,
           "list_price": 9999.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=48141827866911",
           "on_sale": true,
@@ -19411,8 +19451,8 @@
       ],
       "platform_count": 5,
       "price_min": 7705.74,
-      "price_max": 8869.0,
-      "price_spread_pct": 15.1,
+      "price_max": 9524.0,
+      "price_spread_pct": 23.6,
       "price_conflict": true
     },
     "2531": {
@@ -19428,7 +19468,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6612.0,
+          "price": 7159.9,
           "list_price": 7999.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=48141827899679",
           "on_sale": true,
@@ -19467,7 +19507,7 @@
       ],
       "platform_count": 5,
       "price_min": 6226.32,
-      "price_max": 7159.0,
+      "price_max": 7159.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -19540,7 +19580,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5252.0,
+          "price": 5679.9,
           "list_price": 7860.0,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=48141362856223",
           "on_sale": true,
@@ -19579,8 +19619,8 @@
       ],
       "platform_count": 5,
       "price_min": 5170.2,
-      "price_max": 5471.91,
-      "price_spread_pct": 5.8,
+      "price_max": 5679.9,
+      "price_spread_pct": 9.9,
       "price_conflict": true
     },
     "2526": {
@@ -19910,7 +19950,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5844.0,
+          "price": 6259.9,
           "list_price": 7099.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=48141828030751",
           "on_sale": true,
@@ -19954,7 +19994,7 @@
       ],
       "platform_count": 5,
       "price_min": 5444.84,
-      "price_max": 6259.0,
+      "price_max": 6259.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -20019,7 +20059,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5815.0,
+          "price": 6259.9,
           "list_price": 7099.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=48141828227359",
           "on_sale": true,
@@ -20058,7 +20098,7 @@
       ],
       "platform_count": 5,
       "price_min": 5444.84,
-      "price_max": 6259.0,
+      "price_max": 6259.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -20075,7 +20115,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3813.0,
+          "price": 4119.9,
           "list_price": 4664.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=48141363216671",
           "on_sale": true,
@@ -20114,8 +20154,8 @@
       ],
       "platform_count": 5,
       "price_min": 3577.14,
-      "price_max": 4119.0,
-      "price_spread_pct": 15.1,
+      "price_max": 4119.9,
+      "price_spread_pct": 15.2,
       "price_conflict": true
     },
     "2490": {
@@ -20184,7 +20224,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3831.0,
+          "price": 4119.9,
           "list_price": 4664.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=48141362921759",
           "on_sale": true,
@@ -20223,7 +20263,7 @@
       ],
       "platform_count": 5,
       "price_min": 3810.31,
-      "price_max": 4119.0,
+      "price_max": 4119.9,
       "price_spread_pct": 8.1,
       "price_conflict": true
     },
@@ -20296,7 +20336,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4292.0,
+          "price": 4350.0,
           "list_price": 5189.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=48141363183903",
           "on_sale": true,
@@ -20334,9 +20374,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4292.0,
+      "price_min": 4298.71,
       "price_max": 4649.0,
-      "price_spread_pct": 8.3,
+      "price_spread_pct": 8.1,
       "price_conflict": true
     },
     "2507": {
@@ -20821,7 +20861,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14672.0,
+          "price": 16399.9,
           "list_price": 18939.9,
           "url": "https://roomartstore.com.tr/products/aria-oval-canak-lavabolu-banyo-dolabi-takimi-3lu-set?variant=48378198556959",
           "on_sale": true,
@@ -20877,7 +20917,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14306.0,
+          "price": 15899.9,
           "list_price": 18399.9,
           "url": "https://roomartstore.com.tr/products/aria-oval-canak-lavabolu-banyo-dolabi-takimi-3lu-set?variant=48378198589727",
           "on_sale": true,
@@ -20916,8 +20956,8 @@
       ],
       "platform_count": 5,
       "price_min": 13355.92,
-      "price_max": 15299.91,
-      "price_spread_pct": 14.6,
+      "price_max": 15899.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "2381": {
@@ -21029,7 +21069,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 11209.0,
+          "price": 11999.9,
           "list_price": 14199.9,
           "url": "https://roomartstore.com.tr/products/aria-oval-canak-lavabolu-banyo-dolabi-takimi-2li-set?variant=48378435240223",
           "on_sale": true,
@@ -21090,7 +21130,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 15799.9,
+          "price": 14837.0,
           "list_price": 16839.9,
           "url": "https://roomartstore.com.tr/products/lotus-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48568573296927",
           "on_sale": true,
@@ -21138,7 +21178,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 14694.0,
+          "price": 14811.0,
           "list_price": 16839.9,
           "url": "https://roomartstore.com.tr/products/lotus-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48568573329695",
           "on_sale": true,
@@ -21231,7 +21271,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10882.0,
+          "price": 11004.0,
           "list_price": 12799.9,
           "url": "https://roomartstore.com.tr/products/lotus-oval-canak-lavabolu-banyo-dolabi-2li-set-1?variant=48568593187103",
           "on_sale": true,
@@ -21266,9 +21306,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10882.0,
+      "price_min": 10916.91,
       "price_max": 11659.9,
-      "price_spread_pct": 7.1,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2520": {
@@ -21284,7 +21324,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10934.0,
+          "price": 11659.9,
           "list_price": 12799.9,
           "url": "https://roomartstore.com.tr/products/lotus-oval-canak-lavabolu-banyo-dolabi-2li-set-1?variant=48568593121567",
           "on_sale": true,
@@ -21315,9 +21355,9 @@
       ],
       "platform_count": 4,
       "price_min": 10916.91,
-      "price_max": 11231.91,
-      "price_spread_pct": 2.9,
-      "price_conflict": false
+      "price_max": 11659.9,
+      "price_spread_pct": 6.8,
+      "price_conflict": true
     },
     "2518": {
       "stock_code": "2518",
@@ -21689,7 +21729,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12306.0,
+          "price": 13659.9,
           "list_price": 14199.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi-3lu-set?variant=47973519884575",
           "on_sale": true,
@@ -21727,9 +21767,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 12306.0,
-      "price_max": 13158.63,
-      "price_spread_pct": 6.9,
+      "price_min": 12623.51,
+      "price_max": 13659.9,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2479": {
@@ -21801,7 +21841,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12328.0,
+          "price": 13659.9,
           "list_price": 14199.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi-3lu-set?variant=47973520015647",
           "on_sale": true,
@@ -21839,9 +21879,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 12328.0,
-      "price_max": 13163.84,
-      "price_spread_pct": 6.8,
+      "price_min": 12623.51,
+      "price_max": 13659.9,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2471": {
@@ -21857,7 +21897,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13449.9,
+          "price": 12716.0,
           "list_price": 13749.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi-3lu-set?variant=47973519917343",
           "on_sale": true,
@@ -21896,9 +21936,9 @@
       ],
       "platform_count": 5,
       "price_min": 12429.91,
-      "price_max": 13449.9,
-      "price_spread_pct": 8.2,
-      "price_conflict": true
+      "price_max": 12950.91,
+      "price_spread_pct": 4.2,
+      "price_conflict": false
     },
     "2477": {
       "stock_code": "2477",
@@ -21969,7 +22009,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13449.9,
+          "price": 12828.0,
           "list_price": 13749.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi-3lu-set?variant=47973520048415",
           "on_sale": true,
@@ -22254,7 +22294,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8867.0,
+          "price": 8970.0,
           "list_price": 10174.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi-2li-set?variant=47972957782303",
           "on_sale": true,
@@ -22931,7 +22971,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6155.0,
+          "price": 6438.0,
           "list_price": 7549.9,
           "url": "https://roomartstore.com.tr/products/lotus-lavabolu-banyo-dolabi?variant=47954507006239",
           "on_sale": true,
@@ -22969,9 +23009,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 6155.0,
+      "price_min": 6331.51,
       "price_max": 6849.9,
-      "price_spread_pct": 11.3,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "2452": {
@@ -23624,7 +23664,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7263.0,
+          "price": 7799.0,
           "list_price": 8899.9,
           "url": "https://roomartstore.com.tr/products/camasir-ve-kurutma-makinesi-dolabi-231-cm?variant=48618152722719",
           "on_sale": true,
@@ -24010,7 +24050,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7244.0,
+          "price": 7799.0,
           "list_price": 8899.9,
           "url": "https://roomartstore.com.tr/products/camasir-ve-kurutma-makinesi-dolabi-231-cm?variant=48618152755487",
           "on_sale": true,
@@ -24511,7 +24551,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6317.0,
+          "price": 6799.9,
           "list_price": 7599.9,
           "url": "https://roomartstore.com.tr/products/duo-camasir-ve-kurutma-makinesi-kabini-196-cm?variant=48618094362911",
           "on_sale": true,
@@ -24555,9 +24595,9 @@
       ],
       "platform_count": 5,
       "price_min": 6283.11,
-      "price_max": 6547.41,
-      "price_spread_pct": 4.2,
-      "price_conflict": false
+      "price_max": 6799.9,
+      "price_spread_pct": 8.2,
+      "price_conflict": true
     },
     "2373": {
       "stock_code": "2373",
@@ -24745,7 +24785,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4007.0,
+          "price": 4096.0,
           "list_price": 4739.9,
           "url": "https://roomartstore.com.tr/products/aria-cekmeceli-boy-dolabi?variant=47951220605215",
           "on_sale": true,
@@ -24789,8 +24829,8 @@
       ],
       "platform_count": 5,
       "price_min": 3852.38,
-      "price_max": 4073.72,
-      "price_spread_pct": 5.7,
+      "price_max": 4096.0,
+      "price_spread_pct": 6.3,
       "price_conflict": true
     },
     "2389": {
@@ -25062,7 +25102,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4175.0,
+          "price": 4499.9,
           "list_price": 5099.9,
           "url": "https://roomartstore.com.tr/products/duo-camasir-ve-kurutma-makinesi-kabini?variant=47767824859423",
           "on_sale": true,
@@ -25101,7 +25141,7 @@
       ],
       "platform_count": 5,
       "price_min": 4157.91,
-      "price_max": 4499.0,
+      "price_max": 4499.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -25118,7 +25158,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4191.0,
+          "price": 4499.9,
           "list_price": 5099.9,
           "url": "https://roomartstore.com.tr/products/duo-camasir-ve-kurutma-makinesi-kabini?variant=47767824924959",
           "on_sale": true,
@@ -25162,7 +25202,7 @@
       ],
       "platform_count": 5,
       "price_min": 3911.36,
-      "price_max": 4499.0,
+      "price_max": 4499.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -26018,7 +26058,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5816.0,
+          "price": 6749.9,
           "list_price": 7249.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630601503",
           "on_sale": true,
@@ -26057,8 +26097,8 @@
       ],
       "platform_count": 5,
       "price_min": 5651.27,
-      "price_max": 6499.0,
-      "price_spread_pct": 15.0,
+      "price_max": 6749.9,
+      "price_spread_pct": 19.4,
       "price_conflict": true
     },
     "2129": {
@@ -26855,7 +26895,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6035.0,
+          "price": 6749.9,
           "list_price": 7499.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630699807",
           "on_sale": true,
@@ -26899,7 +26939,7 @@
       ],
       "platform_count": 5,
       "price_min": 5867.53,
-      "price_max": 6749.0,
+      "price_max": 6749.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -26916,7 +26956,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6306.0,
+          "price": 6749.9,
           "list_price": 7499.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630798111",
           "on_sale": true,
@@ -26959,9 +26999,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 6306.0,
-      "price_max": 6749.0,
-      "price_spread_pct": 7.0,
+      "price_min": 6317.91,
+      "price_max": 6749.9,
+      "price_spread_pct": 6.8,
       "price_conflict": true
     },
     "2077": {
@@ -27137,7 +27177,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6285.0,
+          "price": 6334.0,
           "list_price": 7499.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630765343",
           "on_sale": true,
@@ -28597,7 +28637,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3709.0,
+          "price": 3999.9,
           "list_price": 4499.9,
           "url": "https://roomartstore.com.tr/products/mk3-kapakli-camasir-makinesi-dolabi?variant=44285406282015",
           "on_sale": true,
@@ -28636,7 +28676,7 @@
       ],
       "platform_count": 5,
       "price_min": 3478.84,
-      "price_max": 3999.0,
+      "price_max": 3999.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -28653,7 +28693,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6889.0,
+          "price": 7399.9,
           "list_price": 8299.9,
           "url": "https://roomartstore.com.tr/products/cd2-camasir-makinesi-dolabi?variant=44285319414047",
           "on_sale": true,
@@ -28692,8 +28732,8 @@
       ],
       "platform_count": 5,
       "price_min": 4668.27,
-      "price_max": 6936.56,
-      "price_spread_pct": 48.6,
+      "price_max": 7399.9,
+      "price_spread_pct": 58.5,
       "price_conflict": true
     },
     "1556": {
@@ -29308,7 +29348,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8402.0,
+          "price": 8999.9,
           "list_price": 9799.9,
           "url": "https://roomartstore.com.tr/products/d-d1-camasir-ve-kurutma-makinesi-dolabi?variant=44289025671455",
           "on_sale": true,
@@ -29352,7 +29392,7 @@
       ],
       "platform_count": 5,
       "price_min": 7823.7,
-      "price_max": 8999.0,
+      "price_max": 8999.9,
       "price_spread_pct": 15.0,
       "price_conflict": true
     },
@@ -29369,7 +29409,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8059.0,
+          "price": 8999.9,
           "list_price": 9799.9,
           "url": "https://roomartstore.com.tr/products/d-d1-camasir-ve-kurutma-makinesi-dolabi?variant=44289025573151",
           "on_sale": true,
@@ -29407,9 +29447,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 8059.0,
-      "price_max": 8999.0,
-      "price_spread_pct": 11.7,
+      "price_min": 8315.91,
+      "price_max": 8999.9,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "1994": {
@@ -29609,7 +29649,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6214.0,
+          "price": 6699.9,
           "list_price": 7399.9,
           "url": "https://roomartstore.com.tr/products/camasir-ve-kurutma-makinesi-dolabi?variant=44285550428447",
           "on_sale": true,
@@ -29640,7 +29680,7 @@
       ],
       "platform_count": 4,
       "price_min": 6190.71,
-      "price_max": 6699.0,
+      "price_max": 6699.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -29657,7 +29697,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6199.0,
+          "price": 6699.9,
           "list_price": 7399.9,
           "url": "https://roomartstore.com.tr/products/camasir-ve-kurutma-makinesi-dolabi?variant=44285550493983",
           "on_sale": true,
@@ -29701,7 +29741,7 @@
       ],
       "platform_count": 5,
       "price_min": 6190.71,
-      "price_max": 6699.0,
+      "price_max": 6699.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -30427,7 +30467,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5378.0,
+          "price": 5549.0,
           "list_price": 6434.9,
           "url": "https://roomartstore.com.tr/products/tm9-lavabolu-banyo-dolabi-2li-set?variant=44281751830815",
           "on_sale": true,
@@ -30656,7 +30696,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5191.0,
+          "price": 5549.0,
           "list_price": 6434.9,
           "url": "https://roomartstore.com.tr/products/tm9-lavabolu-banyo-dolabi-2li-set?variant=44281751798047",
           "on_sale": true,
@@ -30686,9 +30726,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5191.0,
+      "price_min": 5359.11,
       "price_max": 5799.9,
-      "price_spread_pct": 11.7,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "1958": {
@@ -30800,7 +30840,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3733.0,
+          "price": 3782.0,
           "list_price": 4524.9,
           "url": "https://roomartstore.com.tr/products/ld4-lavabolu-banyo-dolabi?variant=44281777848607",
           "on_sale": true,
@@ -31608,7 +31648,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8010.0,
+          "price": 8659.9,
           "list_price": 10479.9,
           "url": "https://roomartstore.com.tr/products/ld3-lavabolu-banyo-dolabi?variant=47006213046559",
           "on_sale": true,
@@ -31647,8 +31687,8 @@
       ],
       "platform_count": 5,
       "price_min": 7528.8,
-      "price_max": 8108.91,
-      "price_spread_pct": 7.7,
+      "price_max": 8659.9,
+      "price_spread_pct": 15.0,
       "price_conflict": true
     },
     "1901": {
@@ -31880,7 +31920,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9745.0,
+          "price": 10499.9,
           "list_price": 12499.9,
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-2li-set?variant=47005956505887",
           "on_sale": true,
@@ -32093,7 +32133,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8659.9,
+          "price": 8271.0,
           "list_price": 10479.9,
           "url": "https://roomartstore.com.tr/products/ld3-lavabolu-banyo-dolabi?variant=47006213144863",
           "on_sale": true,
@@ -32132,8 +32172,8 @@
       ],
       "platform_count": 5,
       "price_min": 7928.72,
-      "price_max": 8659.9,
-      "price_spread_pct": 9.2,
+      "price_max": 8342.91,
+      "price_spread_pct": 5.2,
       "price_conflict": true
     },
     "1910": {
@@ -32429,7 +32469,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10981.0,
+          "price": 11699.9,
           "list_price": 13499.9,
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=47005503914271",
           "on_sale": true,
@@ -32813,7 +32853,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3156.0,
+          "price": 3399.9,
           "list_price": 3494.9,
           "url": "https://roomartstore.com.tr/products/bd7-banyo-boy-dolabi?variant=44284568142111",
           "on_sale": true,
@@ -32856,9 +32896,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3156.0,
+      "price_min": 3181.41,
       "price_max": 3419.9,
-      "price_spread_pct": 8.4,
+      "price_spread_pct": 7.5,
       "price_conflict": true
     },
     "1886": {
@@ -32954,7 +32994,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8077.0,
+          "price": 8999.9,
           "list_price": 9799.9,
           "url": "https://roomartstore.com.tr/products/d-d1-camasir-ve-kurutma-makinesi-dolabi?variant=44289025638687",
           "on_sale": true,
@@ -32992,9 +33032,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 8077.0,
-      "price_max": 8999.0,
-      "price_spread_pct": 11.4,
+      "price_min": 8315.91,
+      "price_max": 8999.9,
+      "price_spread_pct": 8.2,
       "price_conflict": true
     },
     "1775": {
@@ -33010,7 +33050,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9362.0,
+          "price": 9999.9,
           "list_price": 10999.9,
           "url": "https://roomartstore.com.tr/products/d-d2-camasir-ve-kurutma-makinesi-dolabi?variant=44288938344735",
           "on_sale": true,
@@ -33049,7 +33089,7 @@
       ],
       "platform_count": 5,
       "price_min": 9239.91,
-      "price_max": 9999.0,
+      "price_max": 9999.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -34215,7 +34255,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3151.0,
+          "price": 3399.9,
           "list_price": 3494.9,
           "url": "https://roomartstore.com.tr/products/bd7-banyo-boy-dolabi?variant=44284568174879",
           "on_sale": true,
@@ -34253,9 +34293,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3151.0,
+      "price_min": 3181.41,
       "price_max": 3419.9,
-      "price_spread_pct": 8.5,
+      "price_spread_pct": 7.5,
       "price_conflict": true
     },
     "1722": {
@@ -34271,7 +34311,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12760.0,
+          "price": 13749.9,
           "list_price": 15349.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-banyo-dolabi-3lu-set?variant=47003878457631",
           "on_sale": true,
@@ -34397,7 +34437,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8082.0,
+          "price": 8739.9,
           "list_price": 10329.9,
           "url": "https://roomartstore.com.tr/products/tm7-lavabolu-banyo-dolabi-2li-set?variant=47005126492447",
           "on_sale": true,
@@ -34501,7 +34541,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6825.0,
+          "price": 6897.0,
           "list_price": 8594.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-alt-dolap-100-cm?variant=47003378975007",
           "on_sale": true,
@@ -34562,7 +34602,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2122.0,
+          "price": 2299.9,
           "list_price": 2724.9,
           "url": "https://roomartstore.com.tr/products/ad7-aynali-banyo-dolabi?variant=47006355226911",
           "on_sale": true,
@@ -34600,8 +34640,8 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2122.0,
-      "price_max": 2264.9,
+      "price_min": 2155.41,
+      "price_max": 2299.9,
       "price_spread_pct": 6.7,
       "price_conflict": true
     },
@@ -34674,7 +34714,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12495.0,
+          "price": 13399.9,
           "list_price": 14824.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-banyo-dolabi-3lu-set?variant=47003878490399",
           "on_sale": true,
@@ -34786,7 +34826,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 4481.0,
+          "price": 4799.9,
           "list_price": 5399.9,
           "url": "https://roomartstore.com.tr/products/eco-camasir-makinesi-dolabi?variant=44285511860511",
           "on_sale": true,
@@ -34825,7 +34865,7 @@
       ],
       "platform_count": 5,
       "price_min": 4435.11,
-      "price_max": 4799.0,
+      "price_max": 4799.9,
       "price_spread_pct": 8.2,
       "price_conflict": true
     },
@@ -35242,7 +35282,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 9561.0,
+          "price": 10349.9,
           "list_price": 11789.9,
           "url": "https://roomartstore.com.tr/products/tm7-lavabolu-banyo-dolabi-2li-set?variant=47005126230303",
           "on_sale": true,
@@ -35690,7 +35730,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 3167.0,
+          "price": 3399.9,
           "list_price": 3494.9,
           "url": "https://roomartstore.com.tr/products/bd7-banyo-boy-dolabi?variant=44284568076575",
           "on_sale": true,
@@ -35959,7 +35999,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 11172.0,
+          "price": 11999.9,
           "list_price": 13599.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-banyo-dolabi-3lu-set?variant=47003878424863",
           "on_sale": true,
@@ -36071,7 +36111,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8096.0,
+          "price": 8739.9,
           "list_price": 10329.9,
           "url": "https://roomartstore.com.tr/products/tm7-lavabolu-banyo-dolabi-2li-set?variant=47005126394143",
           "on_sale": true,
@@ -36183,7 +36223,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 12785.0,
+          "price": 13749.9,
           "list_price": 15349.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-banyo-dolabi-3lu-set?variant=47003878359327",
           "on_sale": true,
@@ -36391,7 +36431,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 13399.9,
+          "price": 12626.0,
           "list_price": 14824.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-banyo-dolabi-3lu-set?variant=47003878392095",
           "on_sale": true,
@@ -38748,7 +38788,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 10780.0,
+          "price": 11649.9,
           "list_price": 13699.9,
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-2li-set?variant=47005956669727",
           "on_sale": true,
@@ -46613,7 +46653,7 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "shopify": {
-          "price": 12913.0,
+          "price": 13899.9,
           "list_price": 15899.9,
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=47005504012575",
           "on_sale": true,
@@ -46650,9 +46690,9 @@
         "shopify"
       ],
       "platform_count": 4,
-      "price_min": 12913.0,
+      "price_min": 13899.9,
       "price_max": 14874.9,
-      "price_spread_pct": 15.2,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2607": {
