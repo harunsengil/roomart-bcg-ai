@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-28T08:01:11.369454+00:00",
+    "generated_at": "2026-07-29T08:06:43.680868+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,10 +9,10 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1158,
+    "total_products": 1160,
     "multi_platform_count": 990,
     "by_platform_count": {
-      "trendyol": 1007,
+      "trendyol": 1009,
       "shopify": 687,
       "hb": 925,
       "n11": 699,
@@ -23,6 +23,54 @@
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "3000": {
+      "stock_code": "3000",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 45 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 4119,
+          "list_price": 4119,
+          "url": "",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4119,
+      "price_max": 4119,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "2997": {
+      "stock_code": "2997",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 45 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 4119,
+          "list_price": 4119,
+          "url": "",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4119,
+      "price_max": 4119,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "057.48.080.78.81": {
       "stock_code": "057.48.080.78.81",
       "name": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, 60x80 cm",
@@ -27805,7 +27853,7 @@
           "price": 2805.68,
           "list_price": 2999.9,
           "url": "https://www.trendyol.com/roomart/ad7-kulpsuz-2-kapakli-ahs-ap-siyah-suntalam-80-cm-aynali-banyo-u-st-dolabi-p-736999529?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "hb": {
