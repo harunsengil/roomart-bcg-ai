@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-29T08:06:43.680868+00:00",
+    "generated_at": "2026-07-30T07:56:10.233854+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,10 +9,10 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1160,
+    "total_products": 1170,
     "multi_platform_count": 990,
     "by_platform_count": {
-      "trendyol": 1009,
+      "trendyol": 1019,
       "shopify": 687,
       "hb": 925,
       "n11": 699,
@@ -23,6 +23,246 @@
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "3011": {
+      "stock_code": "3011",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 8869,
+          "list_price": 8869,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-x-200-cm-p-1177544934?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 8869,
+      "price_max": 8869,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3008": {
+      "stock_code": "3008",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 8869,
+          "list_price": 8869,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-x-200-cm-p-1177544241?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 8869,
+      "price_max": 8869,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3002": {
+      "stock_code": "3002",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 5679,
+          "list_price": 5679,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-cm-p-1177542912?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 5679,
+      "price_max": 5679,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3007": {
+      "stock_code": "3007",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 7159.9,
+          "list_price": 7159.9,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-1177542095?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7159.9,
+      "price_max": 7159.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3010": {
+      "stock_code": "3010",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 7159.9,
+          "list_price": 7159.9,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-1177542005?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7159.9,
+      "price_max": 7159.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3001": {
+      "stock_code": "3001",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 4649,
+          "list_price": 4649,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-cm-p-1177540628?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4649,
+      "price_max": 4649,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "2998": {
+      "stock_code": "2998",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 4649,
+          "list_price": 4649,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-cm-p-1177540594?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 4649,
+      "price_max": 4649,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3006": {
+      "stock_code": "3006",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 45 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 6259,
+          "list_price": 6259,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-x-200-cm-p-1177415766?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6259,
+      "price_max": 6259,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "3009": {
+      "stock_code": "3009",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 45 x 200 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 6259,
+          "list_price": 6259,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-x-200-cm-p-1177414957?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6259,
+      "price_max": 6259,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "2999": {
+      "stock_code": "2999",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 5679,
+          "list_price": 5679,
+          "url": "",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 5679,
+      "price_max": 5679,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "3000": {
       "stock_code": "3000",
       "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 45 cm",
@@ -31,8 +271,8 @@
         "trendyol": {
           "price": 4119,
           "list_price": 4119,
-          "url": "",
-          "on_sale": false,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-cm-p-1177241390?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
           "price_final": false
         }
       },
@@ -55,8 +295,8 @@
         "trendyol": {
           "price": 4119,
           "list_price": 4119,
-          "url": "",
-          "on_sale": false,
+          "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-cm-p-1177241370?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
           "price_final": false
         }
       },
