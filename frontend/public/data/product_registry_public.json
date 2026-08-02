@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-01T07:43:51.793170+00:00",
+    "generated_at": "2026-08-02T07:45:39.947511+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -2233,7 +2233,7 @@
           "price": 6258.95,
           "list_price": 6899.9,
           "url": "https://www.trendyol.com/roomart/nora-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-p-942615652?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         }
       },
