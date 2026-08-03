@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-03T08:49:01.605386+00:00",
+    "generated_at": "2026-08-03T08:55:04.917155+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -18,7 +18,7 @@
       "n11": 699,
       "koctas": 438
     },
-    "price_conflict_count": 803,
+    "price_conflict_count": 806,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -29,11 +29,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 5679,
+          "price": 2499.9,
           "list_price": 5679,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-cm-p-1177620566?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 5679.0,
@@ -50,10 +50,10 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 5679,
-      "price_max": 5679,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_min": 2499.9,
+      "price_max": 5679.0,
+      "price_spread_pct": 127.2,
+      "price_conflict": true
     },
     "3011": {
       "stock_code": "3011",
@@ -61,11 +61,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 8869,
+          "price": 8869.0,
           "list_price": 8869,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-x-200-cm-p-1177544934?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 8869.0,
@@ -82,8 +82,8 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 8869,
-      "price_max": 8869,
+      "price_min": 8869.0,
+      "price_max": 8869.0,
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
@@ -93,11 +93,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 8869,
+          "price": 8869.0,
           "list_price": 8869,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-x-200-cm-p-1177544241?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 8869.0,
@@ -114,8 +114,8 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 8869,
-      "price_max": 8869,
+      "price_min": 8869.0,
+      "price_max": 8869.0,
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
@@ -125,11 +125,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 5679,
+          "price": 5679.0,
           "list_price": 5679,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-90-cm-p-1177542912?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 5679.0,
@@ -146,8 +146,8 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 5679,
-      "price_max": 5679,
+      "price_min": 5679.0,
+      "price_max": 5679.0,
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
@@ -161,7 +161,7 @@
           "list_price": 7159.9,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-1177542095?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -185,7 +185,7 @@
           "list_price": 7159.9,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-x-200-cm-p-1177542005?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7159.9,
@@ -245,11 +245,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 4649,
+          "price": 4649.0,
           "list_price": 4649,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-cm-p-1177540594?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4649.0,
@@ -266,8 +266,8 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 4649,
-      "price_max": 4649,
+      "price_min": 4649.0,
+      "price_max": 4649.0,
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
@@ -277,11 +277,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 6259,
+          "price": 1043.17,
           "list_price": 6259,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-x-200-cm-p-1177415766?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6259.0,
@@ -298,10 +298,10 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 6259,
-      "price_max": 6259,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_min": 1043.17,
+      "price_max": 6259.0,
+      "price_spread_pct": 500.0,
+      "price_conflict": true
     },
     "3009": {
       "stock_code": "3009",
@@ -309,11 +309,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 6259,
+          "price": 6259.0,
           "list_price": 6259,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-x-200-cm-p-1177414957?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6259.9,
@@ -330,7 +330,7 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 6259,
+      "price_min": 6259.0,
       "price_max": 6259.9,
       "price_spread_pct": 0.0,
       "price_conflict": false
@@ -341,11 +341,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 4119,
+          "price": 4119.0,
           "list_price": 4119,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-cm-p-1177241390?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4119.9,
@@ -362,7 +362,7 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 4119,
+      "price_min": 4119.0,
       "price_max": 4119.9,
       "price_spread_pct": 0.0,
       "price_conflict": false
@@ -373,11 +373,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 4119,
+          "price": 1729.9,
           "list_price": 4119,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-45-cm-p-1177241370?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4119.0,
@@ -394,10 +394,10 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 4119,
-      "price_max": 4119,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_min": 1729.9,
+      "price_max": 4119.0,
+      "price_spread_pct": 138.1,
+      "price_conflict": true
     },
     "057.48.080.78.81": {
       "stock_code": "057.48.080.78.81",
