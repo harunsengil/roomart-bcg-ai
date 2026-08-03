@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-02T07:45:29.965643+00:00",
-    "total_alerts": 10
+    "last_updated": "2026-08-03T08:48:47.845794+00:00",
+    "total_alerts": 9
   },
   "alerts": [
     {
@@ -11,88 +11,79 @@
       "title": "Mutfak Adası — yükselen fırsat",
       "message": "Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası , Mutfa büyüme momentumu yüksek (58/100).",
       "product_id": "877650259",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-2",
-      "type": "OPPORTUNITY",
+      "type": "RISK",
       "severity": "HIGH",
-      "title": "Kahve Köşesi — yükselen fırsat",
-      "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (58/100).",
-      "product_id": "1156642072",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "title": "Banyo Dolabı — çıkış adayı",
+      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
+      "product_id": "971265574",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-3",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.8) ve düşük pay. İnceleme önerilir.",
-      "product_id": "971265574",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "message": "ROOMART Dubai Kapaklı ve Sepetli 92.2 cm Mdflam Banyo Dolabı zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
+      "product_id": "962231369",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-4",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Dubai Kapaklı ve Sepetli 92.2 cm Mdflam Banyo Dolabı zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
-      "product_id": "962231369",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Kitaplıklı Çalışma Masası — lider STAR",
+      "message": "ROOMART Napoli Çok Amaçlı Dolap Kiler Dolabı Kitaplık Mutfak pay 88, büyüme 65.",
+      "product_id": "873329385",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "ROOMART Napoli Çok Amaçlı Dolap Kiler Dolabı Kitaplık Mutfak pay 87, büyüme 65.",
-      "product_id": "873329385",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "title": "Sehpa — lider STAR",
+      "message": "ROOMART Helsinki Orta Sehpa Suntalam 80 cm pay 100, büyüme 52.",
+      "product_id": "866321311",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-6",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 50.",
-      "product_id": "920575303",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "Sehpa — yüksek iade riski",
+      "message": "Siena Sehpa Koltuk Sehpası, Yan Sehpa, Zigon Sehpa, Servis S iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "866372609",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Banyo Dolabı Mat Mdf 150 X 35 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "828218377",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "message": "Suntalam 70 X 25 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "460070742",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
-      "severity": "HIGH",
-      "title": "Sehpa — yüksek iade riski",
-      "message": "Siena Sehpa Koltuk Sehpası, Yan Sehpa, Zigon Sehpa, Servis S iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "866372609",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "severity": "INFO",
+      "title": "Diğer — kârsız hacim uyarısı",
+      "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %80 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174453064",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     },
     {
       "id": "alert-9",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %80 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174453064",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
-    },
-    {
-      "id": "alert-10",
-      "type": "RISK",
-      "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
-      "message": "Çamaşır Sepetli Çamaşır Makinesi Dolabı , Kirli Sepetli Çok  hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
-      "product_id": "877183162",
-      "timestamp": "2026-08-02T07:45:29.941726+00:00"
+      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %80 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174373102",
+      "timestamp": "2026-08-03T08:48:47.823307+00:00"
     }
   ]
 }

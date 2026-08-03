@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-02T07:45:39.947511+00:00",
+    "generated_at": "2026-08-03T08:49:01.605386+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -33022,10 +33022,10 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 13499.9,
-          "list_price": 13499.9,
+          "price": 14999.9,
+          "list_price": 14999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-mat-mdf-100-cm-banyo-alt-dolap-aynali-u-st-dolap-boy-dolap-p-373298553?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": false
         },
         "hb": {
