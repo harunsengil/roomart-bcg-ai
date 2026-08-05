@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-04T08:07:28.567872+00:00",
+    "generated_at": "2026-08-05T08:03:04.060968+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,20 +9,164 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1170,
+    "total_products": 1177,
     "multi_platform_count": 1002,
     "by_platform_count": {
-      "trendyol": 1019,
+      "trendyol": 1025,
       "shopify": 699,
       "hb": 935,
-      "n11": 699,
+      "n11": 702,
       "koctas": 438
     },
-    "price_conflict_count": 808,
+    "price_conflict_count": 809,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "054.22.120.01.00": {
+      "stock_code": "054.22.120.01.00",
+      "name": "Lena Vestiyer Takımı Askılıklı, Ayakkabılık Dolabı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 9499.9,
+          "list_price": 9499.9,
+          "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179925560?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9499.9,
+      "price_max": 9499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "054.01.120.04.00": {
+      "stock_code": "054.01.120.04.00",
+      "name": "Lena Vestiyer Takımı Askılıklı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 7249.9,
+          "list_price": 7249.9,
+          "url": "",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7249.9,
+      "price_max": 7249.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "054.01.120.01.00": {
+      "stock_code": "054.01.120.01.00",
+      "name": "Lena Vestiyer Takımı Askılıklı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 7249.9,
+          "list_price": 7249.9,
+          "url": "",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7249.9,
+      "price_max": 7249.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "054.22.120.04.00": {
+      "stock_code": "054.22.120.04.00",
+      "name": "Lena Vestiyer Takımı Askılıklı, Ayakkabılık Dolabı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 9499.9,
+          "list_price": 9499.9,
+          "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179925003?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9499.9,
+      "price_max": 9499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.47.000.04.72": {
+      "stock_code": "053.47.000.04.72",
+      "name": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 18499.9,
+          "list_price": 18499.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179886797?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 18499.9,
+      "price_max": 18499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.47.000.01.72": {
+      "stock_code": "053.47.000.01.72",
+      "name": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 18499.9,
+          "list_price": 18499.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179634049?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 18499.9,
+      "price_max": 18499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "2999": {
       "stock_code": "2999",
       "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90 cm",
@@ -361,18 +505,26 @@
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=52723583222047",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6697.13,
+          "list_price": 6697.13,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-roomart-kulgri-134119801",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1043.17,
-      "price_max": 6259.0,
-      "price_spread_pct": 500.0,
+      "price_max": 6697.13,
+      "price_spread_pct": 542.0,
       "price_conflict": true
     },
     "3009": {
@@ -393,19 +545,27 @@
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap-takimi?variant=52723583254815",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6697.13,
+          "list_price": 6697.13,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-roomart-kulgri-kumtasi-134119800",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 6259.0,
-      "price_max": 6259.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_max": 6697.13,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3000": {
       "stock_code": "3000",
@@ -21221,7 +21381,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 18759.9,
+          "price": 17704.0,
           "list_price": 21489.9,
           "url": "https://roomartstore.com.tr/products/aria-oval-canak-lavabolu-banyo-dolabi-takimi-4lu-set?variant=48378091962655",
           "on_sale": true,
@@ -30222,7 +30382,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 1849.9,
+          "price": 1746.0,
           "list_price": 2049.9,
           "url": "https://roomartstore.com.tr/products/bd4-banyo-dolabi?variant=44281881985311",
           "on_sale": true,
@@ -35802,7 +35962,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6999.9,
+          "price": 6606.0,
           "list_price": 8159.9,
           "url": "https://roomartstore.com.tr/products/atlantic-lavabolu-alt-dolap-100-cm?variant=47003804303647",
           "on_sale": true,
@@ -48948,6 +49108,30 @@
       "platform_count": 1,
       "price_min": 2019.9,
       "price_max": 2019.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "8682157218013": {
+      "stock_code": "8682157218013",
+      "name": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Dolap 45 X 200, Roomart Külgri Kül Gri ",
+      "category": "Çamaşır Makinesi Dolabı",
+      "platforms": {
+        "n11": {
+          "price": 6697.13,
+          "list_price": 6697.13,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-roomart-kulgri-kul-gri-134119837",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "n11"
+      ],
+      "platform_count": 1,
+      "price_min": 6697.13,
+      "price_max": 6697.13,
       "price_spread_pct": null,
       "price_conflict": false
     },
