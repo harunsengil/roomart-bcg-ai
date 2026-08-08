@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-07T06:46:11.328141+00:00",
+    "generated_at": "2026-08-08T06:07:23.694230+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,10 +10,10 @@
       "koctas"
     ],
     "total_products": 1196,
-    "multi_platform_count": 1021,
+    "multi_platform_count": 1027,
     "by_platform_count": {
       "trendyol": 1044,
-      "shopify": 719,
+      "shopify": 725,
       "hb": 937,
       "n11": 701,
       "koctas": 438
@@ -34,17 +34,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711303?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 12749.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426393375",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 12749.9,
       "price_max": 12749.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.01.70": {
@@ -58,17 +66,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711112?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 12749.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426360607",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 12749.9,
       "price_max": 12749.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.01.77": {
@@ -146,17 +162,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180680414?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 9999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi?variant=52749408796959",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 9999.9,
       "price_max": 9999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.01.78": {
@@ -170,17 +194,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180680267?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 9999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi?variant=52749408764191",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 9999.9,
       "price_max": 9999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.04.66": {
@@ -194,17 +226,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180668656?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 10749.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi?variant=52749391167775",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 10749.9,
       "price_max": 10749.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.01.66": {
@@ -218,17 +258,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180668559?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 10749.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi?variant=52749391135007",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 10749.9,
       "price_max": 10749.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.01.73": {
@@ -14776,7 +14824,7 @@
           "price": 1999.9,
           "list_price": 1999.9,
           "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-110-cm-p-866321554?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -34195,10 +34243,10 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 12629.9,
-          "list_price": 12629.9,
+          "price": 13899.9,
+          "list_price": 13899.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-mat-mdf-85-cm-banyo-alt-dolap-aynali-u-st-dolap-boy-dolap-p-373255558?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": false
         },
         "hb": {
