@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-09T06:09:12.643890+00:00",
+    "generated_at": "2026-08-10T06:52:25.965520+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -6654,7 +6654,7 @@
           "price": 8499.9,
           "list_price": 8499.9,
           "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-u-st-dolabi-banyo-boy-dolabi-p-923693227?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": false
         },
         "shopify": {
