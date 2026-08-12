@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-11T06:15:59.140860+00:00",
+    "generated_at": "2026-08-12T06:54:35.197234+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,11 +10,11 @@
       "koctas"
     ],
     "total_products": 1196,
-    "multi_platform_count": 1027,
+    "multi_platform_count": 1028,
     "by_platform_count": {
-      "trendyol": 1044,
+      "trendyol": 1045,
       "shopify": 725,
-      "hb": 937,
+      "hb": 939,
       "n11": 701,
       "koctas": 438
     },
@@ -215,22 +215,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "053.22.000.01.73": {
-      "stock_code": "053.22.000.01.73",
+    "053.22.000.01.71": {
+      "stock_code": "053.22.000.01.71",
       "name": "Nord Vestiyer Takımı Askılıklı, Ayakkabılık Dolabı, Bench, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 0.0,
-          "list_price": 0,
+          "price": 11099.9,
+          "list_price": 11099.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180159124?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": false
         },
         "shopify": {
-          "price": 11999.9,
+          "price": 11099.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52740774920479",
           "on_sale": true,
           "price_final": false
         }
@@ -242,9 +242,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": null,
+      "price_min": 11099.9,
+      "price_max": 11099.9,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.04.71": {
@@ -487,6 +487,38 @@
           "price": 11999.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730061087",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 11999.9,
+      "price_max": 11999.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "053.22.000.01.73": {
+      "stock_code": "053.22.000.01.73",
+      "name": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, Bench, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 11999.9,
+          "list_price": 11999.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-modu-ler-aynali-portmanto-takimi-p-1180106459?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 11999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
           "on_sale": true,
           "price_final": false
         }
@@ -777,18 +809,26 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi?variant=52740142465311",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 19424.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HGRA88",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 18499.9,
-      "price_max": 18499.9,
-      "price_spread_pct": 0.0,
+      "price_max": 19424.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "053.47.000.01.72": {
@@ -809,18 +849,26 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi?variant=52740142432543",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 19424.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HGRWNJ",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 18499.9,
-      "price_max": 18499.9,
-      "price_spread_pct": 0.0,
+      "price_max": 19424.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "2999": {
@@ -2260,6 +2308,30 @@
       "price_spread_pct": 16.1,
       "price_conflict": true
     },
+    "2987": {
+      "stock_code": "2987",
+      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 9699.9,
+          "list_price": 9699.9,
+          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9699.9,
+      "price_max": 9699.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "2986": {
       "stock_code": "2986",
       "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
@@ -2307,30 +2379,6 @@
       "price_max": 10499.9,
       "price_spread_pct": 15.1,
       "price_conflict": true
-    },
-    "2987": {
-      "stock_code": "2987",
-      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "trendyol": {
-          "price": 9699.9,
-          "list_price": 9699.9,
-          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 9699.9,
-      "price_max": 9699.9,
-      "price_spread_pct": null,
-      "price_conflict": false
     },
     "2984": {
       "stock_code": "2984",
@@ -28557,7 +28605,7 @@
           "price": 4999.9,
           "list_price": 4999.9,
           "url": "https://www.trendyol.com/roomart/delta-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sol-mat-beyaz-atlanti-k-c-am-p-739764967?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "n11": {
@@ -48516,30 +48564,6 @@
       "platform_count": 1,
       "price_min": null,
       "price_max": null,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.22.000.01.71": {
-      "stock_code": "053.22.000.01.71",
-      "name": "Nord Vestiyer Takımı Askılıklı, Ayakkabılık Dolabı, Bench, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "shopify": {
-          "price": 11099.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52740774920479",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify"
-      ],
-      "platform_count": 1,
-      "price_min": 11099.9,
-      "price_max": 11099.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
