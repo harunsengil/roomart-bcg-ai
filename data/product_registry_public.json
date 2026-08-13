@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-12T06:54:35.197234+00:00",
+    "generated_at": "2026-08-13T06:57:52.321802+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,15 +10,15 @@
       "koctas"
     ],
     "total_products": 1196,
-    "multi_platform_count": 1028,
+    "multi_platform_count": 1027,
     "by_platform_count": {
-      "trendyol": 1045,
+      "trendyol": 1044,
       "shopify": 725,
-      "hb": 939,
-      "n11": 701,
+      "hb": 940,
+      "n11": 711,
       "koctas": 438
     },
-    "price_conflict_count": 809,
+    "price_conflict_count": 813,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -55,22 +55,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "053.22.000.01.70": {
-      "stock_code": "053.22.000.01.70",
+    "053.22.000.01.73": {
+      "stock_code": "053.22.000.01.73",
       "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Ayakkabılık, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 12749.9,
-          "list_price": 12749.9,
+          "price": 0.0,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711112?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "shopify": {
-          "price": 12749.9,
+          "price": 11999.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426360607",
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
           "on_sale": true,
           "price_final": false
         }
@@ -82,9 +82,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 12749.9,
-      "price_max": 12749.9,
-      "price_spread_pct": 0.0,
+      "price_min": 11999.9,
+      "price_max": 11999.9,
+      "price_spread_pct": null,
       "price_conflict": false
     },
     "053.22.000.04.78": {
@@ -503,38 +503,6 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "053.22.000.01.73": {
-      "stock_code": "053.22.000.01.73",
-      "name": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, Bench, Modüler, Aynalı Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 11999.9,
-          "list_price": 11999.9,
-          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-modu-ler-aynali-portmanto-takimi-p-1180106459?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 11999.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
-    },
     "053.22.000.04.77": {
       "stock_code": "053.22.000.04.77",
       "name": "Nord Vestiyer Takımı Kapaklı ve Kapaksız Bench,Lambri Askılıklı, Modüler, Oval Aynalı Portmanto Takımı",
@@ -745,18 +713,26 @@
           "url": "https://roomartstore.com.tr/products/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi?variant=52740243849503",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 9974.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HI14LO",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9499.9,
-      "price_max": 9499.9,
-      "price_spread_pct": 0.0,
+      "price_max": 9974.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "054.22.120.04.00": {
@@ -896,16 +872,24 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-p-HBCV0000H4X9LX",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6076.9,
+          "list_price": 6076.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-kul-gri-134971152",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 2499.9,
       "price_max": 6298.9,
       "price_spread_pct": 152.0,
@@ -936,20 +920,28 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-p-HBCV0000H4WFP1",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 9489.9,
+          "list_price": 9489.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-kumtasi-134958021",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 8869.0,
-      "price_max": 9314.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 9489.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3008": {
       "stock_code": "3008",
@@ -976,20 +968,28 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-p-HBCV0000H4W9YX",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 9489.9,
+          "list_price": 9489.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-90-x-200-roomart-kul-gri-134322096",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 8869.0,
-      "price_max": 9314.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 9489.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3002": {
       "stock_code": "3002",
@@ -1016,16 +1016,24 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-p-HBCV0000H4XK05",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6076.9,
+          "list_price": 6076.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-kumtasi-134962152",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 5359.21,
       "price_max": 6298.9,
       "price_spread_pct": 17.5,
@@ -1056,20 +1064,28 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-HBCV0000H4VQIR",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7661.9,
+          "list_price": 7661.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-kul-gri-134958740",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 7159.9,
-      "price_max": 7519.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7661.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3010": {
       "stock_code": "3010",
@@ -1096,20 +1112,28 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-HBCV0000H4WC1U",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7661.9,
+          "list_price": 7661.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-kumtasi-134958886",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 7159.9,
-      "price_max": 7519.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7661.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3001": {
       "stock_code": "3001",
@@ -1136,19 +1160,27 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-p-HBCV0000H4XE17",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 4974.9,
+          "list_price": 4974.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-kumtasi-134960784",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 4649,
-      "price_max": 4884.9,
-      "price_spread_pct": 5.1,
+      "price_max": 4974.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2998": {
@@ -1176,19 +1208,27 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-p-HBCV0000H4XHXL",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 4974.9,
+          "list_price": 4974.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-kul-gri-134960788",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 4649.0,
-      "price_max": 4884.9,
-      "price_spread_pct": 5.1,
+      "price_max": 4974.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "3006": {
@@ -1312,16 +1352,24 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-HBCV0000H4X7FX",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 4131.9,
+          "list_price": 4131.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-kumtasi-134960579",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 3887.05,
       "price_max": 4324.9,
       "price_spread_pct": 11.3,
@@ -1352,16 +1400,24 @@
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-HBCV0000H4X801",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 4131.9,
+          "list_price": 4131.9,
+          "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-kul-gri-134960580",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 1729.9,
       "price_max": 4324.9,
       "price_spread_pct": 150.0,
@@ -48564,6 +48620,30 @@
       "platform_count": 1,
       "price_min": null,
       "price_max": null,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.22.000.01.70": {
+      "stock_code": "053.22.000.01.70",
+      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Ayakkabılık, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "shopify": {
+          "price": 12749.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426360607",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 12749.9,
+      "price_max": 12749.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
