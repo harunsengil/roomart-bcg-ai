@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-13T06:57:52.321802+00:00",
+    "generated_at": "2026-08-14T06:54:59.974288+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,20 +9,116 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1196,
-    "multi_platform_count": 1027,
+    "total_products": 1200,
+    "multi_platform_count": 1028,
     "by_platform_count": {
-      "trendyol": 1044,
+      "trendyol": 1049,
       "shopify": 725,
-      "hb": 940,
+      "hb": 942,
       "n11": 711,
       "koctas": 438
     },
-    "price_conflict_count": 813,
+    "price_conflict_count": 815,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "037.12.155.01.10": {
+      "stock_code": "037.12.155.01.10",
+      "name": "Stilo Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası, Ders Yemek Masası 50x155 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 6799.9,
+          "list_price": 6799.9,
+          "url": "https://www.trendyol.com/roomart/stilo-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-1184864584?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6799.9,
+      "price_max": 6799.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "037.12.155.01.11": {
+      "stock_code": "037.12.155.01.11",
+      "name": "Stilo Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası, Ders Yemek Masası 50x155 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 6799.9,
+          "list_price": 6799.9,
+          "url": "https://www.trendyol.com/roomart/stilo-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-1184864278?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6799.9,
+      "price_max": 6799.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "036.12.120.01.00": {
+      "stock_code": "036.12.120.01.00",
+      "name": "Mira Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası, Ders Yemek Masası 60x120 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 7299.9,
+          "list_price": 7299.9,
+          "url": "https://www.trendyol.com/roomart/mira-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-1184852338?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7299.9,
+      "price_max": 7299.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "036.12.120.15.00": {
+      "stock_code": "036.12.120.15.00",
+      "name": "Mira Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası, Ders Yemek Masası 60x120 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 7299.9,
+          "list_price": 7299.9,
+          "url": "https://www.trendyol.com/roomart/mira-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-1184850815?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 7299.9,
+      "price_max": 7299.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "053.22.000.04.70": {
       "stock_code": "053.22.000.04.70",
       "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Ayakkabılık, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
@@ -55,22 +151,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "053.22.000.01.73": {
-      "stock_code": "053.22.000.01.73",
+    "053.22.000.01.70": {
+      "stock_code": "053.22.000.01.70",
       "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Ayakkabılık, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 0.0,
-          "list_price": 0,
+          "price": 12749.9,
+          "list_price": 12749.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711112?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": false
         },
         "shopify": {
-          "price": 11999.9,
+          "price": 12749.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426360607",
           "on_sale": true,
           "price_final": false
         }
@@ -82,9 +178,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": null,
+      "price_min": 12749.9,
+      "price_max": 12749.9,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.22.000.04.78": {
@@ -503,6 +599,38 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
+    "053.22.000.01.73": {
+      "stock_code": "053.22.000.01.73",
+      "name": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, Bench, Modüler, Aynalı Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 11999.9,
+          "list_price": 11999.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-modu-ler-aynali-portmanto-takimi-p-1180106459?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 11999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi?variant=52740730028319",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 11999.9,
+      "price_max": 11999.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
     "053.22.000.04.77": {
       "stock_code": "053.22.000.04.77",
       "name": "Nord Vestiyer Takımı Kapaklı ve Kapaksız Bench,Lambri Askılıklı, Modüler, Oval Aynalı Portmanto Takımı",
@@ -649,19 +777,27 @@
           "url": "https://roomartstore.com.tr/products/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi?variant=52740287234335",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 77579.0,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-p-HBCV0000HKQSZH",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 7249.9,
-      "price_max": 7249.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_max": 77579.0,
+      "price_spread_pct": 970.1,
+      "price_conflict": true
     },
     "054.01.120.01.00": {
       "stock_code": "054.01.120.01.00",
@@ -681,19 +817,27 @@
           "url": "https://roomartstore.com.tr/products/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi?variant=52740287201567",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 77579.0,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-p-HBCV0000HKQ6VN",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 7249.9,
-      "price_max": 7249.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_max": 77579.0,
+      "price_spread_pct": 970.1,
+      "price_conflict": true
     },
     "054.22.120.01.00": {
       "stock_code": "054.22.120.01.00",
@@ -3094,7 +3238,7 @@
         },
         "shopify": {
           "price": 7799.9,
-          "list_price": 8699.9,
+          "list_price": 10399.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968284987679",
           "on_sale": true,
           "price_final": false
@@ -3150,7 +3294,7 @@
         },
         "shopify": {
           "price": 7237.0,
-          "list_price": 8699.9,
+          "list_price": 10399.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968285053215",
           "on_sale": true,
           "price_final": false
@@ -3206,7 +3350,7 @@
         },
         "shopify": {
           "price": 7799.9,
-          "list_price": 8699.9,
+          "list_price": 10399.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=52638143971615",
           "on_sale": true,
           "price_final": false
@@ -3286,7 +3430,7 @@
         },
         "shopify": {
           "price": 7799.9,
-          "list_price": 8699.9,
+          "list_price": 10399.9,
           "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=52638144004383",
           "on_sale": true,
           "price_final": false
@@ -27458,8 +27602,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6749.9,
-          "list_price": 7249.9,
+          "price": 6499.9,
+          "list_price": 8669.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630601503",
           "on_sale": true,
           "price_final": false
@@ -27497,8 +27641,8 @@
       ],
       "platform_count": 5,
       "price_min": 5651.27,
-      "price_max": 6749.9,
-      "price_spread_pct": 19.4,
+      "price_max": 6499.9,
+      "price_spread_pct": 15.0,
       "price_conflict": true
     },
     "2129": {
@@ -27515,7 +27659,7 @@
         },
         "shopify": {
           "price": 5999.0,
-          "list_price": 7249.9,
+          "list_price": 8669.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630634271",
           "on_sale": true,
           "price_final": false
@@ -28296,7 +28440,7 @@
         },
         "shopify": {
           "price": 6749.9,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630699807",
           "on_sale": true,
           "price_final": false
@@ -28357,7 +28501,7 @@
         },
         "shopify": {
           "price": 6749.9,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630798111",
           "on_sale": true,
           "price_final": false
@@ -28418,7 +28562,7 @@
         },
         "shopify": {
           "price": 6749.9,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=45343147720991",
           "on_sale": true,
           "price_final": false
@@ -28474,7 +28618,7 @@
         },
         "shopify": {
           "price": 6749.9,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630732575",
           "on_sale": true,
           "price_final": false
@@ -28522,7 +28666,7 @@
         },
         "shopify": {
           "price": 6116.0,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630667039",
           "on_sale": true,
           "price_final": false
@@ -28578,7 +28722,7 @@
         },
         "shopify": {
           "price": 6749.9,
-          "list_price": 7499.9,
+          "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630765343",
           "on_sale": true,
           "price_final": false
@@ -48620,30 +48764,6 @@
       "platform_count": 1,
       "price_min": null,
       "price_max": null,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.22.000.01.70": {
-      "stock_code": "053.22.000.01.70",
-      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Ayakkabılık, Modüler, Dikdörtgen Oval Aynalı Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "shopify": {
-          "price": 12749.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi?variant=52749426360607",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify"
-      ],
-      "platform_count": 1,
-      "price_min": 12749.9,
-      "price_max": 12749.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
