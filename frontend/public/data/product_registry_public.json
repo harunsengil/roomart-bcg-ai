@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-15T05:52:32.597016+00:00",
+    "generated_at": "2026-08-16T05:55:05.149709+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -6976,7 +6976,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 7519.0,
+          "price": 9094.9,
           "list_price": 9094.9,
           "url": "https://www.n11.com/urun/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-boy-dolabi-ant-antrasit-86795370",
           "on_sale": true,
@@ -7000,9 +7000,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7519.0,
-      "price_max": 8924.9,
-      "price_spread_pct": 18.7,
+      "price_min": 8499.9,
+      "price_max": 9094.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "2868": {
@@ -48227,7 +48227,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 10349.0,
+          "price": 12519.9,
           "list_price": 13499.9,
           "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-65-cm-aynali-banyo-dolabi-takimi-beyaz-18439543",
           "on_sale": true,
@@ -48242,9 +48242,9 @@
         "shopify"
       ],
       "platform_count": 3,
-      "price_min": 10349.0,
-      "price_max": 12284.9,
-      "price_spread_pct": 18.7,
+      "price_min": 11699.9,
+      "price_max": 12519.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "1325": {
