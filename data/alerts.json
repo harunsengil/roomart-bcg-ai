@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-17T06:01:04.649001+00:00",
+    "last_updated": "2026-08-18T05:56:00.467384+00:00",
     "total_alerts": 8
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Kahve Köşesi — yükselen fırsat",
       "message": "Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı büyüme momentumu yüksek (75/100).",
       "product_id": "1156641550",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-2",
@@ -20,25 +20,25 @@
       "title": "Banyo Dolabı — çıkış adayı",
       "message": "ROOMART \"Lavabolu\" Mdf 95 Cm Çekmeceli Lotus Oval Lavabolu B zayıf puan (2.0) ve düşük pay. İnceleme önerilir.",
       "product_id": "817656657",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-3",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 58.",
-      "product_id": "942636653",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 65.",
+      "product_id": "962085213",
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
       "title": "Kahve Köşesi — lider STAR",
-      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 50.",
+      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 58.",
       "product_id": "885510279",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-5",
@@ -47,16 +47,16 @@
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %83. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-6",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Diğer — yüksek iade riski",
-      "message": "Rt4 Metal Çerçeveli Baharatlık Çok Amaçlı Banyo Ve Mutfak Du iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "684213881",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
+      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90  iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "1177542912",
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-7",
@@ -65,16 +65,16 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1174373102",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
       "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, M hızlı satıyor ama Net Tahsilat %75 (komisyon+promo marjı eritiyor).",
-      "product_id": "1179886797",
-      "timestamp": "2026-08-17T06:01:04.623708+00:00"
+      "title": "Çamaşır Makinesi Dolabı — kârsız hacim uyarısı",
+      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60  hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
+      "product_id": "1177540628",
+      "timestamp": "2026-08-18T05:56:00.439604+00:00"
     }
   ]
 }
