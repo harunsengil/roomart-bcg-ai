@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-22T05:55:01.352541+00:00",
+    "generated_at": "2026-08-23T05:56:30.492686+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -19563,8 +19563,8 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2544.0,
-          "list_price": 11299.9,
+          "price": 11299.9,
+          "list_price": null,
           "url": "https://roomartstore.com.tr/products/gusto-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48622264516895",
           "on_sale": true,
           "price_final": false
@@ -19601,9 +19601,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 2544.0,
-      "price_max": 10349.9,
-      "price_spread_pct": 306.8,
+      "price_min": 9565.51,
+      "price_max": 11299.9,
+      "price_spread_pct": 18.1,
       "price_conflict": true
     },
     "2204": {
