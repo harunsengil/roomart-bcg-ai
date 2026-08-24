@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-23T05:56:30.492686+00:00",
+    "generated_at": "2026-08-24T06:05:06.806864+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10723,7 +10723,7 @@
         },
         "koctas": {
           "price": 6551.91,
-          "list_price": 6998.0,
+          "list_price": 7279.9,
           "url": "https://www.koctas.com.tr/roomart-venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi/p/5001813916?shop=2262",
           "on_sale": true,
           "price_final": true
