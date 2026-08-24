@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-24T06:05:06.806864+00:00",
+    "generated_at": "2026-08-24T08:52:11.670529+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -33,7 +33,7 @@
           "list_price": 6799.9,
           "url": "https://www.trendyol.com/roomart/stilo-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-1184864584?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6799.9,
@@ -73,7 +73,7 @@
           "list_price": 6799.9,
           "url": "https://www.trendyol.com/roomart/stilo-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-1184864278?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6799.9,
@@ -105,7 +105,7 @@
           "list_price": 7299.9,
           "url": "https://www.trendyol.com/roomart/mira-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-1184852338?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7299.9,
@@ -122,11 +122,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7810.9,
+          "price": 1562.18,
           "list_price": 7810.9,
           "url": "https://www.n11.com/urun/mira-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-60x120-cm-beyaz-135861997",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -138,9 +138,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7299.9,
-      "price_max": 7810.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1562.18,
+      "price_max": 7664.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "036.12.120.15.00": {
@@ -153,7 +153,7 @@
           "list_price": 7299.9,
           "url": "https://www.trendyol.com/roomart/mira-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-1184850815?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7299.9,
@@ -170,11 +170,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7810.9,
+          "price": 1562.18,
           "list_price": 7810.9,
           "url": "https://www.n11.com/urun/mira-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-60x120-cm-atlantik-cam-135862017",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -186,9 +186,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7299.9,
-      "price_max": 7810.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1562.18,
+      "price_max": 7664.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "053.22.000.04.70": {
@@ -201,7 +201,7 @@
           "list_price": 12749.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711303?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 12749.9,
@@ -218,11 +218,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 13642.9,
+          "price": 1515.88,
           "list_price": 13642.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi-kumtasi-135861987",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -234,9 +234,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12749.9,
-      "price_max": 13642.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1515.88,
+      "price_max": 13387.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.01.70": {
@@ -249,7 +249,7 @@
           "list_price": 12749.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180711112?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 12749.9,
@@ -266,11 +266,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 13642.9,
+          "price": 1515.88,
           "list_price": 13642.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi-beyaz-135861983",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -282,9 +282,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12749.9,
-      "price_max": 13642.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1515.88,
+      "price_max": 13387.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.04.78": {
@@ -297,7 +297,7 @@
           "list_price": 9999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180680414?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9999.9,
@@ -318,7 +318,7 @@
           "list_price": 10699.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861962",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -345,7 +345,7 @@
           "list_price": 9999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180680267?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9999.9,
@@ -362,11 +362,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10699.9,
+          "price": 1783.32,
           "list_price": 10699.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861963",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -378,9 +378,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9999.9,
-      "price_max": 10699.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1783.32,
+      "price_max": 10499.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.04.66": {
@@ -393,7 +393,7 @@
           "list_price": 10749.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180668656?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10749.9,
@@ -410,11 +410,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11502.9,
+          "price": 1917.15,
           "list_price": 11502.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861966",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -426,9 +426,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10749.9,
-      "price_max": 11502.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1917.15,
+      "price_max": 11287.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.01.66": {
@@ -437,11 +437,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 10749.9,
+          "price": 1194.43,
           "list_price": 10749.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180668559?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10749.9,
@@ -458,11 +458,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11502.9,
+          "price": 1917.15,
           "list_price": 11502.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861968",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -474,9 +474,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10749.9,
-      "price_max": 11502.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1194.43,
+      "price_max": 11287.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "053.22.000.01.71": {
@@ -489,7 +489,7 @@
           "list_price": 11099.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180159124?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11099.9,
@@ -506,11 +506,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11876.9,
+          "price": 1979.48,
           "list_price": 11876.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-beyaz-135861920",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -522,9 +522,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11099.9,
-      "price_max": 11876.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1979.48,
+      "price_max": 11654.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.04.71": {
@@ -537,7 +537,7 @@
           "list_price": 11099.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180158655?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11099.9,
@@ -554,11 +554,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11876.9,
+          "price": 1979.48,
           "list_price": 11876.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-kumtasi-135861919",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -570,9 +570,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11099.9,
-      "price_max": 11876.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1979.48,
+      "price_max": 11654.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.01.67": {
@@ -581,11 +581,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 9249.9,
+          "price": 1541.65,
           "list_price": 9249.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-modu-ler-bench-oval-aynali-portmanto-takimi-p-1180124738?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9249.9,
@@ -602,11 +602,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9897.9,
+          "price": 1649.65,
           "list_price": 9897.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-moduler-bench-oval-aynali-portmanto-takimi-beyaz-135861795",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -618,9 +618,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9249.9,
-      "price_max": 9897.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1541.65,
+      "price_max": 9712.4,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "053.22.000.04.67": {
@@ -633,7 +633,7 @@
           "list_price": 9249.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-modu-ler-bench-oval-aynali-portmanto-takimi-p-1180122166?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9249.9,
@@ -650,11 +650,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9897.9,
+          "price": 1649.65,
           "list_price": 9897.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-moduler-bench-oval-aynali-portmanto-takimi-kumtasi-135861778",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -666,9 +666,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9249.9,
-      "price_max": 9897.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1649.65,
+      "price_max": 9712.4,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.01.72": {
@@ -681,7 +681,7 @@
           "list_price": 13499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180113927?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 13499.9,
@@ -698,11 +698,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 14444.9,
+          "price": 1604.99,
           "list_price": 14444.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-b-135861742",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -714,9 +714,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13499.9,
-      "price_max": 14444.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1604.99,
+      "price_max": 14174.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.04.72": {
@@ -729,7 +729,7 @@
           "list_price": 13499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-modu-ler-dikdo-rtgen-oval-aynali-portmanto-takimi-p-1180112974?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 13499.9,
@@ -746,11 +746,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 14444.9,
+          "price": 1604.99,
           "list_price": 14444.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-k-135861753",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -762,9 +762,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13499.9,
-      "price_max": 14444.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1604.99,
+      "price_max": 14174.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.01.69": {
@@ -773,11 +773,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 10999.9,
+          "price": 1222.21,
           "list_price": 10999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180110827?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10999.9,
@@ -810,9 +810,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10999.9,
+      "price_min": 1222.21,
       "price_max": 11769.9,
-      "price_spread_pct": 7.0,
+      "price_spread_pct": 863.0,
       "price_conflict": true
     },
     "053.22.000.04.69": {
@@ -825,7 +825,7 @@
           "list_price": 10999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-askilikli-kapakli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180110681?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10999.9,
@@ -842,11 +842,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11769.9,
+          "price": 1961.65,
           "list_price": 11769.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861730",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -858,9 +858,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10999.9,
-      "price_max": 11769.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1961.65,
+      "price_max": 11549.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "053.22.000.04.73": {
@@ -873,7 +873,7 @@
           "list_price": 11999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-modu-ler-aynali-portmanto-takimi-p-1180109659?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11999.9,
@@ -890,11 +890,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 12839.9,
+          "price": 1426.66,
           "list_price": 12839.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-kumtasi-135861680",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -906,9 +906,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11999.9,
-      "price_max": 12839.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1426.66,
+      "price_max": 12599.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.01.73": {
@@ -917,11 +917,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 11999.9,
+          "price": 1333.32,
           "list_price": 11999.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-modu-ler-aynali-portmanto-takimi-p-1180106459?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11999.9,
@@ -938,11 +938,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 12839.9,
+          "price": 1426.66,
           "list_price": 12839.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-beyaz-135861705",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -954,9 +954,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11999.9,
-      "price_max": 12839.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1333.32,
+      "price_max": 12599.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "053.22.000.04.77": {
@@ -969,7 +969,7 @@
           "list_price": 11499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-modu-ler-oval-aynali-portmanto-takimi-p-1180009811?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11499.9,
@@ -986,11 +986,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 12304.9,
+          "price": 1367.21,
           "list_price": 12304.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-kumtasi-135861665",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1002,9 +1002,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11499.9,
-      "price_max": 12304.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1367.21,
+      "price_max": 12074.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.01.77": {
@@ -1017,7 +1017,7 @@
           "list_price": 11499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-modu-ler-oval-aynali-portmanto-takimi-p-1180008317?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11499.9,
@@ -1034,11 +1034,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 12304.9,
+          "price": 1367.21,
           "list_price": 12304.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-beyaz-135861642",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1050,9 +1050,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11499.9,
-      "price_max": 12304.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1367.21,
+      "price_max": 12074.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.22.000.01.68": {
@@ -1061,11 +1061,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 12499.9,
+          "price": 1388.88,
           "list_price": 12499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180002911?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 12499.9,
@@ -1082,11 +1082,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 13374.9,
+          "price": 1486.1,
           "list_price": 13374.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861630",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1098,9 +1098,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12499.9,
-      "price_max": 13374.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1388.88,
+      "price_max": 13124.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "053.22.000.04.68": {
@@ -1113,7 +1113,7 @@
           "list_price": 12499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-modu-ler-oval-aynali-portmanto-takimi-p-1180002531?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 12499.9,
@@ -1130,11 +1130,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 13374.9,
+          "price": 1486.1,
           "list_price": 13374.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861629",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1146,9 +1146,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 12499.9,
-      "price_max": 13374.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1486.1,
+      "price_max": 13124.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "054.01.120.04.00": {
@@ -1157,11 +1157,11 @@
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 7249.9,
+          "price": 2759.9,
           "list_price": 7249.9,
           "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-modu-ler-aynali-portmanto-takimi-p-1179933536?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7249.9,
@@ -1178,11 +1178,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7757.9,
+          "price": 1551.58,
           "list_price": 7757.9,
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-kumtasi-135861591",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1194,9 +1194,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7249.9,
-      "price_max": 7757.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1551.58,
+      "price_max": 7612.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "054.01.120.01.00": {
@@ -1209,7 +1209,7 @@
           "list_price": 7249.9,
           "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-modu-ler-aynali-portmanto-takimi-p-1179933432?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7249.9,
@@ -1219,11 +1219,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7757.9,
+          "price": 1551.58,
           "list_price": 7757.9,
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-beyaz-135861557",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1234,9 +1234,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 7249.9,
-      "price_max": 7757.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1551.58,
+      "price_max": 7249.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "054.22.120.01.00": {
@@ -1249,7 +1249,7 @@
           "list_price": 9499.9,
           "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179925560?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9499.9,
@@ -1266,11 +1266,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10164.9,
+          "price": 1694.15,
           "list_price": 10164.9,
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-beyaz-135861536",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1282,9 +1282,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9499.9,
-      "price_max": 10164.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1694.15,
+      "price_max": 9974.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "054.22.120.04.00": {
@@ -1297,7 +1297,7 @@
           "list_price": 9499.9,
           "url": "https://www.trendyol.com/roomart/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179925003?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9499.9,
@@ -1307,11 +1307,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10164.9,
+          "price": 1694.15,
           "list_price": 10164.9,
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-kumtasi-135861535",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1322,9 +1322,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 9499.9,
-      "price_max": 10164.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1694.15,
+      "price_max": 9499.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.47.000.04.72": {
@@ -1337,7 +1337,7 @@
           "list_price": 18499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179886797?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 18499.9,
@@ -1385,7 +1385,7 @@
           "list_price": 18499.9,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-modu-ler-aynali-portmanto-takimi-p-1179634049?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 18499.9,
@@ -1402,11 +1402,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 19794.9,
+          "price": 2199.43,
           "list_price": 19794.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-beyaz-135861125",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1418,9 +1418,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 18499.9,
-      "price_max": 19794.9,
-      "price_spread_pct": 7.0,
+      "price_min": 2199.43,
+      "price_max": 19424.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "2999": {
@@ -1450,11 +1450,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6076.9,
+          "price": 1215.38,
           "list_price": 6076.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-kul-gri-134971152",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1466,9 +1466,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 2499.9,
+      "price_min": 1215.38,
       "price_max": 6298.9,
-      "price_spread_pct": 152.0,
+      "price_spread_pct": 418.3,
       "price_conflict": true
     },
     "3011": {
@@ -1498,11 +1498,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9489.9,
+          "price": 1581.65,
           "list_price": 9489.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-kumtasi-134958021",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1514,9 +1514,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 8869.0,
-      "price_max": 9489.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1581.65,
+      "price_max": 9314.9,
+      "price_spread_pct": 488.9,
       "price_conflict": true
     },
     "3008": {
@@ -1594,11 +1594,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6076.9,
+          "price": 1215.38,
           "list_price": 6076.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-kumtasi-134962152",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1610,9 +1610,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5359.0,
+      "price_min": 1215.38,
       "price_max": 6298.9,
-      "price_spread_pct": 17.5,
+      "price_spread_pct": 418.3,
       "price_conflict": true
     },
     "3007": {
@@ -1690,11 +1690,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7661.9,
+          "price": 1532.38,
           "list_price": 7661.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-kumtasi-134958886",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1706,9 +1706,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7159.9,
-      "price_max": 7661.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1532.38,
+      "price_max": 7519.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "3001": {
@@ -1717,11 +1717,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 4649,
+          "price": 4649.0,
           "list_price": 4649,
           "url": "https://www.trendyol.com/roomart/c-amas-ir-sepetli-banyo-dolabi-c-ok-amac-li-c-ekmeceli-dolap-60-cm-p-1177540628?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4649.0,
@@ -1738,11 +1738,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 4974.9,
+          "price": 1658.3,
           "list_price": 4974.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-kumtasi-134960784",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1754,9 +1754,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 4649,
-      "price_max": 4974.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1658.3,
+      "price_max": 4884.9,
+      "price_spread_pct": 194.6,
       "price_conflict": true
     },
     "2998": {
@@ -1786,11 +1786,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 4974.9,
+          "price": 1658.3,
           "list_price": 4974.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-kul-gri-134960788",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1802,9 +1802,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 4649.0,
-      "price_max": 4974.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1658.3,
+      "price_max": 4884.9,
+      "price_spread_pct": 194.6,
       "price_conflict": true
     },
     "3006": {
@@ -1834,11 +1834,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6697.13,
+          "price": 1339.43,
           "list_price": 6697.13,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-roomart-kulgri-134119801",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1851,8 +1851,8 @@
       ],
       "platform_count": 4,
       "price_min": 1043.17,
-      "price_max": 6697.13,
-      "price_spread_pct": 542.0,
+      "price_max": 6564.9,
+      "price_spread_pct": 529.3,
       "price_conflict": true
     },
     "3009": {
@@ -1882,11 +1882,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6697.13,
+          "price": 1339.43,
           "list_price": 6697.13,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-45-x-200-roomart-kulgri-kumtasi-134119800",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1898,9 +1898,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 6259.0,
-      "price_max": 6697.13,
-      "price_spread_pct": 7.0,
+      "price_min": 1339.43,
+      "price_max": 6564.9,
+      "price_spread_pct": 390.1,
       "price_conflict": true
     },
     "3000": {
@@ -1930,11 +1930,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 4131.9,
+          "price": 1377.3,
           "list_price": 4131.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-kumtasi-134960579",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1946,9 +1946,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 3945.0,
+      "price_min": 1377.3,
       "price_max": 4324.9,
-      "price_spread_pct": 9.6,
+      "price_spread_pct": 214.0,
       "price_conflict": true
     },
     "2997": {
@@ -1978,11 +1978,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 4131.9,
+          "price": 1377.3,
           "list_price": 4131.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-kul-gri-134960580",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1994,9 +1994,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 1729.9,
+      "price_min": 1377.3,
       "price_max": 4324.9,
-      "price_spread_pct": 150.0,
+      "price_spread_pct": 214.0,
       "price_conflict": true
     },
     "057.48.080.78.81": {
@@ -7335,7 +7335,7 @@
           "list_price": 8499.9,
           "url": "https://www.trendyol.com/roomart/ada-lavabolu-banyo-alt-dolabi-banyo-u-st-dolabi-banyo-boy-dolabi-p-923693227?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 8499.9,
@@ -7352,11 +7352,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7454.84,
+          "price": 1490.97,
           "list_price": 9094.9,
           "url": "https://www.n11.com/urun/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-boy-dolabi-ant-antrasit-86795370",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "koctas": {
           "price": 8839.9,
@@ -7376,9 +7376,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7454.84,
+      "price_min": 1490.97,
       "price_max": 8924.9,
-      "price_spread_pct": 19.7,
+      "price_spread_pct": 498.6,
       "price_conflict": true
     },
     "2868": {
@@ -34622,11 +34622,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 14999.9,
+          "price": 14396.96,
           "list_price": 14999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-mat-mdf-100-cm-banyo-alt-dolap-aynali-u-st-dolap-boy-dolap-p-373298553?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "hb": {
           "price": 15749.9,
@@ -34636,11 +34636,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7649.9,
+          "price": 4682.65,
           "list_price": 7649.9,
           "url": "https://www.n11.com/urun/roomart-lavabolu-atlantik-mat-mdf-100-cm-banyo-dolabi-takim-atlantikcam-39453079",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -34651,9 +34651,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 7649.9,
+      "price_min": 4682.65,
       "price_max": 15749.9,
-      "price_spread_pct": 105.9,
+      "price_spread_pct": 236.3,
       "price_conflict": true
     },
     "1887": {
@@ -34927,7 +34927,7 @@
           "list_price": 13899.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-mat-mdf-85-cm-banyo-alt-dolap-aynali-u-st-dolap-boy-dolap-p-373255558?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "hb": {
           "price": 14599.9,
@@ -34937,11 +34937,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6999.9,
+          "price": 4682.65,
           "list_price": 6999.9,
           "url": "https://www.n11.com/urun/roomart-lavabolu-atlantik-mat-mdf-85-cm-banyo-dolabi-takim-atlantikcam-39451287",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -34952,9 +34952,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 6999.9,
+      "price_min": 4682.65,
       "price_max": 14599.9,
-      "price_spread_pct": 108.6,
+      "price_spread_pct": 211.8,
       "price_conflict": true
     },
     "1774": {
@@ -47207,7 +47207,7 @@
           "list_price": 599.9,
           "url": "https://www.trendyol.com/banos/metal-c-erc-eveli-baharatlik-c-ok-amac-li-banyo-ve-mutfak-duvar-rafi-beyaz-p-31882679?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "hb": {
           "price": 604.9,
@@ -47217,11 +47217,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 639.9,
+          "price": 563.11,
           "list_price": 639.9,
           "url": "https://www.n11.com/urun/banos-rt1-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-18439557",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -47232,9 +47232,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 599.9,
-      "price_max": 639.9,
-      "price_spread_pct": 6.7,
+      "price_min": 563.11,
+      "price_max": 604.9,
+      "price_spread_pct": 7.4,
       "price_conflict": true
     },
     "2637": {
