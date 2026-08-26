@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-25T05:59:26.824516+00:00",
+    "generated_at": "2026-08-26T06:00:56.962036+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -3555,7 +3555,7 @@
         },
         "koctas": {
           "price": 6880.41,
-          "list_price": 7644.9,
+          "list_price": 7397.0,
           "url": "https://www.koctas.com.tr/roomart-glamo-aynali-makyaj-masasi-tek-cekmeceli-2-dolapli-taki-duzenleyici-mat-beyaz/p/5002682382?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -3691,7 +3691,7 @@
         },
         "koctas": {
           "price": 7303.41,
-          "list_price": 8114.9,
+          "list_price": 7912.0,
           "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-mat-beyaz/p/5002456750?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -15997,7 +15997,7 @@
           "price": 2200.06,
           "list_price": 2399.9,
           "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-80-cm-p-866190757?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
