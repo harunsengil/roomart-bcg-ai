@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-27T16:40:48.298502+00:00",
+    "generated_at": "2026-08-28T17:38:35.879569+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,10 +10,10 @@
       "koctas"
     ],
     "total_products": 1236,
-    "multi_platform_count": 1053,
+    "multi_platform_count": 1060,
     "by_platform_count": {
-      "trendyol": 1081,
-      "shopify": 751,
+      "trendyol": 1077,
+      "shopify": 762,
       "hb": 967,
       "n11": 739,
       "koctas": 438
@@ -34,17 +34,25 @@
           "url": "https://www.trendyol.com/roomart/yavas-latici-c-ekmeceli-c-amas-ir-ve-kurutma-makinesi-dolabi-185-cm-p-1192076649?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 6699.0,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm?variant=52821101707551",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 6699,
       "price_max": 6699,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "D-33": {
@@ -58,17 +66,25 @@
           "url": "https://www.trendyol.com/roomart/yavas-latici-c-ekmeceli-c-amas-ir-ve-kurutma-makinesi-dolabi-185-cm-p-1192076560?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 6699.0,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm?variant=52821101674783",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 6699,
       "price_max": 6699,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3100": {
@@ -82,17 +98,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192069442?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 13249.9,
+          "list_price": 13499.9,
+          "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752690463",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 13249.9,
       "price_max": 13249.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3099": {
@@ -106,17 +130,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192068299?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 13249.9,
+          "list_price": 13499.9,
+          "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752526623",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 13249.9,
       "price_max": 13249.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3098": {
@@ -130,17 +162,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192066094?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 13249.9,
+          "list_price": 13499.9,
+          "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752002335",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 13249.9,
       "price_max": 13249.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3096": {
@@ -154,17 +194,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192051055?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 9999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050425631",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 9999.9,
       "price_max": 9999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3097": {
@@ -178,17 +226,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192050715?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 9999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050458399",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 9999.9,
       "price_max": 9999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3095": {
@@ -202,17 +258,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192049627?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 9999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050392863",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 9999.9,
       "price_max": 9999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3094": {
@@ -226,17 +290,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192017478?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 7199.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027225887",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 7199.9,
       "price_max": 7199.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3093": {
@@ -250,17 +322,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192016545?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 7199.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027193119",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 7199.9,
       "price_max": 7199.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "3090": {
@@ -274,17 +354,25 @@
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192014749?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 7199.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027160351",
+          "on_sale": false,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 7199.9,
       "price_max": 7199.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.56.280.01.90": {
@@ -543,22 +631,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "059.55.200.04.89": {
-      "stock_code": "059.55.200.04.89",
-      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+    "059.54.200.04.87": {
+      "stock_code": "059.54.200.04.87",
+      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası, 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 18399.9,
-          "list_price": 18399.9,
-          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191881658?merchantId=362387&filterOverPriceListings=false",
+          "price": 16499.9,
+          "list_price": 16499.9,
+          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191604760?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
         },
         "shopify": {
-          "price": 18399.9,
+          "price": 16499.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093501727",
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791718687",
           "on_sale": true,
           "price_final": false
         }
@@ -570,27 +658,27 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 18399.9,
-      "price_max": 18399.9,
+      "price_min": 16499.9,
+      "price_max": 16499.9,
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "059.55.200.01.89": {
-      "stock_code": "059.55.200.01.89",
+    "059.54.200.01.87": {
+      "stock_code": "059.54.200.01.87",
       "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 18399.9,
-          "list_price": 18399.9,
+          "price": 0.0,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191881053?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "shopify": {
-          "price": 18399.9,
+          "price": 16499.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093468959",
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791685919",
           "on_sale": true,
           "price_final": false
         }
@@ -602,9 +690,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 18399.9,
-      "price_max": 18399.9,
-      "price_spread_pct": 0.0,
+      "price_min": 16499.9,
+      "price_max": 16499.9,
+      "price_spread_pct": null,
       "price_conflict": false
     },
     "059.22.160.01.88": {
@@ -735,102 +823,6 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "059.53.200.04.87": {
-      "stock_code": "059.53.200.04.87",
-      "name": "Mode 2 adet 3 Çekmeceli Kesonlu Çalışma Masası , Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masası , Bilgisayar Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 15499.9,
-          "list_price": 15499.9,
-          "url": "https://www.trendyol.com/roomart/mode-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-kitaplikli-ve-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191816165?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 15499.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52819968262431",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 15499.9,
-      "price_max": 15499.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
-    },
-    "059.54.200.01.87": {
-      "stock_code": "059.54.200.01.87",
-      "name": "Mode 2 adet 3 Çekmeceli Kesonlu Çalışma Masası , Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masası , Bilgisayar Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 0.0,
-          "list_price": 0,
-          "url": "https://www.trendyol.com/roomart/mode-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-kitaplikli-ve-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191815407?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 16499.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791685919",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 16499.9,
-      "price_max": 16499.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "059.54.200.04.87": {
-      "stock_code": "059.54.200.04.87",
-      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası, 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 16499.9,
-          "list_price": 16499.9,
-          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191604760?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 16499.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791718687",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 16499.9,
-      "price_max": 16499.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
-    },
     "059.47.160.01.86": {
       "stock_code": "059.47.160.01.86",
       "name": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmeceli Çalışma Masası, Çalışma Ofis Masası",
@@ -863,22 +855,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "059.47.160.04.86": {
-      "stock_code": "059.47.160.04.86",
+    "059.53.160.04.86": {
+      "stock_code": "059.53.160.04.86",
       "name": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmeceli Çalışma Masası, Çalışma Ofis Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 10999.9,
-          "list_price": 10999.9,
+          "price": 0.0,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/mode-kitaplikli-c-alis-ma-masasi-bilgisayar-masasi-c-ekmeceli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-p-1191596557?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "shopify": {
-          "price": 10999.9,
+          "price": 11999.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi?variant=52815786606879",
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi?variant=52815778021663",
           "on_sale": true,
           "price_final": false
         }
@@ -890,9 +882,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 10999.9,
-      "price_max": 10999.9,
-      "price_spread_pct": 0.0,
+      "price_min": 11999.9,
+      "price_max": 11999.9,
+      "price_spread_pct": null,
       "price_conflict": false
     },
     "059.53.160.01.86": {
@@ -911,38 +903,6 @@
           "price": 11999.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi?variant=52815777988895",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
-    },
-    "059.53.160.04.86": {
-      "stock_code": "059.53.160.04.86",
-      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masası , Bilgisayar Masası, Çekmeceli Çalışma Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 11999.9,
-          "list_price": 11999.9,
-          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-c-ekmeceli-c-alis-ma-masasi-p-1191590333?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 11999.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi?variant=52815778021663",
           "on_sale": true,
           "price_final": false
         }
@@ -29048,7 +29008,7 @@
         },
         "koctas": {
           "price": 6083.91,
-          "list_price": 6759.9,
+          "list_price": 6459.0,
           "url": "https://www.koctas.com.tr/roma-rafli-calisma-masasi-calisma-ofi-s-masasi-sol-dolapli-mat-beyaz-roma-masa-sol/p/5000599286?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -50156,6 +50116,102 @@
       "platform_count": 1,
       "price_min": 15499.9,
       "price_max": 15499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "059.53.200.04.87": {
+      "stock_code": "059.53.200.04.87",
+      "name": "Mode 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 15499.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52819968262431",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 15499.9,
+      "price_max": 15499.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "059.47.160.04.86": {
+      "stock_code": "059.47.160.04.86",
+      "name": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmeceli Çalışma Masası, Çalışma Ofis Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 10999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi?variant=52815786606879",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 10999.9,
+      "price_max": 10999.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "059.55.200.01.89": {
+      "stock_code": "059.55.200.01.89",
+      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 18399.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093468959",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 18399.9,
+      "price_max": 18399.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "059.55.200.04.89": {
+      "stock_code": "059.55.200.04.89",
+      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 18399.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093501727",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 18399.9,
+      "price_max": 18399.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
