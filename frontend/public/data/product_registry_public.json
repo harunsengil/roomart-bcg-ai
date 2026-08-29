@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-28T17:38:35.879569+00:00",
+    "generated_at": "2026-08-29T11:46:37.456631+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,15 +10,15 @@
       "koctas"
     ],
     "total_products": 1236,
-    "multi_platform_count": 1060,
+    "multi_platform_count": 1061,
     "by_platform_count": {
       "trendyol": 1077,
       "shopify": 762,
-      "hb": 967,
+      "hb": 996,
       "n11": 739,
       "koctas": 438
     },
-    "price_conflict_count": 837,
+    "price_conflict_count": 839,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -41,18 +41,26 @@
           "url": "https://roomartstore.com.tr/products/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm?variant=52821101707551",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 7033.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4U3HX",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 6699,
-      "price_max": 6699,
-      "price_spread_pct": 0.0,
+      "price_max": 7033.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "D-33": {
@@ -73,18 +81,26 @@
           "url": "https://roomartstore.com.tr/products/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm?variant=52821101674783",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 7033.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4TZLI",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 6699,
-      "price_max": 6699,
-      "price_spread_pct": 0.0,
+      "price_max": 7033.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3100": {
@@ -105,18 +121,26 @@
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752690463",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 13912.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TZ8A",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 13249.9,
-      "price_max": 13249.9,
-      "price_spread_pct": 0.0,
+      "price_max": 13912.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3099": {
@@ -137,18 +161,26 @@
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752526623",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 13912.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TYC1",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 13249.9,
-      "price_max": 13249.9,
-      "price_spread_pct": 0.0,
+      "price_max": 13912.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3098": {
@@ -169,18 +201,26 @@
           "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=52822752002335",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 13912.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TOBT",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 13249.9,
-      "price_max": 13249.9,
-      "price_spread_pct": 0.0,
+      "price_max": 13912.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3096": {
@@ -201,18 +241,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050425631",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 10499.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TR3R",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9999.9,
-      "price_max": 9999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 10499.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3097": {
@@ -233,18 +281,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050458399",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 10499.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TWOU",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9999.9,
-      "price_max": 9999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 10499.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3095": {
@@ -265,18 +321,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi?variant=52821050392863",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 10499.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TU9U",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9999.9,
-      "price_max": 9999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 10499.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3094": {
@@ -297,18 +361,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027225887",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 7559.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TRBV",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 7199.9,
-      "price_max": 7199.9,
-      "price_spread_pct": 0.0,
+      "price_max": 7559.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3093": {
@@ -329,18 +401,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027193119",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 7559.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TR2J",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 7199.9,
-      "price_max": 7199.9,
-      "price_spread_pct": 0.0,
+      "price_max": 7559.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "3090": {
@@ -361,18 +441,26 @@
           "url": "https://roomartstore.com.tr/products/lavabolu-mdf-80-cm-banyo-alt-dolabi?variant=52821027160351",
           "on_sale": false,
           "price_final": false
+        },
+        "hb": {
+          "price": 7559.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TT37",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 7199.9,
-      "price_max": 7199.9,
-      "price_spread_pct": 0.0,
+      "price_max": 7559.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.56.280.01.90": {
@@ -393,18 +481,26 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-masasi?variant=52820200161567",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 18899.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4TE9X",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 17999.9,
-      "price_max": 17999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 18899.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.56.280.04.90": {
@@ -425,18 +521,26 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-masasi?variant=52820200194335",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 18899.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4T234",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 17999.9,
-      "price_max": 17999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 18899.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.01.120.04.00": {
@@ -457,19 +561,27 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=52820164509983",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 5099.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TASB",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 4849.9,
-      "price_max": 4849.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_max": 5099.9,
+      "price_spread_pct": 5.2,
+      "price_conflict": true
     },
     "059.01.120.01.00": {
       "stock_code": "059.01.120.01.00",
@@ -489,19 +601,27 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=52820164477215",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 5099.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TBVH",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 4849.9,
-      "price_max": 4849.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_max": 5099.9,
+      "price_spread_pct": 5.2,
+      "price_conflict": true
     },
     "059.22.120.01.00": {
       "stock_code": "059.22.120.01.00",
@@ -521,18 +641,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi?variant=52820139901215",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 6299.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T878",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 5999.9,
-      "price_max": 5999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 6299.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.22.120.04.00": {
@@ -553,18 +681,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi?variant=52820139933983",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 6299.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T7PR",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 5999.9,
-      "price_max": 5999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 6299.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.54.200.01.89": {
@@ -585,18 +721,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=52820111851807",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 17849.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T7VZ",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 16999.9,
-      "price_max": 16999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 17849.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.54.200.04.89": {
@@ -617,18 +761,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=52820111884575",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 17849.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T5Q0",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 16999.9,
-      "price_max": 16999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 17849.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.54.200.04.87": {
@@ -649,18 +801,26 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791718687",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 17324.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SF49",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 16499.9,
-      "price_max": 16499.9,
-      "price_spread_pct": 0.0,
+      "price_max": 17324.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.54.200.01.87": {
@@ -681,18 +841,26 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791685919",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 17324.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SCD7",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 16499.9,
-      "price_max": 16499.9,
-      "price_spread_pct": null,
+      "price_max": 17324.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.22.160.01.88": {
@@ -713,18 +881,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi?variant=52820065485087",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 9764.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYPZ",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9299.9,
-      "price_max": 9299.9,
-      "price_spread_pct": 0.0,
+      "price_max": 9764.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.22.160.04.88": {
@@ -745,18 +921,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi?variant=52820065517855",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 9764.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYVD",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9299.9,
-      "price_max": 9299.9,
-      "price_spread_pct": 0.0,
+      "price_max": 9764.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.47.160.01.88": {
@@ -777,18 +961,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi?variant=52819972292895",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 11128.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4SQ21",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10599,
-      "price_max": 10599,
-      "price_spread_pct": 0.0,
+      "price_max": 11128.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.47.160.04.88": {
@@ -809,18 +1001,26 @@
           "url": "https://roomartstore.com.tr/products/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi?variant=52819972325663",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 11128.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4STK0",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10599,
-      "price_max": 10599,
-      "price_spread_pct": 0.0,
+      "price_max": 11128.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.47.160.01.86": {
@@ -841,18 +1041,26 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi?variant=52815786574111",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 11549.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RWVN",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10999.9,
-      "price_max": 10999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 11549.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.53.160.04.86": {
@@ -873,18 +1081,26 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi?variant=52815778021663",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 12599.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4S8XT",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": null,
+      "price_max": 12599.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.53.160.01.86": {
@@ -905,18 +1121,26 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi?variant=52815777988895",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 12599.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-p-HBCV0000I4RSCD",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 11999.9,
-      "price_max": 11999.9,
-      "price_spread_pct": 0.0,
+      "price_max": 12599.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "037.12.155.01.10": {
@@ -50154,17 +50378,25 @@
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi?variant=52815786606879",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 11549.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RSQ9",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 10999.9,
-      "price_max": 10999.9,
-      "price_spread_pct": null,
+      "price_max": 11549.9,
+      "price_spread_pct": 5.0,
       "price_conflict": false
     },
     "059.55.200.01.89": {
