@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-29T11:46:37.456631+00:00",
+    "generated_at": "2026-08-30T10:37:25.735435+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -15,10 +15,10 @@
       "trendyol": 1077,
       "shopify": 762,
       "hb": 996,
-      "n11": 739,
+      "n11": 766,
       "koctas": 438
     },
-    "price_conflict_count": 839,
+    "price_conflict_count": 864,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -48,20 +48,28 @@
           "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4U3HX",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7169.9,
+          "list_price": 7169.9,
+          "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kumtasi-137513816",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 6699,
-      "price_max": 7033.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7169.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "D-33": {
       "stock_code": "D-33",
@@ -88,20 +96,28 @@
           "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4TZLI",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7167.9,
+          "list_price": 7169.9,
+          "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kul-gri-137513681",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 6699,
-      "price_max": 7033.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7167.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3100": {
       "stock_code": "3100",
@@ -128,20 +144,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TZ8A",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 14177.9,
+          "list_price": 14177.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-atlantik-cam-antrasit-137513604",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 13249.9,
-      "price_max": 13912.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 14177.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3099": {
       "stock_code": "3099",
@@ -168,20 +192,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TYC1",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 14177.9,
+          "list_price": 14177.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-atlantik-cam-beyaz-137513575",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 13249.9,
-      "price_max": 13912.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 14177.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3098": {
       "stock_code": "3098",
@@ -208,20 +240,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TOBT",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 14177.9,
+          "list_price": 14177.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-beyaz-137513577",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 13249.9,
-      "price_max": 13912.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 14177.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3096": {
       "stock_code": "3096",
@@ -248,20 +288,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TR3R",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 10699.9,
+          "list_price": 10699.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-atlantik-cam-beyaz-137513291",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 9999.9,
-      "price_max": 10499.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 10699.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3097": {
       "stock_code": "3097",
@@ -288,20 +336,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TWOU",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 10699.9,
+          "list_price": 10699.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-atlantik-cam-antrasit-137513290",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 9999.9,
-      "price_max": 10499.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 10699.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3095": {
       "stock_code": "3095",
@@ -328,20 +384,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TU9U",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 10699.9,
+          "list_price": 10699.9,
+          "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-beyaz-137512984",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 9999.9,
-      "price_max": 10499.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 10699.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3094": {
       "stock_code": "3094",
@@ -368,20 +432,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TRBV",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7703.9,
+          "list_price": 7703.9,
+          "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-atlantik-cam-antrasit-137513047",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 7199.9,
-      "price_max": 7559.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7703.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3093": {
       "stock_code": "3093",
@@ -408,20 +480,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TR2J",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7703.9,
+          "list_price": 7703.9,
+          "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-beyaz-atlantik-cam-137512903",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 7199.9,
-      "price_max": 7559.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7703.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "3090": {
       "stock_code": "3090",
@@ -448,20 +528,28 @@
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TT37",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 7703.9,
+          "list_price": 7703.9,
+          "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-beyaz-137512902",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 7199.9,
-      "price_max": 7559.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 7703.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.56.280.01.90": {
       "stock_code": "059.56.280.01.90",
@@ -488,20 +576,28 @@
           "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4TE9X",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 19259.9,
+          "list_price": 19259.9,
+          "url": "https://www.n11.com/urun/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-137512991",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 17999.9,
-      "price_max": 18899.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 19259.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.56.280.04.90": {
       "stock_code": "059.56.280.04.90",
@@ -528,20 +624,28 @@
           "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4T234",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 19259.9,
+          "list_price": 19259.9,
+          "url": "https://www.n11.com/urun/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-137512867",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 17999.9,
-      "price_max": 18899.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 19259.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.01.120.04.00": {
       "stock_code": "059.01.120.04.00",
@@ -568,19 +672,27 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TASB",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 5189.9,
+          "list_price": 5189.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-kumtasi-137511416",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 4849.9,
-      "price_max": 5099.9,
-      "price_spread_pct": 5.2,
+      "price_max": 5189.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "059.01.120.01.00": {
@@ -608,19 +720,27 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TBVH",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 5189.9,
+          "list_price": 5189.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-mat-beyaz-137511430",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 4849.9,
-      "price_max": 5099.9,
-      "price_spread_pct": 5.2,
+      "price_max": 5189.9,
+      "price_spread_pct": 7.0,
       "price_conflict": true
     },
     "059.22.120.01.00": {
@@ -648,20 +768,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T878",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6419.9,
+          "list_price": 6419.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-mat-beyaz-137511313",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 5999.9,
-      "price_max": 6299.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 6419.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.22.120.04.00": {
       "stock_code": "059.22.120.04.00",
@@ -688,20 +816,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T7PR",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 6419.9,
+          "list_price": 6419.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-kumtasi-137511378",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 5999.9,
-      "price_max": 6299.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 6419.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.54.200.01.89": {
       "stock_code": "059.54.200.01.89",
@@ -808,20 +944,28 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SF49",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 17654.9,
+          "list_price": 17654.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-137507302",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 16499.9,
-      "price_max": 17324.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 17654.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.54.200.01.87": {
       "stock_code": "059.54.200.01.87",
@@ -848,20 +992,28 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SCD7",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 17654.9,
+          "list_price": 17654.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-137507303",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 16499.9,
-      "price_max": 17324.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 17654.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.22.160.01.88": {
       "stock_code": "059.22.160.01.88",
@@ -888,20 +1040,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYPZ",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 9950.9,
+          "list_price": 9950.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-mat-beyaz-137508642",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 9299.9,
-      "price_max": 9764.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 9950.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.22.160.04.88": {
       "stock_code": "059.22.160.04.88",
@@ -928,20 +1088,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYVD",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 9950.9,
+          "list_price": 9950.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-kumtasi-137508641",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 9299.9,
-      "price_max": 9764.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 9950.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.47.160.01.88": {
       "stock_code": "059.47.160.01.88",
@@ -968,20 +1136,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4SQ21",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 11340.9,
+          "list_price": 11340.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-137508182",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 10599,
-      "price_max": 11128.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 11340.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.47.160.04.88": {
       "stock_code": "059.47.160.04.88",
@@ -1008,20 +1184,28 @@
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4STK0",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 11340.9,
+          "list_price": 11340.9,
+          "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-137508170",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 10599,
-      "price_max": 11128.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 11340.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.47.160.01.86": {
       "stock_code": "059.47.160.01.86",
@@ -1048,20 +1232,28 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RWVN",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 11769.9,
+          "list_price": 11769.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-mat-beyaz-137473370",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 10999.9,
-      "price_max": 11549.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 11769.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.53.160.04.86": {
       "stock_code": "059.53.160.04.86",
@@ -1088,20 +1280,28 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4S8XT",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 12839.9,
+          "list_price": 12839.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-kumtasi-137472924",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 11999.9,
-      "price_max": 12599.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 12839.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.53.160.01.86": {
       "stock_code": "059.53.160.01.86",
@@ -1128,20 +1328,28 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-p-HBCV0000I4RSCD",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 12839.9,
+          "list_price": 12839.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-mat-beyaz-137472925",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 11999.9,
-      "price_max": 12599.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 12839.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "037.12.155.01.10": {
       "stock_code": "037.12.155.01.10",
@@ -35865,7 +36073,7 @@
           "price": 5999.9,
           "list_price": 5999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-atlantik-mat-mdf-65-cm-banyo-alt-dolabi-p-373275560?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "hb": {
@@ -50385,19 +50593,27 @@
           "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RSQ9",
           "on_sale": true,
           "price_final": false
+        },
+        "n11": {
+          "price": 11769.9,
+          "list_price": 11769.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-kumtasi-137473369",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "n11",
         "shopify"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10999.9,
-      "price_max": 11549.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_max": 11769.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
     },
     "059.55.200.01.89": {
       "stock_code": "059.55.200.01.89",
