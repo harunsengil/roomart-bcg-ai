@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-30T10:37:25.735435+00:00",
+    "generated_at": "2026-08-31T11:47:35.246931+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,9 +10,9 @@
       "koctas"
     ],
     "total_products": 1236,
-    "multi_platform_count": 1061,
+    "multi_platform_count": 1063,
     "by_platform_count": {
-      "trendyol": 1077,
+      "trendyol": 1079,
       "shopify": 762,
       "hb": 996,
       "n11": 766,
@@ -919,36 +919,22 @@
       "price_spread_pct": 5.0,
       "price_conflict": false
     },
-    "059.54.200.04.87": {
-      "stock_code": "059.54.200.04.87",
-      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası, 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+    "059.55.200.04.89": {
+      "stock_code": "059.55.200.04.89",
+      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 16499.9,
-          "list_price": 16499.9,
-          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191604760?merchantId=362387&filterOverPriceListings=false",
+          "price": 18399.9,
+          "list_price": 18399.9,
+          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191881658?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
         },
         "shopify": {
-          "price": 16499.9,
+          "price": 18399.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791718687",
-          "on_sale": true,
-          "price_final": false
-        },
-        "hb": {
-          "price": 17324.9,
-          "list_price": null,
-          "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SF49",
-          "on_sale": true,
-          "price_final": false
-        },
-        "n11": {
-          "price": 17654.9,
-          "list_price": 17654.9,
-          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-137507302",
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093501727",
           "on_sale": true,
           "price_final": false
         }
@@ -956,16 +942,14 @@
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
-        "hb",
-        "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
-      "price_min": 16499.9,
-      "price_max": 17654.9,
-      "price_spread_pct": 7.0,
-      "price_conflict": true
+      "platform_count": 2,
+      "price_min": 18399.9,
+      "price_max": 18399.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
     },
     "059.54.200.01.87": {
       "stock_code": "059.54.200.01.87",
@@ -1204,6 +1188,86 @@
       "platform_count": 4,
       "price_min": 10599,
       "price_max": 11340.9,
+      "price_spread_pct": 7.0,
+      "price_conflict": true
+    },
+    "059.53.200.04.87": {
+      "stock_code": "059.53.200.04.87",
+      "name": "Mode 2 adet 3 Çekmeceli Kesonlu Çalışma Masası , Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masası , Bilgisayar Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 15499.9,
+          "list_price": 15499.9,
+          "url": "https://www.trendyol.com/roomart/mode-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-kitaplikli-ve-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191816165?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 15499.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52819968262431",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 15499.9,
+      "price_max": 15499.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "059.54.200.04.87": {
+      "stock_code": "059.54.200.04.87",
+      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası, 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 16499.9,
+          "list_price": 16499.9,
+          "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191604760?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 16499.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52815791718687",
+          "on_sale": true,
+          "price_final": false
+        },
+        "hb": {
+          "price": 17324.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SF49",
+          "on_sale": true,
+          "price_final": false
+        },
+        "n11": {
+          "price": 17654.9,
+          "list_price": 17654.9,
+          "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-137507302",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "hb",
+        "n11",
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 4,
+      "price_min": 16499.9,
+      "price_max": 17654.9,
       "price_spread_pct": 7.0,
       "price_conflict": true
     },
@@ -50551,30 +50615,6 @@
       "price_spread_pct": null,
       "price_conflict": false
     },
-    "059.53.200.04.87": {
-      "stock_code": "059.53.200.04.87",
-      "name": "Mode 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "shopify": {
-          "price": 15499.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-2-adet-3-cekmeceli-kesonlu-calisma-masasi?variant=52819968262431",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify"
-      ],
-      "platform_count": 1,
-      "price_min": 15499.9,
-      "price_max": 15499.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "059.47.160.04.86": {
       "stock_code": "059.47.160.04.86",
       "name": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmeceli Çalışma Masası, Çalışma Ofis Masası",
@@ -50624,30 +50664,6 @@
           "price": 18399.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093468959",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify"
-      ],
-      "platform_count": 1,
-      "price_min": 18399.9,
-      "price_max": 18399.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "059.55.200.04.89": {
-      "stock_code": "059.55.200.04.89",
-      "name": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Standlı Çalışma Ofis Masası , Bilgisayar Masası , 2 adet 3 Çekmeceli Kesonlu Çalışma Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "shopify": {
-          "price": 18399.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-kesonlu-calisma-masasi-1?variant=52820093501727",
           "on_sale": true,
           "price_final": false
         }
