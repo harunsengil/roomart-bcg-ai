@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-31T11:47:35.246931+00:00",
+    "generated_at": "2026-08-31T12:52:16.255740+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -18,7 +18,7 @@
       "n11": 766,
       "koctas": 438
     },
-    "price_conflict_count": 864,
+    "price_conflict_count": 866,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -50,11 +50,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7169.9,
+          "price": 4682.65,
           "list_price": 7169.9,
           "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kumtasi-137513816",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -66,9 +66,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 6699,
-      "price_max": 7169.9,
-      "price_spread_pct": 7.0,
+      "price_min": 4682.65,
+      "price_max": 7033.9,
+      "price_spread_pct": 50.2,
       "price_conflict": true
     },
     "D-33": {
@@ -77,11 +77,11 @@
       "category": "Çamaşır Makinesi Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 6699,
+          "price": 1116.5,
           "list_price": 6699,
           "url": "https://www.trendyol.com/roomart/yavas-latici-c-ekmeceli-c-amas-ir-ve-kurutma-makinesi-dolabi-185-cm-p-1192076560?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 6699.0,
@@ -98,11 +98,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7167.9,
+          "price": 4682.65,
           "list_price": 7169.9,
           "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kul-gri-137513681",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -114,9 +114,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 6699,
-      "price_max": 7167.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1116.5,
+      "price_max": 7033.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3100": {
@@ -125,11 +125,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 13249.9,
+          "price": 1472.21,
           "list_price": 13249.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192069442?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 13249.9,
@@ -146,11 +146,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 14177.9,
+          "price": 4682.65,
           "list_price": 14177.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-atlantik-cam-antrasit-137513604",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -162,9 +162,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13249.9,
-      "price_max": 14177.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1472.21,
+      "price_max": 13912.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "3099": {
@@ -173,11 +173,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 13249.9,
+          "price": 1472.21,
           "list_price": 13249.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192068299?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 13249.9,
@@ -194,11 +194,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 14177.9,
+          "price": 4682.65,
           "list_price": 14177.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-atlantik-cam-beyaz-137513575",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -210,9 +210,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13249.9,
-      "price_max": 14177.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1472.21,
+      "price_max": 13912.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "3098": {
@@ -221,11 +221,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 13249.9,
+          "price": 1472.21,
           "list_price": 13249.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-1192066094?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 13249.9,
@@ -242,11 +242,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 14177.9,
+          "price": 4682.65,
           "list_price": 14177.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-beyaz-137513577",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -258,9 +258,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 13249.9,
-      "price_max": 14177.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1472.21,
+      "price_max": 13912.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "3096": {
@@ -269,11 +269,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 9999.9,
+          "price": 1666.65,
           "list_price": 9999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192051055?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9999.9,
@@ -290,11 +290,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10699.9,
+          "price": 4682.65,
           "list_price": 10699.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-atlantik-cam-beyaz-137513291",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -306,9 +306,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9999.9,
-      "price_max": 10699.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1666.65,
+      "price_max": 10499.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3097": {
@@ -317,11 +317,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 9999.9,
+          "price": 1666.65,
           "list_price": 9999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192050715?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9999.9,
@@ -338,11 +338,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10699.9,
+          "price": 4682.65,
           "list_price": 10699.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-atlantik-cam-antrasit-137513290",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -354,9 +354,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9999.9,
-      "price_max": 10699.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1666.65,
+      "price_max": 10499.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3095": {
@@ -365,11 +365,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 9999.9,
+          "price": 1666.65,
           "list_price": 9999.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-u-st-dolabi-banyo-dolabi-takimi-p-1192049627?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9999.9,
@@ -386,11 +386,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 10699.9,
+          "price": 4682.65,
           "list_price": 10699.9,
           "url": "https://www.n11.com/urun/lavabolu-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-beyaz-137512984",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -402,9 +402,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9999.9,
-      "price_max": 10699.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1666.65,
+      "price_max": 10499.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3094": {
@@ -413,11 +413,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 7199.9,
+          "price": 1199.98,
           "list_price": 7199.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192017478?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7199.9,
@@ -434,11 +434,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7703.9,
+          "price": 4682.65,
           "list_price": 7703.9,
           "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-atlantik-cam-antrasit-137513047",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -450,9 +450,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7199.9,
-      "price_max": 7703.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1199.98,
+      "price_max": 7559.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3093": {
@@ -461,11 +461,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 7199.9,
+          "price": 1199.98,
           "list_price": 7199.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192016545?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7199.9,
@@ -482,11 +482,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7703.9,
+          "price": 4682.65,
           "list_price": 7703.9,
           "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-beyaz-atlantik-cam-137512903",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -498,9 +498,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7199.9,
-      "price_max": 7703.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1199.98,
+      "price_max": 7559.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "3090": {
@@ -509,11 +509,11 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 7199.9,
+          "price": 1199.98,
           "list_price": 7199.9,
           "url": "https://www.trendyol.com/roomart/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-1192014749?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 7199.9,
@@ -530,11 +530,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7703.9,
+          "price": 4682.65,
           "list_price": 7703.9,
           "url": "https://www.n11.com/urun/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-beyaz-137512902",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -546,9 +546,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 7199.9,
-      "price_max": 7703.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1199.98,
+      "price_max": 7559.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "059.56.280.01.90": {
@@ -557,11 +557,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 17999.9,
+          "price": 1999.99,
           "list_price": 17999.9,
           "url": "https://www.trendyol.com/roomart/mode-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-c-alis-ma-masasi-p-1191961039?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 17999.9,
@@ -578,11 +578,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 19259.9,
+          "price": 2139.99,
           "list_price": 19259.9,
           "url": "https://www.n11.com/urun/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-137512991",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -594,9 +594,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 17999.9,
-      "price_max": 19259.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1999.99,
+      "price_max": 18899.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.56.280.04.90": {
@@ -605,11 +605,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 17999.9,
+          "price": 1999.99,
           "list_price": 17999.9,
           "url": "https://www.trendyol.com/roomart/mode-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-c-alis-ma-masasi-p-1191960438?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 17999.9,
@@ -626,11 +626,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 19259.9,
+          "price": 2139.99,
           "list_price": 19259.9,
           "url": "https://www.n11.com/urun/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-137512867",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -642,9 +642,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 17999.9,
-      "price_max": 19259.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1999.99,
+      "price_max": 18899.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.01.120.04.00": {
@@ -653,11 +653,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 4849.9,
+          "price": 1616.63,
           "list_price": 4849.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191947287?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4849.9,
@@ -674,11 +674,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 5189.9,
+          "price": 1297.48,
           "list_price": 5189.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-kumtasi-137511416",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -690,9 +690,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 4849.9,
-      "price_max": 5189.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1297.48,
+      "price_max": 5099.9,
+      "price_spread_pct": 293.1,
       "price_conflict": true
     },
     "059.01.120.01.00": {
@@ -701,11 +701,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 4849.9,
+          "price": 1616.63,
           "list_price": 4849.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191945166?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 4849.9,
@@ -722,11 +722,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 5189.9,
+          "price": 1297.48,
           "list_price": 5189.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-mat-beyaz-137511430",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -738,9 +738,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 4849.9,
-      "price_max": 5189.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1297.48,
+      "price_max": 5099.9,
+      "price_spread_pct": 293.1,
       "price_conflict": true
     },
     "059.22.120.01.00": {
@@ -749,11 +749,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 5999.9,
+          "price": 1999.97,
           "list_price": 5999.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191926672?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 5999.9,
@@ -770,11 +770,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6419.9,
+          "price": 1283.98,
           "list_price": 6419.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-mat-beyaz-137511313",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -786,9 +786,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5999.9,
-      "price_max": 6419.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1283.98,
+      "price_max": 6299.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "059.22.120.04.00": {
@@ -797,11 +797,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 5999.9,
+          "price": 1999.97,
           "list_price": 5999.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191925304?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 5999.9,
@@ -818,11 +818,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 6419.9,
+          "price": 1283.98,
           "list_price": 6419.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-kumtasi-137511378",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -834,9 +834,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 5999.9,
-      "price_max": 6419.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1283.98,
+      "price_max": 6299.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "059.54.200.01.89": {
@@ -845,11 +845,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 16999.9,
+          "price": 1888.88,
           "list_price": 16999.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191917746?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 16999.9,
@@ -874,10 +874,10 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 16999.9,
+      "price_min": 1888.88,
       "price_max": 17849.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_spread_pct": 845.0,
+      "price_conflict": true
     },
     "059.54.200.04.89": {
       "stock_code": "059.54.200.04.89",
@@ -885,11 +885,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 16999.9,
+          "price": 1888.88,
           "list_price": 16999.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191913542?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 16999.9,
@@ -914,10 +914,10 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 16999.9,
+      "price_min": 1888.88,
       "price_max": 17849.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_spread_pct": 845.0,
+      "price_conflict": true
     },
     "059.55.200.04.89": {
       "stock_code": "059.55.200.04.89",
@@ -1005,11 +1005,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 9299.9,
+          "price": 2859.9,
           "list_price": 9299.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-bilgisayar-masasi-c-alis-ma-ofis-masasi-p-1191875670?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9299.9,
@@ -1026,11 +1026,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9950.9,
+          "price": 1658.48,
           "list_price": 9950.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-mat-beyaz-137508642",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1042,9 +1042,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9299.9,
-      "price_max": 9950.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1658.48,
+      "price_max": 9764.9,
+      "price_spread_pct": 488.8,
       "price_conflict": true
     },
     "059.22.160.04.88": {
@@ -1053,11 +1053,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 9299.9,
+          "price": 1549.98,
           "list_price": 9299.9,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-bilgisayar-masasi-c-alis-ma-ofis-masasi-p-1191874122?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 9299.9,
@@ -1074,11 +1074,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9950.9,
+          "price": 1658.48,
           "list_price": 9950.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-kumtasi-137508641",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1090,9 +1090,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 9299.9,
-      "price_max": 9950.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1549.98,
+      "price_max": 9764.9,
+      "price_spread_pct": 530.0,
       "price_conflict": true
     },
     "059.47.160.01.88": {
@@ -1101,11 +1101,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 10599,
+          "price": 1177.67,
           "list_price": 10599,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191822506?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10599.0,
@@ -1122,11 +1122,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11340.9,
+          "price": 1890.15,
           "list_price": 11340.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-137508182",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1138,9 +1138,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10599,
-      "price_max": 11340.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1177.67,
+      "price_max": 11128.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.47.160.04.88": {
@@ -1149,11 +1149,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 10599,
+          "price": 1177.67,
           "list_price": 10599,
           "url": "https://www.trendyol.com/roomart/mode-rafli-c-alis-ma-masasi-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-p-1191821764?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10599.0,
@@ -1170,11 +1170,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11340.9,
+          "price": 1890.15,
           "list_price": 11340.9,
           "url": "https://www.n11.com/urun/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-137508170",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1186,9 +1186,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10599,
-      "price_max": 11340.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1177.67,
+      "price_max": 11128.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.53.200.04.87": {
@@ -1229,11 +1229,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 16499.9,
+          "price": 1833.32,
           "list_price": 16499.9,
           "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-rafli-monito-r-standli-c-alis-ma-ofis-masasi-bilgisayar-masasi-2-adet-3-c-ekmeceli-kesonlu-c-alis-ma-masasi-p-1191604760?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 16499.9,
@@ -1250,11 +1250,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 17654.9,
+          "price": 1961.66,
           "list_price": 17654.9,
           "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-137507302",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1266,9 +1266,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 16499.9,
-      "price_max": 17654.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1833.32,
+      "price_max": 17324.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.47.160.01.86": {
@@ -1277,11 +1277,11 @@
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
-          "price": 10999.9,
+          "price": 1222.21,
           "list_price": 10999.9,
           "url": "https://www.trendyol.com/roomart/mode-kitaplikli-c-alis-ma-masasi-bilgisayar-masasi-c-ekmeceli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-p-1191597107?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 10999.9,
@@ -1298,11 +1298,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11769.9,
+          "price": 1961.65,
           "list_price": 11769.9,
           "url": "https://www.n11.com/urun/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-mat-beyaz-137473370",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1314,9 +1314,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 10999.9,
-      "price_max": 11769.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1222.21,
+      "price_max": 11549.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "059.53.160.04.86": {
@@ -1377,7 +1377,7 @@
           "list_price": 11999.9,
           "url": "https://www.trendyol.com/roomart/mode-kitaplikli-ve-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-bilgisayar-masasi-c-ekmeceli-c-alis-ma-masasi-p-1191591884?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "shopify": {
           "price": 11999.9,
@@ -1394,11 +1394,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 12839.9,
+          "price": 1426.66,
           "list_price": 12839.9,
           "url": "https://www.n11.com/urun/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-mat-beyaz-137472925",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1410,9 +1410,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 11999.9,
-      "price_max": 12839.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1426.66,
+      "price_max": 12599.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "037.12.155.01.10": {
@@ -2186,11 +2186,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 11769.9,
+          "price": 1961.65,
           "list_price": 11769.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861712",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -2203,8 +2203,8 @@
       ],
       "platform_count": 4,
       "price_min": 1222.21,
-      "price_max": 11769.9,
-      "price_spread_pct": 863.0,
+      "price_max": 11549.9,
+      "price_spread_pct": 845.0,
       "price_conflict": true
     },
     "053.22.000.04.69": {
@@ -2746,11 +2746,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 19794.9,
+          "price": 2199.43,
           "list_price": 19794.9,
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-kumtasi-135861105",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -2762,9 +2762,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 17458.0,
-      "price_max": 19794.9,
-      "price_spread_pct": 13.4,
+      "price_min": 2199.43,
+      "price_max": 19424.9,
+      "price_spread_pct": 783.2,
       "price_conflict": true
     },
     "053.47.000.01.72": {
@@ -2938,11 +2938,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 9489.9,
+          "price": 1581.65,
           "list_price": 9489.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-dolap-90-x-200-roomart-kul-gri-134322096",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -2954,9 +2954,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 8869.0,
-      "price_max": 9489.9,
-      "price_spread_pct": 7.0,
+      "price_min": 1581.65,
+      "price_max": 9314.9,
+      "price_spread_pct": 488.9,
       "price_conflict": true
     },
     "3002": {
@@ -3034,11 +3034,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 7661.9,
+          "price": 1532.38,
           "list_price": 7661.9,
           "url": "https://www.n11.com/urun/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-kul-gri-134958740",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -3050,9 +3050,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 6757.0,
-      "price_max": 7661.9,
-      "price_spread_pct": 13.4,
+      "price_min": 1532.38,
+      "price_max": 7519.9,
+      "price_spread_pct": 390.7,
       "price_conflict": true
     },
     "3010": {

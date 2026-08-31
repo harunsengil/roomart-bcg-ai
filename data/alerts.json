@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-31T11:47:19.393874+00:00",
-    "total_alerts": 11
+    "last_updated": "2026-08-31T12:52:05.747839+00:00",
+    "total_alerts": 10
   },
   "alerts": [
     {
@@ -9,99 +9,90 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ ATLANTİK büyüme momentumu yüksek (97/100).",
+      "message": "ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ ATLANTİK büyüme momentumu yüksek (100/100).",
       "product_id": "739768975",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "ROMA RAFLI ÇALIŞMA MASASI  ÇALIŞMA OFİS MASASI SAĞ DOLAP ATL büyüme momentumu yüksek (79/100).",
-      "product_id": "739769104",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "message": "Mode Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masas büyüme momentumu yüksek (82/100).",
+      "product_id": "1191591884",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Kitaplıklı ve Raflı Çalışma Masası , Çalışma Ofis Masas büyüme momentumu yüksek (79/100).",
-      "product_id": "1191591884",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "message": "ROMA RAFLI ÇALIŞMA MASASI  ÇALIŞMA OFİS MASASI SAĞ DOLAP ATL büyüme momentumu yüksek (82/100).",
+      "product_id": "739769104",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-4",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Al zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
-      "product_id": "971265576",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "message": "ROOMART Dubai Kapaklı ve Sepetli 92.2 cm Mdflam Banyo Dolabı zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
+      "product_id": "962231369",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-5",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — çıkış adayı",
-      "message": "ROOMART Dubai Kapaklı ve Sepetli 92.2 cm Mdflam Banyo Dolabı zayıf puan (3.5) ve düşük pay. İnceleme önerilir.",
-      "product_id": "962231369",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
-    },
-    {
-      "id": "alert-6",
       "type": "SUCCESS",
       "severity": "INFO",
       "title": "Diğer — lider STAR",
       "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
       "product_id": "962085213",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
+    },
+    {
+      "id": "alert-6",
+      "type": "SUCCESS",
+      "severity": "INFO",
+      "title": "Kitaplıklı Çalışma Masası — lider STAR",
+      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 100.",
+      "product_id": "942636653",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-7",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Kahve Köşesi — lider STAR",
-      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 100.",
-      "product_id": "885510279",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
-    },
-    {
-      "id": "alert-8",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %86. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
+    },
+    {
+      "id": "alert-8",
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "Banyo Dolabı — yüksek iade riski",
+      "message": "Ada Banyo Dolabı Mat Suntalam 110 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "923691855",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-9",
       "type": "RISK",
-      "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
-      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90  iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "1177542912",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "severity": "INFO",
+      "title": "Diğer — kârsız hacim uyarısı",
+      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %81 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174373102",
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     },
     {
       "id": "alert-10",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %81 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174373102",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
-    },
-    {
-      "id": "alert-11",
-      "type": "RISK",
-      "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
       "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1174453064",
-      "timestamp": "2026-08-31T11:47:19.370592+00:00"
+      "timestamp": "2026-08-31T12:52:05.721824+00:00"
     }
   ]
 }
