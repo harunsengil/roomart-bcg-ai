@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-03T10:02:27.460344+00:00",
+    "generated_at": "2026-09-04T09:52:42.651255+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -18,7 +18,7 @@
       "n11": 766,
       "koctas": 438
     },
-    "price_conflict_count": 866,
+    "price_conflict_count": 868,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -1540,7 +1540,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6799.9,
+          "price": 6249.0,
           "list_price": 9714.9,
           "url": "https://roomartstore.com.tr/products/stilo-kitaplikli-calisma-masasi?variant=52776048820511",
           "on_sale": true,
@@ -1562,10 +1562,10 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 6799.9,
+      "price_min": 6249.0,
       "price_max": 7139.9,
-      "price_spread_pct": 5.0,
-      "price_conflict": false
+      "price_spread_pct": 14.3,
+      "price_conflict": true
     },
     "037.12.155.01.11": {
       "stock_code": "037.12.155.01.11",
@@ -1580,7 +1580,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6799.9,
+          "price": 6249.0,
           "list_price": 9714.9,
           "url": "https://roomartstore.com.tr/products/stilo-kitaplikli-calisma-masasi?variant=52776048787743",
           "on_sale": true,
@@ -1594,10 +1594,10 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 6799.9,
+      "price_min": 6249.0,
       "price_max": 6799.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
+      "price_spread_pct": 8.8,
+      "price_conflict": true
     },
     "036.12.120.01.00": {
       "stock_code": "036.12.120.01.00",
@@ -1612,7 +1612,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 7299.9,
+          "price": 6749.0,
           "list_price": 10439.9,
           "url": "https://roomartstore.com.tr/products/mira-kitaplikli_calisma_masasi?variant=52776033845535",
           "on_sale": true,
@@ -1660,7 +1660,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 6889.0,
+          "price": 6749.0,
           "list_price": 10439.9,
           "url": "https://roomartstore.com.tr/products/mira-kitaplikli_calisma_masasi?variant=52776033878303",
           "on_sale": true,
@@ -12601,7 +12601,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 8999.0,
+          "price": 8249.0,
           "list_price": 8999.9,
           "url": "https://roomartstore.com.tr/products/mutfak-adasi-cortado?variant=50042856243487",
           "on_sale": true,
@@ -12639,9 +12639,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 8423.91,
+      "price_min": 8249.0,
       "price_max": 8999.9,
-      "price_spread_pct": 6.8,
+      "price_spread_pct": 9.1,
       "price_conflict": true
     },
     "2742": {
@@ -14456,7 +14456,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5931.0,
+          "price": 5999.0,
           "list_price": 7289.9,
           "url": "https://roomartstore.com.tr/products/bar-masasi-dublin?variant=49808378200351",
           "on_sale": true,
@@ -14494,9 +14494,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 5931.0,
+      "price_min": 5999.0,
       "price_max": 6499.0,
-      "price_spread_pct": 9.6,
+      "price_spread_pct": 8.3,
       "price_conflict": true
     },
     "2770": {
@@ -18973,7 +18973,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 2799.9,
+          "price": 2599.0,
           "list_price": 3199.9,
           "url": "https://roomartstore.com.tr/products/calisma-masasi-paris-100-cm?variant=48877303234847",
           "on_sale": true,
@@ -19017,8 +19017,8 @@
       ],
       "platform_count": 5,
       "price_min": 2436.86,
-      "price_max": 2799.9,
-      "price_spread_pct": 14.9,
+      "price_max": 2645.91,
+      "price_spread_pct": 8.6,
       "price_conflict": true
     },
     "2635": {
@@ -24703,7 +24703,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 15799.9,
+          "price": 14699.0,
           "list_price": 16839.9,
           "url": "https://roomartstore.com.tr/products/lotus-oval-canak-lavabolu-banyo-dolabi-2li-set?variant=48568573264159",
           "on_sale": true,
@@ -24734,8 +24734,8 @@
       ],
       "platform_count": 4,
       "price_min": 14450.85,
-      "price_max": 15799.9,
-      "price_spread_pct": 9.3,
+      "price_max": 15209.91,
+      "price_spread_pct": 5.3,
       "price_conflict": true
     },
     "2522": {
@@ -29538,7 +29538,7 @@
           "price_final": true
         },
         "shopify": {
-          "price": 5805.0,
+          "price": 5999.0,
           "list_price": 8669.9,
           "url": "https://roomartstore.com.tr/products/roma-kitaplikli-calisma-masasi?variant=50049630601503",
           "on_sale": true,
