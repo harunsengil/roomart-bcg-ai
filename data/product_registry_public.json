@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-04T09:52:42.651255+00:00",
+    "generated_at": "2026-09-05T09:15:33.297896+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -17405,7 +17405,7 @@
           "price": 1999.9,
           "list_price": 1999.9,
           "url": "https://www.trendyol.com/roomart/helsinki-orta-sehpa-suntalam-110-cm-p-866194458?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
