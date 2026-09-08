@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-07T10:37:52.742970+00:00",
+    "generated_at": "2026-09-08T09:58:14.441113+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,10 +9,10 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1244,
+    "total_products": 1248,
     "multi_platform_count": 1065,
     "by_platform_count": {
-      "trendyol": 1090,
+      "trendyol": 1094,
       "shopify": 762,
       "hb": 996,
       "n11": 766,
@@ -23,6 +23,150 @@
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "053.44.074.01.00": {
+      "stock_code": "053.44.074.01.00",
+      "name": "Nord Vestiyer , Portmanto Ayakkabılık Dolabı 73,6 x 112 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 5549,
+          "list_price": 5549,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm-p-1196836249?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 5549,
+      "price_max": 5549,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.44.074.04.00": {
+      "stock_code": "053.44.074.04.00",
+      "name": "Nord Vestiyer , Portmanto Ayakkabılık Dolabı 73,6 x 112 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 5549,
+          "list_price": 5549,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm-p-1196836084?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 5549,
+      "price_max": 5549,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.46.130.01.00": {
+      "stock_code": "053.46.130.01.00",
+      "name": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 2949.9,
+          "list_price": 2949.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm-p-1196816389?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 2949.9,
+      "price_max": 2949.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.46.130.04.00": {
+      "stock_code": "053.46.130.04.00",
+      "name": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 2949.9,
+          "list_price": 2949.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm-p-1196816018?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 2949.9,
+      "price_max": 2949.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.45.074.04.18": {
+      "stock_code": "053.45.074.04.18",
+      "name": "Nord Vestiyer , Portmanto Kapaksız Raflı Bench 73,6 x 53 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 2999.9,
+          "list_price": 2999.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-kapaksiz-rafli-bench-73-6-x-53-cm-p-1196814513?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 2999.9,
+      "price_max": 2999.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.45.074.01.18": {
+      "stock_code": "053.45.074.01.18",
+      "name": "Nord Vestiyer , Portmanto Kapaksız Raflı Bench 73,6 x 53 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 2999.9,
+          "list_price": 2999.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-kapaksiz-rafli-bench-73-6-x-53-cm-p-1196813904?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 2999.9,
+      "price_max": 2999.9,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
     "053.45.074.04.17": {
       "stock_code": "053.45.074.04.17",
       "name": "Nord Vestiyer , Portmanto Kapaklı Bench 73,6 x 53 cm",
@@ -92,54 +236,6 @@
       "platform_count": 1,
       "price_min": 1899.9,
       "price_max": 1899.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.44.074.04.00": {
-      "stock_code": "053.44.074.04.00",
-      "name": "Nord Vestiyer , Portmanto Ayakkabılık Dolabı 73,6 x 112 cm",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 5549,
-          "list_price": 5549,
-          "url": "",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 5549,
-      "price_max": 5549,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.44.074.01.00": {
-      "stock_code": "053.44.074.01.00",
-      "name": "Nord Vestiyer , Portmanto Ayakkabılık Dolabı 73,6 x 112 cm",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 5549,
-          "list_price": 5549,
-          "url": "",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 5549,
-      "price_max": 5549,
       "price_spread_pct": null,
       "price_conflict": false
     },
@@ -3800,7 +3896,7 @@
           "price": 3719.9,
           "list_price": 3719.9,
           "url": "https://www.trendyol.com/roomart/gu-n-is-ig-i-kumlamali-dokunmatik-ledli-ayna-banyo-ayna-u-st-dolabi-70-cm-p-1174373102?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": true
         },
         "shopify": {
