@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-09T10:01:42.435375+00:00",
+    "generated_at": "2026-09-10T09:59:45.446207+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,10 +10,10 @@
       "koctas"
     ],
     "total_products": 1248,
-    "multi_platform_count": 1065,
+    "multi_platform_count": 1074,
     "by_platform_count": {
       "trendyol": 1094,
-      "shopify": 762,
+      "shopify": 771,
       "hb": 996,
       "n11": 766,
       "koctas": 438
@@ -34,17 +34,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm-p-1196836249?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 5549.0,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm?variant=52865284276511",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 5549,
       "price_max": 5549,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.44.074.04.00": {
@@ -58,17 +66,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm-p-1196836084?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 5549.0,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-ayakkabilik-dolabi-73-6-x-112-cm?variant=52865284309279",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 5549,
       "price_max": 5549,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.46.130.01.00": {
@@ -82,17 +98,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm-p-1196816389?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 2949.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm?variant=52865272316191",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 2949.9,
       "price_max": 2949.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.46.130.04.00": {
@@ -106,17 +130,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm-p-1196816018?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 2949.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-lambri-askilik-69-2-x-18-6-cm?variant=52865272348959",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 2949.9,
       "price_max": 2949.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.45.074.04.18": {
@@ -178,17 +210,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-kapakli-bench-73-6-x-53-cm-p-1196792514?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 3849.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-kapakli-bench-73-6-x-53-cm?variant=52865267237151",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 3849.9,
       "price_max": 3849.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.45.074.01.17": {
@@ -202,17 +242,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-kapakli-bench-73-6-x-53-cm-p-1196792205?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 3849.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-kapakli-bench-73-6-x-53-cm?variant=52865267204383",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 3849.9,
       "price_max": 3849.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.21.130.02.75": {
@@ -226,17 +274,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-aynasi-50-x-130-cm-p-1196785372?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1899.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-aynasi-50-x-130-cm?variant=52865264386335",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1899.9,
       "price_max": 1899.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.21.080.02.74": {
@@ -274,17 +330,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-boy-dolabi-45-x-199-cm-p-1196768015?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 5149.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-boy-dolabi-45-x-199-cm?variant=52865216971039",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 5149.9,
       "price_max": 5149.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.05.045.04.00": {
@@ -298,17 +362,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-portmanto-boy-dolabi-45-x-199-cm-p-1196767522?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 5149.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-boy-dolabi-45-x-199-cm?variant=52865217003807",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 5149.9,
       "price_max": 5149.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "D-44": {
