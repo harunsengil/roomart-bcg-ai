@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-11T09:57:16.291952+00:00",
+    "generated_at": "2026-09-12T09:32:09.428807+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -5555,7 +5555,7 @@
         },
         "koctas": {
           "price": 7303.41,
-          "list_price": 7912.0,
+          "list_price": 8114.9,
           "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-mat-beyaz/p/5002456750?shop=2262",
           "on_sale": true,
           "price_final": true
