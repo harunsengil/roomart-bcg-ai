@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-14T10:54:33.119943+00:00",
+    "generated_at": "2026-09-14T12:35:33.401932+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -37688,11 +37688,11 @@
           "price_final": false
         },
         "n11": {
-          "price": 3669.55,
+          "price": 4725.15,
           "list_price": 4109.9,
           "url": "https://www.n11.com/urun/roomart-banos-cd11-3-rafli-2-kapakli-camasir-makinesi-dolabi-mat-beyaz-19674476",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -37704,9 +37704,9 @@
         "trendyol"
       ],
       "platform_count": 4,
-      "price_min": 3669.55,
+      "price_min": 4725.15,
       "price_max": 5039.9,
-      "price_spread_pct": 37.3,
+      "price_spread_pct": 6.7,
       "price_conflict": true
     },
     "1727": {
@@ -38617,11 +38617,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 5039.9,
+          "price": 4435.11,
           "list_price": null,
           "url": "https://www.hepsiburada.com/cd9-camasir-kurutma-makinesi-dolabi-3-rafli-2-kapakli-banyo-dolabi-mat-beyaz-ahsap-1712-p-HBCV00002HTXBC",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4621.41,
@@ -38649,8 +38649,8 @@
       ],
       "platform_count": 5,
       "price_min": 4391.78,
-      "price_max": 5039.9,
-      "price_spread_pct": 14.8,
+      "price_max": 4799.9,
+      "price_spread_pct": 9.3,
       "price_conflict": true
     },
     "1713": {

@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "scraped_at": "2026-08-31T12:49:41.027549+00:00",
-    "count": 546,
-    "n11_filled": 518,
+    "scraped_at": "2026-09-14T12:32:44.571522+00:00",
+    "count": 547,
+    "n11_filled": 519,
     "trendyol_filled": 545,
-    "hb_filled": 356,
+    "hb_filled": 357,
     "koctas_filled": 390,
     "platforms": [
       "n11",
@@ -3600,7 +3600,7 @@
       "trendyol_list": null
     },
     "1625": {
-      "scraped_at": "2026-08-31T12:47:47.920819+00:00",
+      "scraped_at": "2026-09-14T12:32:24.358787+00:00",
       "n11": 6137.07,
       "n11_list": 2.0,
       "trendyol": 4999.9,
@@ -4042,7 +4042,7 @@
       "koctas_list": 4159.9
     },
     "1919": {
-      "scraped_at": "2026-08-31T12:48:25.797415+00:00",
+      "scraped_at": "2026-09-14T12:32:32.116133+00:00",
       "n11": 4668.27,
       "n11_list": 4701.51,
       "trendyol": 13399.9,
@@ -4051,7 +4051,7 @@
       "hb_list": null
     },
     "1920": {
-      "scraped_at": "2026-08-31T12:48:33.992967+00:00",
+      "scraped_at": "2026-09-14T12:32:38.722759+00:00",
       "n11": 4668.27,
       "n11_list": 4701.51,
       "trendyol": 9999.9,
@@ -4482,13 +4482,13 @@
       "koctas_list": 13934.9
     },
     "1712": {
-      "scraped_at": "2026-08-31T12:49:27.130549+00:00",
+      "scraped_at": "2026-09-14T12:32:07.833627+00:00",
       "n11": 4621.41,
       "n11_list": 5399.9,
       "trendyol": 4391.78,
       "trendyol_list": null,
-      "hb": null,
-      "hb_list": null,
+      "hb": 4435.11,
+      "hb_list": 5039.9,
       "koctas": 4495.41,
       "koctas_list": 4994.9
     },
@@ -5514,6 +5514,13 @@
       "n11_list": 12839.9,
       "trendyol": 11999.9,
       "trendyol_list": null,
+      "hb": null,
+      "hb_list": null
+    },
+    "1732": {
+      "scraped_at": "2026-09-14T12:32:13.425125+00:00",
+      "n11": 4725.15,
+      "n11_list": null,
       "hb": null,
       "hb_list": null
     }
