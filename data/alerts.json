@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-19T09:41:52.643641+00:00",
+    "last_updated": "2026-09-20T10:01:57.100030+00:00",
     "total_alerts": 9
   },
   "alerts": [
@@ -9,18 +9,18 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmecel büyüme momentumu yüksek (100/100).",
-      "product_id": "1191596557",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "message": "Mira Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  büyüme momentumu yüksek (100/100).",
+      "product_id": "1184852338",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (100/100).",
-      "product_id": "1191874122",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "message": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmecel büyüme momentumu yüksek (100/100).",
+      "product_id": "1191596557",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-3",
@@ -29,25 +29,25 @@
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
       "message": "Stilo Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis büyüme momentumu yüksek (100/100).",
       "product_id": "1184864278",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
       "title": "Diğer — lider STAR",
-      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, M pay 100, büyüme 100.",
-      "product_id": "1179886797",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
+      "product_id": "962085213",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 100.",
-      "product_id": "942636653",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, M pay 100, büyüme 100.",
+      "product_id": "1179886797",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-6",
@@ -56,34 +56,34 @@
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %86. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Banyo Dolabı Mat Mdf 60 X 35 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "828118483",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "title": "Diğer — yüksek iade riski",
+      "message": "Nord Vestiyer Takımı Lambri Askılıklı, Ayakkabılık Dolabı, K iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "1180113927",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1196816018",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174373102",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     },
     {
       "id": "alert-9",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174373102",
-      "timestamp": "2026-09-19T09:41:52.617164+00:00"
+      "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174453064",
+      "timestamp": "2026-09-20T10:01:57.079446+00:00"
     }
   ]
 }
