@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-21T13:44:09.355349+00:00",
+    "generated_at": "2026-09-22T10:13:35.519239+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -16,7 +16,7 @@
       "shopify": 771,
       "hb": 996,
       "n11": 766,
-      "koctas": 454
+      "koctas": 466
     },
     "price_conflict_count": 905,
     "public_safe": true,
@@ -2567,17 +2567,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-b-135861742",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 13499.9,
+          "list_price": 13499.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi/p/5003978239?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1604.99,
       "price_max": 14174.9,
       "price_spread_pct": 783.2,
@@ -2615,17 +2623,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-k-135861753",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 13499.9,
+          "list_price": 13499.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi/p/5003978230?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1604.99,
       "price_max": 14174.9,
       "price_spread_pct": 783.2,
@@ -2663,17 +2679,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861712",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 10999.9,
+          "list_price": 10999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi/p/5003978238?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1222.21,
       "price_max": 11549.9,
       "price_spread_pct": 845.0,
@@ -2711,17 +2735,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861730",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 10999.9,
+          "list_price": 10999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi/p/5003978244?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1961.65,
       "price_max": 11549.9,
       "price_spread_pct": 488.8,
@@ -2759,17 +2791,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-kumtasi-135861680",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 11999.9,
+          "list_price": 11999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi/p/5003978240?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1426.66,
       "price_max": 12599.9,
       "price_spread_pct": 783.2,
@@ -2807,17 +2847,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-beyaz-135861705",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 11999.9,
+          "list_price": 11999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi/p/5003978232?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1333.32,
       "price_max": 12599.9,
       "price_spread_pct": 845.0,
@@ -2855,17 +2903,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-kumtasi-135861665",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 11499.9,
+          "list_price": 11499.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi/p/5003978242?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1367.21,
       "price_max": 12074.9,
       "price_spread_pct": 783.2,
@@ -2903,17 +2959,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-beyaz-135861642",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 11499.9,
+          "list_price": 11499.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi/p/5003978234?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1367.21,
       "price_max": 12074.9,
       "price_spread_pct": 783.2,
@@ -2951,17 +3015,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-beyaz-135861630",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 12499.0,
+          "list_price": 12499.0,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi/p/5003978243?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1388.88,
       "price_max": 13124.9,
       "price_spread_pct": 845.0,
@@ -2999,17 +3071,25 @@
           "url": "https://www.n11.com/urun/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-kumtasi-135861629",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 12499.0,
+          "list_price": 12499.0,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi/p/5003978236?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1486.1,
       "price_max": 13124.9,
       "price_spread_pct": 783.2,
@@ -3047,17 +3127,25 @@
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-kumtasi-135861591",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 7249.9,
+          "list_price": 7249.9,
+          "url": "https://www.koctas.com.tr/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi/p/5003978228?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1551.58,
       "price_max": 7612.9,
       "price_spread_pct": 390.7,
@@ -3088,16 +3176,24 @@
           "url": "https://www.n11.com/urun/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-beyaz-135861557",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 7249.9,
+          "list_price": 7249.9,
+          "url": "https://www.koctas.com.tr/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi/p/5003978241?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 1551.58,
       "price_max": 7249.9,
       "price_spread_pct": 367.3,
@@ -4932,30 +5028,6 @@
       "price_spread_pct": 8.5,
       "price_conflict": true
     },
-    "2987": {
-      "stock_code": "2987",
-      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "trendyol": {
-          "price": 9699.9,
-          "list_price": 9699.9,
-          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 9699.9,
-      "price_max": 9699.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "2986": {
       "stock_code": "2986",
       "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
@@ -5003,6 +5075,30 @@
       "price_max": 10499.9,
       "price_spread_pct": 15.2,
       "price_conflict": true
+    },
+    "2987": {
+      "stock_code": "2987",
+      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 9699.9,
+          "list_price": 9699.9,
+          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9699.9,
+      "price_max": 9699.9,
+      "price_spread_pct": null,
+      "price_conflict": false
     },
     "2984": {
       "stock_code": "2984",
