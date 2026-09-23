@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-22T10:13:35.519239+00:00",
+    "generated_at": "2026-09-23T10:13:53.944144+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -18181,7 +18181,7 @@
           "price": 1599.9,
           "list_price": 1599.9,
           "url": "https://www.trendyol.com/roomart/falez-orta-sehpa-suntalam-p-865512350?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -18229,7 +18229,7 @@
           "price": 1599.9,
           "list_price": 1599.9,
           "url": "https://www.trendyol.com/roomart/falez-orta-sehpa-suntalam-p-865512241?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": true
         },
         "shopify": {
@@ -30200,7 +30200,7 @@
         },
         "koctas": {
           "price": 6083.91,
-          "list_price": 5881.17,
+          "list_price": 6459.0,
           "url": "https://www.koctas.com.tr/roma-rafli-calisma-masasi-calisma-ofi-s-masasi-sol-dolapli-mat-beyaz-roma-masa-sol/p/5000599286?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -30902,7 +30902,7 @@
           "price": 3639.9,
           "list_price": 3639.9,
           "url": "https://www.trendyol.com/roomart/2-kapakli-c-ok-amac-li-dolap-ki-ler-dolabi-ki-taplik-p-742010690?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -31501,7 +31501,7 @@
           "price": 4999.9,
           "list_price": 4999.9,
           "url": "https://www.trendyol.com/roomart/retra-4-kapakli-c-ok-amac-li-dolap-ki-ler-dolabi-ki-taplik-atlanti-k-c-am-antrasi-t-p-737948512?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
