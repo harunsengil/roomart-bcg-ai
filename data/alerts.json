@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-24T10:21:51.831596+00:00",
+    "last_updated": "2026-09-25T10:25:45.069338+00:00",
     "total_alerts": 5
   },
   "alerts": [
@@ -9,18 +9,18 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Çamaşır-kurutma Makinesi Dolabı Kapaklı Üst Dolabı B büyüme momentumu yüksek (100/100).",
-      "product_id": "897254452",
-      "timestamp": "2026-09-24T10:21:51.824192+00:00"
+      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (100/100).",
+      "product_id": "877182347",
+      "timestamp": "2026-09-25T10:25:45.060209+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (100/100).",
-      "product_id": "877182347",
-      "timestamp": "2026-09-24T10:21:51.824192+00:00"
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (100/100).",
+      "product_id": "820082166",
+      "timestamp": "2026-09-25T10:25:45.060209+00:00"
     },
     {
       "id": "alert-3",
@@ -29,7 +29,7 @@
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
       "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (100/100).",
       "product_id": "820048531",
-      "timestamp": "2026-09-24T10:21:51.824192+00:00"
+      "timestamp": "2026-09-25T10:25:45.060209+00:00"
     },
     {
       "id": "alert-4",
@@ -38,7 +38,7 @@
       "title": "Diğer — lider STAR",
       "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
       "product_id": "962085213",
-      "timestamp": "2026-09-24T10:21:51.824192+00:00"
+      "timestamp": "2026-09-25T10:25:45.060209+00:00"
     },
     {
       "id": "alert-5",
@@ -47,7 +47,7 @@
       "title": "Kitaplıklı Çalışma Masası — lider STAR",
       "message": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL  pay 100, büyüme 80.",
       "product_id": "758326178",
-      "timestamp": "2026-09-24T10:21:51.824192+00:00"
+      "timestamp": "2026-09-25T10:25:45.060209+00:00"
     }
   ]
 }
