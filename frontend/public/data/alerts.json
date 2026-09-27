@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-26T10:05:47.669380+00:00",
+    "last_updated": "2026-09-27T10:41:34.379647+00:00",
     "total_alerts": 9
   },
   "alerts": [
@@ -9,18 +9,18 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "ROMA RAFLI ÇALIŞMA MASASI  ÇALIŞMA OFİS MASASI SAĞ DOLAP ATL büyüme momentumu yüksek (100/100).",
-      "product_id": "739769104",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (82/100).",
+      "product_id": "1191913542",
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Banyo Dolabı 196,2 x 67 cm Çamaşır Ve Kurutma Makinesi Dolab büyüme momentumu yüksek (82/100).",
-      "product_id": "812234712",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
+      "message": "Mode Raflı Çalışma Masası , Çalışma Ofis Masası , Bilgisayar büyüme momentumu yüksek (82/100).",
+      "product_id": "1191947287",
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-3",
@@ -29,25 +29,25 @@
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
       "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (82/100).",
       "product_id": "1191917746",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D pay 97, büyüme 99.",
-      "product_id": "820272849",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 66, büyüme 100.",
+      "product_id": "962085213",
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Diğer — lider STAR",
-      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 70, büyüme 100.",
-      "product_id": "962085213",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D pay 95, büyüme 65.",
+      "product_id": "820272849",
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-6",
@@ -56,16 +56,16 @@
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %80. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
-      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60  iade/iptal oranı %57. Kalite/lojistik incele.",
+      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60  iade/iptal oranı %50. Kalite/lojistik incele.",
       "product_id": "1177540628",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-8",
@@ -74,7 +74,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
       "product_id": "1196816018",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm hızlı satıyor ama Net Tahsilat %84 (komisyon+promo marjı eritiyor).",
       "product_id": "1196816389",
-      "timestamp": "2026-09-26T10:05:47.642635+00:00"
+      "timestamp": "2026-09-27T10:41:34.353770+00:00"
     }
   ]
 }
