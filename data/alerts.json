@@ -1,89 +1,53 @@
 {
   "metadata": {
-    "last_updated": "2026-09-28T11:54:23.862922+00:00",
-    "total_alerts": 9
+    "last_updated": "2026-09-28T14:21:33.998239+00:00",
+    "total_alerts": 5
   },
   "alerts": [
     {
       "id": "alert-1",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
-      "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (82/100).",
-      "product_id": "1191917746",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
+      "title": "Mutfak Adası — yükselen fırsat",
+      "message": "ROOMART Cortado Bar Masası Dolaplı, Kapaklı Mutfak Masası, Y büyüme momentumu yüksek (75/100).",
+      "product_id": "885457375",
+      "timestamp": "2026-09-28T14:21:33.988950+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Kitaplıklı Çalışma Masası , Bilgisayar Masası, Çekmecel büyüme momentumu yüksek (82/100).",
-      "product_id": "1191597107",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
+      "message": "ROOMART RETRA 4 KAPAKLI ÇOK AMAÇLI DOLAP , KİLER DOLABI , Kİ büyüme momentumu yüksek (75/100).",
+      "product_id": "737948512",
+      "timestamp": "2026-09-28T14:21:33.988950+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
-      "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Stan büyüme momentumu yüksek (82/100).",
-      "product_id": "1191881053",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
+      "title": "Diğer — yükselen fırsat",
+      "message": "ROOMART Luka 4 Gözlü Tek Kapaklı Çok Amaçlı Dolap Ayakkabılı büyüme momentumu yüksek (65/100).",
+      "product_id": "876823360",
+      "timestamp": "2026-09-28T14:21:33.988950+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kahve Köşesi — lider STAR",
-      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 75.",
-      "product_id": "885510279",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
+      "product_id": "962085213",
+      "timestamp": "2026-09-28T14:21:33.988950+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
       "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 51.",
-      "product_id": "942636653",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
-    },
-    {
-      "id": "alert-6",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
-      "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %83. Kalite/lojistik incele.",
-      "product_id": "456979325",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
-    },
-    {
-      "id": "alert-7",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Diğer — yüksek iade riski",
-      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, B iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "1180106459",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
-    },
-    {
-      "id": "alert-8",
-      "type": "RISK",
-      "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1196816018",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
-    },
-    {
-      "id": "alert-9",
-      "type": "RISK",
-      "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174373102",
-      "timestamp": "2026-09-28T11:54:23.845097+00:00"
+      "message": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL  pay 100, büyüme 79.",
+      "product_id": "758326178",
+      "timestamp": "2026-09-28T14:21:33.988950+00:00"
     }
   ]
 }
