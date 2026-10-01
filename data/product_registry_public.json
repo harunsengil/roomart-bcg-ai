@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-30T11:19:46.107814+00:00",
+    "generated_at": "2026-10-01T11:46:28.070850+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9447,8 +9447,8 @@
           "price_final": true
         },
         "koctas": {
-          "price": 7199.0,
-          "list_price": 7199.0,
+          "price": 8839.9,
+          "list_price": 8839.9,
           "url": "https://www.koctas.com.tr/roomart-ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi/p/5002284755?shop=2262",
           "on_sale": true,
           "price_final": false
@@ -35566,7 +35566,7 @@
         },
         "koctas": {
           "price": 13013.91,
-          "list_price": 11999.0,
+          "list_price": 14459.9,
           "url": "https://www.koctas.com.tr/roomart-lavabolu-atlantik-beyaz-mat-mdf-85-cm-banyo-alt-dolap-aynali-ust-dolap-boy-dolap/p/5000180550?shop=2262",
           "on_sale": true,
           "price_final": true

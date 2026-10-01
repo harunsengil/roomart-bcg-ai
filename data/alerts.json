@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-30T11:19:33.844505+00:00",
+    "last_updated": "2026-10-01T11:46:18.052633+00:00",
     "total_alerts": 9
   },
   "alerts": [
@@ -9,45 +9,45 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (82/100).",
-      "product_id": "1191917746",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "message": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL  büyüme momentumu yüksek (100/100).",
+      "product_id": "739771677",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ ATLANTİK büyüme momentumu yüksek (82/100).",
-      "product_id": "739768975",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "message": "Mode Raflı Çalışma Masası , 3 Çekmeceli Kesonlu Çalışma Masa büyüme momentumu yüksek (100/100).",
+      "product_id": "1191917746",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Kitaplıklı Çalışma Masası — yükselen fırsat",
-      "message": "ROOMART ROMA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SOL  büyüme momentumu yüksek (82/100).",
-      "product_id": "739771677",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "message": "Mode Kitaplıklı ve Raflı Çalışma Masası , Raflı Monitör Stan büyüme momentumu yüksek (82/100).",
+      "product_id": "1191604245",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kitaplıklı Çalışma Masası — lider STAR",
-      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 50.",
-      "product_id": "942636653",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "title": "Kahve Köşesi — lider STAR",
+      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 50.",
+      "product_id": "885510279",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Kahve Köşesi — lider STAR",
-      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 50.",
-      "product_id": "885510279",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "title": "Kitaplıklı Çalışma Masası — lider STAR",
+      "message": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis  pay 100, büyüme 50.",
+      "product_id": "942636653",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-6",
@@ -56,16 +56,16 @@
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %83. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "Banyo Dolabı Mat Mdf 60 X 35 Cm Banyo Boy Dolabı iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "828118483",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
+      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 60  iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "1177540628",
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-8",
@@ -74,7 +74,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Nord Vestiyer , Portmanto Lambri Askılık 69,2 x 18,6 cm hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1196816018",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1174373102",
-      "timestamp": "2026-09-30T11:19:33.817614+00:00"
+      "timestamp": "2026-10-01T11:46:18.024304+00:00"
     }
   ]
 }
