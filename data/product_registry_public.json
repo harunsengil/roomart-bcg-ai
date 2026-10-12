@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-11T11:33:13.090771+00:00",
+    "generated_at": "2026-10-12T13:20:21.598692+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -499,11 +499,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7033.9,
+          "price": 6189.83,
           "list_price": null,
           "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4U3HX",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -523,8 +523,8 @@
       ],
       "platform_count": 4,
       "price_min": 4682.65,
-      "price_max": 7033.9,
-      "price_spread_pct": 50.2,
+      "price_max": 6699.9,
+      "price_spread_pct": 43.1,
       "price_conflict": true
     },
     "D-33": {
@@ -547,11 +547,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7033.9,
+          "price": 6189.83,
           "list_price": null,
           "url": "https://www.hepsiburada.com/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-p-HBCV0000I4TZLI",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -571,8 +571,8 @@
       ],
       "platform_count": 4,
       "price_min": 1116.5,
-      "price_max": 7033.9,
-      "price_spread_pct": 530.0,
+      "price_max": 6699.9,
+      "price_spread_pct": 500.1,
       "price_conflict": true
     },
     "3100": {
@@ -595,11 +595,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13912.9,
+          "price": 12243.35,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TZ8A",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -619,8 +619,8 @@
       ],
       "platform_count": 4,
       "price_min": 1472.21,
-      "price_max": 13912.9,
-      "price_spread_pct": 845.0,
+      "price_max": 12550.0,
+      "price_spread_pct": 752.5,
       "price_conflict": true
     },
     "3099": {
@@ -643,11 +643,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13912.9,
+          "price": 12243.35,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TYC1",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -667,8 +667,8 @@
       ],
       "platform_count": 4,
       "price_min": 1472.21,
-      "price_max": 13912.9,
-      "price_spread_pct": 845.0,
+      "price_max": 12550.0,
+      "price_spread_pct": 752.5,
       "price_conflict": true
     },
     "3098": {
@@ -691,11 +691,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13912.9,
+          "price": 12243.35,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-boy-dolabi-banyo-dolabi-seti-p-HBCV0000I4TOBT",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -715,8 +715,8 @@
       ],
       "platform_count": 4,
       "price_min": 1472.21,
-      "price_max": 13912.9,
-      "price_spread_pct": 845.0,
+      "price_max": 12550.0,
+      "price_spread_pct": 752.5,
       "price_conflict": true
     },
     "3096": {
@@ -739,11 +739,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 10499.9,
+          "price": 9239.91,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TR3R",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -763,8 +763,8 @@
       ],
       "platform_count": 4,
       "price_min": 1666.65,
-      "price_max": 10499.9,
-      "price_spread_pct": 530.0,
+      "price_max": 9999.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "3097": {
@@ -835,11 +835,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 10499.9,
+          "price": 9239.91,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-aynali-ust-dolabi-banyo-dolabi-takimi-p-HBCV0000I4TU9U",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -859,8 +859,8 @@
       ],
       "platform_count": 4,
       "price_min": 1666.65,
-      "price_max": 10499.9,
-      "price_spread_pct": 530.0,
+      "price_max": 9999.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "3094": {
@@ -883,11 +883,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7559.9,
+          "price": 6652.71,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TRBV",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -907,8 +907,8 @@
       ],
       "platform_count": 4,
       "price_min": 1199.98,
-      "price_max": 7559.9,
-      "price_spread_pct": 530.0,
+      "price_max": 7199.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "3093": {
@@ -931,11 +931,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7559.9,
+          "price": 6652.71,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TR2J",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -955,8 +955,8 @@
       ],
       "platform_count": 4,
       "price_min": 1199.98,
-      "price_max": 7559.9,
-      "price_spread_pct": 530.0,
+      "price_max": 7199.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "3090": {
@@ -979,11 +979,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7559.9,
+          "price": 6652.71,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lavabolu-mat-mdf-80-cm-banyo-alt-dolabi-p-HBCV0000I4TT37",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 4682.65,
@@ -1003,8 +1003,8 @@
       ],
       "platform_count": 4,
       "price_min": 1199.98,
-      "price_max": 7559.9,
-      "price_spread_pct": 530.0,
+      "price_max": 7199.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "059.56.280.01.90": {
@@ -1027,11 +1027,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 18899.9,
+          "price": 16064.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4TE9X",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 2139.99,
@@ -1051,8 +1051,8 @@
       ],
       "platform_count": 4,
       "price_min": 1999.99,
-      "price_max": 18899.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16950.0,
+      "price_spread_pct": 747.5,
       "price_conflict": true
     },
     "059.56.280.04.90": {
@@ -1075,11 +1075,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 18899.9,
+          "price": 16064.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-rafli-calisma-p-HBCV0000I4T234",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 2139.99,
@@ -1099,8 +1099,8 @@
       ],
       "platform_count": 4,
       "price_min": 1999.99,
-      "price_max": 18899.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16950.0,
+      "price_spread_pct": 747.5,
       "price_conflict": true
     },
     "059.01.120.04.00": {
@@ -1123,11 +1123,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 5099.9,
+          "price": 4334.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TASB",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1297.48,
@@ -1147,8 +1147,8 @@
       ],
       "platform_count": 4,
       "price_min": 1297.48,
-      "price_max": 5099.9,
-      "price_spread_pct": 293.1,
+      "price_max": 4849.9,
+      "price_spread_pct": 273.8,
       "price_conflict": true
     },
     "059.01.120.01.00": {
@@ -1171,11 +1171,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 5099.9,
+          "price": 4334.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4TBVH",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1297.48,
@@ -1195,8 +1195,8 @@
       ],
       "platform_count": 4,
       "price_min": 1297.48,
-      "price_max": 5099.9,
-      "price_spread_pct": 293.1,
+      "price_max": 4849.9,
+      "price_spread_pct": 273.8,
       "price_conflict": true
     },
     "059.22.120.01.00": {
@@ -1219,11 +1219,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6299.9,
+          "price": 5354.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T878",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1283.98,
@@ -1243,8 +1243,8 @@
       ],
       "platform_count": 4,
       "price_min": 1283.98,
-      "price_max": 6299.9,
-      "price_spread_pct": 390.7,
+      "price_max": 5999.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "059.22.120.04.00": {
@@ -1267,11 +1267,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6299.9,
+          "price": 5354.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T7PR",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1283.98,
@@ -1291,8 +1291,8 @@
       ],
       "platform_count": 4,
       "price_min": 1283.98,
-      "price_max": 6299.9,
-      "price_spread_pct": 390.7,
+      "price_max": 5999.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "059.54.200.01.89": {
@@ -1315,11 +1315,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17849.9,
+          "price": 15172.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T7VZ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1331,8 +1331,8 @@
       ],
       "platform_count": 3,
       "price_min": 1888.88,
-      "price_max": 17849.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16000.0,
+      "price_spread_pct": 747.1,
       "price_conflict": true
     },
     "059.54.200.04.89": {
@@ -1355,11 +1355,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17849.9,
+          "price": 15172.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4T5Q0",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -1371,8 +1371,8 @@
       ],
       "platform_count": 3,
       "price_min": 1888.88,
-      "price_max": 17849.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16000.0,
+      "price_spread_pct": 747.1,
       "price_conflict": true
     },
     "059.55.200.04.89": {
@@ -1459,11 +1459,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9764.9,
+          "price": 8300.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYPZ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1658.48,
@@ -1483,8 +1483,8 @@
       ],
       "platform_count": 4,
       "price_min": 1658.48,
-      "price_max": 9764.9,
-      "price_spread_pct": 488.8,
+      "price_max": 9299.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "059.22.160.04.88": {
@@ -1507,11 +1507,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9764.9,
+          "price": 8300.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-bilgisayar-masasi-calisma-ofis-masasi-p-HBCV0000I4SYVD",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1658.48,
@@ -1531,8 +1531,8 @@
       ],
       "platform_count": 4,
       "price_min": 1549.98,
-      "price_max": 9764.9,
-      "price_spread_pct": 530.0,
+      "price_max": 9299.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "059.47.160.01.88": {
@@ -1555,11 +1555,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11128.9,
+          "price": 9459.57,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4SQ21",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1890.15,
@@ -1579,8 +1579,8 @@
       ],
       "platform_count": 4,
       "price_min": 1177.67,
-      "price_max": 11128.9,
-      "price_spread_pct": 845.0,
+      "price_max": 10599.0,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "059.47.160.04.88": {
@@ -1603,11 +1603,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11128.9,
+          "price": 9459.57,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-rafli-calisma-masasi-3-cekmeceli-kesonlu-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-p-HBCV0000I4STK0",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1890.15,
@@ -1627,8 +1627,8 @@
       ],
       "platform_count": 4,
       "price_min": 1177.67,
-      "price_max": 11128.9,
-      "price_spread_pct": 845.0,
+      "price_max": 10599.0,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "059.53.200.04.87": {
@@ -1715,11 +1715,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17324.9,
+          "price": 14726.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SF49",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1961.66,
@@ -1739,8 +1739,8 @@
       ],
       "platform_count": 4,
       "price_min": 1833.32,
-      "price_max": 17324.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16499.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "059.54.200.01.87": {
@@ -1763,11 +1763,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 17324.9,
+          "price": 14726.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-rafli-monitor-standli-calisma-ofis-masasi-bilgisayar-masasi-2-adet-3-cekmeceli-k-p-HBCV0000I4SCD7",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 15889.41,
@@ -1787,8 +1787,8 @@
       ],
       "platform_count": 4,
       "price_min": 1833.32,
-      "price_max": 17324.9,
-      "price_spread_pct": 845.0,
+      "price_max": 16499.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "059.47.160.01.86": {
@@ -1811,11 +1811,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11549.9,
+          "price": 9817.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RWVN",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1961.65,
@@ -1835,8 +1835,8 @@
       ],
       "platform_count": 4,
       "price_min": 1222.21,
-      "price_max": 11549.9,
-      "price_spread_pct": 845.0,
+      "price_max": 10999.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "059.47.160.04.86": {
@@ -1859,11 +1859,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11549.9,
+          "price": 9817.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-calisma-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-calisma-ofis-masasi-p-HBCV0000I4RSQ9",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 10592.91,
@@ -1883,8 +1883,8 @@
       ],
       "platform_count": 4,
       "price_min": 1161.11,
-      "price_max": 11549.9,
-      "price_spread_pct": 894.7,
+      "price_max": 10999.9,
+      "price_spread_pct": 847.4,
       "price_conflict": true
     },
     "059.53.160.01.86": {
@@ -1907,11 +1907,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12599.9,
+          "price": 10709.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-p-HBCV0000I4RSCD",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1426.66,
@@ -1931,8 +1931,8 @@
       ],
       "platform_count": 4,
       "price_min": 1426.66,
-      "price_max": 12599.9,
-      "price_spread_pct": 783.2,
+      "price_max": 11999.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "059.53.160.04.86": {
@@ -1955,11 +1955,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12599.9,
+          "price": 10709.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mode-kitaplikli-ve-rafli-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-cekmeceli-calisma-masasi-p-HBCV0000I4S8XT",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 11555.91,
@@ -1979,8 +1979,8 @@
       ],
       "platform_count": 4,
       "price_min": 1266.67,
-      "price_max": 12599.9,
-      "price_spread_pct": 894.7,
+      "price_max": 11999.9,
+      "price_spread_pct": 847.4,
       "price_conflict": true
     },
     "037.12.155.01.10": {
@@ -2003,11 +2003,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7139.9,
+          "price": 6068.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/stilo-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-HBCV0000HPDOKB",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         }
       },
       "reviews": {},
@@ -2018,9 +2018,9 @@
         "trendyol"
       ],
       "platform_count": 3,
-      "price_min": 6249.0,
-      "price_max": 7139.9,
-      "price_spread_pct": 14.3,
+      "price_min": 6068.92,
+      "price_max": 6799.9,
+      "price_spread_pct": 12.0,
       "price_conflict": true
     },
     "037.12.155.01.11": {
@@ -2075,11 +2075,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7664.9,
+          "price": 6515.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mira-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-HBCV0000HPD0D7",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1562.18,
@@ -2099,8 +2099,8 @@
       ],
       "platform_count": 4,
       "price_min": 1562.18,
-      "price_max": 7664.9,
-      "price_spread_pct": 390.7,
+      "price_max": 7299.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "036.12.120.15.00": {
@@ -2123,11 +2123,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7664.9,
+          "price": 6515.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/mira-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-60x120-cm-p-HBCV0000HPD1G8",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1562.18,
@@ -2147,8 +2147,8 @@
       ],
       "platform_count": 4,
       "price_min": 1562.18,
-      "price_max": 7664.9,
-      "price_spread_pct": 390.7,
+      "price_max": 7299.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "053.22.000.04.70": {
@@ -2171,11 +2171,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13387.9,
+          "price": 11379.72,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HPD35S",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1515.88,
@@ -2203,8 +2203,8 @@
       ],
       "platform_count": 5,
       "price_min": 1515.88,
-      "price_max": 13387.9,
-      "price_spread_pct": 783.2,
+      "price_max": 12749.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.01.70": {
@@ -2227,11 +2227,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13387.9,
+          "price": 11379.72,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-ayakkabilik-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HPD3SX",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1515.88,
@@ -2259,8 +2259,8 @@
       ],
       "platform_count": 5,
       "price_min": 1515.88,
-      "price_max": 13387.9,
-      "price_spread_pct": 783.2,
+      "price_max": 12749.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.04.78": {
@@ -2283,11 +2283,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 10499.9,
+          "price": 8924.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HPCP1M",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 10699.9,
@@ -2314,9 +2314,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 9999.9,
+      "price_min": 8924.92,
       "price_max": 10699.9,
-      "price_spread_pct": 7.0,
+      "price_spread_pct": 19.9,
       "price_conflict": true
     },
     "053.22.000.01.78": {
@@ -2339,11 +2339,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 10499.9,
+          "price": 8924.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-kapakli-bench-kapaksiz-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HPCO2C",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1783.32,
@@ -2371,8 +2371,8 @@
       ],
       "platform_count": 5,
       "price_min": 1783.32,
-      "price_max": 10499.9,
-      "price_spread_pct": 488.8,
+      "price_max": 9999.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.04.66": {
@@ -2395,11 +2395,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11287.9,
+          "price": 9594.72,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HPC1QP",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1917.15,
@@ -2427,8 +2427,8 @@
       ],
       "platform_count": 5,
       "price_min": 1917.15,
-      "price_max": 11287.9,
-      "price_spread_pct": 488.8,
+      "price_max": 10749.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.01.66": {
@@ -2451,11 +2451,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11287.9,
+          "price": 9594.72,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HPC531",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1917.15,
@@ -2483,8 +2483,8 @@
       ],
       "platform_count": 5,
       "price_min": 1194.43,
-      "price_max": 11287.9,
-      "price_spread_pct": 845.0,
+      "price_max": 10749.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "053.22.000.01.71": {
@@ -2507,11 +2507,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11654.9,
+          "price": 9906.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HPC800",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1979.48,
@@ -2539,8 +2539,8 @@
       ],
       "platform_count": 5,
       "price_min": 1979.48,
-      "price_max": 11654.9,
-      "price_spread_pct": 488.8,
+      "price_max": 11099.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.04.71": {
@@ -2563,11 +2563,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11654.9,
+          "price": 9906.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-ayakkabilik-dolabi-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HPC659",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1979.48,
@@ -2595,8 +2595,8 @@
       ],
       "platform_count": 5,
       "price_min": 1979.48,
-      "price_max": 11654.9,
-      "price_spread_pct": 488.8,
+      "price_max": 11099.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.01.67": {
@@ -2619,11 +2619,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9712.4,
+          "price": 8255.54,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-moduler-bench-oval-aynali-portmanto-takimi-p-HBCV0000HPA556",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1649.65,
@@ -2651,8 +2651,8 @@
       ],
       "platform_count": 5,
       "price_min": 1541.65,
-      "price_max": 9712.4,
-      "price_spread_pct": 530.0,
+      "price_max": 9249.9,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "053.22.000.04.67": {
@@ -2675,11 +2675,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9712.4,
+          "price": 8255.54,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-moduler-bench-oval-aynali-portmanto-takimi-p-HBCV0000HPA4BJ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1649.65,
@@ -2707,8 +2707,8 @@
       ],
       "platform_count": 5,
       "price_min": 1649.65,
-      "price_max": 9712.4,
-      "price_spread_pct": 488.8,
+      "price_max": 9249.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.01.72": {
@@ -2731,11 +2731,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 14174.9,
+          "price": 12048.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HP9OYN",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1604.99,
@@ -2763,8 +2763,8 @@
       ],
       "platform_count": 5,
       "price_min": 1604.99,
-      "price_max": 14174.9,
-      "price_spread_pct": 783.2,
+      "price_max": 13499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.04.72": {
@@ -2787,11 +2787,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 14174.9,
+          "price": 12048.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-ayakkabilik-dolabi-kapakli-bench-moduler-dikdortgen-oval-aynali-portmanto-takimi-p-HBCV0000HP9AGH",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1604.99,
@@ -2819,8 +2819,8 @@
       ],
       "platform_count": 5,
       "price_min": 1604.99,
-      "price_max": 14174.9,
-      "price_spread_pct": 783.2,
+      "price_max": 13499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.01.69": {
@@ -2843,11 +2843,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11549.9,
+          "price": 9817.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMG7VS",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1961.65,
@@ -2875,8 +2875,8 @@
       ],
       "platform_count": 5,
       "price_min": 1222.21,
-      "price_max": 11549.9,
-      "price_spread_pct": 845.0,
+      "price_max": 10999.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "053.22.000.04.69": {
@@ -2899,11 +2899,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 11549.9,
+          "price": 9817.42,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-askilikli-kapakli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMGK1S",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1961.65,
@@ -2931,8 +2931,8 @@
       ],
       "platform_count": 5,
       "price_min": 1961.65,
-      "price_max": 11549.9,
-      "price_spread_pct": 488.8,
+      "price_max": 10999.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "053.22.000.04.73": {
@@ -2955,11 +2955,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12599.9,
+          "price": 10709.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-p-HBCV0000HMF7JO",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1426.66,
@@ -2987,8 +2987,8 @@
       ],
       "platform_count": 5,
       "price_min": 1426.66,
-      "price_max": 12599.9,
-      "price_spread_pct": 783.2,
+      "price_max": 11999.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.01.73": {
@@ -3011,11 +3011,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12599.9,
+          "price": 10709.92,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-bench-moduler-aynali-portmanto-takimi-p-HBCV0000HMFD48",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1426.66,
@@ -3043,8 +3043,8 @@
       ],
       "platform_count": 5,
       "price_min": 1333.32,
-      "price_max": 12599.9,
-      "price_spread_pct": 845.0,
+      "price_max": 11999.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "053.22.000.04.77": {
@@ -3067,11 +3067,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12074.9,
+          "price": 10263.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMFG6U",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1367.21,
@@ -3099,8 +3099,8 @@
       ],
       "platform_count": 5,
       "price_min": 1367.21,
-      "price_max": 12074.9,
-      "price_spread_pct": 783.2,
+      "price_max": 11499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.01.77": {
@@ -3123,11 +3123,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 12074.9,
+          "price": 10263.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-ve-kapaksiz-bench-lambri-askilikli-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMF52L",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1367.21,
@@ -3155,8 +3155,8 @@
       ],
       "platform_count": 5,
       "price_min": 1367.21,
-      "price_max": 12074.9,
-      "price_spread_pct": 783.2,
+      "price_max": 11499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.22.000.01.68": {
@@ -3179,11 +3179,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13124.9,
+          "price": 11156.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMDR1Y",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1486.1,
@@ -3211,8 +3211,8 @@
       ],
       "platform_count": 5,
       "price_min": 1388.88,
-      "price_max": 13124.9,
-      "price_spread_pct": 845.0,
+      "price_max": 12499.9,
+      "price_spread_pct": 800.0,
       "price_conflict": true
     },
     "053.22.000.04.68": {
@@ -3235,11 +3235,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 13124.9,
+          "price": 11156.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-lambri-askilikli-2-adet-kapakli-bench-moduler-oval-aynali-portmanto-takimi-p-HBCV0000HMDLUG",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1486.1,
@@ -3267,8 +3267,8 @@
       ],
       "platform_count": 5,
       "price_min": 1486.1,
-      "price_max": 13124.9,
-      "price_spread_pct": 783.2,
+      "price_max": 12499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "054.01.120.04.00": {
@@ -3291,11 +3291,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7612.9,
+          "price": 6470.97,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lena-vestiyer-takimi-askilikli-moduler-aynali-portmanto-takimi-p-HBCV0000HKQSZH",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1551.58,
@@ -3323,8 +3323,8 @@
       ],
       "platform_count": 5,
       "price_min": 1551.58,
-      "price_max": 7612.9,
-      "price_spread_pct": 390.7,
+      "price_max": 7249.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "054.01.120.01.00": {
@@ -3395,11 +3395,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9974.9,
+          "price": 8478.67,
           "list_price": null,
           "url": "https://www.hepsiburada.com/lena-vestiyer-takimi-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HI14LO",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1694.15,
@@ -3427,8 +3427,8 @@
       ],
       "platform_count": 5,
       "price_min": 1694.15,
-      "price_max": 9974.9,
-      "price_spread_pct": 488.8,
+      "price_max": 9499.9,
+      "price_spread_pct": 460.7,
       "price_conflict": true
     },
     "054.22.120.04.00": {
@@ -3499,11 +3499,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 19424.9,
+          "price": 16511.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HGRA88",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 2199.43,
@@ -3531,8 +3531,8 @@
       ],
       "platform_count": 5,
       "price_min": 2199.43,
-      "price_max": 19424.9,
-      "price_spread_pct": 783.2,
+      "price_max": 18499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "053.47.000.01.72": {
@@ -3555,11 +3555,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 19424.9,
+          "price": 16511.17,
           "list_price": null,
           "url": "https://www.hepsiburada.com/nord-vestiyer-takimi-kapakli-askilikli-ayakkabilik-dolabi-moduler-aynali-portmanto-takimi-p-HBCV0000HGRWNJ",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 2199.43,
@@ -3587,8 +3587,8 @@
       ],
       "platform_count": 5,
       "price_min": 2199.43,
-      "price_max": 19424.9,
-      "price_spread_pct": 783.2,
+      "price_max": 18499.9,
+      "price_spread_pct": 741.1,
       "price_conflict": true
     },
     "2999": {
@@ -3611,11 +3611,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6298.9,
+          "price": 5543.03,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-p-HBCV0000H4X9LX",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1215.38,
@@ -3643,8 +3643,8 @@
       ],
       "platform_count": 5,
       "price_min": 1215.38,
-      "price_max": 6298.9,
-      "price_spread_pct": 418.3,
+      "price_max": 5679.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "3011": {
@@ -3667,11 +3667,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9314.9,
+          "price": 8197.11,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-p-HBCV0000H4WFP1",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1581.65,
@@ -3699,8 +3699,8 @@
       ],
       "platform_count": 5,
       "price_min": 1581.65,
-      "price_max": 9314.9,
-      "price_spread_pct": 488.9,
+      "price_max": 8869.9,
+      "price_spread_pct": 460.8,
       "price_conflict": true
     },
     "3008": {
@@ -3723,11 +3723,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 9314.9,
+          "price": 8197.11,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-x-200-cm-p-HBCV0000H4W9YX",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1581.65,
@@ -3755,8 +3755,8 @@
       ],
       "platform_count": 5,
       "price_min": 1581.65,
-      "price_max": 9314.9,
-      "price_spread_pct": 488.9,
+      "price_max": 8869.9,
+      "price_spread_pct": 460.8,
       "price_conflict": true
     },
     "3002": {
@@ -3779,11 +3779,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6298.9,
+          "price": 5543.03,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-90-cm-p-HBCV0000H4XK05",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1215.38,
@@ -3811,8 +3811,8 @@
       ],
       "platform_count": 5,
       "price_min": 1215.38,
-      "price_max": 6298.9,
-      "price_spread_pct": 418.3,
+      "price_max": 5679.9,
+      "price_spread_pct": 367.3,
       "price_conflict": true
     },
     "3007": {
@@ -3835,11 +3835,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7519.9,
+          "price": 6617.51,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-HBCV0000H4VQIR",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1532.38,
@@ -3867,8 +3867,8 @@
       ],
       "platform_count": 5,
       "price_min": 1532.38,
-      "price_max": 7519.9,
-      "price_spread_pct": 390.7,
+      "price_max": 7199.9,
+      "price_spread_pct": 369.9,
       "price_conflict": true
     },
     "3010": {
@@ -3891,11 +3891,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 7519.9,
+          "price": 6617.51,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-x-200-cm-p-HBCV0000H4WC1U",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1532.38,
@@ -3923,8 +3923,8 @@
       ],
       "platform_count": 5,
       "price_min": 1532.38,
-      "price_max": 7519.9,
-      "price_spread_pct": 390.7,
+      "price_max": 7199.9,
+      "price_spread_pct": 369.9,
       "price_conflict": true
     },
     "3001": {
@@ -3947,11 +3947,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 4884.9,
+          "price": 4298.71,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-p-HBCV0000H4XE17",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1658.3,
@@ -3979,8 +3979,8 @@
       ],
       "platform_count": 5,
       "price_min": 1658.3,
-      "price_max": 4884.9,
-      "price_spread_pct": 194.6,
+      "price_max": 4649.9,
+      "price_spread_pct": 180.4,
       "price_conflict": true
     },
     "2998": {
@@ -4003,11 +4003,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 4884.9,
+          "price": 4298.71,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-60-cm-p-HBCV0000H4XHXL",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1658.3,
@@ -4035,8 +4035,8 @@
       ],
       "platform_count": 5,
       "price_min": 1658.3,
-      "price_max": 4884.9,
-      "price_spread_pct": 194.6,
+      "price_max": 4649.9,
+      "price_spread_pct": 180.4,
       "price_conflict": true
     },
     "3006": {
@@ -4059,11 +4059,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6564.9,
+          "price": 5777.11,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-x-200-cm-p-HBCV0000H9EI54",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1339.43,
@@ -4091,8 +4091,8 @@
       ],
       "platform_count": 5,
       "price_min": 1043.17,
-      "price_max": 6564.9,
-      "price_spread_pct": 529.3,
+      "price_max": 6259.9,
+      "price_spread_pct": 500.1,
       "price_conflict": true
     },
     "3009": {
@@ -4115,11 +4115,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 6564.9,
+          "price": 5777.11,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-x-200-cm-p-HBCV0000H9EY20",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1339.43,
@@ -4147,8 +4147,8 @@
       ],
       "platform_count": 5,
       "price_min": 1339.43,
-      "price_max": 6564.9,
-      "price_spread_pct": 390.1,
+      "price_max": 6259.9,
+      "price_spread_pct": 367.4,
       "price_conflict": true
     },
     "3000": {
@@ -4171,11 +4171,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 4324.9,
+          "price": 3805.91,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-HBCV0000H4X7FX",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1377.3,
@@ -4203,8 +4203,8 @@
       ],
       "platform_count": 5,
       "price_min": 1377.3,
-      "price_max": 4324.9,
-      "price_spread_pct": 214.0,
+      "price_max": 4119.9,
+      "price_spread_pct": 199.1,
       "price_conflict": true
     },
     "2997": {
@@ -4227,11 +4227,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 4324.9,
+          "price": 3805.91,
           "list_price": null,
           "url": "https://www.hepsiburada.com/camasir-sepetli-banyo-dolabi-cok-amacli-cekmeceli-dolap-45-cm-p-HBCV0000H4X801",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1377.3,
@@ -4259,8 +4259,8 @@
       ],
       "platform_count": 5,
       "price_min": 1377.3,
-      "price_max": 4324.9,
-      "price_spread_pct": 214.0,
+      "price_max": 4119.9,
+      "price_spread_pct": 199.1,
       "price_conflict": true
     },
     "057.48.080.78.81": {
@@ -9601,11 +9601,11 @@
           "price_final": false
         },
         "hb": {
-          "price": 8924.9,
+          "price": 7853.91,
           "list_price": null,
           "url": "https://www.hepsiburada.com/ada-lavabolu-banyo-alt-dolabi-banyo-ust-dolabi-banyo-boy-dolabi-p-HBCV0000BJB0VS",
           "on_sale": true,
-          "price_final": false
+          "price_final": true
         },
         "n11": {
           "price": 1490.97,
@@ -9633,8 +9633,8 @@
       ],
       "platform_count": 5,
       "price_min": 1490.97,
-      "price_max": 8924.9,
-      "price_spread_pct": 498.6,
+      "price_max": 8839.9,
+      "price_spread_pct": 492.9,
       "price_conflict": true
     },
     "2868": {
