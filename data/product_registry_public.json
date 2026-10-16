@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-15T10:13:30.343959+00:00",
+    "generated_at": "2026-10-16T10:04:00.084797+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,11 +9,11 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1266,
-    "multi_platform_count": 1083,
+    "total_products": 1268,
+    "multi_platform_count": 1098,
     "by_platform_count": {
-      "trendyol": 1112,
-      "shopify": 777,
+      "trendyol": 1115,
+      "shopify": 792,
       "hb": 996,
       "n11": 766,
       "koctas": 487
@@ -23,6 +23,166 @@
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
   "products": {
+    "062.02.120.01.92": {
+      "stock_code": "062.02.120.01.92",
+      "name": "Drop Füme Camlı , Makyaj Masası , Tek Çekmeceli , Takı Düzenleyici Mat Beyaz 25 mm 120 cm",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 4299.9,
+          "list_price": 4299.9,
+          "url": "https://www.trendyol.com/roomart/drop-fu-me-camli-makyaj-masasi-tek-c-ekmeceli-taki-du-zenleyici-mat-beyaz-25-mm-120-cm-p-1216615799?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 4299.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz?variant=53045319172383",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 4299.9,
+      "price_max": 4299.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "058.12.140.02.00": {
+      "stock_code": "058.12.140.02.00",
+      "name": "Astro Oyuncu Masası - Oyun Masası - Gaming Masa - Bilgisayar Masası 140 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 4799.9,
+          "list_price": 4799.9,
+          "url": "https://www.trendyol.com/roomart/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi-140-cm-p-1216602023?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 4799.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi?variant=53045250949407",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 4799.9,
+      "price_max": 4799.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "058.12.120.02.00": {
+      "stock_code": "058.12.120.02.00",
+      "name": "Astro Oyuncu Masası - Oyun Masası - Gaming Masa - Bilgisayar Masası 120 cm",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 3499.9,
+          "list_price": 3499.9,
+          "url": "https://www.trendyol.com/roomart/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi-120-cm-p-1216595548?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 3499.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi?variant=53045250916639",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 3499.9,
+      "price_max": 3499.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "053.01.122.01.72": {
+      "stock_code": "053.01.122.01.72",
+      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 11949.9,
+          "list_price": 11949.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216428606?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 11949.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096251679",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 11949.9,
+      "price_max": 11949.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
+    "053.01.122.04.72": {
+      "stock_code": "053.01.122.04.72",
+      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "trendyol": {
+          "price": 11949.9,
+          "list_price": 11949.9,
+          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216428546?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": false
+        },
+        "shopify": {
+          "price": 11949.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096284447",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 2,
+      "price_min": 11949.9,
+      "price_max": 11949.9,
+      "price_spread_pct": 0.0,
+      "price_conflict": false
+    },
     "053.01.122.04.70": {
       "stock_code": "053.01.122.04.70",
       "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Boy Doabı , Modüler Portmanto Takımı",
@@ -34,17 +194,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216426085?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 10999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032976671",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 10999.9,
       "price_max": 10999.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "053.01.122.01.70": {
@@ -58,65 +226,25 @@
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216424238?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 10999.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032943903",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 10999.9,
       "price_max": 10999.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.01.122.04.72": {
-      "stock_code": "053.01.122.04.72",
-      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 11949.9,
-          "list_price": 11949.9,
-          "url": "",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 11949.9,
-      "price_max": 11949.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "053.01.122.01.72": {
-      "stock_code": "053.01.122.01.72",
-      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 11949.9,
-          "list_price": 11949.9,
-          "url": "",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 11949.9,
-      "price_max": 11949.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.49.100.01.20": {
@@ -130,17 +258,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-rafli-monito-r-standi-100-cm-p-1216415165?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1279.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-rafli-monitor-standi-100-cm?variant=53044481425695",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1279.9,
       "price_max": 1279.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.49.100.04.20": {
@@ -154,17 +290,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-rafli-monito-r-standi-100-cm-p-1216414177?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1279.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-rafli-monitor-standi-100-cm?variant=53044481458463",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1279.9,
       "price_max": 1279.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.25.040.01.00": {
@@ -178,17 +322,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-kitaplig-i-40-cm-p-1216409316?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1699.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-kitapligi-40-cm?variant=53044198277407",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1699.9,
       "price_max": 1699.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.25.040.04.00": {
@@ -202,17 +354,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-kitaplig-i-40-cm-p-1216408797?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1699.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-kitapligi-40-cm?variant=53044198310175",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1699.9,
       "price_max": 1699.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.50.040.01.00": {
@@ -226,17 +386,25 @@
           "url": "https://www.trendyol.com/roomart/mode-3-c-ekmeceli-c-alis-ma-masasi-kesonu-p-1216405450?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 4479.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-calisma-masasi-kesonu?variant=53044121960735",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 4479.9,
       "price_max": 4479.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.50.040.04.00": {
@@ -250,17 +418,25 @@
           "url": "https://www.trendyol.com/roomart/mode-3-c-ekmeceli-c-alis-ma-masasi-kesonu-p-1216404610?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 4479.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-calisma-masasi-kesonu?variant=53044121993503",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 4479.9,
       "price_max": 4479.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.52.120.04.00": {
@@ -274,17 +450,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-duvar-rafi-120-cm-p-1216393616?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1149.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-duvar-rafi-120-cm?variant=53043847528735",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1149.9,
       "price_max": 1149.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.52.120.01.00": {
@@ -298,17 +482,25 @@
           "url": "https://www.trendyol.com/roomart/mode-c-alis-ma-masasi-duvar-rafi-120-cm-p-1216393206?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": false
+        },
+        "shopify": {
+          "price": 1149.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-duvar-rafi-120-cm?variant=53043847495967",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 1149.9,
       "price_max": 1149.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "059.02.120.04.00": {
@@ -2521,15 +2713,23 @@
           "url": "https://roomartstore.com.tr/products/stilo-kitaplikli-calisma-masasi?variant=52776048787743",
           "on_sale": true,
           "price_final": false
+        },
+        "hb": {
+          "price": 6799.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/stilo-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-ders-yemek-masasi-50x155-cm-p-HBCV0000HPEJKY",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 6327.87,
       "price_max": 6799.9,
       "price_spread_pct": 7.5,
@@ -10771,7 +10971,7 @@
           "price": 1649.9,
           "list_price": 1649.9,
           "url": "https://www.trendyol.com/roomart/kulpsuz-tek-kapakli-mat-suntalam-60-cm-aynali-banyo-u-st-dolabi-p-923688243?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -51932,30 +52132,6 @@
       "platform_count": 1,
       "price_min": null,
       "price_max": null,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "HBCV0000HPEJKY": {
-      "stock_code": "HBCV0000HPEJKY",
-      "name": "HBCV0000HPEJKY",
-      "category": "Diğer",
-      "platforms": {
-        "hb": {
-          "price": 6799.9,
-          "list_price": null,
-          "url": "https://www.hepsiburada.com/hbcv0000hpejky-p-HBCV0000HPEJKY",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "hb"
-      ],
-      "platform_count": 1,
-      "price_min": 6799.9,
-      "price_max": 6799.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
