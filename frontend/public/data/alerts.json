@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-19T11:05:41.080626+00:00",
+    "last_updated": "2026-10-19T15:23:34.910637+00:00",
     "total_alerts": 9
   },
   "alerts": [
@@ -9,45 +9,45 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Tek Çekmeceli ve Kapaklı  Çamaşır ve Kurutma Makines büyüme momentumu yüksek (82/100).",
-      "product_id": "877720999",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "message": "Banyo Dolabı 231,2 x 67 cm Çamaşır Ve Kurutma Makinesi Dolab büyüme momentumu yüksek (82/100).",
+      "product_id": "812302321",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Banyo Dolabı Çamaşır Ve Kurutma Makinesi Dolabı büyüme momentumu yüksek (82/100).",
-      "product_id": "809129734",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "message": "Banyo Dolabı 196,2 x 67 cm Çamaşır Ve Kurutma Makinesi Dolab büyüme momentumu yüksek (82/100).",
+      "product_id": "811457732",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Banyo Dolabı Çamaşır Ve Kurutma Makinesi Dolabı büyüme momentumu yüksek (82/100).",
-      "product_id": "809462515",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "message": "Çamaşır-kurutma Makinesi Dolabı Kapaklı Üst Dolabı Banyo Dol büyüme momentumu yüksek (82/100).",
+      "product_id": "897249244",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Diğer — lider STAR",
-      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, M pay 100, büyüme 100.",
-      "product_id": "1179886797",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 100.",
+      "product_id": "920575303",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-5",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D pay 95, büyüme 100.",
-      "product_id": "820272849",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, M pay 100, büyüme 100.",
+      "product_id": "1179886797",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-6",
@@ -56,16 +56,16 @@
       "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
       "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %83. Kalite/lojistik incele.",
       "product_id": "456979325",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "HIGH",
-      "title": "Diğer — yüksek iade riski",
-      "message": "Nord Vestiyer Takımı Kapaklı Askılıklı Ayakkabılık Dolabı, B iade/iptal oranı %50. Kalite/lojistik incele.",
-      "product_id": "1180109659",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "title": "Banyo Dolabı — yüksek iade riski",
+      "message": "Lavabolu Mat Mdf 120 Cm Çekmeceli Banyo Dolabı + Aynalı Üst  iade/iptal oranı %50. Kalite/lojistik incele.",
+      "product_id": "830135827",
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-8",
@@ -74,7 +74,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1174373102",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     },
     {
       "id": "alert-9",
@@ -83,7 +83,7 @@
       "title": "Diğer — kârsız hacim uyarısı",
       "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
       "product_id": "1174453064",
-      "timestamp": "2026-10-19T11:05:41.058853+00:00"
+      "timestamp": "2026-10-19T15:23:34.882988+00:00"
     }
   ]
 }
