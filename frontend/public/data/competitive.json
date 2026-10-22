@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-21T10:29:37.531080+00:00",
+    "generated_at": "2026-10-22T10:26:27.563260+00:00",
     "snapshot_days": 10,
     "latest_snapshot": "2026-10-19",
     "has_velocity": true,
@@ -666,195 +666,16 @@
       ]
     },
     {
-      "our_id": "1143914275",
-      "our_name": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 90 cm",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914275?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_id": "838150250",
+      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150250?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "our_image": null,
-      "our_price": 7200,
-      "our_rating": 5.0,
-      "our_reviews": 2,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
-          "price": 6880,
-          "rating": 3.5,
-          "reviews": 19,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
-          "score": 0.8111,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": -1.5,
-          "review_delta": 17
-        },
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Safir Meşe Beyaz",
-          "price": 6880,
-          "rating": 3.9,
-          "reviews": 81,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-safir-mese-beyaz-p-1082109255?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1811/prod/QC_PREP/20260109/16/142b6e33-0965-303a-9a15-830d7728f424/1_org_zoom.jpg",
-          "score": 0.7719,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": -1.1,
-          "review_delta": 79
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.7674,
-          "rescued": false,
-          "price_delta_pct": -9,
-          "rating_delta": -0.3,
-          "review_delta": 256
-        }
-      ]
-    },
-    {
-      "our_id": "962096793",
-      "our_name": "ROOMART 60 cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,Mutfak Dolabı",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096793?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 6013,
-      "our_rating": 4.3,
-      "our_reviews": 45,
+      "our_price": 7928,
+      "our_rating": 4.2,
+      "our_reviews": 51,
       "bcg_class": "STAR",
       "competitors": [
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.7788,
-          "rescued": false,
-          "price_delta_pct": 9,
-          "rating_delta": 0.4,
-          "review_delta": 213
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
-          "price": 6450,
-          "rating": 4.8,
-          "reviews": 1040,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
-          "score": 0.7692,
-          "rescued": false,
-          "price_delta_pct": 7,
-          "rating_delta": 0.5,
-          "review_delta": 995
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani JE194 Kahve Köşesi Çok Amaçlı Dolap 3 Kapaklı 1 Çekmeceli Mutfak Dolabı Beyaz - Sepet Ceviz",
-          "price": 5900,
-          "rating": 4.6,
-          "reviews": 328,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je194-kahve-kosesi-cok-amacli-dolap-3-kapakli-1-cekmeceli-mutfak-dolabi-beyaz-sepet-ceviz-p-897440771?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/15/7ca4bd0c-272b-3c4b-a737-3e8680e238d8/1_org_zoom.jpg",
-          "score": 0.7538,
-          "rescued": false,
-          "price_delta_pct": -2,
-          "rating_delta": 0.3,
-          "review_delta": 283
-        }
-      ]
-    },
-    {
-      "our_id": "1143914048",
-      "our_name": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 90 cm",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 6639,
-      "our_rating": 4.8,
-      "our_reviews": 5,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
-          "price": 6880,
-          "rating": 3.5,
-          "reviews": 19,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
-          "score": 0.8152,
-          "rescued": false,
-          "price_delta_pct": 4,
-          "rating_delta": -1.3,
-          "review_delta": 14
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.8058,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": -0.1,
-          "review_delta": 253
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
-          "price": 6450,
-          "rating": 4.8,
-          "reviews": 1040,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
-          "score": 0.7799,
-          "rescued": false,
-          "price_delta_pct": -3,
-          "rating_delta": 0.0,
-          "review_delta": 1035
-        }
-      ]
-    },
-    {
-      "our_id": "877720999",
-      "our_name": "ROOMART Tek Çekmeceli ve Kapaklı  Çamaşır ve Kurutma Makinesi Dolabı, Banyo Dolabı",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/tek-cekmeceli-ve-kapakli-camasir-ve-kurutma-makinesi-dolabi-banyo-dolabi-p-877720999?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7699,
-      "our_rating": 5.0,
-      "our_reviews": 1,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani KD123 Çamaşır Ve Kurutma Makinesi Dolabı Çekmeceli Banyo Dolabı Beyaz",
-          "price": 6850,
-          "rating": 4.7,
-          "reviews": 140,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-kd113-camasir-ve-kurutma-makinesi-dolabi-cekmeceli-banyo-dolabi-beyaz-p-903845443?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1764/prod/QC_ENRICHMENT/20251001/15/757e1e7f-8db7-3909-a676-4f21a6d38282/1_org_zoom.jpg",
-          "score": 0.7449,
-          "rescued": false,
-          "price_delta_pct": -11,
-          "rating_delta": -0.3,
-          "review_delta": 139
-        },
         {
           "brand": "Bofigo",
           "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
@@ -863,11 +684,11 @@
           "reviews": 1,
           "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
           "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7001,
+          "score": 0.7149,
           "rescued": false,
-          "price_delta_pct": -10,
-          "rating_delta": -4.0,
-          "review_delta": 0
+          "price_delta_pct": -13,
+          "rating_delta": -3.2,
+          "review_delta": -50
         }
       ]
     },
@@ -895,6 +716,33 @@
           "price_delta_pct": -1,
           "rating_delta": -0.2,
           "review_delta": -134
+        }
+      ]
+    },
+    {
+      "our_id": "838150342",
+      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150342?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7831,
+      "our_rating": 4.1,
+      "our_reviews": 41,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
+          "price": 6930,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
+          "score": 0.7202,
+          "rescued": false,
+          "price_delta_pct": -12,
+          "rating_delta": -3.1,
+          "review_delta": -40
         }
       ]
     },
@@ -954,6 +802,33 @@
       ]
     },
     {
+      "our_id": "838150481",
+      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150481?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7816,
+      "our_rating": 4.2,
+      "our_reviews": 161,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
+          "price": 6930,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
+          "score": 0.7211,
+          "rescued": false,
+          "price_delta_pct": -11,
+          "rating_delta": -3.2,
+          "review_delta": -160
+        }
+      ]
+    },
+    {
       "our_id": "962096802",
       "our_name": "ROOMART 60 cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,Mutfak Dolabı",
       "category": "Kahve Köşesi",
@@ -1005,6 +880,608 @@
           "price_delta_pct": -1,
           "rating_delta": -0.1,
           "review_delta": 285
+        }
+      ]
+    },
+    {
+      "our_id": "885510344",
+      "our_name": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1 Çekmeceli Kiler Dolabı, Mutfak Dolabı",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510344?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7399,
+      "our_rating": 4.4,
+      "our_reviews": 263,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.7864,
+          "rescued": false,
+          "price_delta_pct": -11,
+          "rating_delta": 0.3,
+          "review_delta": -5
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
+          "price": 6880,
+          "rating": 3.5,
+          "reviews": 19,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
+          "score": 0.7774,
+          "rescued": false,
+          "price_delta_pct": -7,
+          "rating_delta": -0.9,
+          "review_delta": -244
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
+          "price": 6450,
+          "rating": 4.8,
+          "reviews": 1040,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
+          "score": 0.7594,
+          "rescued": false,
+          "price_delta_pct": -13,
+          "rating_delta": 0.4,
+          "review_delta": 777
+        }
+      ]
+    },
+    {
+      "our_id": "877720999",
+      "our_name": "ROOMART Tek Çekmeceli ve Kapaklı  Çamaşır ve Kurutma Makinesi Dolabı, Banyo Dolabı",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/tek-cekmeceli-ve-kapakli-camasir-ve-kurutma-makinesi-dolabi-banyo-dolabi-p-877720999?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7699,
+      "our_rating": 5.0,
+      "our_reviews": 1,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani KD123 Çamaşır Ve Kurutma Makinesi Dolabı Çekmeceli Banyo Dolabı Beyaz",
+          "price": 6850,
+          "rating": 4.7,
+          "reviews": 140,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-kd113-camasir-ve-kurutma-makinesi-dolabi-cekmeceli-banyo-dolabi-beyaz-p-903845443?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1764/prod/QC_ENRICHMENT/20251001/15/757e1e7f-8db7-3909-a676-4f21a6d38282/1_org_zoom.jpg",
+          "score": 0.7449,
+          "rescued": false,
+          "price_delta_pct": -11,
+          "rating_delta": -0.3,
+          "review_delta": 139
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
+          "price": 6930,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
+          "score": 0.7001,
+          "rescued": false,
+          "price_delta_pct": -10,
+          "rating_delta": -4.0,
+          "review_delta": 0
+        }
+      ]
+    },
+    {
+      "our_id": "920562678",
+      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920562678?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 5244,
+      "our_rating": 4.4,
+      "our_reviews": 55,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
+          "price": 4730,
+          "rating": 4.3,
+          "reviews": 961,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
+          "score": 0.7287,
+          "rescued": false,
+          "price_delta_pct": -10,
+          "rating_delta": -0.1,
+          "review_delta": 906
+        },
+        {
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
+          "price": 5321,
+          "rating": 3.7,
+          "reviews": 61,
+          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
+          "score": 0.7149,
+          "rescued": false,
+          "price_delta_pct": 1,
+          "rating_delta": -0.7,
+          "review_delta": 6
+        }
+      ]
+    },
+    {
+      "our_id": "897265048",
+      "our_name": "ROOMART Çamaşır-kurutma Makinesi Dolabı Kapaksız Banyo Dolabı 65 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapaksiz-banyo-dolabi-65-cm-p-897265048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 2429,
+      "our_rating": 4.3,
+      "our_reviews": 17,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF03104 Banyo Dolabı Çamaşır Kurutma Makinesi Dolabı Alt Dolap",
+          "price": 2449,
+          "rating": 3.4,
+          "reviews": 5,
+          "url": "https://www.trendyol.com/dekor-fim/df03104-banyo-dolabi-camasir-kurutma-makinesi-dolabi-alt-dolap-p-939085036?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1683/prod/QC/20250523/12/1d6af1f7-6bee-3bc4-b567-2c35fb611775/1_org_zoom.jpg",
+          "score": 0.7042,
+          "rescued": false,
+          "price_delta_pct": 1,
+          "rating_delta": -0.9,
+          "review_delta": -12
+        }
+      ]
+    },
+    {
+      "our_id": "1143914130",
+      "our_name": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 90 cm",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914130?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7200,
+      "our_rating": 5.0,
+      "our_reviews": 4,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
+          "price": 6880,
+          "rating": 3.5,
+          "reviews": 19,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
+          "score": 0.8111,
+          "rescued": false,
+          "price_delta_pct": -4,
+          "rating_delta": -1.5,
+          "review_delta": 15
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Safir Meşe Beyaz",
+          "price": 6880,
+          "rating": 3.9,
+          "reviews": 81,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-safir-mese-beyaz-p-1082109255?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1811/prod/QC_PREP/20260109/16/142b6e33-0965-303a-9a15-830d7728f424/1_org_zoom.jpg",
+          "score": 0.7719,
+          "rescued": false,
+          "price_delta_pct": -4,
+          "rating_delta": -1.1,
+          "review_delta": 77
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.7674,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": -0.3,
+          "review_delta": 254
+        }
+      ]
+    },
+    {
+      "our_id": "1143914275",
+      "our_name": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 90 cm",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914275?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7200,
+      "our_rating": 5.0,
+      "our_reviews": 2,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
+          "price": 6880,
+          "rating": 3.5,
+          "reviews": 19,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
+          "score": 0.8111,
+          "rescued": false,
+          "price_delta_pct": -4,
+          "rating_delta": -1.5,
+          "review_delta": 17
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Safir Meşe Beyaz",
+          "price": 6880,
+          "rating": 3.9,
+          "reviews": 81,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-safir-mese-beyaz-p-1082109255?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1811/prod/QC_PREP/20260109/16/142b6e33-0965-303a-9a15-830d7728f424/1_org_zoom.jpg",
+          "score": 0.7719,
+          "rescued": false,
+          "price_delta_pct": -4,
+          "rating_delta": -1.1,
+          "review_delta": 79
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.7674,
+          "rescued": false,
+          "price_delta_pct": -9,
+          "rating_delta": -0.3,
+          "review_delta": 256
+        }
+      ]
+    },
+    {
+      "our_id": "962096961",
+      "our_name": "ROOMART 60 cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,Mutfak Dolabı",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096961?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 5952,
+      "our_rating": 4.5,
+      "our_reviews": 42,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.7733,
+          "rescued": false,
+          "price_delta_pct": 10,
+          "rating_delta": 0.2,
+          "review_delta": 216
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
+          "price": 6450,
+          "rating": 4.8,
+          "reviews": 1040,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
+          "score": 0.7637,
+          "rescued": false,
+          "price_delta_pct": 8,
+          "rating_delta": 0.3,
+          "review_delta": 998
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani JE194 Kahve Köşesi Çok Amaçlı Dolap 3 Kapaklı 1 Çekmeceli Mutfak Dolabı Beyaz - Sepet Ceviz",
+          "price": 5900,
+          "rating": 4.6,
+          "reviews": 328,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je194-kahve-kosesi-cok-amacli-dolap-3-kapakli-1-cekmeceli-mutfak-dolabi-beyaz-sepet-ceviz-p-897440771?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/15/7ca4bd0c-272b-3c4b-a737-3e8680e238d8/1_org_zoom.jpg",
+          "score": 0.7588,
+          "rescued": false,
+          "price_delta_pct": -1,
+          "rating_delta": 0.1,
+          "review_delta": 286
+        }
+      ]
+    },
+    {
+      "our_id": "962096793",
+      "our_name": "ROOMART 60 cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,Mutfak Dolabı",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096793?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 6013,
+      "our_rating": 4.3,
+      "our_reviews": 45,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.7788,
+          "rescued": false,
+          "price_delta_pct": 9,
+          "rating_delta": 0.4,
+          "review_delta": 213
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
+          "price": 6450,
+          "rating": 4.8,
+          "reviews": 1040,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
+          "score": 0.7692,
+          "rescued": false,
+          "price_delta_pct": 7,
+          "rating_delta": 0.5,
+          "review_delta": 995
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani JE194 Kahve Köşesi Çok Amaçlı Dolap 3 Kapaklı 1 Çekmeceli Mutfak Dolabı Beyaz - Sepet Ceviz",
+          "price": 5900,
+          "rating": 4.6,
+          "reviews": 328,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je194-kahve-kosesi-cok-amacli-dolap-3-kapakli-1-cekmeceli-mutfak-dolabi-beyaz-sepet-ceviz-p-897440771?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/15/7ca4bd0c-272b-3c4b-a737-3e8680e238d8/1_org_zoom.jpg",
+          "score": 0.7538,
+          "rescued": false,
+          "price_delta_pct": -2,
+          "rating_delta": 0.3,
+          "review_delta": 283
+        }
+      ]
+    },
+    {
+      "our_id": "367009664",
+      "our_name": "ROOMART Çamaşır Ve Kurutma Makinesi Dolabı Mat Beyaz",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/camasir-ve-kurutma-makinesi-dolabi-mat-beyaz-p-367009664?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 6699,
+      "our_rating": 4.5,
+      "our_reviews": 293,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
+          "price": 6930,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
+          "score": 0.7953,
+          "rescued": false,
+          "price_delta_pct": 3,
+          "rating_delta": -3.5,
+          "review_delta": -292
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani KD123 Çamaşır Ve Kurutma Makinesi Dolabı Çekmeceli Banyo Dolabı Beyaz",
+          "price": 6850,
+          "rating": 4.7,
+          "reviews": 140,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-kd113-camasir-ve-kurutma-makinesi-dolabi-cekmeceli-banyo-dolabi-beyaz-p-903845443?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1764/prod/QC_ENRICHMENT/20251001/15/757e1e7f-8db7-3909-a676-4f21a6d38282/1_org_zoom.jpg",
+          "score": 0.7665,
+          "rescued": false,
+          "price_delta_pct": 2,
+          "rating_delta": 0.2,
+          "review_delta": -153
+        }
+      ]
+    },
+    {
+      "our_id": "885510233",
+      "our_name": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1 Çekmeceli Kiler Dolabı, Mutfak Dolabı",
+      "category": "Kahve Köşesi",
+      "our_url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510233?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 6870,
+      "our_rating": 4.5,
+      "our_reviews": 172,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
+          "price": 6550,
+          "rating": 4.7,
+          "reviews": 258,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
+          "score": 0.8204,
+          "rescued": false,
+          "price_delta_pct": -5,
+          "rating_delta": 0.2,
+          "review_delta": 86
+        },
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
+          "price": 6880,
+          "rating": 3.5,
+          "reviews": 19,
+          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
+          "score": 0.8118,
+          "rescued": false,
+          "price_delta_pct": 0,
+          "rating_delta": -1.0,
+          "review_delta": -153
+        },
+        {
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
+          "price": 6450,
+          "rating": 4.8,
+          "reviews": 1040,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
+          "score": 0.7929,
+          "rescued": false,
+          "price_delta_pct": -6,
+          "rating_delta": 0.3,
+          "review_delta": 868
+        }
+      ]
+    },
+    {
+      "our_id": "838152663",
+      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838152663?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 7891,
+      "our_rating": 4.5,
+      "our_reviews": 95,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
+          "price": 6930,
+          "rating": 1.0,
+          "reviews": 1,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
+          "score": 0.7169,
+          "rescued": false,
+          "price_delta_pct": -12,
+          "rating_delta": -3.5,
+          "review_delta": -94
+        }
+      ]
+    },
+    {
+      "our_id": "877649981",
+      "our_name": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası , Mutfak Adası",
+      "category": "Mutfak Adası",
+      "our_url": "https://www.trendyol.com/roomart/milano-bar-masasi-dolapli-yuksek-mutfak-yemek-masasi-mutfak-adasi-p-877649981?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 6564,
+      "our_rating": 4.6,
+      "our_reviews": 58,
+      "bcg_class": "STAR",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Mutfak Masası Mutfak Adası Bar Masası Ada Mutfak Yemek Masası Sofya Beyaz",
+          "price": 6495,
+          "rating": 4.4,
+          "reviews": 20,
+          "url": "https://www.trendyol.com/bofigo/mutfak-masasi-mutfak-adasi-bar-masasi-ada-mutfak-yemek-masasi-sofya-beyaz-p-1124370668?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1846/prod/QC_PREP/20260327/07/3f610d99-ef44-3d83-aecc-a050e38f08b1/1_org_zoom.jpg",
+          "score": 0.722,
+          "rescued": false,
+          "price_delta_pct": -1,
+          "rating_delta": -0.2,
+          "review_delta": -38
+        }
+      ]
+    },
+    {
+      "our_id": "920561495",
+      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561495?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 5153,
+      "our_rating": 4.7,
+      "our_reviews": 16,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
+          "price": 4730,
+          "rating": 4.3,
+          "reviews": 961,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
+          "score": 0.7367,
+          "rescued": false,
+          "price_delta_pct": -8,
+          "rating_delta": -0.4,
+          "review_delta": 945
+        },
+        {
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
+          "price": 5321,
+          "rating": 3.7,
+          "reviews": 61,
+          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
+          "score": 0.7059,
+          "rescued": false,
+          "price_delta_pct": 3,
+          "rating_delta": -1.0,
+          "review_delta": 45
+        }
+      ]
+    },
+    {
+      "our_id": "920575159",
+      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Alt Dolap",
+      "category": "Çamaşır Makinesi Dolabı",
+      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-p-920575159?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_image": null,
+      "our_price": 3321,
+      "our_rating": 4.5,
+      "our_reviews": 22,
+      "bcg_class": "QUESTION_MARK",
+      "competitors": [
+        {
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF03107KAC Kapaklı Çamaşır Makinesi Dolabı Çamaşır Alt Modül",
+          "price": 3299,
+          "rating": 4.4,
+          "reviews": 24,
+          "url": "https://www.trendyol.com/dekor-fim/df03107kac-kapakli-camasir-makinesi-dolabi-camasir-alt-modul-p-974584775?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1762/prod/QC_ENRICHMENT/20250925/18/fb95cf68-c11e-36cf-b857-597dd813b2d4/1_org_zoom.jpg",
+          "score": 0.705,
+          "rescued": false,
+          "price_delta_pct": -1,
+          "rating_delta": -0.1,
+          "review_delta": 2
         }
       ]
     },
@@ -1119,101 +1596,6 @@
       ]
     },
     {
-      "our_id": "838150342",
-      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150342?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7831,
-      "our_rating": 4.1,
-      "our_reviews": 41,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
-          "price": 6930,
-          "rating": 1.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7202,
-          "rescued": false,
-          "price_delta_pct": -12,
-          "rating_delta": -3.1,
-          "review_delta": -40
-        }
-      ]
-    },
-    {
-      "our_id": "920575159",
-      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Alt Dolap",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-p-920575159?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 3321,
-      "our_rating": 4.5,
-      "our_reviews": 22,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "DEKORFİM",
-          "name": "dekor fim DF03107KAC Kapaklı Çamaşır Makinesi Dolabı Çamaşır Alt Modül",
-          "price": 3299,
-          "rating": 4.4,
-          "reviews": 24,
-          "url": "https://www.trendyol.com/dekor-fim/df03107kac-kapakli-camasir-makinesi-dolabi-camasir-alt-modul-p-974584775?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1762/prod/QC_ENRICHMENT/20250925/18/fb95cf68-c11e-36cf-b857-597dd813b2d4/1_org_zoom.jpg",
-          "score": 0.705,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": -0.1,
-          "review_delta": 2
-        }
-      ]
-    },
-    {
-      "our_id": "920562678",
-      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920562678?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 5244,
-      "our_rating": 4.4,
-      "our_reviews": 55,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
-          "price": 4730,
-          "rating": 4.3,
-          "reviews": 961,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
-          "score": 0.7287,
-          "rescued": false,
-          "price_delta_pct": -10,
-          "rating_delta": -0.1,
-          "review_delta": 906
-        },
-        {
-          "brand": "DEKORFİM",
-          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
-          "price": 5321,
-          "rating": 3.7,
-          "reviews": 61,
-          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
-          "score": 0.7149,
-          "rescued": false,
-          "price_delta_pct": 1,
-          "rating_delta": -0.7,
-          "review_delta": 6
-        }
-      ]
-    },
-    {
       "our_id": "812785343",
       "our_name": "ROOMART Banyo Dolabı 231,2 x 67 cm Çamaşır Ve Kurutma Makinesi Dolabı",
       "category": "Çamaşır Makinesi Dolabı",
@@ -1241,125 +1623,43 @@
       ]
     },
     {
-      "our_id": "367009664",
-      "our_name": "ROOMART Çamaşır Ve Kurutma Makinesi Dolabı Mat Beyaz",
+      "our_id": "920561584",
+      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
       "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-ve-kurutma-makinesi-dolabi-mat-beyaz-p-367009664?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561584?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "our_image": null,
-      "our_price": 6699,
-      "our_rating": 4.5,
-      "our_reviews": 293,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
-          "price": 6930,
-          "rating": 1.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7953,
-          "rescued": false,
-          "price_delta_pct": 3,
-          "rating_delta": -3.5,
-          "review_delta": -292
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani KD123 Çamaşır Ve Kurutma Makinesi Dolabı Çekmeceli Banyo Dolabı Beyaz",
-          "price": 6850,
-          "rating": 4.7,
-          "reviews": 140,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-kd113-camasir-ve-kurutma-makinesi-dolabi-cekmeceli-banyo-dolabi-beyaz-p-903845443?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1764/prod/QC_ENRICHMENT/20251001/15/757e1e7f-8db7-3909-a676-4f21a6d38282/1_org_zoom.jpg",
-          "score": 0.7665,
-          "rescued": false,
-          "price_delta_pct": 2,
-          "rating_delta": 0.2,
-          "review_delta": -153
-        }
-      ]
-    },
-    {
-      "our_id": "962096961",
-      "our_name": "ROOMART 60 cm Ledli Kahve Köşesi, Çok Amaçlı Dolap,2 Kapaklı 1 Çekmeceli Kiler Dolabı,Mutfak Dolabı",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/60-cm-ledli-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-962096961?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 5952,
-      "our_rating": 4.5,
-      "our_reviews": 42,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.7733,
-          "rescued": false,
-          "price_delta_pct": 10,
-          "rating_delta": 0.2,
-          "review_delta": 216
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
-          "price": 6450,
-          "rating": 4.8,
-          "reviews": 1040,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
-          "score": 0.7637,
-          "rescued": false,
-          "price_delta_pct": 8,
-          "rating_delta": 0.3,
-          "review_delta": 998
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani JE194 Kahve Köşesi Çok Amaçlı Dolap 3 Kapaklı 1 Çekmeceli Mutfak Dolabı Beyaz - Sepet Ceviz",
-          "price": 5900,
-          "rating": 4.6,
-          "reviews": 328,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je194-kahve-kosesi-cok-amacli-dolap-3-kapakli-1-cekmeceli-mutfak-dolabi-beyaz-sepet-ceviz-p-897440771?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1963/prod/QC_ENRICHMENT/20260924/15/7ca4bd0c-272b-3c4b-a737-3e8680e238d8/1_org_zoom.jpg",
-          "score": 0.7588,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": 0.1,
-          "review_delta": 286
-        }
-      ]
-    },
-    {
-      "our_id": "897265048",
-      "our_name": "ROOMART Çamaşır-kurutma Makinesi Dolabı Kapaksız Banyo Dolabı 65 cm",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapaksiz-banyo-dolabi-65-cm-p-897265048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 2429,
-      "our_rating": 4.3,
-      "our_reviews": 17,
+      "our_price": 5209,
+      "our_rating": 4.6,
+      "our_reviews": 37,
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
-          "brand": "DEKORFİM",
-          "name": "dekor fim DF03104 Banyo Dolabı Çamaşır Kurutma Makinesi Dolabı Alt Dolap",
-          "price": 2449,
-          "rating": 3.4,
-          "reviews": 5,
-          "url": "https://www.trendyol.com/dekor-fim/df03104-banyo-dolabi-camasir-kurutma-makinesi-dolabi-alt-dolap-p-939085036?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1683/prod/QC/20250523/12/1d6af1f7-6bee-3bc4-b567-2c35fb611775/1_org_zoom.jpg",
-          "score": 0.7042,
+          "brand": "Bofigo",
+          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
+          "price": 4730,
+          "rating": 4.3,
+          "reviews": 961,
+          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
+          "score": 0.7318,
           "rescued": false,
-          "price_delta_pct": 1,
+          "price_delta_pct": -9,
+          "rating_delta": -0.3,
+          "review_delta": 924
+        },
+        {
+          "brand": "DEKORFİM",
+          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
+          "price": 5321,
+          "rating": 3.7,
+          "reviews": 61,
+          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
+          "score": 0.7114,
+          "rescued": false,
+          "price_delta_pct": 2,
           "rating_delta": -0.9,
-          "review_delta": -12
+          "review_delta": 24
         }
       ]
     },
@@ -1419,178 +1719,14 @@
       ]
     },
     {
-      "our_id": "877649981",
-      "our_name": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası , Mutfak Adası",
-      "category": "Mutfak Adası",
-      "our_url": "https://www.trendyol.com/roomart/milano-bar-masasi-dolapli-yuksek-mutfak-yemek-masasi-mutfak-adasi-p-877649981?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 6564,
-      "our_rating": 4.6,
-      "our_reviews": 58,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Mutfak Masası Mutfak Adası Bar Masası Ada Mutfak Yemek Masası Sofya Beyaz",
-          "price": 6495,
-          "rating": 4.4,
-          "reviews": 20,
-          "url": "https://www.trendyol.com/bofigo/mutfak-masasi-mutfak-adasi-bar-masasi-ada-mutfak-yemek-masasi-sofya-beyaz-p-1124370668?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1846/prod/QC_PREP/20260327/07/3f610d99-ef44-3d83-aecc-a050e38f08b1/1_org_zoom.jpg",
-          "score": 0.722,
-          "rescued": false,
-          "price_delta_pct": -1,
-          "rating_delta": -0.2,
-          "review_delta": -38
-        }
-      ]
-    },
-    {
-      "our_id": "885510233",
-      "our_name": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1 Çekmeceli Kiler Dolabı, Mutfak Dolabı",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510233?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 6870,
-      "our_rating": 4.5,
-      "our_reviews": 172,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.8204,
-          "rescued": false,
-          "price_delta_pct": -5,
-          "rating_delta": 0.2,
-          "review_delta": 86
-        },
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
-          "price": 6880,
-          "rating": 3.5,
-          "reviews": 19,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
-          "score": 0.8118,
-          "rescued": false,
-          "price_delta_pct": 0,
-          "rating_delta": -1.0,
-          "review_delta": -153
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
-          "price": 6450,
-          "rating": 4.8,
-          "reviews": 1040,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
-          "score": 0.7929,
-          "rescued": false,
-          "price_delta_pct": -6,
-          "rating_delta": 0.3,
-          "review_delta": 868
-        }
-      ]
-    },
-    {
-      "our_id": "838152663",
-      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838152663?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7891,
-      "our_rating": 4.5,
-      "our_reviews": 95,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
-          "price": 6930,
-          "rating": 1.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7169,
-          "rescued": false,
-          "price_delta_pct": -12,
-          "rating_delta": -3.5,
-          "review_delta": -94
-        }
-      ]
-    },
-    {
-      "our_id": "885510344",
-      "our_name": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1 Çekmeceli Kiler Dolabı, Mutfak Dolabı",
-      "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi-p-885510344?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7399,
-      "our_rating": 4.4,
-      "our_reviews": 263,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz",
-          "price": 6550,
-          "rating": 4.7,
-          "reviews": 258,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.7864,
-          "rescued": false,
-          "price_delta_pct": -11,
-          "rating_delta": 0.3,
-          "review_delta": -5
-        },
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Beyaz",
-          "price": 6880,
-          "rating": 3.5,
-          "reviews": 19,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
-          "score": 0.7774,
-          "rescued": false,
-          "price_delta_pct": -7,
-          "rating_delta": -0.9,
-          "review_delta": -244
-        },
-        {
-          "brand": "Rani Mobilya",
-          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
-          "price": 6450,
-          "rating": 4.8,
-          "reviews": 1040,
-          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
-          "score": 0.7594,
-          "rescued": false,
-          "price_delta_pct": -13,
-          "rating_delta": 0.4,
-          "review_delta": 777
-        }
-      ]
-    },
-    {
-      "our_id": "1143914130",
+      "our_id": "1143914048",
       "our_name": "ROOMART Defne Kahve Köşesi, Çok Amaçlı Dolap, 4 Kapaklı Kiler Dolabı, Mutfak Dolabı 90 cm",
       "category": "Kahve Köşesi",
-      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914130?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
+      "our_url": "https://www.trendyol.com/roomart/defne-kahve-kosesi-cok-amacli-dolap-4-kapakli-kiler-dolabi-mutfak-dolabi-90-cm-p-1143914048?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
       "our_image": null,
-      "our_price": 7200,
-      "our_rating": 5.0,
-      "our_reviews": 4,
+      "our_price": 6639,
+      "our_rating": 4.8,
+      "our_reviews": 5,
       "bcg_class": "QUESTION_MARK",
       "competitors": [
         {
@@ -1601,25 +1737,11 @@
           "reviews": 19,
           "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-beyaz-p-1082109297?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
           "image": "https://cdn.dsmcdn.com/ty1809/prod/QC_PREP/20260109/16/7dea6414-2620-353c-9c63-5b7bb48db830/1_org_zoom.jpg",
-          "score": 0.8111,
+          "score": 0.8152,
           "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": -1.5,
-          "review_delta": 15
-        },
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo 4 Kapaklı Dolap Çekmeceli Çok Amaçlı Dolap Mutfak Dolabı Kahve Köşesi Kiler Aybüke Safir Meşe Beyaz",
-          "price": 6880,
-          "rating": 3.9,
-          "reviews": 81,
-          "url": "https://www.trendyol.com/bofigo/4-kapakli-dolap-cekmeceli-cok-amacli-dolap-mutfak-dolabi-kahve-kosesi-kiler-aybuke-safir-mese-beyaz-p-1082109255?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1811/prod/QC_PREP/20260109/16/142b6e33-0965-303a-9a15-830d7728f424/1_org_zoom.jpg",
-          "score": 0.7719,
-          "rescued": false,
-          "price_delta_pct": -4,
-          "rating_delta": -1.1,
-          "review_delta": 77
+          "price_delta_pct": 4,
+          "rating_delta": -1.3,
+          "review_delta": 14
         },
         {
           "brand": "Rani Mobilya",
@@ -1629,147 +1751,25 @@
           "reviews": 258,
           "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-p-801151619?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
           "image": "https://cdn.dsmcdn.com/ty1000034/product/media/images/prod/PIM/20251124/09/929d988b-d564-42d6-b944-48d91bec7029/1_org_zoom.jpg",
-          "score": 0.7674,
+          "score": 0.8058,
           "rescued": false,
-          "price_delta_pct": -9,
-          "rating_delta": -0.3,
-          "review_delta": 254
-        }
-      ]
-    },
-    {
-      "our_id": "920561495",
-      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561495?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 5153,
-      "our_rating": 4.7,
-      "our_reviews": 16,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
-          "price": 4730,
-          "rating": 4.3,
-          "reviews": 961,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
-          "score": 0.7367,
-          "rescued": false,
-          "price_delta_pct": -8,
-          "rating_delta": -0.4,
-          "review_delta": 945
+          "price_delta_pct": -1,
+          "rating_delta": -0.1,
+          "review_delta": 253
         },
         {
-          "brand": "DEKORFİM",
-          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
-          "price": 5321,
-          "rating": 3.7,
-          "reviews": 61,
-          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
-          "score": 0.7059,
+          "brand": "Rani Mobilya",
+          "name": "Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçlı Dolap 4 Kapaklı 1 Çekmeceli Kiler Mutfak Dolabı Beyaz - S. Ceviz",
+          "price": 6450,
+          "rating": 4.8,
+          "reviews": 1040,
+          "url": "https://www.trendyol.com/rani-mobilya/rani-je136-kahve-kosesi-cok-amacli-dolap-4-kapakli-1-cekmeceli-kiler-mutfak-dolabi-beyaz-s-ceviz-p-790778444?boutiqueId=61&merchantId=106735&filterOverPriceListings=false&sav=true",
+          "image": "https://cdn.dsmcdn.com/ty1000035/product/media/images/prod/PIM/20251124/09/89f74405-2d79-4c41-aab4-e4728285bb63/1_org_zoom.jpg",
+          "score": 0.7799,
           "rescued": false,
-          "price_delta_pct": 3,
-          "rating_delta": -1.0,
-          "review_delta": 45
-        }
-      ]
-    },
-    {
-      "our_id": "920561584",
-      "our_name": "ROOMART Çamaşır-Kurutma Makinesi Dolabı Kapaklı Banyo Dolabı",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-p-920561584?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 5209,
-      "our_rating": 4.6,
-      "our_reviews": 37,
-      "bcg_class": "QUESTION_MARK",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Metal Banyo Dolabı Mısra Beyaz",
-          "price": 4730,
-          "rating": 4.3,
-          "reviews": 961,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-metal-banyo-dolabi-misra-beyaz-p-934293587?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1675/prod/QC/20250508/10/fec148de-7601-3841-aef8-5d3902d845ca/1_org_zoom.jpg",
-          "score": 0.7318,
-          "rescued": false,
-          "price_delta_pct": -9,
-          "rating_delta": -0.3,
-          "review_delta": 924
-        },
-        {
-          "brand": "DEKORFİM",
-          "name": "dekor fim DF03101KAC Çamaşır Makinesi Dolabı Banyo Dolabı",
-          "price": 5321,
-          "rating": 3.7,
-          "reviews": 61,
-          "url": "https://www.trendyol.com/dekor-fim/df03101kac-camasir-makinesi-dolabi-banyo-dolabi-p-447907650?boutiqueId=61&merchantId=649488&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1783/prod/QC_ENRICHMENT/20251104/08/53d49064-2104-3ce3-b3c5-e45376cef137/1_org_zoom.jpg",
-          "score": 0.7114,
-          "rescued": false,
-          "price_delta_pct": 2,
-          "rating_delta": -0.9,
-          "review_delta": 24
-        }
-      ]
-    },
-    {
-      "our_id": "838150250",
-      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150250?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7928,
-      "our_rating": 4.2,
-      "our_reviews": 51,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
-          "price": 6930,
-          "rating": 1.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7149,
-          "rescued": false,
-          "price_delta_pct": -13,
-          "rating_delta": -3.2,
-          "review_delta": -50
-        }
-      ]
-    },
-    {
-      "our_id": "838150481",
-      "our_name": "ROOMART Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makinesi Dolabı 70x185 cm",
-      "category": "Çamaşır Makinesi Dolabı",
-      "our_url": "https://www.trendyol.com/roomart/banyo-dolabi-kapakli-camasir-ve-kurutma-makinesi-dolabi-70x185-cm-p-838150481?boutiqueId=61&merchantId=362387&filterOverPriceListings=false&sav=true",
-      "our_image": null,
-      "our_price": 7816,
-      "our_rating": 4.2,
-      "our_reviews": 161,
-      "bcg_class": "STAR",
-      "competitors": [
-        {
-          "brand": "Bofigo",
-          "name": "Bofigo Çamaşır Makinesi Dolabı Kurutma Makinesi Dolabı Banyo Dolabı Yakamoz Beyaz",
-          "price": 6930,
-          "rating": 1.0,
-          "reviews": 1,
-          "url": "https://www.trendyol.com/bofigo/camasir-makinesi-dolabi-kurutma-makinesi-dolabi-banyo-dolabi-yakamoz-beyaz-p-1158226399?boutiqueId=61&merchantId=529931&filterOverPriceListings=false&sav=true",
-          "image": "https://cdn.dsmcdn.com/ty1906/prod/QC_PREP/20260619/14/a215f012-60a2-3d8d-80d6-568ae3ed33a7/1_org_zoom.jpg",
-          "score": 0.7211,
-          "rescued": false,
-          "price_delta_pct": -11,
-          "rating_delta": -3.2,
-          "review_delta": -160
+          "price_delta_pct": -3,
+          "rating_delta": 0.0,
+          "review_delta": 1035
         }
       ]
     }
@@ -1779,9 +1779,9 @@
       "id": "comp-1",
       "type": "PRICE",
       "severity": "HIGH",
-      "title": "Kahve Köşesi — fiyatta altımızda rakip",
-      "message": "Rani Mobilya 'Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçl' %13 daha ucuz (bizim ROOMART Venedik Kahve Köşesi, Çok Am).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "title": "Çamaşır Makinesi Dolabı — fiyatta altımızda rakip",
+      "message": "Bofigo 'Bofigo Çamaşır Makinesi Dolabı Kurutma Makines' %13 daha ucuz (bizim ROOMART Banyo Dolabı Kapaklı Çamaşır).",
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-2",
@@ -1789,15 +1789,15 @@
       "severity": "HIGH",
       "title": "Kahve Köşesi — fiyatta altımızda rakip",
       "message": "Rani Mobilya 'Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçl' %13 daha ucuz (bizim ROOMART Venedik Kahve Köşesi, Çok Am).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-3",
       "type": "PRICE",
       "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — fiyatta altımızda rakip",
-      "message": "Bofigo 'Bofigo Çamaşır Makinesi Dolabı Kurutma Makines' %13 daha ucuz (bizim ROOMART Banyo Dolabı Kapaklı Çamaşır).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "title": "Kahve Köşesi — fiyatta altımızda rakip",
+      "message": "Rani Mobilya 'Rani Mobilya Rani Je136 Kahve Köşesi Çok Amaçl' %13 daha ucuz (bizim ROOMART Venedik Kahve Köşesi, Çok Am).",
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-4",
@@ -1805,7 +1805,7 @@
       "severity": "INFO",
       "title": "Banyo Dolabı — yorum lideri AEKA mobilya",
       "message": "AEKA mobilya 7758 yorum vs bizim 4415 (sıra 2/8).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-5",
@@ -1813,7 +1813,7 @@
       "severity": "INFO",
       "title": "Mutfak Adası — yorum lideri AEKA mobilya",
       "message": "AEKA mobilya 1687 yorum vs bizim 305 (sıra 3/5).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-6",
@@ -1821,7 +1821,7 @@
       "severity": "INFO",
       "title": "Kitaplıklı Çalışma Masası — yorum lideri Moonlife",
       "message": "Moonlife 19497 yorum vs bizim 570 (sıra 8/8).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-7",
@@ -1829,7 +1829,7 @@
       "severity": "INFO",
       "title": "Sehpa — yorum lideri ERİZA HOME",
       "message": "ERİZA HOME 2326 yorum vs bizim 194 (sıra 4/8).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-8",
@@ -1837,7 +1837,7 @@
       "severity": "INFO",
       "title": "Kahve Köşesi — yorum lideri Rani Mobilya",
       "message": "Rani Mobilya 9862 yorum vs bizim 787 (sıra 5/5).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-9",
@@ -1845,7 +1845,7 @@
       "severity": "INFO",
       "title": "Kitaplıklı Çalışma Masası — hızlı büyüyen rakip",
       "message": "Moonlife bu hafta +508 yorum (talep ivmesi).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     },
     {
       "id": "comp-10",
@@ -1853,7 +1853,7 @@
       "severity": "INFO",
       "title": "Kahve Köşesi — hızlı büyüyen rakip",
       "message": "Moonlife bu hafta +442 yorum (talep ivmesi).",
-      "timestamp": "2026-10-21T10:29:37.530959+00:00"
+      "timestamp": "2026-10-22T10:26:27.563140+00:00"
     }
   ]
 }
