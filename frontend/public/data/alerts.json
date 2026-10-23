@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-22T10:26:24.540726+00:00",
+    "last_updated": "2026-10-23T10:23:30.410646+00:00",
     "total_alerts": 5
   },
   "alerts": [
@@ -9,9 +9,9 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (100/100).",
-      "product_id": "877183321",
-      "timestamp": "2026-10-22T10:26:24.531923+00:00"
+      "message": "ROOMART Çamaşır-kurutma Makinesi Dolabı Kapaklı Üst Dolabı B büyüme momentumu yüksek (100/100).",
+      "product_id": "897254452",
+      "timestamp": "2026-10-23T10:23:30.403492+00:00"
     },
     {
       "id": "alert-2",
@@ -20,16 +20,16 @@
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
       "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (100/100).",
       "product_id": "820082166",
-      "timestamp": "2026-10-22T10:26:24.531923+00:00"
+      "timestamp": "2026-10-23T10:23:30.403492+00:00"
     },
     {
       "id": "alert-3",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "ROOMART Dora Banyo Dolabı Kapaklı Çamaşır Ve Kurutma Makines büyüme momentumu yüksek (100/100).",
-      "product_id": "935578612",
-      "timestamp": "2026-10-22T10:26:24.531923+00:00"
+      "message": "ROOMART Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli D büyüme momentumu yüksek (100/100).",
+      "product_id": "820441598",
+      "timestamp": "2026-10-23T10:23:30.403492+00:00"
     },
     {
       "id": "alert-4",
@@ -38,7 +38,7 @@
       "title": "Diğer — lider STAR",
       "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
       "product_id": "962085213",
-      "timestamp": "2026-10-22T10:26:24.531923+00:00"
+      "timestamp": "2026-10-23T10:23:30.403492+00:00"
     },
     {
       "id": "alert-5",
@@ -47,7 +47,7 @@
       "title": "Mutfak Adası — lider STAR",
       "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 75.",
       "product_id": "877650214",
-      "timestamp": "2026-10-22T10:26:24.531923+00:00"
+      "timestamp": "2026-10-23T10:23:30.403492+00:00"
     }
   ]
 }
