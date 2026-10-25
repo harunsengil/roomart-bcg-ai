@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-24T09:44:52.197656+00:00",
+    "generated_at": "2026-10-25T10:01:16.292259+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,9 +10,9 @@
       "koctas"
     ],
     "total_products": 1269,
-    "multi_platform_count": 1097,
+    "multi_platform_count": 1096,
     "by_platform_count": {
-      "trendyol": 1115,
+      "trendyol": 1114,
       "shopify": 792,
       "hb": 996,
       "n11": 766,
@@ -111,22 +111,22 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
-    "053.01.122.01.72": {
-      "stock_code": "053.01.122.01.72",
+    "053.01.122.01.70": {
+      "stock_code": "053.01.122.01.70",
       "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
       "category": "Diğer",
       "platforms": {
         "trendyol": {
-          "price": 11949.9,
-          "list_price": 11949.9,
+          "price": 0.0,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216428606?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "on_sale": false,
           "price_final": false
         },
         "shopify": {
-          "price": 11949.9,
+          "price": 10999.9,
           "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096251679",
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032943903",
           "on_sale": true,
           "price_final": false
         }
@@ -138,9 +138,9 @@
         "trendyol"
       ],
       "platform_count": 2,
-      "price_min": 11949.9,
-      "price_max": 11949.9,
-      "price_spread_pct": 0.0,
+      "price_min": 10999.9,
+      "price_max": 10999.9,
+      "price_spread_pct": null,
       "price_conflict": false
     },
     "053.01.122.04.72": {
@@ -191,38 +191,6 @@
           "price": 10999.9,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032976671",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 2,
-      "price_min": 10999.9,
-      "price_max": 10999.9,
-      "price_spread_pct": 0.0,
-      "price_conflict": false
-    },
-    "053.01.122.01.70": {
-      "stock_code": "053.01.122.01.70",
-      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaksız Bench, Boy Doabı , Modüler Portmanto Takımı",
-      "category": "Diğer",
-      "platforms": {
-        "trendyol": {
-          "price": 10999.9,
-          "list_price": 10999.9,
-          "url": "https://www.trendyol.com/roomart/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-modu-ler-portmanto-takimi-p-1216424238?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": false
-        },
-        "shopify": {
-          "price": 10999.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032943903",
           "on_sale": true,
           "price_final": false
         }
@@ -52156,6 +52124,30 @@
       "platform_count": 1,
       "price_min": null,
       "price_max": null,
+      "price_spread_pct": null,
+      "price_conflict": false
+    },
+    "053.01.122.01.72": {
+      "stock_code": "053.01.122.01.72",
+      "name": "Nord Vestiyer Takımı Lambri Askılıklı, Kapaklı Bench, Boy Doabı , Modüler Portmanto Takımı",
+      "category": "Diğer",
+      "platforms": {
+        "shopify": {
+          "price": 11949.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096251679",
+          "on_sale": true,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "shopify"
+      ],
+      "platform_count": 1,
+      "price_min": 11949.9,
+      "price_max": 11949.9,
       "price_spread_pct": null,
       "price_conflict": false
     },
