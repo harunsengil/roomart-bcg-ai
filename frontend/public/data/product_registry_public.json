@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-26T13:05:02.890870+00:00",
+    "generated_at": "2026-10-27T10:49:05.589675+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -13,7 +13,7 @@
     "multi_platform_count": 1097,
     "by_platform_count": {
       "trendyol": 1115,
-      "shopify": 792,
+      "shopify": 794,
       "hb": 996,
       "n11": 766,
       "koctas": 488
@@ -859,6 +859,13 @@
           "on_sale": true,
           "price_final": true
         },
+        "shopify": {
+          "price": 2999.9,
+          "list_price": 3159.0,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-kapaksiz-rafli-bench-73-6-x-53-cm?variant=52865270382879",
+          "on_sale": true,
+          "price_final": false
+        },
         "koctas": {
           "price": 2999.9,
           "list_price": 2999.9,
@@ -871,9 +878,10 @@
       "total_reviews": 0,
       "present_on": [
         "koctas",
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 999.97,
       "price_max": 2999.9,
       "price_spread_pct": 200.0,
@@ -891,6 +899,13 @@
           "on_sale": true,
           "price_final": true
         },
+        "shopify": {
+          "price": 2999.9,
+          "list_price": 3159.0,
+          "url": "https://roomartstore.com.tr/products/nord-vestiyer-portmanto-kapaksiz-rafli-bench-73-6-x-53-cm?variant=52865270350111",
+          "on_sale": true,
+          "price_final": false
+        },
         "koctas": {
           "price": 2999.9,
           "list_price": 2999.9,
@@ -903,9 +918,10 @@
       "total_reviews": 0,
       "present_on": [
         "koctas",
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 999.97,
       "price_max": 2999.9,
       "price_spread_pct": 200.0,
