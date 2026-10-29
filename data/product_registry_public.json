@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-28T11:31:36.604342+00:00",
+    "generated_at": "2026-10-29T11:42:16.445244+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -12,13 +12,13 @@
     "total_products": 1269,
     "multi_platform_count": 1097,
     "by_platform_count": {
-      "trendyol": 1115,
+      "trendyol": 1113,
       "shopify": 794,
       "hb": 996,
       "n11": 766,
-      "koctas": 488
+      "koctas": 492
     },
-    "price_conflict_count": 894,
+    "price_conflict_count": 893,
     "public_safe": true,
     "note": "Ciro/satış YOK — yalnız public fiyat+yorum+url."
   },
@@ -5892,30 +5892,6 @@
       "price_spread_pct": 8.5,
       "price_conflict": true
     },
-    "2987": {
-      "stock_code": "2987",
-      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "trendyol": {
-          "price": 9699.9,
-          "list_price": 9699.9,
-          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 9699.9,
-      "price_max": 9699.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "2986": {
       "stock_code": "2986",
       "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
@@ -5963,6 +5939,30 @@
       "price_max": 10499.9,
       "price_spread_pct": 15.1,
       "price_conflict": true
+    },
+    "2987": {
+      "stock_code": "2987",
+      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 9699.9,
+          "list_price": 9699.9,
+          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9699.9,
+      "price_max": 9699.9,
+      "price_spread_pct": null,
+      "price_conflict": false
     },
     "2984": {
       "stock_code": "2984",
@@ -6608,128 +6608,16 @@
       "price_spread_pct": null,
       "price_conflict": false
     },
-    "2906": {
-      "stock_code": "2906",
-      "name": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası Sol Dolaplı, Bilgisayar Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 7799.0,
-          "list_price": 7799,
-          "url": "https://www.trendyol.com/roomart/nora-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-942636653?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": true
-        },
-        "shopify": {
-          "price": 7354.0,
-          "list_price": 10399.9,
-          "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968284987679",
-          "on_sale": true,
-          "price_final": false
-        },
-        "hb": {
-          "price": 7379.91,
-          "list_price": null,
-          "url": "https://www.hepsiburada.com/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-HBCV0000BH6GUN",
-          "on_sale": true,
-          "price_final": true
-        },
-        "n11": {
-          "price": 7510.41,
-          "list_price": 8699.9,
-          "url": "https://www.n11.com/urun/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-beyaz-116557862",
-          "on_sale": true,
-          "price_final": true
-        },
-        "koctas": {
-          "price": 7303.41,
-          "list_price": 8114.9,
-          "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-mat-beyaz/p/5002456750?shop=2262",
-          "on_sale": true,
-          "price_final": true
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "hb",
-        "koctas",
-        "n11",
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 5,
-      "price_min": 7303.41,
-      "price_max": 7799.0,
-      "price_spread_pct": 6.8,
-      "price_conflict": true
-    },
-    "2908": {
-      "stock_code": "2908",
-      "name": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası Sol Dolaplı, Bilgisayar Masası",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 7093.74,
-          "list_price": 7799,
-          "url": "https://www.trendyol.com/roomart/nora-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-942636417?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
-          "price_final": true
-        },
-        "shopify": {
-          "price": 7395.0,
-          "list_price": 10399.9,
-          "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968285053215",
-          "on_sale": true,
-          "price_final": false
-        },
-        "hb": {
-          "price": 7379.91,
-          "list_price": null,
-          "url": "https://www.hepsiburada.com/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-HBCV0000AF2Q0A",
-          "on_sale": true,
-          "price_final": true
-        },
-        "n11": {
-          "price": 6781.72,
-          "list_price": 8699.9,
-          "url": "https://www.n11.com/urun/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-atlantik-cam-beyaz-116557861",
-          "on_sale": true,
-          "price_final": true
-        },
-        "koctas": {
-          "price": 7303.41,
-          "list_price": 8114.9,
-          "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasiatlanti-k-cam-beyaz/p/5002456760?shop=2262",
-          "on_sale": true,
-          "price_final": true
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "hb",
-        "koctas",
-        "n11",
-        "shopify",
-        "trendyol"
-      ],
-      "platform_count": 5,
-      "price_min": 6781.72,
-      "price_max": 7395.0,
-      "price_spread_pct": 9.0,
-      "price_conflict": true
-    },
     "2905": {
       "stock_code": "2905",
-      "name": "NORA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ DOLAPLI, BİLGİSAYAR MASASI",
+      "name": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası Sol Dolaplı, Bilgisayar Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
           "price": 7799.0,
-          "list_price": 7799,
-          "url": "https://www.trendyol.com/roomart/nora-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-p-942615871?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "list_price": 0,
+          "url": "https://www.trendyol.com/roomart/nora-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-942636653?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -6742,7 +6630,7 @@
         "hb": {
           "price": 7379.91,
           "list_price": null,
-          "url": "https://www.hepsiburada.com/nora-rafli-calisma-masasi-calisma-ofis-masasi-sag-dolapli-bilgisayar-masasi-p-HBCV0000AF2PVS",
+          "url": "https://www.hepsiburada.com/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-HBCV0000AF2PVS",
           "on_sale": true,
           "price_final": true
         },
@@ -6776,40 +6664,16 @@
       "price_spread_pct": 6.8,
       "price_conflict": true
     },
-    "2909": {
-      "stock_code": "2909",
-      "name": "NORA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ DOLAPLI, BİLGİSAYAR MASASI",
-      "category": "Kitaplıklı Çalışma Masası",
-      "platforms": {
-        "trendyol": {
-          "price": 6258.95,
-          "list_price": 6899.9,
-          "url": "https://www.trendyol.com/roomart/nora-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-p-942615652?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": true
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 6258.95,
-      "price_max": 6258.95,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "2907": {
       "stock_code": "2907",
-      "name": "NORA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ DOLAPLI, BİLGİSAYAR MASASI",
+      "name": "Nora Bilgisayar Masası, Raflı Çalışma Masası , Çalışma Ofis Masası Sol Dolaplı, Bilgisayar Masası",
       "category": "Kitaplıklı Çalışma Masası",
       "platforms": {
         "trendyol": {
           "price": 7799.0,
-          "list_price": 7799,
-          "url": "https://www.trendyol.com/roomart/nora-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-p-942615278?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": true,
+          "list_price": 0,
+          "url": "https://www.trendyol.com/roomart/nora-bilgisayar-masasi-rafli-c-alis-ma-masasi-c-alis-ma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-942636417?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
           "price_final": true
         },
         "shopify": {
@@ -6822,7 +6686,7 @@
         "hb": {
           "price": 7379.91,
           "list_price": null,
-          "url": "https://www.hepsiburada.com/nora-rafli-calisma-masasi-calisma-ofis-masasi-sag-dolapli-bilgisayar-masasi-p-HBCV0000BH64OE",
+          "url": "https://www.hepsiburada.com/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-p-HBCV0000BH64OE",
           "on_sale": true,
           "price_final": true
         },
@@ -6860,6 +6724,30 @@
       "price_max": 7799.0,
       "price_spread_pct": 15.0,
       "price_conflict": true
+    },
+    "2909": {
+      "stock_code": "2909",
+      "name": "NORA RAFLI ÇALIŞMA MASASI , ÇALIŞMA OFİS MASASI SAĞ DOLAPLI, BİLGİSAYAR MASASI",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "trendyol": {
+          "price": 6258.95,
+          "list_price": 6899.9,
+          "url": "https://www.trendyol.com/roomart/nora-rafli-c-alis-ma-masasi-c-alis-ma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-p-942615652?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": true
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 6258.95,
+      "price_max": 6258.95,
+      "price_spread_pct": null,
+      "price_conflict": false
     },
     "2951": {
       "stock_code": "2951",
@@ -41992,16 +41880,24 @@
           "url": "https://www.n11.com/urun/banos-rt4-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-18441297",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 959.9,
+          "list_price": 959.9,
+          "url": "https://www.koctas.com.tr/metal-cerceveli-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-rt4/p/1000452572?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 863.91,
       "price_max": 959.9,
       "price_spread_pct": 11.1,
@@ -42112,16 +42008,24 @@
           "url": "https://www.n11.com/urun/banos-rt3-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-5346114",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 899.9,
+          "list_price": 899.9,
+          "url": "https://www.koctas.com.tr/metal-cerceveli-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-rt3/p/1000452811?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 809.91,
       "price_max": 964.9,
       "price_spread_pct": 19.1,
@@ -42232,16 +42136,24 @@
           "url": "https://www.n11.com/urun/banos-rt2-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-18441270",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 549.9,
+          "list_price": 549.9,
+          "url": "https://www.koctas.com.tr/metal-cerceveli-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-rt2/p/1000452814?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 494.91,
       "price_max": 549.9,
       "price_spread_pct": 11.1,
@@ -50174,16 +50086,24 @@
           "url": "https://www.n11.com/urun/banos-rt1-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-18439557",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 599.9,
+          "list_price": 599.9,
+          "url": "https://www.koctas.com.tr/metal-cerceveli-baharatlik-cok-amacli-banyo-ve-mutfak-duvar-rafi-beyaz-rt1/p/1000452573?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 4,
       "price_min": 563.11,
       "price_max": 604.9,
       "price_spread_pct": 7.4,
@@ -51121,6 +51041,102 @@
       "price_max": 4049.0,
       "price_spread_pct": 1.6,
       "price_conflict": false
+    },
+    "2906": {
+      "stock_code": "2906",
+      "name": "Kitaplıklı Çalışma Masası - Nora",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 7354.0,
+          "list_price": 10399.9,
+          "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968284987679",
+          "on_sale": true,
+          "price_final": false
+        },
+        "hb": {
+          "price": 7379.91,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/kitaplikli-calisma-masasi-nora-p-HBCV0000BH6GUN",
+          "on_sale": true,
+          "price_final": true
+        },
+        "n11": {
+          "price": 7510.41,
+          "list_price": 8699.9,
+          "url": "https://www.n11.com/urun/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-beyaz-116557862",
+          "on_sale": true,
+          "price_final": true
+        },
+        "koctas": {
+          "price": 7303.41,
+          "list_price": 8114.9,
+          "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-mat-beyaz/p/5002456750?shop=2262",
+          "on_sale": true,
+          "price_final": true
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "hb",
+        "koctas",
+        "n11",
+        "shopify"
+      ],
+      "platform_count": 4,
+      "price_min": 7303.41,
+      "price_max": 7510.41,
+      "price_spread_pct": 2.8,
+      "price_conflict": false
+    },
+    "2908": {
+      "stock_code": "2908",
+      "name": "Kitaplıklı Çalışma Masası - Nora",
+      "category": "Kitaplıklı Çalışma Masası",
+      "platforms": {
+        "shopify": {
+          "price": 7395.0,
+          "list_price": 10399.9,
+          "url": "https://roomartstore.com.tr/products/kitaplikli-calisma-masasi-nora?variant=50968285053215",
+          "on_sale": true,
+          "price_final": false
+        },
+        "hb": {
+          "price": 7379.91,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/kitaplikli-calisma-masasi-nora-p-HBCV0000AF2Q0A",
+          "on_sale": true,
+          "price_final": true
+        },
+        "n11": {
+          "price": 6781.72,
+          "list_price": 8699.9,
+          "url": "https://www.n11.com/urun/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-atlantik-cam-beyaz-116557861",
+          "on_sale": true,
+          "price_final": true
+        },
+        "koctas": {
+          "price": 7303.41,
+          "list_price": 8114.9,
+          "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasiatlanti-k-cam-beyaz/p/5002456760?shop=2262",
+          "on_sale": true,
+          "price_final": true
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "hb",
+        "koctas",
+        "n11",
+        "shopify"
+      ],
+      "platform_count": 4,
+      "price_min": 6781.72,
+      "price_max": 7395.0,
+      "price_spread_pct": 9.0,
+      "price_conflict": true
     },
     "2832": {
       "stock_code": "2832",
