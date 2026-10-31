@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-30T11:33:16.599380+00:00",
+    "last_updated": "2026-10-31T11:03:26.190024+00:00",
     "total_alerts": 8
   },
   "alerts": [
@@ -11,7 +11,7 @@
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
       "message": "ROOMART Tek Çekmeceli ve Kapaklı  Çamaşır ve Kurutma Makines büyüme momentumu yüksek (82/100).",
       "product_id": "877720999",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-2",
@@ -20,61 +20,61 @@
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
       "message": "Çamaşır Ve Kurutma Makinesi Dolabı+üst Dolabı 67x240 Cm büyüme momentumu yüksek (82/100).",
       "product_id": "553966310",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-3",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Mutfak Adası — lider STAR",
-      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 71.",
-      "product_id": "877650214",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "title": "Çamaşır Makinesi Dolabı — lider STAR",
+      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 90.",
+      "product_id": "920575303",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 56.",
-      "product_id": "920575303",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "title": "Mutfak Adası — lider STAR",
+      "message": "ROOMART Milano Bar Masası Dolaplı Yüksek Mutfak Yemek Masası pay 100, büyüme 71.",
+      "product_id": "877650214",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-5",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART '' Lavabolu '' Atlantik - Antrasit Mat Mdf 65 Cm Alt iade/iptal oranı %100. Kalite/lojistik incele.",
-      "product_id": "379194536",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "message": "ROOMART Likya Kapaklı ve Açık Raflı Mdflam Lavabolu 72 Cm Ba iade/iptal oranı %100. Kalite/lojistik incele.",
+      "product_id": "942329480",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-6",
       "type": "RISK",
       "severity": "HIGH",
       "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART Likya Kapaklı ve Açık Raflı Mdflam Lavabolu 72 Cm Ba iade/iptal oranı %100. Kalite/lojistik incele.",
-      "product_id": "942329480",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "message": "ROOMART '' Lavabolu '' Atlantik - Antrasit Mat Mdf 65 Cm Alt iade/iptal oranı %100. Kalite/lojistik incele.",
+      "product_id": "379194536",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-7",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174373102",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "message": "Drop Füme Camlı , Makyaj Masası , Tek Çekmeceli , Takı Düzen hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
+      "product_id": "1216615799",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     },
     {
       "id": "alert-8",
       "type": "RISK",
       "severity": "INFO",
       "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Drop Füme Camlı , Makyaj Masası , Tek Çekmeceli , Takı Düzen hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1216615799",
-      "timestamp": "2026-10-30T11:33:16.574129+00:00"
+      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
+      "product_id": "1174373102",
+      "timestamp": "2026-10-31T11:03:26.161618+00:00"
     }
   ]
 }

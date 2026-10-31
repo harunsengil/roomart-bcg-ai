@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-30T11:33:27.264008+00:00",
+    "generated_at": "2026-10-31T11:03:35.934180+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -12193,7 +12193,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 3200.0,
+          "price": 3125.0,
           "list_price": 3999.9,
           "url": "https://www.n11.com/urun/camasir-kurutma-makinesi-alt-dolabi-kapakli-banyo-alt-dolap-51-atlantik-cam-beyaz-72240175",
           "on_sale": true,
@@ -12217,9 +12217,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3200.0,
+      "price_min": 3125.0,
       "price_max": 3779.9,
-      "price_spread_pct": 18.1,
+      "price_spread_pct": 21.0,
       "price_conflict": true
     },
     "1016.56": {
@@ -12305,7 +12305,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 5989.9,
+          "price": 4850.0,
           "list_price": 6199.9,
           "url": "https://www.n11.com/urun/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-antrasit-atlantik-cam-72236206",
           "on_sale": true,
@@ -12329,9 +12329,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 5599,
-      "price_max": 5989.9,
-      "price_spread_pct": 7.0,
+      "price_min": 4850.0,
+      "price_max": 5879.9,
+      "price_spread_pct": 21.2,
       "price_conflict": true
     },
     "1015.55": {
@@ -12422,7 +12422,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 4960.0,
+          "price": 4850.0,
           "list_price": 6199.9,
           "url": "https://www.n11.com/urun/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-11-mat-beyaz-72237924",
           "on_sale": true,
@@ -12446,9 +12446,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4960.0,
+      "price_min": 4850.0,
       "price_max": 5879.9,
-      "price_spread_pct": 18.5,
+      "price_spread_pct": 21.2,
       "price_conflict": true
     },
     "1015.51": {
@@ -12478,7 +12478,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 4960.0,
+          "price": 4850.0,
           "list_price": 6199.9,
           "url": "https://www.n11.com/urun/camasir-kurutma-makinesi-dolabi-kapakli-banyo-dolabi-51-mat-beyaz-atlantik-72236847",
           "on_sale": true,
@@ -12502,9 +12502,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 4960.0,
+      "price_min": 4850.0,
       "price_max": 5879.9,
-      "price_spread_pct": 18.5,
+      "price_spread_pct": 21.2,
       "price_conflict": true
     },
     "2816": {
@@ -26610,7 +26610,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 16584.9,
+          "price": 13000.0,
           "list_price": 16584.9,
           "url": "https://www.n11.com/urun/lotus-lavabolu-mdf-95-cm-banyo-dolabi-aynali-dlp-atlantik-cam-66882313",
           "on_sale": true,
@@ -26639,9 +26639,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 15499.9,
-      "price_max": 16584.9,
-      "price_spread_pct": 7.0,
+      "price_min": 13000.0,
+      "price_max": 16274.9,
+      "price_spread_pct": 25.2,
       "price_conflict": true
     },
     "2473": {
@@ -33691,7 +33691,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 3084.0,
+          "price": 3000.0,
           "list_price": 3854.9,
           "url": "https://www.n11.com/urun/banos-cu3-cok-amacli-camasir-makinesi-ust-banyo-dolabi-beyaz-18439506",
           "on_sale": true,
@@ -33715,9 +33715,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 3084.0,
+      "price_min": 3000.0,
       "price_max": 3569.9,
-      "price_spread_pct": 15.8,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "1554": {
@@ -50241,7 +50241,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 2560.0,
+          "price": 2500.0,
           "list_price": 3199.9,
           "url": "https://www.n11.com/urun/paris-calisma-masasi-cocuk-calisma-masasi-100-cm-atlantik-cam-antrasit-60481522",
           "on_sale": true,
@@ -50264,9 +50264,9 @@
         "shopify"
       ],
       "platform_count": 4,
-      "price_min": 2560.0,
+      "price_min": 2500.0,
       "price_max": 2939.9,
-      "price_spread_pct": 14.8,
+      "price_spread_pct": 17.6,
       "price_conflict": true
     },
     "2640": {
@@ -51611,7 +51611,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 10800.0,
+          "price": 10550.0,
           "list_price": 13499.9,
           "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-65-cm-aynali-banyo-dolabi-takimi-beyaz-18439543",
           "on_sale": true,
@@ -51626,9 +51626,9 @@
         "shopify"
       ],
       "platform_count": 3,
-      "price_min": 10800.0,
+      "price_min": 10550.0,
       "price_max": 12284.9,
-      "price_spread_pct": 13.7,
+      "price_spread_pct": 16.4,
       "price_conflict": true
     },
     "1325": {
@@ -51651,7 +51651,7 @@
           "price_final": false
         },
         "n11": {
-          "price": 14874.9,
+          "price": 12450.0,
           "list_price": 15914.9,
           "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-85-cm-aynali-banyo-dolabi-takimi-beyaz-18441272",
           "on_sale": true,
@@ -51674,9 +51674,9 @@
         "shopify"
       ],
       "platform_count": 4,
-      "price_min": 13899.9,
-      "price_max": 14874.9,
-      "price_spread_pct": 7.0,
+      "price_min": 12450.0,
+      "price_max": 14594.9,
+      "price_spread_pct": 17.2,
       "price_conflict": true
     },
     "2607": {
