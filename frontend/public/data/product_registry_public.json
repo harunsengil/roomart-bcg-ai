@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-31T11:03:35.934180+00:00",
+    "generated_at": "2026-11-01T11:59:18.014702+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -10,13 +10,13 @@
       "koctas"
     ],
     "total_products": 1269,
-    "multi_platform_count": 1097,
+    "multi_platform_count": 1098,
     "by_platform_count": {
       "trendyol": 1115,
       "shopify": 794,
       "hb": 996,
       "n11": 766,
-      "koctas": 492
+      "koctas": 515
     },
     "price_conflict_count": 894,
     "public_safe": true,
@@ -65,15 +65,23 @@
           "url": "https://roomartstore.com.tr/products/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi?variant=53045250949407",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 4799.9,
+          "list_price": 4799.9,
+          "url": "https://www.koctas.com.tr/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi-140-cm/p/5004178070?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 4799.9,
       "price_max": 4799.9,
       "price_spread_pct": 0.0,
@@ -97,15 +105,23 @@
           "url": "https://roomartstore.com.tr/products/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi?variant=53045250916639",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 3499.9,
+          "list_price": 3499.9,
+          "url": "https://www.koctas.com.tr/astro-oyuncu-masasi-oyun-masasi-gaming-masa-bilgisayar-masasi-120-cm/p/5004178050?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 3499.9,
       "price_max": 3499.9,
       "price_spread_pct": 0.0,
@@ -129,15 +145,23 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096251679",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 11949.9,
+          "list_price": 11949.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi/p/5004178097?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 11949.9,
       "price_max": 11949.9,
       "price_spread_pct": 0.0,
@@ -161,15 +185,23 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi?variant=53045096284447",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 11949.9,
+          "list_price": 11949.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-kapakli-bench-boy-doabi-moduler-portmanto-takimi/p/5004178100?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 11949.9,
       "price_max": 11949.9,
       "price_spread_pct": 0.0,
@@ -193,15 +225,23 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032976671",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 10999.9,
+          "list_price": 10999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi/p/5004178099?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10999.9,
       "price_max": 10999.9,
       "price_spread_pct": 0.0,
@@ -225,15 +265,23 @@
           "url": "https://roomartstore.com.tr/products/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi?variant=53045032943903",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 10999.9,
+          "list_price": 10999.9,
+          "url": "https://www.koctas.com.tr/nord-vestiyer-takimi-lambri-askilikli-kapaksiz-bench-boy-doabi-moduler-portmanto-takimi/p/5004178101?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 10999.9,
       "price_max": 10999.9,
       "price_spread_pct": 0.0,
@@ -257,15 +305,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-rafli-monitor-standi-100-cm?variant=53044481425695",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1279.9,
+          "list_price": 1279.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-rafli-monitor-standi-100-cm/p/5004178047?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1279.9,
       "price_max": 1279.9,
       "price_spread_pct": 0.0,
@@ -289,15 +345,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-rafli-monitor-standi-100-cm?variant=53044481458463",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1279.9,
+          "list_price": 1279.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-rafli-monitor-standi-100-cm/p/5004178071?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1279.9,
       "price_max": 1279.9,
       "price_spread_pct": 0.0,
@@ -321,15 +385,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-kitapligi-40-cm?variant=53044198277407",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1699.9,
+          "list_price": 1699.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-kitapligi-40-cm/p/5004178036?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1699.9,
       "price_max": 1699.9,
       "price_spread_pct": 0.0,
@@ -353,15 +425,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-kitapligi-40-cm?variant=53044198310175",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1699.9,
+          "list_price": 1699.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-kitapligi-40-cm/p/5004178031?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1699.9,
       "price_max": 1699.9,
       "price_spread_pct": 0.0,
@@ -385,15 +465,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-calisma-masasi-kesonu?variant=53044121960735",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 4479.9,
+          "list_price": 4479.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-calisma-masasi-kesonu/p/5004178021?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 4479.9,
       "price_max": 4479.9,
       "price_spread_pct": 0.0,
@@ -417,15 +505,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-calisma-masasi-kesonu?variant=53044121993503",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 4479.9,
+          "list_price": 4479.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-calisma-masasi-kesonu/p/5004178020?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 4479.9,
       "price_max": 4479.9,
       "price_spread_pct": 0.0,
@@ -449,15 +545,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-duvar-rafi-120-cm?variant=53043847528735",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1149.9,
+          "list_price": 1149.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-duvar-rafi-120-cm/p/5004178077?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1149.9,
       "price_max": 1149.9,
       "price_spread_pct": 0.0,
@@ -481,15 +585,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-duvar-rafi-120-cm?variant=53043847495967",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 1149.9,
+          "list_price": 1149.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-duvar-rafi-120-cm/p/5004178025?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 1149.9,
       "price_max": 1149.9,
       "price_spread_pct": 0.0,
@@ -513,15 +625,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=53043152781599",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 3699.9,
+          "list_price": 3699.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi/p/5004178033?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 3699.9,
       "price_max": 3699.9,
       "price_spread_pct": 0.0,
@@ -545,15 +665,23 @@
           "url": "https://roomartstore.com.tr/products/mode-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=53043152748831",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 3699.9,
+          "list_price": 3699.9,
+          "url": "https://www.koctas.com.tr/mode-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi/p/5004178073?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 2174.2,
       "price_max": 3699.9,
       "price_spread_pct": 70.2,
@@ -577,15 +705,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=53043137118495",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 8199.9,
+          "list_price": 8199.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi/p/5004178080?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 8199.9,
       "price_max": 8199.9,
       "price_spread_pct": 0.0,
@@ -609,15 +745,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi?variant=53043137085727",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 8199.9,
+          "list_price": 8199.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi/p/5004178069?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 8199.9,
       "price_max": 8199.9,
       "price_spread_pct": 0.0,
@@ -641,15 +785,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi?variant=53043107627295",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 9899.9,
+          "list_price": 9899.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-kitaplikli-rafli-calisma-masasi/p/5004178063?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9899.9,
       "price_max": 9899.9,
       "price_spread_pct": 0.0,
@@ -673,15 +825,23 @@
           "url": "https://roomartstore.com.tr/products/mode-3-cekmeceli-kesonlu-calisma-masasi?variant=53043107660063",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 9899.9,
+          "list_price": 9899.9,
+          "url": "https://www.koctas.com.tr/mode-3-cekmeceli-kesonlu-calisma-masasi-calisma-ofis-masasi-bilgisayar-masasi-kitaplikli-rafli-calisma-masasi/p/5004178060?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 2,
+      "platform_count": 3,
       "price_min": 9899.9,
       "price_max": 9899.9,
       "price_spread_pct": 0.0,
@@ -1191,20 +1351,28 @@
           "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kumtasi-137513816",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 6699.0,
+          "list_price": 6699.0,
+          "url": "https://www.koctas.com.tr/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm/p/5004178095?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 4682.65,
-      "price_max": 6364.05,
-      "price_spread_pct": 35.9,
+      "price_max": 6699.0,
+      "price_spread_pct": 43.1,
       "price_conflict": true
     },
     "D-33": {
@@ -1239,20 +1407,28 @@
           "url": "https://www.n11.com/urun/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm-kul-gri-137513681",
           "on_sale": true,
           "price_final": true
+        },
+        "koctas": {
+          "price": 6699.0,
+          "list_price": 6699.0,
+          "url": "https://www.koctas.com.tr/yavaslatici-cekmeceli-camasir-ve-kurutma-makinesi-dolabi-185-cm/p/5004178094?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
         "hb",
+        "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 1116.5,
-      "price_max": 6435.0,
-      "price_spread_pct": 476.4,
+      "price_max": 6699.0,
+      "price_spread_pct": 500.0,
       "price_conflict": true
     },
     "3100": {
@@ -6643,7 +6819,7 @@
         },
         "koctas": {
           "price": 7303.41,
-          "list_price": 8114.9,
+          "list_price": 7410.0,
           "url": "https://www.koctas.com.tr/nora-bilgisayar-masasi-rafli-calisma-masasi-calisma-ofis-masasi-sol-dolapli-bilgisayar-masasi-mat-beyaz/p/5002456750?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -6755,7 +6931,7 @@
         },
         "koctas": {
           "price": 7303.41,
-          "list_price": 8114.9,
+          "list_price": 7410.0,
           "url": "https://www.koctas.com.tr/roomart-nora-rafli-calisma-masasi-calisma-ofi-s-masasi-sag-dolapli-bi-lgi-sayar-masasi-mat-beyaz/p/5002456757?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -13675,7 +13851,7 @@
         },
         "koctas": {
           "price": 6551.91,
-          "list_price": 7279.9,
+          "list_price": 6469.0,
           "url": "https://www.koctas.com.tr/roomart-venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi/p/5001813916?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -15156,7 +15332,7 @@
         },
         "koctas": {
           "price": 6146.91,
-          "list_price": 6829.9,
+          "list_price": 6469.0,
           "url": "https://www.koctas.com.tr/roomart-milano-bar-masasi-dolapli-yuksek-mutfak-yemek-masasi-mutfak-adasi/p/5001695694?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -20174,7 +20350,7 @@
         },
         "koctas": {
           "price": 2623.41,
-          "list_price": 2914.9,
+          "list_price": 2587.0,
           "url": "https://www.koctas.com.tr/paris-calisma-masasi-cocuk-calisma-masasi-ofis-masasi-bilgisayar-masasi-100-cm/p/5001315511?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -50725,17 +50901,25 @@
           "url": "https://roomartstore.com.tr/products/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz?variant=53045319172383",
           "on_sale": true,
           "price_final": false
+        },
+        "koctas": {
+          "price": 4299.9,
+          "list_price": 4299.9,
+          "url": "https://www.koctas.com.tr/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz-25-mm-120-cm/p/5004178103?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
         "shopify"
       ],
-      "platform_count": 1,
+      "platform_count": 2,
       "price_min": 4299.9,
       "price_max": 4299.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "2576": {
