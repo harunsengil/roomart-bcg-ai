@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-03T12:58:19.501202+00:00",
+    "generated_at": "2026-11-04T13:13:13.114739+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -9,7 +9,7 @@
       "n11",
       "koctas"
     ],
-    "total_products": 1269,
+    "total_products": 1268,
     "multi_platform_count": 1098,
     "by_platform_count": {
       "trendyol": 1115,
@@ -34,17 +34,33 @@
           "url": "https://www.trendyol.com/roomart/drop-fu-me-camli-makyaj-masasi-tek-c-ekmeceli-taki-du-zenleyici-mat-beyaz-25-mm-120-cm-p-1216615799?merchantId=362387&filterOverPriceListings=false",
           "on_sale": true,
           "price_final": true
+        },
+        "shopify": {
+          "price": 4299.9,
+          "list_price": null,
+          "url": "https://roomartstore.com.tr/products/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz?variant=53045319172383",
+          "on_sale": true,
+          "price_final": false
+        },
+        "koctas": {
+          "price": 4299.9,
+          "list_price": 4299.9,
+          "url": "https://www.koctas.com.tr/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz-25-mm-120-cm/p/5004178103?shop=2262",
+          "on_sale": true,
+          "price_final": false
         }
       },
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "koctas",
+        "shopify",
         "trendyol"
       ],
-      "platform_count": 1,
+      "platform_count": 3,
       "price_min": 4299.9,
       "price_max": 4299.9,
-      "price_spread_pct": null,
+      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "058.12.140.02.00": {
@@ -50888,38 +50904,6 @@
       "price_min": null,
       "price_max": null,
       "price_spread_pct": null,
-      "price_conflict": false
-    },
-    "062.02.120.01.92": {
-      "stock_code": "062.02.120.01.92",
-      "name": "Drop Füme Camlı , Makyaj Masası , Tek Çekmeceli , Takı Düzenleyici Mat Beyaz 25 mm 120 cm",
-      "category": "Diğer",
-      "platforms": {
-        "shopify": {
-          "price": 4299.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz?variant=53045319172383",
-          "on_sale": true,
-          "price_final": false
-        },
-        "koctas": {
-          "price": 4299.9,
-          "list_price": 4299.9,
-          "url": "https://www.koctas.com.tr/drop-fume-camli-makyaj-masasi-tek-cekmeceli-taki-duzenleyici-mat-beyaz-25-mm-120-cm/p/5004178103?shop=2262",
-          "on_sale": true,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "koctas",
-        "shopify"
-      ],
-      "platform_count": 2,
-      "price_min": 4299.9,
-      "price_max": 4299.9,
-      "price_spread_pct": 0.0,
       "price_conflict": false
     },
     "2576": {
