@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-10T13:42:50.311630+00:00",
+    "generated_at": "2026-11-11T12:55:06.538583+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -4493,7 +4493,7 @@
         },
         "shopify": {
           "price": 5250.0,
-          "list_price": null,
+          "list_price": 5964.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=52723559465247",
           "on_sale": true,
           "price_final": false
@@ -4661,7 +4661,7 @@
         },
         "shopify": {
           "price": 5250.0,
-          "list_price": null,
+          "list_price": 5964.9,
           "url": "https://roomartstore.com.tr/products/rim-camasir-sepetli-cekmeceli-dolap?variant=52723559498015",
           "on_sale": true,
           "price_final": false
