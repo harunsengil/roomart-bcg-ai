@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-11T12:55:06.538583+00:00",
+    "generated_at": "2026-11-12T13:57:38.976230+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -13,7 +13,7 @@
     "multi_platform_count": 1098,
     "by_platform_count": {
       "trendyol": 1115,
-      "shopify": 795,
+      "shopify": 794,
       "hb": 996,
       "n11": 766,
       "koctas": 515
@@ -6092,30 +6092,6 @@
       "price_spread_pct": 16.1,
       "price_conflict": true
     },
-    "2987": {
-      "stock_code": "2987",
-      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "trendyol": {
-          "price": 9699.9,
-          "list_price": 9699.9,
-          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
-          "price_final": false
-        }
-      },
-      "reviews": {},
-      "total_reviews": 0,
-      "present_on": [
-        "trendyol"
-      ],
-      "platform_count": 1,
-      "price_min": 9699.9,
-      "price_max": 9699.9,
-      "price_spread_pct": null,
-      "price_conflict": false
-    },
     "2986": {
       "stock_code": "2986",
       "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
@@ -6163,6 +6139,30 @@
       "price_max": 10499.9,
       "price_spread_pct": 15.1,
       "price_conflict": true
+    },
+    "2987": {
+      "stock_code": "2987",
+      "name": "Dubai Sepetli Mdflam Banyo Dolabı, Lavabolu Banyo Alt Dolabı + Aynalı Banyo Üst Dolabı Takımı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 9699.9,
+          "list_price": 9699.9,
+          "url": "https://www.trendyol.com/roomart/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-u-st-dolabi-takimi-p-971265578?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": false,
+          "price_final": false
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "trendyol"
+      ],
+      "platform_count": 1,
+      "price_min": 9699.9,
+      "price_max": 9699.9,
+      "price_spread_pct": null,
+      "price_conflict": false
     },
     "2984": {
       "stock_code": "2984",
@@ -13875,7 +13875,7 @@
         },
         "koctas": {
           "price": 6551.91,
-          "list_price": 7279.0,
+          "list_price": 7799.9,
           "url": "https://www.koctas.com.tr/roomart-venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi/p/5001813916?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -13931,7 +13931,7 @@
         },
         "koctas": {
           "price": 6551.91,
-          "list_price": 7279.9,
+          "list_price": 7799.9,
           "url": "https://www.koctas.com.tr/roomart-venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi/p/5001813897?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -13992,7 +13992,7 @@
         },
         "koctas": {
           "price": 6551.91,
-          "list_price": 7279.9,
+          "list_price": 7799.9,
           "url": "https://www.koctas.com.tr/roomart-venedik-kahve-kosesi-cok-amacli-dolap-2-kapakli-1-cekmeceli-kiler-dolabi-mutfak-dolabi/p/5001813880?shop=2262",
           "on_sale": true,
           "price_final": true
@@ -34257,13 +34257,6 @@
           "on_sale": false,
           "price_final": false
         },
-        "shopify": {
-          "price": 5399.9,
-          "list_price": null,
-          "url": "https://roomartstore.com.tr/products/eco-camasir-makinesi-dolabi?variant=44748046958879",
-          "on_sale": true,
-          "price_final": false
-        },
         "hb": {
           "price": 2999.9,
           "list_price": null,
@@ -34281,13 +34274,12 @@
       "total_reviews": 7,
       "present_on": [
         "hb",
-        "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 2,
       "price_min": 2790,
-      "price_max": 5399.9,
-      "price_spread_pct": 93.5,
+      "price_max": 2999.9,
+      "price_spread_pct": 7.5,
       "price_conflict": true
     },
     "1998": {
