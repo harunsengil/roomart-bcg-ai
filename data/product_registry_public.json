@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-12T13:57:38.976230+00:00",
+    "generated_at": "2026-11-13T13:21:21.250085+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -16,7 +16,7 @@
       "shopify": 794,
       "hb": 996,
       "n11": 766,
-      "koctas": 515
+      "koctas": 514
     },
     "price_conflict_count": 892,
     "public_safe": true,
@@ -30781,13 +30781,6 @@
           "url": "https://roomartstore.com.tr/products/lavabo-bataryasi-bt104?variant=51028880425247",
           "on_sale": true,
           "price_final": false
-        },
-        "koctas": {
-          "price": 3299.9,
-          "list_price": 3299.9,
-          "url": "https://www.koctas.com.tr/bt104-kromlu-lavabo-bataryasi-sifon-hediyeli/p/5002456753?shop=2262",
-          "on_sale": true,
-          "price_final": false
         }
       },
       "reviews": {
@@ -30798,14 +30791,13 @@
       },
       "total_reviews": 1,
       "present_on": [
-        "koctas",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 3,
+      "platform_count": 2,
       "price_min": 649.97,
-      "price_max": 3299.9,
-      "price_spread_pct": 407.7,
+      "price_max": 3169.9,
+      "price_spread_pct": 387.7,
       "price_conflict": true
     },
     "BT110": {
