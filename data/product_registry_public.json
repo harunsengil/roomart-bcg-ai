@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-15T12:55:46.688873+00:00",
+    "generated_at": "2026-11-16T13:56:05.973378+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -41751,7 +41751,7 @@
           "price_final": false
         },
         "shopify": {
-          "price": 8500.0,
+          "price": 2150.0,
           "list_price": null,
           "url": "https://roomartstore.com.tr/products/cc2-kose-kitaplik?variant=50042289291551",
           "on_sale": true,
@@ -41787,8 +41787,8 @@
       ],
       "platform_count": 4,
       "price_min": 1826.0,
-      "price_max": 8500.0,
-      "price_spread_pct": 365.5,
+      "price_max": 2150.0,
+      "price_spread_pct": 17.7,
       "price_conflict": true
     },
     "1595": {
