@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-17T14:48:20.234705+00:00",
-    "total_alerts": 8
+    "last_updated": "2026-11-18T14:27:11.478432+00:00",
+    "total_alerts": 5
   },
   "alerts": [
     {
@@ -9,72 +9,45 @@
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Çamaşır Sepetli Banyo Dolabı, Çok Amaçlı Çekmeceli Dolap 90  büyüme momentumu yüksek (100/100).",
-      "product_id": "820297677",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
+      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al büyüme momentumu yüksek (100/100).",
+      "product_id": "920575159",
+      "timestamp": "2026-11-18T14:27:11.470787+00:00"
     },
     {
       "id": "alert-2",
       "type": "OPPORTUNITY",
       "severity": "HIGH",
       "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
-      "message": "Banyo Dolabı 196,2 x 67 cm Çamaşır Ve Kurutma Makinesi Dolab büyüme momentumu yüksek (100/100).",
-      "product_id": "812234712",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
+      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (100/100).",
+      "product_id": "877182347",
+      "timestamp": "2026-11-18T14:27:11.470787+00:00"
     },
     {
       "id": "alert-3",
-      "type": "SUCCESS",
-      "severity": "INFO",
-      "title": "Çamaşır Makinesi Dolabı — lider STAR",
-      "message": "ROOMART Çamaşır-Kurutma Makinesi Alt Dolabı Kapaklı Banyo Al pay 100, büyüme 83.",
-      "product_id": "920575303",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
+      "type": "OPPORTUNITY",
+      "severity": "HIGH",
+      "title": "Çamaşır Makinesi Dolabı — yükselen fırsat",
+      "message": "ROOMART Luna Çamaşır Sepetli Çamaşır makinesi Dolabı , Kirli büyüme momentumu yüksek (100/100).",
+      "product_id": "877183321",
+      "timestamp": "2026-11-18T14:27:11.470787+00:00"
     },
     {
       "id": "alert-4",
       "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Sehpa — lider STAR",
-      "message": "ROOMART Helsinki Orta Sehpa Suntalam 80 cm pay 100, büyüme 72.",
-      "product_id": "866321311",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
+      "title": "Diğer — lider STAR",
+      "message": "ROOMART Glamo Aynalı Makyaj Masası - Tek Çekmeceli, 2 Dolapl pay 100, büyüme 100.",
+      "product_id": "962085213",
+      "timestamp": "2026-11-18T14:27:11.470787+00:00"
     },
     {
       "id": "alert-5",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Banyo Dolabı — yüksek iade riski",
-      "message": "ROOMART '' Lavabolu '' Atlantik - Antrasit Mat Mdf 65 Cm Alt iade/iptal oranı %100. Kalite/lojistik incele.",
-      "product_id": "379194536",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
-    },
-    {
-      "id": "alert-6",
-      "type": "RISK",
-      "severity": "HIGH",
-      "title": "Çamaşır Makinesi Dolabı — yüksek iade riski",
-      "message": "Çamaşır-kurutma Makinesi Dolabı + Üst Dolabı 2'li Mat Beyaz iade/iptal oranı %83. Kalite/lojistik incele.",
-      "product_id": "456979325",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
-    },
-    {
-      "id": "alert-7",
-      "type": "RISK",
+      "type": "SUCCESS",
       "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Gün Işığı Kumlamalı Dokunmatik Ledli Ayna, Banyo Ayna Üst Do hızlı satıyor ama Net Tahsilat %83 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174373102",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
-    },
-    {
-      "id": "alert-8",
-      "type": "RISK",
-      "severity": "INFO",
-      "title": "Diğer — kârsız hacim uyarısı",
-      "message": "Banyo Ayna Üst Dolabı, Gün Işığı Kumlamalı Dokunmatik Ledli  hızlı satıyor ama Net Tahsilat %82 (komisyon+promo marjı eritiyor).",
-      "product_id": "1174453064",
-      "timestamp": "2026-11-17T14:48:20.207440+00:00"
+      "title": "Kahve Köşesi — lider STAR",
+      "message": "ROOMART Venedik Kahve Köşesi, Çok Amaçlı Dolap, 2 Kapaklı 1  pay 100, büyüme 90.",
+      "product_id": "885510344",
+      "timestamp": "2026-11-18T14:27:11.470787+00:00"
     }
   ]
 }
