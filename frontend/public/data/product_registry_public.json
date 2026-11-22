@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-21T13:40:29.874934+00:00",
+    "generated_at": "2026-11-22T13:33:37.637847+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -14,7 +14,7 @@
     "by_platform_count": {
       "trendyol": 1115,
       "shopify": 794,
-      "hb": 996,
+      "hb": 1001,
       "n11": 766,
       "koctas": 514
     },
@@ -6063,6 +6063,13 @@
           "on_sale": true,
           "price_final": false
         },
+        "hb": {
+          "price": 14353.4,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/dubai-mdflam-sepetli-banyo-dolabi-seti-lavabolu-alt-dolap-aynali-banyo-ust-dolabi-boy-dolabi-p-HBCV0000RFO34Z",
+          "on_sale": true,
+          "price_final": false
+        },
         "n11": {
           "price": 11795.02,
           "list_price": 14879.9,
@@ -6081,15 +6088,16 @@
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 11795.02,
-      "price_max": 12797.91,
-      "price_spread_pct": 8.5,
+      "price_max": 14353.4,
+      "price_spread_pct": 21.7,
       "price_conflict": true
     },
     "2987": {
@@ -6183,6 +6191,13 @@
           "on_sale": true,
           "price_final": false
         },
+        "hb": {
+          "price": 1024.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/dubai-sepetli-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-aynali-banyo-ust-dolabi-takimi-p-HBCV0000RFRZOQ",
+          "on_sale": true,
+          "price_final": false
+        },
         "n11": {
           "price": 10111.41,
           "list_price": 11529.9,
@@ -6201,15 +6216,16 @@
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
-      "price_min": 9827.91,
+      "platform_count": 5,
+      "price_min": 1024.9,
       "price_max": 10499.9,
-      "price_spread_pct": 6.8,
+      "price_spread_pct": 924.5,
       "price_conflict": true
     },
     "2985": {
@@ -6284,6 +6300,13 @@
           "on_sale": true,
           "price_final": false
         },
+        "hb": {
+          "price": 6824.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/dubai-kapakli-ve-sepetli-92-2-cm-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-p-HBCV0000RFQS7Y",
+          "on_sale": true,
+          "price_final": false
+        },
         "n11": {
           "price": 6259.41,
           "list_price": 7314.9,
@@ -6307,15 +6330,16 @@
       },
       "total_reviews": 1,
       "present_on": [
+        "hb",
         "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 6083.91,
-      "price_max": 6499.9,
-      "price_spread_pct": 6.8,
+      "price_max": 6824.9,
+      "price_spread_pct": 12.2,
       "price_conflict": true
     },
     "2980": {
@@ -6337,6 +6361,13 @@
           "on_sale": true,
           "price_final": false
         },
+        "hb": {
+          "price": 6824.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/dubai-kapakli-ve-sepetli-92-2-cm-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-p-HBCV0000RFNB3N",
+          "on_sale": true,
+          "price_final": false
+        },
         "n11": {
           "price": 6259.41,
           "list_price": 7314.9,
@@ -6355,15 +6386,16 @@
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 6083.91,
-      "price_max": 6499.9,
-      "price_spread_pct": 6.8,
+      "price_max": 6824.9,
+      "price_spread_pct": 12.2,
       "price_conflict": true
     },
     "2982": {
@@ -6385,6 +6417,13 @@
           "on_sale": true,
           "price_final": false
         },
+        "hb": {
+          "price": 6824.9,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/dubai-kapakli-ve-sepetli-92-2-cm-mdflam-banyo-dolabi-lavabolu-banyo-alt-dolabi-p-HBCV0000RFNW15",
+          "on_sale": true,
+          "price_final": false
+        },
         "n11": {
           "price": 6259.41,
           "list_price": 7314.9,
@@ -6403,15 +6442,16 @@
       "reviews": {},
       "total_reviews": 0,
       "present_on": [
+        "hb",
         "koctas",
         "n11",
         "shopify",
         "trendyol"
       ],
-      "platform_count": 4,
+      "platform_count": 5,
       "price_min": 6083.91,
-      "price_max": 6499.9,
-      "price_spread_pct": 6.8,
+      "price_max": 6824.9,
+      "price_spread_pct": 12.2,
       "price_conflict": true
     },
     "2983": {
