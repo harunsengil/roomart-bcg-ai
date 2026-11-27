@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-11-26T15:37:31.882816+00:00",
+    "generated_at": "2026-11-27T15:28:47.210416+00:00",
     "merge_key": "stock_code (yedek: barcode)",
     "platforms": [
       "trendyol",
@@ -12,7 +12,7 @@
     "total_products": 1268,
     "multi_platform_count": 1098,
     "by_platform_count": {
-      "trendyol": 1114,
+      "trendyol": 1115,
       "shopify": 794,
       "hb": 1005,
       "n11": 766,
@@ -30553,8 +30553,8 @@
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 4999.9,
-          "list_price": 4999.9,
+          "price": 0.0,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/ayaksiz-tek-kapakli-sol-lavabolu-46-cm-banyo-alt-dolabi-aynali-u-st-dolabi-p-806574841?merchantId=362387&filterOverPriceListings=false",
           "on_sale": false,
           "price_final": false
@@ -30594,7 +30594,7 @@
       "platforms": {
         "trendyol": {
           "price": 3479.9,
-          "list_price": 3479.9,
+          "list_price": 0,
           "url": "https://www.trendyol.com/roomart/ayaksiz-tek-kapakli-sol-lavabolu-46-cm-banyo-alt-dolabi-p-806572947?merchantId=362387&filterOverPriceListings=false",
           "on_sale": false,
           "price_final": true
@@ -44044,49 +44044,58 @@
       "price_spread_pct": 14.9,
       "price_conflict": true
     },
-    "1053": {
-      "stock_code": "1053",
+    "1327": {
+      "stock_code": "1327",
       "name": "Roomart Tm3 Ayaksız 2 Kapaklı Lavabolu Beyaz Mdf 100 Cm Banyo Dolabı Aynalı Üst Dolap Boy Dolabı",
       "category": "Banyo Dolabı",
       "platforms": {
         "trendyol": {
-          "price": 7738.32,
-          "list_price": 0,
+          "price": 14999.9,
+          "list_price": 14999.9,
           "url": "https://www.trendyol.com/banos/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-u-st-dolap-boy-dolabi-p-31882964?merchantId=362387&filterOverPriceListings=false",
-          "on_sale": false,
+          "on_sale": true,
           "price_final": true
         },
         "shopify": {
-          "price": 8659.9,
-          "list_price": 10479.9,
-          "url": "https://roomartstore.com.tr/products/ld3-lavabolu-banyo-dolabi?variant=47006213243167",
+          "price": 13900.0,
+          "list_price": 16999.9,
+          "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=47005503947039",
           "on_sale": true,
           "price_final": false
         },
         "hb": {
-          "price": 8007.91,
+          "price": 12599.92,
           "list_price": null,
-          "url": "https://www.hepsiburada.com/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi-p-HBV00000GWUHQ",
+          "url": "https://www.hepsiburada.com/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi-p-HBV00000GWUM7",
           "on_sale": true,
           "price_final": true
         },
         "n11": {
-          "price": 8342.91,
-          "list_price": 10479.9,
-          "url": "https://www.n11.com/urun/banos-ld3-ayaksiz-2-kapakli-lavabolu-beyaz-100-cm-banyo-dolabi-beyaz-18441240",
+          "price": 14444.91,
+          "list_price": 16999.9,
+          "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-100-cm-aynali-banyo-dolabi-takimi-beyaz-18439561",
           "on_sale": true,
           "price_final": true
         },
         "koctas": {
-          "price": 8108.91,
-          "list_price": 9009.9,
-          "url": "https://www.koctas.com.tr/ayaksiz-2-kapakli-100-cm-lavabolu-beyaz-mdf-banyo-dolabi-ld3/p/1000452776?shop=2262",
+          "price": 14039.91,
+          "list_price": 15599.9,
+          "url": "https://www.koctas.com.tr/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi/p/1000452694?shop=2262",
           "on_sale": true,
           "price_final": true
         }
       },
-      "reviews": {},
-      "total_reviews": 0,
+      "reviews": {
+        "n11": {
+          "rating": 5.0,
+          "review_count": 13
+        },
+        "shopify": {
+          "rating": 4.93,
+          "review_count": 15
+        }
+      },
+      "total_reviews": 28,
       "present_on": [
         "hb",
         "koctas",
@@ -44095,9 +44104,9 @@
         "trendyol"
       ],
       "platform_count": 5,
-      "price_min": 7738.32,
-      "price_max": 8659.9,
-      "price_spread_pct": 11.9,
+      "price_min": 12599.92,
+      "price_max": 14999.9,
+      "price_spread_pct": 19.0,
       "price_conflict": true
     },
     "1326": {
@@ -49556,6 +49565,62 @@
       "price_spread_pct": 0.0,
       "price_conflict": false
     },
+    "1053": {
+      "stock_code": "1053",
+      "name": "Roomart Ld3 Ayaksız 2 Kapaklı Lavabolu Beyaz Mdf 100 Cm Banyo Dolabı",
+      "category": "Banyo Dolabı",
+      "platforms": {
+        "trendyol": {
+          "price": 7738.32,
+          "list_price": 8659.9,
+          "url": "https://www.trendyol.com/banos/roomart-ld3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-p-31882859?merchantId=362387&filterOverPriceListings=false",
+          "on_sale": true,
+          "price_final": true
+        },
+        "shopify": {
+          "price": 8659.9,
+          "list_price": 10479.9,
+          "url": "https://roomartstore.com.tr/products/ld3-lavabolu-banyo-dolabi?variant=47006213243167",
+          "on_sale": true,
+          "price_final": false
+        },
+        "hb": {
+          "price": 8007.91,
+          "list_price": null,
+          "url": "https://www.hepsiburada.com/roomart-ld3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-p-HBV00000GWUHQ",
+          "on_sale": true,
+          "price_final": true
+        },
+        "n11": {
+          "price": 8342.91,
+          "list_price": 10479.9,
+          "url": "https://www.n11.com/urun/banos-ld3-ayaksiz-2-kapakli-lavabolu-beyaz-100-cm-banyo-dolabi-beyaz-18441240",
+          "on_sale": true,
+          "price_final": true
+        },
+        "koctas": {
+          "price": 8108.91,
+          "list_price": 9009.9,
+          "url": "https://www.koctas.com.tr/ayaksiz-2-kapakli-100-cm-lavabolu-beyaz-mdf-banyo-dolabi-ld3/p/1000452776?shop=2262",
+          "on_sale": true,
+          "price_final": true
+        }
+      },
+      "reviews": {},
+      "total_reviews": 0,
+      "present_on": [
+        "hb",
+        "koctas",
+        "n11",
+        "shopify",
+        "trendyol"
+      ],
+      "platform_count": 5,
+      "price_min": 7738.32,
+      "price_max": 8659.9,
+      "price_spread_pct": 11.9,
+      "price_conflict": true
+    },
     "1052": {
       "stock_code": "1052",
       "name": "Kl3 Ayaksız 2 Kapaklı Lavabolu Beyaz Mdf 100 Cm Banyo Dolabı Aynalı Üst Dolabı",
@@ -51844,63 +51909,6 @@
       "price_min": 12450.0,
       "price_max": 14594.9,
       "price_spread_pct": 17.2,
-      "price_conflict": true
-    },
-    "1327": {
-      "stock_code": "1327",
-      "name": "Lavabolu Banyo Dolabı 3lü Set - Atria",
-      "category": "Banyo Dolabı",
-      "platforms": {
-        "shopify": {
-          "price": 13900.0,
-          "list_price": 16999.9,
-          "url": "https://roomartstore.com.tr/products/tm3-lavabolu-banyo-dolabi-3lu-set?variant=47005503947039",
-          "on_sale": true,
-          "price_final": false
-        },
-        "hb": {
-          "price": 12599.92,
-          "list_price": null,
-          "url": "https://www.hepsiburada.com/lavabolu-banyo-dolabi-3lu-set-atria-p-HBV00000GWUM7",
-          "on_sale": true,
-          "price_final": true
-        },
-        "n11": {
-          "price": 14444.91,
-          "list_price": 16999.9,
-          "url": "https://www.n11.com/urun/banos-tm3-lavabolu-beyaz-100-cm-aynali-banyo-dolabi-takimi-beyaz-18439561",
-          "on_sale": true,
-          "price_final": true
-        },
-        "koctas": {
-          "price": 14039.91,
-          "list_price": 15599.9,
-          "url": "https://www.koctas.com.tr/roomart-tm3-ayaksiz-2-kapakli-lavabolu-beyaz-mdf-100-cm-banyo-dolabi-aynali-ust-dolap-boy-dolabi/p/1000452694?shop=2262",
-          "on_sale": true,
-          "price_final": true
-        }
-      },
-      "reviews": {
-        "n11": {
-          "rating": 5.0,
-          "review_count": 13
-        },
-        "shopify": {
-          "rating": 4.93,
-          "review_count": 15
-        }
-      },
-      "total_reviews": 28,
-      "present_on": [
-        "hb",
-        "koctas",
-        "n11",
-        "shopify"
-      ],
-      "platform_count": 4,
-      "price_min": 12599.92,
-      "price_max": 14444.91,
-      "price_spread_pct": 14.6,
       "price_conflict": true
     },
     "2607": {
